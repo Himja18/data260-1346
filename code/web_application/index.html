@@ -4,128 +4,281 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HW1-Himja Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ink: #16213E;
+      --amber: #F2A93C;
+      --paper: #F7F5EF;
+      --steel: #5B6472;
+      --line: #D8D3C4;
+      --card: #FFFFFF;
+      --delay: #F2A93C;
+      --breakdown: #5B6472;
+      --accident: #C4483C;
+      --service-change: #2E6E9E;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      max-width: 640px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #f7f7fb;
-      color: #222;
+      font-family: 'IBM Plex Sans', Arial, sans-serif;
+      margin: 0;
+      padding: 48px 20px 80px;
+      background: var(--paper);
+      background-image:
+        radial-gradient(circle at 100% 0%, rgba(242,169,60,0.08) 0%, transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(22,33,62,0.05) 0%, transparent 45%);
+      color: var(--ink);
+      min-height: 100vh;
     }
-    h1 {
-      font-size: 2.2rem;
-      color: #1a3c6e;
+
+    .page {
+      max-width: 620px;
+      margin: 0 auto;
     }
-    form {
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    label {
-      display: block;
-      margin-top: 16px;
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 4px;
-      font-weight: bold;
     }
+
+    .line-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--amber);
+      box-shadow: 0 0 0 4px rgba(242,169,60,0.25);
+      flex-shrink: 0;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    h1 {
+      font-family: 'Archivo', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 2.15rem;
+      letter-spacing: -0.01em;
+      margin: 6px 0 28px;
+      color: var(--ink);
+    }
+
+    .route-strip {
+      display: flex;
+      height: 6px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .route-strip span { flex: 1; }
+    .route-strip span:nth-child(1) { background: var(--delay); }
+    .route-strip span:nth-child(2) { background: var(--breakdown); }
+    .route-strip span:nth-child(3) { background: var(--accident); }
+    .route-strip span:nth-child(4) { background: var(--service-change); }
+
+    form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 36px 34px 32px;
+      box-shadow: 0 18px 40px -20px rgba(22,33,62,0.25);
+    }
+
+    label {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 22px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+    label:first-of-type { margin-top: 0; }
+
+    label .req {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: rgba(242,169,60,0.14);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
     input[type="text"],
     input[type="email"],
     textarea,
     select {
       width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
+      padding: 11px 13px;
+      border: 1.5px solid var(--line);
       border-radius: 4px;
-      font-size: 1rem;
+      font-size: 0.98rem;
+      font-family: 'IBM Plex Sans', Arial, sans-serif;
+      color: var(--ink);
+      background: #FDFCFA;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
+
+    #routeId {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(242,169,60,0.22);
+    }
+
     textarea {
       resize: vertical;
-      min-height: 90px;
+      min-height: 96px;
+      line-height: 1.5;
     }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%235B6472' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
     .checkbox-row {
       display: flex;
       align-items: center;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 12px 14px;
+      background: rgba(22,33,62,0.035);
+      border-radius: 4px;
     }
     .checkbox-row input {
-      margin-right: 8px;
-      width: auto;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #1a3c6e;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
+      width: 17px;
+      height: 17px;
+      accent-color: var(--ink);
       cursor: pointer;
     }
-    button:hover {
-      background-color: #14305a;
+    .checkbox-row label {
+      margin: 0;
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--steel);
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 26px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--ink);
+      color: #FFF;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Archivo', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+    button:hover { background: #0F1730; }
+    button:active { transform: scale(0.99); }
+
+    .footnote {
+      margin-top: 18px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--steel);
+      text-align: center;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
 <body>
 
-  <h1>Municipal Transit Incident Report</h1>
+  <div class="page">
+    <div class="masthead">
+      <span class="line-dot"></span>
+      <span class="eyebrow">Route 2 &middot; Rider Report Line</span>
+    </div>
+    <h1>Municipal Transit Incident Report</h1>
 
-  <form id="incidentForm">
-    <label for="routeId">Route / Incident Title (required)</label>
-    <input
-      type="text"
-      id="routeId"
-      name="routeId"
-      placeholder="e.g., Line 22 - Bus stalled on Main St"
-      required
-      autofocus
-    />
-
-    <label for="location">Location (required)</label>
-    <input
-      type="text"
-      id="location"
-      name="location"
-      placeholder="e.g., Main St & 5th Ave stop"
-      required
-    />
-
-    <label for="reporterEmail">Your Email (required)</label>
-    <input
-      type="email"
-      id="reporterEmail"
-      name="reporterEmail"
-      placeholder="e.g., jane.doe@email.com"
-      required
-    />
-
-    <label for="description">Incident Description (required)</label>
-    <textarea
-      id="description"
-      name="description"
-      placeholder="Describe what happened, when, and any other relevant details (min. 25 characters)"
-      required
-    ></textarea>
-
-    <label for="category">Category</label>
-    <select id="category" name="category">
-      <option value="Delay">Delay</option>
-      <option value="Breakdown">Breakdown</option>
-      <option value="Accident">Accident</option>
-      <option value="Service Change">Service Change</option>
-    </select>
-
-    <div class="checkbox-row">
-      <input type="checkbox" id="agreeToTerms" name="agreeToTerms" />
-      <label for="agreeToTerms" style="margin:0; font-weight:normal;">
-        I agree to the terms and conditions.
-      </label>
+    <div class="route-strip" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
     </div>
 
-    <button type="submit">Report Incident</button>
-  </form>
+    <form id="incidentForm">
+      <label for="routeId">Route / Incident Title <span class="req">Required</span></label>
+      <input
+        type="text"
+        id="routeId"
+        name="routeId"
+        placeholder="e.g., Line 22 - Bus stalled on Main St"
+        required
+        autofocus
+      />
+
+      <label for="location">Location <span class="req">Required</span></label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="e.g., Main St & 5th Ave stop"
+        required
+      />
+
+      <label for="reporterEmail">Your Email <span class="req">Required</span></label>
+      <input
+        type="email"
+        id="reporterEmail"
+        name="reporterEmail"
+        placeholder="e.g., jane.doe@email.com"
+        required
+      />
+
+      <label for="description">Incident Description <span class="req">Required</span></label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Describe what happened, when, and any other relevant details (min. 25 characters)"
+        required
+      ></textarea>
+
+      <label for="category">Category</label>
+      <select id="category" name="category">
+        <option value="Delay">Delay</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Accident">Accident</option>
+        <option value="Service Change">Service Change</option>
+      </select>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="agreeToTerms" name="agreeToTerms" />
+        <label for="agreeToTerms">I agree to the terms and conditions.</label>
+      </div>
+
+      <button type="submit">Report Incident</button>
+    </form>
+
+    <div class="footnote">DATA-260 &middot; DOMAIN_ID 2 &middot; Municipal Transit Incidents</div>
+  </div>
 
   <script src="script.js"></script>
 </body>
