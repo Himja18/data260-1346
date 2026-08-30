@@ -1,0 +1,34 @@
+{
+  "temp_0.7": {
+    "n_runs": 20,
+    "distinct_tag_sets": 15,
+    "tags_in_all_runs": [],
+    "tags_in_exactly_one_run": [
+      "Bus",
+      "BusBreakdown",
+      "DelayedService",
+      "Intersection Troubles",
+      "MainStIntersection",
+      "Route22",
+      "Stalled",
+      "Stuck",
+      "Traffic Congestion"
+    ],
+    "latency_p50_ms": 12070.6,
+    "latency_p95_ms": 14927.9,
+    "latency_p99_ms": 16754.7
+  },
+  "temp_0.0": {
+    "n_runs": 20,
+    "distinct_tag_sets": 1,
+    "tags_in_all_runs": [
+      "Bus Delays",
+      "Intersection",
+      "Mechanical Issue"
+    ],
+    "tags_in_exactly_one_run": [],
+    "latency_p50_ms": 11999.4,
+    "latency_p95_ms": 13257.0,
+    "latency_p99_ms": 13921.5
+  }
+}

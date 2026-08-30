@@ -1,0 +1,41 @@
+run_index,temperature,tags,summary,latency_ms
+1,0.7,Bus Delays|Mechanical Issue|Intersection Troubles,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",17211.36474609375
+2,0.7,Bus Delays|Mechanical Failure|Intersection Incident,"8:15 AM bus on Route 22 stalls at Main St and 5th Ave intersection, 20 minutes later a replacement arrives.",14639.421939849854
+3,0.7,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine problem.",10789.658069610596
+4,0.7,Bus Delay|Mechanical Issue|Main Street,20-minute delay on 8:15 AM bus breakdown on Main St.,10410.845041275024
+5,0.7,Bus Breakdown|Route 22|Main St,8:15 AM bus on Route 22 stalls near Main St and 5th Ave for 20 minutes.,12750.941038131714
+6,0.7,Bus Delays|Mechanical Issue|Intersection,8:15 AM bus on Route 22 stalls due to engine problem near Main St and 5th Ave intersection.,14807.672023773193
+7,0.7,Bus Delay|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine failure.",14213.176012039185
+8,0.7,BusDelay|MechanicalIssue|Intersection,8:15 AM bus on Route 22 stalls near Main St and 5th Ave for 20 minutes.,12577.146053314209
+9,0.7,Bus Delays|Mechanical Issue|Stuck,"8:15 AM bus on Route 22 stalls due to engine failure, delays passengers for 20 minutes.",12121.715784072876
+10,0.7,Bus Delays|Mechanical Issue|Traffic Congestion,Bus breakdown on Route 22 causes 20-minute delay near Main St and 5th Ave.,9902.193069458008
+11,0.7,Bus Delays|Main Street|Mechanical Failure,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes on Main St.",12310.06121635437
+12,0.7,Bus Breakdown|Route 22|Main St,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes for replacement vehicle.",12019.506216049194
+13,0.7,Bus Delay|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes at Main St and 5th Ave intersection due to engine failure.",12592.86117553711
+14,0.7,BusBreakdown|MainStIntersection|DelayedService,"8:15 AM bus on Route 22 stalled due to engine issue, delaying passengers for 20 minutes.",11027.315855026245
+15,0.7,Bus Delays|Route 22|Mechanical Issue,"8:15 AM bus on Route 22 stalls due to engine problem, delays passengers for 20 minutes.",11343.762874603271
+16,0.7,BusDelay|Route22|MechanicalIssue,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11154.2489528656
+17,0.7,Bus|Stalled|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, 20-minute delay reported.",12333.631992340088
+18,0.7,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11484.265089035034
+19,0.7,Bus Delays|Mechanical Issue|Intersection Incident,Bus breakdown on Route 22 causes 20-minute delay near Main St and 5th Ave intersection.,10953.27615737915
+20,0.7,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes for replacement.",11840.409994125366
+1,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12103.064060211182
+2,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",13213.331937789917
+3,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11967.610120773315
+4,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12007.987260818481
+5,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12041.98408126831
+6,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11751.907110214233
+7,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12277.49514579773
+8,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11858.966827392578
+9,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11860.496759414673
+10,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11902.827024459839
+11,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11876.863956451416
+12,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12251.089096069336
+13,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12072.360038757324
+14,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12334.069013595581
+15,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",12365.477085113525
+16,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11920.676946640015
+17,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11968.475818634033
+18,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",14087.64624595642
+19,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11990.75984954834
+20,0.0,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",11711.140155792236

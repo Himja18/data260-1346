@@ -1,0 +1,442 @@
+[
+  {
+    "run_index": 1,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection Troubles"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 17211.36474609375
+  },
+  {
+    "run_index": 2,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Failure",
+      "Intersection Incident"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls at Main St and 5th Ave intersection, 20 minutes later a replacement arrives.",
+    "latency_ms": 14639.421939849854
+  },
+  {
+    "run_index": 3,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine problem.",
+    "latency_ms": 10789.658069610596
+  },
+  {
+    "run_index": 4,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delay",
+      "Mechanical Issue",
+      "Main Street"
+    ],
+    "summary": "20-minute delay on 8:15 AM bus breakdown on Main St.",
+    "latency_ms": 10410.845041275024
+  },
+  {
+    "run_index": 5,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Breakdown",
+      "Route 22",
+      "Main St"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave for 20 minutes.",
+    "latency_ms": 12750.941038131714
+  },
+  {
+    "run_index": 6,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls due to engine problem near Main St and 5th Ave intersection.",
+    "latency_ms": 14807.672023773193
+  },
+  {
+    "run_index": 7,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delay",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine failure.",
+    "latency_ms": 14213.176012039185
+  },
+  {
+    "run_index": 8,
+    "temperature": 0.7,
+    "tags": [
+      "BusDelay",
+      "MechanicalIssue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave for 20 minutes.",
+    "latency_ms": 12577.146053314209
+  },
+  {
+    "run_index": 9,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Stuck"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls due to engine failure, delays passengers for 20 minutes.",
+    "latency_ms": 12121.715784072876
+  },
+  {
+    "run_index": 10,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Traffic Congestion"
+    ],
+    "summary": "Bus breakdown on Route 22 causes 20-minute delay near Main St and 5th Ave.",
+    "latency_ms": 9902.193069458008
+  },
+  {
+    "run_index": 11,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Main Street",
+      "Mechanical Failure"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes on Main St.",
+    "latency_ms": 12310.06121635437
+  },
+  {
+    "run_index": 12,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Breakdown",
+      "Route 22",
+      "Main St"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes for replacement vehicle.",
+    "latency_ms": 12019.506216049194
+  },
+  {
+    "run_index": 13,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delay",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes at Main St and 5th Ave intersection due to engine failure.",
+    "latency_ms": 12592.86117553711
+  },
+  {
+    "run_index": 14,
+    "temperature": 0.7,
+    "tags": [
+      "BusBreakdown",
+      "MainStIntersection",
+      "DelayedService"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalled due to engine issue, delaying passengers for 20 minutes.",
+    "latency_ms": 11027.315855026245
+  },
+  {
+    "run_index": 15,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Route 22",
+      "Mechanical Issue"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls due to engine problem, delays passengers for 20 minutes.",
+    "latency_ms": 11343.762874603271
+  },
+  {
+    "run_index": 16,
+    "temperature": 0.7,
+    "tags": [
+      "BusDelay",
+      "Route22",
+      "MechanicalIssue"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11154.2489528656
+  },
+  {
+    "run_index": 17,
+    "temperature": 0.7,
+    "tags": [
+      "Bus",
+      "Stalled",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, 20-minute delay reported.",
+    "latency_ms": 12333.631992340088
+  },
+  {
+    "run_index": 18,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11484.265089035034
+  },
+  {
+    "run_index": 19,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection Incident"
+    ],
+    "summary": "Bus breakdown on Route 22 causes 20-minute delay near Main St and 5th Ave intersection.",
+    "latency_ms": 10953.27615737915
+  },
+  {
+    "run_index": 20,
+    "temperature": 0.7,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes for replacement.",
+    "latency_ms": 11840.409994125366
+  },
+  {
+    "run_index": 1,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12103.064060211182
+  },
+  {
+    "run_index": 2,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 13213.331937789917
+  },
+  {
+    "run_index": 3,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11967.610120773315
+  },
+  {
+    "run_index": 4,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12007.987260818481
+  },
+  {
+    "run_index": 5,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12041.98408126831
+  },
+  {
+    "run_index": 6,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11751.907110214233
+  },
+  {
+    "run_index": 7,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12277.49514579773
+  },
+  {
+    "run_index": 8,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11858.966827392578
+  },
+  {
+    "run_index": 9,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11860.496759414673
+  },
+  {
+    "run_index": 10,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11902.827024459839
+  },
+  {
+    "run_index": 11,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11876.863956451416
+  },
+  {
+    "run_index": 12,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12251.089096069336
+  },
+  {
+    "run_index": 13,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12072.360038757324
+  },
+  {
+    "run_index": 14,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12334.069013595581
+  },
+  {
+    "run_index": 15,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 12365.477085113525
+  },
+  {
+    "run_index": 16,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11920.676946640015
+  },
+  {
+    "run_index": 17,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11968.475818634033
+  },
+  {
+    "run_index": 18,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 14087.64624595642
+  },
+  {
+    "run_index": 19,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11990.75984954834
+  },
+  {
+    "run_index": 20,
+    "temperature": 0.0,
+    "tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay.",
+    "latency_ms": 11711.140155792236
+  }
+]
