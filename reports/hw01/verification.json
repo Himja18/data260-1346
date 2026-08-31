@@ -1,0 +1,75 @@
+{
+  "verification_date": "2026-08-30",
+  "hardware": "MacBook Pro 13-inch (M2, 8GB RAM)",
+  "os": "macOS Tahoe 26.5.1",
+  "checks": [
+    {
+      "name": "Docker installed",
+      "command": "docker --version",
+      "result": "Docker version 29.2.1",
+      "passed": true
+    },
+    {
+      "name": "AWS CLI installed and authenticated",
+      "command": "aws sts get-caller-identity",
+      "result": "Account 036402400291 confirmed",
+      "passed": true
+    },
+    {
+      "name": "Docker image builds successfully (linux/amd64)",
+      "command": "docker buildx build --platform linux/amd64 -t transit-incident-app:latest .",
+      "result": "Build succeeded, image pushed to ECR",
+      "passed": true
+    },
+    {
+      "name": "Web app reachable locally via Docker",
+      "command": "curl -I http://localhost:8446",
+      "result": "HTTP/1.1 200 OK",
+      "passed": true
+    },
+    {
+      "name": "Web app reachable on AWS ECS public IP",
+      "command": "curl -I http://18.218.84.2:8446",
+      "result": "HTTP/1.1 200 OK",
+      "passed": true
+    },
+    {
+      "name": "Ollama installed with required model",
+      "command": "ollama --version && ollama list",
+      "result": "ollama version 0.32.14; qwen2.5:3b present",
+      "passed": true
+    },
+    {
+      "name": "agents_demo.py produces valid JSON with exactly 3 tags",
+      "command": "python code/agents_demo.py",
+      "result": "FINALIZED output contained exactly 3 tags and a summary <=25 words",
+      "passed": true
+    },
+    {
+      "name": "Non-determinism experiment completed (40 runs)",
+      "command": "python code/run_nondeterminism_experiment.py",
+      "result": "20 runs at temp 0.7, 20 runs at temp 0.0; summary saved to reports/hw01/raw/nondeterminism_summary.json",
+      "passed": true
+    },
+    {
+      "name": "model_client.py complete() interface returns token counts",
+      "command": "python code/hw1_client.py (manual test)",
+      "result": "Each turn printed non-zero input/output/total token counts sourced from Ollama's API response",
+      "passed": true
+    },
+    {
+      "name": "hw1_client.py /stats command works without side effects",
+      "command": "/stats typed mid-conversation",
+      "result": "Correct cumulative counts and history length printed; conversation continued normally afterward",
+      "passed": true
+    },
+    {
+      "name": "GitHub repository accessible with required collaborators",
+      "command": "manual check via GitHub Settings > Collaborators",
+      "result": "Sbnikitha and supriyaselvanganesan invited",
+      "passed": true
+    }
+  ],
+  "overall_status": "PASS",
+  "notes": "Model substitution: qwen2.5:3b used in place of the assignment's suggested qwen3:8b due to 8GB RAM hardware constraint. Documented in AI_USE.md and report.pdf."
+}

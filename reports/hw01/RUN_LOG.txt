@@ -1,0 +1,171 @@
+RUN_LOG.txt — DATA-260 HW1
+============================
+
+This log records the console output and approximate timestamps for the
+runs that produced the results reported in report.pdf and METRICS.md.
+All commands were run on: MacBook Pro 13" (M2, 8GB RAM), macOS Tahoe.
+
+
+[Part 2 — Ollama Agents Demo]
+------------------------------
+Command: python agents_demo.py
+Model: qwen2.5:3b (local, via Ollama)
+
+=== PLANNER OUTPUT ===
+{
+  "tags": ["BusDelay", "MechanicalIssue", "Intersection"],
+  "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes."
+}
+
+=== REVIEWER OUTPUT ===
+{
+  "tags": ["BusDelay", "MechanicalIssue", "Intersection"],
+  "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes.",
+  "changed": true,
+  "review_notes": "Removed 'Route 22' from tags as it's not directly supported by the content."
+}
+
+=== FINALIZED / PUBLISH OUTPUT ===
+{
+  "tags": ["BusDelay", "MechanicalIssue", "Intersection"],
+  "summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes."
+}
+
+(latency: 16037 ms, temperature: 0.7)
+
+
+[Part 3 — Non-Determinism Experiment: 40 runs]
+------------------------------------------------
+Command: python run_nondeterminism_experiment.py
+Fixed input: reports/hw01/cases/nondeterminism_input.json
+("Line 22 - Bus stalled on Main St")
+
+Running 20 runs at temperature=0.7 ...
+Running 20 runs at temperature=0.0 ...
+
+=== TEMPERATURE 0.7 SUMMARY ===
+{
+  "n_runs": 20,
+  "distinct_tag_sets": 15,
+  "tags_in_all_runs": [],
+  "tags_in_exactly_one_run": [
+    "Bus", "BusBreakdown", "DelayedService", "Intersection Troubles",
+    "MainStIntersection", "Route22", "Stalled", "Stuck", "Traffic Congestion"
+  ],
+  "latency_p50_ms": 12070.6,
+  "latency_p95_ms": 14927.9,
+  "latency_p99_ms": 16754.7
+}
+
+=== TEMPERATURE 0.0 SUMMARY ===
+{
+  "n_runs": 20,
+  "distinct_tag_sets": 1,
+  "tags_in_all_runs": ["Bus Delays", "Intersection", "Mechanical Issue"],
+  "tags_in_exactly_one_run": [],
+  "latency_p50_ms": 11999.4,
+  "latency_p95_ms": 13257.0,
+  "latency_p99_ms": 13921.5
+}
+
+Raw data saved to:
+  reports/hw01/raw/nondeterminism_raw.json
+  reports/hw01/raw/nondeterminism_raw.csv
+  reports/hw01/raw/nondeterminism_summary.json
+
+
+[Part 4 — 5-Turn Conversation with hw1_client.py]
+----------------------------------------------------
+Command: python hw1_client.py
+Model: qwen2.5:3b (local, via Ollama)
+
+Turn 1:
+You: What are common causes of bus breakdowns?
+Assistant: Common causes of bus breakdowns include mechanical failures
+(such as engine issues, transmission problems, or brakes), electrical
+malfunctions, tire troubles, and fuel issues. Weather conditions can
+also contribute to breakdowns, particularly heavy rain, snow, or
+extreme heat.
+[turn tokens — input: 39, output: 52, total: 91]
+
+Turn 2:
+You: What should a driver do immediately after a breakdown?
+Assistant: After a breakdown, a driver should: 1. Turn on hazard lights
+2. Park safely 3. Turn off engine 4. Use emergency brake 5. Move
+passengers to safety 6. Contact maintenance/authorities 7. Do not leave
+without permission.
+[turn tokens — input: 110, output: 111, total: 221]
+
+Turn 3:
+You: How long should passengers typically wait for a replacement vehicle?
+Assistant: Waiting time varies by transit authority policy and breakdown
+severity, typically 15-30 minutes before alternative transportation is
+suggested.
+[turn tokens — input: 241, output: 75, total: 316]
+
+--- /stats (after turn 3) ---
+Turn count: 3
+Cumulative input tokens:  390
+Cumulative output tokens: 238
+Cumulative total tokens:  628
+Serialized conversation-history length: 1722 characters
+
+Turn 4:
+You: Should the bus route be temporarily suspended during a breakdown?
+Assistant: Depends on severity/policy. Buses are usually rerouted or
+held; full suspension only for severe, widespread disruptions.
+[turn tokens — input: 336, output: 69, total: 405]
+
+Turn 5:
+You: What information should be logged for the incident report?
+Assistant: Date/time, location, description, severity, service impact,
+driver/supervisor contact info, witness info, actions taken, timeline,
+photos/videos.
+[turn tokens — input: 424, output: 125, total: 549]
+
+--- /stats (after turn 5) ---
+Turn count: 5
+Cumulative input tokens:  1150
+Cumulative output tokens: 432
+Cumulative total tokens:  1582
+Serialized conversation-history length: 2962 characters
+
+=== Session summary (on /exit) ===
+Total turns: 5
+Cumulative input tokens:  1150
+Cumulative output tokens: 432
+Cumulative total tokens:  1582
+
+
+[Part 4 — AGENT.md Verification]
+-----------------------------------
+Attempt 1 (referenced "AGENT.md" by name only — instructions NOT included in prompt):
+You: Following the code review instructions in AGENT.md, review this
+function: def add(a, b): result = a+b; return(result)
+Assistant: [Full prose response with explanation and a rewritten code
+block — did NOT follow bullet-only format]
+Result: FAILED to follow AGENT.md's constraint.
+
+Attempt 2 (actual instructions pasted inline into the prompt):
+You: When reviewing code, respond using ONLY a bulleted list. Do not use
+any prose paragraphs, introductions, or conclusions. Each bullet should
+identify one specific issue, reference the exact line/function, and be
+one sentence. Do not restate what the code does. Now review this
+function: def add(a, b): result = a+b; return(result)
+Assistant: - Missing colon at the end of the function definition
+Result: FOLLOWED the bullet-only format correctly, though the specific
+claim (missing colon) was factually incorrect — the one-liner syntax is
+valid Python.
+
+
+[Docker / AWS deployment key events]
+---------------------------------------
+- Initial Docker build/run on localhost:8446: successful.
+- Initial ECS deployment: FAILED — task exited with code 255.
+  CloudWatch log: "exec /docker-entrypoint.sh: exec format error"
+  Root cause: image built for ARM64 (Mac M2) but Fargate expects x86_64.
+- Fix: docker buildx build --platform linux/amd64 -t transit-incident-app:latest .
+  Re-tagged and re-pushed to ECR.
+- Forced new ECS deployment: SUCCESS.
+  Deployment status: Success, 1/1 tasks running, circuit breaker 0/3 failed.
+  App verified reachable at public IP http://18.218.84.2:8446
