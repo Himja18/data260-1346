@@ -1,0 +1,31 @@
+run,outcome,turn_count,validation_retry_count,latency_ms,final_tags,final_summary
+1,valid_first_attempt,3,0,35265.1,Bus Delay|Route 22|Mechanical Failure,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, delays 20 minutes due to engine issue."
+2,valid_first_attempt,5,0,26970.2,Bus Incident|Route 22|Mechanical Failure,Passengers stranded for 20 minutes on Route 22 bus due to engine failure.
+3,valid_first_attempt,3,0,13229.2,Bus Delays|Route 22|Main St,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes at Main St intersection."
+4,valid_first_attempt,5,0,25766.0,Bus Breakdown|Main St Intersection|Passenger Stranded,"8:15 AM bus on Route 22 stalls, delays passengers at Main St and 5th Ave intersection."
+5,abandoned_at_ceiling,6,0,32352.0,Main St|5th Ave|Route22,
+6,abandoned_at_ceiling,6,0,30222.5,Mechanical Issue|Bus Delays|Intersection Incident,
+7,valid_first_attempt,3,0,10933.4,BusDelay|MechanicalIssue|Intersection,8:15 AM bus on Route 22 stalls due to engine failure near Main St and 5th Ave intersection.
+8,valid_first_attempt,3,0,14058.7,Bus Delays|Main Street|Mechanical Issue,20-minute delay due to bus breakdown on Main St.
+9,valid_first_attempt,5,0,23695.3,Bus Breakdown|Route 22|Mechanical Issue,Passengers stranded 20 minutes due to Route 22 bus engine breakdown near Main St and 5th Ave intersection.
+10,abandoned_at_ceiling,6,0,24910.4,Line 22|Main St|Engine Failure,
+11,abandoned_at_ceiling,6,0,27576.7,Bus Route 22|Mechanical Issue|Stuck Passengers,
+12,valid_first_attempt,5,0,21028.3,Bus Delays|Route 22|Mechanical Issue,"Bus on Route 22 stalls, passengers wait 20 minutes due to engine failure."
+13,valid_first_attempt,3,0,9710.4,Bus Delay|Mechanical Issue|Intersection,Passengers stranded 20 minutes due to bus breakdown near Main St and 5th Ave.
+14,abandoned_at_ceiling,6,0,28022.9,Bus Incident|Main St|Route 22,
+15,valid_first_attempt,5,0,25220.5,Bus Delays|Route 22|Mechanical Issues,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine issue."
+16,valid_first_attempt,3,0,9769.8,BusDelay|Route22|MechanicalIssue,"8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine problem."
+17,valid_first_attempt,5,0,3512982.1,Mechanical issue|Bus breakdown|Main St,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes for a replacement."
+18,valid_first_attempt,3,0,10739.2,Bus Delays|Main Street|Mechanical Issue,"8:15 AM bus on Route 22 stalls, 20-minute delay due to engine problem."
+19,abandoned_at_ceiling,6,0,319063.2,BusDelay|Intersection|MechanicalIssue,
+20,valid_first_attempt,3,0,14048.0,Bus|Stalled|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20 minute delay."
+21,abandoned_at_ceiling,6,0,28387.3,Bus breakdown|Main St|Passengers stranded,
+22,abandoned_at_ceiling,6,0,25981.1,Bus Malfunction|Main St Incident|Passengers Delayed,
+23,abandoned_at_ceiling,6,0,28073.6,Bus 22|Mechanical Issue|Passenger Stranded,
+24,valid_first_attempt,3,0,12427.5,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay."
+25,abandoned_at_ceiling,6,0,2684944.6,Bus Malfunction|Route 22|Traffic Delay,
+26,valid_first_attempt,3,0,12774.4,Bus Delays|Main St|Mechanical Issue,"8:15 AM bus on Route 22 stalls, 20-minute delay due to engine problem."
+27,abandoned_at_ceiling,6,0,31619.6,Mechanical Failure|Bus Breakdown|Passenger Stranding,
+28,abandoned_at_ceiling,6,0,24892.3,Bus|Route22|MechanicalIssue,
+29,valid_first_attempt,3,0,9816.5,Bus Delay|Mechanical Issue|Main St,8:15 AM bus breakdown on Main St leads to 20-minute delay.
+30,valid_first_attempt,3,0,11004.5,Bus Delays|Mechanical Issue|Intersection,"8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay."

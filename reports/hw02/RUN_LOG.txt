@@ -1,0 +1,147 @@
+DATA-260 HW2 — RUN_LOG.txt
+SID4: 1346 | SEED: 1346 | VERIFY_SEED: 261346 | PORT_BASE: 8446
+Hardware: MacBook Pro 13" (M2, 8GB RAM) | Model: qwen2.5:3b
+
+=====================================================================
+1. Backend smoke test (Part 2)
+=====================================================================
+(venv) himja@Himjas-MacBook-Pro backend % uvicorn main:app --host 0.0.0.0 --port 8446 --reload
+INFO:     Will watch for changes in these directories: ['/Users/himja/Documents/data260-1346/code/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8446 (Press CTRL+C to quit)
+INFO:     Started reloader process [19981] using StatReload
+INFO:     Started server process [19989]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58124 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58124 - "GET /script.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58124 - "GET /api/incidents HTTP/1.1" 200 OK
+
+[NOTE: full manual verification also performed in-browser at
+http://localhost:8446/ -- confirmed search filtering, "Update Record #1",
+"Delete Highest ID", and new-incident submission all update the list
+correctly. Screenshots in report.pdf.]
+
+=====================================================================
+2. Part 4.3 -- Schema experiment, 30 runs, turn_ceiling=6
+=====================================================================
+(venv) himja@Himjas-MacBook-Pro code % python run_schema_experiment.py
+Fixed input: 'Line 22 - Bus stalled on Main St'
+Running 30 runs at turn_ceiling=6 ...
+  [run 1/30] ...
+  ... (28 more runs; full per-run output omitted here for length, see
+      reports/hw02/raw/schema_raw.json for the complete per-run record) ...
+  [run 30/30] ...
+
+=== SUMMARY ===
+{
+  "n_runs": 30,
+  "turn_ceiling": 6,
+  "counts": {
+    "valid_first_attempt": 18,
+    "valid_after_1_retry": 0,
+    "valid_after_2plus_retries": 0,
+    "abandoned_at_ceiling": 12
+  },
+  "mean_latency_ms_by_outcome": {
+    "valid_first_attempt": 211080.0,
+    "valid_after_1_retry": null,
+    "valid_after_2plus_retries": null,
+    "abandoned_at_ceiling": 273837.2
+  },
+  "overall_mean_latency_ms": 236182.8
+}
+
+Saved raw JSON to /Users/himja/Documents/data260-1346/reports/hw02/raw/schema_raw.json
+Saved raw CSV to /Users/himja/Documents/data260-1346/reports/hw02/raw/schema_raw.csv
+Saved summary to /Users/himja/Documents/data260-1346/reports/hw02/raw/schema_summary.json
+
+[NOTE: this batch took approximately 2 hours of wall-clock time on this
+8GB RAM machine -- substantially slower than a fresh single-run
+calibration taken immediately afterward (see below), suggesting
+performance degradation under sustained load on this hardware.]
+
+=====================================================================
+3. Part 4.4 -- Ceiling comparison calibration (1 run each), then full run
+=====================================================================
+(venv) himja@Himjas-MacBook-Pro code % python run_ceiling_experiment.py --n 1
+Fixed input: 'Line 22 - Bus stalled on Main St'
+  [ceiling=2] run 1/1 ...
+  [ceiling=10] run 1/1 ...
+
+=== SUMMARY ===
+{
+  "ceiling_2": {
+    "n_runs": 1,
+    "completion_rate": 0.0,
+    "mean_latency_ms": 4104.1,
+    "mean_latency_ms_completed_only": null
+  },
+  "ceiling_10": {
+    "n_runs": 1,
+    "completion_rate": 1.0,
+    "mean_latency_ms": 20877.5,
+    "mean_latency_ms_completed_only": 20877.5
+  }
+}
+
+(venv) himja@Himjas-MacBook-Pro code % python run_ceiling_experiment.py
+Fixed input: 'Line 22 - Bus stalled on Main St'
+  [ceiling=2] run 1/20 ...
+  ... (38 more runs; full per-run output in reports/hw02/raw/ceiling_raw.json) ...
+  [ceiling=10] run 20/20 ...
+
+=== SUMMARY ===
+{
+  "ceiling_2": {
+    "n_runs": 20,
+    "completion_rate": 0.0,
+    "mean_latency_ms": 4050.6,
+    "mean_latency_ms_completed_only": null
+  },
+  "ceiling_10": {
+    "n_runs": 20,
+    "completion_rate": 0.9,
+    "mean_latency_ms": 30163.3,
+    "mean_latency_ms_completed_only": 27295.3
+  }
+}
+
+Saved raw JSON to /Users/himja/Documents/data260-1346/reports/hw02/raw/ceiling_raw.json
+Saved raw CSV to /Users/himja/Documents/data260-1346/reports/hw02/raw/ceiling_raw.csv
+Saved summary to /Users/himja/Documents/data260-1346/reports/hw02/raw/ceiling_summary.json
+
+=====================================================================
+4. Part 4.5 -- Adversarial input, 5 runs, turn_ceiling=6
+=====================================================================
+(venv) himja@Himjas-MacBook-Pro code % python run_adversarial_experiment.py
+Adversarial input: 'MULTI-INCIDENT CASCADE - Lines 4, 9, 12, and 15 Network-Wide Disruption'
+Running 5 runs at turn_ceiling=6 ...
+  [run 1/5] ...
+  [run 2/5] ...
+  [run 3/5] ...
+  [run 4/5] ...
+  [run 5/5] ...
+
+=== SUMMARY ===
+{
+  "n_runs": 5,
+  "turn_ceiling": 6,
+  "ceiling_hits": 5,
+  "observed_ceiling_hit_rate": 1.0,
+  "note": "Rate reported as observed, not assumed deterministic. A hit rate below 4/5 does not mean the input failed to be adversarial -- it means the model's small size makes it inconsistent even on genuinely hard inputs; report the number as-is."
+}
+
+Saved raw JSON to /Users/himja/Documents/data260-1346/reports/hw02/raw/adversarial_raw.json
+Saved summary to /Users/himja/Documents/data260-1346/reports/hw02/raw/adversarial_summary.json
+
+=====================================================================
+5. Final smoke test / verification (make verify-hw02 equivalent)
+=====================================================================
+(venv) himja@Himjas-MacBook-Pro code % python verify_hw02.py
+Running HW2 smoke tests...
+  [PASS] fastapi_backend_responds
+  [PASS] langgraph_finishes_not_hanging
+  [PASS] finalized_output_has_exactly_3_tags
+
+Saved verification report to /Users/himja/Documents/data260-1346/reports/hw02/verification.json
+Overall: PASS

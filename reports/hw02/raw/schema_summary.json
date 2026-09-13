@@ -1,0 +1,17 @@
+{
+  "n_runs": 30,
+  "turn_ceiling": 6,
+  "counts": {
+    "valid_first_attempt": 18,
+    "valid_after_1_retry": 0,
+    "valid_after_2plus_retries": 0,
+    "abandoned_at_ceiling": 12
+  },
+  "mean_latency_ms_by_outcome": {
+    "valid_first_attempt": 211080.0,
+    "valid_after_1_retry": null,
+    "valid_after_2plus_retries": null,
+    "abandoned_at_ceiling": 273837.2
+  },
+  "overall_mean_latency_ms": 236182.8
+}

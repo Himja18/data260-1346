@@ -1,0 +1,14 @@
+{
+  "ceiling_2": {
+    "n_runs": 20,
+    "completion_rate": 0.0,
+    "mean_latency_ms": 4050.6,
+    "mean_latency_ms_completed_only": null
+  },
+  "ceiling_10": {
+    "n_runs": 20,
+    "completion_rate": 0.9,
+    "mean_latency_ms": 30163.3,
+    "mean_latency_ms_completed_only": 27295.3
+  }
+}

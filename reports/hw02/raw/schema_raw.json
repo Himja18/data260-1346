@@ -1,0 +1,392 @@
+[
+  {
+    "run": 1,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 35265.1,
+    "final_tags": [
+      "Bus Delay",
+      "Route 22",
+      "Mechanical Failure"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, delays 20 minutes due to engine issue."
+  },
+  {
+    "run": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 5,
+    "validation_retry_count": 0,
+    "latency_ms": 26970.2,
+    "final_tags": [
+      "Bus Incident",
+      "Route 22",
+      "Mechanical Failure"
+    ],
+    "final_summary": "Passengers stranded for 20 minutes on Route 22 bus due to engine failure."
+  },
+  {
+    "run": 3,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 13229.2,
+    "final_tags": [
+      "Bus Delays",
+      "Route 22",
+      "Main St"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes at Main St intersection."
+  },
+  {
+    "run": 4,
+    "outcome": "valid_first_attempt",
+    "turn_count": 5,
+    "validation_retry_count": 0,
+    "latency_ms": 25766.0,
+    "final_tags": [
+      "Bus Breakdown",
+      "Main St Intersection",
+      "Passenger Stranded"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls, delays passengers at Main St and 5th Ave intersection."
+  },
+  {
+    "run": 5,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 32352.0,
+    "final_tags": [
+      "Main St",
+      "5th Ave",
+      "Route22"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 6,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 30222.5,
+    "final_tags": [
+      "Mechanical Issue",
+      "Bus Delays",
+      "Intersection Incident"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 7,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 10933.4,
+    "final_tags": [
+      "BusDelay",
+      "MechanicalIssue",
+      "Intersection"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls due to engine failure near Main St and 5th Ave intersection."
+  },
+  {
+    "run": 8,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 14058.7,
+    "final_tags": [
+      "Bus Delays",
+      "Main Street",
+      "Mechanical Issue"
+    ],
+    "final_summary": "20-minute delay due to bus breakdown on Main St."
+  },
+  {
+    "run": 9,
+    "outcome": "valid_first_attempt",
+    "turn_count": 5,
+    "validation_retry_count": 0,
+    "latency_ms": 23695.3,
+    "final_tags": [
+      "Bus Breakdown",
+      "Route 22",
+      "Mechanical Issue"
+    ],
+    "final_summary": "Passengers stranded 20 minutes due to Route 22 bus engine breakdown near Main St and 5th Ave intersection."
+  },
+  {
+    "run": 10,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 24910.4,
+    "final_tags": [
+      "Line 22",
+      "Main St",
+      "Engine Failure"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 11,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 27576.7,
+    "final_tags": [
+      "Bus Route 22",
+      "Mechanical Issue",
+      "Stuck Passengers"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 12,
+    "outcome": "valid_first_attempt",
+    "turn_count": 5,
+    "validation_retry_count": 0,
+    "latency_ms": 21028.3,
+    "final_tags": [
+      "Bus Delays",
+      "Route 22",
+      "Mechanical Issue"
+    ],
+    "final_summary": "Bus on Route 22 stalls, passengers wait 20 minutes due to engine failure."
+  },
+  {
+    "run": 13,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 9710.4,
+    "final_tags": [
+      "Bus Delay",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "final_summary": "Passengers stranded 20 minutes due to bus breakdown near Main St and 5th Ave."
+  },
+  {
+    "run": 14,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 28022.9,
+    "final_tags": [
+      "Bus Incident",
+      "Main St",
+      "Route 22"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 15,
+    "outcome": "valid_first_attempt",
+    "turn_count": 5,
+    "validation_retry_count": 0,
+    "latency_ms": 25220.5,
+    "final_tags": [
+      "Bus Delays",
+      "Route 22",
+      "Mechanical Issues"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine issue."
+  },
+  {
+    "run": 16,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 9769.8,
+    "final_tags": [
+      "BusDelay",
+      "Route22",
+      "MechanicalIssue"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls, passengers wait 20 minutes due to engine problem."
+  },
+  {
+    "run": 17,
+    "outcome": "valid_first_attempt",
+    "turn_count": 5,
+    "validation_retry_count": 0,
+    "latency_ms": 3512982.1,
+    "final_tags": [
+      "Mechanical issue",
+      "Bus breakdown",
+      "Main St"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, passengers wait 20 minutes for a replacement."
+  },
+  {
+    "run": 18,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 10739.2,
+    "final_tags": [
+      "Bus Delays",
+      "Main Street",
+      "Mechanical Issue"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls, 20-minute delay due to engine problem."
+  },
+  {
+    "run": 19,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 319063.2,
+    "final_tags": [
+      "BusDelay",
+      "Intersection",
+      "MechanicalIssue"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 20,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 14048.0,
+    "final_tags": [
+      "Bus",
+      "Stalled",
+      "Intersection"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20 minute delay."
+  },
+  {
+    "run": 21,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 28387.3,
+    "final_tags": [
+      "Bus breakdown",
+      "Main St",
+      "Passengers stranded"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 22,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 25981.1,
+    "final_tags": [
+      "Bus Malfunction",
+      "Main St Incident",
+      "Passengers Delayed"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 23,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 28073.6,
+    "final_tags": [
+      "Bus 22",
+      "Mechanical Issue",
+      "Passenger Stranded"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 24,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 12427.5,
+    "final_tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay."
+  },
+  {
+    "run": 25,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 2684944.6,
+    "final_tags": [
+      "Bus Malfunction",
+      "Route 22",
+      "Traffic Delay"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 26,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 12774.4,
+    "final_tags": [
+      "Bus Delays",
+      "Main St",
+      "Mechanical Issue"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls, 20-minute delay due to engine problem."
+  },
+  {
+    "run": 27,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 31619.6,
+    "final_tags": [
+      "Mechanical Failure",
+      "Bus Breakdown",
+      "Passenger Stranding"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 28,
+    "outcome": "abandoned_at_ceiling",
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 24892.3,
+    "final_tags": [
+      "Bus",
+      "Route22",
+      "MechanicalIssue"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 29,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 9816.5,
+    "final_tags": [
+      "Bus Delay",
+      "Mechanical Issue",
+      "Main St"
+    ],
+    "final_summary": "8:15 AM bus breakdown on Main St leads to 20-minute delay."
+  },
+  {
+    "run": 30,
+    "outcome": "valid_first_attempt",
+    "turn_count": 3,
+    "validation_retry_count": 0,
+    "latency_ms": 11004.5,
+    "final_tags": [
+      "Bus Delays",
+      "Mechanical Issue",
+      "Intersection"
+    ],
+    "final_summary": "8:15 AM bus on Route 22 stalls near Main St and 5th Ave, causing 20-minute delay."
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "run": 1,
+    "outcome": "abandoned_at_ceiling",
+    "hit_ceiling": true,
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 28859.0,
+    "final_tags": [
+      "Network-Wide",
+      "Incidents",
+      "Delays"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 2,
+    "outcome": "abandoned_at_ceiling",
+    "hit_ceiling": true,
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 27971.0,
+    "final_tags": [
+      "Network Disruption",
+      "Cascading Delays",
+      "Train Malfunctions"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 3,
+    "outcome": "abandoned_at_ceiling",
+    "hit_ceiling": true,
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 28246.3,
+    "final_tags": [
+      "Network Disruption",
+      "Route Delays",
+      "Train Malfunctions"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 4,
+    "outcome": "abandoned_at_ceiling",
+    "hit_ceiling": true,
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 25894.5,
+    "final_tags": [
+      "Incidents",
+      "Network",
+      "Delays"
+    ],
+    "final_summary": ""
+  },
+  {
+    "run": 5,
+    "outcome": "abandoned_at_ceiling",
+    "hit_ceiling": true,
+    "turn_count": 6,
+    "validation_retry_count": 0,
+    "latency_ms": 28943.9,
+    "final_tags": [
+      "Multi-incident",
+      "Real-time boards",
+      "Network disruption"
+    ],
+    "final_summary": ""
+  }
+]

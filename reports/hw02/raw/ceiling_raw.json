@@ -1,0 +1,322 @@
+[
+  {
+    "ceiling": 2,
+    "run": 1,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3652.9
+  },
+  {
+    "ceiling": 2,
+    "run": 2,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3934.2
+  },
+  {
+    "ceiling": 2,
+    "run": 3,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4476.5
+  },
+  {
+    "ceiling": 2,
+    "run": 4,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3615.4
+  },
+  {
+    "ceiling": 2,
+    "run": 5,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4676.3
+  },
+  {
+    "ceiling": 2,
+    "run": 6,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4825.4
+  },
+  {
+    "ceiling": 2,
+    "run": 7,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3823.1
+  },
+  {
+    "ceiling": 2,
+    "run": 8,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4030.1
+  },
+  {
+    "ceiling": 2,
+    "run": 9,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4303.0
+  },
+  {
+    "ceiling": 2,
+    "run": 10,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4732.5
+  },
+  {
+    "ceiling": 2,
+    "run": 11,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3773.6
+  },
+  {
+    "ceiling": 2,
+    "run": 12,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4026.7
+  },
+  {
+    "ceiling": 2,
+    "run": 13,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4113.5
+  },
+  {
+    "ceiling": 2,
+    "run": 14,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3350.5
+  },
+  {
+    "ceiling": 2,
+    "run": 15,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4823.7
+  },
+  {
+    "ceiling": 2,
+    "run": 16,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4218.1
+  },
+  {
+    "ceiling": 2,
+    "run": 17,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 4063.0
+  },
+  {
+    "ceiling": 2,
+    "run": 18,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3352.4
+  },
+  {
+    "ceiling": 2,
+    "run": 19,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3954.3
+  },
+  {
+    "ceiling": 2,
+    "run": 20,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 2,
+    "latency_ms": 3267.6
+  },
+  {
+    "ceiling": 10,
+    "run": 1,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 10,
+    "latency_ms": 60861.5
+  },
+  {
+    "ceiling": 10,
+    "run": 2,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 23673.2
+  },
+  {
+    "ceiling": 10,
+    "run": 3,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 20858.0
+  },
+  {
+    "ceiling": 10,
+    "run": 4,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 3,
+    "latency_ms": 10206.7
+  },
+  {
+    "ceiling": 10,
+    "run": 5,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 3,
+    "latency_ms": 10965.7
+  },
+  {
+    "ceiling": 10,
+    "run": 6,
+    "outcome": "abandoned_at_ceiling",
+    "completed": false,
+    "turn_count": 10,
+    "latency_ms": 51089.8
+  },
+  {
+    "ceiling": 10,
+    "run": 7,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 7,
+    "latency_ms": 102960.7
+  },
+  {
+    "ceiling": 10,
+    "run": 8,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 3,
+    "latency_ms": 10836.9
+  },
+  {
+    "ceiling": 10,
+    "run": 9,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 3,
+    "latency_ms": 11903.7
+  },
+  {
+    "ceiling": 10,
+    "run": 10,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 21626.8
+  },
+  {
+    "ceiling": 10,
+    "run": 11,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 9,
+    "latency_ms": 45530.4
+  },
+  {
+    "ceiling": 10,
+    "run": 12,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 7,
+    "latency_ms": 33517.1
+  },
+  {
+    "ceiling": 10,
+    "run": 13,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 23434.2
+  },
+  {
+    "ceiling": 10,
+    "run": 14,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 21222.7
+  },
+  {
+    "ceiling": 10,
+    "run": 15,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 25662.0
+  },
+  {
+    "ceiling": 10,
+    "run": 16,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 7,
+    "latency_ms": 36703.3
+  },
+  {
+    "ceiling": 10,
+    "run": 17,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 3,
+    "latency_ms": 11966.8
+  },
+  {
+    "ceiling": 10,
+    "run": 18,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 23358.9
+  },
+  {
+    "ceiling": 10,
+    "run": 19,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 5,
+    "latency_ms": 21270.9
+  },
+  {
+    "ceiling": 10,
+    "run": 20,
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "turn_count": 7,
+    "latency_ms": 35616.8
+  }
+]

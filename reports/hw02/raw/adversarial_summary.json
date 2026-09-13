@@ -1,0 +1,7 @@
+{
+  "n_runs": 5,
+  "turn_ceiling": 6,
+  "ceiling_hits": 5,
+  "observed_ceiling_hit_rate": 1.0,
+  "note": "Rate reported as observed, not assumed deterministic. A hit rate below 4/5 does not mean the input failed to be adversarial -- it means the model's small size makes it inconsistent even on genuinely hard inputs; report the number as-is."
+}
