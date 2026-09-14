@@ -42,9 +42,6 @@ WEB_DIR = (APP_DIR / ".." / "web_application").resolve()
 app = FastAPI(title="DATA-260 HW2 — Municipal Transit Incidents API")
 
 
-# ---------------------------------------------------------------------------
-# Domain model
-# ---------------------------------------------------------------------------
 
 class IncidentIn(BaseModel):
     """Shape of the JSON body the frontend POSTs when adding an incident."""
@@ -83,9 +80,6 @@ INCIDENTS: list[Incident] = [
 ]
 
 
-# ---------------------------------------------------------------------------
-# Static app (HTML/JS)
-# ---------------------------------------------------------------------------
 
 @app.get("/")
 def serve_index():
@@ -96,10 +90,6 @@ def serve_index():
 def serve_script():
     return FileResponse(WEB_DIR / "script.js", media_type="application/javascript")
 
-
-# ---------------------------------------------------------------------------
-# API: list / search
-# ---------------------------------------------------------------------------
 
 @app.get("/api/incidents", response_model=list[Incident])
 def list_incidents(q: Optional[str] = None):
@@ -116,9 +106,6 @@ def list_incidents(q: Optional[str] = None):
     ]
 
 
-# ---------------------------------------------------------------------------
-# API: add
-# ---------------------------------------------------------------------------
 
 @app.post("/api/incidents", response_model=Incident, status_code=201)
 def add_incident(payload: IncidentIn):
@@ -129,9 +116,6 @@ def add_incident(payload: IncidentIn):
     return incident
 
 
-# ---------------------------------------------------------------------------
-# API: update record ID 1 (HW2 Part 2.2 — fixed, domain-appropriate values)
-# ---------------------------------------------------------------------------
 
 @app.put("/api/incidents/1", response_model=Incident)
 def update_record_one():
@@ -148,9 +132,6 @@ def update_record_one():
     raise HTTPException(status_code=404, detail="Record with ID 1 not found")
 
 
-# ---------------------------------------------------------------------------
-# API: delete highest-ID record (HW2 Part 2.3)
-# ---------------------------------------------------------------------------
 
 @app.delete("/api/incidents/highest", status_code=200)
 def delete_highest():

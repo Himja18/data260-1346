@@ -39,9 +39,6 @@ from model_client import ModelClient  # noqa: E402
 TURN_CEILING_DEFAULT = 6
 
 
-# ---------------------------------------------------------------------------
-# HW2 Part 4.1: Pydantic schema for Planner output
-# ---------------------------------------------------------------------------
 
 class PlannerOutputSchema(BaseModel):
     tags: List[str]
@@ -76,9 +73,9 @@ def validate_planner_output(proposal: dict) -> str:
         return "; ".join(err["msg"] for err in e.errors())
 
 
-# ---------------------------------------------------------------------------
+
 # Shared state
-# ---------------------------------------------------------------------------
+
 
 class AgentState(TypedDict):
     title: str
@@ -96,9 +93,9 @@ class AgentState(TypedDict):
     final_output: Dict[str, Any]
 
 
-# ---------------------------------------------------------------------------
+
 # Helpers (shared with agents_demo.py's approach)
-# ---------------------------------------------------------------------------
+
 
 def extract_json(text: str) -> dict:
     """Best-effort extraction of a JSON object from an LLM response."""
@@ -131,9 +128,9 @@ def finalize(reviewer_output: dict, planner_output: dict) -> dict:
     return {"tags": tags, "summary": summary}
 
 
-# ---------------------------------------------------------------------------
+
 # Nodes
-# ---------------------------------------------------------------------------
+
 
 _client = ModelClient(temperature=0.7)
 
@@ -145,8 +142,7 @@ def planner_node(state: AgentState) -> Dict[str, Any]:
 
     retry_note = ""
     if state.get("validation_error"):
-        # Schema validation failure takes priority: the model's JSON shape
-        # was wrong (Part 4.2), not just its content quality.
+    
         retry_note = (
             "\nYour previous response FAILED SCHEMA VALIDATION for this "
             f"reason: {state['validation_error']}\n"
@@ -178,7 +174,7 @@ Respond with ONLY a JSON object in this exact shape, no other text:
     result = _client.complete([{"role": "user", "content": prompt}])
     proposal = extract_json(result.content)
 
-    # HW2 Part 4.1/4.2: validate against the Pydantic schema. On failure,
+    # validate against the Pydantic schema. On failure,
     # record the error for the next retry instead of proceeding to Reviewer.
     error = validate_planner_output(proposal)
     prior_retries = state.get("validation_retry_count", 0)
@@ -239,9 +235,9 @@ def supervisor_node(state: AgentState) -> Dict[str, Any]:
     return {"turn_count": state.get("turn_count", 0) + 1}
 
 
-# ---------------------------------------------------------------------------
+
 # Router (reads state, returns a string destination — no state mutation)
-# ---------------------------------------------------------------------------
+
 
 def router_logic(state: AgentState) -> str:
     ceiling = state.get("turn_ceiling", TURN_CEILING_DEFAULT)

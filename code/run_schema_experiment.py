@@ -61,7 +61,7 @@ def main():
             "final_summary": result["final"].get("summary", ""),
         })
 
-    # ---- Save raw results ----
+    # Save raw results
     raw_json_path = RAW_DIR / "schema_raw.json"
     with open(raw_json_path, "w") as f:
         json.dump(runs, f, indent=2)
@@ -73,7 +73,7 @@ def main():
         for row in runs:
             writer.writerow({**row, "final_tags": "|".join(row["final_tags"])})
 
-    # ---- Compute summary ----
+    # Compute summary
     outcomes = ["valid_first_attempt", "valid_after_1_retry", "valid_after_2plus_retries", "abandoned_at_ceiling"]
     counts = {o: sum(1 for r in runs if r["outcome"] == o) for o in outcomes}
     latencies_by_outcome = {
