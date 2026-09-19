@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Home - Transit Incident Portal{% endblock %}
+{% block content %}
+<div class="card p-4">
+  <div class="card-body text-center">
+    <h1 class="mb-3">Municipal Transit Incident Portal</h1>
+    <p class="lead text-muted">
+      Welcome to the Route 2 rider incident dashboard for Domain 2
+      (Municipal Transit Incidents).
+    </p>
+
+    {% if logged_in %}
+      <p class="mb-4">You're logged in as <strong>{{ username }}</strong>.</p>
+      <a href="/dashboard" class="btn btn-primary me-2">Go to Dashboard</a>
+      <a href="/logout" class="btn btn-outline-secondary">Log out</a>
+    {% else %}
+      <p class="mb-4">Please log in to view and manage incident reports.</p>
+      <a href="/login" class="btn btn-primary">Log in</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
