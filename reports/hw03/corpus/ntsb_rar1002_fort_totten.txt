@@ -1,0 +1,112 @@
+NTSB/RAR-10/02
+Collision of Two Washington Metropolitan Area Transit Authority Metrorail Trains
+Near Fort Totten Station, Washington, D.C., June 22, 2009
+Source: https://www.ntsb.gov/investigations/accidentreports/reports/rar1002.pdf
+Accessed: 2026-09-19
+
+ABSTRACT
+On Monday, June 22, 2009, about 4:58 p.m., eastern daylight time, inbound Washington
+Metropolitan Area Transit Authority Metrorail train 112 struck the rear of stopped inbound
+Metrorail train 214. The accident occurred on aboveground track on the Metrorail Red Line near
+the Fort Totten station in Washington, D.C. The lead car of train 112 struck the rear car of train
+214, causing the rear car of train 214 to telescope into the lead car of train 112, resulting in a loss
+of occupant survival space in the lead car of about 63 feet (about 84 percent of its total length).
+Nine people aboard train 112, including the train operator, were killed. Emergency response
+agencies reported transporting 52 people to local hospitals. Damage to train equipment was
+estimated to be $12 million.
+
+INVESTIGATION SYNOPSIS
+The investigation found that the Metrorail automatic train control (ATC) system stopped
+detecting the presence of train 214 (the struck train), which caused train 214 to stop and also
+allowed speed commands to be transmitted to train 112 (the striking train) until the collision.
+This loss of detection occurred because parasitic oscillation in the General Railway Signal
+Company (GRS)/Alstom Signaling Inc. track circuit modules was creating a spurious signal that
+mimicked a valid track circuit signal, thus causing the track circuit to fail to detect the presence
+of train 214.
+
+The investigation examined two near-collisions in 2005 near the Rosslyn Metrorail station that
+were the result of a loss of train detection. In response to the Rosslyn event, WMATA developed
+and issued technical bulletins requiring an enhanced circuit verification test procedure; however,
+none of the WMATA technicians interviewed as part of this investigation was familiar with the
+enhanced procedure.
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of the June 22,
+2009, collision of WMATA Metrorail train 112 with the rear of standing train 214 near the Fort
+Totten station was (1) a failure of the track circuit modules, built by GRS/Alstom Signaling Inc.,
+that caused the automatic train control system to lose detection of train 214 and thus transmit
+speed commands to train 112 up to the point of impact, and (2) WMATA's failure to ensure that
+the enhanced track circuit verification test (developed following the 2005 Rosslyn
+near-collisions) was institutionalized and used systemwide.
+
+Contributing to the accident were (1) WMATA's lack of a safety culture, (2) WMATA's failure to
+effectively maintain and monitor the performance of its automatic train control system, (3)
+GRS/Alstom Signaling Inc.'s failure to provide a maintenance plan to detect spurious signals, (4)
+ineffective safety oversight by the WMATA Board of Directors, (5) the Tri-State Oversight
+Committee's ineffective oversight and lack of safety oversight authority, and (6) the Federal
+Transit Administration's lack of statutory authority to provide federal safety oversight.
+
+Contributing to the severity of passenger injuries and the number of fatalities was WMATA's
+failure to replace or retrofit the 1000-series railcars after these cars were shown in a previous
+accident to exhibit poor crashworthiness.
+
+ACCIDENT NARRATIVE
+The operator of train 214 (the struck train) reported for duty at the Shady Grove station at 3:18
+p.m. The operator of train 112 (the striking train) reported for duty at Brentwood Yard at 3:50
+p.m. Train 214's operator said his train "lost speed commands" (readouts showed 0 mph)
+between the Takoma and Fort Totten stations, causing it to stop. Train 112, operating in
+automatic mode, was traveling behind train 214. According to recorded train control system
+data, the speed commands transmitted to train 112 dropped from 55 mph to 0 mph at 4:56:41,
+then resumed at 55 mph about 39 seconds later, at 4:57:20. Third-rail power was lost at 4:58:08
+(the moment of collision). The point of collision was on track B2 about 2,935 feet north of the
+Fort Totten station.
+
+INJURIES AND DAMAGE
+Eight passengers in the lead car of train 112 and the operator of train 112 were killed (nine total
+fatalities). According to the fire department, 52 patients were transported to hospitals: 2 with
+critical injuries, 12 with moderate injuries, and the rest with minor injuries. Damage to train
+equipment was estimated at $12 million; about $5,000 in track and appurtenance damage also
+occurred.
+
+TRAIN AND MECHANICAL INFORMATION
+All six cars of train 112 were 1000-series cars manufactured by Rohr; these were the oldest cars
+in the Metrorail fleet. WMATA was in the process of purchasing new 7000-series cars
+(tentatively scheduled starting in 2013) to replace the 1000-series cars. After the accident,
+WMATA began "bellying" the 1000-series cars (placing them in the middle of trains) to reduce
+their vulnerability to catastrophic damage, though no engineering analysis had validated this
+approach before it was implemented.
+
+AUTOMATIC TRAIN CONTROL SYSTEM
+The Metrorail ATC system consists of three subsystems: Automatic Train Protection (ATP),
+Automatic Train Supervision (ATS), and Automatic Train Operation (ATO). The ATP subsystem
+maintains train separation by transmitting speed commands based on track occupancy detected
+via track circuits. Track occupancy detection uses impedance bonds and audio-frequency
+signals injected into the rails; when a train's wheelsets shunt this signal, the track relay
+deenergizes, indicating "occupied."
+
+The collision occurred within a 738-foot-long track circuit designated B2-304, located about 1/2
+mile north of the Fort Totten station. Postaccident examination revealed that the track relay for
+track circuit B2-304 was out of correspondence with the physical location of the accident trains:
+the track relay was energized (indicating vacant) even though both accident trains were
+occupying the block and shunting the track circuit. According to OCC records, track-circuit-
+failed-occupied alarms (a different, more common malfunction) occur at a rate of about 5,000
+per week systemwide, and the AIM system creates and deletes more than 1,000 "ghost trains"
+each week -- both of which contributed to the loss-of-detection anomaly being difficult to
+distinguish from routine noise.
+
+TRAIN OPERATING MODES
+Mode 1 (automatic): normal functions controlled by ATC, operator monitors. Train 112 was
+operating in Mode 1. Mode 2, Level 1 (manual with speed protection): operator controls
+acceleration/braking with ATP overspeed protection. Train 214 was operating in this mode, even
+though WMATA required all revenue trains to operate in automatic mode (Mode 1) during rush
+periods per Metrorail Safety Rules and Procedures Handbook (MSRPH) Rule 3.20. Mode 3
+(manual with ATP cutout): no overspeed protection, used only when equipment malfunctions.
+
+RECOMMENDATIONS
+The NTSB made recommendations to the U.S. Department of Transportation, the Federal Transit
+Administration, the Tri-State Oversight Committee, the WMATA Board of Directors, WMATA
+itself, Alstom Signaling Inc., and six other transit systems using GRS track circuit modules:
+Massachusetts Bay Transportation Authority, Southeastern Pennsylvania Transportation
+Authority, Greater Cleveland Regional Transit Authority, Metropolitan Atlanta Regional
+Transportation Authority, Los Angeles County Metropolitan Transportation Authority, and
+Chicago Transit Authority.

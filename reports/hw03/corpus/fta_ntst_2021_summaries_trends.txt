@@ -1,0 +1,98 @@
+2021 National Transit Database - National Transit Summaries & Trends (NTST)
+Federal Transit Administration, Office of Budget and Policy
+Source: https://www.transit.dot.gov/sites/fta.dot.gov/files/2022-11/2021%20National%20Transit%20Summaries%20and%20Trends_1-1.pdf
+Accessed: 2026-09-19
+
+OVERVIEW
+The 2021 NTST discusses data from Report Years (RY) 2012 to 2021, reflecting the impact of the
+COVID-19 public health emergency (declared March 13, 2020) on national transit data. April
+2020 is the lowest month on record (dating to 2002) for national urban public transportation
+ridership, with 158.5 million Unlinked Passenger Trips (UPT) taken, compared to 835.1 million
+UPT in April 2019 -- an 81 percent year-over-year decrease. The year-over-year decrease from
+December 2019 to December 2020 was 62 percent across all modes for UPT; there was a 48
+percent increase across all modes for UPT from December 2020 to December 2021 as recovery
+began.
+
+RIDERSHIP TRENDS 2012-2021
+Total urban transit ridership decreased 57.5 percent over the 10-year period, from about 10.36
+billion passengers (2012) to 4.40 billion passengers (2021). Approximately 87.3 percent of urban
+agency ridership occurs on Bus and Heavy Rail services combined. By mode, 2012-2021 ridership
+declines were: Bus -57.1%, Heavy Rail -57.1%, Commuter Rail -68.4%, Light Rail -60.6%, Other
+-55.0%, Demand Response -38.3% (smallest decline of any mode), Vanpool -55.5%.
+
+Rail ridership decreased from 4.75 billion to 1.96 billion UPT over the decade; rail's share of
+national ridership decreased from 45.3 percent (2012) to 43.8 percent (2021). Within rail, Heavy
+Rail makes up about 82.1 percent of total rail ridership in 2021 (up slightly from 78.5 percent
+average 2011-2019), Light Rail about 9 percent, and Commuter Rail about 7.6 percent.
+
+EMPLOYMENT AND FUNDING
+At the end of Calendar Year 2021, there were over 370,000 employees (339,067 urban, 29,750
+rural, 1,269 tribal) involved in operating, administering, and maintaining U.S. public transit.
+
+Federal funding was the predominant operating expense funding source in 2021 due to COVID-19
+relief programs: directly generated revenues (fares, etc.) funded only 17.4 percent of urban
+operating expenses; Local funded 25.6 percent; State funded 20.8 percent; Federal government
+sources funded the remaining 36.2 percent. In RY 2021, 852 transit agencies spent over $13.1
+billion from CARES, CRRSA, and ARP pandemic relief programs combined, mostly ($4.957
+billion, 73.0% of total federal COVID relief) on operating expenses -- a 95 percent increase over
+RY 2020 relief spending.
+
+Bus modes used the largest share of total industry operating expenses at $23.1 billion, followed by
+Heavy Rail ($9.4 billion) and Commuter Rail ($6.5 billion). Vehicle Operations accounted for
+48.41 percent of all operating expenses (functional breakdown: Vehicle Operations $22,944M,
+Vehicle Maintenance $8,954M, Facility Maintenance $6,108M, General Administration $9,390M;
+total $47,396M).
+
+FAREBOX RECOVERY
+In 2021, for each dollar spent on operating costs per trip across all modes, only 12.8 cents were
+recovered through fares -- a 30 percent decrease from the 2020 fare recovery ratio of 18.4 cents,
+driven by the pandemic. Commuter Rail, Commuter Bus, and Vanpool have relatively high
+farebox recovery ratios (scheduled around commuter demand, limited off-peak service); Vanpool
+in particular has a high ratio because drivers are unpaid volunteers and the mode has traditionally
+relied on rider fees with limited government subsidy.
+
+COST AND SERVICE CHARACTERISTICS (2021)
+Average trip length: Vanpool 39.0 miles, Commuter Rail 25.0 miles, Commuter Bus 24.6 miles
+(all long-distance commuter-focused modes) vs. much shorter trips on fixed-route bus and other
+rail modes; Heavy Rail average trip length was 4.6 miles.
+Cost per UPT: Commuter Rail $43.90 (one of the highest per-trip rates) but cost per Passenger
+Mile Traveled (PMT) only $1.75 (one of the lowest), because trips are so long; Bus had a low cost
+per UPT ($10.36) but a relatively higher cost per PMT ($2.84) because trips are short (3.7 mile
+average).
+Passengers per hour (PPH): Ferryboat highest at 93.5 PPH, Heavy Rail 49.6 PPH, Demand
+Response lowest at 1.6 PPH.
+Cost per vehicle revenue hour: Ferryboat highest at $1,925.68/hour; Vanpool lowest at
+$39.49/hour (again reflecting unpaid volunteer drivers).
+Average fleet age: Vanpool 3.56 years (typical useful life 4-5 years); Bus 7.48 years (typical useful
+life 10-12 years); rail vehicles designed for 25-35 year service life, explaining their higher average
+ages.
+
+FIXED GUIDEWAY INFRASTRUCTURE
+Rail transit modes operate 74.9 percent of total Fixed Guideway (FG) and High-Intensity Busway
+(HIB) Directional Route Miles (DRM) nationally. Seven of the most populous UZAs (all in the top
+15 in population in every census since 1860) account for over 46.9 percent (8,251.9 miles) of all
+FG route miles nationally, averaging 1,179 FG miles per UZA -- versus just 92.5 average FG miles
+for the 101 other UZAs that have any FG at all.
+
+SAFETY AND SECURITY DATA (2021, NTD-reported, preliminary)
+The total number of transit fatalities has been reasonably stable at about 322 annual fatalities
+nationally, with year-to-year variation of less than 50 total fatalities. The fatality rate increased
+from about 0.79 fatalities per 10 million Vehicle Revenue Miles (VRM) in 2020 to about 0.94
+fatalities per 10 million VRM in 2021. In 2021, rail modes had higher fatality rates than non-rail
+modes, in part because suicides are much more common on rail than non-rail modes.
+
+Large Urbanized Areas (UZAs) experienced 246.70 reportable safety and security events per 100
+million VRM in 2021 -- notably higher than Medium UZAs (164.64 per 100 million VRM) and
+Small UZAs (100.63 per 100 million VRM), suggesting event rates scale with urban density and
+system complexity rather than staying constant.
+
+Note on data comparability: the NTD's reporting requirements for "Safety Occurrences Not
+Otherwise Classified" events changed in 2015, causing an increase in reported injuries from 2015
+onward compared to 2011-2014 that reflects a reporting-definition change rather than an actual
+safety trend -- an important caveat when comparing pre- and post-2015 injury statistics.
+
+Note on FRA/NTD scope split: the Federal Railroad Administration (not FTA/NTD) oversees
+safety for Commuter Rail systems, the Alaska Railroad, and a select set of Hybrid Rail and Heavy
+Rail systems; these agencies do NOT report safety data to the NTD and are excluded from NTD
+safety analyses -- meaning NTD-derived safety statistics understate total rail safety events
+nationally by excluding these FRA-regulated systems.

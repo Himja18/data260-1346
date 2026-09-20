@@ -1,0 +1,92 @@
+RAW SOURCE EXCERPT (verbatim, public domain U.S. government work)
+NTSB/HAR-96/02 - Collision of METRA Train and School Bus, Fox River Grove, Illinois,
+October 25, 1995
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR9602.pdf
+Accessed: 2026-09-19
+This file supplements ntsb_har9602_fox_river_grove.txt with additional verbatim detail on the
+signal timing analysis, documentation history, and school busdriver background.
+
+SCHOOL BUSDRIVER BACKGROUND (verbatim detail)
+The 54-year-old school busdriver had been hired by the TJA School District on August 1, 1983,
+as a secretary and bookkeeper. Between April 1986 and July 1989, she served as a bus dispatcher.
+She passed the Illinois written school busdriver examination on January 2, 1987, and took the
+school bus road test three times between January 2 and 5, 1987, before passing it. She was
+selected on July 15, 1989, for the position of assistant transportation director, responsible for
+auditing and evaluating the performance of 92 school busdrivers, though she was not herself
+certified as a trainer. On the day of the accident, the regular busdriver for this route was ill, and
+the substitute (the accident driver) had never driven this particular route before, either in a car or
+a school bus. She had completed all but one stop on the route as the bus approached the grade
+crossing.
+
+RAILROAD SIGNAL WARNING TIME -- THUMBWHEEL HISTORY (verbatim technical detail)
+The desired advance warning time for the crossing signal is entered via a "thumbwheel" switch on
+the microprocessor. During the 5 years before the accident, the thumbwheel had been set at 30
+seconds for the northernmost railroad track, with the narrow band shunt connected to the rails
+approximately 3,053 feet from the edge of the crossing. On October 11, 1995 -- two weeks before
+the accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency
+at that crossing and throughout the railroad's property." UP officials stated the change did not
+alter the minimum constant warning time of 20 seconds. A UP representative testified at the
+Safety Board's public hearing in January 1996: "We design our circuits for 25 seconds to give a
+5-second buffer... because there are conditions out on the track that make us unable to give an
+exact warning time... So we put in a 5-second buffer to this 20 seconds."
+
+DOCUMENTATION AND COMMUNICATION BETWEEN IDOT AND THE RAILROAD
+On August 4, 1987, the C&NW railroad sent IDOT design plans indicating the railroad grade
+crossing approach circuit lengths were "3,080 feet, 30 seconds at 70 mph." At that time no
+highway traffic signals existed at Algonquin Road. In April 1991, C&NW submitted construction
+prints to IDOT indicating an approach warning time for track #1 (southern track) of 25 seconds
+and 30 seconds for track #2 (northern track). On May 11, 1992, C&NW provided IDOT with a
+"project completion report" that answered "yes" to the question "Do all approach start distances
+provide a minimum operation of 20 seconds before arrival of any train?"
+
+At the Safety Board's public hearing in January 1996, UP presented construction prints dated July
+14, 1995, indicating a minimum of 20 seconds warning time. IDOT representatives testified they
+had never seen these construction prints before the hearing, and that they believed based on other
+documents they had a warning time of 25 to 30 seconds from the railroad signal system. When
+asked how much information about warning time the railroad provided when a signal is turned
+on, the IDOT engineering technician responded: "You don't get any written documents... if we
+inquired, they [the railroad] could give us an answer... We would establish some timing and put
+in some test calls and we could observe how long it was from the time we received the call from
+the railroad until their gates were horizontal and adjust our timing on that basis."
+
+WARNING TIME TESTS -- RESULTS (verbatim statistics)
+On October 25-26, 1995, Safety Board investigators timed approximately 15 trains and found
+warning times ranging from about 20 seconds (shortest) to 155 seconds (longest). On October 29,
+1995, investigators conducted tests replicating the accident train's movements and recorded
+warning times of 20.73 and 21.12 seconds. In November 1995, IDOT's independent postaccident
+testing found a 22.7-second average warning time for 70-mph eastbound trains (with some as low
+as 21 seconds) and a 26.8-second average for 70-mph westbound trains. Critically, in 34 out of 66
+tests, the traffic lights provided 10 seconds or less for traffic on Algonquin Road to clear the
+railroad tracks after the highway signal's preemption sequence began.
+
+HIGHWAY SIGNAL PREEMPTION SEQUENCE HISTORY
+Between January 1990 and October 1994, IDOT was unable to coordinate the traffic phases of
+three adjacent intersections (US 14 at Lincoln Avenue, Algonquin Road, and State Route 22)
+through a master controller, so they operated in an uncoordinated mode. During this period, if a
+train approached while US 14 had a green indication, the sequence allowed only 6 seconds to
+elapse before a green indication was displayed for northbound Algonquin Road (18 seconds if a
+pedestrian button had been pushed). In October 1994, new signal controllers and a new master
+controller were installed, enabling coordinated mode; the programmed sequence then included an
+automatic 12-second pedestrian clearance phase, allowing 18 seconds before green for
+northbound Algonquin Road. Testimony from IDOT's contractors indicated the preemption
+sequence could take as long as 21 seconds to reach a green indication under certain
+circumstances (e.g., if the preemption occurred within 3 seconds of US 14 receiving a green
+indication, a further 3-second delay was programmed in to prevent motorists from receiving a
+momentary green).
+
+RESEARCH ON WARNING TIME PERCEPTION (verbatim citation)
+A February 1991 FHWA-funded report by the University of Tennessee assessed the actions of
+3,500 motorists during 445 train crossings at three active grade crossings. It found that extremely
+short warning times "leave little margin of safety and poorly accommodate larger vehicles such
+as combination trucks and buses," while warning times exceeding 40 seconds (flashing lights) or
+60 seconds (gated crossings) can cause drivers to lose confidence in the traffic control system.
+Most motorists expect a train to arrive within 20 seconds of the traffic control device activating;
+warning times in excess of 30 to 40 seconds caused many motorists to engage in risky crossing
+behavior.
+
+ACTIVATION OF CROSSING WARNING DEVICES TESTS
+At the request of the Safety Board, Safety Engineering Associates (an engineering consultant
+retained by Union Pacific) performed six tests to determine the delay between circuit activation
+and the actual activation of lights and bell. Light circuit tests ranged from 803 to 819
+milliseconds; bell circuit tests ranged from 800 to 802 milliseconds. The average delay time
+across all six tests was 805 milliseconds (8/10 of a second).

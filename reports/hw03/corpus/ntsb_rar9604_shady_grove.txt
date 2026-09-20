@@ -1,0 +1,115 @@
+NTSB/RAR-96/04
+Collision of Washington Metropolitan Area Transit Authority Train T-111 with Standing
+Train at Shady Grove Passenger Station, Gaithersburg, Maryland, January 6, 1996
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/rar9604.pdf
+Accessed: 2026-09-19
+
+ABSTRACT
+On January 6, 1996, WMATA Metrorail subway train No. T-111 failed to come to a stop at the
+above-ground Shady Grove, Maryland, passenger station, the final station on the Metrorail Red
+Line. The four-car train ran by the station platform and continued about 470 feet into the
+Metrorail yard north of the station, where it struck a standing, unoccupied "gap" subway train
+that was awaiting assignment. The operator of train T-111 was fatally injured; the train's two
+passengers were not injured. Total property damages were estimated to be between $2.1 and $2.6
+million.
+
+PROBABLE CAUSE
+The Safety Board determined the probable cause was the failure of WMATA management and
+board of directors (1) to fully understand and address the design features and incompatibilities of
+the automatic train control (ATC) system before establishing automatic train operation as the
+standard operating mode at all times and in all weather conditions, (2) to permit Operations
+Control Center (OCC) controllers and supervisors to use their own experience, knowledge, and
+judgment to make decisions involving safety, and (3) to effectively promulgate and enforce a
+prohibition against placing standby ("gap") trains at terminal stations on the same track as
+incoming trains. Contributing to the severity of the operator's injuries was the disproportionate
+crush sustained by the lead cars of the colliding trains.
+
+ACCIDENT NARRATIVE
+A winter storm warning was in effect for the Washington, D.C. area on the night of the accident,
+with snow beginning around 9:10 p.m. Multiple trains began overrunning station platforms
+because of slippery tracks. The OCC button controller stated that between 10:00 and 10:30 p.m.,
+he asked the OCC superintendent on several occasions for permission to allow train operators to
+switch to manual mode, and was denied each time -- consistent with a WMATA policy (issued
+November 17, 1995) prohibiting mode changes except in emergencies.
+
+At 10:27:35 p.m., train T-111 overran the Twinbrook station by all four cars while under
+performance level 3 (44 mph limit); it was instructed to skip servicing that station and continue in
+automatic mode. At 10:31:55 p.m., it overran the Rockville station platform by one car. Because
+its lead car was outside the station's platform limits when the train finished servicing Rockville,
+the previously assigned performance level (a 59-mph limit) was lost, and the train's speed control
+system defaulted to performance level 1 -- a 75-mph limit -- for the next segment toward Shady
+Grove. At 10:35:30 p.m., the operator reported console speed readouts of "75 limiting and 75
+regulated," meaning the train was authorized to reach 75 mph on a segment where it should have
+been limited to 59. The OCC radio controller told him to continue in automatic mode. At
+10:36:40, the operator reported his actual speed had reached 75 mph; the controller acknowledged
+but did not intervene. Approaching the Shady Grove station, the operator reported his speed had
+dropped to "35/35" -- but syslog data show the train was still traveling in excess of 50 mph and
+about 1,140 feet from the platform at that moment. The train never actually slowed to the
+expected stopping profile: it struck the gap train at a calculated speed of 22-29 mph, roughly 470
+feet past the end of the platform.
+
+The Red Line radio controller told investigators: "At this time I had a feeling the system was
+doing what it was supposed to do... I didn't feel I had an emergency where I could step in and
+overrule -- put my job on the line -- and tell the man to go manual."
+
+TRAIN OPERATOR AND MEDICAL FINDINGS
+The 48-year-old operator had been promoted from bus operator to train operator on October 29,
+1995 -- only about 10 weeks before the accident -- and had operated on the Red Line for roughly
+30 duty days total. Postmortem toxicology found therapeutic levels of acetaminophen and codeine
+(from Tylenol 3, which he had a documented history of taking for chronic back pain) plus several
+over-the-counter cold-medication ingredients; no evidence indicated these medications
+contributed to the accident, and the report treated the medications as a background factor rather
+than a cause.
+
+WHEEL FLATS AND THE DECISION TO ELIMINATE MANUAL OPERATION
+An unusually high number of "wheel flat" incidents occurred November 11-14, 1995 (77 flat-
+wheel events, 47% of that entire month's total, coinciding with 2.47 inches of precipitation -- more
+than half of November's total rainfall). A November 15, 1995 WMATA Vehicle Engineering
+Branch memo concluded the flats were "operator-induced" because the cars were being operated
+in manual mode at the time, and recommended curtailing manual operation during winter storms
+in favor of standardizing automatic (ATC) operation. The director of engineering and operations
+support who received this memo said he considered more testing was needed before endorsing
+the conclusion, and did not forward the recommendation to top management -- yet the policy was
+implemented anyway on November 17, 1995, apparently based on separate verbal guidance from
+the general superintendent for rail transportation. This is a key finding: the actual policy change
+that set up the accident was NOT formally traceable to the engineering analysis that supposedly
+justified it.
+
+Later testing (December 1995-January 1996) found that the Breda 2000/3000-series cars'
+slip/slide braking system, under wet-rail conditions, achieved average deceleration rates as low as
+1.24 mph/sec in simulated tests -- well below the 1.65-2.2 mph/sec range the ATC block signaling
+system's design assumed was available. This meant the automatic system, now mandatory in all
+weather, could authorize speeds assuming braking performance the cars could not actually deliver
+under low-adhesion conditions.
+
+EMERGENCY RESPONSE FINDINGS
+The OCC's initial 911 call did not include the status of third-rail power or the best access points,
+as required by the Metrorail Safety Rules and Procedures Handbook (MSRPH) Section 5.1A.25.
+A dispatcher used the wrong chain marker, causing some firefighters to respond to the Shady
+Grove station itself rather than the accident site roughly 500 feet beyond it. A section of third rail
+remained energized for 43 minutes after the accident because an OCC controller was unable to
+remotely trip circuit breaker "33" from the command console (attempts at 10:41, 10:42, and 11:22
+p.m. failed); station personnel eventually operated a manual emergency trip switch at 11:23 p.m.
+Only one Warning Strobe and Alarm Device (WSAD, which visually/audibly indicates if power is
+restored) reached the scene initially, out of a recommended two. No third-rail schematics were
+posted at the accident location to help firefighters understand which rail sections were controlled
+from where.
+
+Two uninjured passengers aboard the striking train were left waiting 15-30 minutes in the dark,
+damaged train before rescuers made contact, because responders searching for casualties did not
+realize passengers remained aboard and prioritized establishing that the third rail was de-energized
+before allowing their egress.
+
+REGULATORY CONTEXT
+WMATA was a member of the American Public Transit Association (APTA) and received
+periodic APTA safety audits (most recently December 1993, with a June 1995 follow-up); the
+audit summary stated "most of the essential elements of the WMATA System Safety Program
+Plan were effectively implemented" -- a conclusion this accident directly contradicted regarding
+management decision-making and communication. In response to the Intermodal Surface
+Transportation Efficiency Act of 1991, the FTA's December 27, 1995 final rule (49 CFR Part 659,
+effective January 26, 1996) required states with non-FRA-regulated rail fixed-guideway systems
+to designate a state safety oversight agency. WMATA proposed a new Tri-State Oversight
+Committee (TOC) with six members (two each from Virginia, Maryland, and D.C.) in response --
+the same body that, 13 years later, was found by the 2010 Fort Totten investigation to have
+provided ineffective oversight, showing a recurring institutional weakness across multiple WMATA
+accidents over more than a decade.

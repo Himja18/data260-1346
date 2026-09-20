@@ -1,0 +1,87 @@
+NTSB/RAR-11/01
+Miami International Airport, Automated People Mover Train Collision with Passenger
+Terminal Wall, Miami, Florida, November 28, 2008. Adopted: November 8, 2011.
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/RAR1101.pdf
+Accessed: 2026-09-19 (verified live fetch)
+
+ABSTRACT
+About 4:44 p.m. on November 28, 2008, a three-car automated people mover (APM) train
+operating along a fixed guideway on E Concourse at Miami International Airport failed to stop
+at the passenger platform and struck a wall at the end of the guideway. A maintenance technician
+was monitoring the train from the lead car, but it was operating in fully automatic mode without
+a human operator. The technician and five passengers were injured; one person on the platform
+also required medical attention.
+
+THE JUMPER WIRE
+The south train had been experiencing recurring failures with its wayside antenna, dynamic
+braking, and overspeed/overshoot systems for weeks before the accident. On November 21,
+2008 (one week before the accident), a JCI (Johnson Controls, Inc.) maintenance technician
+installed a "jumper wire" between two terminals in the train's control compartment to keep it in
+service while troubleshooting continued. This jumper wire bypassed the vital (safety-critical)
+overspeed/overshoot relay -- the fail-safe backup system designed to stop the train if the primary
+"program stop" positioning system ever failed. One JCI technician who reviewed the schematics
+realized the jumper wire disabled this safety backup and told his shift lead, who directed him to
+leave it in place anyway so the train could keep running. JCI had no written procedures governing
+when jumper wires could be used or requiring their removal before passenger service.
+
+WHAT ACTUALLY FAILED
+Postaccident testing found the failure was a broken crystal inside the program stop module's
+oscillator circuit -- the component that counted phase changes in a wayside antenna to determine
+the train's position relative to its stopping point. Without a working oscillator, the train had no
+way to trigger deceleration. Normally the overspeed/overshoot backup system would have caught
+this failure and applied emergency brakes, but the jumper wire had disabled exactly that backup.
+
+MAINTENANCE HISTORY AND TESTING GAPS
+JCI took over APM maintenance from the original contractor (Bombardier, and predecessors
+back to the original 1980 manufacturer Westinghouse) in January 2008, after Bombardier
+declined a new maintenance contract over liability concerns about the trains being past their
+"design life." No stopping/braking tests had been conducted on either APM train before the
+accident because JCI was concerned about placing stress on the aging undercarriages. The
+manufacturer recommended testing vital relays every 4 years; the overspeed/overshoot relay that
+had been bypassed was tagged as last inspected on December 4, 2001 -- nearly 7 years before the
+accident.
+
+POSTACCIDENT VERIFICATION TESTING
+NTSB investigators conducted five stopping tests on the (undamaged) north train on December
+7, 2008, WITHOUT a jumper wire installed, and the train performed within design parameters in
+every test -- including correctly triggering emergency stops when simulated door-opening and
+overspeed conditions were introduced. This confirmed the overspeed/overshoot system itself was
+functional and would have prevented the accident had it not been bypassed.
+
+SAFETY OVERSIGHT GAP -- A THIRD LAYER OF FAILURE
+Beyond the FTA/State Safety Oversight Agency (SSOA) framework discussed elsewhere in this
+corpus for FTA-FUNDED rail transit, this report reveals a distinct gap: the Miami APM system
+received NO FTA funding and was therefore not covered by 49 CFR Part 659 at all. Florida's
+own oversight statute (Section 341.061) was not enacted until 1984 and was not retroactive, so in
+a 1988 exchange of letters, the Miami-Dade Aviation Department (MDAD) successfully argued
+it did not need to develop a system safety program plan for this specific APM (built in 1980), and
+no further correspondence on the topic occurred between 1988 and the 2008 accident -- 20 years
+with essentially no external safety oversight of this system. The report's Appendix B lists at least
+22 other states with fixed-guideway systems (mostly airport people movers and amusement-park
+monorails/funiculars) similarly falling outside any state oversight agency's regulated scope.
+
+ORGANIZATIONAL ACCIDENT FRAMEWORK
+The report explicitly applies James Reason's "organizational accident" framework (also cited in
+the FTA bus accident investigation background research document elsewhere in this corpus),
+distinguishing "active failures" (the jumper wire installation itself) from "latent failures" (MDAD's
+and Florida's absent oversight, which had been dormant for two decades before this specific
+active failure triggered the accident).
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of this accident
+was the installation by Johnson Controls, Inc. maintenance technicians of a jumper wire that
+prevented the overspeed/overshoot system from activating to stop the train when the crystal
+within the primary program stop module failed. Contributing factors: (1) JCI's failure to provide
+specific procedures regarding disabling vital train control systems during passenger operations,
+(2) ineffective safety oversight by the Miami-Dade Aviation Department, (3) lack of adequate
+safety oversight by the state of Florida, and (4) lack of authority by the U.S. DOT to provide
+adequate safety oversight of such systems.
+
+RECOMMENDATIONS
+New recommendations went to the U.S. DOT and all 50 states/D.C. (jointly identify all fixed
+guideway systems within each jurisdiction, R-11-1/R-11-2), to all 50 states/D.C. (obtain statutory
+authority to oversee ALL fixed guideway systems regardless of funding source or age, R-11-3),
+to Miami-Dade County (develop a system safety program plan, R-11-4), and to Johnson Controls,
+Inc. (prohibit deactivation of safety-critical systems during passenger service, R-11-5). The
+report also reiterates Recommendation R-10-3 (from the Fort Totten investigation, also in this
+corpus) urging the DOT to seek broader rail transit safety oversight authority.

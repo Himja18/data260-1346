@@ -1,0 +1,59 @@
+RAW SOURCE EXCERPT (verbatim facts, public domain U.S. government work)
+NTSB/RAR-10/02 - Fort Totten Collision Report - Metrorail Upgrade Program Activities
+Source: https://www.ntsb.gov/investigations/accidentreports/reports/rar1002.pdf
+Accessed: 2026-09-19
+Supplements the other Fort Totten files in this corpus with detail on WMATA's ongoing
+infrastructure upgrade programs at the time of the 2009 accident.
+
+TRACTION POWER UPGRADE PROGRAM
+At the time of the accident, WMATA had an ongoing Traction Power Upgrade Program intended
+to increase electrical capacity across the Metrorail system to support more frequent train service
+and newer railcars with higher power demands. This program involved replacing aging
+substations and cabling systems that had been in service since the original 1970s construction of
+the system.
+
+TRACK CIRCUIT REPLACEMENT PROGRAM
+WMATA also had a Track Circuit Replacement Program underway, intended to gradually replace
+the original General Railway Signal (GRS) track circuit modules -- the same type of equipment
+whose parasitic-oscillation failure caused the loss of train detection at Fort Totten -- with newer
+Union Switch & Signal (US&S, later Ansaldo STS USA) equipment. This replacement program
+had not yet reached the Fort Totten area at the time of the accident.
+
+REPLACEMENT OF IMPEDANCE BONDS NEAR FORT TOTTEN
+Separately, WMATA had recently performed work replacing impedance bonds (the components
+at each end of a track circuit that transmit the detection signal into the rails) in the vicinity of the
+Fort Totten accident location, as part of routine track circuit maintenance rather than the larger
+replacement program. The investigation examined whether this recent maintenance work
+introduced or failed to catch the parasitic oscillation condition that caused the accident, since the
+enhanced circuit verification test developed after the 2005 Rosslyn near-miss -- which could have
+caught this condition -- was not used during this maintenance work, consistent with the report's
+broader finding that WMATA failed to institutionalize that enhanced test procedure systemwide.
+
+PREVIOUS METRORAIL INCIDENT INVOLVING FAILURE OF TRAIN DETECTION
+The report examined two near-collisions in 2005 near the Rosslyn Metrorail station in Virginia,
+also resulting from a loss of train detection in the track circuit between the Foggy Bottom and
+Rosslyn stations. Archived data reviewed during the Fort Totten investigation showed that the
+Rosslyn track circuit had exhibited the same parasitic oscillation problem dating back to at least
+1988 -- the earliest year for which data were available -- meaning the underlying equipment
+defect had potentially been present, undetected, for over two decades before it caused a fatal
+accident at a different location on the same system.
+
+REVIEW OF ATC RECORDED DATA
+Investigators reviewed archived Automatic Train Control (ATC) system data from the weeks and
+months preceding the June 22, 2009 accident to determine whether the track circuit at location
+B2-304 had shown any prior signs of intermittent malfunction before the fatal failure. This
+retrospective data review was a key part of establishing that the parasitic oscillation condition,
+once present, could persist undetected through normal operations because it produced a signal
+that mimicked a valid, unoccupied-track reading rather than triggering any of the routine
+track-circuit-failed-occupied or failed-vacant nuisance alarms that WMATA technicians were
+accustomed to seeing and routinely dismissing as minor.
+
+SAFETY OVERSIGHT OF TRANSIT OPERATIONS -- FEDERAL TRANSIT ADMINISTRATION
+The report's "Safety Oversight of Transit Operations" section describes the Federal Transit
+Administration's limited statutory authority over rail transit safety as it existed in 2009-2010,
+prior to the later regulatory changes discussed in the 2015 L'Enfant Plaza oversight letter also in
+this corpus. At the time of Fort Totten, FTA safety authority was exercised almost entirely
+through the State Safety Oversight Agency (SSOA) framework under 49 CFR Part 659, with no
+direct FTA inspection or enforcement authority over WMATA itself -- the same underlying
+structural weakness the NTSB would revisit in far greater depth five years later following the
+L'Enfant Plaza incident.

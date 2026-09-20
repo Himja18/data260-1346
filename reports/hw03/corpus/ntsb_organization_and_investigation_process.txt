@@ -1,0 +1,92 @@
+NTSB Organization, Mission, and Investigation Process - Reference Notes
+Compiled from standard boilerplate language and organizational descriptions repeated across
+multiple NTSB accident reports in this corpus.
+Source: Consolidated from NTSB.gov accident report standard sections (see individual report
+files for original document URLs).
+Accessed: 2026-09-19
+
+WHAT THE NTSB IS
+The National Transportation Safety Board (NTSB) is an independent federal agency, established
+in 1967, dedicated to promoting aviation, railroad, highway, marine, pipeline, and hazardous
+materials safety. Congress mandated the agency through the Independent Safety Board Act of
+1974 to investigate transportation accidents, determine probable causes, issue safety
+recommendations, study transportation safety issues, and evaluate the safety effectiveness of
+government agencies involved in transportation. As of more recent reports in this corpus (2024
+NJ Transit tree collision report), the NTSB's charge also explicitly extends to "commercial
+space" alongside aviation, railroad, highway, marine, and pipeline modes, and the agency
+additionally serves as the appellate authority for FAA and US Coast Guard certificate enforcement
+actions and adjudicates FAA civil penalty appeals -- responsibilities not present in the agency's
+earlier self-description from 1990s-era reports in this corpus, reflecting how the agency's mandate
+has grown over time.
+
+HOW THE NTSB PUBLISHES FINDINGS
+The NTSB makes its actions and decisions public through several document types found across
+this corpus:
+- Accident Reports (e.g., "Highway/Railroad Accident Report," "Railroad Accident Report,"
+  "Railroad Investigation Report," "Highway Accident Brief") -- these focus on a single accident
+  and include factual investigation findings, analysis, conclusions, probable cause, and
+  recommendations.
+- Safety Recommendation Letters (e.g., the L'Enfant Plaza oversight letter, R-15-31/32) -- sent
+  directly to a government agency, company, or other entity urging specific action, sometimes
+  marked "Urgent."
+- Safety Studies (e.g., the 1998 study on passive grade crossings cited within the Conasauga
+  report, NTSB/SS-98/02) -- broader investigations addressing patterns across many similar
+  accidents rather than a single event.
+- Special Investigation Reports (e.g., the 2014 report on Roadway Worker Protection cited in the
+  FTA bus accident investigation background research document, NTSB/SIR 14-03) -- issue-
+  focused investigations spanning multiple incidents or a systemic safety topic.
+
+WHAT AN NTSB INVESTIGATION DOES AND DOES NOT DO
+A recurring, near-verbatim statement across NTSB reports in this corpus clarifies the legal
+character of an investigation: "accident/incident investigations are fact-finding proceedings with
+no formal issues and no adverse parties... and are not conducted for the purpose of determining
+the rights or liabilities of any person" (49 CFR Section 831.4). The NTSB explicitly does not
+assign fault or blame in the legal sense; assignment of fault or legal liability is stated to be "not
+relevant" to the agency's statutory mission of improving transportation safety. Correspondingly,
+federal statute (49 U.S.C. Section 1154(b)) prohibits admitting any part of an NTSB report into
+evidence, or otherwise using it, in a civil action for damages arising from a matter mentioned in
+the report. This means that while an NTSB report may describe a "probable cause" in plain
+factual language (e.g., "the busdriver's failure to stop before traversing the... grade crossing"),
+this determination is explicitly not a legal fault-finding and cannot itself be used in court to
+establish liability.
+
+REPORT NUMBERING CONVENTIONS OBSERVED ACROSS THIS CORPUS
+NTSB report numbers generally follow a TYPE-YY/NN pattern, where TYPE indicates report
+category and mode (e.g., HAR = Highway Accident Report, RAR = Railroad Accident Report,
+RIR = Railroad Investigation Report, HAB = Highway Accident Brief, SIR = Special
+Investigation Report, SS = Safety Study), YY is the two-digit year of adoption/issuance, and NN
+is a sequential number within that year. For example, NTSB/HAR-96/02 (Fox River Grove) was
+the second Highway Accident Report adopted in 1996; NTSB/RAR-10/02 (Fort Totten) was the
+second Railroad Accident Report adopted in 2010. Note that the "issued" or "adopted" year in the
+report number reflects when the NTSB finalized the report, which can be one to several years
+after the accident date itself occurred (e.g., the 2021 NJ Transit tree-strike accident produced
+report RIR-25-19, issued in 2025 -- a roughly one-year investigation-to-publication gap that is
+fairly typical for non-"Urgent" reports in this corpus).
+
+DOCKET AND SUPPLEMENTARY MATERIALS
+Several reports in this corpus reference a public docket system (accessible via the NTSB's Case
+Analysis and Reporting Online, or "CAROL," system) where additional supporting materials are
+held beyond what appears in the published report itself -- including police reports, photographs,
+driver and witness statements, prior crash history data, engineering reports, and detailed timing
+data (e.g., traffic signal sequences). The NYC transit bus report (HAB-18/10) and the SEPTA
+Spring Garden Station report (RIR-22/03) both explicitly direct readers to search a specific
+NTSB accident ID number in this docket system for more detail than the summary report itself
+contains.
+
+ADDITIONAL NOTE: DAMAGE ESTIMATES AND EQUIPMENT AGE AS RECURRING FACTORS
+Across the verified accident reports in this corpus, the age of the involved equipment recurs as
+a contributing theme even when it is not cited as a formal probable cause. The Miami APM
+train involved in the 2008 collision was built in 1980 (28 years old at the time of the accident,
+already past its intended design life according to the original maintenance contractor's stated
+reason for declining to renew its contract). The Chicago Transit Authority railcars involved in
+the 2014 O'Hare collision were originally manufactured 1981-1987 and rebuilt 1999-2002 (27-33
+years old at the time of the accident), and were not equipped with true event recorders -- a
+technology gap the NTSB had been trying to close since a 1996 recommendation, nearly two
+decades before the O'Hare accident occurred. The WMATA rail cars and track circuit equipment
+involved in the 2009 Fort Totten collision similarly dated to the system's original 1970s
+construction. Estimated property damage figures varied enormously across the corpus's reports:
+$11,196,796 for the 2014 O'Hare collision (a single-train accident with no fatalities), reflecting
+that severe non-fatal property-damage accidents can carry very large dollar figures relative to
+some fatal accidents in this corpus, since damage estimates and fatality counts are independent
+dimensions of accident severity that a retrieval system should not conflate when answering
+questions that ask specifically about one or the other.

@@ -1,0 +1,129 @@
+Transit Bus Accident Investigations - Background Research
+FTA Report No. 0222, June 2022. Prepared by K&J Safety and Security Consulting Services and
+the Center for Urban Transportation Research (CUTR), University of South Florida.
+Sponsored by: Federal Transit Administration, Office of Research, Demonstration, and Innovation
+Source: https://rosap.ntl.bts.gov/view/dot/64104/dot_64104_DS1.pdf
+Accessed: 2026-09-19
+
+ABSTRACT
+As part of FTA's effort to promote continuous safety improvement in the public transit industry,
+Effective Practices in Performing Transit Bus Accident Investigations were developed to provide
+bus transit agencies leading transit industry practices for performing investigations. This
+supporting document examines each Safety Management System (SMS) element. Recommended
+practices are not intended to be prescriptive; each agency tailors its investigation processes to its
+unique operating environment.
+
+SMS FRAMEWORK
+Title 49 CFR Part 673 (the Public Transportation Agency Safety Plan Final Rule, effective July
+19, 2018) requires each transit agency to establish and implement an SMS scaled to its size, scope,
+and complexity, including four elements: Safety Management Policy, Safety Risk Management
+(SRM), Safety Assurance (SA), and Safety Promotion. SMS is defined as "a formal, top-down,
+organization-wide approach to managing safety risk and assuring the effectiveness of the transit
+agency's safety risk mitigation."
+
+KEY ROLES
+Accountable Executive: typically the agency's President/CEO/General Manager; ultimate
+accountability for SMS effectiveness cannot be delegated even though specific responsibilities
+can be. Chief Safety Officer (CSO) or SMS Executive: may be designated by the Accountable
+Executive for day-to-day SMS implementation, reporting directly to the Accountable Executive
+(who may also serve in this role themselves).
+
+ORGANIZATIONAL ACCIDENTS -- CASE STUDIES CITED
+The report cites the 2005 BP Texas City Refinery disaster (15 killed, 180 injured, over $1.5
+billion in losses) as an example where the US Chemical Safety and Hazard Investigation Board
+found BP "lacked focus on controlling major hazard risks," rewarding personal safety metrics
+over process safety, with ineffective leadership oversight. It also cites the MTA's August 2014
+Blue-Ribbon Panel (BRP) report, convened after mainline derailments at LIRR, Metro-North
+Railroad, and NYC Transit involving track-related defects, which recommended restructuring so
+each rail agency's Chief Safety Officer reports directly to agency leadership with no other job
+responsibilities besides safety.
+
+SAFETY CULTURE -- FIVE COMPONENTS (adapted from James Reason)
+An informed culture (current knowledge of human/technical/organizational/environmental safety
+factors); a reporting culture (encourages error and near-miss reporting via confidential systems
+with fast feedback); a learning culture (willingness/competence to learn from safety data); a
+flexible culture (can reconfigure and adapt, even from hierarchical to flatter structures); and a just
+culture (avoids individual blame, focuses on systemic deficiencies, distinguishes error from
+violation).
+
+EMPLOYEE SAFETY REPORTING EXAMPLES
+FRA's Confidential Close Call Reporting System (C3RS): a NASA-FRA partnership (NASA
+serves as an independent "honest broker" with no regulatory interest, drawing on its experience
+running the Aviation Safety Reporting System since 1976 with over one million reports). As of
+the report's writing, C3RS had 9 participating carriers, 18 active Peer Review Teams (PRTs), and
+over 21,000 eligible frontline railroad employees. A 12-year FRA evaluation across four
+demonstration sites found C3RS reduced derailments (3 sites), injuries (1 site), discipline hearings
+(2 sites), and improved safety culture (4 sites). A separate close-call program operated by the
+Bureau of Transportation Statistics (BTS) with WMATA lets employees report voluntarily under
+Confidential Information Protection and Statistical Efficiency Act (CIPSEA) protections.
+
+A NYCT track safety taskforce survey found more than half of maintenance-of-way personnel had
+experienced a near miss or close call, but only about one-third of those who had experienced one
+reported it -- attributed to a "blame culture."
+
+JOINT UNION-MANAGEMENT SAFETY EFFORTS
+After two roadway worker fatal accidents in one week in April 2007, NYCT convened a Joint
+Track Safety Taskforce including management and Transport Workers Union (TWU) Local 100
+representatives; it made 63 recommendations, and subsequent joint labor-management audits
+correlated with declining rules non-compliance. NTSB's Special Investigation Report on Roadway
+Worker Protection (NTSB/SIR 14-03, 2014) noted that "union representation brings operations-
+specific knowledge to the accident investigation team and helps facilitate the cooperation of
+employees."
+
+HAZARD IDENTIFICATION METHODOLOGY
+A hazard is "any real or potential condition that can cause injury, illness, or death; damage to or
+loss of the facilities, equipment, rolling stock, or infrastructure of a public transportation system;
+or damage to the environment" (49 CFR 673.5). Three methodologies for identifying hazards:
+Reactive (analysis of past events/accidents), Proactive (analysis of existing/real-time situations via
+employee reporting or monitoring), and Predictive (data-gathering to anticipate future adverse
+events before they occur).
+
+The report uses an "iceberg graph" (based on H.W. Heinrich's 1930s industrial safety research) to
+illustrate that for every highly damaging accident at the tip of the iceberg, there is a much larger
+number of less-harmful precursor incidents, and an even larger number of "normal" work
+situations containing hazards below the surface -- hazard identification is most effective at that
+base, before consequences ever occur.
+
+HAZARD ANALYSIS METHODS
+Operating Hazard Analysis (OHA): identifies hazards from personnel/procedure interactions
+during production, testing, operations, maintenance, and emergencies.
+Failure Modes and Effects Analysis (FMEA): determines effects of sub-element failures on
+system operation and classifies each by severity; strengths include identifying single-point
+failure modes needing design redundancy, but limited to evaluating single failure modes at a time
+and can become unwieldy for complex multi-layered systems.
+Fault Tree Analysis (FTA method, distinct from the Federal Transit Administration): a
+deductive method working backward from an undesired top event to find plausible causes;
+strong for systems with many interfaces, but is a static model that cannot address time
+interdependencies or partial/conditional failure states.
+Software Safety Analysis: addresses hazards from software controlling bus engine systems,
+door failures, CCTV, and other computer-interfaced systems, per Military Standard MIL-STD-882E.
+
+"PRACTICAL DRIFT" CONCEPT
+Practical drift is "the slow and inconspicuous, yet steady, uncoupling between written procedures
+and actual practices" during service delivery (drawing on Scott Snook's "Friendly Fire" analysis
+of the accidental 1994 Blackhawk shootdown). It is not always negative (adaptations can be more
+efficient or safer), but unmonitored drift can create unrecognized safety risk. Example given: an
+operator skips steps of a pre-trip inspection due to bad weather or fatigue; if unnoticed and
+uncorrected, other operators may adopt the same shortcut until inspections degrade into a
+"pencil-whipping exercise."
+
+SAFETY RISK ASSESSMENT PROCESS (five steps)
+(1) Evaluate probability of the hazard's consequence occurring; (2) evaluate severity of the
+consequence if it occurs; (3) evaluate current mitigations already in place; (4) index the safety
+risk by combining probability and severity into a Risk Assessment Code (RAC); (5) determine
+acceptability of the resulting risk level.
+
+Event probability levels range from A (Frequent, likely to occur often) through E (Improbable,
+assumed the event may never be experienced) to F (Eliminated, hazard identified and later
+removed). Event severity categories range from Catastrophic (1: death, permanent total
+disability, or monetary loss >=$10M) through Critical (2: >=$1M but <$10M, hospitalization of
+3+ personnel) and Marginal (3: >=$100K but <$1M, lost workday injury) to Negligible (4: <$100K,
+no lost workday).
+
+MITIGATION HIERARCHY (most to least effective)
+Design for Minimum Hazard (eliminate at design phase) > Safety Devices (reduce consequence
+severity when the hazard can't be eliminated) > Warning Devices (detect and alert when
+elimination isn't possible) > Special Procedures (administrative controls when no better option
+exists). The report cautions that administrative action (memos, updated SOPs, discipline, retraining)
+is the cheapest and most common "quick fix" response to incidents, but over-reliance on it can
+create the appearance that something has been done without resolving the underlying hazard.

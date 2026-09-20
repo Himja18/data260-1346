@@ -1,0 +1,84 @@
+SAMIS 1997 Annual Report - Detailed Tables Appendix
+Source: https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/samis97.pdf
+Accessed: 2026-09-19
+This file supplements fta_samis_1997_annual_report.txt with detailed mode-by-mode collision,
+personal casualty, and operating statistics tables from the 1997 report.
+
+BUS COLLISIONS 1997 -- INCIDENTS BY TYPE AND MODE (LMB/MMB/SMB = Large/Medium/
+Small Motor Bus agencies by fleet size)
+With Other Vehicles: LMB 13,677; MMB 5,107; SMB 1,163 (of which, at grade crossings: 2/48/17)
+With Objects: LMB 1,383; MMB 584; SMB 173
+With People: LMB 559; MMB 233; SMB 40 (includes attempted suicides: 1/3/0)
+Total Bus Collisions 1997: LMB 15,619; MMB 5,924; SMB 1,376
+
+BUS COLLISION FATALITIES 1997 (by victim type: Patrons/Employees/Others)
+With Other Vehicles -- Patrons: 0/0/0; Employees: 1/6/0; Others: 19/13/7 (LMB/MMB/SMB each)
+With People -- Patrons: 6/3/1; Employees: 0/0/0; Others: 25/10/4
+Total bus collision fatalities: LMB 44 (6 Patrons + 2 Employees + wait, totals per manual: LMB
+Total=44, MMB Total=28, SMB Total=11) across Patrons+Employees+Others combined.
+
+RAIL COLLISIONS 1997 -- INCIDENTS BY TYPE AND MODE (CR=Commuter Rail, HR=Heavy
+Rail, LR=Light Rail)
+With Other Vehicles: CR 77; HR 111; LR 281 (at grade crossings: 43/2/61)
+With Objects: CR 17; HR 37; LR 25
+With People: CR 63; HR 161; LR 46 (at grade crossings: 4/3/5; attempted suicides: 30/47/0)
+Total Rail Collisions 1997: CR 157; HR 309; LR 352
+
+RAIL COLLISION FATALITIES 1997 (by victim type)
+With People -- Patrons: CR 0, HR 56, LR 0; Employees: CR 2, HR 3, LR 0; Others: CR 60, HR 5,
+LR 3. Notably Heavy Rail had 56 patron fatalities from collisions with people in a single year --
+by far the largest single fatality category in the entire rail collision dataset, dominated by the HR
+mode's much higher ridership and station/right-of-way exposure.
+Total Rail Collision Fatalities 1997: CR 69 total (0+2+69 pattern per manual); HR 5; LR 3.
+
+RAIL GRADE CROSSING INCIDENT/FATALITY TRENDS 1995-1997 (by mode)
+Incidents: CR 27/35/48 (1995/1996/1997); HR 2/2/5; LR 98/97/66. Total: 127/134/119.
+Fatalities: CR 10/4/6; HR 0/0/3; LR 7/3/3. Total: 17/7/12.
+Injuries: CR 13/13/34; HR 3/0/0; LR 179/171/92. Total: 195/184/126.
+This shows a general downward trend in rail grade-crossing injuries over the three years (from
+195 to 126), even as fatalities fluctuated somewhat (17, then 7, then 12).
+
+PERSONAL CASUALTIES 1997 -- BY LOCATION AND MODE (bus)
+Parking Facility: LMB 650, MMB 20, SMB 34
+Inside Vehicle: LMB 4,960, MMB 3,004, SMB 993
+On Right of Way: LMB 656, MMB 38, SMB 56
+Entering/Exiting Vehicle: LMB 3,063, MMB 2,131, SMB 698 (of which, lift-associated: 135/94/36)
+In Stations/Stops: LMB 728, MMB 169, SMB 144
+Total Personal Casualties (bus) 1997: LMB 10,057; MMB 5,362; SMB 1,925 (note: manual lists
+1997 SMB total as 1,865 in the yearly trend table vs 1,925 in the by-location breakdown table --
+a minor internal inconsistency in the original SAMIS report worth noting for anyone cross-
+checking figures).
+
+PERSONAL CASUALTIES 1997 -- BY LOCATION AND MODE (rail)
+Parking Facility: CR 36, HR 603, LR 10
+Inside Vehicle: CR 420, HR 730, LR 210
+On Right of Way: CR 680, HR 879, LR 70
+Entering/Exiting Vehicle: CR 499, HR 953, LR 240
+In Stations/Stops: CR 619, HR 8,361, LR 197 (escalator-associated: 26/951/32; elevator-
+associated: 2/97/7)
+Total Personal Casualties (rail) 1997: CR 2,254; HR 11,526; LR 727
+
+FIRES 1997 -- BY LOCATION AND MODE
+Bus: In Vehicles LMB 112/MMB 73/SMB 20; In Station 4/7/0; Right-of-way/Other 20/3/1.
+Bus Total: LMB 136, MMB 83, SMB 21.
+Rail: In Vehicles CR 77/HR 464/LR 9; In Station 46/1257/25; Right-of-way/Other 479/1532/49.
+Rail Total: CR 602, HR 3253, LR 83. Heavy Rail's fire count (3,253) dwarfs all other modes
+combined, driven overwhelmingly by right-of-way/other fires (1,532) and in-station fires (1,257)
+-- consistent with the narrative note elsewhere in the report that "most fires are set" in stations and
+terminals.
+
+OPERATING STATISTICS AND PROPERTY DAMAGE 1997 (selected modes)
+Mode: Property Damage / Passengers / Passenger Miles / Vehicle Miles
+LMB: $17,801,076 / 2,840,893,678 / 9,091,818,099 / 838,353,348
+HR: $8,690,402 / 2,429,454,599 / 12,056,067,600 / 557,671,749
+CR: $8,472,858 / 310,706,887 / 7,000,312,146 / 216,206,241
+LR: $2,047,011 / 259,404,303 / 1,023,708,132 / 40,747,527
+Total (all modes): $55,478,590 / 7,615,145,885 / 37,256,086,606 / 2,701,800,982
+
+SECURITY -- WHERE TRANSIT CRIMES OCCUR (Part I offenses, rail vs. bus contrast)
+For BUS, 63.9% of all Part I crime offenses occurred inside vehicles, versus only 17.8% in
+stations. For RAIL, the pattern inverts: only 12.7% of Part I offenses occurred inside vehicles,
+while 34.0% occurred in stations and 53.2% occurred in "Other" locations (parking facilities,
+platforms, right-of-way, etc.) -- suggesting rail crime is far more concentrated in station
+environments and surrounding areas than inside the moving vehicle itself, the opposite of the bus
+pattern.

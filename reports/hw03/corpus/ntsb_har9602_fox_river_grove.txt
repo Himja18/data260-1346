@@ -1,0 +1,132 @@
+NTSB/HAR-96/02
+HIGHWAY/RAILROAD ACCIDENT REPORT
+Collision of Northeast Illinois Regional Commuter Railroad Corporation (METRA) Train and
+Transportation Joint Agreement School District 47/155 School Bus at Railroad/Highway Grade
+Crossing in Fox River Grove, Illinois, on October 25, 1995
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR9602.pdf
+Accessed: 2026-09-19
+
+EXECUTIVE SUMMARY
+On October 25, 1995, at 7:10 a.m., the Northeast Illinois Regional Commuter Railroad
+Corporation (d/b/a Metropolitan Rail) express commuter train 624 struck the rear left side of a
+stopped Transportation Joint Agreement School District 47/155 school bus at a railroad/highway
+grade crossing in Fox River Grove, Illinois. The accident occurred after the school bus had
+crossed the railroad tracks and stopped for a red traffic signal, with its rear extended about 3 feet
+into the path of the train. Of the 35 school bus passengers, 7, 24, and 4 passengers sustained
+fatal, serious to minor, and no injuries, respectively; the busdriver received minor injuries. The
+120 passengers and 3 crewmembers aboard the commuter train were uninjured.
+
+The National Transportation Safety Board determines that the probable cause of the collision
+was that the busdriver had positioned the school bus so it encroached upon the railroad tracks
+because of the failure of: 1) the Illinois Department of Transportation to recognize the short
+queuing area on northbound Algonquin Road and to take corrective action; 2) the Illinois
+Department of Transportation to recognize the insufficient time of the green signal indication for
+vehicles on northbound Algonquin Road before the arrival of a train at the crossing; and 3) the
+Transportation Joint Agreement School District 47/155 to identify route hazards and to provide
+its drivers with alternative instructions for such situations. Contributing to the accident was the
+failure of the Illinois Department of Transportation and its many contractors, the Illinois
+Commerce Commission, and the railroads to have a communication system that ensures
+understanding of the integration and working relationship of the railroad and highway signal
+systems.
+
+The major safety issues discussed in this report are: the appropriateness of the busdriver's
+performance; the adequacy of the school district bus routing and busdriver monitoring and
+evaluating procedures; the road design; the railroad/highway signal interaction; the coordination
+and communication between the Illinois Department of Transportation and the Union Pacific
+Railroad Company and their oversight of the signal system integration; and the injury and
+survival factors in the school bus.
+
+INVESTIGATION
+Accident Narrative
+About 7:10 a.m. on October 25, 1995, an eastbound Northeast Illinois Regional Commuter
+Railroad Corporation d/b/a Metropolitan Rail (METRA) express commuter train 624 en route to
+Chicago, Illinois, collided with the left rear side of a Transportation Joint Agreement (TJA)
+School District 47/155 school bus at a railroad/highway grade crossing in Fox River Grove,
+Illinois. The collision occurred on Algonquin Road near its intersection with U.S. Route 14 (US
+14). The school busdriver had driven across the railroad tracks and stopped for the red indication
+of a highway traffic signal. The northbound school bus, which was waiting within the available
+storage space (queuing area), had its left rear extending about 3 feet into the path of the train.
+
+Of the 35 school bus passengers, 7 sustained fatal injuries, 24 sustained serious to minor injuries,
+and 4 were not injured. The school busdriver sustained minor injuries. The estimated 120
+passengers and the 3 crewmembers aboard the train were uninjured.
+
+Table 1 -- Injuries
+TYPE       Busdriver  Bus Passengers  Traincrew  Train Passengers  TOTAL
+Fatal      0          7               0          0                 7
+Serious    0          10              0          0                 10
+Minor      1          14              0          0                 15
+None       0          4               3          120                127
+TOTAL      1          35              3          120                159
+
+Railroad Signal System
+The railroad grade crossing signal system uses a microprocessor to calculate the speed of the
+train and the time it will take for the train to arrive at the crossing. The system activates the
+crossing warning devices at a predetermined constant warning time regardless of the train's
+speed. During the 5 years before the accident, the thumbwheel on the microprocessor at the
+accident site had been set at 30 seconds for the northernmost railroad track. However, 2 weeks
+before the accident (October 11, 1995), the thumbwheel was reset at 25 seconds. According to
+the UP, the thumbwheel setting was changed to 25 seconds to ensure consistency at that crossing
+and throughout the railroad's property.
+
+FRA regulations address required minimum warning time in Title 49 CFR, Part 234.225,
+"Activation of Warning System," which states: "A highway/rail grade crossing warning system
+shall be maintained to activate in accordance with the design of the warning system, but in no
+event shall it provide less than 20 seconds warning time before the grade crossing is occupied by
+rail traffic."
+
+Highway Signal System
+At the accident crossing, once the microprocessor activates the crossing warning devices, the
+highway signal system is simultaneously sent a signal via a "highway interconnect circuit."
+Testimony from IDOT's contractors indicated that the preemption sequence could take as long as
+21 seconds to reach a green indication for Algonquin Road under certain circumstances.
+
+History of Algonquin Road
+Before 1989, US 14 was a two-lane, two-way roadway. In 1989, IDOT widened US 14 using
+about 35 feet of railroad property, thereby shortening the queuing area between the tracks and
+US 14 from about 80 feet to about 45 feet. During the road-widening planning stages, the
+railroad expressed safety concerns to IDOT and local communities about US 14 being less than
+50 feet from its railroad tracks. However, IDOT completed the road-widening as planned.
+
+Algonquin Road Grade Crossing Accident History
+Safety Board investigators gathered accident information indicating that during February 1990
+through September 1995, 20 accidents/incidents occurred at this crossing, resulting in no
+fatalities or injuries. Nineteen accidents/incidents involved vehicles striking or being struck by
+railroad gates; eleven involved commercial vehicles. In the month before the accident, on
+September 18, 1995, a pickup truck driver drove northbound across the tracks after the crossing
+warning devices had been activated; an eastbound train then struck the rear bumper of the pickup
+truck.
+
+Warning Time Tests
+On October 25-26, 1995, Safety Board investigators timed approximately 15 trains to determine
+the amount of time that passed between when the crossing warning devices were activated and
+when the train arrived at the crossing. The shortest warning time was about 20 seconds and the
+longest warning time was 155 seconds. In November 1995, IDOT independently conducted
+postaccident testing and found that in 34 out of 66 tests, the traffic lights provided 10 seconds or
+less for traffic on Algonquin Road to clear the railroad tracks.
+
+Toxicological Tests
+The ISP toxicological analysis indicates that the school busdriver's blood and urine, obtained 4
+hours after the accident, were negative for alcohol. Toxicological tests of the engineer's blood
+and urine samples were negative for alcohol and controlled substances.
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of the collision
+was that the busdriver had positioned the school bus so it encroached upon the railroad tracks
+because of the failure of the Illinois Department of Transportation to recognize the short queuing
+area and insufficient green signal time, and the failure of the Transportation Joint Agreement
+School District 47/155 to identify route hazards and provide alternative driver instructions.
+Contributing to the accident was the failure of IDOT, its contractors, the Illinois Commerce
+Commission, and the railroads to have a communication system that ensures understanding of
+the integration of the railroad and highway signal systems.
+
+RECOMMENDATIONS
+As a result of its investigation of this accident, the Safety Board made recommendations to the
+Secretary of Transportation, the Federal Highway Administration, the Federal Railroad
+Administration, the National Highway Traffic Safety Administration, the State of Illinois, the
+Illinois Department of Transportation, the Transportation Joint Agreement School District
+47/155, the National Association of State Directors of Pupil Transportation Services, the
+American Association of State Highway and Transportation Officials, the National Association
+of County Engineers, the American Public Works Association, the Institute of Transportation
+Engineers, the Association of American Railroads, the American Short Line Railroad
+Association, the American Public Transit Association, and Operation Lifesaver, Inc.

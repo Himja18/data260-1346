@@ -1,0 +1,91 @@
+# questions.yaml — HW3 Part 2, Domain 2 (Municipal Transit Incidents)
+# SID4 = 1346 | Committed BEFORE any retrieval pipeline was run.
+#
+# question_type values:
+#   single_source -> answer depends on exactly one document in the corpus
+#   multi_source  -> answer requires synthesizing facts from 2+ documents
+#   adversarial   -> designed so a chunker could retrieve a similar-sounding
+#                    but WRONG passage with high confidence
+#
+# expected_answer is the ground-truth answer used to grade each pipeline's
+# retrieved context (not a literal string match requirement -- used to check
+# whether the correct supporting facts were present in the retrieved chunks).
+
+questions:
+
+  - id: q1
+    question: >
+      By how much, and how shortly before the accident, did Union Pacific
+      change the warning-time thumbwheel setting at the Fox River Grove
+      grade crossing?
+    question_type: single_source
+    source_files:
+      - ntsb_har9602_fox_river_grove_raw_excerpt.txt
+    expected_answer: >
+      The warning-time thumbwheel setting was reduced from 30 seconds to
+      25 seconds, a change made on October 11, 1995 -- about two weeks
+      before the October 25, 1995 accident.
+
+  - id: q2
+    question: >
+      After the fatal fall at Spring Garden Station, how much did SEPTA
+      commit to its SCOPE program, and how many outreach workers did it add?
+    question_type: single_source
+    source_files:
+      - ntsb_rir2203_septa_spring_garden.txt
+    expected_answer: >
+      SEPTA announced it would spend $3.6 million on the SCOPE (Safety,
+      Cleaning, Ownership, Partnership, and Engagement) program, increasing
+      outreach workers from 7 to 57.
+
+  - id: q3
+    question: >
+      How has the property-damage dollar threshold for a reportable non-rail
+      transit collision changed between the FTA's 1997 SAMIS reporting
+      guidance and its 2026 Safety & Security Policy Manual?
+    question_type: multi_source
+    source_files:
+      - fta_samis_1997_annual_report.txt
+      - fta_ntd_safety_security_policy_manual_2026.txt
+      - fta_ntd_glossary_and_definitions_supplement.txt
+    expected_answer: >
+      The threshold rose from a flat $1,000 in the 1997 SAMIS reporting
+      glossary to $25,000 in the 2026 FTA Safety & Security Policy Manual
+      for non-rail modes; rail modes instead use a "substantial damage"
+      operational-disruption test rather than a dollar figure.
+
+  - id: q4
+    question: >
+      In the WMATA Metrorail smoke and arcing incident that occurred at
+      L'Enfant Plaza station, how many passengers were on the train and how
+      many people were treated or transported for smoke exposure?
+    question_type: adversarial
+    source_files:
+      - ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt
+    expected_answer: >
+      About 400 passengers were on the six-car train; DC Fire and EMS
+      reported 86 people treated and transported from the scene, plus
+      9 more who self-transported to medical facilities (95 total), and
+      there was 1 fatality (Carol Glover). NOTE: this is an adversarial
+      question -- Fort Totten (9 fatalities, 2009) and Shady Grove
+      (1 fatality, 1996) are separate WMATA incidents in this corpus that
+      share dense Metrorail/Operations-Control-Center vocabulary with this
+      one, so a chunker may retrieve the wrong incident's passenger or
+      casualty figures with high similarity score.
+
+  - id: q5
+    question: >
+      What was the specific mechanical cause of the failure that allowed the
+      Miami International Airport automated people mover train to collide
+      with the terminal wall in 2008, and what safety system should have
+      prevented it but did not?
+    question_type: single_source
+    source_files:
+      - ntsb_rar1101_miami_apm_verified.txt
+    expected_answer: >
+      A broken crystal inside the program stop module's oscillator circuit
+      caused the train to lose the ability to determine its position and
+      decelerate. The overspeed/overshoot relay -- the vital backup system
+      designed to catch exactly this kind of failure -- had been disabled a
+      week earlier by a maintenance "jumper wire" installed by a JCI
+      technician, so it never triggered emergency braking.

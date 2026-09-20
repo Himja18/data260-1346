@@ -1,0 +1,110 @@
+RAW SOURCE EXCERPT (verbatim, public domain U.S. government work)
+NTSB/RAR-10/02 - Collision of Two Washington Metropolitan Area Transit Authority
+Metrorail Trains Near Fort Totten Station, Washington, D.C., June 22, 2009
+Source: https://www.ntsb.gov/investigations/accidentreports/reports/rar1002.pdf
+Accessed: 2026-09-19
+This file supplements ntsb_rar1002_fort_totten.txt with additional verbatim detail from the
+report's factual sections on personnel, ATC system design, and postaccident testing.
+
+PERSONNEL INFORMATION -- TRAIN 112 OPERATOR (verbatim detail)
+WMATA records showed that the operator of the striking train was hired initially as a bus
+operator on January 22, 2007. On December 8, 2008, she was reclassified as a train operator, the
+position she occupied at the time of the accident. She began her rail training on December 8,
+2008, and successfully completed the training program on February 11, 2009. WMATA files
+disclosed no disciplinary action as a train operator prior to the accident.
+
+Examination of the operator's cell phone records revealed that between 12:37:37 a.m. and
+4:14:58 p.m. on the day of the accident, 11 voice calls were made from her cell phone, and 9
+were received. The last activity was an 80-second outgoing call made at 4:14:58 p.m., about 18
+minutes before departure from the Glenmont station and 45 minutes before the collision. The
+records showed no cell phone activity during the time the operator was responsible for operating
+the train on the day of the accident.
+
+PERSONNEL INFORMATION -- TRAIN 214 OPERATOR (verbatim detail)
+WMATA records indicated that the operator of the struck train was hired initially as a bus driver
+on February 17, 2000. On October 26, 2001, he was reclassified as a train operator. Efficiency
+test records showed that the operator of train 214 had received three reprimands and two
+suspensions since 2003: two reprimands in February 2003 (a 6-minute delay and failing to report
+a station overrun), a third reprimand on May 22, 2009 for failing to take his key before securing a
+car, a 2004 suspension for passing a red signal on the main track, and a 2006 suspension for
+making an improper coupling that caused equipment damage. This operator was also removed
+from service on three occasions in August 2008 for manually stopping his 6-car train at the 8-car
+marker at passenger stations rather than relying on the automated system.
+
+On the day of the accident, WMATA required all revenue trains to be operated in automatic mode
+during the morning and evening rush periods per Metrorail Safety Rules and Procedures
+Handbook (MSRPH) Rule 3.20. Contrary to instructions to return to automatic mode, the operator
+of train 214 continued to operate his train manually, citing MSRPH Rule 3.1: "Passenger safety
+is the responsibility of every WMATA employee; however, the Train Operators have the ultimate
+and final responsibility for the safety of the passengers on their particular trains."
+
+MEDICAL AND TOXICOLOGICAL INFORMATION (verbatim detail)
+Postaccident toxicological testing was conducted between 8:17 p.m. and 9:10 p.m. on the day of
+the accident for three OCC employees on duty at the time (an assistant superintendent, an OCC
+supervisor, and a Red Line controller), testing for ethyl alcohol and illegal drugs (marijuana
+metabolites, cocaine metabolites, opiates, amphetamines, phencyclidine). All results were
+negative. Specimens from the operator of train 214 were sent to the Civil Aeromedical Institute
+(CAMI) for independent analysis, testing for ethanol, amphetamines, opiates, marijuana, cocaine,
+phencyclidine, benzodiazepines, barbiturates, antidepressants, antihistamines, meprobamate,
+methaqualone, and nicotine -- all negative. The NTSB, using its own authority (since the FTA has
+no mechanism for obtaining specimens from an employee killed in an accident), obtained
+specimens from the autopsy of the operator of train 112; results were negative for alcohol and
+other drugs, though ibuprofen was detected in the blood specimen.
+
+METEOROLOGICAL INFORMATION
+The accident occurred during daylight. The weather was reported as dry with clear skies and
+10-mile visibility. The wind was at 13 mph, and the temperature was 84 degrees F.
+
+AUTOMATIC TRAIN CONTROL SYSTEM -- DETAILED DESIGN
+The Metrorail ATC system consists of three subsystems: Automatic Train Protection (ATP),
+which is a wayside system providing collision and overspeed protection through automatic block
+signaling and transmits speed commands based on instantaneous track occupancy; Automatic
+Train Supervision (ATS), primarily a wayside system with OCC inputs controlling train routing
+and scheduling; and Automatic Train Operation (ATO), primarily a wayside system managing
+train startup, acceleration, running speed, and smooth station stops.
+
+Speed commands are displayed on train operators' consoles via three readouts: ATP speed
+("limiting" speed, the maximum the ATP subsystem allows), ATS speed ("regulated" speed,
+maximum authorized by the rail operations computer), and "train" speed (actual speed). By
+design, if a train does not receive speed commands for any reason, the ATP and ATS speeds
+default to 0 mph as a fail-safe measure.
+
+Three train operating modes exist: Mode 1 (automatic) -- normal functions controlled by ATC,
+operator monitors; the striking train (112) was in this mode. Mode 2, Level 1 (manual with speed
+protection) -- operator controls acceleration/braking with ATP overspeed protection; the struck
+train (214) was in this mode. Mode 3 (manual with ATP cutout) -- no overspeed protection, used
+only when malfunctioning equipment makes Modes 1 or 2 impossible.
+
+TRACK CIRCUIT DETECTION MECHANISM (verbatim technical detail)
+At each end of each track circuit, an impedance bond is mounted between the rails; one end acts
+as transmitter, the other as receiver. A track circuit transmitter module generates a code-rate
+modulated audio frequency signal supplied to the transmitter impedance bond, which injects it
+into the rails. If no train occupies the block, the signal travels through the rails to the receiver
+impedance bond, which sends it back to a track circuit receiver module. If the signal meets
+amplitude and modulation requirements, the module energizes a track relay coil, causing the
+relay armature to "pick up" (rise), indicating the block is unoccupied. When a train enters the
+track circuit, its wheelsets shunt the signal away from the receiver bond; when the returned signal
+drops below a preset level, the module deenergizes the track relay, signifying occupancy. A loss
+of train detection occurs when the relay does not deenergize while a train is occupying the track
+circuit -- exactly what happened at track circuit B2-304.
+
+POSTACCIDENT INSPECTION AND TESTING OF ATP COMPONENTS
+Control of 14 of the 27 track circuits along track B2 between Takoma and Fort Totten is provided
+by track circuit modules mounted on equipment racks in the Fort Totten train control room. The
+ATP transmitter/receiver modules installed at Fort Totten at the time of the accident were
+manufactured by GRS in the early 1970s. Investigators tested the five track circuits preceding
+track circuit B2-304 using a 0.06-ohm shunt to simulate a train wheelset at three locations
+(transmitter end, middle, receiver end) of each; all track relays deenergized correctly. Track
+circuit B2-304 itself detected a shunt at the transmitter end but failed to detect a shunt placed in
+the middle of the circuit, and detection at the receiver end was intermittent -- the track relay
+momentarily energized and picked up, then deenergized and dropped out.
+
+DATA MANAGEMENT AND ALARM RATES (verbatim statistic)
+According to OCC records, "track-circuit-failed-occupied" alarms (a track circuit reporting
+occupied when actually vacant) occur at a rate of about 5,000 per week systemwide, concentrated
+in about 100 track circuits (of about 3,000 systemwide). "Track-circuit-failed-vacant" (NRB)
+alarms occur at about 3,000 per week. The AIM system creates and then deletes more than 1,000
+"ghost trains" each week as part of its nuisance-alarm suppression logic. Because of this high
+background rate of routine, non-hazardous track circuit noise, WMATA had classified these
+alarm types as "minor" -- a classification the investigation found contributed to the loss-of-
+detection anomaly at B2-304 not being caught before the accident.

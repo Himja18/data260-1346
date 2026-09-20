@@ -1,0 +1,75 @@
+National Transit Database (NTD) - Supplementary Glossary and Cross-Reference Notes
+Compiled from FTA NTD reporting manuals (Safety & Security Policy Manual 2026,
+National Transit Summaries & Trends 2021) and SAMIS Annual Report glossary sections.
+Source: https://www.transit.dot.gov (multiple FTA NTD publications, see other corpus files
+for individual document URLs and access dates).
+Accessed: 2026-09-19
+This file consolidates cross-cutting terminology used across the FTA/NTD documents in this
+corpus, to aid consistent interpretation of Domain 2 (Municipal Transit Incidents) source material.
+
+REPORTING TIER DEFINITIONS (NTD)
+Full Reporters: Transit agencies that submit complete Safety and Security (S&S) data on all
+required forms (S&S-20, S&S-30, S&S-40, S&S-50).
+Reduced Reporters: Urban transit agencies with 30 vehicles or fewer in maximum service,
+eligible (since FY 2011) to skip certain reporting categories including passenger miles,
+mode-specific costs, employee counts, maintenance performance, energy consumption, monthly
+ridership, and safety data. Reduced Reporters instead report only annual totals of major events,
+fatalities, and injuries for the year rather than event-by-event detail.
+Rural Reporters: Recipients/beneficiaries of FTA's Section 5311 Rural Areas Formula Program;
+report to the rural module of the NTD, generally through their state (states file rural reports on
+behalf of subrecipient rural agencies, who do not report directly).
+Build Reporters / Plan Reporters: Agencies receiving federal funding for constructing transit
+infrastructure or for planning/programming, but not yet operating revenue service.
+Voluntary Reporters: Public or private transit systems that are not required to report to the NTD
+but choose to do so anyway, and must meet the same obligations as mandatory reporters once they
+opt in.
+
+MODE ABBREVIATIONS USED ACROSS NTD DOCUMENTS (consolidated)
+AG = Automated Guideway; AR = Alaska Railroad; CC = Cable Car; CR = Commuter Rail;
+DR = Demand Response; FB = Ferryboat; HR = Heavy Rail; IP = Inclined Plane; JT = Jitney;
+LR = Light Rail; MB = Motor Bus (further subdivided in older SAMIS-era reports into LMB/
+MMB/SMB by operating agency's fleet size: Large 500+, Medium, Small <100 -- NOT by
+physical vehicle size); MG = Monorail/Automated Guideway; PB = Publico (unique to Puerto
+Rico); RB = Bus Rapid Transit; SR = Streetcar Rail; TB = Trolleybus (data combined with Motor
+Bus in SAMIS-era reporting); TN = Transportation Network Company; TR = Aerial Tramway;
+VP = Vanpool; YR = Hybrid Rail.
+
+KEY METRICS USED ACROSS FTA STATISTICAL REPORTS
+UPT (Unlinked Passenger Trips): a count of boardings; a single journey involving a transfer
+between vehicles counts as multiple UPT.
+PMT (Passenger Miles Traveled): total miles traveled by all passengers combined (UPT
+multiplied by average trip distance, roughly).
+VRM (Vehicle Revenue Miles) / VRH (Vehicle Revenue Hours): miles/hours a vehicle travels
+while in revenue service, available to carry passengers (excludes deadhead/maintenance travel).
+VOMS (Vehicles Operated in Maximum Service): the peak number of vehicles an agency has in
+service at once, typically during rush hour.
+Farebox Recovery Ratio: the percentage of operating costs covered by passenger fare revenue.
+
+CROSS-DOCUMENT TERMINOLOGY RECONCILIATION -- "COLLISION"
+The FTA's current (2026) Safety & Security Policy Manual defines a collision broadly as any
+vehicle/vessel accident involving impact with another vehicle, a person, an animal, an object, a
+rail vehicle, a vessel, or a dock, and requires separate rail vs. non-rail reportability thresholds. The
+older 1997 SAMIS report used a narrower, threshold-based definition: "An incident in which a
+transit vehicle strikes or is struck by another vehicle... Reports are made if the accident results in
+death, injury, or property damage over $1,000" -- a flat $1,000 threshold, contrasted with the 2026
+manual's $25,000 non-rail property-damage threshold (adjusted upward over nearly 30 years,
+partly reflecting inflation and partly a policy decision to focus federal reporting on more serious
+events). Researchers comparing incident counts across eras (e.g., 1997 SAMIS vs. 2021 NTST or
+the 2026 manual) should account for this definitional and threshold drift rather than assuming
+directly comparable "collision" counts.
+
+CROSS-DOCUMENT NOTE -- FATALITY DEFINITION CONSISTENCY
+All FTA/NTD documents in this corpus consistently define a reportable fatality as a death
+confirmed within 30 days of the transit-related event, explicitly excluding deaths from illness,
+natural causes, or drug overdose unrelated to the event itself. This definition has remained stable
+from the 1997 SAMIS glossary through the 2026 Policy Manual, unlike the property-damage
+threshold, which has changed substantially.
+
+CROSS-DOCUMENT NOTE -- OVERSIGHT AGENCY ACRONYMS
+FTA = Federal Transit Administration (federal). SSOA = State Safety Oversight Agency (state-level,
+required under 49 CFR Part 659 for each state with a non-FRA-regulated rail fixed-guideway
+system). TOC = Tri-State Oversight Committee (WMATA's specific SSOA, covering Virginia,
+Maryland, and D.C. jointly -- the only multi-jurisdictional SSOA structured this way in the
+country as of the mid-2010s). FRA = Federal Railroad Administration (regulates commuter rail
+and other "commuter authority" systems under 45 USC 1104, with much stronger inspection and
+enforcement powers than the FTA/SSOA framework governing rapid transit).

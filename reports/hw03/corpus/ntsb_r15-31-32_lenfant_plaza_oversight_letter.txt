@@ -1,0 +1,105 @@
+NTSB Safety Recommendation Letter R-15-31 and R-15-32 (Urgent)
+Date: September 30, 2015. To: The Honorable Anthony Foxx, Secretary of Transportation, US DOT.
+Subject: WMATA Metrorail smoke and arcing accident, L'Enfant Plaza station, January 12, 2015,
+and inadequate safety oversight by the Tri-State Oversight Committee (TOC).
+Source: https://www.ntsb.gov/safety/safety-recs/recletters/R-15-031-032.pdf
+Accessed: 2026-09-19
+
+BACKGROUND -- THE L'ENFANT PLAZA ACCIDENT
+On Monday, January 12, 2015, about 3:15 p.m. eastern standard time, WMATA Metrorail Yellow
+Line train 302 stopped after encountering an accumulation of heavy smoke while traveling
+southbound in a tunnel between the L'Enfant Plaza station and the Potomac River bridge in the
+District of Columbia. About 400 passengers were on board the six-car train. The smoke
+originated from an arcing event near the third rail about 2,000 feet south of the L'Enfant Plaza
+station. Smoke filled the L'Enfant Plaza station, causing an evacuation. District of Columbia Fire
+and Emergency Management Services reported that 86 people were treated and transported from
+the scene; another 9 passengers self-transported to medical facilities. There was one passenger
+fatality (Carol Glover, 61, died of acute respiratory failure).
+
+Passengers spent more than 30 minutes inside the smoke-filled train before firefighters arrived. A
+smoke detector near the location of heavy smoke activated at 3:04 p.m. but was not displayed at
+the Rail Operations Control Center (ROCC) because of a loose wire preventing communication
+with the Advanced Information Management System. WMATA's standard operating procedure
+stated that at the first report of smoke, all trains should be stopped in both directions, but this did
+not happen on the day of the accident.
+
+This accident was the 13th WMATA rail accident investigated by the NTSB since Metrorail began
+operation in 1976, and the NTSB has issued 101 safety recommendations to WMATA since 1970
+(dating back to a special study of the system while it was still under construction).
+
+TRI-STATE OVERSIGHT COMMITTEE (TOC) -- STRUCTURAL PROBLEMS
+The TOC was established in 1997 by a memorandum of understanding (MOU) between the
+Virginia Department of Rail and Public Transportation, the Maryland Department of
+Transportation, and the District of Columbia Department of Transportation, composed of six
+representatives (two from each jurisdiction). As the designated State Safety Oversight Agency
+(SSOA) for WMATA under 49 CFR Part 659, the TOC develops a System Safety Program
+Standard but has NO regulatory or enforcement authority (cannot levy civil penalties) and does
+not conduct independent inspections of equipment, infrastructure, or operations -- it relies entirely
+on WMATA to respond appropriately to safety concerns.
+
+In 2013, under the new MAP-21 law (Moving Ahead for Progress in the 21st Century Act,
+effective October 2, 2012), the FTA notified the TOC that it did NOT meet certification
+requirements, based on nine specific deficiencies including: the TOC is only a committee created
+by MOU with no enabling legislation; it cannot hire its own staff or promulgate/enforce
+regulations; its members are managed by their home jurisdictions (not by the TOC itself) and can
+be reassigned to other duties; its chair position rotates every 2 years between jurisdictions,
+disrupting continuity; and all three jurisdictions have their own separate funding and political
+relationships with WMATA that can create conflicts of interest.
+
+At the time of this letter, the TOC had only THREE full-time employees, each paid by and
+accountable to a different jurisdiction. The TOC had no offices, had never conducted a single
+independent investigation into any WMATA accident or incident (all investigations were
+delegated back to WMATA itself), and had no enforcement authority.
+
+COMPARISON TO FRA OVERSIGHT (PATH AS PRECEDENT)
+The letter contrasts WMATA's oversight regime with the Federal Railroad Administration's (FRA)
+oversight of the Port Authority Trans-Hudson Corporation (PATH), a similarly complex rapid
+transit system (13.8 miles, about half underground, 244,000 daily weekday passengers, 10 speed
+limits from 8-55 mph). PATH is classified as a "commuter authority" under 45 USC Section
+1104(3) and is therefore subject to full FRA regulatory oversight, including civil penalties,
+individual liability penalties, compliance orders, and emergency orders -- tools the TOC and FTA
+do not have. The FRA employs about 400 federal safety inspectors plus about 165 state
+inspectors (Maryland and Virginia both participate in the FRA's State Inspection Program, with 3
+and 6 FRA-qualified inspectors respectively).
+
+THE AUGUST 6, 2015 DERAILMENT -- ILLUSTRATING THE OVERSIGHT GAP
+On August 6, 2015, WMATA Metrorail train 412 (a nonrevenue employee train) derailed
+approaching the Smithsonian interlocking; three of six cars derailed. Investigation found that a
+July 9, 2015 track inspection had identified a "wide gage" defect (58.09 inches, exceeding
+WMATA's 57.75-inch maximum standard) at the exact location of the later derailment. WMATA
+policy required immediately removing that track from service until repairs were completed --
+but the defect remained in the track for 27 days while WMATA continued running revenue
+service over it with no speed reduction or other mitigation, until the derailment occurred. Under
+FRA oversight, a wide-gage defect like this would have mandated removing the track from
+service, with continued operation permitted only at a maximum 15 mph for no more than 30 days
+under a designated person's authorization.
+
+CONCLUSION AND URGENT RECOMMENDATIONS
+The NTSB noted it had initiated 11 investigations of the WMATA rail system over the prior 33
+years, resulting in 18 fatalities total, and concluded that "the TOC cannot perform effective safety
+oversight of the WMATA rail system," and further that neither FTA's MAP-21 regulatory changes
+nor a proposed new "Metro Safety Commission" would likely resolve the identified deficiencies.
+
+The NTSB made two URGENT safety recommendations to the US Department of Transportation:
+(R-15-31): Seek an amendment to 45 USC Section 1104(3) to list WMATA as a "commuter
+authority," thus authorizing the FRA to exercise regulatory oversight of WMATA's rail system.
+(R-15-32): After that amendment, direct the FRA Administrator to develop and implement a plan
+to transition oversight of WMATA's rail system to the FRA within 6 months.
+
+ADDITIONAL DETAIL: RELATIONSHIP TO OTHER FIXED-GUIDEWAY OVERSIGHT GAPS
+The oversight weaknesses documented in this letter regarding WMATA's Tri-State Oversight
+Committee are structurally similar to, but legally distinct from, the oversight gap documented in
+the 2011 Miami International Airport automated people mover accident report elsewhere in this
+corpus. In the WMATA case, a State Safety Oversight Agency (the TOC) existed under 49 CFR
+Part 659 but lacked meaningful enforcement authority. In the Miami APM case, no oversight
+regime applied at all, because the system predated Florida's 1984 oversight statute and received
+no FTA funding, placing it outside 49 CFR Part 659's scope entirely. Both cases were cited by
+the NTSB as evidence that the pre-MAP-21 (and, in WMATA's case, even the initial post-MAP-21)
+oversight framework for U.S. rail fixed-guideway systems left significant safety gaps, whether
+through weak enforcement of existing rules (WMATA) or the complete absence of any
+applicable rule (Miami APM). This letter's proposed remedy -- placing WMATA under Federal
+Railroad Administration (FRA) jurisdiction as a "commuter authority" -- was a WMATA-specific
+fix and would not, by itself, have addressed the broader class of non-FTA-funded fixed-guideway
+systems (airport people movers, amusement park monorails and inclines, etc.) identified as an
+oversight gap in the Miami APM report's Appendix B, which listed at least 22 states with such
+unregulated systems as of 2011.

@@ -1,0 +1,92 @@
+National Transit Database Safety & Security Policy Manual, January 2026 (Part 2 of 2)
+Federal Transit Administration, Office of Budget and Policy
+Source: https://www.transit.dot.gov/sites/fta.dot.gov/files/2026-01/2026%20Safety%20&%20Security%20Manual_V1.pdf
+Accessed: 2026-09-19
+This file supplements fta_ntd_safety_security_policy_manual_2026.txt with additional
+definitions covering personal security events, non-major reporting, and S&S-30 examples.
+
+S&S-30 SECURITY CONFIGURATION -- WORKED EXAMPLES (verbatim from manual)
+Example: A transit agency operates Demand Response (DR) and Bus (MB) service and contracts
+with a security company providing two personnel to patrol the transit center 8 hours a day, 5
+days a week, each working a 4-hour shift (20 hours/week total per person). The MB/Directly
+Operated mode uses the transit center; DR/DO does not. Solution: the agency reports 1.0 FTE
+Primary Security Personnel for MB/DO and 0 for DR/DO.
+
+Example: A transit agency uses four full-time employees plus one-third of an additional
+employee's time to provide security on its buses. Solution: the agency reports 4.3 FTE for
+"Number of Primary Security Personnel."
+
+Example: A transit agency operates both Motor Bus and Light Rail. It has 12 security guards
+patrolling non-revenue facilities (administrative buildings) and contracts an additional five
+guards to respond only to events on light rail vehicles (17 full-time guards total). It also uses
+Non-Contracted Local Police for the MB mode. There are 400 MB and 100 LR employees
+working in the administrative buildings. Solution for MB: 400/500 = 0.8; 0.8 x 12 = 9.6 FTE
+Primary Security Personnel ("Transit agency security force"), 0 Secondary Personnel (secondary
+configuration is "Local police non-contracted"). Solution for LR: 5 FTE Primary ("Contracted
+security force"); 100/500 = 0.2; 0.2 x 12 = 2.4 Secondary Personnel ("Transit agency security
+force"), for a Total Number of Security Personnel of 7.4 (2.4 + 5).
+
+Example: A transit agency operates LR and MB service with a full-time dedicated transit police
+force of 30 officers covering both modes, plus a contract with local police for 10 off-duty
+officers working 4-hour shifts during peak periods. This works out to 15 full-time security
+personnel per mode (30/2) plus 2.5 part-time security personnel per mode (10 part-time = 5
+full-time equivalents, divided by 2 modes). Solution: for both LR and MB S&S-30 forms, report
+15 for Primary Security Personnel ("Dedicated transit police force") and 2.5 for Secondary
+Security Personnel ("Off-duty police officers").
+
+PERSONAL SECURITY EVENTS (verbatim category list and definitions)
+Personal Security Events include: Assault (including Assault on a Transit Worker), Attempted
+Suicide, Suicide, Homicide, Motor Vehicle Theft, Robbery, Rape, Larceny/Theft, and Other
+Personal Security Events.
+
+A reportable Personal Security Event is one resulting in an injury requiring transport away from
+the scene for medical attention, a serious injury (rail mode), a fatality, property damage of
+$25,000 or more (non-rail), substantial damage (rail mode), or an evacuation for life-safety
+reasons or to the rail right-of-way (rail mode).
+
+Important clarification: If two events occur at the same time and place (concurrent events), the
+agency reports the event type that occurred first -- with the exception that a collision resulting
+from a security event (assault, homicide, suicide, or attempted suicide by impact with a transit
+vehicle) is always reported as a Collision, not as the underlying security event type.
+
+Major and non-major thresholds occurring in a single incident are reported as TWO separate
+events. Example: a transit bus strikes a private vehicle resulting in a tow-away, and the driver of
+the private vehicle assaults the bus operator, but the operator is not transported for medical
+attention. The agency reports the collision on the S&S-40 (it met the tow-away threshold) AND
+separately reports the non-major assault on the operator on the S&S-50 (since the assault itself
+did not meet any major threshold).
+
+OTHER SAFETY EVENTS
+Other Safety Events are safety events that are NOT collisions, fires, security events, hazardous
+material spills, acts of God, or derailments. Examples include slips, trips, falls, smoke events (no
+fire suppression), fumes, runaway trains (when not resulting in a collision or derailment), and
+electric shock. These are ONLY reported as a Major Event if they meet the fatality, evacuation,
+or property damage threshold, OR result in two or more injured persons. An Other Safety Event
+resulting in exactly one person immediately transported from the scene for medical attention
+(and meeting no other major threshold) is instead reported on the Non-Major Summary Report
+(S&S-50), not the S&S-40.
+
+S&S-50: NON-MAJOR MONTHLY SUMMARY REPORT (verbatim overview)
+The Non-Major Monthly Summary Report (S&S-50) captures safety events that meet the NTD
+injury threshold (one person transported for medical attention, but not meeting any major
+threshold) in addition to non-major fires and non-major assaults on a transit worker. Notably,
+assaults on a transit worker do NOT require an injury to be reportable on the S&S-50 -- an
+assault with zero injury (e.g., spitting, verbal threat accompanied by physical contact) is still
+reportable there. Transit agencies must submit an S&S-50 for each mode and type of service
+every month, even if no event occurred that month (a "zero report").
+
+Multi-Agency Facilities: When multiple transit agencies share a facility (e.g., a joint bus/rail
+station), each agency reports events involving its own vehicles/personnel separately; the facility
+itself is not double-counted as belonging to only one agency for reporting purposes.
+
+NON-MAJOR ASSAULTS ON TRANSIT WORKERS
+This is a distinct sub-category tracked on the S&S-50 specifically because assaults on transit
+workers (bus operators, train operators, station agents, etc.) are considered significant even at low
+severity, given their impact on workforce safety and morale, independent of whether the incident
+also caused a physical injury requiring medical transport.
+
+NUMBER OF OTHER SAFETY INCIDENTS / NUMBER OF NON-MAJOR FIRES
+The S&S-50 also captures a simple count of "Other Safety Incidents" (single-injury Other Safety
+Events not meeting a major threshold) and "Non-Major Fires" (suppressed fires not meeting any
+major threshold) for the reporting month, without the detailed event-by-event breakdown required
+on the S&S-40.

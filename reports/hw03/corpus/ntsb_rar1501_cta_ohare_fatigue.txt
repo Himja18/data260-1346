@@ -1,0 +1,123 @@
+NTSB/RAR-15-01
+Chicago Transit Authority Train Collides with Bumping Post and Escalator at O'Hare Station
+Chicago, Illinois, March 24, 2014. Adopted: April 28, 2015.
+Source: https://www.ntsb.gov/investigations/accidentreports/reports/rar1501.pdf
+Accessed: 2026-09-19 (verified live fetch)
+
+ABSTRACT
+About 2:49 a.m. on March 24, 2014, Chicago Transit Authority (CTA) train No. 141 collided
+with the bumping post near the end of the center pocket track at O'Hare Station. The lead car
+rode over the bumping post and went up an escalator at the end of the track that provided public
+access to O'Hare International Airport; no one was using the escalator at the time. About 50
+people were on the train. Thirty-three injured passengers and the injured train operator were
+taken to the hospital. Estimated damage was $11,196,796.
+
+ACCIDENT NARRATIVE
+The train operator went on duty at 8:40 p.m. on March 23, 2014, for her fourth of five scheduled
+round trips between O'Hare and Logan Square stations. She told investigators she was not sleepy
+at the start of her shift, but at Harlem Station (about 10 minutes from O'Hare) she turned off the
+cab heater because she felt warm and drowsy. As the train entered O'Hare Station on the center
+pocket track at about 25 mph, she fell asleep, telling investigators: "I was tired. I didn't get any
+sleep the day before... I nodded off into the terminal at O'Hare." The train passed a red wayside
+signal without braking; a fixed track trip 29 feet 2 inches from the bumping post mechanically
+triggered full dynamic and friction braking, which woke the operator, but there was insufficient
+distance remaining -- the train struck the bumping post and end platform at about 23 mph and rode
+up the escalator.
+
+STATION DESIGN DEFICIENCY
+The center pocket track's bumping post was installed with only about 15.6 feet of clearance to
+the end of track (versus about 60 feet for the two adjacent tracks), with no room for the "energy
+friction shoes" installed on the other tracks to help slow a striking train. Original 1980 design
+specifications called for the pocket track to be capable of stopping an eight-car train at 15 mph,
+but the track's cab speed was actually set at 25 mph -- inconsistent with the design criteria and
+with the 15 mph speed used on the other two tracks. Following the accident, CTA reduced the
+cab speed to 0 mph in the pocket track and identified similar terminal-track configurations at
+Midway, Linden, and Cottage Grove stations for correction.
+
+OPERATOR FATIGUE ANALYSIS
+The 25-year-old operator was on the "extra board" (called in as needed) and worked her 12th
+consecutive calendar day, including six night-shift starts (7:30-9:00 p.m.) in the week before the
+accident. Her 72-hour sleep/wake history showed she likely slept no more than about 10 hours in
+the 63 hours preceding the accident. She had received a written warning on February 1, 2014,
+for previously dozing off and missing a station stop. The accident occurred at 2:49 a.m., within
+the "circadian low" window (roughly 3-5 a.m.) when human alertness is naturally lowest.
+Toxicology was negative for alcohol and drugs; her personal electronic device showed no use
+during the accident trip. CTA discharged her following the accident.
+
+CTA SCHEDULING POLICY AT THE TIME
+CTA imposed no limit on the number of consecutive days or double shifts an employee could
+work; the union contract (Amalgamated Transit Union Local 308) only capped any single
+assignment at 13 hours. CTA administrative managers were not required to take fatigue
+awareness training. Only 24 percent of transit agencies nationally, per a 2006 FTA survey,
+addressed fatigue management in their System Safety Program Plans. Following the accident,
+CTA: capped actual train-operation duty at 12 hours within a 14-hour window; increased minimum
+rest between shifts from 8 to 10 hours; required at least 1 day off in any 7-day period; and limited
+new operators (under 1 year experience) to 32 hours of actual train-operating duty per week.
+
+SIGNAL SYSTEM AND TRANSMISSION-BASED TRAIN CONTROL (TBTC)
+The report concludes a fully implemented Transmission-Based Train Control (TBTC) system
+-- the transit-industry equivalent of freight rail's Positive Train Control (PTC) -- would have
+prevented the accident by enforcing braking before the train could pass the red signal, regardless
+of operator action. The NTSB noted that Safety Recommendation R-09-08 (issued in 2009 after a
+similar 2008 MBTA Green Line rear-end collision in Newton, MA) asking FTA to facilitate PTC
+implementation on transit systems had produced no substantive action in the five years since,
+and was reclassified "Closed-Unacceptable Action/Superseded" in this report, replaced by new
+Recommendation R-15-22 requiring TBTC systems that prevent train collisions.
+
+EVENT RECORDER HISTORY
+The 2600-series cars involved (rebuilt 1999-2002, originally manufactured 1981-1987) were not
+equipped with true event recorders, only a "fault logger" that was destroyed in the crash, so no
+event data could be recovered. The NTSB traced a 19-year history of unsuccessful attempts to
+require event recorders on transit rail vehicles: a 1996 recommendation (R-96-46) was closed as
+"Acceptable Action" after FTA issued guidance but did not mandate installation; a 2002
+recommendation (R-02-19) following two 2001 CTA rear-end collisions was closed
+"Unacceptable Action" in 2008 because FTA said it lacked legislative authority to regulate
+vehicle equipment. Only after the 2012 Moving Ahead for Progress in the 21st Century Act
+(MAP-21) granted FTA new equipment-standard authority did this report renew the
+recommendation (R-15-23), this time citing FTA's now-clear legal authority to act.
+
+OVERSIGHT CONTEXT (FTA/MAP-21)
+This report traces the same FTA statutory-authority gap discussed in the 2015 L'Enfant Plaza
+oversight letter and Fort Totten report elsewhere in this corpus: it cites the NTSB's 2009 Fort
+Totten investigation and the FTA's own 2010 acknowledgment that "rail transit operates in a
+significantly less regulated environment with regard to safety" compared to airlines or Amtrak,
+despite carrying more daily passengers. MAP-21 (effective October 1, 2012) finally gave FTA
+authority under 49 U.S.C. Section 5329 to establish a National Public Transportation Safety Plan
+and adopt a Safety Management System (SMS) approach nationally.
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of the accident
+was the failure of the train operator to stop the train at the appropriate signal due to falling asleep
+as a result of fatigue, resulting from the challenges of working shiftwork, circadian factors, and
+acute sleep loss from her ineffective off-duty time management. Chicago Transit Authority
+failed to effectively manage the operator's work schedule to mitigate fatigue risk. Contributing
+to the severity of the accident was CTA's failure to identify the insufficient stopping distance and
+inadequate speed restriction at the center pocket track at O'Hare Station.
+
+ADDITIONAL VERIFIED DETAIL: SAFETY CERTIFICATION AND CONFIGURATION MANAGEMENT
+The O'Hare Station itself was designed and built in the 1980s by the City of Chicago, and no
+documentation existed showing a safety certification of the original station design -- something
+that would be required today under 49 CFR 659 for a project of this size. At the time of the 2014
+accident, CTA's own internal policy only required its Configuration Management (safety-review)
+process to be triggered for capital projects costing $1 million or more, and full Safety
+Certification only for projects costing $100 million or more. Following the accident, CTA's chief
+engineer for infrastructure told investigators the agency had hired a consultant specifically to
+restructure its contract requirements so that safety certification review would apply even to
+smaller projects, and that all future designs -- regardless of size -- would be routed through CTA's
+Safety Department for review, including input from the Operations Department. This gap
+(safety-critical design changes below a high dollar threshold escaping formal safety review)
+mirrors, in a different agency and mode, the pattern the NTSB found in the WMATA Smithsonian-
+area derailment discussed in this corpus's WMATA history file, where a known "wide gage"
+track defect was left in service without triggering any of WMATA's own safety escalation
+procedures.
+
+ADDITIONAL VERIFIED DETAIL: TRACK STOP TERMINOLOGY
+CTA's fixed-block signal system, as this report describes it, uses "track trips" -- physical
+mechanisms in the raised or "tripping" position at a red signal that mechanically engage a lever
+on the underside of a passing train to trigger emergency braking if the train passes a stop signal
+without authorization. This is functionally similar to, but a different specific mechanism from,
+the electronic "program stop" and "overspeed/overshoot flag" system used by the driverless
+Miami International Airport APM system described elsewhere in this corpus -- illustrating that
+different rail transit technologies (conventional heavy rail with human operators, versus a fully
+automated guideway system) use entirely different physical and electronic means to achieve the
+same basic safety goal of preventing a train from overrunning its intended stopping point.

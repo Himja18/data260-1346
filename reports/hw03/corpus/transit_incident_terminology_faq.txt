@@ -1,0 +1,87 @@
+Municipal Transit Incidents - Domain Terminology FAQ
+A reference document synthesizing recurring questions about terminology differences across
+the source documents in this corpus (Domain 2: Municipal Transit Incidents).
+Source: Synthesized from cross-referencing all primary source documents in this corpus (see
+individual files for original URLs and access dates).
+Accessed: 2026-09-19
+
+Q: What is the difference between a "collision," a "derailment," and a "personal casualty" in
+NTD reporting terminology?
+A: Per the FTA's Safety & Security Policy Manual (2026) and the older SAMIS glossary (1997),
+a collision involves impact between a transit vehicle and something else (another vehicle, a
+person, an object, an animal, a rail vehicle, a vessel, or a dock). A derailment is explicitly a
+non-collision event -- a train or rail vehicle unintentionally leaves its rails (this also covers a bus
+"going off road" in the older SAMIS bus-mode terminology, and rollovers). A personal casualty
+is a distinct category for people hurt on transit property or vehicles NOT as the result of a
+collision, derailment, or fire -- for example, someone falling on an escalator, tripping while
+boarding, or being injured in a station parking lot.
+
+Q: Why do different reports in this corpus give different numbers for "how many WMATA
+accidents the NTSB has investigated"?
+A: Because the count depends on when the statement was made and what is being counted. The
+1996 Shady Grove report references prior WMATA investigations without a specific running
+total. The 2015 L'Enfant Plaza oversight letter states 11 NTSB investigations of the WMATA rail
+system specifically over the prior 33 years (i.e., since roughly 1982), with 18 total fatalities
+across those investigations -- a count that does NOT include earlier special studies (like the 1970
+pre-construction study) or bus-mode incidents, since those aren't "rail system" investigations in
+the narrow sense used in that letter.
+
+Q: Is "Municipal Transit Incidents" limited to trains, or does it include buses?
+A: Based on the documents in this corpus, the domain spans both. The FTA's NTD reporting
+system and its SAMIS/NTST statistical publications track Motor Bus (MB) alongside all rail
+modes as co-equal categories under the same Safety & Security reporting framework. Several
+individual incident reports in this corpus involve buses specifically rather than rail (the NYC
+MTA transit bus pedestrian fatality, HAB-18/10; the two school bus/grade-crossing collision
+reports, Fox River Grove and Conasauga, though those involve school buses rather than public
+transit buses specifically). The FTA-sponsored "Transit Bus Accident Investigations" background
+research document treats bus-mode safety management as a full peer topic to rail-mode safety
+management, using the same Safety Management System (SMS) framework required under 49
+CFR Part 673 for all modes.
+
+Q: What counts as a "reportable" event versus something transit agencies track internally but
+don't have to report to the federal government?
+A: This threshold has shifted over time and varies by mode, as detailed in fta_ntd_safety_
+security_policy_manual_2026.txt and the cross-document reconciliation note in
+fta_ntd_glossary_and_definitions_supplement.txt. As of the 2026 manual, non-rail modes report
+property damage of $25,000 or more; rail modes instead use a "substantial damage" test tied to
+operational disruption rather than a dollar figure. The 1997 SAMIS glossary used a flat $1,000
+property-damage threshold for ALL modes -- meaning a comparison of "how many incidents
+happened in 1997 vs. 2026" cannot be made by simply comparing raw incident counts, because
+the definition of what qualifies as a reportable incident has moved substantially over that period.
+
+Q: What does "R-10-3" refer to, and why does it show up in multiple unrelated reports?
+A: R-10-3 is an NTSB safety recommendation number issued to the U.S. Department of
+Transportation following the 2009 WMATA Fort Totten collision, urging DOT to continue
+seeking authority to provide safety oversight of rail fixed guideway transportation systems,
+including the ability to promulgate and enforce safety regulations. Because this recommendation
+addressed a general statutory-authority gap rather than a WMATA-specific defect, the NTSB
+reiterated the same recommendation number in its 2011 Miami International Airport automated
+people mover report, even though that accident involved a completely different transit agency,
+state, and even transit mode (an automated guideway system rather than a conventional
+heavy-rail system). Readers of this corpus should not assume a recommendation number always
+maps to a single accident report; some recommendation numbers, like R-10-3, are deliberately
+carried forward and cited across multiple, otherwise unrelated investigations until the underlying
+systemic issue is considered resolved.
+
+Q: How does "Automated Guideway" (AG) mode in NTD reporting relate to airport people
+movers like the Miami APM system in this corpus?
+A: The FTA's National Transit Database mode taxonomy includes Automated Guideway (AG) as
+a distinct mode covering driverless, fixed-guideway systems -- this is the mode category that
+would technically apply to a system like the Miami International Airport people mover if it were
+an FTA reporter. However, as the Miami APM accident report documents, that specific system
+received no FTA funding and therefore was never an NTD reporter at all, illustrating that not
+every fixed-guideway transit-like system in the United States falls within the NTD's data
+collection scope, even though it may be functionally identical to systems that do.
+
+Q: Why do some reports in this corpus describe circadian/fatigue factors (CTA O'Hare) while
+others describe purely mechanical or procedural failures (Miami APM, Fort Totten)?
+A: These represent different points along the "organizational accident" causal chain described in
+the FTA bus accident investigations background research document in this corpus: some
+accidents in this corpus trace primarily to human-factors failures at the front line (the O'Hare
+operator's fatigue), some to procedural/maintenance failures (the Miami APM jumper wire,
+installed against at least one technician's own better judgment), and some to failures within the
+technical equipment itself compounded by organizational failure to catch it (the Fort Totten track
+circuit's parasitic oscillation, present for over two decades before causing an accident). A
+retrieval system asked broadly "what causes transit accidents in this corpus" should ideally
+surface examples from more than one of these causal categories rather than over-indexing on
+whichever category has the most documents.

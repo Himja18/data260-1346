@@ -1,0 +1,110 @@
+NTSB Railroad Investigation Report RIR-25-19
+New Jersey Transit Light Rail Vehicle Collision
+Location: Florence, New Jersey. Date: October 14, 2024.
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/RIR2519.pdf
+Accessed: 2026-09-19
+
+Accident type: Employee fatality. Train: Train 207, 2 articulated railcars, 1 operator, 41
+passengers. Track: Federal Railroad Administration regulated track; Class 4 main, signalized.
+Fatalities: 1. Injuries: 23 minor injuries. Property Damage: $194,000.
+
+SUMMARY
+On October 14, 2024, about 5:58 a.m., an Alstom employee operating southbound New Jersey
+Transit (NJ Transit) train 207 was fatally injured when the train struck a tree that had fallen
+across the tracks of the River Line at milepost (MP) 24.53 near Florence, New Jersey. Train 207
+was a light rail vehicle consisting of two railcars with 41 passengers on board. During the
+collision, a tree branch penetrated the lead railcar's forward windshield and struck the operator.
+Twenty-three passengers were transported to a local hospital with minor injuries. Alstom
+estimated damages to equipment to be about $194,000. At the time of the accident, visibility
+conditions were dark with the train's headlights providing the only illumination, and the weather
+was 60 degrees F with no precipitation.
+
+A light rail vehicle is a railcar, locomotive, or other piece of rail equipment used in passenger
+service but not built to the standards of equipment regulated by the Federal Railroad
+Administration (FRA). This accident involved a multiagency regulatory environment: NJ Transit
+falls under the Federal Transit Administration's purview but operates some of its trains over
+FRA-regulated track. For these operations, NJ Transit is subject to FRA regulations but has
+obtained waivers for compliance with some FRA requirements, including equipment standards.
+
+ACCIDENT NARRATIVE
+The operator reported for duty at 4:48 a.m. at an NJ Transit maintenance facility in Trenton, New
+Jersey, and started her scheduled trip from Hamilton Avenue Station at 5:47 a.m. About 5:55
+a.m., the train departed Bordertown Station, the last station north of the accident area. According
+to event recorder data, the operator initiated an emergency braking application at 5:58:56 a.m.
+while rounding a right-hand curve north of the point of impact. The train was traveling 65 mph
+(the maximum authorized speed in the area) when braking began. The train came to a stop about
+880 feet past the estimated point of impact.
+
+The NTSB identified abrasive transfer marks on the rails consistent with emergency braking
+starting about 340 feet from the point of impact (based on the head end of the train). During a
+partial reenactment at low speed under predawn lighting conditions, the fallen tree became
+visible to an approaching train operator about 350 feet north of the point of impact. Per FRA
+waivers, the light rail vehicle's headlights were designed to illuminate a person standing 500 feet
+away. Daylight observations found that the point of impact was visible from about 1,400 feet
+away -- a 1,000-foot difference attributed to darkness and the limited reach of headlights at
+night.
+
+Braking tests performed by the vehicle's manufacturer in 2003 indicated this type of light rail
+vehicle had an emergency braking distance of 499 feet from 60 mph under ideal conditions; the
+manufacturer did not test braking performance above 60 mph.
+
+The train operator was hired by Bombardier Transportation (acquired by Alstom in 2021) in
+August 2004 and became an engineer in November 2004. Her engineer certification under 49
+CFR Part 240 was current (last certification date October 19, 2022). In 2024, she passed all four
+unannounced operational tests related to unexpected stops, including two "banner tests"
+(simulated obstructions) and two "stop tests." Postmortem drug and alcohol testing did not find
+impairing substances.
+
+THE TREE
+The tree involved was a chestnut oak with a 3-foot diameter trunk, growing on private property
+about 40 feet east of the tracks and 11 feet past NJ Transit's property line. On-scene observations
+did not find visible decay on the tree's exterior, but an arborist's postaccident examination of the
+stump identified internal decay extending from the trunk into the root system. The arborist's
+report did not include a reason why the tree fell when it did. Weather the night before was calm
+(about 4 mph winds, no precipitation).
+
+The Alstom maintenance-of-way superintendent described vegetation monitoring along the River
+Line as including routine track and signal inspections twice per week, plus walking surveys
+every spring and fall. Hazardous trees were marked with paint and recorded in supervisor logs,
+but there were no fixed criteria for identifying hazardous trees. The last track inspection of the
+accident area (October 11, 2024) found no defects related to trees. The last seasonal survey
+(spring 2024) resulted in brush removal and tree trimming but no tree removals.
+
+Review of Alstom records for the 18 months before the collision identified four cases of trains
+striking downed trees and six cases of downed trees reported on or near tracks along the River
+Line; two of the four strikes cracked windshields (January 9 and July 17, 2024), but none caused
+injuries before this accident.
+
+CORRECTIVE ACTION
+NJ Transit and Alstom submitted a corrective action plan to the New Jersey Department of
+Transportation (NJDOT, the state safety oversight agency) on November 4, 2024. Alstom
+established a temporary 30-mph speed restriction near the accident area and contracted an
+arborist for three assessment visits (October, November, December), surveying from MP 23.9 to
+MP 27.4. After the assessment, Alstom had 111 trees removed. On February 27, 2025, Alstom
+lifted the speed restriction, and NJDOT officially closed the corrective action plan on May 15,
+2025. NJDOT added "Trees along the right-of-way" as a risk item to its quarterly inspection
+schedule under its FTA-mandated risk-based inspection program (49 CFR Part 674, per the 2021
+Bipartisan Infrastructure Law, 49 U.S.C. 5329).
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of New Jersey
+Transit train 207 striking a fallen tree, resulting in a tree branch piercing the front windshield and
+fatally injuring the train operator, was the predawn low light conditions that prevented the
+operator from seeing the tree in time to stop the train.
+
+ANALYSIS
+The investigation did not find evidence of defects with the train or track, and the operator was
+not impaired. The operator applied the train's brakes less than 2 seconds after seeing the tree
+(340 feet away at 65 mph, about 95 feet per second) -- a correct and timely response. However,
+this distance was already within the train's minimum stopping distance (which would exceed the
+499-foot braking distance measured at 60 mph), so the train retained enough speed at impact for
+a tree branch to penetrate the windshield fatally. Investigators concluded it is unlikely that
+Alstom's regular track inspections and seasonal surveys could have identified this particular tree
+as a hazard, since it showed no visible external decay.
+
+LESSONS LEARNED
+The investigation identified four cases of trains striking downed trees before this accident.
+These collisions were minor but indicated the presence of a risk that, on October 14, 2024, led to
+a fatal collision. This accident underscores the importance of incorporating all measurable
+hazards into system safety programs. Comprehensive safety oversight programs are required
+under federal regulations at 49 CFR Part 674.

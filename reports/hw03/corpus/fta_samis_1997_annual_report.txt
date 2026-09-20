@@ -1,0 +1,107 @@
+Safety Management Information Statistics (SAMIS) 1997 Annual Report
+FTA-MA-26-5002-99-01, DOT-VNTSC-FTA-99-3
+U.S. Department of Transportation, Federal Transit Administration, March 1999
+Source: https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/samis97.pdf
+Accessed: 2026-09-19
+
+ABSTRACT
+The Safety Management Information Statistics (SAMIS) 1997 Annual Report is a compilation
+and analysis of transit accident, casualty, and crime statistics reported under the Federal Transit
+Administration's National Transit Database Reporting System by FTA-funded transit systems in
+the United States during 1997. In its eighth year of publication, SAMIS provides uniformly
+collected comprehensive safety and security data from all recipients or beneficiaries of Urbanized
+Area Formula funds.
+
+REPORTING SCOPE
+Transit safety data are collected in four basic categories: Collisions, Derailments/Buses going off
+road, Personal Casualties, and Fires. All transit agencies subject to NTD reporting must report
+safety data. Transit security data are modeled after the FBI's Uniform Crime Reporting System,
+using standardized offense definitions (Part I crime index offenses and Part II arrests). Transit
+agencies serving urbanized areas (UZAs) with populations of 200,000 or more are required to
+report security data. SAMIS reports property damage when it exceeds $1,000 (a lower threshold
+than many other transportation industries use).
+
+GLOSSARY OF KEY TERMS (SAFETY)
+Vehicle Accident: An incident involving a moving vehicle, including collisions with another
+vehicle, object, or person (except suicides) and derailment/leaving the roadway.
+Collision with Vehicle/Object/People: An incident in which a transit vehicle strikes or is struck
+by another vehicle, an obstacle (e.g., building, utility pole), or a person; reported if it results in
+death, injury, or property damage over $1,000. Collisions with people exclude suicide attempts
+unless specifically indicated.
+Derailment/Left Roadway: A non-collision incident in which a transit vehicle leaves the rails or
+road on which it travels (includes rollovers). All occurrences are reported, with no dollar
+threshold.
+Fatality: A transit-caused death confirmed within 30 days of a transit incident.
+Fire: Uncontrolled combustion evidenced by flame and/or smoke requiring suppression by
+equipment or personnel. No threshold; all fires are reported.
+Grade Crossing: An intersection of highway roads, railroad tracks, or dedicated transit rail
+tracks. Collisions at grade crossings involving transit vehicles apply only to light rail, commuter
+rail, heavy rail, or trolleybus.
+Injury: Any physical damage or harm to a person requiring medical treatment, or reported at the
+time and place of occurrence.
+Personal Casualty on Vehicle / Entering-Exiting / in Stations-Bus Stops: Incidents where a
+person is hurt on a vehicle, boarding/alighting, or using a transit facility -- but NOT as a result of a
+collision, derailment, or fire.
+Suicide: A person intentionally attempting to end his or her own life; a subset of Collision with
+People.
+
+TRANSIT MODE DEFINITIONS
+AG=Automated Guideway; CC=Cable Car; CR=Commuter Rail (urban passenger rail for local
+short-distance travel, excludes heavy/light rail and intercity service); DR=Demand Response;
+FB=Ferryboat; HR=Heavy Rail (electrically powered, usually third-rail, exclusive right-of-way,
+longer trains/station spacing than light rail); IP=Inclined Plane; JT=Jitney; LR=Light Rail
+(Streetcar; predominantly reserved but not always grade-separated right-of-way); MB=Motor Bus
+(subdivided by agency fleet size into LMB [Large, 500+ buses], MMB [Medium], SMB [Small,
+under 100 buses] -- this subdivision reflects operating environment differences and prevents
+motor-bus statistics from dwarfing other modes in comparison charts; Trolleybus (TB) data are
+combined with Motor Bus data); VP=Vanpool (8-18 seat vehicles, prearranged schedules,
+pre-formed rider groups, drivers are commuters with little/no compensation beyond free
+transportation).
+
+1997 HEADLINE FIGURES (Directly Operated Transit, "Transit" = MB+CR+HR+LR+AG+DR+VP)
+Total Incidents: 61,561 (1997), compared to 90,163 in 1990 -- a declining trend over the period.
+Total Fatalities: 275 (1997), compared to 339 in 1990.
+Total Injuries: 56,132 (1997), compared to 54,556 in 1990.
+Total Collisions: 24,777 (1997), down from 57,726 in 1990.
+Total Personal Casualties: 32,367 (1997), up from 25,212 in 1990.
+Total Derailments/Left Roadway: 147 (1997), down from 276 in 1990.
+Total Fires: 4,188 (1997), down from 6,823 in 1990.
+Total Property Damage: $55,478,590 (1997), up from $37,972,669 in 1990 (not inflation-adjusted).
+Purchased Transportation (PT) in 1997 alone: 3,343 incidents, 35 fatalities, 2,279 injuries, 2,352
+collisions, 952 personal casualties, 9 derailments, 22 fires, $4,726,826 property damage.
+
+1997 FATALITIES BY MODE: LMB 55, MMB 40, SMB 14, DR 7, CR 79, HR 77, LR 3, AG 0, VP
+0. Total = 275.
+
+RAIL GRADE CROSSING FATALITIES BY MODE AND YEAR (1995-1997): CR 6/4/6 (approx,
+1995-1997 sequence), HR 3/0/3, LR 3/3/3; totals were 12 grade-crossing fatalities across CR/HR/LR
+combined in 1997 (down from earlier years).
+
+ACCIDENT RATES (1997, per 100,000,000 passenger miles):
+Fatalities: LMB 0.59, MMB 0.64, SMB 0.79, DR 2.57, CR 0.86, HR 0.24, LR 0.29, AG 0, VP 0,
+ALL modes combined 0.54.
+Injuries: LMB 260, MMB 179, SMB 185, DR 456, CR 24, HR 25, LR 85, AG 15, VP 23, ALL 118.
+
+SECURITY DATA HIGHLIGHTS (BUS, Part I offenses distribution)
+Larceny/Theft was the most common Part I offense on buses (55.7% of all Part I offenses),
+followed by Robbery (19.3%), Motor Vehicle Theft (10.0%), Burglary (8.2%), Aggravated Assault
+(6.4%), Arson (0.2%), Forcible Rape (0.1%), and Homicide (0.1%). For bus, 63.9% of Part I
+offenses occurred in vehicles, 17.8% in stations, and 18.3% elsewhere.
+
+SECURITY DATA HIGHLIGHTS (RAIL, Part I offenses distribution)
+Larceny/Theft was again dominant (51.2%), followed by Robbery (28.6%), Aggravated Assault
+(14.9%), Motor Vehicle Theft (3.2%), Burglary (1.4%), Forcible Rape (0.5%), Arson (0.2%), and
+Homicide (0.1%). For rail, most Part I offenses (53.2%) occurred "Other" locations (not
+specifically in-vehicle or in-station), 34.0% in stations, and only 12.7% in vehicles -- a notably
+different pattern from bus, where in-vehicle crime dominates.
+
+Victims of Part I offenses on bus: 57.8% Patrons, 33.6% Employees, 6.7% Others, 1.9% Property.
+Victims of Part I offenses on rail: 82.9% Patrons, 4.0% Employees, 4.7% Others, 8.4% Property.
+
+PART II OFFENSES (ARRESTS) -- BUS: Fare Evasion was the single largest category at 58.4% of
+all Part II arrests, followed by Disorderly Conduct (21.6%), Vandalism (4.6%), Drunkenness
+(3.7%), Drug Abuse Violations (2.9%), Trespassing (5.7%), and smaller categories.
+PART II OFFENSES (ARRESTS) -- RAIL: Fare Evasion was again the largest category (27.5%),
+followed by Disorderly Conduct (19.8%), Trespassing (7.9%), Vandalism (21.9% - second
+largest), Drug Abuse Violations (7.8%), and Other Assaults (5.5%). Notably, Vandalism was a much
+larger share of rail arrests (21.9%) than bus arrests (4.6%).

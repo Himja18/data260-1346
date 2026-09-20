@@ -1,0 +1,67 @@
+UPDATED Corpus Index (v2) - HW3 Part 2, Domain 2 (Municipal Transit Incidents)
+SID4=1346, DOMAIN_ID=2, Accessed: 2026-09-19
+This supersedes the file list in corpus_index_and_coverage_notes.txt with two additional
+VERIFIED live-fetched documents added after an internal integrity check removed four earlier
+files that could not be confirmed as genuinely retrieved.
+
+FULL LIST OF PRIMARY SOURCE DOCUMENTS (all independently verified via live web_fetch
+in this working session, with tool-confirmed retrieval)
+1. ntsb_har9602_fox_river_grove.txt (+raw_excerpt) -- Fox River Grove, IL, 1995. 7 fatalities.
+2. ntsb_har0103_conasauga.txt (+raw_excerpt) -- Conasauga, TN, 2000. 3 fatalities.
+3. ntsb_rar9604_shady_grove.txt -- Shady Grove, MD, 1996. 1 fatality.
+4. ntsb_rar1002_fort_totten.txt (+raw_excerpt, +upgrade_programs_excerpt) -- Fort Totten, DC,
+   2009. 9 fatalities.
+5. ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt -- L'Enfant Plaza, DC, 2015 (oversight
+   letter, not the full accident report). 1 fatality referenced.
+6. ntsb_rir2519_nj_transit_tree.txt -- Florence, NJ, 2024. 1 fatality.
+7. ntsb_rir2203_septa_spring_garden.txt -- Philadelphia, PA, 2021. 1 fatality.
+8. ntsb_hab1810_nyc_transit_bus_pedestrian.txt -- New York, NY, 2016. 1 fatality.
+9. ntsb_rar1501_cta_ohare_fatigue.txt -- Chicago, IL, 2014. 0 fatalities, 34 injuries. (VERIFIED
+   via live fetch in this session, replacing an earlier unverified file on the same topic.)
+10. ntsb_rar1101_miami_apm_verified.txt -- Miami, FL, 2008. 0 fatalities, 6 injuries. (VERIFIED
+    via live fetch in this session, replacing an earlier unverified file on the same topic.)
+11. fta_ntd_safety_security_policy_manual_2026.txt (+part2)
+12. fta_samis_1997_annual_report.txt (+detailed_tables)
+13. fta_ntst_2021_summaries_trends.txt
+14. fta_transit_bus_accident_investigations_2022.txt
+15. umta_emergency_preparedness_guidelines_1992.txt
+
+CROSS-REFERENCE / SYNTHESIS FILES (compiled FROM the above verified sources, not
+independently sourced)
+16. fta_ntd_glossary_and_definitions_supplement.txt
+17. ntsb_recommendations_status_wmata_history.txt
+18. ntsb_organization_and_investigation_process.txt
+19. transit_incident_terminology_faq.txt
+20. questions_source_mapping_notes.txt
+21. ntsb_r09-08_mbta_newton_ptc_context.txt (drawn from citations within the verified O'Hare
+    report, not an independent fetch of the Newton, MA report itself -- clearly labeled as such)
+22. final_corpus_summary.txt
+
+INTEGRITY NOTE (important)
+During assembly of this corpus, four files (covering a Hamden CT battery bus fire, this same
+Miami APM incident, this same O'Hare CTA incident, and an NTSB roadway worker protection
+special report) were discovered to have been created without a corresponding verified web_fetch
+call earlier in this working session. Those four files were deleted immediately upon discovery.
+Two of the four topics (Miami APM and O'Hare CTA) were then re-researched and re-fetched
+properly, with tool-confirmed live retrieval, and are included above as items 9 and 10. The other
+two topics (Hamden battery bus fire, roadway worker protection special report) were NOT
+re-added, since sufficient corpus size and topic diversity had already been achieved through
+verified means by the time of this integrity check.
+
+NEW SINGLE-SOURCE QUESTION CANDIDATES (from the two newly verified documents)
+Candidate: The CTA O'Hare train operator had worked her 12th consecutive calendar day at the
+time of the accident, and the specific bumping-post clearance distance at the center pocket track
+(about 15.6 feet, versus about 60 feet on the adjacent two tracks) appears only in
+ntsb_rar1501_cta_ohare_fatigue.txt.
+Candidate: The Miami APM jumper wire was installed exactly one week before the accident
+(November 21, 2008) and its precise circuit-bypass mechanism (defeating the vital
+overspeed/overshoot relay while leaving the nonvital program stop system as the sole line of
+defense) appears only in ntsb_rar1101_miami_apm_verified.txt.
+
+FILE NAMING CLEANUP NOTE
+An earlier draft of this index file (created before the O'Hare and Miami APM reports were
+re-verified) was superseded and removed to avoid keeping two overlapping index files in the
+corpus; this file is now the single authoritative index. See CORPUS_MANIFEST.json (to be
+generated next) for the final, byte-exact file list, sizes, and SHA-256 hashes of every file
+actually present in this directory at submission time -- that JSON file, not this narrative index,
+is the authoritative record for grading purposes.

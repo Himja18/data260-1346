@@ -1,0 +1,80 @@
+RAW SOURCE EXCERPT (verbatim, public domain U.S. government work)
+NTSB/HAR-01/03 - Collision of CSXT Freight Train and Murray County School Bus,
+Conasauga, Tennessee, March 28, 2000
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR0103.pdf
+Accessed: 2026-09-19
+This file supplements ntsb_har0103_conasauga.txt with additional verbatim detail on grade
+crossing safety initiatives, in-vehicle warning systems, and the bus video recorder analysis.
+
+BUS VIDEO RECORDER FINDINGS (verbatim detail)
+All Murray County School District buses are equipped with a video monitoring system (a Silent
+Witness brand VCR and color video camera). The camera was mounted at the front and center of
+the bus, pointed down the passenger compartment; the driver and first two rows were not within
+the camera's line of sight. District policy required a separate videocassette for each day of the
+week. Investigators examined the videocassette from the VCR plus 14 videocassette reels and 7
+segments of loose magnetic tape recovered separately at the scene. Using landmarks and sound
+recordings, staff confirmed 12 instances of the bus crossing the railroad tracks on tape, in every
+instance with the accident driver at the wheel. The bus did NOT stop before crossing on nine of
+those occasions, including the day of the accident -- eight of the nine were in the two weeks
+immediately preceding the accident. It stopped only twice, both times when another vehicle was
+present behind it.
+
+REPORTING NEAR MISSES AT GRADE CROSSINGS
+After the accident, another locomotive engineer reported that 11 days earlier (March 17, 2000,
+between 3:00 and 3:30 p.m.), he had seen a school bus cross the Liberty Church Road tracks
+without stopping, passing over the crossing about 500 feet ahead of his train. He did not report
+the incident at the time because he could not read the identifying numbers on the back of the bus.
+CSXT locomotives commonly carry a placard depicting a school bus stopped at a grade crossing
+while a train approaches, instructing crews to report near misses; CSXT operating rule 100-F
+requires crews to report such occurrences, including failures of school bus drivers to stop or
+observe reasonable precautions, to the CSXT Police Communications Center.
+
+1998 SAFETY STUDY ON PASSIVE GRADE CROSSINGS (verbatim findings)
+The Safety Board's 1998 study (NTSB/SS-98/02) investigated 60 accidents at passive grade
+crossings between December 1995 and August 1996 and cited driver error as the primary cause in
+49 of 60 cases. The study concluded that consolidation (separation and closure) of passive
+crossings is the most effective way to eliminate vehicle-train accidents; the next most desirable
+method is equipping crossings with active warning devices; and installation/enforcement of stop
+signs at passive crossings would provide consistent information to motorists. The study made 19
+recommendations, including H-98-28 to the U.S. DOT (full funding within 3 years for stop/stop-
+ahead signs at passive crossings) and H-98-34 to the States (install stop signs within 2 years of
+receiving federal funding, unless a traffic engineering analysis determines this would reduce
+safety, in which case upgrade to active devices or eliminate the crossing).
+
+Of the 11 passive crossings in Polk County and 8 in Murray County examined by investigators,
+only 3 in Murray County were equipped with stop signs; none in Polk County had any. As of the
+report's writing, Recommendation H-98-34 was classified "Open-Acceptable Response" for
+Tennessee and 16 other States, "Open-Unacceptable Response" for 7 States, "Closed-
+Unacceptable Action" for 4 States, and "Closed-Acceptable Action" for only 2 States (Idaho and
+Hawaii) -- Idaho because it already required stop signs at all passive crossings by law, and Hawaii
+because it had only two passive crossings, both already equipped.
+
+DOT HIGHWAY-RAIL CROSSING INVENTORY -- DATA QUALITY ISSUES (verbatim finding)
+Investigators examined the FRA's Highway Rail Crossing Inventory database entries for 10
+crossings in the Liberty Church Road vicinity and found significant discrepancies: the inventory
+listed the track speed as 10 mph less than actual speed in seven instances, and did not list track
+speed at all in one instance. The inventory listed 13 trains per day for five crossings and 16 trains
+per day for four crossings, while CSXT actually reported 30 to 35 trains per day traveling over
+each crossing -- roughly double to triple what the federal inventory showed.
+
+IN-VEHICLE WARNING SYSTEMS -- FIELD TESTS (verbatim detail)
+In 1997, the Minnesota Department of Transportation tested a three-point in-vehicle warning
+system in a school district where 30 equipped buses each crossed two to five grade crossings per
+day. Surveyed drivers: 80 percent thought the system provided valuable warning information; 15
+percent said it affected their driving behavior; one respondent said it helped her avoid a crash. In
+2000, the Illinois Department of Transportation's Intelligent Transportation Systems Program
+Office piloted a similar system near Chicago with 300 test vehicles (school buses, emergency
+vehicles, commercial vehicles) at five active grade crossings. Preliminary results indicated
+drivers liked the additional warnings but would have preferred earlier alerts, before lights and
+gates activated. The in-vehicle receiver device was projected to cost about $100 per vehicle; the
+wayside transmitters cost $20,000-$30,000 each at the time, with costs expected to fall as
+production scaled.
+
+FOUR SAFETY INITIATIVES PROPOSED TO TENNESSEE (verbatim, October 16, 2000 letter)
+Following this accident, the NTSB Chairman wrote to the Governor of Tennessee suggesting four
+initiatives: (1) install warning devices at all passive grade crossings traversed daily by school
+buses; (2) strengthen criteria for installing active warning devices by including the frequency of
+school bus crossings as a factor; (3) strengthen Tennessee's CDL manual and exam to include
+questions on passive grade crossing safety; and (4) install noise-reducing "option kill switches" in
+school buses (already being piloted in Florida and Kentucky) so drivers can turn off radios and
+fans when approaching a crossing.

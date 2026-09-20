@@ -1,0 +1,118 @@
+NTSB/HAR-01/03
+HIGHWAY ACCIDENT REPORT
+Collision of CSXT Freight Train and Murray County School District School Bus at
+Railroad/Highway Grade Crossing, Conasauga, Tennessee, March 28, 2000
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR0103.pdf
+Accessed: 2026-09-19
+
+EXECUTIVE SUMMARY
+On March 28, 2000, about 6:40 a.m. (sunrise was at 6:33 a.m.), a CSX Transportation, Inc.
+(CSXT), freight train traveling 51 mph struck the passenger side of a Murray County, Georgia,
+School District school bus at a railroad/highway grade crossing near Conasauga, Tennessee. The
+accident occurred as the school bus was crossing the tracks at a speed of approximately 15 mph.
+During the accident sequence, the driver and three children were ejected. Two ejected passengers
+received serious injuries and one was fatally injured. The driver, who had been wearing a
+lap/shoulder belt that broke during the crash sequence, received minor injuries. Of the four
+passengers who remained inside the bus, two were fatally injured, one sustained serious injuries,
+and one, who was restrained by a lap belt, received minor injuries. The two train crewmembers
+were not injured.
+
+The National Transportation Safety Board determines that the probable cause of the collision
+was the school bus driver's failure to stop before traversing the railroad/highway grade crossing.
+Contributing to the accident was the Murray County, Georgia, School District's failure to monitor
+busdriver performance and its lack of school bus route planning to identify hazards on school bus
+routes and to eliminate the necessity of crossing railroad tracks. Contributing to the injuries of
+the school bus passengers were incomplete compartmentalization and a lack of energy-absorbing
+material on interior surfaces.
+
+ACCIDENT NARRATIVE
+The school bus was equipped with video recording equipment to monitor passenger behavior.
+Examination of the videotapes found on the bus showed that the school bus did not stop, as
+required, before attempting to cross the railroad tracks on the day of the accident, nor had it
+stopped at this crossing on eight previous occasions in the two weeks preceding the accident.
+Investigators identified 11 crossings on the videotape as the Liberty Church Road crossing: the
+bus stopped only twice (both times when another vehicle was present behind it).
+
+In a postaccident interview, the busdriver stated that she came to a complete stop, looked left
+then right, opened and closed the door, and proceeded -- but the videotape contradicted this
+account. The train crew (engineer and conductor) saw the bus approaching and yelled; the
+engineer held the horn down continuously and placed the train in emergency braking, but the bus
+did not stop. The train struck the bus on the passenger side between the axles.
+
+INJURIES
+Table: Driver 1 minor injury; Train crew 0 injuries (2 total, both uninjured); Bus passengers: 3
+fatal, 3 serious, 1 minor (7 total). Overall total across all persons: 10.
+
+Two fatally injured passengers were seated in the area of impact; a third fatally injured
+passenger, seated in the last row, was ejected. The bus driver's lap/shoulder belt broke during the
+accident, ejecting her; she sustained a fractured nose and lacerations.
+
+TOXICOLOGICAL TESTS
+The busdriver's blood and urine tested negative for alcohol and illicit drugs, but positive for
+pseudoephedrine, ephedrine, and phenylpropanolamine -- common ingredients in over-the-counter
+cold medications and weight-loss products, none of which typically cause impairment. The train
+engineer and conductor volunteered for testing (not required by regulation after a grade-crossing
+collision) and were negative for drugs and alcohol.
+
+SCHOOL BUS DRIVER
+The 34-year-old driver was hired as a full-time substitute busdriver on May 11, 1999, and became
+a full-time driver at the start of the 1999-2000 school year. She held a valid Georgia CDL with a
+passenger endorsement. She attended a required annual 8-hour recertification training session on
+August 12, 1999, covering grade-crossing procedures, and had previously (with a different
+employer) been reprimanded for talking during a similar training session.
+
+SIGHT DISTANCE AND AUDIBILITY
+Safety Board investigators determined that when the bus was stopped 15 feet from the nearest
+rail, the driver could see the train when it was 1,268 feet from the crossing -- well beyond the
+960 feet of sight distance the bus would have needed (per AASHTO guidance) to safely cross
+from a stop given a 60-mph train. Audibility tests found that with the bus's radio on and door
+closed (the conditions at the time of the accident), the train horn was only 5 decibels above
+ambient noise at 1,268 feet -- barely detectable -- and was not audible on the accident videotape's
+audio track at all. With the radio off and door open, the horn was 26 decibels above ambient
+noise, comfortably audible.
+
+ACCIDENT SIMULATION
+Using vehicle dynamics and occupant kinematics simulation (MADYMO), Safety Board staff
+calculated peak accelerations during the initial lateral impact of 30 Gs at the bus's center of
+gravity, 39 Gs at the last row of seats, and 31 Gs at the first row, with peak angular acceleration of
+about 2,500 degrees/second/second, driven by the bus's clockwise rotation and pivoting about the
+front axle.
+
+RAILROAD/HIGHWAY GRADE CROSSING SAFETY -- PASSIVE CROSSINGS
+In an earlier 1998 safety study, the Safety Board investigated 60 accidents at passive grade
+crossings (December 1995-August 1996) and found driver error was the primary cause in 49 of
+60 cases. Of the 11 passive crossings in Polk County and 8 in Murray County examined by
+investigators, only 3 in Murray County had stop signs; none in Polk County did. The Liberty
+Church Road crossing had not been designated for improvement before the accident; it was
+upgraded to an active crossing with gates and lights on September 9, 2000, following the
+accident.
+
+An earlier locomotive engineer had reported to investigators that 11 days before the accident, on
+March 17, 2000, he witnessed the same school bus cross the tracks without stopping, but did not
+report it at the time because he could not read the bus's identifying numbers.
+
+RELATIONSHIP TO THE 1995 FOX RIVER GROVE ACCIDENT
+This report references NTSB/HAR-96/02, the 1995 Fox River Grove, Illinois, accident. Following
+that accident, the Safety Board had recommended (H-96-52, H-96-53) that the National
+Association of State Directors of Pupil Transportation Services (NASDPTS) encourage members
+to develop school bus route hazard identification programs and monitor busdriver performance,
+and to consider grade-crossing accident histories when establishing routes. It had also
+recommended (H-96-50, H-96-51) guidelines on radio speaker placement in school buses and
+disabling speakers near the driver's head -- both closed "Acceptable Alternate Action" in 1999
+after a NASDPTS survey found most States had prohibited or were prohibiting radio speakers in
+the driver's compartment. Despite this, the bus involved in the Conasauga accident still had an
+active radio/speaker near the driver at the time of the accident.
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of the collision
+was the school bus driver's failure to stop before traversing the railroad/highway grade crossing.
+Contributing to the accident was the Murray County, Georgia, School District's failure to monitor
+busdriver performance and its lack of route planning to identify hazards. Contributing to the
+severity of injuries was incomplete compartmentalization and a lack of energy-absorbing material
+on interior bus surfaces.
+
+RECOMMENDATIONS
+The Safety Board made recommendations to the States, the National Highway Traffic Safety
+Administration, the Federal Highway Administration, the Georgia Department of Education, the
+National Association of State Directors of Pupil Transportation Services, and school bus
+manufacturers, and reiterated a recommendation to the U.S. Department of Transportation.

@@ -1,0 +1,192 @@
+National Transit Database Safety & Security Policy Manual
+January 2026, Office of Budget and Policy, Federal Transit Administration (FTA)
+Source: https://www.transit.dot.gov/sites/fta.dot.gov/files/2026-01/2026%20Safety%20&%20Security%20Manual_V1.pdf
+Accessed: 2026-09-19
+
+INTRODUCTION: THE NATIONAL TRANSIT DATABASE
+The National Transit Database (NTD) was established in 1974 and has evolved into the
+Nation's primary source of information and statistics on transit systems. The Federal Transit
+Administration (FTA) provides billions of dollars each year in transit assistance, in part based on
+the data collected through the NTD.
+
+WHO REPORTS
+Safety and Security (S&S) reporters are those transit agencies that submit a Full Report to the
+NTD, also called "Full Reporters." Transit agencies reporting as Reduced Reporters or Rural
+Reporters do not report S&S data on the reporting forms on the Safety & Security tab; instead,
+they report S&S data on their Annual Report. FTA assigns an S&S analyst to each transit agency.
+
+REPORTING OVERVIEW (Exhibit 1)
+- Chief Executive Officer Certification (S&S-20): All Full Reporters.
+- Security Configuration (S&S-30): All Full Reporters.
+- Major Event Report (S&S-40, safety events): All Full Reporters, except Commuter Rail (CR)
+  and Alaska Railroad (AR) modes.
+- Major Event Report (S&S-40, security events): All Full Reporters.
+- Non-Major Monthly Summary Report (S&S-50): All Full Reporters. CR and AR modes must
+  only report non-major assaults on a transit worker.
+
+Transit agencies must submit one S&S-40 report for each major event that meets NTD reporting
+thresholds. Transit agencies summarize less severe events on the Non-Major Monthly Summary
+Report (S&S-50), which captures safety events that meet the NTD injury threshold plus non-
+major fires and non-major assaults on a transit worker. Assaults on a transit worker do not
+require an injury to be reportable on the S&S-50.
+
+WHEN TO REPORT
+The Major Event Report (S&S-40) is due no later than 30 days after the date of the event. The
+Security Configuration (S&S-30) is due by February 28, 2026. The Non-Major Summary form
+(S&S-50) must be submitted for each mode and type of service (TOS) every month, even if no
+event occurs, with monthly due dates running from February 28 (for January) through January
+31 of the following year (for December).
+
+S&S-20: SAFETY AND SECURITY CEO CERTIFICATION
+The Chief Executive Officer (CEO) of each transit agency must submit an annual Safety and
+Security CEO Certification (S&S-20), confirming that all S&S data submitted are accurate for
+the calendar year. It automatically tallies the number of events, injuries, and fatalities reported
+across Major Event forms, plus events, injuries, fires, and assaults on transit workers from the
+Non-Major Summary form. The agency's CEO must complete the S&S-20 by the end of February
+2026.
+
+S&S-30: SECURITY CONFIGURATION
+The Security Configuration (S&S-30) indicates the number and type of personnel that respond to
+security events or provide security on a transit agency's property. There are seven personnel
+type selections: Dedicated transit police force; Dedicated (transit) unit of local police;
+Contracted local law enforcement; Transit agency security force; Contracted security force;
+Off-duty police officers; and Use of local police (non-contracted). Security personnel are
+reported as "Primary" (routinely patrol or respond to events on transit property) and/or
+"Secondary" (occasionally respond or assist the primary force) configurations. Agencies report
+personnel in terms of Full-Time Equivalents (FTE), where one FTE equals one full-time
+employee typically working 2,080 hours per year.
+
+S&S-40: MAJOR EVENT REPORT
+The Major Event Report (S&S-40) captures detailed information on severe safety and security
+events. Agencies must complete one S&S-40 per reportable event, regardless of how many
+thresholds an event meets.
+
+A reportable event must: occur at a transit revenue facility, maintenance facility, or rail yard;
+occur on transit right-of-way or infrastructure; occur during a transit-related maintenance
+activity; or involve a transit revenue vehicle.
+
+NOT reportable: events off transit property where the person/vehicle ends up on transit property
+afterward; occupational safety events in administrative buildings; events during
+engineering/construction phases of a new or extended rail system (unless involving transit
+operations, testing, or transit-related maintenance); deaths confirmed to result from illness, drug
+overdose, or natural causes (a fatal heart attack in a transit facility is NOT reportable; deaths of
+undetermined cause in a rail right-of-way that may be the result of collision or electrocution ARE
+reportable); events at bus stops/shelters not on transit-owned property (unless involving a transit
+vehicle or a person boarding/alighting); collisions during travel to/from maintenance in a service
+vehicle; and collisions involving a supervisor car or other non-revenue vehicle on public roads.
+
+PREDOMINANT USE RULE: When an event affects more than one mode, the agency reports the
+event under only one mode. If rail and non-rail are both involved, report under the rail mode. If
+two rail modes or two non-rail modes, choose based on predominant use (typically measured by
+passenger volume).
+
+MAJOR EVENT THRESHOLDS (Exhibit 5)
+Fatality: Confirmed within 30 days; includes suicides. Applies to both rail and non-rail modes
+identically.
+
+Injury (non-rail/ferry): Immediate transport away from the scene for medical attention for one or
+more persons.
+Injury (rail): Non-serious (transport for medical attention) OR Serious injury, which is any of:
+hospitalization for more than 48 hours within 7 days of the event; a fracture of any bone (except
+simple fractures of fingers, toes, or nose); severe hemorrhages or nerve/muscle/tendon damage;
+internal organ involvement; or second/third-degree burns or burns affecting more than 5 percent
+of body surface.
+
+Property damage (non-rail): Estimated property damage equal to or exceeding $25,000.
+Substantial damage (rail): Damage to any involved vehicles, facilities, equipment, rolling stock,
+or infrastructure that (a) disrupts operations of the rail transit agency AND (b) adversely affects
+structural strength, performance, or operating characteristics such that it requires towing, rescue,
+on-site maintenance, or immediate removal prior to safe operation. Excludes cracked windows,
+dents/bends/small punctures, broken lights/mirrors, or removal from service for minor
+repair/testing.
+
+Evacuation: A condition where persons depart transit vehicles/facilities for life-safety reasons
+(fire, smoke, noxious fumes, fuel leak, electrical hazard, bomb threat, suspicious item, or other
+imminent hazard). Rail modes must also report all evacuations to controlled rail right-of-way.
+Self-evacuations (without direction from transit personnel) are NOT automatically reportable.
+Evacuations due to mechanical failure are not reported unless onto the right-of-way or there was
+imminent danger.
+
+Derailment (rail only): Any derailment of a rail transit revenue vehicle or non-revenue service
+vehicle, including both mainline and yard derailments. If caused by a collision, report as a
+collision instead and note the derailed vehicles on the "Rail Transit Train Involved" form.
+
+Collisions Involving Tow-Aways: All collisions involving revenue roadway vehicles where one or
+more motor vehicles required towing, regardless of severity. Applies to motor vehicles only, not
+rail cars or ferry boats.
+
+Automatically Reportable Rail Collisions (regardless of other thresholds):
+- Rail Grade Crossing or Intersection Collisions (any place a rail guideway used for transit
+  operations is crossed at grade by a road or path, including station crosswalks; excludes parking
+  lot entrances/driveways).
+- Rail Collisions with an Individual (transit vehicle must be in motion; a stopped-vehicle impact
+  with a person is reported as a fall on the Non-Major Monthly Summary form instead).
+- Rail Collisions with Another Rail Vehicle (any collision between a transit revenue train and
+  another revenue train, a revenue train and a non-revenue rail service vehicle, or two non-revenue
+  rail service vehicles).
+
+Runaway Train (rail only, revenue vehicles): A train moving and no longer under control of a
+driver (whether or not the operator is physically aboard). Reportable regardless of any other
+threshold, under whichever event type resulted (Collision, Derailment, or Other Safety Event).
+
+EVENT TYPES (Exhibit 11)
+Safety Events: Collisions (incl. suicide/attempted suicide/assault/homicide), Fires (suppression),
+Derailments, Hazardous Material Spills, Acts of God, Other Safety Events.
+System Security Events: Bomb Threat/Bombing, Chemical/Biological/Radiological/Nuclear
+Release, Arson, Sabotage, Burglary, Vandalism, Hijacking, Cyber Security Events, Suspicious
+Package, Other System Security Events (e.g., projectiles thrown at vehicles).
+Personal Security Events: Assault (incl. on a Transit Worker), Attempted Suicide, Suicide,
+Homicide, Motor Vehicle Theft, Robbery, Rape, Larceny/Theft, Other Personal Security Events.
+
+COLLISIONS
+A collision is a vehicle or vessel accident involving impact of a transit vehicle/vessel with another
+vehicle, a person, an animal, an object, a rail vehicle, a vessel, or a dock.
+Reportable non-rail collision: results in injury requiring transport, a fatality, a life-safety
+evacuation, property damage of $25,000+, or towing of the transit or non-transit vehicle.
+Reportable rail collision: results in a transport-requiring injury, a serious injury, a fatality, a
+life-safety/right-of-way evacuation, substantial damage, a runaway train, occurs at a grade
+crossing/intersection, or involves collision with a person or another rail vehicle.
+
+Suicides, attempted suicides, assaults (incl. on transit workers), and homicides by impact with a
+transit vehicle are reported AS COLLISIONS, not as security events. An attempted suicide is
+self-inflicted harm where death does not occur but intent was fatal; intent must be established by
+a third party (police reports, security personnel reports, or eyewitness statements) -- self-report
+alone is not sufficient. An assault is an attack by one person on another without lawful authority.
+A homicide includes murder/non-negligent manslaughter (willful killing) and negligent
+manslaughter (killing through gross negligence).
+
+FIRES
+A fire event is reportable only if it was suppressed in some manner AND meets a reportable
+event threshold (injury, serious injury for rail, fatality, $25,000+ property damage, substantial
+damage for rail, or life-safety/right-of-way evacuation). Arson does NOT qualify as a fire event
+and is reported as a security event instead. A smoke-only event with no fire suppression is not
+reported as a fire; if it caused a life-safety evacuation, it is reported as an Other Safety Event.
+
+HAZARDOUS MATERIAL SPILLS
+A hazardous material spill is the release of any amount of material creating imminent danger to
+life, health, or the environment, requiring special cleanup attention. Leaks of oil, power steering
+fluid, or brake fluid from a transit vehicle are explicitly NOT considered sufficient quantity to
+constitute a reportable spill.
+
+ACTS OF GOD
+Natural, unavoidable catastrophes interrupting the expected course of events: earthquakes,
+floods, hurricanes, tornadoes, other high winds, lightning, snow storms, and ice storms.
+Reportable only if meeting an injury/serious injury/fatality/property damage/substantial
+damage/evacuation threshold.
+
+SECURITY EVENTS -- KEY DEFINITIONS
+Bomb Threat: A credible written or oral communication threatening use of an explosive/
+incendiary device to disrupt transit service or create a public emergency.
+Bombing: Unlawful, intentional delivery/placement/discharge/detonation of an explosive device
+against transit property intending death, injury, or extensive property damage.
+Arson: Unlawfully and intentionally damaging or attempting to damage property by fire or
+incendiary device.
+Hijacking: Unlawfully seizing control of a transit vehicle by force, threat, or intimidation, with
+intent to detain persons aboard against their will, transport them somewhere other than the next
+scheduled stop, or cause the vehicle to deviate from schedule.
+Sabotage: Deliberate destruction of transit property or slowing of operations by employees
+intending to damage the agency's business or economic condition.
+Cyber: An event targeting transit facilities, personnel, information, or computer/
+telecommunications systems, including denial/disruption of services (especially train control
+systems), unauthorized monitoring, unauthorized disclosure of proprietary/classified information,
+or unauthorized modification/destruction of programming code or databases.

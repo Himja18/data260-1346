@@ -1,0 +1,162 @@
+Recommended Emergency Preparedness Guidelines for Rail Transit Systems
+Urban Mass Transportation Administration (UMTA), Office of Technical Assistance,
+Safety and Security Staff. Reprinted August 1992.
+Source: https://ntlrepository.blob.core.windows.net/lib/6000/6700/6752/609.html
+Accessed: 2026-09-19
+
+PREFACE / ORIGIN
+This document contains recommended guidelines to assist rail transit systems in assessing,
+developing, documenting and improving their capability for responding to emergency situations,
+and to coordinate these efforts with outside emergency response organizations. It was developed
+in response to recommendations made by the National Transportation Safety Board's hearing
+concerning rail transit system safety, with cooperation from the American Public Transit
+Association (APTA) and representatives from various transit systems and emergency response
+organizations.
+
+1. INTRODUCTION
+Safety planning has two basic phases: a preventive phase (preventing the occurrence of an
+incident) and a reactive phase (responding once an incident has occurred, minimizing its effect).
+These guidelines address the reactive phase. They cover four primary elements: Emergency Plan
+Development, Training, Facilities and Equipment, and Vehicles. The Facilities/Equipment and
+Vehicles sections are intended primarily for planning new systems, system extensions, and
+system rehabilitation -- not expected to have a major impact on existing facilities.
+
+2. EMERGENCY PLAN DEVELOPMENT
+An Emergency Plan should contain: statement of policy, definition of scope, agreements with
+emergency response organizations, transit system functions and responsibilities, emergency
+procedures, general response capability criteria, and supporting documentation.
+
+2.2 SCOPE - procedures should be developed for: reporting the emergency; evaluating and
+establishing its parameters; notifying emergency response personnel; dispatching personnel and
+equipment; coordinating activities of all emergency response personnel; protecting passengers,
+personnel and equipment; evacuation; keeping stakeholders informed; and restoring normal
+operations.
+
+2.3 INTER-ORGANIZATIONAL AGREEMENTS - Rail transit systems should establish
+agreements with outside organizations (fire departments, EMS, police) prior to emergencies.
+Agreements should include at minimum: a list of participating organizations with contact
+information (24-hour coverage); an outline of personnel/equipment to be provided; financial
+responsibilities; jurisdictional boundaries; how the document was developed/approved; how
+changes will be reviewed; a definitions section; and identification of training responsibilities.
+
+2.5 EMERGENCY PROCEDURES should address at minimum: train fires, trainway fires, station
+fires, train derailment/collision, death or injury to a patron, train evacuation, bomb threat, total
+power failure, flammable/combustible liquid or vapor intrusion, trainway intrusion,
+suicide/trainway injuries or fatalities, and natural disasters (high winds, flood, earthquake).
+
+2.6 GENERAL RESPONSE CAPABILITY CRITERIA - key response areas: notification,
+communications, removal of traction power from vehicles, ventilation, coupling/uncoupling of
+vehicles, evacuation, and firefighting. A suggested decision-checklist includes questions such as:
+Who provides the initial report? Who decides the reported incident is in fact an emergency and
+determines its category? If reported while a train is moving between stations, who decides
+whether to stop the train or move it to the next station? Who decides to turn off traction power,
+and how is it verified to be off? Who decides to evacuate a station or train, and what criteria are
+used?
+
+2.7 EMERGENCY PLAN SUPPORTING DOCUMENTATION (worked examples cited in the
+original document): Inter-Organizational Emergency Procedures such as "NYCTA Executive
+Interagency Standard Operating Procedure," BART's "Emergency Plan," and WMATA METRO's
+"Rapid Rail Transit Fire/Rescue Operations Procedure Guidelines." Decision-Making Aids for
+Central Controllers cited include CTA's Milwaukee-Kimball and State Street Subway Maps,
+WMATA's "Fire Maps," PATH's carousel of slides in the Central Control console, and BART's
+Microcomputer Data Retrieval System. Major Accident Investigation reports cited as inputs
+include the "PATH Investigation Report, March 16, 1982 Fire" and the NTSB's "BART Fire on
+Train #117 and Evacuation of Passengers While in Transbay Tube, San Francisco, January 17,
+1979."
+
+3. TRAINING
+Three training phases recommended: initial operational and emergency response training for all
+employees; specialized emergency response training for certain groups depending on job
+requirements; and refresher/retraining courses for both phases.
+
+3.1.2 SPECIALIZED EMERGENCY TRAINING - Operating/supervisory personnel, maintenance
+personnel, and transit police should be taught appropriate responses to: fire/smoke in tunnel;
+fire/smoke in or under train; fire/smoke on or adjacent to trainway; fire/smoke at station;
+derailment, collision, structural collapse; passenger evacuation from train; person on trainway;
+sick passenger; hostage situation; civil disorder; bomb threat; total power failure; flood;
+flammable/combustible liquid/vapor intrusion; severe weather/natural disasters; and combined-
+category situations (e.g., derailment + fire + evacuation together).
+
+Specialized training areas detailed further: emergency tunnel evacuation, emergency tunnel
+ventilation, firefighting (transit personnel's first-priority role is assisting passenger evacuation and
+helping fire department access -- actual firefighting is primarily the fire department's job, but
+basic firefighting training builds confidence and enables fighting small fires before the fire
+department arrives when prudent), passenger emergency care (first aid, CPR, treatment of head/
+back injuries, respiratory blockages), crowd control and panic prevention, emergency uncoupling
+of rail cars, and removal of traction power.
+
+3.1.4.3 EMERGENCY RESPONSE TRAINING DRILLS - Recommended drill types: drills prior
+to system start-up (on unopened new sections), drills during non-revenue service periods, and
+drills during revenue service (posing a hypothetical emergency without actually dispatching real
+fire/rescue personnel or interrupting service) -- these can be general notice, employee notice, or
+no-notice drills. Monitor locations should allow observation of: initial communications between
+train operator and Central Control; implementation of evacuation procedures; the passenger
+evacuation process itself; EMT first aid in the triage area; use of evacuation equipment; emergency
+command post operations; and firefighters' response efforts. A post-drill simulation critique
+(often video-recorded) should review monitor reports and assess remedial action needs.
+
+3.3 PUBLIC EDUCATION - Passenger emergency preparedness training should cover: how to
+recognize and immediately report emergencies to transit employees; how to recognize system
+hazards (third rail, high voltage equipment, passage between cars); how to recognize and operate
+emergency-related equipment (vehicle intercom, fire extinguishers, on-board emergency stop
+devices, side/end doors, ladders/ramps/planks, subway emergency exits, station emergency
+phones); and how to anticipate special needs of fellow passengers (children, elderly, handicapped)
+during emergencies. A separate School Safety Program is recommended to teach children in
+communities adjoining rail transit trainway about hazards like third-rail power and the dangers of
+throwing rocks, tampering with switches, or placing objects on tracks -- especially important
+before a new system or extension opens.
+
+4. FACILITIES AND EQUIPMENT
+Covers passenger stations, trainway, and Central Control, addressing construction, lighting,
+access/egress, communications, ventilation, fire protection support, intrusion protection, traction
+power removal, graphics, and emergency power.
+
+4.1.3 ACCESS/EGRESS (stations) - guidance includes: each emergency exit should be identified
+by graphics and a distinctive-colored light with dual light circuitry; emergency exit doors should
+never be locked on the inside; exits should not open onto hazardous areas (vehicle roadways,
+parking areas) and should be kept clear of obstructions; exits should be able to be readily opened
+from outside by fire department/rescue personnel; vertical ladders in emergency exits should be
+prohibited; and non-egress doors/ladders should be clearly labeled "Not an Exit."
+
+4.1.9 TRACTION POWER (stations) - a means for locally removing power from specific third-rail
+or catenary sections should exist (e.g., local emergency trip stations), and Central Control should
+also be able to remove power from specific sections remotely; devices for verifying power has
+actually been removed should be incorporated.
+
+4.2.3 ACCESS/EGRESS (trainway) - underground trainways built by cut-and-cover typically have
+shallow depth enabling vent shafts and emergency exit stairways to the surface; deep bore tunnels
+and underwater tubes have limited direct-to-surface exit capability and instead use cross passages,
+fire doors to the opposite trackway, or a separate center passageway. Elevated trainways have
+rarely had emergency exits; the preferred evacuation method is moving the train (or part of it) to
+the nearest station or bringing a rescue train alongside for passenger transfer -- as a last resort,
+fire department ladder trucks have been used, described as "an extremely slow and time-
+consuming process." At-grade/open-cut trainways typically use emergency access gates openable
+by transit personnel or rescue crews, without keys from the inside; fire department personnel
+should have keys or other means to open them from outside.
+
+4.2.8 INTRUSION ALARM - Where rail transit tracks run adjacent to highways or share corridors
+with freight/passenger railroads, motor vehicle accidents or train derailments could intrude onto
+the transit track area; both train operators and Central Control must be immediately alerted to
+such intrusions, via physical barriers and/or a detection and alarm system.
+
+5. VEHICLES
+5.1.3.1 END DOORS - An emergency door opening control requiring no electrical power should
+be located on the vehicle exterior; passengers should be able to move from car to car in an
+emergency; locking of end doors is discouraged unless an interior emergency release exists.
+5.1.3.2 SIDE DOORS - An interlocking door control in each operator cab should permit opening
+all doors on either side of the train; an emergency door unlocking device requiring no electrical
+power should exist both inside and outside the vehicle; side doors should be wide enough for two
+people side by side.
+5.1.7.1 EMERGENCY BRAKES - Each vehicle should have a fail-safe friction brake for manual
+activation; emergency braking independent of the train operator should activate automatically if
+any car in a train unintentionally uncouples.
+
+APPENDIX B: EMERGENCY EQUIPMENT (representative list)
+Air bag rescue and lifting system (capable of lifting/moving/shifting up to 146,000 pounds); axes;
+bolt cutters; emergency evacuation cart; evacuation ladders and planks; fire extinguishers of
+various types; fire hose and nozzles; first aid kits; flood lights; hand lights; hand tools; hydraulic
+jacks and hydraulic pry/pinch/push/bend/tear/shear tools for extrication; insulating aprons, mats,
+blankets, and gloves (electrical shock protection); jumpers/stingers for third rail power;
+maintenance phone headsets; pry bars; radios; self-contained breathing apparatus (SCBA) with
+spare air bottles; shoe lifts (to inhibit traction power collection on a vehicle); and stretchers
+(Stokes baskets, Reeves stretchers).

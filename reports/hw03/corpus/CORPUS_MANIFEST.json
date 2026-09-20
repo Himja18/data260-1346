@@ -1,0 +1,156 @@
+{
+  "domain_id": 2,
+  "domain_name": "Municipal Transit Incidents",
+  "sid4": 1346,
+  "prefix": "s1346",
+  "corpus_finalized": "2026-09-19",
+  "total_files": 29,
+  "total_bytes": 204823,
+  "files": [
+    {
+      "filename": "corpus_index_and_coverage_notes.txt",
+      "byte_size": 4531,
+      "sha256": "b1738b4852c2937bf082abde8b651c59bbde12dd3086f836fce574ca3b772905"
+    },
+    {
+      "filename": "final_corpus_summary.txt",
+      "byte_size": 4711,
+      "sha256": "0b96a424281d033635fa28265236f32703a62adc48040cfe709db9dd778ccf56"
+    },
+    {
+      "filename": "fta_ntd_glossary_and_definitions_supplement.txt",
+      "byte_size": 5505,
+      "sha256": "ed8a4ea01f31bfbc184c82a6fb5e91eae6d85ef1885c6a95d7347ca709fbd903"
+    },
+    {
+      "filename": "fta_ntd_safety_security_policy_manual_2026.txt",
+      "byte_size": 12867,
+      "sha256": "9f2054560ac33062a54cc9112ea365851a80ed85926959dc288462ee415ecef9"
+    },
+    {
+      "filename": "fta_ntd_safety_security_policy_manual_2026_part2.txt",
+      "byte_size": 6523,
+      "sha256": "1ae1803813b21a22899761a058da874ad4eeeaf616dc7a1b5c6e7ec873524a0b"
+    },
+    {
+      "filename": "fta_ntst_2021_summaries_trends.txt",
+      "byte_size": 6708,
+      "sha256": "61504be20bba07f9adb3a1aeb1ec3f947425c69950dfba218a116eada053fc28"
+    },
+    {
+      "filename": "fta_samis_1997_annual_report.txt",
+      "byte_size": 7131,
+      "sha256": "d5ff58cc5e91b9a8ceb038e52ab6c2dfb30a61f37f03ef983fc555819d867364"
+    },
+    {
+      "filename": "fta_samis_1997_detailed_tables.txt",
+      "byte_size": 4997,
+      "sha256": "d5547f21f4931dd71f7620a226c37d04ceb4242a9e3d85a8b73d1a84635f7dfd"
+    },
+    {
+      "filename": "fta_transit_bus_accident_investigations_2022.txt",
+      "byte_size": 8976,
+      "sha256": "a8808b6f54d21ad308e69da36aef8221088ed24b7d75a9de2d468afda9e52c2e"
+    },
+    {
+      "filename": "ntsb_fort_totten_upgrade_programs_excerpt.txt",
+      "byte_size": 4305,
+      "sha256": "06331729e5079d9afd39c0c72c0af3f9cb9eda36fcfa4618ec2e538b31e85685"
+    },
+    {
+      "filename": "ntsb_hab1810_nyc_transit_bus_pedestrian.txt",
+      "byte_size": 6292,
+      "sha256": "01fb8ee7f381873927bbda8c9cc703ce189f82c3fdab574b91d557aaa138dcfd"
+    },
+    {
+      "filename": "ntsb_har0103_conasauga.txt",
+      "byte_size": 8056,
+      "sha256": "2c6e95bcca138d3bbb62137f3bafa939a6f725fbb2d6b287f8b3ec35c7484063"
+    },
+    {
+      "filename": "ntsb_har0103_conasauga_raw_excerpt.txt",
+      "byte_size": 6242,
+      "sha256": "c104f44bd12989c2f75f9fd1722fd21acdb8f255d86f722a112130fbbc3c5018"
+    },
+    {
+      "filename": "ntsb_har9602_fox_river_grove.txt",
+      "byte_size": 9174,
+      "sha256": "a199f73c77ba27506a63065715592d4c2d2d1cf50c756c74094c98b86c14ed16"
+    },
+    {
+      "filename": "ntsb_har9602_fox_river_grove_raw_excerpt.txt",
+      "byte_size": 7075,
+      "sha256": "528bdc4c1a88c136504f8287e319164fedd498063b3c2c92973f43dd16c5818c"
+    },
+    {
+      "filename": "ntsb_organization_and_investigation_process.txt",
+      "byte_size": 6973,
+      "sha256": "3bf8b6b7d4cefe80ed909628aee2eda3a76e9a21448c71ac331c400c5542f7df"
+    },
+    {
+      "filename": "ntsb_r09-08_mbta_newton_ptc_context.txt",
+      "byte_size": 3299,
+      "sha256": "9b5b1e0660502bd1eef71140d37c5f1c837ec771780939b1b1588eb5a714311b"
+    },
+    {
+      "filename": "ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt",
+      "byte_size": 7977,
+      "sha256": "fba8ce7ce6fdd22300be562ed25e7a6083ddcd431b5c8fabce8f2ded4a1fec06"
+    },
+    {
+      "filename": "ntsb_rar1002_fort_totten.txt",
+      "byte_size": 7659,
+      "sha256": "8dafd8967cb30d8dd0b1a327810b560ca75ed79c2976c67500cb82b0bc2bd663"
+    },
+    {
+      "filename": "ntsb_rar1002_fort_totten_raw_excerpt.txt",
+      "byte_size": 8394,
+      "sha256": "2f5aa128738b8d34188abb6c1fd0acaeb22368c5885ec03420ce1057c8e4f6dc"
+    },
+    {
+      "filename": "ntsb_rar1101_miami_apm_verified.txt",
+      "byte_size": 6273,
+      "sha256": "19c5b1a1ff720137d88ecad9f53fb64e82255d6222423c777a4b0fc474662450"
+    },
+    {
+      "filename": "ntsb_rar1501_cta_ohare_fatigue.txt",
+      "byte_size": 9374,
+      "sha256": "68a9891701148742d7156e32e773fab3bee4c0fe45a9f5e90d4b1062ebb776cf"
+    },
+    {
+      "filename": "ntsb_rar9604_shady_grove.txt",
+      "byte_size": 8490,
+      "sha256": "393bbc7d9911afb7bb0ade4f5f51c382866cadf6a510b84b6fc6b4637571857c"
+    },
+    {
+      "filename": "ntsb_recommendations_status_wmata_history.txt",
+      "byte_size": 6627,
+      "sha256": "0a8f25c110c10c7f2fcc6a227c86e7324493f91dd72dd1c2346c69798b173bf5"
+    },
+    {
+      "filename": "ntsb_rir2203_septa_spring_garden.txt",
+      "byte_size": 4940,
+      "sha256": "f0287ccfc6821552133620f7aba17da3b7285d17c669a6912aea9465419dc858"
+    },
+    {
+      "filename": "ntsb_rir2519_nj_transit_tree.txt",
+      "byte_size": 7648,
+      "sha256": "c31213ecea89a0ce92cdecec6646f17b46f762f0ecc7c8390ad4576a5e3fde3b"
+    },
+    {
+      "filename": "questions_source_mapping_notes.txt",
+      "byte_size": 5559,
+      "sha256": "c377b71293c0cc165328f3bce0f24a31054dbf8ee89d0b653f377dd93ad9b3c2"
+    },
+    {
+      "filename": "transit_incident_terminology_faq.txt",
+      "byte_size": 6747,
+      "sha256": "ab1d77bd21167743475b50a1675ddf5a1a41c01d7084c28265ae81c9b43d5776"
+    },
+    {
+      "filename": "umta_emergency_preparedness_guidelines_1992.txt",
+      "byte_size": 11770,
+      "sha256": "376c7fc7f8d431354be689a472b4846248f6adfa8427e75bdca96f1f50ffa0f1"
+    }
+  ]
+}

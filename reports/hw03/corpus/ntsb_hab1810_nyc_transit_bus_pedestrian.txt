@@ -1,0 +1,89 @@
+NTSB Highway Accident Brief HAB-18/10
+Fatal Pedestrian Collision with Transit Bus, New York City, New York, October 21, 2016
+Accident Number: HWY17SH006. Adopted: July 31, 2018.
+Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/HAB1810.pdf
+Accessed: 2026-09-19
+
+Vehicle: 2006 Motor Coach Industries transit bus. Driver: 63-year-old male. Pedestrian: 58-year-
+old female. Fatalities: 1. Location: Water/State Street and Whitehall Street, New York City.
+
+CRASH DESCRIPTION
+About 5:30 p.m. on Friday, October 21, 2016, a transit bus operated by the New York City
+Metropolitan Transportation Authority (MTA) was traveling southwest on Water Street in Lower
+Manhattan. The bus entered the intersection with Whitehall Street on a green signal but did not
+clear it before the light turned red, stopping behind a line of vehicles one block west and blocking
+part of the crosswalk. A 58-year-old female pedestrian, talking on her cell phone and walking
+slower than her group, entered the crosswalk on a WALK signal as other pedestrians passed safely
+in front of the stopped bus. As she walked in front of the bus, the traffic signal one block west
+turned green and southwestbound vehicles -- including the bus -- began moving, even though the
+signal at Whitehall Street (governing her crossing) was still red and she still had the WALK signal.
+The bus struck her with the right side of its front bumper, knocked her down, ran over her, and
+dragged her underneath for about half a mile before witnesses at a later intersection alerted the
+driver and police. She died of multiple blunt force trauma; postcrash toxicology was negative for
+alcohol and other drugs. Weather: 66.9 degrees F, calm winds, cloudy, still daylight (about 30
+minutes before a 6:06 p.m. sunset).
+
+CRASH LOCATION
+An urban, heavily trafficked intersection in Manhattan's Financial District, near the Staten Island
+Ferry terminal -- thousands of pedestrians use the area daily. Posted speed limit 25 mph. A city
+Department of Transportation traffic safety survey found only 3 pedestrian collisions at this
+intersection between 2011 and 2015, only one involving a pedestrian in a crosswalk on a green
+signal, and none fatal.
+
+DRIVER
+Hired by MTA in 1977, held a New York Class B CDL with passenger endorsement. His most
+recent annual physical (September 6, 2016) found him medically qualified with normal eyesight;
+he did not report any medical conditions despite the exam listing several prescription
+medications (in a 2014 exam he had reported high blood pressure only). He failed to disclose a
+personal-vehicle accident from the previous 12 months during MTA's October 7, 2016 annual
+employment review. Since April 2014, he had been involved in five transit bus crashes before this
+fatal one (at fault in at least two), had four citizen reckless-driving complaints filed against him,
+was cited twice for speeding in an MTA bus, and had undergone three mandated supervisor
+observations because of his driving record. Postcrash toxicology was negative for drugs; he was
+not tested for alcohol because more than 8 hours had elapsed (he was hospitalized for emotional
+distress after the crash).
+
+VEHICLE
+A 2006 Motor Coach Industries DL4500 bus (max 61 passengers), inspected 3 weeks before the
+crash (October 3) with all repairs completed. Postcrash inspection found no mechanical defects;
+the service brake functioned within manufacturer and MTA guidelines. An NTSB investigator
+confirmed that, given the driver's seat design (upright and forward), the driver could have seen the
+pedestrian in front of the bus had he scanned the crosswalk before accelerating.
+
+MTA SYSTEM-WIDE CONTEXT
+The MTA employs over 12,700 transit bus operators with at least 5,600 buses on the road at any
+time, and runs a 6-week initial training program. An internal MTA crash analysis found that
+operators with 3-5 years of service were more likely to be involved in crashes, leading to the
+"TOPS" (Transitional Operators Program) retraining initiative for that group. The MTA also runs
+a "ghost rider" program (random unannounced rides by staff to spot unsafe driving) -- over 16,000
+random rides had been taken between November 2014 and this crash, though the driver's own
+random rides all predated November 2014. At the time of this crash, MTA had been involved in
+62 fatal pedestrian crashes since 2004: 8 in 2015, and 5 in 2016 before this one.
+
+VEHICLE-BASED SAFETY COUNTERMEASURES
+This bus was not equipped with an "S-1 Gard" system (a deflector installed in front of the rear
+wheels to push a fallen body away from them, reducing injury severity if someone falls under a
+bus). MTA had examined this system but decided prevention was preferable, and was instead
+testing two other systems: Clever Devices' "TurnWarning" system (senses a turn and audibly
+warns nearby pedestrians a bus is turning, logging date/time/location of each announcement), and
+a Rosco/Mobileye system that scans for pedestrians/cyclists and warns the driver audibly and
+visually, with planned expansion to automatic deceleration/collision-avoidance braking.
+
+APPLICABLE LAW
+Under NY Vehicle and Traffic Law Article 24 Section 1112, pedestrians facing a WALK signal
+have the right of way. Article 26 Section 1146 requires drivers to exercise "due care" to avoid
+colliding with pedestrians/cyclists/animals, with penalties (including imprisonment) for violations
+causing injury. NYC's "Right of Way Law" (Administrative Code 19-190, enacted August 2014 as
+part of Vision Zero) makes it a misdemeanor for a driver to kill or seriously injure a pedestrian or
+cyclist through failure to yield or exercise due care.
+
+PROBABLE CAUSE
+The National Transportation Safety Board determines that the probable cause of the crash was the
+failure of the bus driver to check for pedestrians in the crosswalk immediately in front of the bus
+before he accelerated from a stopped position.
+
+BOARD MEMBER CONCURRING STATEMENT
+Member Earl F. Weener concurred with the probable cause but separately noted the pedestrian was
+using a mobile phone while crossing, citing National Safety Council guidance against crossing
+while using an electronic device and noting some jurisdictions (Honolulu in 2017) have passed
+laws against pedestrians viewing cell phones while crossing streets.
