@@ -1,7 +1,7 @@
 {
   "pipeline": "token",
   "num_chunks": 117,
-  "elapsed_seconds": 9.46,
+  "elapsed_seconds": 3.65,
   "top_k": 3,
   "results": [
     {
@@ -70,8 +70,8 @@
       "question": "How has the property-damage dollar threshold for a reportable non-rail transit collision changed between the FTA's 1997 SAMIS reporting guidance and its 2026 Safety & Security Policy Manual?",
       "expected_answer": "The threshold rose from a flat $1,000 in the 1997 SAMIS reporting glossary to $25,000 in the 2026 FTA Safety & Security Policy Manual for non-rail modes; rail modes instead use a \"substantial damage\" operational-disruption test rather than a dollar figure.",
       "expected_source_files": [
-        "fta_samis_1997_annual_report.txt",
         "fta_ntd_glossary_and_definitions_supplement.txt",
+        "fta_samis_1997_annual_report.txt",
         "fta_ntd_safety_security_policy_manual_2026.txt"
       ],
       "retrieved_chunks": [
