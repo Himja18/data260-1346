@@ -1,0 +1,160 @@
+{
+  "pipeline": "sentence_window",
+  "num_chunks": 1000,
+  "elapsed_seconds": 9.46,
+  "top_k": 3,
+  "results": [
+    {
+      "question_id": "q1",
+      "question_type": "single_source",
+      "question": "By how much, and how shortly before the accident, did Union Pacific change the warning-time thumbwheel setting at the Fox River Grove grade crossing?",
+      "expected_answer": "The warning-time thumbwheel setting was reduced from 30 seconds to 25 seconds, a change made on October 11, 1995 -- about two weeks before the October 25, 1995 accident.",
+      "expected_source_files": [
+        "ntsb_har9602_fox_river_grove_raw_excerpt.txt"
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "score": 0.17152102291584015,
+          "source_file": "questions_source_mapping_notes.txt",
+          "text": "CANDIDATE 1 (single-source: ntsb_har9602_fox_river_grove_raw_excerpt.txt)\nFact: The railroad's warning-time thumbwheel setting at the Fox River Grove crossing was\nchanged from 30 seconds to 25 seconds exactly two weeks before the accident (October 11,\n1995), a change Union Pacific made \"to ensure consistency... throughout the railroad's property.\"\n"
+        },
+        {
+          "rank": 2,
+          "score": 0.2979862093925476,
+          "source_file": "ntsb_har9602_fox_river_grove_raw_excerpt.txt",
+          "text": "On October 11, 1995 -- two weeks before\nthe accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds \"to ensure consistency\nat that crossing and throughout the railroad's property.\" "
+        },
+        {
+          "rank": 3,
+          "score": 0.3735736012458801,
+          "source_file": "ntsb_har9602_fox_river_grove.txt",
+          "text": "However, 2 weeks\nbefore the accident (October 11, 1995), the thumbwheel was reset at 25 seconds. "
+        }
+      ],
+      "hit_expected_source_file": true
+    },
+    {
+      "question_id": "q2",
+      "question_type": "single_source",
+      "question": "After the fatal fall at Spring Garden Station, how much did SEPTA commit to its SCOPE program, and how many outreach workers did it add?",
+      "expected_answer": "SEPTA announced it would spend $3.6 million on the SCOPE (Safety, Cleaning, Ownership, Partnership, and Engagement) program, increasing outreach workers from 7 to 57.",
+      "expected_source_files": [
+        "ntsb_rir2203_septa_spring_garden.txt"
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "score": 0.3015485405921936,
+          "source_file": "questions_source_mapping_notes.txt",
+          "text": "CANDIDATE 2 (single-source: ntsb_rir2203_septa_spring_garden.txt)\nFact: Following the Spring Garden Station platform fatality, SEPTA announced a $3.6 million\nSCOPE Program that increased outreach workers from 7 to 57. "
+        },
+        {
+          "rank": 2,
+          "score": 0.45967286825180054,
+          "source_file": "ntsb_rir2203_septa_spring_garden.txt",
+          "text": "POSTACCIDENT ACTIONS\nIn September 2021, SEPTA announced it would spend $3.6 million on its \"Safety, Cleaning,\nOwnership, Partnership, and Engagement\" (SCOPE) Program, increasing outreach workers from\n7 to 57 to assist vulnerable populations (homelessness, addiction, mental illness) on the transit\nsystem, creating a virtual patrol center to monitor 28,000 cameras, and equipping cleaning staff\nwith cell phones to streamline reporting unsafe conduct to police.\n\n"
+        },
+        {
+          "rank": 3,
+          "score": 0.5931803584098816,
+          "source_file": "ntsb_rir2203_septa_spring_garden.txt",
+          "text": "NTSB Railroad Investigation Report RIR-22/03\nSoutheastern Pennsylvania Transportation Authority Fatality at Spring Garden Station\nPhiladelphia, Pennsylvania, July 28, 2021. "
+        }
+      ],
+      "hit_expected_source_file": true
+    },
+    {
+      "question_id": "q3",
+      "question_type": "multi_source",
+      "question": "How has the property-damage dollar threshold for a reportable non-rail transit collision changed between the FTA's 1997 SAMIS reporting guidance and its 2026 Safety & Security Policy Manual?",
+      "expected_answer": "The threshold rose from a flat $1,000 in the 1997 SAMIS reporting glossary to $25,000 in the 2026 FTA Safety & Security Policy Manual for non-rail modes; rail modes instead use a \"substantial damage\" operational-disruption test rather than a dollar figure.",
+      "expected_source_files": [
+        "fta_samis_1997_annual_report.txt",
+        "fta_ntd_glossary_and_definitions_supplement.txt",
+        "fta_ntd_safety_security_policy_manual_2026.txt"
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "score": 0.2202124148607254,
+          "source_file": "questions_source_mapping_notes.txt",
+          "text": "MULTI-SOURCE CANDIDATE (for a question requiring synthesis across documents)\nFact: The property-damage reporting threshold for non-rail transit collisions changed from a flat\n$1,000 (per the 1997 SAMIS glossary) to $25,000 (per the 2026 FTA Safety & Security Policy\nManual) -- requiring the retriever to pull from BOTH fta_samis_1997_annual_report.txt AND\nfta_ntd_safety_security_policy_manual_2026.txt (or the cross-reference summary in\nfta_ntd_glossary_and_definitions_supplement.txt) to answer correctly. "
+        },
+        {
+          "rank": 2,
+          "score": 0.31606826186180115,
+          "source_file": "transit_incident_terminology_faq.txt",
+          "text": "The 1997 SAMIS glossary used a flat $1,000\nproperty-damage threshold for ALL modes -- meaning a comparison of \"how many incidents\nhappened in 1997 vs. "
+        },
+        {
+          "rank": 3,
+          "score": 0.31920117139816284,
+          "source_file": "fta_ntd_glossary_and_definitions_supplement.txt",
+          "text": "The\nolder 1997 SAMIS report used a narrower, threshold-based definition: \"An incident in which a\ntransit vehicle strikes or is struck by another vehicle... Reports are made if the accident results in\ndeath, injury, or property damage over $1,000\" -- a flat $1,000 threshold, contrasted with the 2026\nmanual's $25,000 non-rail property-damage threshold (adjusted upward over nearly 30 years,\npartly reflecting inflation and partly a policy decision to focus federal reporting on more serious\nevents). "
+        }
+      ],
+      "hit_expected_source_file": true
+    },
+    {
+      "question_id": "q4",
+      "question_type": "adversarial",
+      "question": "In the WMATA Metrorail smoke and arcing incident that occurred at L'Enfant Plaza station, how many passengers were on the train and how many people were treated or transported for smoke exposure?",
+      "expected_answer": "About 400 passengers were on the six-car train; DC Fire and EMS reported 86 people treated and transported from the scene, plus 9 more who self-transported to medical facilities (95 total), and there was 1 fatality (Carol Glover). NOTE: this is an adversarial question -- Fort Totten (9 fatalities, 2009) and Shady Grove (1 fatality, 1996) are separate WMATA incidents in this corpus that share dense Metrorail/Operations-Control-Center vocabulary with this one, so a chunker may retrieve the wrong incident's passenger or casualty figures with high similarity score.",
+      "expected_source_files": [
+        "ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt"
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "score": 0.29518449306488037,
+          "source_file": "ntsb_recommendations_status_wmata_history.txt",
+          "text": "2015 (January 12): L'Enfant Plaza smoke/arcing incident -- an electrical short circuit near the\nthird rail filled a tunnel and station with smoke; one passenger fatality (Carol Glover), 86-95\npeople treated for smoke exposure.\n"
+        },
+        {
+          "rank": 2,
+          "score": 0.44162291288375854,
+          "source_file": "ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt",
+          "text": "The smoke\noriginated from an arcing event near the third rail about 2,000 feet south of the L'Enfant Plaza\nstation. "
+        },
+        {
+          "rank": 3,
+          "score": 0.4480586051940918,
+          "source_file": "ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt",
+          "text": "Subject: WMATA Metrorail smoke and arcing accident, L'Enfant Plaza station, January 12, 2015,\nand inadequate safety oversight by the Tri-State Oversight Committee (TOC).\n"
+        }
+      ],
+      "hit_expected_source_file": true
+    },
+    {
+      "question_id": "q5",
+      "question_type": "single_source",
+      "question": "What was the specific mechanical cause of the failure that allowed the Miami International Airport automated people mover train to collide with the terminal wall in 2008, and what safety system should have prevented it but did not?",
+      "expected_answer": "A broken crystal inside the program stop module's oscillator circuit caused the train to lose the ability to determine its position and decelerate. The overspeed/overshoot relay -- the vital backup system designed to catch exactly this kind of failure -- had been disabled a week earlier by a maintenance \"jumper wire\" installed by a JCI technician, so it never triggered emergency braking.",
+      "expected_source_files": [
+        "ntsb_rar1101_miami_apm_verified.txt"
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "score": 0.33660751581192017,
+          "source_file": "ntsb_rar1101_miami_apm_verified.txt",
+          "text": "on November 28, 2008, a three-car automated people mover (APM) train\noperating along a fixed guideway on E Concourse at Miami International Airport failed to stop\nat the passenger platform and struck a wall at the end of the guideway. "
+        },
+        {
+          "rank": 2,
+          "score": 0.3831605017185211,
+          "source_file": "ntsb_rar1101_miami_apm_verified.txt",
+          "text": "NTSB/RAR-11/01\nMiami International Airport, Automated People Mover Train Collision with Passenger\nTerminal Wall, Miami, Florida, November 28, 2008. "
+        },
+        {
+          "rank": 3,
+          "score": 0.4696560502052307,
+          "source_file": "transit_incident_terminology_faq.txt",
+          "text": "Because this recommendation\naddressed a general statutory-authority gap rather than a WMATA-specific defect, the NTSB\nreiterated the same recommendation number in its 2011 Miami International Airport automated\npeople mover report, even though that accident involved a completely different transit agency,\nstate, and even transit mode (an automated guideway system rather than a conventional\nheavy-rail system). "
+        }
+      ],
+      "hit_expected_source_file": true
+    }
+  ]
+}

@@ -39,7 +39,7 @@ primary document(s) it draws from.
 | `ntsb_recommendations_status_wmata_history.txt` | Fox River Grove, Shady Grove, Fort Totten, L'Enfant Plaza letter |
 | `ntsb_organization_and_investigation_process.txt` | All NTSB report files in this corpus |
 | `transit_incident_terminology_faq.txt` | All FTA/NTSB files in this corpus |
-| `questions_source_mapping_notes.txt` | All files in this corpus (working notes for `questions.yaml`) |
+| `ntsb_safety_recommendation_status_classifications.txt` | Fort Totten, O'Hare/CTA, Miami APM, L'Enfant Plaza letter |
 | `ntsb_r09-08_mbta_newton_ptc_context.txt` | Citations found inside `ntsb_rar1501_cta_ohare_fatigue.txt` (not an independent fetch of the Newton, MA report itself) |
 | `corpus_index_and_coverage_notes.txt` | Full corpus index/summary |
 | `final_corpus_summary.txt` | Full corpus index/summary |

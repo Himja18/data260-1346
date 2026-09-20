@@ -1,0 +1,32 @@
+[2026-09-20 11:33:02] === HW3 Part 2 Chunking Comparison — starting run ===
+[2026-09-20 11:33:02] Embedding model: BAAI/bge-small-en-v1.5
+[2026-09-20 11:33:02] Loaded 29 corpus documents from /Users/himja/Documents/data260-1346/reports/hw03/corpus
+[2026-09-20 11:33:02] Loaded 5 questions from /Users/himja/Documents/data260-1346/reports/hw03/questions.yaml
+[2026-09-20 11:34:04] --- Running pipeline: token ---
+[2026-09-20 11:34:08] [token] Produced 117 chunks
+[2026-09-20 11:34:13] [token] q1: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:13] [token] q2: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:13] [token] q3: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:13] [token] q4: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:13] [token] q5: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:13] [token] Done in 9.5s, 117 chunks total
+[2026-09-20 11:34:13] [token] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/token_results.json
+[2026-09-20 11:34:13] --- Running pipeline: semantic ---
+[2026-09-20 11:34:38] [semantic] Produced 89 chunks
+[2026-09-20 11:34:42] [semantic] q1: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:42] [semantic] q2: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:42] [semantic] q3: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:42] [semantic] q4: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:42] [semantic] q5: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:42] [semantic] Done in 29.0s, 89 chunks total
+[2026-09-20 11:34:42] [semantic] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/semantic_results.json
+[2026-09-20 11:34:42] --- Running pipeline: sentence_window ---
+[2026-09-20 11:34:42] [sentence_window] Produced 1000 chunks
+[2026-09-20 11:34:52] [sentence_window] q1: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:52] [sentence_window] q2: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:52] [sentence_window] q3: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:52] [sentence_window] q4: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:52] [sentence_window] q5: retrieved 3 chunks, hit_expected_source=True
+[2026-09-20 11:34:52] [sentence_window] Done in 9.5s, 1000 chunks total
+[2026-09-20 11:34:52] [sentence_window] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/sentence_window_results.json
+[2026-09-20 11:34:52] === All three pipelines complete ===
