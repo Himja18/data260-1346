@@ -1,0 +1,171 @@
+{
+  "sid4": 1346,
+  "domain_id": 2,
+  "corpus_total_bytes": 204830,
+  "checks_passed": 32,
+  "checks_failed": 0,
+  "checks_total": 32,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "auth_app/main.py exists",
+      "status": "PASS",
+      "detail": "/Users/himja/Documents/data260-1346/code/auth_app/main.py"
+    },
+    {
+      "check": "auth_app/auth.py exists",
+      "status": "PASS",
+      "detail": "/Users/himja/Documents/data260-1346/code/auth_app/auth.py"
+    },
+    {
+      "check": "auth_app/templates/base.html exists",
+      "status": "PASS",
+      "detail": "/Users/himja/Documents/data260-1346/code/auth_app/templates/base.html"
+    },
+    {
+      "check": "auth_app/templates/home.html exists",
+      "status": "PASS",
+      "detail": "/Users/himja/Documents/data260-1346/code/auth_app/templates/home.html"
+    },
+    {
+      "check": "auth_app/templates/login.html exists",
+      "status": "PASS",
+      "detail": "/Users/himja/Documents/data260-1346/code/auth_app/templates/login.html"
+    },
+    {
+      "check": "auth_app/templates/dashboard.html exists",
+      "status": "PASS",
+      "detail": "/Users/himja/Documents/data260-1346/code/auth_app/templates/dashboard.html"
+    },
+    {
+      "check": "corpus/ directory exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CORPUS_MANIFEST.json exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CORPUS_MANIFEST.json has 'files' list",
+      "status": "PASS",
+      "detail": "29 entries"
+    },
+    {
+      "check": "All manifest files present on disk",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "All manifest SHA-256 hashes match actual files",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Corpus total size >= 200,000 bytes",
+      "status": "PASS",
+      "detail": "204830 bytes"
+    },
+    {
+      "check": "Corpus total size >= 204,800 bytes (200 KiB)",
+      "status": "PASS",
+      "detail": "204830 bytes"
+    },
+    {
+      "check": "SOURCES.md exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Known leaking file (questions_source_mapping_notes.txt) is NOT present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "questions.yaml exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "questions.yaml has exactly 5 questions",
+      "status": "PASS",
+      "detail": "found 5"
+    },
+    {
+      "check": "At least 2 single_source questions",
+      "status": "PASS",
+      "detail": "found 3"
+    },
+    {
+      "check": "At least 1 multi_source question",
+      "status": "PASS",
+      "detail": "found 1"
+    },
+    {
+      "check": "All questions have required fields",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "raw/ directory exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "raw/token_results.json exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "token_results.json has 5 question results",
+      "status": "PASS",
+      "detail": "found 5"
+    },
+    {
+      "check": "raw/semantic_results.json exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "semantic_results.json has 5 question results",
+      "status": "PASS",
+      "detail": "found 5"
+    },
+    {
+      "check": "raw/sentence_window_results.json exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "sentence_window_results.json has 5 question results",
+      "status": "PASS",
+      "detail": "found 5"
+    },
+    {
+      "check": "RUN_LOG.txt exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "METRICS.md exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "AI_USE.md exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "METRICS.md contains an Analysis section",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "METRICS.md contains a Conclusion section",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}
