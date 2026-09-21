@@ -23,7 +23,7 @@ const CATEGORY_CLASS = {
   "Service Change": "service-change",
 };
 
-// ---- State panel helper: exactly one of loading/empty/error/table shown ----
+
 function showState(state) {
   [stateLoading, stateEmpty, stateError, table].forEach((el) => {
     if (el === table) {
@@ -59,7 +59,7 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// ---- Fetch + render list, given an optional search query ----
+
 async function loadIncidents(query = "") {
   showState("loading");
   resultCount.textContent = "";
@@ -86,7 +86,6 @@ async function loadIncidents(query = "") {
   }
 }
 
-// ---- Live search (debounced) ----
 let searchDebounce;
 searchInput.addEventListener("input", (event) => {
   clearTimeout(searchDebounce);
@@ -98,7 +97,7 @@ document.getElementById("retryBtn").addEventListener("click", () => {
   loadIncidents(searchInput.value.trim());
 });
 
-// ---- Demo action: update record ID 1 ----
+
 document.getElementById("updateFirstBtn").addEventListener("click", async () => {
   actionStatus.textContent = "Updating record #1...";
   actionStatus.className = "inline-status";

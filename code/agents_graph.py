@@ -72,10 +72,7 @@ def validate_planner_output(proposal: dict) -> str:
     except ValidationError as e:
         return "; ".join(err["msg"] for err in e.errors())
 
-
-
 # Shared state
-
 
 class AgentState(TypedDict):
     title: str
@@ -92,10 +89,7 @@ class AgentState(TypedDict):
     turn_count: int
     final_output: Dict[str, Any]
 
-
-
 # Helpers (shared with agents_demo.py's approach)
-
 
 def extract_json(text: str) -> dict:
     """Best-effort extraction of a JSON object from an LLM response."""
@@ -127,10 +121,7 @@ def finalize(reviewer_output: dict, planner_output: dict) -> dict:
 
     return {"tags": tags, "summary": summary}
 
-
-
 # Nodes
-
 
 _client = ModelClient(temperature=0.7)
 
@@ -234,10 +225,7 @@ def supervisor_node(state: AgentState) -> Dict[str, Any]:
     """State-updating node only: increments the turn counter."""
     return {"turn_count": state.get("turn_count", 0) + 1}
 
-
-
 # Router (reads state, returns a string destination — no state mutation)
-
 
 def router_logic(state: AgentState) -> str:
     ceiling = state.get("turn_ceiling", TURN_CEILING_DEFAULT)
@@ -262,11 +250,7 @@ def router_logic(state: AgentState) -> str:
 
     return END
 
-
-# ---------------------------------------------------------------------------
 # Graph assembly
-# ---------------------------------------------------------------------------
-
 def build_graph():
     graph = StateGraph(AgentState)
 
@@ -284,11 +268,7 @@ def build_graph():
     graph.add_edge("reviewer", "supervisor")
 
     return graph.compile()
-
-
-# ---------------------------------------------------------------------------
 # Runner
-# ---------------------------------------------------------------------------
 
 def run_once(title: str, content: str, turn_ceiling: int = TURN_CEILING_DEFAULT,
              force_issues: bool = False, verbose: bool = True) -> dict:

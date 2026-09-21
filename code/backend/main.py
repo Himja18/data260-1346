@@ -34,14 +34,11 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-PORT_BASE = 8446  # SID4 1346 -> 8000 + (1346 mod 900)
-
+PORT_BASE = 8446  
 APP_DIR = Path(__file__).resolve().parent
 WEB_DIR = (APP_DIR / ".." / "web_application").resolve()
 
 app = FastAPI(title="DATA-260 HW2 — Municipal Transit Incidents API")
-
-
 
 class IncidentIn(BaseModel):
     """Shape of the JSON body the frontend POSTs when adding an incident."""
@@ -56,10 +53,6 @@ class IncidentIn(BaseModel):
 class Incident(IncidentIn):
     id: int
 
-
-# In-memory store, seeded with a couple of records so the list/search/update/
-# delete endpoints have something to operate on immediately.
-_next_id = 3
 INCIDENTS: list[Incident] = [
     Incident(
         id=1,
@@ -78,8 +71,6 @@ INCIDENTS: list[Incident] = [
         category="Delay",
     ),
 ]
-
-
 
 @app.get("/")
 def serve_index():
@@ -105,8 +96,6 @@ def list_incidents(q: Optional[str] = None):
         if needle in incident.routeId.lower() or needle in incident.category.lower()
     ]
 
-
-
 @app.post("/api/incidents", response_model=Incident, status_code=201)
 def add_incident(payload: IncidentIn):
     global _next_id
@@ -114,7 +103,6 @@ def add_incident(payload: IncidentIn):
     INCIDENTS.append(incident)
     _next_id += 1
     return incident
-
 
 
 @app.put("/api/incidents/1", response_model=Incident)
@@ -131,8 +119,6 @@ def update_record_one():
             return updated
     raise HTTPException(status_code=404, detail="Record with ID 1 not found")
 
-
-
 @app.delete("/api/incidents/highest", status_code=200)
 def delete_highest():
     if not INCIDENTS:
@@ -142,7 +128,4 @@ def delete_highest():
     INCIDENTS.remove(highest)
     return {"deleted_id": highest.id}
 
-
-# Mount the web_application directory for any other static assets referenced
-# by index.html (kept last so it doesn't shadow the API routes above).
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")

@@ -98,7 +98,6 @@ def check_backend() -> dict:
 
     return result
 
-
 def check_graph_finishes() -> dict:
     """Confirm the LangGraph pipeline terminates within a bounded number
     of turns instead of hanging, using a real (small) turn ceiling."""
@@ -126,7 +125,6 @@ def check_graph_finishes() -> dict:
         result["passed"] = False
 
     return result
-
 
 def check_schema_exactly_three_tags() -> dict:
     """Confirm the finalize() safety net always yields exactly 3 tags,
