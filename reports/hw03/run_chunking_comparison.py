@@ -99,6 +99,27 @@ def run_pipeline(name, node_parser, docs, questions, embed_model):
     for q in questions:
         qtext = q["question"].strip()
         retrieved = retriever.retrieve(qtext)
+
+        # --- Query embedding detail (shared query = q1) ---
+        # Prints the query embedding's dimension, first 8 values, the query
+        # vector's shape, the shape of the stacked retrieved-doc vectors, and
+        # an explicitly-computed cosine similarity per retrieved chunk (kept
+        # separate from whatever raw distance/score the FAISS store returns).
+        if q["id"] == "q1":
+            query_vec = np.array(embed_model.get_query_embedding(qtext))
+            doc_vecs = np.stack([
+                embed_model.get_text_embedding(r.node.get_content()) for r in retrieved
+            ])
+            log(f"[{name}] Query embedding dimension: {query_vec.shape[0]}")
+            log(f"[{name}] Query embedding first 8 values: {query_vec[:8].tolist()}")
+            log(f"[{name}] Query vector shape: {query_vec.shape}")
+            log(f"[{name}] Stacked doc vectors shape: {doc_vecs.shape}")
+            cosine_sims = doc_vecs @ query_vec / (
+                np.linalg.norm(doc_vecs, axis=1) * np.linalg.norm(query_vec)
+            )
+            log(f"[{name}] Cosine similarities (explicit, vs. FAISS L2 score): "
+                f"{cosine_sims.tolist()}")
+
         retrieved_chunks = [
             {
                 "rank": i + 1,

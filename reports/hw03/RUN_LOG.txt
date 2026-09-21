@@ -1,32 +1,47 @@
-[2026-09-20 12:02:04] === HW3 Part 2 Chunking Comparison — starting run ===
-[2026-09-20 12:02:04] Embedding model: BAAI/bge-small-en-v1.5
-[2026-09-20 12:02:04] Loaded 29 corpus documents from /Users/himja/Documents/data260-1346/reports/hw03/corpus
-[2026-09-20 12:02:04] Loaded 5 questions from /Users/himja/Documents/data260-1346/reports/hw03/questions.yaml
-[2026-09-20 12:02:14] --- Running pipeline: token ---
-[2026-09-20 12:02:14] [token] Produced 117 chunks
-[2026-09-20 12:02:17] [token] q1: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:17] [token] q2: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:17] [token] q3: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:17] [token] q4: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:17] [token] q5: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:17] [token] Done in 3.7s, 117 chunks total
-[2026-09-20 12:02:17] [token] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/token_results.json
-[2026-09-20 12:02:17] --- Running pipeline: semantic ---
-[2026-09-20 12:02:30] [semantic] Produced 89 chunks
-[2026-09-20 12:02:33] [semantic] q1: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:33] [semantic] q2: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:33] [semantic] q3: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:33] [semantic] q4: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:33] [semantic] q5: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:33] [semantic] Done in 15.6s, 89 chunks total
-[2026-09-20 12:02:33] [semantic] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/semantic_results.json
-[2026-09-20 12:02:33] --- Running pipeline: sentence_window ---
-[2026-09-20 12:02:33] [sentence_window] Produced 999 chunks
-[2026-09-20 12:02:40] [sentence_window] q1: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:40] [sentence_window] q2: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:40] [sentence_window] q3: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:40] [sentence_window] q4: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:40] [sentence_window] q5: retrieved 3 chunks, hit_expected_source=True
-[2026-09-20 12:02:40] [sentence_window] Done in 6.9s, 999 chunks total
-[2026-09-20 12:02:40] [sentence_window] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/sentence_window_results.json
-[2026-09-20 12:02:40] === All three pipelines complete ===
+[2026-09-21 07:57:22] === HW3 Part 2 Chunking Comparison — starting run ===
+[2026-09-21 07:57:22] Embedding model: BAAI/bge-small-en-v1.5
+[2026-09-21 07:57:22] Loaded 29 corpus documents from /Users/himja/Documents/data260-1346/reports/hw03/corpus
+[2026-09-21 07:57:22] Loaded 5 questions from /Users/himja/Documents/data260-1346/reports/hw03/questions.yaml
+[2026-09-21 07:57:29] --- Running pipeline: token ---
+[2026-09-21 07:57:30] [token] Produced 117 chunks
+[2026-09-21 07:57:32] [token] Query embedding dimension: 384
+[2026-09-21 07:57:32] [token] Query embedding first 8 values: [-0.020870672538876534, -0.07525075972080231, 0.03977179154753685, 0.007048518396914005, 0.022885305806994438, 0.022207733243703842, -0.0004885134403593838, 0.05800475925207138]
+[2026-09-21 07:57:32] [token] Query vector shape: (384,)
+[2026-09-21 07:57:32] [token] Stacked doc vectors shape: (3, 384)
+[2026-09-21 07:57:32] [token] Cosine similarities (explicit, vs. FAISS L2 score): [0.7828308719852493, 0.7658749531860699, 0.7446891217437774]
+[2026-09-21 07:57:32] [token] q1: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:32] [token] q2: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:32] [token] q3: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:32] [token] q4: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:32] [token] q5: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:32] [token] Done in 2.9s, 117 chunks total
+[2026-09-21 07:57:32] [token] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/token_results.json
+[2026-09-21 07:57:32] --- Running pipeline: semantic ---
+[2026-09-21 07:57:38] [semantic] Produced 89 chunks
+[2026-09-21 07:57:40] [semantic] Query embedding dimension: 384
+[2026-09-21 07:57:40] [semantic] Query embedding first 8 values: [-0.020870672538876534, -0.07525075972080231, 0.03977179154753685, 0.007048518396914005, 0.022885305806994438, 0.022207733243703842, -0.0004885134403593838, 0.05800475925207138]
+[2026-09-21 07:57:40] [semantic] Query vector shape: (384,)
+[2026-09-21 07:57:40] [semantic] Stacked doc vectors shape: (3, 384)
+[2026-09-21 07:57:40] [semantic] Cosine similarities (explicit, vs. FAISS L2 score): [0.7882521461225576, 0.7166716875880815, 0.7027884919416674]
+[2026-09-21 07:57:40] [semantic] q1: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:40] [semantic] q2: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:40] [semantic] q3: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:40] [semantic] q4: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:40] [semantic] q5: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:40] [semantic] Done in 7.4s, 89 chunks total
+[2026-09-21 07:57:40] [semantic] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/semantic_results.json
+[2026-09-21 07:57:40] --- Running pipeline: sentence_window ---
+[2026-09-21 07:57:40] [sentence_window] Produced 999 chunks
+[2026-09-21 07:57:44] [sentence_window] Query embedding dimension: 384
+[2026-09-21 07:57:44] [sentence_window] Query embedding first 8 values: [-0.020870672538876534, -0.07525075972080231, 0.03977179154753685, 0.007048518396914005, 0.022885305806994438, 0.022207733243703842, -0.0004885134403593838, 0.05800475925207138]
+[2026-09-21 07:57:44] [sentence_window] Query vector shape: (384,)
+[2026-09-21 07:57:44] [sentence_window] Stacked doc vectors shape: (3, 384)
+[2026-09-21 07:57:44] [sentence_window] Cosine similarities (explicit, vs. FAISS L2 score): [0.8093156327427621, 0.6716206281850563, 0.6300701804255517]
+[2026-09-21 07:57:44] [sentence_window] q1: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:44] [sentence_window] q2: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:44] [sentence_window] q3: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:44] [sentence_window] q4: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:44] [sentence_window] q5: retrieved 3 chunks, hit_expected_source=True
+[2026-09-21 07:57:44] [sentence_window] Done in 4.4s, 999 chunks total
+[2026-09-21 07:57:44] [sentence_window] Saved results to /Users/himja/Documents/data260-1346/reports/hw03/raw/sentence_window_results.json
+[2026-09-21 07:57:44] === All three pipelines complete ===

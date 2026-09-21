@@ -1,7 +1,7 @@
 {
   "pipeline": "semantic",
   "num_chunks": 89,
-  "elapsed_seconds": 15.55,
+  "elapsed_seconds": 7.43,
   "top_k": 3,
   "results": [
     {
@@ -71,8 +71,8 @@
       "expected_answer": "The threshold rose from a flat $1,000 in the 1997 SAMIS reporting glossary to $25,000 in the 2026 FTA Safety & Security Policy Manual for non-rail modes; rail modes instead use a \"substantial damage\" operational-disruption test rather than a dollar figure.",
       "expected_source_files": [
         "fta_ntd_glossary_and_definitions_supplement.txt",
-        "fta_samis_1997_annual_report.txt",
-        "fta_ntd_safety_security_policy_manual_2026.txt"
+        "fta_ntd_safety_security_policy_manual_2026.txt",
+        "fta_samis_1997_annual_report.txt"
       ],
       "retrieved_chunks": [
         {

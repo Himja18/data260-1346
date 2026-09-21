@@ -46,7 +46,6 @@ def home(request: Request):
         },
     )
 
-
 @router.get("/login", response_class=HTMLResponse)
 def login_form(request: Request):
     if _session_is_live(request):
@@ -54,7 +53,6 @@ def login_form(request: Request):
     return templates.TemplateResponse(
         request, "login.html", {"error": None, "logged_in": False}
     )
-
 
 @router.post("/login", response_class=HTMLResponse)
 def login_submit(request: Request, username: str = Form(...), password: str = Form(...)):
@@ -71,7 +69,6 @@ def login_submit(request: Request, username: str = Form(...), password: str = Fo
         status_code=401,
     )
 
-
 @router.get("/dashboard", response_class=HTMLResponse)
 def dashboard(request: Request):
     if not _session_is_live(request):
@@ -82,7 +79,6 @@ def dashboard(request: Request):
         "dashboard.html",
         {"username": request.session.get("username"), "logged_in": True},
     )
-
 
 @router.get("/logout")
 def logout(request: Request):
