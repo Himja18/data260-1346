@@ -631,3 +631,36 @@ Saved 9 results to /Users/himja/Documents/data260-1346/reports/hw04/raw/rag_resu
 [2026-09-27T00:56:52] q1   single_source   A_no_rag        True  True  False True  12830.8
 [2026-09-27T00:56:52] q1   single_source   B_basic_rag     True  True  True  True   9638.3
 [2026-09-27T00:56:52] q1   single_source   C_context_rag   True  True  True  True   8556.6
+[2026-09-27T01:51:10] === HW4 Part 4 RAG start | model=qwen2.5:3b | embed=BAAI/bge-small-en-v1.5 | chunk=500/50 | k=3
+[2026-09-27T01:51:14] Corpus: 466 chunks from /Users/himja/Documents/data260-1346/reports/hw03/corpus
+[2026-09-27T01:51:14] Embedding 466 chunks with BAAI/bge-small-en-v1.5 ...
+[2026-09-27T01:51:36] === HW4 Part 4 RAG start | model=qwen2.5:3b | embed=BAAI/bge-small-en-v1.5 | chunk=500/50 | k=3
+[2026-09-27T01:51:39] Corpus: 466 chunks from /Users/himja/Documents/data260-1346/reports/hw03/corpus
+[2026-09-27T01:51:39] Embedding 466 chunks with BAAI/bge-small-en-v1.5 ...
+[2026-09-27T01:51:44] FAISS index built: 466 vectors, dim=384
+[2026-09-27T01:51:44] 
+============================================================
+[2026-09-27T01:51:44] Q=q1 | type=single_source | k=3
+[2026-09-27T01:51:44] Question: By how much, and how shortly before the accident, did Union Pacific change the warning-time thumbwheel setting at the Fox River Grove grade crossing?
+[2026-09-27T01:51:44] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T01:51:44]   Rank 1 | score=0.3906 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T01:51:44]   Preview: , 1995 -- two weeks before the accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." UP officials state
+[2026-09-27T01:51:44]   Rank 2 | score=0.4191 | source=ntsb_har9602_fox_river_grove.txt
+[2026-09-27T01:51:44]   Preview:  5 years before the accident, the thumbwheel on the microprocessor at the accident site had been set at 30 seconds for the northernmost railroad track. However, 2 weeks before the accident (October 11
+[2026-09-27T01:51:44]   Rank 3 | score=0.4900 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T01:51:44]   Preview: rade crossing.  RAILROAD SIGNAL WARNING TIME -- THUMBWHEEL HISTORY (verbatim technical detail) The desired advance warning time for the crossing signal is entered via a "thumbwheel" switch on the micr
+[2026-09-27T01:51:44] 
+--- Config A ---
+[2026-09-27T01:52:06] Answer (21275.3 ms):
+I'm sorry, but I don't have enough specific information to accurately answer this question. Union Pacific and the Fox River Grove grade crossing incident are historical events, and the exact details of any changes to warning-time settings are not widely documented or publicized. Such changes, if they occurred, would typically be part of ongoing safety improvements or adjustments made by the railroad company in response to safety concerns or regulatory requirements.
+
+For precise and up-to-date information, I would recommend consulting Union Pacific's official safety records, the Federal Railroad Administration (FRA), or contacting the National Transportation Safety Board (NTSB), which investigates such incidents. They may have more detailed information about any changes made to warning systems at the Fox River Grove grade crossing.
+[2026-09-27T01:52:06] 
+--- Config B ---
+[2026-09-27T01:52:22] Answer (16687.5 ms):
+Union Pacific changed the warning-time thumbwheel setting at the Fox River Grove grade crossing from 30 seconds to 25 seconds. This change occurred two weeks before the accident, specifically on October 11, 1995. 
+
+The change was made to ensure consistency at that crossing and throughout the railroad's property. Union Pacific officials stated that this change did not alter the minimum constant warning time of 20 seconds, but it did add a 5-second buffer to account for conditions on the track.
+[2026-09-27T01:52:22] 
+--- Config C ---
