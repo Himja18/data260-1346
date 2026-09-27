@@ -328,3 +328,306 @@ INFO:     Stopping reloader process [38053]
 [2026-09-27T00:36:56] | 50 | 4.12x | 4.59x | 18.26 |
 [2026-09-27T00:36:56] | 200 | 6.97x | 5.92x | 75.22 |
 [2026-09-27T00:36:56] Saved 180 raw rows to /Users/himja/Documents/data260-1346/reports/hw04/raw/n1_raw.csv and n1_raw.json; summary in n1_summary.json
+[2026-09-27T00:45:34] === HW4 Part 4 RAG start | model=qwen2.5:3b | embed=BAAI/bge-small-en-v1.5 | chunk=500/50 | k=3
+[2026-09-27T00:46:20] Corpus: 466 chunks from /Users/himja/Documents/data260-1346/reports/hw03/corpus
+[2026-09-27T00:46:20] Embedding 466 chunks with BAAI/bge-small-en-v1.5 ...
+[2026-09-27T00:46:23] FAISS index built: 466 vectors, dim=384
+[2026-09-27T00:46:23] 
+============================================================
+[2026-09-27T00:46:23] Q=q1 | type=single_source | k=3
+[2026-09-27T00:46:23] Question: By how much, and how shortly before the accident, did Union Pacific change the warning-time thumbwheel setting at the Fox River Grove grade crossing?
+[2026-09-27T00:46:24] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:46:24]   Rank 1 | score=0.3906 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:46:24]   Preview: , 1995 -- two weeks before the accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." UP officials state
+[2026-09-27T00:46:24]   Rank 2 | score=0.4191 | source=ntsb_har9602_fox_river_grove.txt
+[2026-09-27T00:46:24]   Preview:  5 years before the accident, the thumbwheel on the microprocessor at the accident site had been set at 30 seconds for the northernmost railroad track. However, 2 weeks before the accident (October 11
+[2026-09-27T00:46:24]   Rank 3 | score=0.4900 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:46:24]   Preview: rade crossing.  RAILROAD SIGNAL WARNING TIME -- THUMBWHEEL HISTORY (verbatim technical detail) The desired advance warning time for the crossing signal is entered via a "thumbwheel" switch on the micr
+[2026-09-27T00:46:24] 
+--- Config A ---
+[2026-09-27T00:46:42] Answer (18036.5 ms):
+I'm sorry, but I don't have enough specific information to accurately answer this question. Union Pacific and the Fox River Grove grade crossing incident are historical events, and the exact details of any changes to warning-time settings are not widely documented or publicized. Such changes, if they occurred, would typically be part of ongoing safety improvements or adjustments made by the railroad company in response to safety concerns or regulatory requirements.
+
+For precise and up-to-date information, I would recommend consulting Union Pacific's official safety records, the Federal Railroad Administration (FRA), or contacting the National Transportation Safety Board (NTSB), which investigates such incidents. They may have more detailed information about any changes made to warning systems at the Fox River Grove grade crossing.
+[2026-09-27T00:46:42] 
+--- Config B ---
+[2026-09-27T00:46:59] Answer (17615.0 ms):
+Union Pacific changed the warning-time thumbwheel setting at the Fox River Grove grade crossing from 30 seconds to 25 seconds. This change occurred two weeks before the accident, specifically on October 11, 1995. 
+
+The change was made to ensure consistency at that crossing and throughout the railroad's property. Union Pacific officials stated that this change did not alter the minimum constant warning time of 20 seconds, but it did add a 5-second buffer to account for conditions on the track.
+[2026-09-27T00:46:59] 
+--- Config C ---
+[2026-09-27T00:47:16] Answer (16315.9 ms):
+[Doc 1] and [Doc 2] both indicate that Union Pacific changed the warning-time thumbwheel setting from 30 seconds to 25 seconds at the Fox River Grove grade crossing. This change occurred [Doc 2] 2 weeks before the accident, which happened in October 1995. Therefore, the warning-time thumbwheel setting was changed by 5 seconds, and this change was made 2 weeks shortly before the accident.
+[2026-09-27T00:47:16] 
+============================================================
+[2026-09-27T00:47:16] Q=q2 | type=single_source | k=3
+[2026-09-27T00:47:16] Question: After the fatal fall at Spring Garden Station, how much did SEPTA commit to its SCOPE program, and how many outreach workers did it add?
+[2026-09-27T00:47:19] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:47:20]   Rank 1 | score=0.6212 | source=ntsb_rir2203_septa_spring_garden.txt
+[2026-09-27T00:47:20]   Preview: TACCIDENT ACTIONS In September 2021, SEPTA announced it would spend $3.6 million on its "Safety, Cleaning, Ownership, Partnership, and Engagement" (SCOPE) Program, increasing outreach workers from 7 t
+[2026-09-27T00:47:20]   Rank 2 | score=0.6706 | source=ntsb_rir2203_septa_spring_garden.txt
+[2026-09-27T00:47:20]   Preview: NTSB Railroad Investigation Report RIR-22/03 Southeastern Pennsylvania Transportation Authority Fatality at Spring Garden Station Philadelphia, Pennsylvania, July 28, 2021. Issued: February 25, 2022. 
+[2026-09-27T00:47:20]   Rank 3 | score=0.7146 | source=ntsb_rir2203_septa_spring_garden.txt
+[2026-09-27T00:47:20]   Preview: n Philadelphia, Pennsylvania. As the Southeastern Pennsylvania Transportation Authority (SEPTA) Market-Frankford Line (MFL) passenger train number 78 entered the station for a normal station stop, the
+[2026-09-27T00:47:20] 
+--- Config A ---
+[2026-09-27T00:47:45] Answer (25820.6 ms):
+I'm sorry, but the information you're asking for is not directly related to the fatal fall incident at Spring Garden Station. The fatal fall incident at Spring Garden Station in Philadelphia, Pennsylvania, was a tragic event that occurred on January 27, 2019, involving a SEPTA (Southeastern Pennsylvania Transportation Authority) train. This incident led to a review of SEPTA's safety protocols and operations.
+
+Regarding the SCOPE (Southeastern Pennsylvania Transportation Authority Community Outreach Program), it is a program aimed at improving communication and understanding between SEPTA and the communities it serves. However, I do not have specific information on how much SEPTA committed to the SCOPE program or how many outreach workers it added after the fatal fall incident. 
+
+For precise and up-to-date information on these specific details, I would recommend checking SEPTA's official statements, press releases, or contacting their customer service directly. They would have the most accurate and current information regarding their commitments and additions to the SCOPE program.
+[2026-09-27T00:47:45] 
+--- Config B ---
+[2026-09-27T00:48:02] Answer (17065.6 ms):
+After the fatal fall at Spring Garden Station, SEPTA committed to increasing its "Safety, Cleaning, Ownership, Partnership, and Engagement" (SCOPE) Program by spending $3.6 million. Additionally, SEPTA added 50 outreach workers to assist vulnerable populations on the transit system. The original number of outreach workers was 7, and the increase brought the total to 57 outreach workers.
+[2026-09-27T00:48:02] 
+--- Config C ---
+[2026-09-27T00:48:16] Answer (13132.1 ms):
+[Doc 1] states that after the fatal fall at Spring Garden Station, SEPTA announced it would spend $3.6 million on its "Safety, Cleaning, Ownership, Partnership, and Engagement" (SCOPE) Program. Additionally, it increased outreach workers from 7 to 57 to assist vulnerable populations on the transit system.
+[2026-09-27T00:48:16] 
+============================================================
+[2026-09-27T00:48:16] Q=q3 | type=multi_source | k=3
+[2026-09-27T00:48:16] Question: How has the property-damage dollar threshold for a reportable non-rail transit collision changed between the FTA's 1997 SAMIS reporting guidance and its 2026 Safety & Security Policy Manual?
+[2026-09-27T00:48:23] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:48:23]   Rank 1 | score=0.3123 | source=transit_incident_terminology_faq.txt
+[2026-09-27T00:48:23]   Preview: icy_manual_2026.txt and the cross-document reconciliation note in fta_ntd_glossary_and_definitions_supplement.txt. As of the 2026 manual, non-rail modes report property damage of $25,000 or more; rail
+[2026-09-27T00:48:23]   Rank 2 | score=0.3719 | source=fta_ntd_glossary_and_definitions_supplement.txt
+[2026-09-27T00:48:23]   Preview: -rail reportability thresholds. The older 1997 SAMIS report used a narrower, threshold-based definition: "An incident in which a transit vehicle strikes or is struck by another vehicle... Reports are 
+[2026-09-27T00:48:23]   Rank 3 | score=0.4090 | source=fta_samis_1997_annual_report.txt
+[2026-09-27T00:48:23]   Preview: Safety Management Information Statistics (SAMIS) 1997 Annual Report FTA-MA-26-5002-99-01, DOT-VNTSC-FTA-99-3 U.S. Department of Transportation, Federal Transit Administration, March 1999 Source: https
+[2026-09-27T00:48:23] 
+--- Config A ---
+[2026-09-27T00:49:12] Answer (48343.8 ms):
+To accurately answer this question, I need to look at the specific details of the property-damage dollar threshold for a reportable non-rail transit collision as outlined in the FTA's (Federal Transit Administration) 1997 SAMIS (Safety and Management Information System) reporting guidance and its 2026 Safety & Security Policy Manual.
+
+Unfortunately, I do not have access to the exact text of these documents. However, I can provide a general approach to answering this question based on typical practices:
+
+1. **1997 SAMIS Reporting Guidance**: In the early 1990s, the FTA likely had a lower threshold for reporting property damage. This is because the SAMIS guidance was likely designed to capture incidents that were significant enough to warrant attention and improvement.
+
+2. **2026 Safety & Security Policy Manual**: By 2026, the FTA would have likely raised the threshold to reflect changes in the industry, including technological advancements, safety improvements, and the evolving nature of transit operations. The threshold would have been set at a higher level to ensure that only the most significant incidents are reported, allowing for more focused and effective safety measures.
+
+Given these general observations, the property-damage dollar threshold for a reportable non-rail transit collision would have likely increased from the 1997 level to a higher threshold by 2026. However, without the specific details of the 1997 guidance and the 2026 policy, I cannot provide a precise dollar amount or exact percentage increase.
+
+For an accurate answer, one would need to review the specific language of both documents.
+[2026-09-27T00:49:12] 
+--- Config B ---
+[2026-09-27T00:49:51] Answer (39279.3 ms):
+The property-damage dollar threshold for a reportable non-rail transit collision has changed significantly between the FTA's 1997 SAMIS reporting guidance and its 2026 Safety & Security Policy Manual.
+
+In the 1997 SAMIS guidance, the threshold was a flat $1,000. This means that any property damage over $1,000 would result in a report being made. The reportability was based on whether the incident resulted in death, injury, or property damage over $1,000.
+
+In contrast, the 2026 Safety & Security Policy Manual introduced a different approach for non-rail modes. The manual uses a "substantial damage" test tied to operational disruption rather than a dollar figure. For non-rail modes, the threshold is now $25,000 or more for property damage. This threshold has been adjusted upward over nearly 30 years, partly reflecting inflation and partly due to a policy decision to focus federal resources more effectively.
+
+Therefore, the change from $1,000 to $25,000 or more for non-rail modes represents a substantial increase in the threshold for property damage to be considered reportable.
+[2026-09-27T00:49:51] 
+--- Config C ---
+[2026-09-27T00:49:58] Answer (7153.8 ms):
+I cannot answer this question from the provided documents.
+[2026-09-27T00:49:58] 
+============================================================
+[2026-09-27T00:49:58] Q=q4 | type=adversarial | k=3
+[2026-09-27T00:49:58] Question: In the WMATA Metrorail smoke and arcing incident that occurred at L'Enfant Plaza station, how many passengers were on the train and how many people were treated or transported for smoke exposure?
+[2026-09-27T00:50:05] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:50:05]   Rank 1 | score=0.4054 | source=ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt
+[2026-09-27T00:50:05]   Preview: th of the L'Enfant Plaza station. Smoke filled the L'Enfant Plaza station, causing an evacuation. District of Columbia Fire and Emergency Management Services reported that 86 people were treated and t
+[2026-09-27T00:50:05]   Rank 2 | score=0.4135 | source=ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt
+[2026-09-27T00:50:05]   Preview: NT PLAZA ACCIDENT On Monday, January 12, 2015, about 3:15 p.m. eastern standard time, WMATA Metrorail Yellow Line train 302 stopped after encountering an accumulation of heavy smoke while traveling so
+[2026-09-27T00:50:05]   Rank 3 | score=0.4817 | source=ntsb_r15-31-32_lenfant_plaza_oversight_letter.txt
+[2026-09-27T00:50:05]   Preview: NTSB Safety Recommendation Letter R-15-31 and R-15-32 (Urgent) Date: September 30, 2015. To: The Honorable Anthony Foxx, Secretary of Transportation, US DOT. Subject: WMATA Metrorail smoke and arcing 
+[2026-09-27T00:50:05] 
+--- Config A ---
+[2026-09-27T00:50:24] Answer (19403.8 ms):
+I'm sorry, but I don't have specific, accurate information about the exact number of passengers on the train or the number of people treated or transported for smoke exposure during the WMATA Metrorail smoke and arcing incident at L'Enfant Plaza station. Such details can vary based on the specific incident and the information provided by the Metropolitan Washington Airports Authority (MWAA), which manages the Metrorail system, and the Washington Metropolitan Area Transit Authority (WMATA).
+
+For precise and up-to-date information, I would recommend consulting official reports from WMATA or the MWAA, or contacting them directly. They would have the most accurate and detailed information regarding the number of passengers involved and the number of people treated or transported for smoke exposure in that incident.
+[2026-09-27T00:50:24] 
+--- Config B ---
+[2026-09-27T00:50:40] Answer (15513.2 ms):
+In the WMATA Metrorail smoke and arcing incident that occurred at L'Enfant Plaza station, there were about 400 passengers on the train. According to the sources, 86 people were treated and transported from the scene, and another 9 passengers self-transported to medical facilities. Therefore, a total of 95 people (86 + 9) were treated or transported for smoke exposure.
+[2026-09-27T00:50:40] 
+--- Config C ---
+[2026-09-27T00:50:44] Answer (3940.5 ms):
+I cannot answer this question from the provided documents.
+[2026-09-27T00:50:44] 
+============================================================
+[2026-09-27T00:50:44] Q=q5 | type=not_in_corpus | k=3
+[2026-09-27T00:50:44] Question: What is the current annual budget of the New York Metropolitan Transportation Authority (MTA) for the fiscal year 2025?
+[2026-09-27T00:50:50] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:50:50]   Rank 1 | score=0.6771 | source=ntsb_rir2203_septa_spring_garden.txt
+[2026-09-27T00:50:50]   Preview: TACCIDENT ACTIONS In September 2021, SEPTA announced it would spend $3.6 million on its "Safety, Cleaning, Ownership, Partnership, and Engagement" (SCOPE) Program, increasing outreach workers from 7 t
+[2026-09-27T00:50:50]   Rank 2 | score=0.6934 | source=fta_ntst_2021_summaries_trends.txt
+[2026-09-27T00:50:50]   Preview: 2021 National Transit Database - National Transit Summaries & Trends (NTST) Federal Transit Administration, Office of Budget and Policy Source: https://www.transit.dot.gov/sites/fta.dot.gov/files/2022
+[2026-09-27T00:50:50]   Rank 3 | score=0.7324 | source=fta_ntst_2021_summaries_trends.txt
+[2026-09-27T00:50:50]   Preview: ; State funded 20.8 percent; Federal government sources funded the remaining 36.2 percent. In RY 2021, 852 transit agencies spent over $13.1 billion from CARES, CRRSA, and ARP pandemic relief programs
+[2026-09-27T00:50:50] 
+--- Config A ---
+[2026-09-27T00:51:08] Answer (17879.2 ms):
+I'm sorry, but as of my last update in 2023, specific details about the exact annual budget for the New York Metropolitan Transportation Authority (MTA) for the fiscal year 2025 were not readily available in public databases or reports. Budget figures for such a large and complex organization can change annually and are often subject to revision based on various factors including economic conditions, operational needs, and legislative decisions.
+
+For the most accurate and up-to-date information, I would recommend checking the official website of the New York MTA or consulting recent financial reports from reliable sources such as the New York State Department of Transportation or the New York State Comptroller's office. These sources typically provide detailed financial information about the MTA, including its budget for the current fiscal year.
+[2026-09-27T00:51:08] 
+--- Config B ---
+[2026-09-27T00:51:23] Answer (15437.2 ms):
+The provided sources do not contain any specific information about the current annual budget of the New York Metropolitan Transportation Authority (MTA) for the fiscal year 2025. The sources are focused on transit funding and spending trends, as well as the impact of the COVID-19 pandemic on the national transit system. To find the MTA's budget for fiscal year 2025, you would need to refer to the MTA's official financial reports or the relevant fiscal documents from the New York State government.
+[2026-09-27T00:51:23] 
+--- Config C ---
+[2026-09-27T00:51:27] Answer (4305.6 ms):
+I cannot answer this question from the provided documents.
+[2026-09-27T00:51:27] 
+============================================================
+[2026-09-27T00:51:27] Q=q6 | type=unrelated | k=3
+[2026-09-27T00:51:27] Question: What is the chemical formula for water and how many hydrogen bonds does a water molecule typically form with neighbouring molecules?
+[2026-09-27T00:51:32] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:51:32]   Rank 1 | score=0.8601 | source=ntsb_safety_recommendation_status_classifications.txt
+[2026-09-27T00:51:32]   Preview: ion, since it explicitly paired graded question content with its own answers and source filenames — a problem this file does not share, since it makes no reference to any specific graded question.  FI
+[2026-09-27T00:51:32]   Rank 2 | score=0.8804 | source=final_corpus_summary.txt
+[2026-09-27T00:51:32]   Preview: ation, or reproduction for this academic assignment. Every document's original source URL and access date are recorded in the header of its corresponding file in this directory, and are also consolida
+[2026-09-27T00:51:32]   Rank 3 | score=0.9024 | source=final_corpus_summary.txt
+[2026-09-27T00:51:32]   Preview: ore this line was appended, satisfying the assignment's 200 KB minimum under either the decimal or binary interpretation of the unit. Corpus finalized 2026-09-19 for DATA 260 HW3 Part 2, SID4=1346, DO
+[2026-09-27T00:51:32] 
+--- Config A ---
+[2026-09-27T00:51:38] Answer (6368.6 ms):
+The chemical formula for water is H2O. 
+
+Water molecules typically form about 4 hydrogen bonds with neighboring water molecules. However, the exact number can vary depending on the specific conditions, such as temperature and pressure. In a typical aqueous solution at room temperature and pressure, water molecules can form approximately 4 hydrogen bonds with neighboring water molecules.
+[2026-09-27T00:51:38] 
+--- Config B ---
+[2026-09-27T00:51:44] Answer (5798.0 ms):
+The chemical formula for water is H₂O. A water molecule typically forms four hydrogen bonds with neighboring molecules.
+[2026-09-27T00:51:44] 
+--- Config C ---
+[2026-09-27T00:51:49] Answer (5405.1 ms):
+I cannot answer this question from the provided documents.
+[2026-09-27T00:51:49] 
+Saved 18 results to /Users/himja/Documents/data260-1346/reports/hw04/raw/rag_results.json
+[2026-09-27T00:51:50] Eval table saved to /Users/himja/Documents/data260-1346/reports/hw04/raw/rag_eval.csv
+[2026-09-27T00:51:50] 
+=== EVALUATION TABLE ===
+[2026-09-27T00:51:50] Q    Type            Config          Ret   Ans   Grnd  Ref   ms     
+[2026-09-27T00:51:50] -----------------------------------------------------------------
+[2026-09-27T00:51:50] q1   single_source   A_no_rag        True  True  False True  18036.5
+[2026-09-27T00:51:50] q1   single_source   B_basic_rag     True  True  True  True  17615.0
+[2026-09-27T00:51:50] q1   single_source   C_context_rag   True  True  True  True  16315.9
+[2026-09-27T00:51:50] q2   single_source   A_no_rag        True  True  False True  25820.6
+[2026-09-27T00:51:50] q2   single_source   B_basic_rag     True  True  True  True  17065.6
+[2026-09-27T00:51:50] q2   single_source   C_context_rag   True  True  True  True  13132.1
+[2026-09-27T00:51:50] q3   multi_source    A_no_rag        True  True  False True  48343.8
+[2026-09-27T00:51:50] q3   multi_source    B_basic_rag     True  True  True  True  39279.3
+[2026-09-27T00:51:50] q3   multi_source    C_context_rag   True  False True  True   7153.8
+[2026-09-27T00:51:50] q4   adversarial     A_no_rag        True  True  False True  19403.8
+[2026-09-27T00:51:50] q4   adversarial     B_basic_rag     True  True  True  True  15513.2
+[2026-09-27T00:51:50] q4   adversarial     C_context_rag   True  False True  True   3940.5
+[2026-09-27T00:51:50] q5   not_in_corpus   A_no_rag        N/A   False False False 17879.2
+[2026-09-27T00:51:50] q5   not_in_corpus   B_basic_rag     N/A   False True  False 15437.2
+[2026-09-27T00:51:50] q5   not_in_corpus   C_context_rag   N/A   True  True  True   4305.6
+[2026-09-27T00:51:50] q6   unrelated       A_no_rag        N/A   False False False  6368.6
+[2026-09-27T00:51:50] q6   unrelated       B_basic_rag     N/A   False True  False  5798.0
+[2026-09-27T00:51:50] q6   unrelated       C_context_rag   N/A   True  True  True   5405.1
+[2026-09-27T00:55:01] === HW4 Part 4 RAG start | model=qwen2.5:3b | embed=BAAI/bge-small-en-v1.5 | chunk=500/50 | k=3
+[2026-09-27T00:55:04] Corpus: 466 chunks from /Users/himja/Documents/data260-1346/reports/hw03/corpus
+[2026-09-27T00:55:04] Embedding 466 chunks with BAAI/bge-small-en-v1.5 ...
+[2026-09-27T00:55:11] FAISS index built: 466 vectors, dim=384
+[2026-09-27T00:55:11] 
+============================================================
+[2026-09-27T00:55:11] Q=q1 | type=single_source | k=1
+[2026-09-27T00:55:11] Question: By how much, and how shortly before the accident, did Union Pacific change the warning-time thumbwheel setting at the Fox River Grove grade crossing?
+[2026-09-27T00:55:11] 
+--- Retrieved chunks (k=1) ---
+[2026-09-27T00:55:11]   Rank 1 | score=0.3906 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:55:11]   Preview: , 1995 -- two weeks before the accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." UP officials state
+[2026-09-27T00:55:11] 
+--- Config A ---
+[2026-09-27T00:55:27] Answer (16271.6 ms):
+I'm sorry, but I don't have enough specific information to accurately answer this question. Union Pacific and the Fox River Grove grade crossing incident are historical events, and the exact details of any changes to warning-time settings are not widely documented or publicized. Such changes, if they occurred, would typically be part of ongoing safety improvements or adjustments made by the railroad company in response to safety concerns or regulatory requirements.
+
+For precise and up-to-date information, I would recommend consulting Union Pacific's official safety records, the Federal Railroad Administration (FRA), or contacting the National Transportation Safety Board (NTSB), which investigates such incidents. They may have more detailed information about any changes made to warning systems at the Fox River Grove grade crossing.
+[2026-09-27T00:55:27] 
+--- Config B ---
+[2026-09-27T00:55:34] Answer (6919.5 ms):
+Union Pacific changed the warning-time thumbwheel setting at the Fox River Grove grade crossing to 25 seconds. This change occurred two weeks before the accident. The change was made to ensure consistency at the crossing and throughout the railroad's property. Despite the change, the minimum constant warning time of 20 seconds was not altered.
+[2026-09-27T00:55:34] 
+--- Config C ---
+[2026-09-27T00:55:41] Answer (6586.6 ms):
+[Doc 1] states that Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." The document does not provide the exact time by which this change was made shortly before the accident. Therefore, I cannot answer this question from the provided documents.
+[2026-09-27T00:55:41] 
+============================================================
+[2026-09-27T00:55:41] Q=q1 | type=single_source | k=3
+[2026-09-27T00:55:41] Question: By how much, and how shortly before the accident, did Union Pacific change the warning-time thumbwheel setting at the Fox River Grove grade crossing?
+[2026-09-27T00:55:42] 
+--- Retrieved chunks (k=3) ---
+[2026-09-27T00:55:42]   Rank 1 | score=0.3906 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:55:42]   Preview: , 1995 -- two weeks before the accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." UP officials state
+[2026-09-27T00:55:42]   Rank 2 | score=0.4191 | source=ntsb_har9602_fox_river_grove.txt
+[2026-09-27T00:55:42]   Preview:  5 years before the accident, the thumbwheel on the microprocessor at the accident site had been set at 30 seconds for the northernmost railroad track. However, 2 weeks before the accident (October 11
+[2026-09-27T00:55:42]   Rank 3 | score=0.4900 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:55:42]   Preview: rade crossing.  RAILROAD SIGNAL WARNING TIME -- THUMBWHEEL HISTORY (verbatim technical detail) The desired advance warning time for the crossing signal is entered via a "thumbwheel" switch on the micr
+[2026-09-27T00:55:42] 
+--- Config A ---
+[2026-09-27T00:55:56] Answer (13311.8 ms):
+I'm sorry, but I don't have enough specific information to accurately answer this question. Union Pacific and the Fox River Grove grade crossing incident are historical events, and the exact details of any changes to warning-time settings are not widely documented or publicized. Such changes, if they occurred, would typically be part of ongoing safety improvements or adjustments made by the railroad company in response to safety concerns or regulatory requirements.
+
+For precise and up-to-date information, I would recommend consulting Union Pacific's official safety records, the Federal Railroad Administration (FRA), or contacting the National Transportation Safety Board (NTSB), which investigates such incidents. They may have more detailed information about any changes made to warning systems at the Fox River Grove grade crossing.
+[2026-09-27T00:55:56] 
+--- Config B ---
+[2026-09-27T00:56:09] Answer (13322.0 ms):
+Union Pacific changed the warning-time thumbwheel setting at the Fox River Grove grade crossing from 30 seconds to 25 seconds. This change occurred two weeks before the accident, specifically on October 11, 1995. 
+
+The change was made to ensure consistency at that crossing and throughout the railroad's property. Union Pacific officials stated that this change did not alter the minimum constant warning time of 20 seconds, but it did add a 5-second buffer to account for conditions on the track.
+[2026-09-27T00:56:09] 
+--- Config C ---
+[2026-09-27T00:56:20] Answer (10624.7 ms):
+[Doc 1] and [Doc 2] both indicate that Union Pacific changed the warning-time thumbwheel setting from 30 seconds to 25 seconds at the Fox River Grove grade crossing. This change occurred [Doc 2] 2 weeks before the accident, which happened in October 1995. Therefore, the warning-time thumbwheel setting was changed by 5 seconds, and this change was made 2 weeks shortly before the accident.
+[2026-09-27T00:56:20] 
+============================================================
+[2026-09-27T00:56:20] Q=q1 | type=single_source | k=5
+[2026-09-27T00:56:20] Question: By how much, and how shortly before the accident, did Union Pacific change the warning-time thumbwheel setting at the Fox River Grove grade crossing?
+[2026-09-27T00:56:21] 
+--- Retrieved chunks (k=5) ---
+[2026-09-27T00:56:21]   Rank 1 | score=0.3906 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:56:21]   Preview: , 1995 -- two weeks before the accident -- Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." UP officials state
+[2026-09-27T00:56:21]   Rank 2 | score=0.4191 | source=ntsb_har9602_fox_river_grove.txt
+[2026-09-27T00:56:21]   Preview:  5 years before the accident, the thumbwheel on the microprocessor at the accident site had been set at 30 seconds for the northernmost railroad track. However, 2 weeks before the accident (October 11
+[2026-09-27T00:56:21]   Rank 3 | score=0.4900 | source=ntsb_har9602_fox_river_grove_raw_excerpt.txt
+[2026-09-27T00:56:21]   Preview: rade crossing.  RAILROAD SIGNAL WARNING TIME -- THUMBWHEEL HISTORY (verbatim technical detail) The desired advance warning time for the crossing signal is entered via a "thumbwheel" switch on the micr
+[2026-09-27T00:56:21]   Rank 4 | score=0.5174 | source=ntsb_har0103_conasauga.txt
+[2026-09-27T00:56:21]   Preview: an active crossing with gates and lights on September 9, 2000, following the accident.  An earlier locomotive engineer had reported to investigators that 11 days before the accident, on March 17, 2000
+[2026-09-27T00:56:21]   Rank 5 | score=0.5973 | source=ntsb_har9602_fox_river_grove.txt
+[2026-09-27T00:56:21]   Preview: NTSB/HAR-96/02 HIGHWAY/RAILROAD ACCIDENT REPORT Collision of Northeast Illinois Regional Commuter Railroad Corporation (METRA) Train and Transportation Joint Agreement School District 47/155 School Bu
+[2026-09-27T00:56:21] 
+--- Config A ---
+[2026-09-27T00:56:34] Answer (12830.8 ms):
+I'm sorry, but I don't have enough specific information to accurately answer this question. Union Pacific and the Fox River Grove grade crossing incident are historical events, and the exact details of any changes to warning-time settings are not widely documented or publicized. Such changes, if they occurred, would typically be part of ongoing safety improvements or adjustments made by the railroad company in response to safety concerns or regulatory requirements.
+
+For precise and up-to-date information, I would recommend consulting Union Pacific's official safety records, the Federal Railroad Administration (FRA), or contacting the National Transportation Safety Board (NTSB), which investigates such incidents. They may have more detailed information about any changes made to warning systems at the Fox River Grove grade crossing.
+[2026-09-27T00:56:34] 
+--- Config B ---
+[2026-09-27T00:56:43] Answer (9638.3 ms):
+Union Pacific changed the warning-time thumbwheel setting at the Fox River Grove grade crossing from 30 seconds to 25 seconds, two weeks before the accident. This change was made to ensure consistency at that crossing and throughout the railroad's property. The change occurred two weeks before the accident, which happened on October 25, 1995.
+[2026-09-27T00:56:43] 
+--- Config C ---
+[2026-09-27T00:56:52] Answer (8556.6 ms):
+[Doc 2] states that Union Pacific Railroad reset the thumbwheel to 25 seconds "to ensure consistency at that crossing and throughout the railroad's property." This change was made 2 weeks before the accident, which occurred in October 1995. The thumbwheel was previously set at 30 seconds. Therefore, Union Pacific changed the warning-time thumbwheel setting by 5 seconds, 2 weeks before the accident.
+[2026-09-27T00:56:52] 
+Saved 9 results to /Users/himja/Documents/data260-1346/reports/hw04/raw/rag_results.json
+[2026-09-27T00:56:52] Eval table saved to /Users/himja/Documents/data260-1346/reports/hw04/raw/rag_eval.csv
+[2026-09-27T00:56:52] 
+=== EVALUATION TABLE ===
+[2026-09-27T00:56:52] Q    Type            Config          Ret   Ans   Grnd  Ref   ms     
+[2026-09-27T00:56:52] -----------------------------------------------------------------
+[2026-09-27T00:56:52] q1   single_source   A_no_rag        True  True  False True  16271.6
+[2026-09-27T00:56:52] q1   single_source   B_basic_rag     True  True  True  True   6919.5
+[2026-09-27T00:56:52] q1   single_source   C_context_rag   True  False True  True   6586.6
+[2026-09-27T00:56:52] q1   single_source   A_no_rag        True  True  False True  13311.8
+[2026-09-27T00:56:52] q1   single_source   B_basic_rag     True  True  True  True  13322.0
+[2026-09-27T00:56:52] q1   single_source   C_context_rag   True  True  True  True  10624.7
+[2026-09-27T00:56:52] q1   single_source   A_no_rag        True  True  False True  12830.8
+[2026-09-27T00:56:52] q1   single_source   B_basic_rag     True  True  True  True   9638.3
+[2026-09-27T00:56:52] q1   single_source   C_context_rag   True  True  True  True   8556.6

@@ -1,0 +1,52 @@
+{
+  "homework": "HW4",
+  "sid4": 1346,
+  "commit_hash": "a7cf6db940ff240b4ea69288360e64f6bdf854ac",
+  "seed": 1346,
+  "verify_seed": 261346,
+  "model_configuration": "qwen2.5:3b via Ollama",
+  "timestamp": "2026-09-27T01:04:04.783918",
+  "checks": [
+    {
+      "name": "fastapi_backend_responds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "login_returns_200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "incidents_list_returns_data",
+      "passed": true,
+      "detail": "50 incidents"
+    },
+    {
+      "name": "naive_endpoint_n_plus_1",
+      "passed": true,
+      "detail": "sql_statements=11"
+    },
+    {
+      "name": "fixed_endpoint_one_query",
+      "passed": true,
+      "detail": "sql_statements=1"
+    },
+    {
+      "name": "raw_180_requests_saved",
+      "passed": true,
+      "detail": "180 rows"
+    },
+    {
+      "name": "rag_results_saved",
+      "passed": true,
+      "detail": "9 results"
+    },
+    {
+      "name": "transit_lines_seeded",
+      "passed": true,
+      "detail": "line=L-179"
+    }
+  ],
+  "all_passed": true
+}
