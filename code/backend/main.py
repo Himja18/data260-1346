@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import auth
 import incidents
+import incidents_n1
 from database import Base, engine
 
 PORT_BASE = 8446
@@ -28,6 +29,8 @@ app.add_middleware(
 Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router)
+# Part 3 routes first: /api/incidents/naive and /fixed must match before /{incident_id}
+app.include_router(incidents_n1.router)
 app.include_router(incidents.router)
 
 

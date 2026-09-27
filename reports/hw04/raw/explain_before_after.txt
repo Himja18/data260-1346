@@ -1,0 +1,79 @@
+HW4 Part 3.8 EXPLAIN before/after - 2026-09-27T00:38:27
+incidents rows: 5001
+
+==================== BEFORE index ====================
+
+--- Q1 page of one category (fixed endpoint shape)
+SELECT i.id, i.route_title, i.category, i.created_at, l.code, l.name, l.mode FROM incidents i LEFT OUTER JOIN transit_lines l ON l.id = i.line_id WHERE i.category = 'Accident' ORDER BY i.id DESC LIMIT 50
+
+id | select_type | table | partitions | type   | possible_keys | key     | key_len | ref                 | rows | filtered | Extra                           
+---+-------------+-------+------------+--------+---------------+---------+---------+---------------------+------+----------+---------------------------------
+1  | SIMPLE      | i     | NULL       | index  | NULL          | PRIMARY | 4       | NULL                | 50   | 10.0     | Using where; Backward index scan
+1  | SIMPLE      | l     | NULL       | eq_ref | PRIMARY       | PRIMARY | 4       | s1346_rel.i.line_id | 1    | 100.0    | NULL                            
+
+EXPLAIN ANALYZE:
+-> Limit: 50 row(s)  (cost=130 rows=5) (actual time=0.0643..0.337 rows=50 loops=1)
+    -> Nested loop left join  (cost=130 rows=5) (actual time=0.0633..0.333 rows=50 loops=1)
+        -> Filter: (i.category = 'Accident')  (cost=4.58 rows=5) (actual time=0.0503..0.27 rows=50 loops=1)
+            -> Index scan on i using PRIMARY (reverse)  (cost=4.58 rows=50) (actual time=0.0158..0.216 rows=479 loops=1)
+        -> Single-row index lookup on l using PRIMARY (id = i.line_id)  (cost=0.25 rows=1) (actual time=0.00107..0.0011 rows=1 loops=50)
+
+
+median of 50 runs: 0.809 ms
+
+--- Q2 count in one category
+SELECT COUNT(*) FROM incidents WHERE category = 'Accident'
+
+id | select_type | table     | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra      
+---+-------------+-----------+------------+------+---------------+------+---------+------+------+----------+------------
+1  | SIMPLE      | incidents | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 5000 | 10.0     | Using where
+
+EXPLAIN ANALYZE:
+-> Aggregate: count(0)  (cost=622 rows=1) (actual time=2.33..2.33 rows=1 loops=1)
+    -> Filter: (incidents.category = 'Accident')  (cost=507 rows=500) (actual time=0.0223..2.31 rows=501 loops=1)
+        -> Table scan on incidents  (cost=507 rows=5000) (actual time=0.0207..2.07 rows=5001 loops=1)
+
+
+median of 50 runs: 1.076 ms
+
+CREATE INDEX ix_incidents_category ON incidents (category);
+
+==================== AFTER index ====================
+
+--- Q1 page of one category (fixed endpoint shape)
+SELECT i.id, i.route_title, i.category, i.created_at, l.code, l.name, l.mode FROM incidents i LEFT OUTER JOIN transit_lines l ON l.id = i.line_id WHERE i.category = 'Accident' ORDER BY i.id DESC LIMIT 50
+
+id | select_type | table | partitions | type   | possible_keys         | key                   | key_len | ref                 | rows | filtered | Extra              
+---+-------------+-------+------------+--------+-----------------------+-----------------------+---------+---------------------+------+----------+--------------------
+1  | SIMPLE      | i     | NULL       | ref    | ix_incidents_category | ix_incidents_category | 202     | const               | 501  | 100.0    | Backward index scan
+1  | SIMPLE      | l     | NULL       | eq_ref | PRIMARY               | PRIMARY               | 4       | s1346_rel.i.line_id | 1    | 100.0    | NULL               
+
+EXPLAIN ANALYZE:
+-> Limit: 50 row(s)  (cost=247 rows=50) (actual time=0.0754..0.137 rows=50 loops=1)
+    -> Nested loop left join  (cost=247 rows=501) (actual time=0.075..0.134 rows=50 loops=1)
+        -> Index lookup on i using ix_incidents_category (category = 'Accident') (reverse)  (cost=71.8 rows=501) (actual time=0.0706..0.0813 rows=50 loops=1)
+        -> Single-row index lookup on l using PRIMARY (id = i.line_id)  (cost=0.25 rows=1) (actual time=880e-6..905e-6 rows=1 loops=50)
+
+
+median of 50 runs: 0.673 ms
+
+--- Q2 count in one category
+SELECT COUNT(*) FROM incidents WHERE category = 'Accident'
+
+id | select_type | table     | partitions | type | possible_keys         | key                   | key_len | ref   | rows | filtered | Extra      
+---+-------------+-----------+------------+------+-----------------------+-----------------------+---------+-------+------+----------+------------
+1  | SIMPLE      | incidents | NULL       | ref  | ix_incidents_category | ix_incidents_category | 202     | const | 501  | 100.0    | Using index
+
+EXPLAIN ANALYZE:
+-> Aggregate: count(0)  (cost=177 rows=1) (actual time=0.131..0.131 rows=1 loops=1)
+    -> Covering index lookup on incidents using ix_incidents_category (category = 'Accident')  (cost=61.9 rows=501) (actual time=0.0113..0.113 rows=501 loops=1)
+
+
+median of 50 runs: 0.267 ms
+
+==================== SHOW INDEX FROM incidents ====================
+Key_name              | Seq_in_index | Column_name | Non_unique
+----------------------+--------------+-------------+-----------
+PRIMARY               | 1            | id          | 0         
+fk_incident_line      | 1            | line_id     | 1         
+ix_incidents_category | 1            | category    | 1         

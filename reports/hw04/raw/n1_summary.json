@@ -1,0 +1,85 @@
+{
+  "n_requests_total": 180,
+  "per_combination": [
+    {
+      "page_size": 10,
+      "version": "naive",
+      "n": 30,
+      "sql_stmts_per_req": 11,
+      "p50_ms": 7.76,
+      "p95_ms": 11.14,
+      "p99_ms": 34.93,
+      "server_p50_ms": 4.71
+    },
+    {
+      "page_size": 10,
+      "version": "fixed",
+      "n": 30,
+      "sql_stmts_per_req": 1,
+      "p50_ms": 3.94,
+      "p95_ms": 6.04,
+      "p99_ms": 10.43,
+      "server_p50_ms": 0.9
+    },
+    {
+      "page_size": 50,
+      "version": "naive",
+      "n": 30,
+      "sql_stmts_per_req": 51,
+      "p50_ms": 24.11,
+      "p95_ms": 30.37,
+      "p99_ms": 73.17,
+      "server_p50_ms": 19.82
+    },
+    {
+      "page_size": 50,
+      "version": "fixed",
+      "n": 30,
+      "sql_stmts_per_req": 1,
+      "p50_ms": 5.85,
+      "p95_ms": 6.61,
+      "p99_ms": 6.87,
+      "server_p50_ms": 1.75
+    },
+    {
+      "page_size": 200,
+      "version": "naive",
+      "n": 30,
+      "sql_stmts_per_req": 201,
+      "p50_ms": 87.82,
+      "p95_ms": 168.36,
+      "p99_ms": 224.89,
+      "server_p50_ms": 80.19
+    },
+    {
+      "page_size": 200,
+      "version": "fixed",
+      "n": 30,
+      "sql_stmts_per_req": 1,
+      "p50_ms": 12.6,
+      "p95_ms": 28.46,
+      "p99_ms": 40.23,
+      "server_p50_ms": 4.76
+    }
+  ],
+  "speedup": [
+    {
+      "page_size": 10,
+      "p50_speedup_x": 1.97,
+      "p95_speedup_x": 1.84,
+      "p50_saved_ms": 3.82
+    },
+    {
+      "page_size": 50,
+      "p50_speedup_x": 4.12,
+      "p95_speedup_x": 4.59,
+      "p50_saved_ms": 18.26
+    },
+    {
+      "page_size": 200,
+      "p50_speedup_x": 6.97,
+      "p95_speedup_x": 5.92,
+      "p50_saved_ms": 75.22
+    }
+  ]
+}

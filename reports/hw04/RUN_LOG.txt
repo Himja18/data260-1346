@@ -197,3 +197,134 @@ INFO:     127.0.0.1:53548 - "GET /api/incidents/1 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53572 - "PUT /api/incidents/1 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53604 - "DELETE /api/incidents/2 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53618 - "GET /api/incidents/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53892 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53893 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53925 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53926 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53930 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53931 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54159 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54160 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54165 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54164 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54181 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54182 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54818 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54817 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54874 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54883 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54884 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55010 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55011 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55031 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55032 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55060 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55061 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55201 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55202 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55221 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55257 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55264 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55809 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55812 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55916 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55917 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55918 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55920 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55922 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55981 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55984 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56020 - "POST /api/incidents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:56023 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56033 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56036 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56040 - "PUT /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56043 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56063 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56066 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56070 - "PUT /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56073 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56076 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56079 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56091 - "PUT /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56094 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56102 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56105 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56111 - "PUT /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56114 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56139 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56142 - "GET /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56145 - "DELETE /api/incidents/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56148 - "GET /api/incidents?limit=50 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'incidents_n1.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [61334]
+INFO:     Started server process [76767]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'sql_counter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [76767]
+INFO:     Started server process [76866]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'seed_part3.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [76866]
+INFO:     Started server process [77192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'measure_n1.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [77192]
+INFO:     Started server process [77286]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'explain_index.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [77286]
+INFO:     Started server process [77448]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [77448]
+INFO:     Started server process [79692]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [79692]
+INFO:     Stopping reloader process [38053]
+[2026-09-27T00:36:50] === N+1 measurement start: http://127.0.0.1:8446, logged in as dispatcher1346@transit.test, 30 requests x 3 sizes x 2 versions
+[2026-09-27T00:36:51] page_size=10: 30 naive + 30 fixed requests done
+[2026-09-27T00:36:52] page_size=50: 30 naive + 30 fixed requests done
+[2026-09-27T00:36:56] page_size=200: 30 naive + 30 fixed requests done
+[2026-09-27T00:36:56] | Page size | Version | SQL stmts/req | p50 (ms) | p95 (ms) | p99 (ms) |
+[2026-09-27T00:36:56] |---|---|---|---|---|---|
+[2026-09-27T00:36:56] | 10 | naive | 11 | 7.76 | 11.14 | 34.93 |
+[2026-09-27T00:36:56] | 10 | fixed | 1 | 3.94 | 6.04 | 10.43 |
+[2026-09-27T00:36:56] | 50 | naive | 51 | 24.11 | 30.37 | 73.17 |
+[2026-09-27T00:36:56] | 50 | fixed | 1 | 5.85 | 6.61 | 6.87 |
+[2026-09-27T00:36:56] | 200 | naive | 201 | 87.82 | 168.36 | 224.89 |
+[2026-09-27T00:36:56] | 200 | fixed | 1 | 12.6 | 28.46 | 40.23 |
+[2026-09-27T00:36:56] 
+[2026-09-27T00:36:56] | Page size | p50 speed-up | p95 speed-up | p50 time saved (ms) |
+[2026-09-27T00:36:56] |---|---|---|---|
+[2026-09-27T00:36:56] | 10 | 1.97x | 1.84x | 3.82 |
+[2026-09-27T00:36:56] | 50 | 4.12x | 4.59x | 18.26 |
+[2026-09-27T00:36:56] | 200 | 6.97x | 5.92x | 75.22 |
+[2026-09-27T00:36:56] Saved 180 raw rows to /Users/himja/Documents/data260-1346/reports/hw04/raw/n1_raw.csv and n1_raw.json; summary in n1_summary.json
