@@ -1,0 +1,10 @@
+question_id,k,config,correct_retrieval,correct_answer,grounded,refused_when_needed,latency_ms
+q1,1,A_no_rag,True,True,False,True,16271.6
+q1,1,B_basic_rag,True,True,True,True,6919.5
+q1,1,C_context_rag,True,False,True,True,6586.6
+q1,3,A_no_rag,True,True,False,True,13311.8
+q1,3,B_basic_rag,True,True,True,True,13322.0
+q1,3,C_context_rag,True,True,True,True,10624.7
+q1,5,A_no_rag,True,True,False,True,12830.8
+q1,5,B_basic_rag,True,True,True,True,9638.3
+q1,5,C_context_rag,True,True,True,True,8556.6
