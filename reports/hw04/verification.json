@@ -1,11 +1,11 @@
 {
   "homework": "HW4",
   "sid4": 1346,
-  "commit_hash": "a7cf6db940ff240b4ea69288360e64f6bdf854ac",
+  "commit_hash": "9f6f6348862f0eade2693401b3a57c93b2b8ad68",
   "seed": 1346,
   "verify_seed": 261346,
   "model_configuration": "qwen2.5:3b via Ollama",
-  "timestamp": "2026-09-27T01:04:04.783918",
+  "timestamp": "2026-09-28T09:17:15.414999",
   "checks": [
     {
       "name": "fastapi_backend_responds",
@@ -40,7 +40,7 @@
     {
       "name": "rag_results_saved",
       "passed": true,
-      "detail": "9 results"
+      "detail": "18 results"
     },
     {
       "name": "transit_lines_seeded",
