@@ -17,6 +17,9 @@ DATABASE_URL = (
     f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{DB_NAME}"
 )
 
+# DATABASE_URL env override lets offline tests point at SQLite.
+DATABASE_URL = os.getenv("DATABASE_URL", DATABASE_URL)
+
 engine = create_engine(DATABASE_URL, pool_pre_ping=True, echo=False)
 
 # Required name (HW4 Part 2): the session factory every request uses.

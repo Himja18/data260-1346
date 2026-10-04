@@ -28,10 +28,5 @@ export const api = {
     request("/auth/login", { method: "POST", body: JSON.stringify({ email, password }) }),
   logout: () => request("/auth/logout", { method: "POST" }),
 
-  listIncidents: (limit = 50) => request(`/incidents?limit=${limit}`),
-  getIncident: (id) => request(`/incidents/${id}`),
-  createIncident: (data) => request("/incidents", { method: "POST", body: JSON.stringify(data) }),
-  updateIncident: (id, data) =>
-    request(`/incidents/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  deleteIncident: (id) => request(`/incidents/${id}`, { method: "DELETE" }),
+  // Incident CRUD moved to Redux thunks (store/incidentsSlice.js, axios).
 };

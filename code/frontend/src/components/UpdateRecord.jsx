@@ -1,49 +1,45 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import { api } from "../api.js";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { selectIncidents, updateIncident } from "../store/incidentsSlice.js";
+import { client, toError } from "../store/client.js";
 import LoginRequired from "./LoginRequired.jsx";
-import IncidentFields from "./IncidentFields.jsx";
+import IncidentFields, { toPayload } from "./IncidentFields.jsx";
 
-export default function UpdateRecord({ user, onUpdate, onLogin }) {
-  const [params] = useSearchParams();
-  const id = params.get("id");
+export default function UpdateRecord({ user, onLogin }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [params, setParams] = useSearchParams();
+  const incidents = useSelector(selectIncidents);
 
-  const [routeTitle, setRouteTitle] = useState("");
-  const [category, setCategory] = useState("");
-  const [lineId, setLineId] = useState(null);
-  const [loadState, setLoadState] = useState("loading");
+  const [selectedId, setSelectedId] = useState(params.get("id") ?? "");
+  const [form, setForm] = useState(null);
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
 
-  // Load the current values so the form starts pre-filled.
+  // Pre-fill the form for the selected ID: from Redux if loaded, else from the API.
   useEffect(() => {
-    if (!user || !id) return;
+    if (!user || !selectedId) { setForm(null); return; }
+    setError("");
+    const fromStore = incidents.find((x) => x.id === Number(selectedId));
+    const fill = (inc) => setForm({
+      route_title: inc.route_title, category: inc.category,
+      passengers_affected: inc.passengers_affected, line_id: inc.line_id ?? "",
+      incident_code: inc.incident_code,
+    });
+    if (fromStore) { fill(fromStore); return; }
     let cancelled = false;
-    setLoadState("loading");
-    api
-      .getIncident(id)
-      .then((inc) => {
-        if (cancelled) return;
-        setRouteTitle(inc.route_title);
-        setCategory(inc.category);
-        setLineId(inc.line_id);
-        setLoadState("ready");
-      })
-      .catch((err) => {
-        if (cancelled) return;
-        setError(err.message);
-        setLoadState("error");
-      });
+    client.get(`/incidents/${selectedId}`)
+      .then((res) => { if (!cancelled) fill(res.data); })
+      .catch((err) => { if (!cancelled) { setForm(null); setError(toError(err).message); } });
     return () => { cancelled = true; };
-  }, [user, id]);
+  }, [user, selectedId, incidents]);
 
-   if (!user) return <LoginRequired action="edit incidents" onLogin={onLogin} />;
-  if (!id) {
-    return (
-      <p className="state">
-        Pick an incident to edit from the list. <Link to="/">Go to incidents</Link>
-      </p>
-    );
+  if (!user) return <LoginRequired action="edit incidents" onLogin={onLogin} />;
+
+  function selectId(id) {
+    setSelectedId(id);
+    setParams(id ? { id } : {});
   }
 
   async function handleSubmit(e) {
@@ -51,8 +47,9 @@ export default function UpdateRecord({ user, onUpdate, onLogin }) {
     setError("");
     setSaving(true);
     try {
-      // Keep line_id so editing the two fields doesn't unlink the transit line.
-      await onUpdate(id, { route_title: routeTitle.trim(), category: category.trim(), line_id: lineId });
+      // PUT /incidents/{id} via the updateIncident thunk; the slice replaces it in state.
+      await dispatch(updateIncident({ id: selectedId, data: toPayload(form) })).unwrap();
+      navigate("/");
     } catch (err) {
       setError(err.message);
       setSaving(false);
@@ -61,16 +58,26 @@ export default function UpdateRecord({ user, onUpdate, onLogin }) {
 
   return (
     <section className="form-card">
-      <h1>Edit incident #{id}</h1>
-      <p className="lede">Changes are saved to the incident log right away.</p>
-      {loadState === "loading" && <p className="state">Loading incident…</p>}
+      <h1>Update an incident</h1>
+      <p className="lede">Select an incident by ID, edit it, and save.</p>
+
+      <div className="field">
+        <label htmlFor="select_id">Incident ID</label>
+        <input id="select_id" type="number" min={1} list="incident-ids" value={selectedId}
+          onChange={(e) => selectId(e.target.value)} placeholder="Type or pick an ID" />
+        <datalist id="incident-ids">
+          {incidents.map((inc) => (
+            <option key={inc.id} value={inc.id}>{inc.incident_code} – {inc.route_title}</option>
+          ))}
+        </datalist>
+      </div>
+
       {error && <p className="alert alert-error" role="alert">{error}</p>}
-      {loadState === "ready" && (
+
+      {form && (
         <form onSubmit={handleSubmit}>
-          <IncidentFields
-            routeTitle={routeTitle} setRouteTitle={setRouteTitle}
-            category={category} setCategory={setCategory}
-          />
+          <p className="lede">Editing <strong>{form.incident_code}</strong></p>
+          <IncidentFields form={form} setForm={setForm} />
           <div className="form-actions">
             <button className="btn" type="submit" disabled={saving}>
               {saving ? "Saving…" : "Save changes"}
@@ -79,7 +86,6 @@ export default function UpdateRecord({ user, onUpdate, onLogin }) {
           </div>
         </form>
       )}
-      {loadState === "error" && <Link className="btn btn-quiet" to="/">Back to incidents</Link>}
     </section>
   );
 }

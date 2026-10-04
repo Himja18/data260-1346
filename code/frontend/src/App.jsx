@@ -1,36 +1,21 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { api } from "./api.js";
+import { clearIncidents, fetchIncidents } from "./store/incidentsSlice.js";
 import AuthPanel from "./components/Authpanel.jsx";
 import Home from "./components/Home.jsx";
 import CreateRecord from "./components/CreateRecord.jsx";
 import UpdateRecord from "./components/UpdateRecord.jsx";
-import DeleteRecord from "./components/DeleteRecord.jsx";
 
 export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
   const [user, setUser] = useState(null);
   const [checkingSession, setCheckingSession] = useState(true);
-  const [incidents, setIncidents] = useState([]);
-  const [listState, setListState] = useState("idle"); // idle | loading | ready | error
-  const [listError, setListError] = useState("");
-
-  const loadIncidents = useCallback(async () => {
-    setListState("loading");
-    try {
-      setIncidents(await api.listIncidents());
-      setListState("ready");
-    } catch (err) {
-      if (err.status === 401) {
-        setUser(null); // session expired on the server
-        setListState("idle");
-      } else {
-        setListError(err.message);
-        setListState("error");
-      }
-    }
-  }, []);
+  // Incident data now lives in Redux (store/incidentsSlice.js), not in App state.
+  const incidentsError = useSelector((s) => s.incidents.error);
 
   // On first load, ask the server whether the cookie maps to a live session.
   useEffect(() => {
@@ -41,16 +26,19 @@ export default function App() {
       .finally(() => setCheckingSession(false));
   }, []);
 
-  // Whenever login state changes, (re)load or clear the list.
+  // Whenever login state changes, load or clear the incidents in the store.
   useEffect(() => {
-    if (user) loadIncidents();
-    else setIncidents([]);
-  }, [user, loadIncidents]);
+    if (user) dispatch(fetchIncidents());
+    else dispatch(clearIncidents());
+  }, [user, dispatch]);
 
-  // Handlers passed down as props to the page components.
+  // Any thunk that comes back 401 means the server-side session expired.
+  useEffect(() => {
+    if (incidentsError?.status === 401) setUser(null);
+  }, [incidentsError]);
+
   async function handleLogin(email, password) {
     setUser(await api.login(email, password));
-    // From the login page go home; from a protected page, stay where the user was.
     if (location.pathname === "/login") navigate("/");
   }
 
@@ -58,24 +46,6 @@ export default function App() {
     await api.logout().catch(() => {});
     setUser(null);
     navigate("/login");
-  }
-
-  async function handleCreate(data) {
-    await api.createIncident(data);
-    await loadIncidents();
-    navigate("/");
-  }
-
-  async function handleUpdate(id, data) {
-    await api.updateIncident(id, data);
-    await loadIncidents();
-    navigate("/");
-  }
-
-  async function handleDelete(id) {
-    await api.deleteIncident(id);
-    await loadIncidents();
-    navigate("/");
   }
 
   return (
@@ -89,6 +59,7 @@ export default function App() {
           <nav className="nav" aria-label="Main">
             <NavLink to="/" end>Incidents</NavLink>
             {user && <NavLink to="/create">Report incident</NavLink>}
+            {user && <NavLink to="/update">Update incident</NavLink>}
           </nav>
           <div className="session">
             {user ? (
@@ -114,14 +85,7 @@ export default function App() {
             <Route
               path="/"
               element={
-                <Home
-                  user={user}
-                  incidents={incidents}
-                  listState={listState}
-                  listError={listError}
-                  onRetry={loadIncidents}
-                  onLogin={handleLogin}
-                />
+                <Home user={user} onLogin={handleLogin} />
               }
             />
             <Route
@@ -142,15 +106,14 @@ export default function App() {
                 )
               }
             />
-            <Route path="/create" element={<CreateRecord user={user} onCreate={handleCreate} onLogin={handleLogin} />} />
-            <Route path="/update" element={<UpdateRecord user={user} onUpdate={handleUpdate} onLogin={handleLogin} />} />
-            <Route path="/delete" element={<DeleteRecord user={user} onDelete={handleDelete} onLogin={handleLogin} />} />
+            <Route path="/create" element={<CreateRecord user={user} onLogin={handleLogin} />} />
+            <Route path="/update" element={<UpdateRecord user={user} onLogin={handleLogin} />} />
             <Route path="*" element={<p className="state">That page doesn't exist. <Link to="/">Go to incidents</Link></p>} />
           </Routes>
         )}
       </main>
 
-      <footer className="footer">DATA-260 HW4, s1346, Municipal Transit Incidents</footer>
+      <footer className="footer">DATA-260 HW5, s1346, Municipal Transit Incidents</footer>
     </>
   );
 }

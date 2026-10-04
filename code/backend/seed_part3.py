@@ -14,7 +14,7 @@ import random
 import sys
 from datetime import datetime, timedelta
 
-from sqlalchemy import delete, func, insert, select
+from sqlalchemy import delete, func, insert, select, update
 
 from database import db_session_basede26
 from models import Incident, TransitLine
@@ -65,7 +65,8 @@ def build_incidents(rng: random.Random, lines: list) -> list[dict]:
         title = TEMPLATES[category].format(line=line.name.split(" - ")[0],
                                            mins=rng.randint(5, 45),
                                            street=rng.choice(STREETS))
-        rows.append({"route_title": title, "category": category, "line_id": line.id,
+        rows.append({"incident_code": f"TMP-{len(rows):06d}",   # replaced by INC-<id> after insert
+                     "route_title": title, "category": category, "line_id": line.id,
                      "created_at": END_TIME - timedelta(seconds=off)})
     return rows
 
@@ -106,6 +107,11 @@ def main():
 
         incidents = build_incidents(rng, line_rows)
         db.execute(insert(Incident), incidents)
+        # HW5: incident_code is NOT NULL UNIQUE; derive it from the auto id.
+        for inc_id, in db.execute(select(Incident.id)
+                                  .where(Incident.incident_code.like("TMP-%"))).all():
+            db.execute(update(Incident).where(Incident.id == inc_id)
+                       .values(incident_code=f"INC-{inc_id:06d}"))
         db.commit()
 
         code_by_id = {r.id: r.code for r in line_rows}

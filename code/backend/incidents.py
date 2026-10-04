@@ -1,10 +1,14 @@
 """CRUD for Municipal Transit Incidents. Every route requires a logged-in session."""
+from uuid import uuid4
+
 from fastapi import APIRouter, Depends, HTTPException, Query, status
+from sqlalchemy import func, select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from auth import get_current_user
 from database import get_db
-from models import Incident
+from models import Incident, TransitLine
 from schemas import IncidentIn, IncidentOut
 
 router = APIRouter(
@@ -21,13 +25,34 @@ def _get_or_404(db: Session, incident_id: int) -> Incident:
     return incident
 
 
+def _check_refs(db: Session, payload: IncidentIn, exclude_id: int | None = None):
+    """Constraint checks with clear messages (the DB constraints are the backstop)."""
+    if payload.line_id is not None and db.get(TransitLine, payload.line_id) is None:
+        raise HTTPException(422, detail=f"line_id {payload.line_id} does not exist")
+    if payload.incident_code:
+        q = select(Incident.id).where(Incident.incident_code == payload.incident_code)
+        if exclude_id is not None:
+            q = q.where(Incident.id != exclude_id)
+        if db.scalar(q) is not None:
+            raise HTTPException(409, detail=f"Incident code '{payload.incident_code}' already exists")
+
+
+def _commit_or_409(db: Session):
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(409, detail="Constraint violation: duplicate incident_code "
+                                        "or invalid line_id")
+
+
 @router.get("", response_model=list[IncidentOut])
 def list_incidents(
     limit: int = Query(50, ge=1, le=500),
     offset: int = Query(0, ge=0),
     db: Session = Depends(get_db),
 ):
-    """View all records (paged, newest first)."""
+    """View all records (paged, newest first). Kept as a plain list so the HW4 client works."""
     return (db.query(Incident).order_by(Incident.id.desc())
               .offset(offset).limit(limit).all())
 
@@ -39,9 +64,23 @@ def get_incident(incident_id: int, db: Session = Depends(get_db)):
 
 @router.post("", response_model=IncidentOut, status_code=status.HTTP_201_CREATED)
 def create_incident(payload: IncidentIn, db: Session = Depends(get_db)):
-    incident = Incident(**payload.model_dump())   # id auto-incremented by MySQL
+    _check_refs(db, payload)
+    data = payload.model_dump()
+    auto_code = data["incident_code"] is None
+    if auto_code:   # temporary unique placeholder, replaced with INC-<id> below
+        data["incident_code"] = f"TMP-{uuid4().hex[:6]}"
+    incident = Incident(**data)
     db.add(incident)
-    db.commit()
+    try:
+        db.flush()                                  # assigns incident.id
+        if auto_code:
+            incident.incident_code = f"INC-{incident.id:06d}"
+            db.flush()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(409, detail="Could not assign a unique incident_code; "
+                                        "supply one explicitly")
+    _commit_or_409(db)
     db.refresh(incident)
     return incident
 
@@ -49,9 +88,12 @@ def create_incident(payload: IncidentIn, db: Session = Depends(get_db)):
 @router.put("/{incident_id}", response_model=IncidentOut)
 def update_incident(incident_id: int, payload: IncidentIn, db: Session = Depends(get_db)):
     incident = _get_or_404(db, incident_id)
-    for field, value in payload.model_dump().items():
+    _check_refs(db, payload, exclude_id=incident_id)
+    for field, value in payload.model_dump(exclude_none=False).items():
+        if field == "incident_code" and value is None:
+            continue                                # keep the existing code
         setattr(incident, field, value)
-    db.commit()
+    _commit_or_409(db)
     db.refresh(incident)
     return incident
 

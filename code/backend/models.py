@@ -1,7 +1,7 @@
-"""ORM models for s1346_rel."""
+"""ORM models for s1346_rel (HW5)."""
 from datetime import datetime, timezone
 
-from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy import CheckConstraint, Column, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -13,28 +13,38 @@ def utcnow() -> datetime:
 
 
 class TransitLine(Base):
-    """Related entity (Part 3 seeds 200 of these). Full CRUD comes in a later HW."""
+    """Related entity (the 'author' role): one line has many incidents."""
     __tablename__ = "transit_lines"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    code = Column(String(20), unique=True, nullable=False)   # e.g. "L-042"
-    name = Column(String(100), nullable=False)               # e.g. "Line 42 - Crosstown"
-    mode = Column(String(20), nullable=False)                # Bus / Light Rail / Subway ...
+    code = Column(String(20), unique=True, nullable=False)   # unique field, e.g. "L-042"
+    name = Column(String(100), nullable=False)               # primary text field
+    mode = Column(String(20), nullable=False)                # secondary text field
+    created_at = Column(DateTime, nullable=False, default=utcnow)
+    updated_at = Column(DateTime, nullable=False, default=utcnow, onupdate=utcnow)
 
-    incidents = relationship("Incident", back_populates="line")
+    # passive_deletes: let the DB's ON DELETE RESTRICT decide; never null-out children.
+    incidents = relationship("Incident", back_populates="line", passive_deletes="all")
 
 
 class Incident(Base):
     """Primary domain entity: Municipal Transit Incident."""
     __tablename__ = "incidents"
+    __table_args__ = (
+        CheckConstraint("passengers_affected >= 0", name="ck_passengers_nonneg"),
+    )
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    incident_code = Column(String(10), unique=True, nullable=False)  # unique field
     route_title = Column(String(200), nullable=False)        # primary field
     category = Column(String(50), nullable=False)            # secondary field
-    line_id = Column(Integer, ForeignKey("transit_lines.id"), nullable=True)
+    passengers_affected = Column(Integer, nullable=False, default=0, server_default="0")
+    line_id = Column(Integer, ForeignKey("transit_lines.id", ondelete="RESTRICT"),
+                     nullable=True)
     created_at = Column(DateTime, nullable=False, default=utcnow)
+    updated_at = Column(DateTime, nullable=False, default=utcnow, onupdate=utcnow)
 
-    # Default lazy="select" -> accessing .line fires one query per incident (N+1 in Part 3).
+    # Default lazy="select" -> accessing .line fires one query per incident (N+1 in HW4 Part 3).
     line = relationship("TransitLine", back_populates="incidents")
 
 
