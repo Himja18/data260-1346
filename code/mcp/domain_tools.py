@@ -6,6 +6,7 @@ with a message saying exactly what was wrong.
 
 execute_tool(name, inputs) is the single entry point (Part 4/5).
 """
+import json
 import logging
 import re
 import sys
@@ -146,6 +147,11 @@ def get_repo():
 def run_tool(name: str, inputs: dict | None, repo=None) -> dict:
     """Run one tool and always return an envelope dict (never raises)."""
     inputs = {} if inputs is None else inputs
+    if isinstance(inputs, str):                  # agents sometimes send a JSON string
+        try:
+            inputs = json.loads(inputs) if inputs.strip() else {}
+        except ValueError:
+            return fail("invalid input: inputs is not valid JSON")
     if name not in TOOLS:
         return fail(f"unknown tool '{name}'; available: {sorted(TOOLS)}")
     try:
