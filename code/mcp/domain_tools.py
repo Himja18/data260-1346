@@ -12,6 +12,7 @@ import sys
 from typing import Any, Callable
 
 from envelope import fail, ok, to_json
+from resilience import RetriesExhausted
 
 log = logging.getLogger("s1346_rel")
 if not log.handlers:                      # stderr only (STDIO-safe)
@@ -137,7 +138,8 @@ def get_repo():
     global _default_repo
     if _default_repo is None:
         from repository import SqlRepository
-        _default_repo = SqlRepository()
+        from resilience import ResilientRepository
+        _default_repo = ResilientRepository(SqlRepository())   # Part 3: timeout + retries
     return _default_repo
 
 
@@ -148,9 +150,11 @@ def run_tool(name: str, inputs: dict | None, repo=None) -> dict:
         return fail(f"unknown tool '{name}'; available: {sorted(TOOLS)}")
     try:
         result = TOOLS[name](repo if repo is not None else get_repo(), inputs)
-    except InvalidInput as e:
+    except InvalidInput as e:                      # bad input: never retried
         result = fail(f"invalid input: {e}")
-    except Exception as e:                       # storage/network failures -> clean error
+    except RetriesExhausted as e:                  # Part 3: all retries used -> clean error
+        result = fail(f"{name} unavailable: {e}")
+    except Exception as e:                         # anything else: still no crash
         log.exception("tool %s failed", name)
         result = fail(f"{name} failed: {e.__class__.__name__}: {str(e).splitlines()[0][:200]}")
     log.info("%s %s -> ok=%s", name, inputs, result["ok"])

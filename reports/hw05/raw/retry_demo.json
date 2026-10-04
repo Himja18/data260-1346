@@ -1,0 +1,35 @@
+[
+  {
+    "case": "A: success on first attempt",
+    "outcomes": [
+      "ok"
+    ],
+    "attempts": 1,
+    "latency_ms": 0.1,
+    "ok": true,
+    "error": null
+  },
+  {
+    "case": "B: timeout on attempt 1, success on retry",
+    "outcomes": [
+      "timeout",
+      "ok"
+    ],
+    "attempts": 2,
+    "latency_ms": 2110.6,
+    "ok": true,
+    "error": null
+  },
+  {
+    "case": "C: fails every attempt -> clean error",
+    "outcomes": [
+      "fault",
+      "fault",
+      "fault"
+    ],
+    "attempts": 3,
+    "latency_ms": 311.3,
+    "ok": false,
+    "error": "get_incident unavailable: failed after 3 attempt(s): TransientError: connection reset by peer (simulated)"
+  }
+]

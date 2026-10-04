@@ -1,0 +1,92 @@
+[
+  {
+    "tool": "search_incidents",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "Delay",
+            "Breakdown",
+            "Accident",
+            "Service Change"
+          ]
+        },
+        "line_code": {
+          "type": "string",
+          "pattern": "^L-\\d{3}$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
+          "default": 10
+        }
+      },
+      "additionalProperties": false
+    },
+    "rejected_input": {
+      "category": "Flood",
+      "limit": 10
+    },
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "invalid input: category must be one of ['Delay', 'Breakdown', 'Accident', 'Service Change'], got 'Flood'"
+    },
+    "why": "`category` is an enum. 'Flood' is not one of Delay / Breakdown / Accident / Service Change, so validation rejects it before any query runs."
+  },
+  {
+    "tool": "get_incident",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "incident_code": {
+          "type": "string",
+          "pattern": "^INC-\\d{6}$"
+        }
+      },
+      "required": [
+        "incident_code"
+      ],
+      "additionalProperties": false
+    },
+    "rejected_input": {
+      "incident_code": "INC-12"
+    },
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "invalid input: incident_code must look like 'INC-000123' (pattern ^INC-\\d{6}$), got 'INC-12'"
+    },
+    "why": "`incident_code` must match ^INC-\\d{6}$ (six digits). 'INC-12' has two, so it fails the format check; the database is never queried."
+  },
+  {
+    "tool": "incident_stats",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "line_code": {
+          "type": "string",
+          "pattern": "^L-\\d{3}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "rejected_input": {
+      "line_code": "Line5"
+    },
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "invalid input: line_code must look like 'L-005' (pattern ^L-\\d{3}$), got 'Line5'"
+    },
+    "why": "`line_code` must match ^L-\\d{3}$. 'Line5' is a free-text name, not a line code, so the pattern check rejects it."
+  }
+]

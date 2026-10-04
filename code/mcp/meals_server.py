@@ -20,6 +20,7 @@ from typing import Any
 import httpx
 from mcp.server.fastmcp import FastMCP
 from mcp.server.fastmcp.exceptions import ToolError
+from mcp.types import ToolAnnotations
 
 logging.basicConfig(
     stream=sys.stderr,                       # stderr only - stdout is the JSON-RPC channel
@@ -32,6 +33,10 @@ API_BASE = "https://www.themealdb.com/api/json/v1/1"
 TIMEOUT_S = 10.0
 
 mcp = FastMCP("meals")
+
+# All four tools only read from TheMealDB.
+READ_ONLY = ToolAnnotations(readOnlyHint=True, destructiveHint=False,
+                            idempotentHint=True, openWorldHint=True)
 
 
 # ---- helpers --------------------------------------------------------------
@@ -102,7 +107,7 @@ def _list_result(items: list[dict], what: str) -> dict:
 
 
 # ---- tools ------------------------------------------------------------------
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def search_meals_by_name(query: str, limit: int = 5) -> dict:
     """Search meals by name (e.g. "Arrabiata"). Returns up to `limit` (1-25) meals with
     id, name, area (cuisine), category and thumbnail. Use the id with meal_details."""
@@ -116,7 +121,7 @@ def search_meals_by_name(query: str, limit: int = 5) -> dict:
     return _list_result(items, f"name '{query}'")
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def meals_by_ingredient(ingredient: str, limit: int = 12) -> dict:
     """List meals whose main ingredient matches (e.g. "chicken"). Returns small cards:
     id, name, thumbnail. limit 1-25."""
@@ -129,7 +134,7 @@ def meals_by_ingredient(ingredient: str, limit: int = 12) -> dict:
     return _list_result(items, f"ingredient '{ingredient}'")
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def meal_details(id: str | int) -> dict:
     """Full recipe for one meal id: category, area, instructions, image, source,
     youtube, and ingredients as [{name, measure}]."""
@@ -143,7 +148,7 @@ def meal_details(id: str | int) -> dict:
     return _details(meals[0])
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def random_meal() -> dict:
     """One random meal, same shape as meal_details."""
     meals = _get("random.php")["meals"]

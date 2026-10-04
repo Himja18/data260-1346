@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-10-04T15:57:49",
+  "run_by": "himja",
+  "verify_seed": 261346,
+  "backend": "mysql s1346_rel",
+  "policy": {
+    "max_attempts": 3,
+    "attempt_timeout_s": 2.0,
+    "base_delay_s": 0.1,
+    "multiplier": 2.0,
+    "max_delay_s": 1.0
+  },
+  "percentile_method": "nearest-rank",
+  "rates": [
+    {
+      "failure_rate": "0%",
+      "calls": 50,
+      "succeeded": 50,
+      "success_rate": "100%",
+      "mean_latency_ms": 1.1,
+      "p50_latency_ms": 0.8,
+      "p99_latency_ms": 9.2,
+      "total_attempts": 50,
+      "injected_faults": 0,
+      "calls_needing_retry": 0,
+      "draws": 50,
+      "replay_matches": true,
+      "sequence_sha256": "dd89800342a2adde",
+      "sequence_first_40": "........................................"
+    },
+    {
+      "failure_rate": "20%",
+      "calls": 50,
+      "succeeded": 48,
+      "success_rate": "96%",
+      "mean_latency_ms": 33.8,
+      "p50_latency_ms": 2.4,
+      "p99_latency_ms": 311.7,
+      "total_attempts": 62,
+      "injected_faults": 14,
+      "calls_needing_retry": 9,
+      "draws": 62,
+      "replay_matches": true,
+      "sequence_sha256": "63ffc9b4ddea006b",
+      "sequence_first_40": ".FFF......F.F.......FF.....FFFF........F"
+    },
+    {
+      "failure_rate": "50%",
+      "calls": 50,
+      "succeeded": 44,
+      "success_rate": "88%",
+      "mean_latency_ms": 87.2,
+      "p50_latency_ms": 3.5,
+      "p99_latency_ms": 314.3,
+      "total_attempts": 80,
+      "injected_faults": 36,
+      "calls_needing_retry": 19,
+      "draws": 80,
+      "replay_matches": true,
+      "sequence_sha256": "ca089130d46f7fcd",
+      "sequence_first_40": ".FFF..F.FFF.FF.F....FF...FFFFFF...F.FF.F"
+    }
+  ]
+}

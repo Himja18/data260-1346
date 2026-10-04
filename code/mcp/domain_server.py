@@ -16,17 +16,22 @@ Logs go to stderr only.
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
+from mcp.types import ToolAnnotations
 
 from domain_tools import run_tool
 
 mcp = FastMCP("s1346_rel")
+
+# All three tools only read data.
+READ_ONLY = ToolAnnotations(readOnlyHint=True, destructiveHint=False,
+                            idempotentHint=True, openWorldHint=False)
 
 
 def _args(**kw):
     return {k: v for k, v in kw.items() if v is not None}
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def search_incidents(category: Optional[str] = None, line_code: Optional[str] = None,
                      text: Optional[str] = None, limit: int = 10) -> dict:
     """Search transit incidents, newest first. Filters (all optional): category
@@ -36,14 +41,14 @@ def search_incidents(category: Optional[str] = None, line_code: Optional[str] = 
                                               text=text, limit=limit))
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def get_incident(incident_code: str) -> dict:
     """Full details for one incident by its code, e.g. 'INC-000123', including
     its transit line name and mode."""
     return run_tool("get_incident", {"incident_code": incident_code})
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def incident_stats(line_code: Optional[str] = None) -> dict:
     """Aggregate: incident count and total passengers affected per category,
     for one line ('L-005') or for all lines if line_code is omitted."""
