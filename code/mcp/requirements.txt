@@ -1,2 +1,5 @@
 mcp[cli]>=1.9,<2   # FastMCP API (renamed in mcp 2.x)
 httpx
+sqlalchemy>=2.0
+pymysql
+cryptography
