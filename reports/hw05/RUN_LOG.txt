@@ -1,0 +1,209 @@
+DATA-260 HW5 - RUN_LOG (s1346, himja)
+Real console output of the runs that produced the reported results, in run order.
+Machine: Himjas-MacBook-Pro, macOS. Python venv (3.11), Node v22.23.3, MySQL 9.4, Ollama qwen2.5:3b.
+Timestamps are local time (PDT) unless the line shows UTC.
+
+=====================================================================
+2026-10-04 (morning)  Part 1 - migration 003 on s1346_rel
+=====================================================================
+$ mysqldump -u root -p s1346_rel > ~/backup_hw4.sql        (436K backup)
+$ mysql -u root -p < code/backend/migrations/003_hw5_related_entity.sql
+$ mysql -u root -p s1346_rel -e "DESCRIBE incidents; SELECT id, incident_code, passengers_affected, line_id FROM incidents LIMIT 3;"
+| id                  | int          | NO   | PRI | NULL              | auto_increment
+| incident_code       | varchar(10)  | NO   | UNI | NULL              |
+| route_title         | varchar(200) | NO   |     | NULL              |
+| category            | varchar(50)  | NO   | MUL | NULL              |
+| passengers_affected | int          | NO   |     | 0                 |
+| line_id             | int          | YES  | MUL | NULL              |
+| created_at          | datetime     | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED
+| updated_at          | datetime     | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP
+|  1 | INC-000001    |                   0 |    NULL |
+|  4 | INC-000004    |                   0 |     177 |
+|  5 | INC-000005    |                   0 |     106 |
+$ python main.py
+INFO:     Uvicorn running on http://0.0.0.0:8446 (Press CTRL+C to quit)
+INFO:     Application startup complete.
+
+=====================================================================
+2026-10-04 15:53:38  Part 3.1 - contracts for the Part 2B rejected calls
+=====================================================================
+$ python code/mcp/gen_contracts.py
+2026-10-04 15:53:38,923 INFO s1346_rel: search_incidents {'category': 'Flood', 'limit': 10} -> ok=False
+2026-10-04 15:53:38,923 INFO s1346_rel: get_incident {'incident_code': 'INC-12'} -> ok=False
+2026-10-04 15:53:38,923 INFO s1346_rel: incident_stats {'line_code': 'Line5'} -> ok=False
+wrote /Users/himja/Documents/data260-1346/reports/hw05/PART3_CONTRACTS.md
+wrote /Users/himja/Documents/data260-1346/reports/hw05/raw/inspector_rejected_calls.json
+
+=====================================================================
+2026-10-04 15:53:47  Part 3.2 - retry policy demo
+=====================================================================
+$ python code/mcp/demo_retry.py
+Run by himja at 2026-10-04 15:53:47
+Policy: max_attempts=3, timeout/attempt=2.0s, backoff=0.1s x2.0 (cap 1.0s)
+2026-10-04 15:53:47,078 INFO s1346_rel: get_incident {'incident_code': 'INC-005005'} -> ok=True
+
+=== A: success on first attempt ===
+attempt outcomes : ['ok']
+attempts used    : 1/3
+total latency    : 0 ms
+envelope         : {"ok": true, "data": {"incident_code": "INC-005005"}, "error": null}
+2026-10-04 15:53:49,084 WARNING retry: get_incident: attempt 1 attempt timed out after 2.0s
+2026-10-04 15:53:49,084 INFO retry: get_incident: retry 2/3 after 0.10s backoff
+2026-10-04 15:53:49,189 INFO s1346_rel: get_incident {'incident_code': 'INC-005005'} -> ok=True
+
+=== B: timeout on attempt 1, success on retry ===
+attempt outcomes : ['timeout', 'ok']
+attempts used    : 2/3
+total latency    : 2111 ms
+envelope         : {"ok": true, "data": {"incident_code": "INC-005005"}, "error": null}
+2026-10-04 15:53:49,190 WARNING retry: get_incident: attempt 1 failed (transient): TransientError: connection reset by peer (simulated)
+2026-10-04 15:53:49,190 INFO retry: get_incident: retry 2/3 after 0.10s backoff
+2026-10-04 15:53:49,295 WARNING retry: get_incident: attempt 2 failed (transient): TransientError: connection reset by peer (simulated)
+2026-10-04 15:53:49,295 INFO retry: get_incident: retry 3/3 after 0.20s backoff
+2026-10-04 15:53:49,501 WARNING retry: get_incident: attempt 3 failed (transient): TransientError: connection reset by peer (simulated)
+2026-10-04 15:53:49,501 INFO s1346_rel: get_incident {'incident_code': 'INC-005005'} -> ok=False
+
+=== C: fails every attempt -> clean error ===
+attempt outcomes : ['fault', 'fault', 'fault']
+attempts used    : 3/3
+total latency    : 311 ms
+envelope         : {"ok": false, "data": null, "error": "get_incident unavailable: failed after 3 attempt(s): TransientError: connection reset by peer (simulated)"}
+
+saved /Users/himja/Documents/data260-1346/reports/hw05/raw/retry_demo.json
+
+=====================================================================
+2026-10-04 15:54:40 - 15:56:21  Part 3.3 - first attempts failed (wrong MYSQL_PASSWORD exported)
+=====================================================================
+$ python code/mcp/run_fault_injection.py
+Run by himja at 2026-10-04 15:54:40
+...
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(fixed by exporting the password verified with `mysql -u root -p -h 127.0.0.1 s1346_rel`)
+
+=====================================================================
+2026-10-04 15:57:42  Part 3.3 - seeded fault injection, 150 calls (reported results)
+=====================================================================
+$ python code/mcp/run_fault_injection.py 2>/dev/null
+Run by himja at 2026-10-04 15:57:42
+VERIFY_SEED=261346  backend=mysql s1346_rel  calls/rate=50
+Policy: max_attempts=3, timeout/attempt=2.0s, backoff=0.1s x2.0 cap 1.0s
+
+rate  0%: success 100%  mean     1.1 ms  p99     9.2 ms  retried  0  faults  0  seq dd89800342a2adde  replay_matches=True
+rate 20%: success  96%  mean    33.8 ms  p99   311.7 ms  retried  9  faults 14  seq 63ffc9b4ddea006b  replay_matches=True
+rate 50%: success  88%  mean    87.2 ms  p99   314.3 ms  retried 19  faults 36  seq ca089130d46f7fcd  replay_matches=True
+
+| Injected failure rate | Success rate | Mean latency (ms) | p99 latency (ms) |
+|---|---|---|---|
+| 0% | 100% | 1.1 | 9.2 |
+| 20% | 96% | 33.8 | 311.7 |
+| 50% | 88% | 87.2 | 314.3 |
+
+150 call records saved to reports/hw05/raw/
+
+=====================================================================
+Part 4 / 5.III - offline test suite
+=====================================================================
+$ python code/mcp/test_tools.py
+s1346 tool tests - run by himja (offline: FakeRepo, no DB/LLM/network)
+
+PASS  test_search_valid
+PASS  test_search_invalid_category
+PASS  test_search_invalid_limit
+PASS  test_get_incident_valid
+PASS  test_get_incident_invalid_format
+PASS  test_get_incident_not_found
+PASS  test_stats_valid
+PASS  test_stats_invalid_line_code
+PASS  test_unknown_tool_and_bad_json_do_not_crash
+PASS  test_retries_exhausted_returns_clean_error
+PASS  test_execute_tool_blocks_safety_violation
+PASS  test_run_agent_stops_at_max_steps
+
+12/12 tests passed
+
+=====================================================================
+Part 5.I - safety rule demo
+=====================================================================
+$ python code/mcp/demo_safety.py
+Safety rule demo - run by himja
+Rule: a search with no category/line_code/text filter may return at most 10 rows.
+
+ALLOWED (scoped by category)
+  execute_tool('search_incidents', {"category": "Delay", "limit": 50})
+  -> {"ok": true, "data": {"count": 1, "...": "results omitted"}, "error": null}
+
+BLOCKED (unscoped bulk export)
+  execute_tool('search_incidents', {"limit": 50})
+  -> {"ok": false, "data": null, "error": "blocked by safety rule: unscoped search limited to 10 rows (requested 50). Add a category, line_code or text filter to see more."}
+
+storage calls made: 1 (the blocked call never reached the database)
+
+=====================================================================
+2026-10-04 16:09:04  Part 5.IV - agent scenarios (local Ollama)
+=====================================================================
+$ python code/mcp/run_scenarios.py
+Agent scenarios - run by himja at 2026-10-04 16:09:04
+model=qwen2.5:3b (local Ollama, temperature 0, seed 1346)  log=reports/hw05/raw/agent_runs.jsonl
+
+[S1 aggregate] run_id=40c802ac steps=2/5 tool_calls=1 stop=completed (22.86s)
+[S2 detail] run_id=7c5abf22 steps=2/5 tool_calls=1 stop=completed (7.82s)
+[S3 search] run_id=d90b350d steps=2/5 tool_calls=1 stop=completed (17.25s)
+2026-10-04 16:09:54,679 WARNING s1346_rel: search_incidents {'limit': 50} -> blocked by safety rule: unscoped search limited to 10 rows (requested 50). Add a category, line_code or text filter to see more.
+[S4 safety] run_id=c51c0f96 steps=1/5 tool_calls=1 stop=safety_block (2.7s)
+[S5 ceiling] run_id=bb352ae8 steps=3/3 tool_calls=12 stop=max_steps (60.25s)
+
+| Scenario | Steps (max) | Tool calls | Stop reason | run_id |
+|---|---|---|---|---|
+| S1 aggregate | 2 (5) | 1 | completed | 40c802ac |
+| S2 detail | 2 (5) | 1 | completed | 7c5abf22 |
+| S3 search | 2 (5) | 1 | completed | d90b350d |
+| S4 safety | 1 (5) | 1 | safety_block | c51c0f96 |
+| S5 ceiling | 3 (3) | 12 | max_steps | bb352ae8 |
+
+=====================================================================
+Verification (append below with:  python verify_hw05.py | tee -a reports/hw05/RUN_LOG.txt)
+=====================================================================
+Running HW5 smoke tests (PORT_BASE=8446) ...
+  [PASS] backend_responds_on_port_base: status=200
+  [PASS] login_returns_200: status=200
+  [PASS] lines_list_paginated: total=200
+  [PASS] relationship_query_returns_incidents: line 1: total=25
+  [PASS] line_create_201_dup_409_format_422_delete_200: dup=409 bad=422 delete=200
+  [PASS] delete_line_with_incidents_blocked_409: line 5
+  [PASS] missing_line_404
+  [PASS] meals_server_lists_4_tools: ['search_meals_by_name', 'meals_by_ingredient', 'meal_details', 'random_meal']
+  [PASS] meals_server_answers_tool_call: 1 result(s)
+  [PASS] domain_server_lists_3_tools: ['search_incidents', 'get_incident', 'incident_stats']
+  [FAIL] domain_server_tool_call_envelope_ok: total_incidents=incident_stats unavailable: failed after 1 attempt(s): OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+  [PASS] domain_server_rejects_invalid_input
+  [PASS] fault_injection_150_records: {0.0: 50, 0.2: 50, 0.5: 50}
+  [PASS] fault_sequence_reproducible_from_verify_seed: replayed all 3 rates
+  [PASS] retry_recovers_after_transient_failure
+  [PASS] offline_test_suite_all_pass: 12/12 tests passed
+  [PASS] safety_rule_blocks_unscoped_bulk_search
+  [PASS] agent_log_has_all_stop_reasons: 5 logged runs, stop reasons=['completed', 'max_steps', 'safety_block']
+  [PASS] ollama_model_available: ['qwen2.5:3b', 'codellama:latest']
+
+18/19 passed  ->  reports/hw05/verification.json
+Running HW5 smoke tests (PORT_BASE=8446) ...
+  [PASS] backend_responds_on_port_base: status=200
+  [PASS] login_returns_200: status=200
+  [PASS] lines_list_paginated: total=200
+  [PASS] relationship_query_returns_incidents: line 1: total=25
+  [PASS] line_create_201_dup_409_format_422_delete_200: dup=409 bad=422 delete=200
+  [PASS] delete_line_with_incidents_blocked_409: line 5
+  [PASS] missing_line_404
+  [PASS] meals_server_lists_4_tools: ['search_meals_by_name', 'meals_by_ingredient', 'meal_details', 'random_meal']
+  [PASS] meals_server_answers_tool_call: 1 result(s)
+  [PASS] domain_server_lists_3_tools: ['search_incidents', 'get_incident', 'incident_stats']
+  [PASS] domain_server_tool_call_envelope_ok: total_incidents=25
+  [PASS] domain_server_rejects_invalid_input
+  [PASS] fault_injection_150_records: {0.0: 50, 0.2: 50, 0.5: 50}
+  [PASS] fault_sequence_reproducible_from_verify_seed: replayed all 3 rates
+  [PASS] retry_recovers_after_transient_failure
+  [PASS] offline_test_suite_all_pass: 12/12 tests passed
+  [PASS] safety_rule_blocks_unscoped_bulk_search
+  [PASS] agent_log_has_all_stop_reasons: 5 logged runs, stop reasons=['completed', 'max_steps', 'safety_block']
+  [PASS] ollama_model_available: ['qwen2.5:3b', 'codellama:latest']
+
+19/19 passed  ->  reports/hw05/verification.json

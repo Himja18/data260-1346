@@ -1,0 +1,109 @@
+{
+  "homework": "HW5",
+  "sid4": 1346,
+  "commit_hash": "8e8068a4d2b16f4c33e51f67b74d2584a745496a",
+  "model_configuration": "qwen2.5:3b via Ollama (temperature 0, seed 1346)",
+  "seed": 1346,
+  "verify_seed": 261346,
+  "port_base": 8446,
+  "timestamp": "2026-10-04T16:22:32",
+  "checks": [
+    {
+      "name": "backend_responds_on_port_base",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "login_returns_200",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "lines_list_paginated",
+      "passed": true,
+      "detail": "total=200"
+    },
+    {
+      "name": "relationship_query_returns_incidents",
+      "passed": true,
+      "detail": "line 1: total=25"
+    },
+    {
+      "name": "line_create_201_dup_409_format_422_delete_200",
+      "passed": true,
+      "detail": "dup=409 bad=422 delete=200"
+    },
+    {
+      "name": "delete_line_with_incidents_blocked_409",
+      "passed": true,
+      "detail": "line 5"
+    },
+    {
+      "name": "missing_line_404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "meals_server_lists_4_tools",
+      "passed": true,
+      "detail": "['search_meals_by_name', 'meals_by_ingredient', 'meal_details', 'random_meal']"
+    },
+    {
+      "name": "meals_server_answers_tool_call",
+      "passed": true,
+      "detail": "1 result(s)"
+    },
+    {
+      "name": "domain_server_lists_3_tools",
+      "passed": true,
+      "detail": "['search_incidents', 'get_incident', 'incident_stats']"
+    },
+    {
+      "name": "domain_server_tool_call_envelope_ok",
+      "passed": true,
+      "detail": "total_incidents=25"
+    },
+    {
+      "name": "domain_server_rejects_invalid_input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fault_injection_150_records",
+      "passed": true,
+      "detail": "{0.0: 50, 0.2: 50, 0.5: 50}"
+    },
+    {
+      "name": "fault_sequence_reproducible_from_verify_seed",
+      "passed": true,
+      "detail": "replayed all 3 rates"
+    },
+    {
+      "name": "retry_recovers_after_transient_failure",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_test_suite_all_pass",
+      "passed": true,
+      "detail": "12/12 tests passed"
+    },
+    {
+      "name": "safety_rule_blocks_unscoped_bulk_search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "agent_log_has_all_stop_reasons",
+      "passed": true,
+      "detail": "5 logged runs, stop reasons=['completed', 'max_steps', 'safety_block']"
+    },
+    {
+      "name": "ollama_model_available",
+      "passed": true,
+      "detail": "['qwen2.5:3b', 'codellama:latest']"
+    }
+  ],
+  "summary": "19/19 passed",
+  "all_passed": true
+}

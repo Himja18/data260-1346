@@ -167,6 +167,38 @@ def run_tool(name: str, inputs: dict | None, repo=None) -> dict:
     return result
 
 
+# ---- Part 5: domain safety rule -----------------------------------------------
+UNSCOPED_ROW_CAP = 10
+
+
+def safety_check(name: str, inputs) -> str | None:
+    """Business rule: no bulk export of the incident log.
+    A search with no filter (no category, line_code or text) may return at most
+    10 rows. Larger pulls must be scoped, so an agent can't dump the whole
+    5,000-row log in one call. Returns the reason if blocked, else None."""
+    if name != "search_incidents" or not isinstance(inputs, dict):
+        return None
+    scoped = any(inputs.get(k) not in (None, "") for k in ("category", "line_code", "text"))
+    limit = inputs.get("limit", 10)
+    if not scoped and isinstance(limit, int) and limit > UNSCOPED_ROW_CAP:
+        return (f"blocked by safety rule: unscoped search limited to {UNSCOPED_ROW_CAP} rows "
+                f"(requested {limit}). Add a category, line_code or text filter to see more.")
+    return None
+
+
 def execute_tool(name: str, inputs: dict | None, repo=None) -> str:
-    """Single safe entry point: returns the envelope as a JSON string."""
-    return to_json(run_tool(name, inputs, repo))
+    """Single safe entry point: safety rule first, then the tool.
+    Always returns the {ok, data, error} envelope as a JSON string; never raises."""
+    try:
+        if isinstance(inputs, str) and inputs.strip():
+            try:
+                inputs = json.loads(inputs)
+            except ValueError:
+                pass                                   # run_tool reports the bad JSON
+        reason = safety_check(name, inputs)
+        if reason:
+            log.warning("%s %s -> %s", name, inputs, reason)
+            return to_json(fail(reason))
+        return to_json(run_tool(name, inputs, repo))
+    except Exception as e:                             # last-resort guard
+        return to_json(fail(f"internal error: {e.__class__.__name__}"))

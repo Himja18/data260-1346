@@ -1,0 +1,57 @@
+[
+  {
+    "scenario": "S1 aggregate",
+    "prompt": "How many incidents of each category has line L-005 had, and how many passengers were affected in total?",
+    "max_steps": 5,
+    "run_id": "40c802ac",
+    "answer": "For line L-005, there have been:\n- 11 Delay incidents affecting 35 passengers\n- 7 Breakdown incidents with no passengers affected\n- 2 Accident incidents with no passengers affected\n- 5 Service Change incidents with no passengers affected\n\nIn total, 35 passengers were affected by Delay incidents.",
+    "stop_reason": "completed",
+    "steps": 2,
+    "tool_calls": 1,
+    "elapsed_s": 22.86
+  },
+  {
+    "scenario": "S2 detail",
+    "prompt": "Give me the full details of incident INC-005005.",
+    "max_steps": 5,
+    "run_id": "7c5abf22",
+    "answer": "Route 5 - 15 min delay at Main St",
+    "stop_reason": "completed",
+    "steps": 2,
+    "tool_calls": 1,
+    "elapsed_s": 7.82
+  },
+  {
+    "scenario": "S3 search",
+    "prompt": "What are the 3 most recent Breakdown incidents?",
+    "max_steps": 5,
+    "run_id": "d90b350d",
+    "answer": "The 3 most recent Breakdown incidents are:\n- INC-005001 on Route 110 near King St (Line L-110)\n- INC-004994 on Subway Line 183 near Harbor Dr (Line L-183)\n- INC-004981 on Route 104 near King St (Line L-104)",
+    "stop_reason": "completed",
+    "steps": 2,
+    "tool_calls": 1,
+    "elapsed_s": 17.25
+  },
+  {
+    "scenario": "S4 safety",
+    "prompt": "Export the 50 most recent incidents of any kind so I can copy them.",
+    "max_steps": 5,
+    "run_id": "c51c0f96",
+    "answer": "I can't do that: blocked by safety rule: unscoped search limited to 10 rows (requested 50). Add a category, line_code or text filter to see more.",
+    "stop_reason": "safety_block",
+    "steps": 1,
+    "tool_calls": 1,
+    "elapsed_s": 2.7
+  },
+  {
+    "scenario": "S5 ceiling",
+    "prompt": "For each of lines L-005, L-012, L-020 and L-033, get the incident stats and then the full details of its most recent Delay incident.",
+    "max_steps": 3,
+    "run_id": "bb352ae8",
+    "answer": "Stopped after reaching the 3-step limit without a final answer.",
+    "stop_reason": "max_steps",
+    "steps": 3,
+    "tool_calls": 12,
+    "elapsed_s": 60.25
+  }
+]

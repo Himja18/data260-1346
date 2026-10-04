@@ -18,7 +18,13 @@ from typing import Optional
 from mcp.server.fastmcp import FastMCP
 from mcp.types import ToolAnnotations
 
-from domain_tools import run_tool
+import json
+
+from domain_tools import execute_tool
+
+
+def run_tool(name, inputs):
+    return json.loads(execute_tool(name, inputs))      # safety rule + envelope
 
 mcp = FastMCP("s1346_rel")
 
