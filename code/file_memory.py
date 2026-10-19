@@ -253,16 +253,31 @@ def consolidate_file(path: Path = MEMORY_PATH, now: Optional[datetime] = None) -
 
 
 # ---- adding facts (/dream) -------------------------------------------------------------------
-DREAM_LINE_RE = re.compile(r"^\s*[-*]?\s*\(([\w.\-]+)\)\s*(.+?)\s*$")
+DREAM_LINE_RE = re.compile(r"^\s*(?:[-*\u2022]|\d+[.)])?\s*\**\s*[\(\[]([\w.\-]+)[\)\]]\**\s*:?\s*(.+?)\s*$")
+
+
+COLON_FACT_RE = re.compile(r"\b([a-z_]+\.[a-z_.]+)\s*:\s*(.+?)(?=\s+[a-z_]+\.[a-z_.]+\s*:|\s*\bNONE\b|$)", re.S)
+
+
+def _as_sentence(topic: str, value: str) -> str:
+    """Turn a terse 'topic: value' answer into a short fact sentence."""
+    value = " ".join(value.split()).rstrip(".")
+    if len(value.split()) >= 4:
+        return value + "."
+    return f"The {topic.replace('.', ' ').replace('_', ' ')} is {value}."
 
 
 def parse_dream_output(reply: str) -> list:
-    """Parse model lines of the form `(topic) fact` into (topic, text) pairs."""
+    """Parse model lines of the form `(topic) fact`; fall back to `topic: value` pairs."""
     out = []
     for line in reply.splitlines():
         match = DREAM_LINE_RE.match(line)
         if match and 3 <= len(match.group(2)) <= 200:
             out.append((match.group(1).lower(), match.group(2).rstrip()))
+    if not out:          # small models often answer "user.name: himja. project.port: 8446."
+        for topic, value in COLON_FACT_RE.findall(reply):
+            if value.strip(" .") and len(value) <= 200:
+                out.append((topic.lower().rstrip("."), _as_sentence(topic.lower().rstrip("."), value)))
     return out
 
 

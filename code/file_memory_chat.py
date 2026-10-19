@@ -42,6 +42,8 @@ DREAM_PROMPT = (
     "(topic) Fact sentence.\n"
     "Topics are short, lowercase and dotted (user.name, project.port, preference.format). "
     "Reuse one of these existing topics when the fact is about the same thing: {topics}.\n"
+    "Include a fact even if it repeats or corrects something already in memory; a correction "
+    "must use the same topic as the value it corrects.\n"
     "If there is nothing worth remembering, output NONE.\n\nCONVERSATION:\n{transcript}"
 )
 
@@ -134,6 +136,8 @@ class FileMemoryChat:
         lines = [f"/dream: looked at {len(recent)} messages, model proposed {len(candidates)} fact(s), "
                  f"added {len(added)} (duplicates skipped)"]
         lines += [f"  + {a}" for a in added]
+        if not candidates:
+            lines.append("  model reply: " + " ".join(result.content.split())[:300])
         _, memory = fm.load_memory_files(self.agent_path, self.memory_path)
         if fm.needs_consolidation(memory):
             lines.append("  note: consolidation now required - run /compact")

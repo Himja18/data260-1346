@@ -307,3 +307,69 @@ Running HW6 smoke tests (PORT_BASE=8446, VERIFY_SEED=261346) ...
   [PASS] ollama_model_available: ['qwen3:4b', 'qwen2.5:3b', 'codellama:latest']
 
 31/33 passed  ->  reports/hw06/verification.json
+
+== reports/hw06/raw/generated_function.py (model-generated)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 1 function(s) fully annotated
+  [FAIL] C3 docstring on every public function: ['incident_age_hours']
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+  behaviour: {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"}
+
+== code/file_memory.py :: count_content_lines, read_last_consolidated, needs_consolidation, consolidate_text, build_system_prompt (implemented)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 5 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+
+Saved reports/hw06/raw/agent_md_check.json
+attempt 1: static 6/7, behaviour {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"} -> FAIL
+attempt 2: static 7/7, behaviour {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"} -> FAIL
+attempt 3: static 7/7, behaviour {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"} -> FAIL
+
+== reports/hw06/raw/generated_function.py (model-generated)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 1 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+  behaviour: {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"}
+
+== code/file_memory.py :: count_content_lines, read_last_consolidated, needs_consolidation, consolidate_text, build_system_prompt (implemented)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 5 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+
+Saved reports/hw06/raw/agent_md_check.json
+
+== reports/hw06/raw/generated_function.py (model-generated)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 1 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+  behaviour: {'aware_2.5h': True, 'naive_is_utc': True, 'future_raises': True, 'default_now_works': True}
+
+== code/file_memory.py :: count_content_lines, read_last_consolidated, needs_consolidation, consolidate_text, build_system_prompt (implemented)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 5 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+
+Saved reports/hw06/raw/agent_md_check.json
