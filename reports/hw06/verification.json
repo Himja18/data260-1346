@@ -1,0 +1,180 @@
+{
+  "homework": "HW6",
+  "sid4": 1346,
+  "commit_hash": "e4e8ca72fe628c767cb68dbae52e55cdc0c41fcf",
+  "tag_hw6_commit": "UNKNOWN",
+  "model_configuration": "qwen2.5:3b via Ollama (temperature 0, seed 1346); embeddings BAAI/bge-small-en-v1.5",
+  "seed": 1346,
+  "verify_seed": 261346,
+  "port_base": 8446,
+  "timestamp": "2026-10-18T22:53:17",
+  "checks": [
+    {
+      "name": "backend_responds_on_port_base",
+      "passed": true,
+      "detail": "{'status': 'ok', 'service': 's1346', 'port': 8446, 'mongo': 'ok'}"
+    },
+    {
+      "name": "backend_reaches_mongodb",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "mongo_collections_exist",
+      "passed": true,
+      "detail": "['episodes', 'incident_reports', 'messages', 'summaries']"
+    },
+    {
+      "name": "collections_have_jsonschema_validator",
+      "passed": true,
+      "detail": "['episodes', 'incident_reports', 'messages', 'summaries']"
+    },
+    {
+      "name": "mongo_validator_rejects_invalid_document",
+      "passed": true,
+      "detail": "WriteError code 121"
+    },
+    {
+      "name": "doc_create_201_with_defaults_and_timestamps",
+      "passed": true,
+      "detail": "status=201"
+    },
+    {
+      "name": "doc_list_200_contains_record",
+      "passed": true,
+      "detail": "3 docs"
+    },
+    {
+      "name": "doc_get_by_id_200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "doc_update_200_refreshes_updated_at",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "doc_delete_200_then_get_404",
+      "passed": true,
+      "detail": "delete=200 get=404"
+    },
+    {
+      "name": "doc_invalid_data_422_with_messages",
+      "passed": true,
+      "detail": "{'missing_required': 422, 'invalid_enum': 422, 'wrong_type': 422, 'title_over_100': 422, 'bad_date': 422}"
+    },
+    {
+      "name": "doc_error_codes_400_404_415",
+      "passed": true,
+      "detail": "{'bad_id': 400, 'unknown_id': 404, 'non_json': 415}"
+    },
+    {
+      "name": "chat_returns_reply",
+      "passed": true,
+      "detail": "4 replies, session=sess-0b5a7a857a67"
+    },
+    {
+      "name": "chat_reports_memory_used",
+      "passed": true,
+      "detail": "window=6 n=12"
+    },
+    {
+      "name": "chat_logs_token_components",
+      "passed": true,
+      "detail": "prompt_full=342 completion=21"
+    },
+    {
+      "name": "summary_triggered_every_m_user_messages",
+      "passed": true,
+      "detail": "M=4"
+    },
+    {
+      "name": "memory_endpoint_shape",
+      "passed": true,
+      "detail": "messages=8 episodes=2"
+    },
+    {
+      "name": "episodic_facts_stored_with_embeddings",
+      "passed": true,
+      "detail": "['The user owns a vehicle registered as Bus 9901.', 'The user works as a bus dispatcher for Route 99 night buses.']"
+    },
+    {
+      "name": "aggregate_daily_counts",
+      "passed": true,
+      "detail": "[{'date': '2026-10-19', 'messages': 8, 'user_messages': 4, 'assistant_messages': 4, 'sessions': 1}]"
+    },
+    {
+      "name": "memory_probes_yaml_5_probes_rubric_1_to_5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sweep_30_turns_per_setting",
+      "passed": true,
+      "detail": "{'n4': 30, 'n12': 30, 'n30': 30, 'policy': 30}"
+    },
+    {
+      "name": "window_respects_short_term_n",
+      "passed": true,
+      "detail": "{'n4': 4, 'n12': 12, 'n30': 30, 'policy': 30}"
+    },
+    {
+      "name": "probe_scores_20_rows_in_range",
+      "passed": true,
+      "detail": "20"
+    },
+    {
+      "name": "policy_reduces_prompt_tokens",
+      "passed": true,
+      "detail": "2412.9 -> 958.8"
+    },
+    {
+      "name": "cost_estimate_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "agent_md_5_instructions_3_categories",
+      "passed": true,
+      "detail": "16 instructions, categories=['coding conventions', 'prohibited actions', 'project description', 'technology stack', 'testing approach']"
+    },
+    {
+      "name": "original_memory_55_lines_needs_consolidation",
+      "passed": true,
+      "detail": "['51 non-empty, non-comment lines > 40', 'last consolidated 1141.9 h ago (> 24 h)']"
+    },
+    {
+      "name": "consolidation_under_40_lines_dups_merged",
+      "passed": true,
+      "detail": "55 -> 39 lines"
+    },
+    {
+      "name": "contradictions_resolved_explicitly_none_lost",
+      "passed": true,
+      "detail": "5 contradictions"
+    },
+    {
+      "name": "consolidated_memory_committed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "generated_function_follows_agent_md",
+      "passed": false,
+      "detail": "['C3 docstring on every public function']"
+    },
+    {
+      "name": "generated_function_behaviour",
+      "passed": false,
+      "detail": "{'error': \"TypeError: can't compare offset-naive and offset-aware datetimes\"}"
+    },
+    {
+      "name": "ollama_model_available",
+      "passed": true,
+      "detail": "['qwen3:4b', 'qwen2.5:3b', 'codellama:latest']"
+    }
+  ],
+  "summary": "31/33 passed",
+  "all_passed": false
+}

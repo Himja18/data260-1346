@@ -270,3 +270,40 @@ Saved reports/hw06/raw/agent_md_check.json
   [PASS] N1 no hard-coded secrets: none
 
 Saved reports/hw06/raw/agent_md_check.json
+python verify_hw06.py
+Running HW6 smoke tests (PORT_BASE=8446, VERIFY_SEED=261346) ...
+  [PASS] backend_responds_on_port_base: {'status': 'ok', 'service': 's1346', 'port': 8446, 'mongo': 'ok'}
+  [PASS] backend_reaches_mongodb: ok
+  [PASS] mongo_collections_exist: ['episodes', 'incident_reports', 'messages', 'summaries']
+  [PASS] collections_have_jsonschema_validator: ['episodes', 'incident_reports', 'messages', 'summaries']
+  [PASS] mongo_validator_rejects_invalid_document: WriteError code 121
+  [PASS] doc_create_201_with_defaults_and_timestamps: status=201
+  [PASS] doc_list_200_contains_record: 3 docs
+  [PASS] doc_get_by_id_200
+  [PASS] doc_update_200_refreshes_updated_at: status=200
+  [PASS] doc_delete_200_then_get_404: delete=200 get=404
+  [PASS] doc_invalid_data_422_with_messages: {'missing_required': 422, 'invalid_enum': 422, 'wrong_type': 422, 'title_over_100': 422, 'bad_date': 422}
+  [PASS] doc_error_codes_400_404_415: {'bad_id': 400, 'unknown_id': 404, 'non_json': 415}
+  [PASS] chat_returns_reply: 4 replies, session=sess-0b5a7a857a67
+  [PASS] chat_reports_memory_used: window=6 n=12
+  [PASS] chat_logs_token_components: prompt_full=342 completion=21
+  [PASS] summary_triggered_every_m_user_messages: M=4
+  [PASS] memory_endpoint_shape: messages=8 episodes=2
+  [PASS] episodic_facts_stored_with_embeddings: ['The user owns a vehicle registered as Bus 9901.', 'The user works as a bus dispatcher for Route 99 night buses.']
+  [PASS] aggregate_daily_counts: [{'date': '2026-10-19', 'messages': 8, 'user_messages': 4, 'assistant_messages': 4, 'sessions': 1}]
+  [PASS] memory_probes_yaml_5_probes_rubric_1_to_5
+  [PASS] sweep_30_turns_per_setting: {'n4': 30, 'n12': 30, 'n30': 30, 'policy': 30}
+  [PASS] window_respects_short_term_n: {'n4': 4, 'n12': 12, 'n30': 30, 'policy': 30}
+  [PASS] probe_scores_20_rows_in_range: 20
+  [PASS] policy_reduces_prompt_tokens: 2412.9 -> 958.8
+  [PASS] cost_estimate_present
+  [PASS] agent_md_5_instructions_3_categories: 16 instructions, categories=['coding conventions', 'prohibited actions', 'project description', 'technology stack', 'testing approach']
+  [PASS] original_memory_55_lines_needs_consolidation: ['51 non-empty, non-comment lines > 40', 'last consolidated 1141.9 h ago (> 24 h)']
+  [PASS] consolidation_under_40_lines_dups_merged: 55 -> 39 lines
+  [PASS] contradictions_resolved_explicitly_none_lost: 5 contradictions
+  [PASS] consolidated_memory_committed
+  [FAIL] generated_function_follows_agent_md: ['C3 docstring on every public function']
+  [FAIL] generated_function_behaviour: {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"}
+  [PASS] ollama_model_available: ['qwen3:4b', 'qwen2.5:3b', 'codellama:latest']
+
+31/33 passed  ->  reports/hw06/verification.json
