@@ -1,13 +1,13 @@
 {
   "homework": "HW6",
   "sid4": 1346,
-  "commit_hash": "e4e8ca72fe628c767cb68dbae52e55cdc0c41fcf",
-  "tag_hw6_commit": "UNKNOWN",
+  "commit_hash": "d0c662bad71253df3b1da31958d4ec5f6ecc34ee",
+  "tag_hw6_commit": "012dac3b4893d5a26e7ee1f0dfbd9f2abe243fb7",
   "model_configuration": "qwen2.5:3b via Ollama (temperature 0, seed 1346); embeddings BAAI/bge-small-en-v1.5",
   "seed": 1346,
   "verify_seed": 261346,
   "port_base": 8446,
-  "timestamp": "2026-10-18T22:53:17",
+  "timestamp": "2026-10-18T23:16:49",
   "checks": [
     {
       "name": "backend_responds_on_port_base",
@@ -72,7 +72,7 @@
     {
       "name": "chat_returns_reply",
       "passed": true,
-      "detail": "4 replies, session=sess-0b5a7a857a67"
+      "detail": "4 replies, session=sess-c7acd9b14fa6"
     },
     {
       "name": "chat_reports_memory_used",
@@ -142,7 +142,7 @@
     {
       "name": "original_memory_55_lines_needs_consolidation",
       "passed": true,
-      "detail": "['51 non-empty, non-comment lines > 40', 'last consolidated 1141.9 h ago (> 24 h)']"
+      "detail": "['51 non-empty, non-comment lines > 40', 'last consolidated 1142.3 h ago (> 24 h)']"
     },
     {
       "name": "consolidation_under_40_lines_dups_merged",
@@ -161,13 +161,13 @@
     },
     {
       "name": "generated_function_follows_agent_md",
-      "passed": false,
-      "detail": "['C3 docstring on every public function']"
+      "passed": true,
+      "detail": "all static rules pass"
     },
     {
       "name": "generated_function_behaviour",
-      "passed": false,
-      "detail": "{'error': \"TypeError: can't compare offset-naive and offset-aware datetimes\"}"
+      "passed": true,
+      "detail": "{'aware_2.5h': True, 'naive_is_utc': True, 'future_raises': True, 'default_now_works': True}"
     },
     {
       "name": "ollama_model_available",
@@ -175,6 +175,6 @@
       "detail": "['qwen3:4b', 'qwen2.5:3b', 'codellama:latest']"
     }
   ],
-  "summary": "31/33 passed",
-  "all_passed": false
+  "summary": "33/33 passed",
+  "all_passed": true
 }
