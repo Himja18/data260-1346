@@ -1,59 +1,52 @@
-# HW6 AI_USE - s1346
-
-> DRAFT written with the assistant. Edit every part marked **[YOU]** so it describes what you
-> actually did and saw on your machine before you submit.
+# HW6 AI_USE - s1346 (Himja Patel)
 
 ## 1. What I used an AI assistant for, and what I did myself
 
-**AI assistant (Claude):** I used it as a pair programmer. It read the HW6 brief and my HW1-HW5
-repository and drafted most of the new code: the PyMongo connection with `$jsonSchema` validators, the
-Pydantic schemas and CRUD routes for `incident_reports`, the validation/error handlers and JSON middleware,
-the memory system (`memory_store.py`, `memory_logic.py`, `chat.py`, embeddings, token counting), the chat
-page, `memory_probes.yaml` and the 30-message conversation, the experiment runner and cost/METRICS
-generator, the file-based memory module and CLI (`/memory`, `/compact`, `/dream`, `/help`), the 55-line
-test MEMORY.md with its answer key, the AGENT.md checker, the offline test suite and `verify_hw06.py`.
+**AI assistant (Claude):** pair programmer. It read the HW6 brief and my HW1-HW5 repository and drafted most of
+the new code: the MongoDB connection with `$jsonSchema` validators, the Pydantic schemas and CRUD routes for
+`incident_reports`, the error handlers and JSON middleware, the memory system (`memory_store.py`,
+`memory_logic.py`, `chat.py`, embeddings, token counting), the chat page, `memory_probes.yaml` and the 30-message
+conversation, the experiment runner and METRICS generator, the file-based memory module and CLI
+(`/memory`, `/compact`, `/dream`, `/help`), the 55-line test MEMORY.md with its answer key, the AGENT.md checker,
+the offline test suite, `verify_hw06.py`, and first drafts of METRICS.md and the report.
 
-**Myself [YOU]:** installed and ran MongoDB + Compass; ran every endpoint and error case with cURL;
-held the 10+ message chat and checked summaries and episodes in Compass; ran the four experiment
-settings and the probes on my own machine and model; reviewed the probe scores against the answers;
-ran the consolidation test, `/compact`, `/dream` and the AGENT.md check; took all screenshots; chose
-which settings are best/worst and wrote the analysis. *(adjust to what you really did)*
+**Myself:** I installed and debugged MongoDB 7.0 and Compass on my Mac (Homebrew tap trust, a failing launchd
+service, starting `mongod` with its own data path), ran every endpoint and error case with cURL, held the chat
+session and inspected the collections in Compass, ran all four experiment settings and the probes on my own
+machine (and re-ran them with `caffeinate` after the Mac slept during the first run), ran the consolidation test,
+`/dream`, `/compact` and the AGENT.md check, fixed the generated function by hand, reviewed every result and
+took all screenshots.
 
-## 2. One AI output that was wrong/unsuitable
+## 2. One AI output that was wrong
 
 The fact-extraction prompt the assistant wrote for episodic memory (`EXTRACT_PROMPT` in
-`code/backend/memory_logic.py`) contained an example sentence, *"The user's name is Dana."*.
-qwen2.5:3b copied that example as if it were a fact: while I was only asking *"What should I tell riders
-waiting at the stop?"*, it stored the episode **"The user's name is Dana."** (importance 0.8) next to the
-correct "The user's name is Himja.". From then on the fact was retrieved by cosine similarity and the
-assistant started addressing me as "Dana" in its replies (Fig 11). Because chat runs at temperature 0 with
-seed 1346, the same wrong fact appeared again when I repeated the session.
+`code/backend/memory_logic.py`) contained the example sentence "The user's name is Dana.". qwen2.5:3b copied it
+as a fact: after my message "What should I tell riders waiting at the stop?" it stored the episode
+"The user's name is Dana." (importance 0.8) next to the correct "The user's name is Himja.", and the replies
+began addressing me as Dana. Because chat runs at temperature 0 with seed 1346, the same wrong fact came back
+when I repeated the session.
 
-## 3. How I detected the problem
+## 3. How I detected it
 
-I never typed "Dana" in the chat, but the replies used it. `GET /api/memory/himja` (Fig 12) showed where it came
-from: the `recent_episodes` list contained "The user's name is Dana." created right after my message about
-riders at the stop - a message with no name in it. The word "Dana" appeared nowhere in my messages, only in the
-extraction prompt's example, so the extractor had hallucinated it from the prompt.
+I never typed "Dana", yet replies used it. `GET /api/memory/himja` (Fig 12) and the `episodes` collection
+(Fig 16) showed the stored fact and its timestamp, right after a message with no name in it. The only place
+"Dana" appeared was the example in the extraction prompt. A later turn confirmed the harm: for the message
+"hellp" the wrong fact was retrieved with a higher score (0.555) than the correct one (0.516) (Fig 16b).
 
 ## 4. What I changed and why it works now
 
-- Removed the concrete example name from the extraction prompt and added two rules: use only information
-  written in the message itself and never invent names; questions/greetings contain no facts.
-- Cleared the test user (`DELETE /api/memory/himja`) before the Part 3 runs, so no wrong episode leaks into them.
-  This mattered for Part 3: the experiment conversation's persona is actually named Dana, so the leaked example
-  would have made probe P5 look correct for the wrong reason.
-- **[YOU]** after the fix, re-ran the chat / experiment and checked in `raw/probes_*.json` and Compass
-  (`episodes`) that every stored name comes from a message that contains it.
+I removed the example name from the extraction prompt and added two rules: use only information written in the
+message itself and never invent names; questions and greetings contain no facts. I cleared the test users before
+the Part 3 runs. This mattered: the experiment persona really is named Dana, so the old prompt would have made
+probe P5 look correct for the wrong reason. After the fix, the only name used in the Part 3 runs was the
+persona's own name from message 2 ("Dana Okafor"), and the verify run stored only facts that were in its messages
+("The user owns a vehicle registered as Bus 9901.", "The user works as a bus dispatcher for Route 99 night buses.").
 
-**Verified independently - consolidation:** before running consolidation I wrote the correct current value of
-every contradicted topic in `reports/hw06/memory_test/expected_resolutions.json`. `code/run_consolidation_test.py`
-compares the result with that answer key and reported two wrong resolutions by the "newest statement wins" rule:
-`project.port` (a later wrong "port 8000") and `db.relational` (a later tentative "thinking about PostgreSQL",
-which the tool did flag `REVIEW`). Neither value was lost - both correct values stay in `## Superseded` - and
-re-asserting the correct port with `/dream` fixes it at the next `/compact`.
-
-**Also verified independently [YOU - optional]:** Ollama's `prompt_eval_count` vs. the Qwen2.5 tokenizer
-count of the full prompt (columns `prompt_tokens` vs `prompt_tokens_full` in `raw/memory_turns.csv`).
-If Ollama reports fewer tokens on later turns, that is the KV-cache reusing the unchanged prompt prefix.
-That is why the cost estimate uses the tokenizer count: a hosted API bills the whole prompt.
+**Also verified independently:**
+- The token counter first reported "prompt 2 tok" because a newer `transformers` returns a dict from
+  `apply_chat_template`; after the fix the tokenizer count matched Ollama's `prompt_eval_count` exactly
+  (119 = 119, 385 = 385 in RUN_LOG.txt), and two separate N=4 runs gave the same 669.1 tokens per turn.
+- The consolidation answer key (`expected_resolutions.json`, written before running) exposed two wrong
+  "newest wins" resolutions (`project.port`, `db.relational`); re-stating the port through `/dream` fixed it.
+- The model-generated `incident_age_hours` failed the AGENT.md check (no docstring; naive vs aware datetime
+  crash). Feedback fixed the docstring; I fixed the datetime bug by hand and re-verified (7/7 rules, 4/4 tests).

@@ -25,7 +25,11 @@
 - N1. Never hard-code passwords, API keys, tokens or connection secrets; read them from environment variables.
 - N2. Never modify or delete documents in the Part 1 incident_reports collection from memory code.
 - N3. Never silently delete a fact from MEMORY.md; a superseded fact moves to the "Superseded" section with what replaced it.
-- N4. Never rewrite published git history (no force-push, no moving a homework tag).
+- N4. Never rewrite published git history: no force-push to main, and no moving a homework tag after that homework is submitted.
+
+## Code review (reused from HW1)
+- R1. When reviewing code, respond ONLY with a bulleted list: one specific issue per bullet, naming the exact line, function or file, at most one sentence each, with no introduction or summary.
+- R2. If the reviewed code has no issues, respond with the single bullet "No issues found."
 
 ## Assistant behaviour
 - B1. Answer in at most 120 words; when an incident report is ambiguous, ask which category applies instead of guessing.
