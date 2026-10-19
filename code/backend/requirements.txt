@@ -5,3 +5,11 @@ pymysql
 cryptography
 email-validator
 requests
+pymongo>=4.6
+pyyaml
+numpy
+sentence-transformers   # embeddings for episodic memory (same model as HW4 RAG)
+transformers            # Qwen2.5 tokenizer for per-component token counts
+# offline tests only
+mongomock
+httpx

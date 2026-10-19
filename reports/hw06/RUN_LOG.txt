@@ -1,0 +1,272 @@
+[2026-10-17T01:50:23] === HW6 Part 3 memory experiment | backend={'status': 'ok', 'service': 's1346', 'port': 8446, 'mongo': 'ok'} | seed=1346
+[2026-10-17T01:50:23] --- setting n4 (SHORT_TERM_N=4) user=s1346-exp-n4 session=n4-seed1346-1792227023 cleared={'messages': 0, 'summaries': 0, 'episodes': 0}
+[2026-10-17T01:50:57] n4 turn 01: prompt_full=119 (ollama=119) completion=39 window=0 epi=0 latency=31953ms
+[2026-10-17T01:51:10] n4 turn 02: prompt_full=225 (ollama=225) completion=58 window=2 epi=1 latency=12946ms
+[2026-10-17T01:51:26] n4 turn 03: prompt_full=321 (ollama=321) completion=58 window=4 epi=2 latency=15452ms
+[2026-10-17T01:51:49] n4 turn 04: prompt_full=346 (ollama=346) completion=50 window=4 epi=3 latency=22354ms
+[2026-10-17T01:52:13] n4 turn 05: prompt_full=385 (ollama=385) completion=89 window=4 epi=3 latency=23776ms
+[2026-10-17T01:52:21] n4 turn 06: prompt_full=422 (ollama=422) completion=43 window=4 epi=3 latency=8378ms
+[2026-10-17T01:52:40] n4 turn 07: prompt_full=414 (ollama=414) completion=100 window=4 epi=3 latency=17954ms
+[2026-10-17T01:53:22] n4 turn 08: prompt_full=425 (ollama=425) completion=44 window=4 epi=3 latency=41825ms
+[2026-10-17T01:53:45] n4 turn 09: prompt_full=621 (ollama=621) completion=101 window=4 epi=3 latency=22646ms
+[2026-10-17T01:54:06] n4 turn 10: prompt_full=637 (ollama=637) completion=140 window=4 epi=3 latency=21182ms
+Original: reports/hw06/memory_test/MEMORY_original.md - 55 lines
+Consolidation required because: 51 non-empty, non-comment lines > 40; last consolidated 1096.9 h ago (> 24 h)
+Consolidated: reports/hw06/memory_test/MEMORY_consolidated.md - 39 lines (facts 47 -> 24)
+Duplicates merged: 18 lines
+Contradictions resolved: 5
+  [ok    ] project.port: kept "The backend runs on port 8000."  (superseded: The backend runs on port 8446 (PORT_BASE).)
+  [ok    ] model.local: kept "The local model is qwen2.5:3b because qwen3:8b does not fit in 8 GB of RAM."  (superseded: The local model is qwen3:8b.)
+  [ok    ] project.frontend: kept "The frontend is React with Vite and Redux Toolkit."  (superseded: The frontend is plain HTML, CSS and JavaScript.)
+  [REVIEW] db.relational: kept "The user is thinking about switching the relational database to PostgreSQL."  (superseded: Relational data is stored in MySQL database s1346_rel.)
+  [ok    ] preference.report_format: kept "Reports should be exactly three bullet points."  (superseded: Reports should be written as a single paragraph.)
+Check against expected_resolutions.json:
+  OK   model.local: expected 'qwen2.5:3b', kept "The local model is qwen2.5:3b because qwen3:8b does not fit in 8 GB of RAM."
+  OK   preference.report_format: expected 'three bullet points', kept "Reports should be exactly three bullet points."
+  OK   project.frontend: expected 'React', kept "The frontend is React with Vite and Redux Toolkit."
+  WRONG db.relational: expected 'MySQL', kept "The user is thinking about switching the relational database to PostgreSQL."
+  WRONG project.port: expected '8446', kept "The backend runs on port 8000."
+Conflicting values silently lost: 0
+Under 40 lines: True
+Report: reports/hw06/raw/consolidation_report.json
+[2026-10-17T01:54:25] n4 turn 11: prompt_full=734 (ollama=734) completion=87 window=4 epi=3 latency=18892ms
+[2026-10-17T01:55:26] n4 turn 12: prompt_full=684 (ollama=684) completion=126 window=4 epi=3 latency=59876ms
+[2026-10-17T01:55:52] n4 turn 13: prompt_full=800 (ollama=800) completion=96 window=4 epi=3 latency=25605ms
+[2026-10-17T01:56:08] n4 turn 14: prompt_full=800 (ollama=800) completion=98 window=4 epi=3 latency=15465ms
+[2026-10-17T01:56:18] n4 turn 15: prompt_full=770 (ollama=770) completion=33 window=4 epi=3 latency=9976ms
+[2026-10-17T01:57:24] n4 turn 16: prompt_full=693 (ollama=693) completion=56 window=4 epi=3 latency=66347ms
+[2026-10-17T01:57:41] n4 turn 17: prompt_full=660 (ollama=660) completion=86 window=4 epi=3 latency=16805ms
+[2026-10-17T01:57:59] n4 turn 18: prompt_full=724 (ollama=724) completion=74 window=4 epi=3 latency=17193ms
+[2026-10-17T01:58:14] n4 turn 19: prompt_full=735 (ollama=735) completion=82 window=4 epi=3 latency=14860ms
+[2026-10-17T01:59:18] n4 turn 20: prompt_full=742 (ollama=742) completion=116 window=4 epi=3 latency=63770ms
+[2026-10-17T01:59:36] n4 turn 21: prompt_full=851 (ollama=851) completion=88 window=4 epi=3 latency=17663ms
+[2026-10-17T01:59:56] n4 turn 22: prompt_full=870 (ollama=870) completion=93 window=4 epi=3 latency=19008ms
+[2026-10-17T02:00:10] n4 turn 23: prompt_full=836 (ollama=836) completion=71 window=4 epi=3 latency=14377ms
+[2026-10-17T02:01:51] n4 turn 24: prompt_full=808 (ollama=808) completion=84 window=4 epi=3 latency=100529ms
+[2026-10-17T02:02:16] n4 turn 25: prompt_full=964 (ollama=964) completion=119 window=4 epi=3 latency=24842ms
+[2026-10-17T02:02:30] n4 turn 26: prompt_full=1024 (ollama=1024) completion=79 window=4 epi=3 latency=14076ms
+[2026-10-17T02:02:39] n4 turn 27: prompt_full=1013 (ollama=1013) completion=60 window=4 epi=3 latency=8732ms
+[2026-10-17T02:03:08] n4 turn 28: prompt_full=959 (ollama=959) completion=58 window=4 epi=3 latency=28430ms
+[2026-10-17T02:03:19] n4 turn 29: prompt_full=735 (ollama=735) completion=67 window=4 epi=3 latency=10887ms
+[2026-10-17T02:03:30] n4 turn 30: prompt_full=756 (ollama=756) completion=76 window=4 epi=3 latency=11128ms
+[2026-10-17T02:03:37] n4 P1_report_format: score=5 (all required) answer="I will provide reports in the format of exactly three bullet points, considering the user's preference, and taking into "
+[2026-10-17T03:08:26] n4 P2_route: score=5 (all required) answer='I am covering Route 23 for the rest of my shift. I will consider a decision between a **Delay** or **Service Change** fo'
+[2026-10-17T04:05:01] n4 P3_supervisor: score=5 (all required) answer='My shift supervisor for the rest of tonight is Lena Park. I will consider a decision between a **Delay** or **Service Ch'
+[2026-10-17T05:05:43] n4 P4_breakdown: score=5 (all required) answer='Earlier tonight, bus 4471 broke down at Santa Clara St & 5th St. I am considering a decision between a **Delay** or **Se'
+[2026-10-17T05:05:58] n4 P5_identity: score=5 (all required) answer='My name is Dana Okafor. I am the night-shift dispatcher at the Tamien depot and have been reassigned to cover Route 23 f'
+[2026-10-17T05:05:58] n4 SUMMARY: mean_prompt_full=669.1 mean_latency=25897.6ms probe=5 {'P1_report_format': 5, 'P2_route': 5, 'P3_supervisor': 5, 'P4_breakdown': 5, 'P5_identity': 5}
+[2026-10-17T05:05:58] --- setting n12 (SHORT_TERM_N=12) user=s1346-exp-n12 session=n12-seed1346-1792238758 cleared={'messages': 0, 'summaries': 0, 'episodes': 0}
+[2026-10-17T05:22:42] n12 turn 01: prompt_full=119 (ollama=119) completion=39 window=0 epi=0 latency=7916ms
+[2026-10-17T05:53:07] n12 turn 02: prompt_full=225 (ollama=225) completion=58 window=2 epi=1 latency=14569ms
+[2026-10-17T06:21:55] n12 turn 03: prompt_full=321 (ollama=321) completion=58 window=4 epi=2 latency=13214ms
+[2026-10-17T06:54:20] n12 turn 04: prompt_full=408 (ollama=408) completion=51 window=6 epi=3 latency=15678ms
+[2026-10-17T07:25:08] n12 turn 05: prompt_full=546 (ollama=546) completion=110 window=8 epi=3 latency=23999ms
+[2026-10-17T07:57:53] n12 turn 06: prompt_full=686 (ollama=686) completion=53 window=10 epi=3 latency=9844ms
+[2026-10-17T07:58:11] n12 turn 07: prompt_full=756 (ollama=756) completion=105 window=12 epi=3 latency=17476ms
+[2026-10-17T08:40:16] n12 turn 08: prompt_full=818 (ollama=818) completion=77 window=12 epi=3 latency=59855ms
+[2026-10-17T09:26:20] n12 turn 09: prompt_full=1017 (ollama=1017) completion=131 window=12 epi=3 latency=34327ms
+[2026-10-17T10:10:54] n12 turn 10: prompt_full=1099 (ollama=1099) completion=115 window=12 epi=3 latency=22884ms
+[2026-10-17T10:59:14] n12 turn 11: prompt_full=1165 (ollama=1165) completion=96 window=12 epi=3 latency=20015ms
+[2026-10-17T12:13:24] n12 turn 12: prompt_full=1140 (ollama=1140) completion=207 window=12 epi=3 latency=73766ms
+[2026-10-17T13:13:57] n12 turn 13: prompt_full=1400 (ollama=1400) completion=118 window=12 epi=3 latency=35751ms
+[2026-10-17T13:14:30] n12 turn 14: prompt_full=1406 (ollama=1406) completion=131 window=12 epi=3 latency=33136ms
+[2026-10-17T14:04:55] n12 turn 15: prompt_full=1462 (ollama=1462) completion=106 window=12 epi=3 latency=26729ms
+[2026-10-17T15:22:10] n12 turn 16: prompt_full=1411 (ollama=1411) completion=203 window=12 epi=3 latency=136734ms
+[2026-10-17T15:23:03] n12 turn 17: prompt_full=1618 (ollama=1618) completion=256 window=12 epi=3 latency=52992ms
+[2026-10-17T15:23:52] n12 turn 18: prompt_full=1791 (ollama=1791) completion=196 window=12 epi=3 latency=48435ms
+[2026-10-17T15:24:40] n12 turn 19: prompt_full=1767 (ollama=1767) completion=237 window=12 epi=3 latency=48178ms
+[2026-10-17T15:25:59] n12 turn 20: prompt_full=1885 (ollama=1885) completion=222 window=12 epi=3 latency=78211ms
+[2026-10-18T21:59:01] === HW6 Part 3 memory experiment | backend={'status': 'ok', 'service': 's1346', 'port': 8446, 'mongo': 'ok'} | seed=1346
+[2026-10-18T21:59:01] --- setting n12 (SHORT_TERM_N=12) user=s1346-exp-n12 session=n12-seed1346-1792385941 cleared={'messages': 41, 'summaries': 7, 'episodes': 8}
+[2026-10-18T21:59:30] n12 turn 01: prompt_full=119 (ollama=119) completion=39 window=0 epi=0 latency=27498ms
+[2026-10-18T21:59:42] n12 turn 02: prompt_full=225 (ollama=225) completion=58 window=2 epi=1 latency=11969ms
+[2026-10-18T21:59:55] n12 turn 03: prompt_full=321 (ollama=321) completion=58 window=4 epi=2 latency=12072ms
+[2026-10-18T22:00:18] n12 turn 04: prompt_full=408 (ollama=408) completion=51 window=6 epi=3 latency=22428ms
+[2026-10-18T22:00:47] n12 turn 05: prompt_full=546 (ollama=546) completion=110 window=8 epi=3 latency=28462ms
+[2026-10-18T22:01:01] n12 turn 06: prompt_full=686 (ollama=686) completion=53 window=10 epi=3 latency=13288ms
+[2026-10-18T22:01:16] n12 turn 07: prompt_full=756 (ollama=756) completion=105 window=12 epi=3 latency=15611ms
+[2026-10-18T22:02:10] n12 turn 08: prompt_full=818 (ollama=818) completion=77 window=12 epi=3 latency=53506ms
+[2026-10-18T22:02:43] n12 turn 09: prompt_full=1017 (ollama=1017) completion=131 window=12 epi=3 latency=32080ms
+[2026-10-18T22:03:02] n12 turn 10: prompt_full=1099 (ollama=1099) completion=115 window=12 epi=3 latency=19397ms
+[2026-10-18T22:03:23] n12 turn 11: prompt_full=1165 (ollama=1165) completion=96 window=12 epi=3 latency=20848ms
+[2026-10-18T22:04:26] n12 turn 12: prompt_full=1140 (ollama=1140) completion=207 window=12 epi=3 latency=62729ms
+[2026-10-18T22:05:03] n12 turn 13: prompt_full=1400 (ollama=1400) completion=118 window=12 epi=3 latency=36102ms
+[2026-10-18T22:05:31] n12 turn 14: prompt_full=1406 (ollama=1406) completion=131 window=12 epi=3 latency=27327ms
+[2026-10-18T22:05:58] n12 turn 15: prompt_full=1462 (ollama=1462) completion=106 window=12 epi=3 latency=26904ms
+[2026-10-18T22:06:27] n12 turn 16: prompt_full=1411 (ollama=1411) completion=203 window=12 epi=3 latency=28305ms
+[2026-10-18T22:06:40] n12 turn 17: prompt_full=1618 (ollama=1618) completion=256 window=12 epi=3 latency=13059ms
+[2026-10-18T22:06:52] n12 turn 18: prompt_full=1791 (ollama=1791) completion=196 window=12 epi=3 latency=11464ms
+[2026-10-18T22:07:04] n12 turn 19: prompt_full=1767 (ollama=1767) completion=237 window=12 epi=3 latency=10931ms
+[2026-10-18T22:07:22] n12 turn 20: prompt_full=1885 (ollama=1885) completion=222 window=12 epi=3 latency=18058ms
+[2026-10-18T22:07:35] n12 turn 21: prompt_full=1883 (ollama=1883) completion=256 window=12 epi=3 latency=13031ms
+[2026-10-18T22:07:50] n12 turn 22: prompt_full=2046 (ollama=2046) completion=256 window=12 epi=3 latency=14759ms
+[2026-10-18T22:08:05] n12 turn 23: prompt_full=2104 (ollama=2104) completion=256 window=12 epi=3 latency=14858ms
+[2026-10-18T22:08:39] n12 turn 24: prompt_full=2094 (ollama=2094) completion=256 window=12 epi=3 latency=33561ms
+[2026-10-18T22:08:59] n12 turn 25: prompt_full=2263 (ollama=2263) completion=256 window=12 epi=3 latency=19406ms
+[2026-10-18T22:09:12] n12 turn 26: prompt_full=2296 (ollama=2296) completion=121 window=12 epi=3 latency=12554ms
+[2026-10-18T22:09:24] n12 turn 27: prompt_full=2182 (ollama=2182) completion=169 window=12 epi=3 latency=12111ms
+[2026-10-18T22:09:40] n12 turn 28: prompt_full=2103 (ollama=2103) completion=62 window=12 epi=3 latency=15162ms
+[2026-10-18T22:09:51] n12 turn 29: prompt_full=1820 (ollama=1820) completion=186 window=12 epi=3 latency=11160ms
+[2026-10-18T22:09:58] n12 turn 30: prompt_full=1761 (ollama=1761) completion=39 window=12 epi=3 latency=7423ms
+[2026-10-18T22:10:04] n12 P1_report_format: score=5 (all required) answer='I should provide reports in the format of three bullet points: **Incident Type**, **Service**, and **Details**, ensuring'
+[2026-10-18T22:10:18] n12 P2_route: score=5 (all required) answer='- **Incident Type:** Delay\n- **Service:** Route 23\n- **Details:** [Specific details about the delay], [Time], [Location]'
+[2026-10-18T22:10:27] n12 P3_supervisor: score=4 (all required, but mentions ['\\bmarco\\b']) answer='- **Incident Type:** Delay\n- **Service:** Route 23\n- **Details:** [Specific details about the delay], [Time], [Location]'
+[2026-10-18T22:10:33] n12 P4_breakdown: score=5 (all required) answer='- **Incident Type:** Delay\n- **Service:** Bus 4471\n- **Details:** Broke down earlier tonight at Santa Clara St & 5th St,'
+[2026-10-18T22:10:38] n12 P5_identity: score=5 (all required) answer='- **Incident Type:** Delay\n- **Service:** Bus 4471\n- **Details:** Broke down earlier tonight at Santa Clara St & 5th St,'
+[2026-10-18T22:10:38] n12 SUMMARY: mean_prompt_full=1386.4 mean_latency=21535.4ms probe=4.8 {'P1_report_format': 5, 'P2_route': 5, 'P3_supervisor': 4, 'P4_breakdown': 5, 'P5_identity': 5}
+[2026-10-18T22:10:38] --- setting n30 (SHORT_TERM_N=30) user=s1346-exp-n30 session=n30-seed1346-1792386638 cleared={'messages': 0, 'summaries': 0, 'episodes': 0}
+[2026-10-18T22:10:42] n30 turn 01: prompt_full=119 (ollama=119) completion=39 window=0 epi=0 latency=3458ms
+[2026-10-18T22:10:46] n30 turn 02: prompt_full=225 (ollama=225) completion=58 window=2 epi=1 latency=3802ms
+[2026-10-18T22:10:50] n30 turn 03: prompt_full=321 (ollama=321) completion=58 window=4 epi=2 latency=3396ms
+[2026-10-18T22:10:54] n30 turn 04: prompt_full=408 (ollama=408) completion=51 window=6 epi=3 latency=4020ms
+[2026-10-18T22:11:02] n30 turn 05: prompt_full=546 (ollama=546) completion=110 window=8 epi=3 latency=7002ms
+[2026-10-18T22:11:05] n30 turn 06: prompt_full=686 (ollama=686) completion=53 window=10 epi=3 latency=3196ms
+[2026-10-18T22:11:10] n30 turn 07: prompt_full=756 (ollama=756) completion=105 window=12 epi=3 latency=4512ms
+[2026-10-18T22:11:23] n30 turn 08: prompt_full=880 (ollama=880) completion=85 window=14 epi=3 latency=12897ms
+[2026-10-18T22:11:35] n30 turn 09: prompt_full=1186 (ollama=1186) completion=134 window=16 epi=3 latency=11458ms
+[2026-10-18T22:11:44] n30 turn 10: prompt_full=1353 (ollama=1353) completion=215 window=18 epi=3 latency=8764ms
+[2026-10-18T22:11:54] n30 turn 11: prompt_full=1588 (ollama=1588) completion=256 window=20 epi=3 latency=9657ms
+[2026-10-18T22:12:10] n30 turn 12: prompt_full=1853 (ollama=1853) completion=167 window=22 epi=3 latency=15901ms
+[2026-10-18T22:12:28] n30 turn 13: prompt_full=2096 (ollama=2096) completion=256 window=24 epi=3 latency=17245ms
+[2026-10-18T22:12:39] n30 turn 14: prompt_full=2364 (ollama=2364) completion=239 window=26 epi=3 latency=10474ms
+[2026-10-18T22:12:48] n30 turn 15: prompt_full=2624 (ollama=2624) completion=171 window=28 epi=3 latency=9131ms
+[2026-10-18T22:13:10] n30 turn 16: prompt_full=2813 (ollama=2813) completion=256 window=30 epi=3 latency=21697ms
+[2026-10-18T22:13:28] n30 turn 17: prompt_full=2975 (ollama=2975) completion=219 window=30 epi=3 latency=18369ms
+[2026-10-18T22:13:49] n30 turn 18: prompt_full=3128 (ollama=3128) completion=240 window=30 epi=3 latency=19682ms
+[2026-10-18T22:14:08] n30 turn 19: prompt_full=3297 (ollama=3297) completion=256 window=30 epi=3 latency=18361ms
+[2026-10-18T22:14:32] n30 turn 20: prompt_full=3516 (ollama=3516) completion=63 window=30 epi=3 latency=23965ms
+[2026-10-18T22:14:51] n30 turn 21: prompt_full=3601 (ollama=3601) completion=230 window=30 epi=3 latency=19029ms
+[2026-10-18T22:15:12] n30 turn 22: prompt_full=3780 (ollama=3780) completion=256 window=30 epi=3 latency=20741ms
+[2026-10-18T22:15:34] n30 turn 23: prompt_full=3936 (ollama=3936) completion=256 window=30 epi=3 latency=21964ms
+[2026-10-18T22:16:13] n30 turn 24: prompt_full=4098 (ollama=4058) completion=246 window=30 epi=3 latency=38679ms
+[2026-10-18T22:16:36] n30 turn 25: prompt_full=4369 (ollama=3858) completion=256 window=30 epi=3 latency=22371ms
+[2026-10-18T22:16:51] n30 turn 26: prompt_full=4426 (ollama=3959) completion=49 window=30 epi=3 latency=14176ms
+[2026-10-18T22:16:54] n30 turn 27: prompt_full=4218 (ollama=4028) completion=47 window=30 epi=3 latency=2949ms
+[2026-10-18T22:17:14] n30 turn 28: prompt_full=4105 (ollama=4077) completion=58 window=30 epi=3 latency=19562ms
+[2026-10-18T22:17:27] n30 turn 29: prompt_full=3643 (ollama=3643) completion=60 window=30 epi=3 latency=12431ms
+[2026-10-18T22:17:40] n30 turn 30: prompt_full=3477 (ollama=3477) completion=74 window=30 epi=3 latency=12864ms
+[2026-10-18T22:17:51] n30 P1_report_format: score=5 (all required) answer="I should provide reports in the format of exactly three bullet points, considering the user's preference and the context"
+[2026-10-18T22:18:16] n30 P2_route: score=5 (all required) answer='- **Incident Type:** Delay\n- **Location:** Route 23\n- **Details:** The user has been reassigned to cover Route 23 for th'
+[2026-10-18T22:18:31] n30 P3_supervisor: score=5 (all required) answer='- **Incident Type:** Delay\n- **Location:** Route 23\n- **Details:** The user has been reassigned to cover Route 23 for th'
+[2026-10-18T22:18:41] n30 P4_breakdown: score=5 (all required) answer='- **Incident Type:** Delay\n- **Location:** Santa Clara St & 5th St\n- **Details:** The bus 4471 broke down earlier tonigh'
+[2026-10-18T22:18:51] n30 P5_identity: score=2 (says it does not know) answer='- **Incident Type:** Delay\n- **Location:** Route 23\n- **Details:** The user is covering Route 23 for the rest of their s'
+[2026-10-18T22:18:51] n30 SUMMARY: mean_prompt_full=2412.9 mean_latency=13725.0ms probe=4.4 {'P1_report_format': 5, 'P2_route': 5, 'P3_supervisor': 5, 'P4_breakdown': 5, 'P5_identity': 2}
+[2026-10-18T22:18:51] --- setting policy (Compression policy (N=30 + compress_assistant)) user=s1346-exp-policy session=policy-seed1346-1792387131 cleared={'messages': 0, 'summaries': 0, 'episodes': 0}
+[2026-10-18T22:18:56] policy turn 01: prompt_full=119 (ollama=119) completion=39 window=0 epi=0 latency=4276ms
+[2026-10-18T22:19:00] policy turn 02: prompt_full=225 (ollama=225) completion=58 window=2 epi=1 latency=3565ms
+[2026-10-18T22:19:03] policy turn 03: prompt_full=321 (ollama=321) completion=58 window=4 epi=2 latency=3320ms
+[2026-10-18T22:19:07] policy turn 04: prompt_full=373 (ollama=373) completion=51 window=6 epi=3 latency=4136ms
+[2026-10-18T22:19:13] policy turn 05: prompt_full=466 (ollama=466) completion=88 window=8 epi=3 latency=5487ms
+[2026-10-18T22:19:15] policy turn 06: prompt_full=530 (ollama=530) completion=18 window=10 epi=3 latency=1607ms
+[2026-10-18T22:19:19] policy turn 07: prompt_full=534 (ollama=534) completion=97 window=12 epi=3 latency=4168ms
+[2026-10-18T22:19:29] policy turn 08: prompt_full=580 (ollama=580) completion=18 window=14 epi=3 latency=10010ms
+[2026-10-18T22:19:36] policy turn 09: prompt_full=836 (ollama=836) completion=84 window=16 epi=3 latency=7316ms
+[2026-10-18T22:19:40] policy turn 10: prompt_full=882 (ollama=882) completion=60 window=18 epi=3 latency=3036ms
+[2026-10-18T22:19:42] policy turn 11: prompt_full=962 (ollama=962) completion=49 window=20 epi=3 latency=2864ms
+[2026-10-18T22:19:55] policy turn 12: prompt_full=975 (ollama=975) completion=70 window=22 epi=3 latency=12312ms
+[2026-10-18T22:20:05] policy turn 13: prompt_full=1185 (ollama=1185) completion=67 window=24 epi=3 latency=8870ms
+[2026-10-18T22:20:09] policy turn 14: prompt_full=1241 (ollama=1241) completion=68 window=26 epi=3 latency=4089ms
+[2026-10-18T22:20:12] policy turn 15: prompt_full=1284 (ollama=1284) completion=53 window=28 epi=3 latency=2891ms
+[2026-10-18T22:20:25] policy turn 16: prompt_full=1307 (ollama=1307) completion=87 window=30 epi=3 latency=13251ms
+[2026-10-18T22:20:33] policy turn 17: prompt_full=1222 (ollama=1222) completion=93 window=30 epi=3 latency=7491ms
+[2026-10-18T22:20:41] policy turn 18: prompt_full=1272 (ollama=1272) completion=81 window=30 epi=3 latency=7293ms
+[2026-10-18T22:20:45] policy turn 19: prompt_full=1268 (ollama=1268) completion=58 window=30 epi=3 latency=4649ms
+[2026-10-18T22:20:55] policy turn 20: prompt_full=1248 (ollama=1248) completion=26 window=30 epi=3 latency=9833ms
+[2026-10-18T22:21:03] policy turn 21: prompt_full=1208 (ollama=1208) completion=126 window=30 epi=3 latency=7885ms
+[2026-10-18T22:21:09] policy turn 22: prompt_full=1287 (ollama=1287) completion=70 window=30 epi=3 latency=5767ms
+[2026-10-18T22:21:13] policy turn 23: prompt_full=1313 (ollama=1313) completion=33 window=30 epi=3 latency=4399ms
+[2026-10-18T22:21:26] policy turn 24: prompt_full=1214 (ollama=1214) completion=83 window=30 epi=3 latency=13032ms
+[2026-10-18T22:21:35] policy turn 25: prompt_full=1140 (ollama=1140) completion=69 window=30 epi=3 latency=8090ms
+[2026-10-18T22:21:42] policy turn 26: prompt_full=1175 (ollama=1175) completion=45 window=30 epi=3 latency=6099ms
+[2026-10-18T22:21:46] policy turn 27: prompt_full=1132 (ollama=1132) completion=24 window=30 epi=3 latency=4173ms
+[2026-10-18T22:21:58] policy turn 28: prompt_full=1092 (ollama=1092) completion=51 window=30 epi=3 latency=11843ms
+[2026-10-18T22:22:04] policy turn 29: prompt_full=1168 (ollama=1168) completion=46 window=30 epi=3 latency=6121ms
+[2026-10-18T22:22:10] policy turn 30: prompt_full=1204 (ollama=1204) completion=74 window=30 epi=3 latency=5448ms
+[2026-10-18T22:22:14] policy P1_report_format: score=5 (all required) answer='I will provide the report as exactly three bullet points, considering the decision to log as a Service Change for the de'
+[2026-10-18T22:22:33] policy P2_route: score=5 (all required) answer='You are covering Route 23 for the rest of your shift. Consider logging the incident as a Service Change for the detore d'
+[2026-10-18T22:22:41] policy P3_supervisor: score=5 (all required) answer='Your supervisor for the rest of tonight is Lena Park.'
+[2026-10-18T22:22:45] policy P4_breakdown: score=5 (all required) answer='Earlier tonight, Bus 4471 broke down at Santa Clara St & 5th St. You are considering logging the incident as a Service C'
+[2026-10-18T22:22:49] policy P5_identity: score=2 (says it does not know) answer='- Your name is not specified in the message.\n- Your job is to cover a specific route for the rest of your shift, which i'
+[2026-10-18T22:22:49] policy SUMMARY: mean_prompt_full=958.8 mean_latency=6444.0ms probe=4.4 {'P1_report_format': 5, 'P2_route': 5, 'P3_supervisor': 5, 'P4_breakdown': 5, 'P5_identity': 2}
+[2026-10-18T22:22:49] Saved reports/hw06/raw/memory_summary.json, memory_turns.csv, probe_scores.csv
+[2026-10-18T22:41:17] === HW6 Part 3 memory experiment | backend={'status': 'ok', 'service': 's1346', 'port': 8446, 'mongo': 'ok'} | seed=1346
+[2026-10-18T22:41:17] --- setting n4 (SHORT_TERM_N=4) user=s1346-exp-n4 session=n4-seed1346-1792388477 cleared={'messages': 70, 'summaries': 12, 'episodes': 13}
+[2026-10-18T22:41:26] n4 turn 01: prompt_full=119 (ollama=119) completion=39 window=0 epi=0 latency=8059ms
+[2026-10-18T22:41:30] n4 turn 02: prompt_full=225 (ollama=225) completion=58 window=2 epi=1 latency=3896ms
+[2026-10-18T22:41:35] n4 turn 03: prompt_full=321 (ollama=321) completion=58 window=4 epi=2 latency=4302ms
+[2026-10-18T22:41:41] n4 turn 04: prompt_full=346 (ollama=346) completion=50 window=4 epi=3 latency=6178ms
+[2026-10-18T22:41:49] n4 turn 05: prompt_full=385 (ollama=385) completion=89 window=4 epi=3 latency=6936ms
+[2026-10-18T22:41:52] n4 turn 06: prompt_full=422 (ollama=422) completion=43 window=4 epi=3 latency=2676ms
+[2026-10-18T22:41:58] n4 turn 07: prompt_full=414 (ollama=414) completion=100 window=4 epi=3 latency=5999ms
+[2026-10-18T22:42:10] n4 turn 08: prompt_full=425 (ollama=425) completion=44 window=4 epi=3 latency=12169ms
+[2026-10-18T22:42:20] n4 turn 09: prompt_full=621 (ollama=621) completion=101 window=4 epi=3 latency=8632ms
+[2026-10-18T22:42:27] n4 turn 10: prompt_full=637 (ollama=637) completion=140 window=4 epi=3 latency=6532ms
+[2026-10-18T22:42:31] n4 turn 11: prompt_full=734 (ollama=734) completion=87 window=4 epi=3 latency=4788ms
+[2026-10-18T22:42:46] n4 turn 12: prompt_full=684 (ollama=684) completion=126 window=4 epi=3 latency=14326ms
+[2026-10-18T22:42:57] n4 turn 13: prompt_full=800 (ollama=800) completion=96 window=4 epi=3 latency=9623ms
+[2026-10-18T22:43:02] n4 turn 14: prompt_full=800 (ollama=800) completion=98 window=4 epi=3 latency=4551ms
+[2026-10-18T22:43:06] n4 turn 15: prompt_full=770 (ollama=770) completion=33 window=4 epi=3 latency=4418ms
+[2026-10-18T22:43:23] n4 turn 16: prompt_full=693 (ollama=693) completion=56 window=4 epi=3 latency=16816ms
+[2026-10-18T22:43:31] n4 turn 17: prompt_full=660 (ollama=660) completion=86 window=4 epi=3 latency=7056ms
+[2026-10-18T22:43:36] n4 turn 18: prompt_full=724 (ollama=724) completion=74 window=4 epi=3 latency=4986ms
+[2026-10-18T22:43:40] n4 turn 19: prompt_full=735 (ollama=735) completion=82 window=4 epi=3 latency=3252ms
+[2026-10-18T22:43:56] n4 turn 20: prompt_full=742 (ollama=742) completion=116 window=4 epi=3 latency=16654ms
+[2026-10-18T22:44:03] n4 turn 21: prompt_full=851 (ollama=851) completion=88 window=4 epi=3 latency=6665ms
+[2026-10-18T22:44:09] n4 turn 22: prompt_full=870 (ollama=870) completion=93 window=4 epi=3 latency=6128ms
+[2026-10-18T22:44:14] n4 turn 23: prompt_full=836 (ollama=836) completion=71 window=4 epi=3 latency=4694ms
+[2026-10-18T22:44:43] n4 turn 24: prompt_full=808 (ollama=808) completion=84 window=4 epi=3 latency=28479ms
+[2026-10-18T22:44:54] n4 turn 25: prompt_full=964 (ollama=964) completion=119 window=4 epi=3 latency=9756ms
+[2026-10-18T22:44:59] n4 turn 26: prompt_full=1024 (ollama=1024) completion=79 window=4 epi=3 latency=4780ms
+[2026-10-18T22:45:02] n4 turn 27: prompt_full=1013 (ollama=1013) completion=60 window=4 epi=3 latency=3113ms
+[2026-10-18T22:45:12] n4 turn 28: prompt_full=959 (ollama=959) completion=58 window=4 epi=3 latency=9890ms
+[2026-10-18T22:45:16] n4 turn 29: prompt_full=735 (ollama=735) completion=67 window=4 epi=3 latency=3694ms
+[2026-10-18T22:45:19] n4 turn 30: prompt_full=756 (ollama=756) completion=76 window=4 epi=3 latency=3687ms
+[2026-10-18T22:45:22] n4 P1_report_format: score=5 (all required) answer="I will provide reports in the format of exactly three bullet points, considering the user's preference, and taking into "
+[2026-10-18T22:45:36] n4 P2_route: score=5 (all required) answer='I am covering Route 23 for the rest of my shift. I will consider a decision between a **Delay** or **Service Change** fo'
+[2026-10-18T22:45:42] n4 P3_supervisor: score=5 (all required) answer='My shift supervisor for the rest of tonight is Lena Park. I will consider a decision between a **Delay** or **Service Ch'
+[2026-10-18T22:45:45] n4 P4_breakdown: score=5 (all required) answer='Earlier tonight, bus 4471 broke down at Santa Clara St & 5th St. I am considering a decision between a **Delay** or **Se'
+[2026-10-18T22:45:48] n4 P5_identity: score=5 (all required) answer='My name is Dana Okafor. I am the night-shift dispatcher at the Tamien depot and have been reassigned to cover Route 23 f'
+[2026-10-18T22:45:48] n4 SUMMARY: mean_prompt_full=669.1 mean_latency=7757.8ms probe=5 {'P1_report_format': 5, 'P2_route': 5, 'P3_supervisor': 5, 'P4_breakdown': 5, 'P5_identity': 5}
+[2026-10-18T22:45:48] Saved reports/hw06/raw/memory_summary.json, memory_turns.csv, probe_scores.csv
+
+== reports/hw06/raw/generated_function.py (model-generated)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 1 function(s) fully annotated
+  [FAIL] C3 docstring on every public function: ['incident_age_hours']
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+  behaviour: {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"}
+
+== code/file_memory.py :: count_content_lines, read_last_consolidated, needs_consolidation, consolidate_text, build_system_prompt (implemented)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 5 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+
+Saved reports/hw06/raw/agent_md_check.json
+
+== reports/hw06/raw/generated_function.py (model-generated)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 1 function(s) fully annotated
+  [FAIL] C3 docstring on every public function: ['incident_age_hours']
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+  behaviour: {'error': "TypeError: can't compare offset-naive and offset-aware datetimes"}
+
+== code/file_memory.py :: count_content_lines, read_last_consolidated, needs_consolidation, consolidate_text, build_system_prompt (implemented)
+  [PASS] C1 snake_case / UPPER_SNAKE_CASE names: all names ok
+  [PASS] C2 type hints on parameters and return: 5 function(s) fully annotated
+  [PASS] C3 docstring on every public function: all public functions documented
+  [PASS] C4 no print() in library code: no print()
+  [PASS] C5 no bare except: none
+  [PASS] T2 no direct Ollama HTTP calls: none
+  [PASS] N1 no hard-coded secrets: none
+
+Saved reports/hw06/raw/agent_md_check.json

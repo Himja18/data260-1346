@@ -1,0 +1,77 @@
+[
+  {
+    "setting": "policy",
+    "probe_id": "P1_report_format",
+    "question": "In what format did I ask you to give me reports? Answer in one sentence.",
+    "expected": "Exactly three bullet points.",
+    "answer": "I will provide the report as exactly three bullet points, considering the decision to log as a Service Change for the detore due to the worsening water main break on 1st Street.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user prefers reports to be given as exactly three bullet points.",
+      "The user has experience with multiple riders reporting incidents.",
+      "The user is considering a decision between Delay and Service Change."
+    ],
+    "short_term_count": 30
+  },
+  {
+    "setting": "policy",
+    "probe_id": "P2_route",
+    "question": "Which route am I covering for the rest of my shift?",
+    "expected": "Route 23.",
+    "answer": "You are covering Route 23 for the rest of your shift. Consider logging the incident as a Service Change for the detore due to the worsening water main break on 1st Street.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user was reassigned to cover Route 23 for the rest of their shift.",
+      "The user is considering a decision between Delay and Service Change.",
+      "The user has a shift supervisor named Marco Reyes"
+    ],
+    "short_term_count": 30
+  },
+  {
+    "setting": "policy",
+    "probe_id": "P3_supervisor",
+    "question": "Who is my supervisor for the rest of tonight?",
+    "expected": "Lena Park (the earlier supervisor Marco Reyes went home sick).",
+    "answer": "Your supervisor for the rest of tonight is Lena Park.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user's supervisor for the rest of the night is Lena Park.",
+      "The user has a shift supervisor named Marco Reyes",
+      "The user is starting their shift on the incident desk tonight."
+    ],
+    "short_term_count": 30
+  },
+  {
+    "setting": "policy",
+    "probe_id": "P4_breakdown",
+    "question": "Which bus broke down earlier tonight, and where?",
+    "expected": "Bus 4471, at Santa Clara St & 5th St.",
+    "answer": "Earlier tonight, Bus 4471 broke down at Santa Clara St & 5th St. You are considering logging the incident as a Service Change for the detore due to the worsening water main break on 1st Street.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user assigned bus 4471 to handle the situation at Santa Clara St & 5th St.",
+      "The user is covering a specific route for the rest of their shift.",
+      "The user is considering a decision between Delay and Service Change."
+    ],
+    "short_term_count": 30
+  },
+  {
+    "setting": "policy",
+    "probe_id": "P5_identity",
+    "question": "What is my name and what is my job?",
+    "expected": "Dana Okafor, night-shift dispatcher at the Tamien depot.",
+    "answer": "- Your name is not specified in the message.\n- Your job is to cover a specific route for the rest of your shift, which is Route 23.\n- Your supervisor for the rest of tonight is not specified in the message.",
+    "score": 2,
+    "reason": "says it does not know",
+    "episodic_used": [
+      "The user has a shift supervisor named Marco Reyes",
+      "The user is covering a specific route for the rest of their shift.",
+      "The user's supervisor for the rest of tonight is not specified in the message."
+    ],
+    "short_term_count": 30
+  }
+]

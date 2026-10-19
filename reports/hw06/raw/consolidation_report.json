@@ -1,0 +1,235 @@
+{
+  "lines_before": 55,
+  "content_lines_before": 51,
+  "facts_before": 47,
+  "duplicates_merged": [
+    {
+      "topic": "user.name",
+      "kept": "The user's name is Himja.",
+      "merged_line": 15,
+      "merged_text": "The user's name is Himja."
+    },
+    {
+      "topic": "project.domain",
+      "kept": "The project domain is Municipal Transit Incidents (DOMAIN_ID 2).",
+      "merged_line": 17,
+      "merged_text": "The project domain is municipal transit incidents (DOMAIN_ID 2)."
+    },
+    {
+      "topic": "hardware",
+      "kept": "The user works on a MacBook Pro M2 with 8 GB of RAM.",
+      "merged_line": 18,
+      "merged_text": "The user works on a MacBook Pro M2 with 8 GB RAM."
+    },
+    {
+      "topic": "preference.tone",
+      "kept": "The user prefers short, direct answers.",
+      "merged_line": 22,
+      "merged_text": "The user prefers short and direct answers."
+    },
+    {
+      "topic": "user.name",
+      "kept": "The user's name is Himja.",
+      "merged_line": 26,
+      "merged_text": "The user's name is Himja."
+    },
+    {
+      "topic": "project.categories",
+      "kept": "Incident categories are Delay, Breakdown, Accident and Service Change.",
+      "merged_line": 27,
+      "merged_text": "Incident categories are Delay, Breakdown, Accident, and Service Change."
+    },
+    {
+      "topic": "project.port",
+      "kept": "The backend runs on port 8446 (PORT_BASE).",
+      "merged_line": 30,
+      "merged_text": "The backend runs on port 8446 (PORT_BASE)."
+    },
+    {
+      "topic": "preference.tone",
+      "kept": "The user prefers short and direct answers.",
+      "merged_line": 31,
+      "merged_text": "The user prefers short, direct answers."
+    },
+    {
+      "topic": "hardware",
+      "kept": "The user works on a MacBook Pro M2 with 8 GB RAM.",
+      "merged_line": 34,
+      "merged_text": "The user works on a MacBook Pro M2 with 8 GB of RAM."
+    },
+    {
+      "topic": "project.embedding",
+      "kept": "RAG embeddings use BAAI/bge-small-en-v1.5.",
+      "merged_line": 35,
+      "merged_text": "RAG embeddings use BAAI/bge-small-en-v1.5."
+    },
+    {
+      "topic": "project.categories",
+      "kept": "Incident categories are Delay, Breakdown, Accident, and Service Change.",
+      "merged_line": 37,
+      "merged_text": "Incident categories are Delay, Breakdown, Accident and Service Change."
+    },
+    {
+      "topic": "project.domain",
+      "kept": "The project domain is municipal transit incidents (DOMAIN_ID 2).",
+      "merged_line": 40,
+      "merged_text": "The project domain is Municipal Transit Incidents (DOMAIN_ID 2)."
+    },
+    {
+      "topic": "project.auth",
+      "kept": "Login uses server-side sessions referenced by an HTTP-only cookie.",
+      "merged_line": 41,
+      "merged_text": "Login uses server-side sessions referenced by an HTTP-only cookie."
+    },
+    {
+      "topic": "project.envelope",
+      "kept": "MCP tools return an {ok, data, error} envelope.",
+      "merged_line": 44,
+      "merged_text": "MCP tools return an {ok, data, error} envelope."
+    },
+    {
+      "topic": "preference.tone",
+      "kept": "The user prefers short, direct answers.",
+      "merged_line": 46,
+      "merged_text": "The user prefers short, direct answers."
+    },
+    {
+      "topic": "project.turn_ceiling",
+      "kept": "The chosen LangGraph turn ceiling is 10.",
+      "merged_line": 49,
+      "merged_text": "The chosen LangGraph turn ceiling is 10."
+    },
+    {
+      "topic": "user.name",
+      "kept": "The user's name is Himja.",
+      "merged_line": 51,
+      "merged_text": "The user's name is Himja."
+    },
+    {
+      "topic": "project.mongo",
+      "kept": "Document data and chat memory live in MongoDB database s1346_doc.",
+      "merged_line": 52,
+      "merged_text": "Document data and chat memory live in MongoDB database s1346_doc."
+    }
+  ],
+  "contradictions": [
+    {
+      "topic": "project.port",
+      "kept": "The backend runs on port 8000.",
+      "kept_date": "2026-10-06",
+      "superseded": [
+        {
+          "date": "2026-09-18",
+          "text": "The backend runs on port 8446 (PORT_BASE)."
+        }
+      ],
+      "flag": "ok"
+    },
+    {
+      "topic": "model.local",
+      "kept": "The local model is qwen2.5:3b because qwen3:8b does not fit in 8 GB of RAM.",
+      "kept_date": "2026-09-05",
+      "superseded": [
+        {
+          "date": "2026-09-03",
+          "text": "The local model is qwen3:8b."
+        }
+      ],
+      "flag": "ok"
+    },
+    {
+      "topic": "project.frontend",
+      "kept": "The frontend is React with Vite and Redux Toolkit.",
+      "kept_date": "2026-10-03",
+      "superseded": [
+        {
+          "date": "2026-09-05",
+          "text": "The frontend is plain HTML, CSS and JavaScript."
+        }
+      ],
+      "flag": "ok"
+    },
+    {
+      "topic": "db.relational",
+      "kept": "The user is thinking about switching the relational database to PostgreSQL.",
+      "kept_date": "2026-09-20",
+      "superseded": [
+        {
+          "date": "2026-09-10",
+          "text": "Relational data is stored in MySQL database s1346_rel."
+        }
+      ],
+      "flag": "REVIEW"
+    },
+    {
+      "topic": "preference.report_format",
+      "kept": "Reports should be exactly three bullet points.",
+      "kept_date": "2026-10-02",
+      "superseded": [
+        {
+          "date": "2026-09-12",
+          "text": "Reports should be written as a single paragraph."
+        }
+      ],
+      "flag": "ok"
+    }
+  ],
+  "unstructured_kept": [
+    "- Remember to tag the repository after every homework (hw1 ... hw6)."
+  ],
+  "lines_after": 39,
+  "content_lines_after": 34,
+  "facts_after": 24,
+  "superseded_lines": 5,
+  "consolidated_at": "2026-10-17T01:54:08-07:00",
+  "resolution_checks": [
+    {
+      "topic": "model.local",
+      "expected": "qwen2.5:3b",
+      "kept": "The local model is qwen2.5:3b because qwen3:8b does not fit in 8 GB of RAM.",
+      "correct": true
+    },
+    {
+      "topic": "preference.report_format",
+      "expected": "three bullet points",
+      "kept": "Reports should be exactly three bullet points.",
+      "correct": true
+    },
+    {
+      "topic": "project.frontend",
+      "expected": "React",
+      "kept": "The frontend is React with Vite and Redux Toolkit.",
+      "correct": true
+    },
+    {
+      "topic": "db.relational",
+      "expected": "MySQL",
+      "kept": "The user is thinking about switching the relational database to PostgreSQL.",
+      "correct": false
+    },
+    {
+      "topic": "project.port",
+      "expected": "8446",
+      "kept": "The backend runs on port 8000.",
+      "correct": false
+    }
+  ],
+  "incorrect_resolutions": [
+    {
+      "topic": "db.relational",
+      "expected": "MySQL",
+      "kept": "The user is thinking about switching the relational database to PostgreSQL.",
+      "correct": false
+    },
+    {
+      "topic": "project.port",
+      "expected": "8446",
+      "kept": "The backend runs on port 8000.",
+      "correct": false
+    }
+  ],
+  "conflicting_values_lost": [],
+  "under_40_lines": true,
+  "original_file": "reports/hw06/memory_test/MEMORY_original.md",
+  "consolidated_file": "reports/hw06/memory_test/MEMORY_consolidated.md"
+}

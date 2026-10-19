@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitDesk Memory Chat · s1346</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #16213E; --amber: #F2A93C; --paper: #F7F5EF; --steel: #586472;
+      --line: #D8D3C4; --card: #FFFFFF; --accident: #C4483C; --ok: #2E6E30;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink);
+           font-family: 'IBM Plex Sans', Arial, sans-serif; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 32px 20px 48px; }
+    .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em;
+               text-transform: uppercase; color: var(--steel); }
+    h1 { font-family: 'Archivo', Arial, sans-serif; font-weight: 800; margin: 6px 0 4px; }
+    .route-strip { display: flex; height: 5px; margin: 14px 0 22px; }
+    .route-strip span { flex: 1; } .route-strip span:nth-child(1) { background: var(--amber); }
+    .route-strip span:nth-child(2) { background: var(--ink); } .route-strip span:nth-child(3) { background: var(--accident); }
+    .route-strip span:nth-child(4) { background: #2E5E8E; }
+    .ids { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+    .ids label { font-size: 0.8rem; color: var(--steel); display: flex; flex-direction: column; gap: 4px; }
+    input, textarea, select { font: inherit; padding: 9px 11px; border: 1.5px solid var(--line);
+                              border-radius: 4px; background: #FDFCFA; color: var(--ink); }
+    .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 16px; }
+    .log { height: 440px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+    .msg { padding: 10px 12px; border-radius: 4px; max-width: 88%; white-space: pre-wrap; line-height: 1.4; }
+    .msg.user { align-self: flex-end; background: var(--ink); color: #fff; }
+    .msg.assistant { align-self: flex-start; background: #F2EFE6; }
+    .msg .meta { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem;
+                 opacity: 0.7; margin-top: 6px; }
+    form { display: flex; gap: 10px; margin-top: 12px; }
+    form input { flex: 1; }
+    button { font: inherit; font-weight: 600; padding: 9px 16px; border: none; border-radius: 4px;
+             background: var(--ink); color: #fff; cursor: pointer; }
+    button:disabled { opacity: 0.5; cursor: wait; }
+    h2 { font-family: 'Archivo', Arial, sans-serif; font-size: 1rem; margin: 0 0 10px; }
+    .mem h3 { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; text-transform: uppercase;
+              letter-spacing: 0.06em; color: var(--steel); margin: 14px 0 6px; }
+    .mem pre { white-space: pre-wrap; font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem;
+               background: #FAF8F2; border: 1px solid var(--line); padding: 8px; margin: 0;
+               max-height: 150px; overflow-y: auto; }
+    .status { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; min-height: 1em; margin-top: 8px; }
+    .status.fail { color: var(--accident); }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .log { height: 340px; } }
+  </style>
+</head>
+<body>
+<div class="page">
+  <span class="eyebrow">DATA-260 HW6 · s1346 · Municipal Transit Incidents</span>
+  <h1>TransitDesk Memory Chat</h1>
+  <div class="route-strip" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <div class="ids">
+    <label>user_id <input id="userId" value="himja" /></label>
+    <label>session_id <input id="sessionId" placeholder="(new session)" /></label>
+    <label>short-term N <input id="shortN" type="number" min="0" max="100" placeholder="server default" /></label>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Conversation</h2>
+      <div class="log" id="log"></div>
+      <form id="chatForm">
+        <input id="message" placeholder="Type a message…" autocomplete="off" required />
+        <button type="submit" id="sendBtn">Send</button>
+      </form>
+      <div class="status" id="status"></div>
+    </div>
+    <div class="card mem">
+      <h2>Memory used this turn</h2>
+      <h3>Short-term window</h3><pre id="memShort">–</pre>
+      <h3>Long-term summaries</h3><pre id="memLong">–</pre>
+      <h3>Episodic facts retrieved</h3><pre id="memEpi">–</pre>
+      <h3>Stored this turn</h3><pre id="memNew">–</pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+
+  function addMessage(role, text, meta) {
+    const div = document.createElement("div");
+    div.className = `msg ${role}`;
+    div.textContent = text;
+    if (meta) {
+      const m = document.createElement("span");
+      m.className = "meta";
+      m.textContent = meta;
+      div.appendChild(m);
+    }
+    $("log").appendChild(div);
+    $("log").scrollTop = $("log").scrollHeight;
+  }
+
+  function showMemory(body) {
+    const mu = body.memory_used;
+    $("memShort").textContent = `${mu.short_term.count} message(s), N=${mu.short_term.n}, policy=${mu.short_term.policy}\n` +
+      mu.short_term.messages.map((m) => `${m.role}: ${m.content}`).join("\n");
+    $("memLong").textContent = `Lifetime:\n${mu.long_term.lifetime_summary || "(none yet)"}\n\nSession:\n${mu.long_term.session_summary || "(none yet)"}`;
+    $("memEpi").textContent = mu.episodic.length
+      ? mu.episodic.map((f) => `${f.fact}  (score ${f.score}, importance ${f.importance})`).join("\n")
+      : "(none)";
+    const up = body.memory_updates;
+    $("memNew").textContent = (up.episodes_stored.map((f) => `+ ${f.fact} (${f.importance})`).join("\n") || "(no new facts)") +
+      `\nsession summary updated: ${up.session_summary_updated}\nlifetime summary updated: ${up.lifetime_summary_updated}`;
+  }
+
+  $("chatForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const message = $("message").value.trim();
+    if (!message) return;
+    const payload = { user_id: $("userId").value.trim(), message };
+    if ($("sessionId").value.trim()) payload.session_id = $("sessionId").value.trim();
+    if ($("shortN").value !== "") payload.short_term_n = Number($("shortN").value);
+
+    addMessage("user", message);
+    $("message").value = "";
+    $("sendBtn").disabled = true;
+    $("status").className = "status";
+    $("status").textContent = "Thinking…";
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.message || body.detail || `HTTP ${res.status}`);
+      $("sessionId").value = body.session_id;
+      const u = body.usage;
+      addMessage("assistant", body.reply,
+        `turn ${u.turn} · prompt ${u.prompt_tokens_full} tok · completion ${u.completion_tokens} tok · ${Math.round(u.latency_ms)} ms`);
+      showMemory(body);
+      $("status").textContent = "";
+    } catch (err) {
+      $("status").className = "status fail";
+      $("status").textContent = `Error: ${err.message}`;
+    } finally {
+      $("sendBtn").disabled = false;
+      $("message").focus();
+    }
+  });
+</script>
+</body>
+</html>

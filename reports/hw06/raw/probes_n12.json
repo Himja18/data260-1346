@@ -1,0 +1,77 @@
+[
+  {
+    "setting": "n12",
+    "probe_id": "P1_report_format",
+    "question": "In what format did I ask you to give me reports? Answer in one sentence.",
+    "expected": "Exactly three bullet points.",
+    "answer": "I should provide reports in the format of three bullet points: **Incident Type**, **Service**, and **Details**, ensuring accuracy and completeness, as per the user's preference.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user prefers reports to be given as exactly three bullet points.",
+      "The user has experience with multiple riders reporting incidents.",
+      "The user is considering a decision between Delay and Service Change."
+    ],
+    "short_term_count": 12
+  },
+  {
+    "setting": "n12",
+    "probe_id": "P2_route",
+    "question": "Which route am I covering for the rest of my shift?",
+    "expected": "Route 23.",
+    "answer": "- **Incident Type:** Delay\n- **Service:** Route 23\n- **Details:** [Specific details about the delay], [Time], [Location], [Shift Supervisor: Marco Reyes, Dispatcher: [User's Name]]\n\nPlease provide the specific details about the delay to complete the log.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user was reassigned to cover Route 23 for the rest of their shift.",
+      "The user is considering a decision between Delay and Service Change.",
+      "The user has a shift supervisor named Marco Reyes"
+    ],
+    "short_term_count": 12
+  },
+  {
+    "setting": "n12",
+    "probe_id": "P3_supervisor",
+    "question": "Who is my supervisor for the rest of tonight?",
+    "expected": "Lena Park (the earlier supervisor Marco Reyes went home sick).",
+    "answer": "- **Incident Type:** Delay\n- **Service:** Route 23\n- **Details:** [Specific details about the delay], [Time], [Location], [Shift Supervisor: Marco Reyes, Dispatcher: [User's Name]]\n\nYour supervisor for the rest of tonight is Lena Park. Please provide the specific details about the delay to complete the log.",
+    "score": 4,
+    "reason": "all required, but mentions ['\\\\bmarco\\\\b']",
+    "episodic_used": [
+      "The user's supervisor for the rest of the night is Lena Park.",
+      "The user has a shift supervisor named Marco Reyes",
+      "The user is starting their shift on the incident desk tonight."
+    ],
+    "short_term_count": 12
+  },
+  {
+    "setting": "n12",
+    "probe_id": "P4_breakdown",
+    "question": "Which bus broke down earlier tonight, and where?",
+    "expected": "Bus 4471, at Santa Clara St & 5th St.",
+    "answer": "- **Incident Type:** Delay\n- **Service:** Bus 4471\n- **Details:** Broke down earlier tonight at Santa Clara St & 5th St, [Time], [Location], [Shift Supervisor: Marco Reyes, Dispatcher: [User's Name]]\n\nPlease provide the specific details about the delay to complete the log.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user assigned bus 4471 to handle the situation at Santa Clara St & 5th St.",
+      "The user is covering a specific route for the rest of their shift.",
+      "The user is considering a decision between Delay and Service Change."
+    ],
+    "short_term_count": 12
+  },
+  {
+    "setting": "n12",
+    "probe_id": "P5_identity",
+    "question": "What is my name and what is my job?",
+    "expected": "Dana Okafor, night-shift dispatcher at the Tamien depot.",
+    "answer": "- **Incident Type:** Delay\n- **Service:** Bus 4471\n- **Details:** Broke down earlier tonight at Santa Clara St & 5th St, [Time], [Location], [Shift Supervisor: Marco Reyes, Dispatcher: Dana Okafor]\n\nPlease provide the specific details about the delay to complete the log.",
+    "score": 5,
+    "reason": "all required",
+    "episodic_used": [
+      "The user has a shift supervisor named Marco Reyes",
+      "The user is covering a specific route for the rest of their shift.",
+      "The user's supervisor for the rest of tonight is not specified in the message."
+    ],
+    "short_term_count": 12
+  }
+]

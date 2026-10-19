@@ -1,0 +1,8 @@
+{
+  "_note": "Ground truth written by hand BEFORE running consolidation: the value that should be current for every topic that contains a deliberate contradiction.",
+  "model.local": "qwen2.5:3b",
+  "preference.report_format": "three bullet points",
+  "project.frontend": "React",
+  "db.relational": "MySQL",
+  "project.port": "8446"
+}

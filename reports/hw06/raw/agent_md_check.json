@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-10-18T22:51:59",
+  "targets": [
+    {
+      "target": "reports/hw06/raw/generated_function.py",
+      "kind": "model-generated",
+      "static": [
+        {
+          "rule": "C1 snake_case / UPPER_SNAKE_CASE names",
+          "passed": true,
+          "detail": "all names ok"
+        },
+        {
+          "rule": "C2 type hints on parameters and return",
+          "passed": true,
+          "detail": "1 function(s) fully annotated"
+        },
+        {
+          "rule": "C3 docstring on every public function",
+          "passed": false,
+          "detail": [
+            "incident_age_hours"
+          ]
+        },
+        {
+          "rule": "C4 no print() in library code",
+          "passed": true,
+          "detail": "no print()"
+        },
+        {
+          "rule": "C5 no bare except",
+          "passed": true,
+          "detail": "none"
+        },
+        {
+          "rule": "T2 no direct Ollama HTTP calls",
+          "passed": true,
+          "detail": "none"
+        },
+        {
+          "rule": "N1 no hard-coded secrets",
+          "passed": true,
+          "detail": "none"
+        }
+      ],
+      "behaviour": {
+        "error": "TypeError: can't compare offset-naive and offset-aware datetimes"
+      },
+      "all_static_passed": false
+    },
+    {
+      "target": "code/file_memory.py :: count_content_lines, read_last_consolidated, needs_consolidation, consolidate_text, build_system_prompt",
+      "kind": "implemented",
+      "static": [
+        {
+          "rule": "C1 snake_case / UPPER_SNAKE_CASE names",
+          "passed": true,
+          "detail": "all names ok"
+        },
+        {
+          "rule": "C2 type hints on parameters and return",
+          "passed": true,
+          "detail": "5 function(s) fully annotated"
+        },
+        {
+          "rule": "C3 docstring on every public function",
+          "passed": true,
+          "detail": "all public functions documented"
+        },
+        {
+          "rule": "C4 no print() in library code",
+          "passed": true,
+          "detail": "no print()"
+        },
+        {
+          "rule": "C5 no bare except",
+          "passed": true,
+          "detail": "none"
+        },
+        {
+          "rule": "T2 no direct Ollama HTTP calls",
+          "passed": true,
+          "detail": "none"
+        },
+        {
+          "rule": "N1 no hard-coded secrets",
+          "passed": true,
+          "detail": "none"
+        }
+      ],
+      "all_static_passed": true
+    }
+  ],
+  "generation": {
+    "model": "qwen2.5:3b",
+    "prompt": "Write a Python function named incident_age_hours(occurred_at, now=None) for this project. It returns how many hours (a float) have passed between occurred_at and now (default: the current UTC time). Naive datetimes are treated as UTC. If occurred_at is later than now, raise ValueError. Follow every instruction in AGENT.md. Return only the code (imports + the function) in one ```python block.",
+    "raw_reply": "```python\nfrom datetime import datetime, timezone\nimport pytz\n\ndef incident_age_hours(occurred_at: datetime, now: datetime = None) -> float:\n    if now is None:\n        now = datetime.now(pytz.utc)\n    \n    if occurred_at > now:\n        raise ValueError(\"Occurred at datetime is later than now.\")\n    \n    occurred_at_utc = occurred_at.astimezone(pytz.utc)\n    now_utc = now.astimezone(pytz.utc)\n    \n    delta = now_utc - occurred_at_utc\n    return delta.total_seconds() / 3600\n```",
+    "input_tokens": 891,
+    "output_tokens": 125
+  }
+}

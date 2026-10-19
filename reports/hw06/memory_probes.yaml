@@ -1,0 +1,61 @@
+# DATA-260 HW6 Part 3.2 - memory probes (s1346, Municipal Transit Incidents)
+# Written BEFORE any experiment run. Asked, in this order, in the same session
+# right after the 30-message conversation (reports/hw06/cases/conversation_30.json).
+#
+# Scoring is automatic and deterministic (code/run_memory_experiment.py, score_probe):
+#   required  - list of groups; a group is satisfied if ANY of its regex alternatives
+#               matches the answer (case-insensitive)
+#   forbidden - regexes for outdated or wrong values
+#   unknown   - phrases that mean the model honestly says it does not know
+version: 1
+rubric:
+  5: "All required elements correct; no outdated or wrong value mentioned."
+  4: "All required elements correct, but an outdated/wrong value is also mentioned (e.g. old supervisor as well as the new one)."
+  3: "At least half of the required elements correct (partial recall)."
+  2: "Honestly says it does not know / was not told, or recalls fewer than half of the elements without inventing a wrong value."
+  1: "Wrong or invented answer (hallucination), or a forbidden value given as the answer."
+unknown_patterns:
+  - "(don't|do not|didn't|did not) (know|have|recall|remember)"
+  - "not (sure|certain|aware|mentioned|provided|specified)"
+  - "no (information|record|details?)"
+  - "(haven't|have not) (been told|mentioned|said)"
+  - "unable to (recall|determine)"
+probes:
+  - id: P1_report_format
+    question: "In what format did I ask you to give me reports? Answer in one sentence."
+    planted_at_turn: 26
+    expected: "Exactly three bullet points."
+    required:
+      - ["\\bthree\\b", "\\b3\\b"]
+      - ["bullet"]
+    forbidden: []
+  - id: P2_route
+    question: "Which route am I covering for the rest of my shift?"
+    planted_at_turn: 28
+    expected: "Route 23."
+    required:
+      - ["\\b23\\b"]
+    forbidden: ["\\b68\\b", "\\b22\\b"]
+  - id: P3_supervisor
+    question: "Who is my supervisor for the rest of tonight?"
+    planted_at_turn: 20
+    expected: "Lena Park (the earlier supervisor Marco Reyes went home sick)."
+    required:
+      - ["\\blena\\b"]
+    forbidden: ["\\bmarco\\b"]
+  - id: P4_breakdown
+    question: "Which bus broke down earlier tonight, and where?"
+    planted_at_turn: 9
+    expected: "Bus 4471, at Santa Clara St & 5th St."
+    required:
+      - ["4471"]
+      - ["santa clara"]
+    forbidden: []
+  - id: P5_identity
+    question: "What is my name and what is my job?"
+    planted_at_turn: 2
+    expected: "Dana Okafor, night-shift dispatcher at the Tamien depot."
+    required:
+      - ["\\bdana\\b"]
+      - ["dispatch"]
+    forbidden: []

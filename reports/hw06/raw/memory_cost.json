@@ -1,0 +1,56 @@
+{
+  "pricing_usd_per_1m": {
+    "input": 1.0,
+    "output": 5.0
+  },
+  "conversations": 10000,
+  "turns": 30,
+  "rows": [
+    {
+      "setting": "n4",
+      "name": "SHORT_TERM_N=4",
+      "probe": 5,
+      "input_tokens_per_conv": 20073,
+      "output_tokens_per_conv": 2370,
+      "maintenance_input_per_conv": 11109,
+      "maintenance_output_per_conv": 2280,
+      "cost_reply_only_usd": 319.23,
+      "cost_total_usd": 544.32
+    },
+    {
+      "setting": "n12",
+      "name": "SHORT_TERM_N=12",
+      "probe": 4.8,
+      "input_tokens_per_conv": 41592,
+      "output_tokens_per_conv": 4425,
+      "maintenance_input_per_conv": 12603,
+      "maintenance_output_per_conv": 1962,
+      "cost_reply_only_usd": 637.17,
+      "cost_total_usd": 861.3
+    },
+    {
+      "setting": "n30",
+      "name": "SHORT_TERM_N=30",
+      "probe": 4.4,
+      "input_tokens_per_conv": 72387,
+      "output_tokens_per_conv": 4563,
+      "maintenance_input_per_conv": 12864,
+      "maintenance_output_per_conv": 1830,
+      "cost_reply_only_usd": 952.02,
+      "cost_total_usd": 1172.16
+    },
+    {
+      "setting": "policy",
+      "name": "Eviction/compression policy (N=30 + compress_assistant)",
+      "probe": 4.4,
+      "input_tokens_per_conv": 28764,
+      "output_tokens_per_conv": 1845,
+      "maintenance_input_per_conv": 9891,
+      "maintenance_output_per_conv": 1731,
+      "cost_reply_only_usd": 379.89,
+      "cost_total_usd": 565.35
+    }
+  ],
+  "best": "n4",
+  "worst": "n30"
+}

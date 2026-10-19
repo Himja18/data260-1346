@@ -1,0 +1,43 @@
+{
+  "description": "Fixed 30-message (30 user turns) dispatcher conversation for the HW6 Part 3 SHORT_TERM_N sweep. Facts the probes ask about are planted at turns 2, 3/20 (supervisor, later corrected), 9, 26 and 28 so that the different window sizes see different amounts of them.",
+  "planted_facts": {
+    "2": "name Dana Okafor, night-shift dispatcher at the Tamien depot",
+    "3": "supervisor Marco Reyes (outdated - corrected at turn 20)",
+    "9": "bus 4471 broke down at Santa Clara St & 5th St (overheating engine)",
+    "20": "supervisor corrected to Lena Park",
+    "26": "reports must be exactly three bullet points",
+    "28": "reassigned to cover Route 23"
+  },
+  "messages": [
+    "Good evening. I'm starting my shift on the incident desk tonight.",
+    "Quick intro so you know who you're working with: my name is Dana Okafor and I'm the night-shift dispatcher at the Tamien depot.",
+    "My shift supervisor tonight is Marco Reyes, so escalations go to him.",
+    "What categories do we use when logging incidents?",
+    "How should I decide between Delay and Service Change?",
+    "A rider just called about a light rail train running about 10 minutes late. Which category is that?",
+    "What details should a good incident description include?",
+    "How quickly should a breakdown be reported to maintenance?",
+    "Log this for me: bus 4471 broke down at Santa Clara St & 5th St at 9:40 pm with an overheating engine.",
+    "What should I tell riders waiting at that stop?",
+    "Is a replacement bus usually sent from the same depot?",
+    "What's the difference between an accident and a breakdown in our system?",
+    "A cyclist brushed a bus mirror on 1st Street, nobody was hurt. How do I categorize it?",
+    "Should minor collisions with no injuries still be reported to safety?",
+    "Give me a one-line template for logging a minor collision.",
+    "How do I mark an incident as resolved?",
+    "What counts as a service change versus a detour?",
+    "Line 68 is detouring around a water main break on Monterey Rd. How should I log that?",
+    "How long should a detour stay logged as open?",
+    "Correction to what I said earlier: Marco went home sick, so my supervisor for the rest of tonight is Lena Park.",
+    "Can you remind me what to check before closing an incident?",
+    "What does 'passengers affected' mean on the incident form?",
+    "Roughly how many passengers does a full articulated bus carry?",
+    "Is it better to log incidents immediately or batch them at the end of the shift?",
+    "What should I do if two riders report what seems to be the same incident?",
+    "Preference for the rest of the night: whenever I ask for a report, give it to me as exactly three bullet points.",
+    "What are common causes of delays on high-frequency routes?",
+    "Heads up: dispatch just reassigned me to cover Route 23 for the rest of my shift.",
+    "How do I escalate an incident that is getting worse?",
+    "Thanks, that's all the setup. I'll ask you a few check questions next."
+  ]
+}
