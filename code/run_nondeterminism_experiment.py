@@ -16,7 +16,6 @@ Usage (run from the code/ folder):
 
 import csv
 import json
-import statistics
 import sys
 from pathlib import Path
 
@@ -91,7 +90,7 @@ def main():
         print("Create it first (see reports/hw01/cases/nondeterminism_input.json).")
         sys.exit(1)
 
-    with open(INPUT_FILE, "r") as f:
+    with open(INPUT_FILE) as f:
         data = json.load(f)
     title, content = data["title"], data["content"]
 

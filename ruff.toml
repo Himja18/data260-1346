@@ -1,0 +1,21 @@
+# HW7 Part 1 - Ruff configuration (lint + import order), used by pre-commit and `make lint`.
+target-version = "py311"
+line-length = 110
+extend-exclude = ["code/frontend", "reports", "**/node_modules"]
+# Module roots used by the code (sys.path entries), so import sorting is the same from any cwd.
+src = [".", "code", "code/backend", "code/mcp", "src"]
+
+[lint]
+# E/W pycodestyle, F pyflakes (unused imports/variables, undefined names), I isort,
+# B bugbear (likely bugs), UP pyupgrade, S608 SQL built by string formatting.
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = [
+    "E501",    # long lines are reported by the formatter width, not as errors
+    "B008",    # FastAPI's Depends(...) in argument defaults is the framework idiom
+    "UP007",   # keep Optional[...] where earlier homeworks used it
+    "UP045",
+]
+
+[lint.per-file-ignores]
+"code/test_*.py" = ["E402"]          # tests set sys.path / env vars before importing
+"verify_hw0*.py" = ["E402"]

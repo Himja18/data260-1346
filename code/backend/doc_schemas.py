@@ -1,5 +1,5 @@
 """Pydantic schemas for the HW6 Part 1 MongoDB document API (incident_reports)."""
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from typing import Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -12,7 +12,7 @@ FUTURE_TOLERANCE = timedelta(minutes=5)
 
 def _as_utc(value: datetime) -> datetime:
     """Treat naive datetimes as UTC so every stored date is comparable."""
-    return value.replace(tzinfo=timezone.utc) if value.tzinfo is None else value.astimezone(timezone.utc)
+    return value.replace(tzinfo=UTC) if value.tzinfo is None else value.astimezone(UTC)
 
 
 def _check_not_future(value: Optional[datetime]) -> Optional[datetime]:
@@ -20,7 +20,7 @@ def _check_not_future(value: Optional[datetime]) -> Optional[datetime]:
     if value is None:
         return value
     value = _as_utc(value)
-    if value > datetime.now(timezone.utc) + FUTURE_TOLERANCE:
+    if value > datetime.now(UTC) + FUTURE_TOLERANCE:
         raise ValueError("occurred_at cannot be in the future")
     return value
 

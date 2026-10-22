@@ -554,3 +554,41 @@ footer {
   .actions { justify-content: flex-start; padding-top: 8px; }
   
 }
+/* ---- HW7 Part 4: Bay Wheels advisor ------------------------------------------ */
+.page:has(.bike-grid), main:has(.bike-grid) { max-width: 1400px; }
+.bike-form { max-width: none; }
+.bike-form input[type="text"], .bike-form select { width: 100%; }
+.bike-row { display: flex; gap: 24px; align-items: flex-end; flex-wrap: wrap; }
+.check { display: flex; gap: 8px; align-items: center; margin-bottom: 20px; font-weight: 600; }
+.hint { color: var(--steel); font-size: 0.85rem; margin: 6px 0 0; word-break: break-all; }
+.metrics-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;
+  margin: 24px 0; }
+.metrics-strip div { background: var(--ink); color: #fff; border-radius: 10px; padding: 10px 14px; }
+.metrics-strip span { display: block; font-size: 0.75rem; opacity: 0.75; text-transform: uppercase; }
+.metrics-strip strong { font-size: 1.15rem; }
+.bike-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; }
+@media (max-width: 960px) { .bike-grid { grid-template-columns: 1fr; } }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px;
+  box-shadow: var(--shadow); min-width: 0; }
+.panel h2 { margin-top: 0; }
+.timeline { list-style: none; padding: 0; margin: 0; max-height: 1100px; overflow: auto; }
+.timeline li { border-left: 4px solid var(--service-change); padding: 6px 10px; margin-bottom: 10px;
+  background: var(--field); border-radius: 0 8px 8px 0; }
+.timeline li.err { border-left-color: var(--accident); }
+.tl-head { display: flex; gap: 10px; align-items: center; font-size: 0.85rem; }
+.tl-step { font-weight: 700; }
+.tl-phase { font-size: 0.7rem; text-transform: uppercase; padding: 1px 6px; border-radius: 6px;
+  background: var(--amber); color: var(--ink); }
+.tl-phase.report { background: var(--steel); color: #fff; }
+.tl-ms { margin-left: auto; color: var(--steel); }
+.tl-in, .tl-out, .answer { white-space: pre-wrap; word-break: break-word; font-size: 0.78rem; margin: 4px 0 0;
+  max-height: 180px; overflow: auto; }
+.tl-out { color: var(--steel); }
+.answer { max-height: none; background: var(--field); padding: 10px; border-radius: 8px; font-size: 0.85rem; }
+.decision { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.decision div { border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+.decision span { display: block; font-size: 0.75rem; color: var(--steel); text-transform: uppercase; }
+.decision strong { font-size: 1.1rem; }
+.decision .alert { grid-column: 1 / -1; }
+.board.small th, .board.small td { padding: 6px 8px; font-size: 0.85rem; }
+.citations li { font-size: 0.82rem; margin-bottom: 4px; }

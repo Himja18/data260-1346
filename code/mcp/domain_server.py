@@ -13,12 +13,11 @@ Run:  npx @modelcontextprotocol/inspector@0 "$PWD/venv/bin/python" code/mcp/doma
 Needs MYSQL_PASSWORD (and optionally MYSQL_USER/HOST/PORT) in the environment.
 Logs go to stderr only.
 """
+import json
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 from mcp.types import ToolAnnotations
-
-import json
 
 from domain_tools import execute_tool
 

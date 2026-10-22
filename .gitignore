@@ -2,3 +2,10 @@ venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+# HW7
+data/
+.env
+code/frontend/dist/
+reports/hw07/raw/bike_runs/*/uploaded.csv
+reports/hw07/raw/attack_runs/*/uploaded.csv

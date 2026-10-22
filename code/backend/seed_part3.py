@@ -73,8 +73,8 @@ def build_incidents(rng: random.Random, lines: list) -> list[dict]:
 
 def checksum(lines: list[dict], incidents: list[dict], line_code_by_id: dict) -> str:
     h = hashlib.sha256()
-    for l in lines:
-        h.update(f"{l['code']}|{l['name']}|{l['mode']}\n".encode())
+    for line in lines:
+        h.update(f"{line['code']}|{line['name']}|{line['mode']}\n".encode())
     for i in incidents:
         h.update(f"{i['route_title']}|{i['category']}|{line_code_by_id[i['line_id']]}|"
                  f"{i['created_at'].isoformat()}\n".encode())

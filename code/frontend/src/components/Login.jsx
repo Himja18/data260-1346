@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-// Email + password login form. onLogin (from App) calls the API; on success the
-// backend sets the HTTP-only session cookie and App redirects to the home page.
+// Username + password login form (HW7). onLogin (from App) calls POST /auth/login;
+// on success the JWT is stored for the tab and App redirects to the home page.
 export default function Login({ onLogin }) {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -13,7 +13,7 @@ export default function Login({ onLogin }) {
     setError("");
     setSubmitting(true);
     try {
-      await onLogin(email.trim(), password);
+      await onLogin(username.trim(), password);
     } catch (err) {
       setError(err.message);
       setSubmitting(false);
@@ -24,14 +24,14 @@ export default function Login({ onLogin }) {
     <form onSubmit={handleSubmit} className="login-form">
       {error && <p className="alert alert-error" role="alert">{error}</p>}
       <div className="field">
-        <label htmlFor="email">Email <span className="req">Required</span></label>
+        <label htmlFor="username">Username <span className="req">Required</span></label>
         <input
-          id="email"
-          type="email"
+          id="username"
+          type="text"
           autoComplete="username"
-          placeholder="e.g., dispatcher1346@transit.test"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          placeholder="e.g., writer1346"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
           autoFocus
         />

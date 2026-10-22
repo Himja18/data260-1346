@@ -1,5 +1,6 @@
--- DATA-260 HW5 schema for s1346_rel (fresh install).
--- Existing HW4 databases: run migrations/003_hw5_related_entity.sql instead.
+-- DATA-260 HW7 schema for s1346_rel (fresh install).
+-- Existing databases: run migrations/003_hw5_related_entity.sql (HW4 -> HW5) and
+-- migrations/004_hw7_jwt_roles.sql (HW5/HW6 -> HW7) instead.
 -- Run:  mysql -u root -p < code/backend/schema.sql
 
 CREATE DATABASE IF NOT EXISTS s1346_rel
@@ -31,16 +32,9 @@ CREATE TABLE IF NOT EXISTS incidents (
 
 CREATE TABLE IF NOT EXISTS users (
   id            INT AUTO_INCREMENT PRIMARY KEY,
-  name          VARCHAR(100) NOT NULL,
-  email         VARCHAR(255) NOT NULL UNIQUE,
-  password_hash VARCHAR(255) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE IF NOT EXISTS sessions (
-  id         VARCHAR(64) PRIMARY KEY,          -- opaque session token
-  user_id    INT      NOT NULL,
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  expires_at DATETIME NOT NULL,
-  CONSTRAINT fk_session_user FOREIGN KEY (user_id) REFERENCES users(id)
-    ON DELETE CASCADE
+  username      VARCHAR(50)  NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,                -- PBKDF2-SHA256 hash, never plain text
+  role          ENUM('reader', 'writer', 'moderator') NOT NULL DEFAULT 'reader',
+  name          VARCHAR(100) NULL,
+  email         VARCHAR(255) NULL UNIQUE
 ) ENGINE=InnoDB;

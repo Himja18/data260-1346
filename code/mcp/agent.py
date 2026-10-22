@@ -20,7 +20,7 @@ import os
 import re
 import time
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from domain_tools import SCHEMAS, execute_tool
 
@@ -110,7 +110,7 @@ class RunLog:
         self.write("start", user_input=user_input)
 
     def write(self, event, **fields):
-        rec = {"ts": datetime.now(timezone.utc).isoformat(timespec="milliseconds"),
+        rec = {"ts": datetime.now(UTC).isoformat(timespec="milliseconds"),
                **self.base, "event": event, **fields}
         with open(self.path, "a") as f:
             f.write(json.dumps(rec, default=str) + "\n")

@@ -4,7 +4,7 @@ All memory reads/writes go through MemoryStore so the chat logic can be tested
 with any pymongo-compatible database. The Part 1 incident_reports collection is
 never touched here.
 """
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Optional
 
 from pymongo import ASCENDING, DESCENDING
@@ -15,7 +15,7 @@ from hw06_config import EPISODES, MESSAGES, SUMMARIES
 
 def utc_now() -> datetime:
     """Current UTC time (timezone-aware)."""
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def _clean(doc: Optional[dict], drop: tuple = ()) -> Optional[dict]:

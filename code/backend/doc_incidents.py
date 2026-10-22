@@ -4,7 +4,7 @@ Status codes: 201 create, 200 read/update/delete, 400 malformed id or a write th
 MongoDB validator rejected, 404 unknown id, 422 Pydantic validation failure,
 503 MongoDB unreachable, 500 any other database error (handlers in main.py).
 """
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Optional
 
 from bson import ObjectId
@@ -22,7 +22,7 @@ router = APIRouter(prefix="/api/doc/incidents", tags=["HW6 Part 1 - MongoDB inci
 
 def _now() -> datetime:
     """Current UTC time (timezone-aware)."""
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def _object_id(incident_id: str) -> ObjectId:
@@ -31,7 +31,7 @@ def _object_id(incident_id: str) -> ObjectId:
         return ObjectId(incident_id)
     except (InvalidId, TypeError):
         raise HTTPException(status.HTTP_400_BAD_REQUEST,
-                            detail=f"'{incident_id}' is not a valid id (24 hex characters expected)")
+                            detail=f"'{incident_id}' is not a valid id (24 hex characters expected)") from None
 
 
 def _out(doc: dict) -> IncidentDocOut:

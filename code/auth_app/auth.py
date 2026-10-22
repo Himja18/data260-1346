@@ -3,8 +3,9 @@ DATA 260 HW3 - Part 1: auth.py
 Router for the Municipal Transit Incident Portal auth demo (Domain 2, s1346).
 """
 import time
-from fastapi import APIRouter, Request, Form
-from fastapi.responses import RedirectResponse, HTMLResponse
+
+from fastapi import APIRouter, Form, Request
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 router = APIRouter()

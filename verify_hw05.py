@@ -107,8 +107,9 @@ for n, f in [("backend_responds_on_port_base", c_health), ("login_returns_200", 
 
 # ---- Part 2: both MCP servers start and answer a tool call (over STDIO) --------
 async def mcp_probe(script, call_name, call_args):
-    from mcp import ClientSession, StdioServerParameters
     from mcp.client.stdio import stdio_client
+
+    from mcp import ClientSession, StdioServerParameters
     params = StdioServerParameters(command=sys.executable, args=[str(MCP_DIR / script)],
                                    env=dict(os.environ))
     async with stdio_client(params) as (r, w):
@@ -174,8 +175,8 @@ def c_reproducible():
 
 
 def c_retry_policy():
-    from resilience import RetryPolicy, ResilientRepository, TransientError
     from domain_tools import run_tool
+    from resilience import ResilientRepository, RetryPolicy, TransientError
 
     class Flaky:
         def __init__(self): self.n = 0
@@ -214,7 +215,7 @@ def c_safety():
 
 
 def c_agent_log():
-    events = [json.loads(l) for l in open(RAW / "agent_runs.jsonl")]
+    events = [json.loads(line) for line in open(RAW / "agent_runs.jsonl")]
     stops = {e["stop_reason"] for e in events if e["event"] == "stop"}
     runs = len({e["run_id"] for e in events if e["event"] == "stop" and e.get("model") != "mock"})
     check("agent_log_has_all_stop_reasons", {"completed", "safety_block", "max_steps"} <= stops,

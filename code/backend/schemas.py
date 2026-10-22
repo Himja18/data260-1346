@@ -69,15 +69,27 @@ class IncidentOut(BaseModel):
     updated_at: datetime
 
 
-# ---- Auth (unchanged from HW4) -----------------------------------------------
+# ---- Auth (HW7: JWT, username + role) ---------------------------------------
+USERNAME_PATTERN = r"^[A-Za-z0-9_.-]{3,50}$"
+Role = Literal["reader", "writer", "moderator"]
+
+
 class LoginIn(BaseModel):
-    email: str = Field(..., max_length=255, pattern=EMAIL_PATTERN)
-    password: str = Field(..., min_length=1)
+    username: str = Field(..., pattern=USERNAME_PATTERN, examples=["writer1346"])
+    password: str = Field(..., min_length=1, max_length=200)
+
+
+class TokenOut(BaseModel):
+    access_token: str
+    token_type: Literal["bearer"] = "bearer"
+    expires_in: int            # seconds
+    role: Role
 
 
 class UserOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
-    name: str
-    email: str
+    username: str
+    role: Role
+    name: Optional[str] = None

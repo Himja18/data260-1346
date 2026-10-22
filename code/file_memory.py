@@ -19,7 +19,7 @@ rewrite a 55-line file without dropping facts, and a rule-based merge is auditab
 import logging
 import re
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
@@ -63,7 +63,7 @@ def _strip_comments(text: str) -> str:
 def memory_for_prompt(memory_text: str) -> str:
     """MEMORY.md without comments and without the ## Superseded audit section."""
     text = re.split(r"^## Superseded.*$", memory_text, maxsplit=1, flags=re.M)[0]
-    return "\n".join(l for l in _strip_comments(text).splitlines() if l.strip()).strip()
+    return "\n".join(ln for ln in _strip_comments(text).splitlines() if ln.strip()).strip()
 
 
 def build_system_prompt(base_prompt: str, agent_text: str, memory_text: str) -> str:
@@ -82,7 +82,7 @@ def build_system_prompt(base_prompt: str, agent_text: str, memory_text: str) -> 
 # ---- consolidation checks ---------------------------------------------------------------
 def count_content_lines(memory_text: str) -> int:
     """Number of non-empty, non-comment lines."""
-    return sum(1 for l in _strip_comments(memory_text).splitlines() if l.strip())
+    return sum(1 for ln in _strip_comments(memory_text).splitlines() if ln.strip())
 
 
 def read_last_consolidated(memory_text: str) -> Optional[datetime]:
@@ -94,12 +94,12 @@ def read_last_consolidated(memory_text: str) -> Optional[datetime]:
         stamp = datetime.fromisoformat(match.group(1))
     except ValueError:
         return None
-    return stamp if stamp.tzinfo else stamp.replace(tzinfo=timezone.utc)
+    return stamp if stamp.tzinfo else stamp.replace(tzinfo=UTC)
 
 
 def consolidation_reasons(memory_text: str, now: Optional[datetime] = None) -> list:
     """Why consolidation is required (empty list = not required)."""
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     reasons = []
     lines = count_content_lines(memory_text)
     if lines > MAX_MEMORY_LINES:
@@ -186,7 +186,7 @@ def is_duplicate(a: str, b: str, threshold: float = DUPLICATE_JACCARD) -> bool:
 # ---- consolidation ---------------------------------------------------------------------------
 def consolidate_text(memory_text: str, now: Optional[datetime] = None) -> tuple:
     """Consolidate MEMORY.md text. Returns (new_text, report_dict)."""
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     parsed = parse_memory(memory_text)
     report = {"lines_before": len(memory_text.splitlines()),
               "content_lines_before": count_content_lines(memory_text),
@@ -302,7 +302,7 @@ def append_facts(path: Path, facts: list, today: Optional[str] = None) -> list:
         return []
     lines = text.splitlines()
     try:
-        start = next(i for i, l in enumerate(lines) if l.strip().lower() == "## facts")
+        start = next(i for i, ln in enumerate(lines) if ln.strip().lower() == "## facts")
         end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
         while end > start + 1 and not lines[end - 1].strip():
             end -= 1

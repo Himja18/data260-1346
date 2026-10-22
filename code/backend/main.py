@@ -1,7 +1,7 @@
-"""DATA-260 HW6 backend - Municipal Transit Incidents (s1346).
+"""DATA-260 HW7 backend - Municipal Transit Incidents (s1346).
 
 Server configuration. Extends the HW2-HW5 FastAPI service:
-  * MySQL (s1346_rel): incidents, transit lines, users/sessions  (HW4/HW5)
+  * MySQL (s1346_rel): incidents, transit lines, users with roles (HW4/HW5; HW7 JWT auth)
   * MongoDB (s1346_doc): document view of incidents (HW6 Part 1) and the
     messages / summaries / episodes memory collections (HW6 Part 2)
 Run:  uvicorn main:app --host 0.0.0.0 --port 8446 --reload
@@ -18,6 +18,7 @@ from pymongo.errors import ConnectionFailure, PyMongoError, ServerSelectionTimeo
 from sqlalchemy.exc import IntegrityError
 
 import auth
+import bike
 import chat
 import doc_incidents
 import incidents
@@ -33,10 +34,10 @@ log = logging.getLogger("s1346")
 WEB_DIR = Path(__file__).resolve().parent.parent / "web_application"
 HW6_PREFIXES = ("/api/doc", "/api/chat", "/api/memory", "/api/aggregate")
 
-app = FastAPI(title="DATA-260 HW6 - s1346 Municipal Transit Incidents API")
+app = FastAPI(title="DATA-260 HW7 - s1346 Municipal Transit Incidents API")
 
 # CORS middleware: React (Vite) dev server + the HW6 chat page served on PORT_BASE.
-# allow_credentials so the HW4/HW5 session cookie is sent.
+# HW7: auth is a bearer token header (no cookies needed).
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://127.0.0.1:5173",
@@ -71,6 +72,7 @@ app.include_router(incidents.router)
 app.include_router(lines.router)          # HW5: related-entity CRUD + relationship query
 app.include_router(doc_incidents.router)  # HW6 Part 1: MongoDB document CRUD
 app.include_router(chat.router)           # HW6 Part 2: memory chat, memory view, aggregate
+app.include_router(bike.router)           # HW7 Part 4: Bay Wheels ReAct/MRKL advisor
 
 
 @app.on_event("startup")

@@ -1,11 +1,12 @@
 """HW5 Part 1: CRUD for the related entity (transit lines) + relationship query.
-Every route requires a logged-in session, like /api/incidents."""
+HW7: JWT roles like /api/incidents - read: any role, create/update: writer or
+moderator, delete: moderator."""
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from auth import get_current_user
+from auth import DELETE_ROLES, READ_ROLES, WRITE_ROLES, require_roles
 from database import get_db
 from models import Incident, TransitLine
 from schemas import IncidentOut, Page, TransitLineIn, TransitLineOut
@@ -13,7 +14,7 @@ from schemas import IncidentOut, Page, TransitLineIn, TransitLineOut
 router = APIRouter(
     prefix="/api/lines",
     tags=["transit lines"],
-    dependencies=[Depends(get_current_user)],
+    dependencies=[Depends(require_roles(*READ_ROLES))],
 )
 
 
@@ -36,10 +37,11 @@ def _commit_or_409(db: Session, detail: str):
         db.commit()
     except IntegrityError:            # race-safe backstop for the UNIQUE / FK constraints
         db.rollback()
-        raise HTTPException(status_code=409, detail=detail)
+        raise HTTPException(status_code=409, detail=detail) from None
 
 
-@router.post("", response_model=TransitLineOut, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=TransitLineOut, status_code=status.HTTP_201_CREATED,
+             dependencies=[Depends(require_roles(*WRITE_ROLES))])
 def create_line(payload: TransitLineIn, db: Session = Depends(get_db)):
     if _code_taken(db, payload.code):
         raise HTTPException(409, detail=f"Line code '{payload.code}' already exists")
@@ -68,7 +70,8 @@ def get_line(line_id: int, db: Session = Depends(get_db)):
     return get_line_or_404(db, line_id)
 
 
-@router.put("/{line_id}", response_model=TransitLineOut)
+@router.put("/{line_id}", response_model=TransitLineOut,
+            dependencies=[Depends(require_roles(*WRITE_ROLES))])
 def update_line(line_id: int, payload: TransitLineIn, db: Session = Depends(get_db)):
     line = get_line_or_404(db, line_id)
     if _code_taken(db, payload.code, exclude_id=line_id):
@@ -80,7 +83,7 @@ def update_line(line_id: int, payload: TransitLineIn, db: Session = Depends(get_
     return line
 
 
-@router.delete("/{line_id}")
+@router.delete("/{line_id}", dependencies=[Depends(require_roles(*DELETE_ROLES))])
 def delete_line(line_id: int, db: Session = Depends(get_db)):
     """Blocked (409) while incidents still reference the line; the DB's
     ON DELETE RESTRICT enforces the same rule if this check is bypassed."""

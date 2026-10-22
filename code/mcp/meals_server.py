@@ -49,13 +49,13 @@ def _get(endpoint: str, params: dict[str, Any] | None = None) -> dict:
         resp.raise_for_status()
         data = resp.json()
     except httpx.TimeoutException:
-        raise ToolError(f"TheMealDB timed out after {TIMEOUT_S:.0f}s ({endpoint})")
+        raise ToolError(f"TheMealDB timed out after {TIMEOUT_S:.0f}s ({endpoint})") from None
     except httpx.HTTPStatusError as e:
-        raise ToolError(f"TheMealDB returned HTTP {e.response.status_code} for {endpoint}")
+        raise ToolError(f"TheMealDB returned HTTP {e.response.status_code} for {endpoint}") from e
     except httpx.HTTPError as e:
-        raise ToolError(f"Network error calling TheMealDB ({endpoint}): {e.__class__.__name__}")
+        raise ToolError(f"Network error calling TheMealDB ({endpoint}): {e.__class__.__name__}") from e
     except ValueError:
-        raise ToolError(f"TheMealDB returned invalid JSON for {endpoint}")
+        raise ToolError(f"TheMealDB returned invalid JSON for {endpoint}") from None
     if not isinstance(data, dict) or "meals" not in data:
         raise ToolError(f"Unexpected response shape from {endpoint}")
     return data

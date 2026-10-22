@@ -1,0 +1,16 @@
+# HW7 Part 1 - lint on every commit. Install once:  pip install pre-commit && pre-commit install
+# The hook lints only the staged Python files; a failing check blocks the commit.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1
+    hooks:
+      - id: ruff            # lint (rules in ruff.toml); no --fix, so errors stay visible
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+        files: \.(py|md|toml|yaml|yml|sql)$
+        exclude: ^reports/
+      - id: check-added-large-files
+        args: [--maxkb=5000]

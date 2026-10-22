@@ -4,6 +4,7 @@ FastAPI auth demo for Domain 2 (Municipal Transit Incidents).
 SID4=1346, PORT_BASE=8446, PREFIX=s1346
 """
 import os
+
 from fastapi import FastAPI
 from starlette.middleware.sessions import SessionMiddleware
 

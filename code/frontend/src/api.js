@@ -1,5 +1,7 @@
-// Thin wrapper around the FastAPI backend. credentials: "include" sends the
-// HTTP-only session cookie; JavaScript never reads or stores the token itself.
+// Thin wrapper around the FastAPI auth endpoints (HW7: JWT bearer tokens).
+// /auth/login returns an access token; it is stored via setToken() and sent as
+// "Authorization: Bearer ..." by both this helper and the axios client.
+import { getToken, setToken } from "./store/client.js";
 
 function messageFrom(data, status) {
   if (data && typeof data.detail === "string") return data.detail;
@@ -7,11 +9,15 @@ function messageFrom(data, status) {
   return `Request failed (${status})`;
 }
 
-async function request(path, { headers, ...options } = {}) {
-  const res = await fetch(`/api${path}`, {
-    credentials: "include",
+async function request(url, { headers, ...options } = {}) {
+  const token = getToken();
+  const res = await fetch(url, {
     ...options,
-    headers: { "Content-Type": "application/json", ...(headers || {}) },
+    headers: {
+      ...(options.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(headers || {}),
+    },
   });
   const data = await res.json().catch(() => null);
   if (!res.ok) {
@@ -24,9 +30,16 @@ async function request(path, { headers, ...options } = {}) {
 
 export const api = {
   me: () => request("/auth/me"),
-  login: (email, password) =>
-    request("/auth/login", { method: "POST", body: JSON.stringify({ email, password }) }),
-  logout: () => request("/auth/logout", { method: "POST" }),
+  async login(username, password) {
+    const tok = await request("/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+    });
+    setToken(tok.access_token);
+    return request("/auth/me");
+  },
+  logout: async () => setToken(null),     // stateless JWT: forgetting the token logs out
+  runBikeAgent: (formData) => request("/api/bike/run", { method: "POST", body: formData }),
 
-  // Incident CRUD moved to Redux thunks (store/incidentsSlice.js, axios).
+  // Incident CRUD lives in Redux thunks (store/incidentsSlice.js, axios).
 };

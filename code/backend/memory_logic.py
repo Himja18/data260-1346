@@ -11,8 +11,7 @@ import re
 from typing import Optional
 
 from embeddings import cosine_scores
-from hw06_config import (COMPRESS_KEEP_RECENT, COMPRESS_MAX_CHARS, EPISODE_DEDUP_SCORE,
-                         MAX_FACTS_PER_MESSAGE)
+from hw06_config import COMPRESS_KEEP_RECENT, COMPRESS_MAX_CHARS, EPISODE_DEDUP_SCORE, MAX_FACTS_PER_MESSAGE
 
 SYSTEM_PRIMER = (
     "You are TransitDesk, the assistant of the s1346 Municipal Transit Incidents system. "
@@ -137,7 +136,7 @@ def retrieve_episodes(query_vec: list, episodes: list, k: int, min_score: float)
     if not episodes or k <= 0:
         return []
     scores = cosine_scores(query_vec, [e["embedding"] for e in episodes])
-    ranked = sorted(zip(scores.tolist(), episodes), key=lambda p: p[0], reverse=True)
+    ranked = sorted(zip(scores.tolist(), episodes, strict=True), key=lambda p: p[0], reverse=True)
     return [{"fact": e["fact"], "importance": e["importance"], "score": round(s, 3),
              "session_id": e["session_id"], "created_at": e["created_at"]}
             for s, e in ranked[:k] if s >= min_score]

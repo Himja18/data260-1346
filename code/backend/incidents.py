@@ -1,12 +1,17 @@
-"""CRUD for Municipal Transit Incidents. Every route requires a logged-in session."""
+"""CRUD for Municipal Transit Incidents (HW7: JWT bearer auth + roles).
+
+  list / read      any authenticated role (reader, writer, moderator)
+  create / update  writer or moderator
+  delete           moderator only
+"""
 from uuid import uuid4
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from sqlalchemy import func, select
+from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from auth import get_current_user
+from auth import DELETE_ROLES, READ_ROLES, WRITE_ROLES, require_roles
 from database import get_db
 from models import Incident, TransitLine
 from schemas import IncidentIn, IncidentOut
@@ -14,7 +19,7 @@ from schemas import IncidentIn, IncidentOut
 router = APIRouter(
     prefix="/api/incidents",
     tags=["incidents"],
-    dependencies=[Depends(get_current_user)],
+    dependencies=[Depends(require_roles(*READ_ROLES))],   # baseline: any valid token
 )
 
 
@@ -43,7 +48,7 @@ def _commit_or_409(db: Session):
     except IntegrityError:
         db.rollback()
         raise HTTPException(409, detail="Constraint violation: duplicate incident_code "
-                                        "or invalid line_id")
+                                        "or invalid line_id") from None
 
 
 @router.get("", response_model=list[IncidentOut])
@@ -62,7 +67,8 @@ def get_incident(incident_id: int, db: Session = Depends(get_db)):
     return _get_or_404(db, incident_id)
 
 
-@router.post("", response_model=IncidentOut, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=IncidentOut, status_code=status.HTTP_201_CREATED,
+             dependencies=[Depends(require_roles(*WRITE_ROLES))])
 def create_incident(payload: IncidentIn, db: Session = Depends(get_db)):
     _check_refs(db, payload)
     data = payload.model_dump()
@@ -79,13 +85,14 @@ def create_incident(payload: IncidentIn, db: Session = Depends(get_db)):
     except IntegrityError:
         db.rollback()
         raise HTTPException(409, detail="Could not assign a unique incident_code; "
-                                        "supply one explicitly")
+                                        "supply one explicitly") from None
     _commit_or_409(db)
     db.refresh(incident)
     return incident
 
 
-@router.put("/{incident_id}", response_model=IncidentOut)
+@router.put("/{incident_id}", response_model=IncidentOut,
+            dependencies=[Depends(require_roles(*WRITE_ROLES))])
 def update_incident(incident_id: int, payload: IncidentIn, db: Session = Depends(get_db)):
     incident = _get_or_404(db, incident_id)
     _check_refs(db, payload, exclude_id=incident_id)
@@ -98,7 +105,7 @@ def update_incident(incident_id: int, payload: IncidentIn, db: Session = Depends
     return incident
 
 
-@router.delete("/{incident_id}")
+@router.delete("/{incident_id}", dependencies=[Depends(require_roles(*DELETE_ROLES))])
 def delete_incident(incident_id: int, db: Session = Depends(get_db)):
     incident = _get_or_404(db, incident_id)
     db.delete(incident)

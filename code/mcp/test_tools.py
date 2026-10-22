@@ -14,10 +14,9 @@ import traceback
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from domain_tools import execute_tool                               # noqa: E402
-from resilience import RetryPolicy, ResilientRepository  # noqa: E402
-
+from domain_tools import execute_tool  # noqa: E402
 from fixtures import AlwaysDown, FakeRepo  # noqa: E402
+from resilience import ResilientRepository, RetryPolicy  # noqa: E402
 
 
 def call(name, inputs, repo=None):
@@ -101,7 +100,7 @@ TESTS = [test_search_valid, test_search_invalid_category, test_search_invalid_li
 
 # Part 5 adds its tests here (safety rule + agent max_steps).
 try:
-    from test_agent import TESTS as AGENT_TESTS              # noqa: E402
+    from test_agent import TESTS as AGENT_TESTS  # noqa: E402
     TESTS += AGENT_TESTS
 except ImportError:
     pass

@@ -7,6 +7,7 @@ import AuthPanel from "./components/Authpanel.jsx";
 import Home from "./components/Home.jsx";
 import CreateRecord from "./components/CreateRecord.jsx";
 import UpdateRecord from "./components/UpdateRecord.jsx";
+import BikeShare from "./components/BikeShare.jsx";
 
 export default function App() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function App() {
   // Incident data now lives in Redux (store/incidentsSlice.js), not in App state.
   const incidentsError = useSelector((s) => s.incidents.error);
 
-  // On first load, ask the server whether the cookie maps to a live session.
+  // On first load, ask the server whether the stored JWT is still valid.
   useEffect(() => {
     api
       .me()
@@ -32,13 +33,13 @@ export default function App() {
     else dispatch(clearIncidents());
   }, [user, dispatch]);
 
-  // Any thunk that comes back 401 means the server-side session expired.
+  // Any thunk that comes back 401 means the token expired or is invalid.
   useEffect(() => {
     if (incidentsError?.status === 401) setUser(null);
   }, [incidentsError]);
 
-  async function handleLogin(email, password) {
-    setUser(await api.login(email, password));
+  async function handleLogin(username, password) {
+    setUser(await api.login(username, password));
     if (location.pathname === "/login") navigate("/");
   }
 
@@ -60,11 +61,12 @@ export default function App() {
             <NavLink to="/" end>Incidents</NavLink>
             {user && <NavLink to="/create">Report incident</NavLink>}
             {user && <NavLink to="/update">Update incident</NavLink>}
+            {user && <NavLink to="/bike">Bike advisor</NavLink>}
           </nav>
           <div className="session">
             {user ? (
               <>
-                <span>{user.name}</span>
+                <span>{user.username} · {user.role}</span>
                 <button className="btn btn-on-dark btn-small" onClick={handleLogout}>
                   Log out
                 </button>
@@ -94,7 +96,7 @@ export default function App() {
                 user ? (
                   <section className="gate">
                     <h2>You're logged in</h2>
-                    <p>Signed in as {user.email}.</p>
+                    <p>Signed in as {user.username} ({user.role}).</p>
                     <Link className="btn" to="/">Go to incidents</Link>
                   </section>
                 ) : (
@@ -108,12 +110,13 @@ export default function App() {
             />
             <Route path="/create" element={<CreateRecord user={user} onLogin={handleLogin} />} />
             <Route path="/update" element={<UpdateRecord user={user} onLogin={handleLogin} />} />
+            <Route path="/bike" element={<BikeShare user={user} onLogin={handleLogin} />} />
             <Route path="*" element={<p className="state">That page doesn't exist. <Link to="/">Go to incidents</Link></p>} />
           </Routes>
         )}
       </main>
 
-      <footer className="footer">DATA-260 HW5, s1346, Municipal Transit Incidents</footer>
+      <footer className="footer">DATA-260 HW7, s1346, Municipal Transit Incidents</footer>
     </>
   );
 }

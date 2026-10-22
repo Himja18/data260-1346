@@ -27,10 +27,10 @@ import re
 import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, List, TypedDict
+from typing import Any, TypedDict
 
-from langgraph.graph import StateGraph, END
-from pydantic import BaseModel, field_validator, ValidationError
+from langgraph.graph import END, StateGraph
+from pydantic import BaseModel, ValidationError, field_validator
 
 # Make src/ importable regardless of cwd.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
@@ -41,12 +41,12 @@ TURN_CEILING_DEFAULT = 6
 
 
 class PlannerOutputSchema(BaseModel):
-    tags: List[str]
+    tags: list[str]
     summary: str
 
     @field_validator("tags")
     @classmethod
-    def exactly_three_tags_in_range(cls, tags: List[str]) -> List[str]:
+    def exactly_three_tags_in_range(cls, tags: list[str]) -> list[str]:
         if len(tags) != 3:
             raise ValueError(f"Expected exactly 3 tags, got {len(tags)}")
         for t in tags:
@@ -82,12 +82,12 @@ class AgentState(TypedDict):
     task: str
     turn_ceiling: int
     force_issues: bool  # test hook: makes the reviewer always report issues
-    planner_proposal: Dict[str, Any]
-    reviewer_feedback: Dict[str, Any]
+    planner_proposal: dict[str, Any]
+    reviewer_feedback: dict[str, Any]
     validation_error: str      # HW2 Part 4.1/4.2: schema validation feedback
     validation_retry_count: int
     turn_count: int
-    final_output: Dict[str, Any]
+    final_output: dict[str, Any]
 
 # Helpers (shared with agents_demo.py's approach)
 
@@ -126,14 +126,14 @@ def finalize(reviewer_output: dict, planner_output: dict) -> dict:
 _client = ModelClient(temperature=0.7)
 
 
-def planner_node(state: AgentState) -> Dict[str, Any]:
+def planner_node(state: AgentState) -> dict[str, Any]:
     """Planner agent: reads title/content (and, on a retry, the Reviewer's
     prior objection) and proposes 3 tags + a <=25-word summary."""
     print("---NODE: Planner ---")
 
     retry_note = ""
     if state.get("validation_error"):
-    
+
         retry_note = (
             "\nYour previous response FAILED SCHEMA VALIDATION for this "
             f"reason: {state['validation_error']}\n"
@@ -181,7 +181,7 @@ Respond with ONLY a JSON object in this exact shape, no other text:
     }
 
 
-def reviewer_node(state: AgentState) -> Dict[str, Any]:
+def reviewer_node(state: AgentState) -> dict[str, Any]:
     """Reviewer agent: critiques the Planner's draft against the source
     text and either approves it or flags issues to send back."""
     print("---NODE: Reviewer ---")
@@ -221,7 +221,7 @@ JSON object in this exact shape, no other text:
     return {"reviewer_feedback": feedback}
 
 
-def supervisor_node(state: AgentState) -> Dict[str, Any]:
+def supervisor_node(state: AgentState) -> dict[str, Any]:
     """State-updating node only: increments the turn counter."""
     return {"turn_count": state.get("turn_count", 0) + 1}
 
@@ -355,7 +355,7 @@ def main():
     args = parser.parse_args()
 
     if args.input_file:
-        with open(args.input_file, "r") as f:
+        with open(args.input_file) as f:
             data = json.load(f)
         title, content = data["title"], data["content"]
     elif args.title and args.content:

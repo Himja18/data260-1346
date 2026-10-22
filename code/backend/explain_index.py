@@ -43,7 +43,7 @@ def table(rows, keys):
     cols = [str(k) for k in keys]
     data = [["NULL" if v is None else str(v) for v in r] for r in rows]
     widths = [max(len(c), *(len(d[i]) for d in data)) for i, c in enumerate(cols)]
-    fmt = " | ".join("{:<%d}" % w for w in widths)
+    fmt = " | ".join(f"{{:<{w}}}" for w in widths)
     out(fmt.format(*cols))
     out("-+-".join("-" * w for w in widths))
     for d in data:

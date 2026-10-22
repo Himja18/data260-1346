@@ -22,14 +22,12 @@ Appends to reports/hw04/RUN_LOG.txt
 import argparse
 import csv
 import json
-import os
 import time
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
 import faiss
-import numpy as np
 import requests
 from sentence_transformers import SentenceTransformer
 
@@ -155,7 +153,7 @@ def retrieve(query: str, k: int, model: SentenceTransformer,
     qvec = model.encode([query], normalize_embeddings=True).astype("float32")
     distances, indices = index.search(qvec, k)
     results = []
-    for rank, (dist, idx) in enumerate(zip(distances[0], indices[0])):
+    for rank, (dist, idx) in enumerate(zip(distances[0], indices[0], strict=True)):
         c = chunks[idx]
         results.append({
             "rank": rank + 1,

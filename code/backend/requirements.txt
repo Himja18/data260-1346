@@ -1,3 +1,5 @@
+PyJWT>=2.8               # HW7: JWT bearer tokens
+python-multipart          # HW7 Part 4: CSV upload form
 fastapi
 uvicorn[standard]
 sqlalchemy>=2.0
@@ -13,3 +15,13 @@ transformers            # Qwen2.5 tokenizer for per-component token counts
 # offline tests only
 mongomock
 httpx
+# HW7 (Parts 2-6)
+jsonschema>=4.20          # agent loop: tool-argument schema validation
+duckdb>=1.0               # Part 4 csv_sql (in-memory, read-only contract)
+beautifulsoup4>=4.12      # Part 4 policy_retriever: HTML -> text
+pandas>=2.0               # Part 4 scenario preparation
+langgraph>=0.3            # Part 4 ReAct agent (create_react_agent)
+langchain-core>=0.3
+langchain-ollama>=0.3
+ruff==0.17.1              # Part 1 linting (same version as the pre-commit hook)
+pre-commit>=3.7

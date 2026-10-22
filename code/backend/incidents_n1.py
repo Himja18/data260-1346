@@ -5,7 +5,7 @@
   GET /api/incidents/fixed?limit=N   1 query total: incidents LEFT JOIN transit_lines
                                      via joinedload             ->  1 statement
 
-Both need a logged-in session (same as the rest of /api/incidents), accept an
+Both need a valid JWT bearer token, any role (HW7; same as the rest of /api/incidents), accept an
 optional ?category= filter, and report their own SQL statement count in the
 body ("sql_statements") and in the X-SQL-Count response header.
 """
@@ -15,7 +15,7 @@ from typing import Optional
 from fastapi import APIRouter, Depends, Query, Response
 from sqlalchemy.orm import Session, joinedload
 
-from auth import get_current_user
+from auth import READ_ROLES, require_roles
 from database import get_db
 from models import Incident, TransitLine
 from sql_counter import count_sql
@@ -23,7 +23,7 @@ from sql_counter import count_sql
 router = APIRouter(
     prefix="/api/incidents",
     tags=["incidents: N+1 (Part 3)"],
-    dependencies=[Depends(get_current_user)],
+    dependencies=[Depends(require_roles(*READ_ROLES))],
 )
 
 

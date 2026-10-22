@@ -33,6 +33,9 @@ class CompletionResult:
     output_tokens: int
     total_tokens: int
     latency_ms: float = 0.0          # HW6: wall-clock time of this model call
+    # HW7: native tool calls exactly as the model emitted them (arguments may be a
+    # dict or a raw string - validation is the agent loop's job, not the adapter's).
+    tool_calls: list = field(default_factory=list)
 
 
 @dataclass
@@ -59,8 +62,9 @@ class ModelClient:
         """
         Send a list of {"role": ..., "content": ...} messages to the model
         and return a CompletionResult with the response text and token
-        counts for this turn. `tools` is accepted for interface-compatibility
-        with tool-calling adapters but is not used by this local model.
+        counts for this turn. HW7: when `tools` (OpenAI-style function specs) is
+        given it is sent to Ollama and any native tool calls are returned in
+        CompletionResult.tool_calls as [{"name": str, "arguments": dict|str}].
         `options` (HW6) overrides Ollama options for this one call only.
         """
         opts = {"temperature": self.temperature}
@@ -75,6 +79,8 @@ class ModelClient:
             "stream": False,
             "options": opts,
         }
+        if tools:
+            payload["tools"] = tools
 
         started = time.perf_counter()
         response = requests.post(OLLAMA_URL, json=payload, timeout=self.timeout_s)
@@ -88,8 +94,13 @@ class ModelClient:
         self.cumulative_output_tokens += output_tokens
         self.turn_count += 1
 
+        calls = [{"name": (c.get("function") or {}).get("name", ""),
+                  "arguments": (c.get("function") or {}).get("arguments", {})}
+                 for c in data["message"].get("tool_calls") or []]
+
         return CompletionResult(
-            content=data["message"]["content"],
+            tool_calls=calls,
+            content=data["message"].get("content") or "",
             input_tokens=input_tokens,
             output_tokens=output_tokens,
             total_tokens=input_tokens + output_tokens,

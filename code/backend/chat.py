@@ -25,9 +25,19 @@ from pymongo.database import Database
 import memory_logic as ml
 import token_counter
 from embeddings import get_embedder
-from hw06_config import (CHAT_TEMPERATURE, EPISODIC_MIN_SCORE, EPISODIC_TOP_K,
-                         LIFETIME_EVERY_SESSION_SUMMARIES, MEMORY_POLICY, REPLY_MAX_TOKENS,
-                         REPO_ROOT, SEED, SHORT_TERM_N, SUMMARIZE_EVERY_USER_MSGS, USAGE_LOG)
+from hw06_config import (
+    CHAT_TEMPERATURE,
+    EPISODIC_MIN_SCORE,
+    EPISODIC_TOP_K,
+    LIFETIME_EVERY_SESSION_SUMMARIES,
+    MEMORY_POLICY,
+    REPLY_MAX_TOKENS,
+    REPO_ROOT,
+    SEED,
+    SHORT_TERM_N,
+    SUMMARIZE_EVERY_USER_MSGS,
+    USAGE_LOG,
+)
 from memory_store import MemoryStore, utc_now
 from mongo_db import get_mongo_db
 
@@ -118,7 +128,7 @@ def handle_chat(req: ChatRequest, store: MemoryStore, client, embedder) -> dict:
     aux_in, aux_out = aux_in + ext.input_tokens, aux_out + ext.output_tokens
     if new_facts:
         vecs = embedder.embed([f["fact"] for f in new_facts])
-        for f, v in zip(new_facts, vecs):
+        for f, v in zip(new_facts, vecs, strict=True):
             f["embedding"] = v
         new_facts = ml.dedup_facts(new_facts, stored)
     stored_facts = store.add_episodes(req.user_id, session_id, new_facts)
@@ -189,7 +199,7 @@ def chat(req: ChatRequest, store: MemoryStore = Depends(get_store)) -> dict:
     try:
         return handle_chat(req, store, get_model_client(), get_embedder())
     except requests.RequestException as exc:
-        raise HTTPException(503, detail=f"Local model (Ollama) unavailable: {exc.__class__.__name__}")
+        raise HTTPException(503, detail=f"Local model (Ollama) unavailable: {exc.__class__.__name__}") from exc
 
 
 @router.get("/api/memory/{user_id}")

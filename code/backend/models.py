@@ -1,5 +1,5 @@
-"""ORM models for s1346_rel (HW5)."""
-from datetime import datetime, timezone
+"""ORM models for s1346_rel (HW5; HW7 adds username + role to users)."""
+from datetime import UTC, datetime
 
 from sqlalchemy import CheckConstraint, Column, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
@@ -9,7 +9,7 @@ from database import Base
 
 def utcnow() -> datetime:
     # MySQL DATETIME is timezone-naive; store naive UTC consistently.
-    return datetime.now(timezone.utc).replace(tzinfo=None)
+    return datetime.now(UTC).replace(tzinfo=None)
 
 
 class TransitLine(Base):
@@ -48,24 +48,20 @@ class Incident(Base):
     line = relationship("TransitLine", back_populates="incidents")
 
 
+ROLES = ("reader", "writer", "moderator")
+
+
 class User(Base):
+    """Login account. HW7: JWT login by username; role drives authorization."""
     __tablename__ = "users"
+    __table_args__ = (
+        CheckConstraint("role IN ('reader', 'writer', 'moderator')", name="ck_users_role"),
+    )
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(100), nullable=False)
-    email = Column(String(255), unique=True, nullable=False)
-    password_hash = Column(String(255), nullable=False)
-
-    sessions = relationship("UserSession", back_populates="user", cascade="all, delete-orphan")
-
-
-class UserSession(Base):
-    """Server-side session. The browser cookie holds ONLY this row's opaque id."""
-    __tablename__ = "sessions"
-
-    id = Column(String(64), primary_key=True)                # session token
-    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    created_at = Column(DateTime, nullable=False, default=utcnow)
-    expires_at = Column(DateTime, nullable=False)
-
-    user = relationship("User", back_populates="sessions")
+    username = Column(String(50), unique=True, nullable=False)
+    password_hash = Column(String(255), nullable=False)        # PBKDF2-SHA256, never plain text
+    role = Column(String(20), nullable=False, default="reader", server_default="reader")
+    # Kept from HW4/HW5 for the existing account; optional for new users.
+    name = Column(String(100), nullable=True)
+    email = Column(String(255), unique=True, nullable=True)

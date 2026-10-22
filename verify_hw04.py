@@ -1,7 +1,9 @@
 """HW4 smoke-test verification script. Writes reports/hw04/verification.json."""
-import json, subprocess, sys, time
+import json
+import subprocess
 from datetime import datetime
 from pathlib import Path
+
 import requests
 
 REPO = Path(__file__).resolve().parent

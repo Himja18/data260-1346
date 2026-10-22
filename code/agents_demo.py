@@ -21,7 +21,6 @@ Usage:
 import argparse
 import json
 import re
-import sys
 import time
 
 from langchain_ollama import ChatOllama
@@ -179,7 +178,7 @@ def main():
     args = parser.parse_args()
 
     if args.input_file:
-        with open(args.input_file, "r") as f:
+        with open(args.input_file) as f:
             data = json.load(f)
         title, content = data["title"], data["content"]
     elif args.title and args.content:

@@ -10,7 +10,8 @@ import json
 import logging
 import re
 import sys
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from envelope import fail, ok, to_json
 from resilience import RetriesExhausted

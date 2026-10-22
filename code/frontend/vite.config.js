@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // The dev server proxies /api to the FastAPI backend on PORT_BASE 8446.
-// Same-origin requests mean the HTTP-only session cookie just works (no CORS).
+// Same-origin requests, so no CORS setup is needed for the bearer-token calls.
 // 127.0.0.1 (not "localhost") avoids Node resolving to IPv6 ::1, which uvicorn isn't bound to.
 export default defineConfig({
   plugins: [react()],
@@ -11,6 +11,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       "/api": { target: "http://127.0.0.1:8446" },
+      "/auth": { target: "http://127.0.0.1:8446" },     // HW7 JWT login + me
     },
   },
 });

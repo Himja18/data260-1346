@@ -10,7 +10,7 @@ import shutil
 import sys
 import tempfile
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 os.environ.update({"MONGO_MOCK": "1", "EMBED_BACKEND": "hash", "TOKENIZER_NAME": "none",
@@ -190,10 +190,10 @@ def doc_api_crud_and_validation():
 def consolidation_rules():
     text = (REPO / "reports" / "hw06" / "memory_test" / "MEMORY_original.md").read_text()
     assert fm.needs_consolidation(text)
-    fresh = "<!-- last_consolidated: %s -->\n- [2026-10-01] (a) x\n" % datetime.now(timezone.utc).isoformat()
+    fresh = f"<!-- last_consolidated: {datetime.now(UTC).isoformat()} -->\n- [2026-10-01] (a) x\n"
     assert not fm.needs_consolidation(fresh)
-    old = fresh.replace(datetime.now(timezone.utc).isoformat()[:10],
-                        (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()[:10])
+    old = fresh.replace(datetime.now(UTC).isoformat()[:10],
+                        (datetime.now(UTC) - timedelta(days=2)).isoformat()[:10])
     assert fm.needs_consolidation(old)
     new, rep = fm.consolidate_text(text)
     assert rep["lines_after"] < 40 and len(rep["contradictions"]) == 5
