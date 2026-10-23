@@ -57,6 +57,9 @@ hw07-part4:             ## Part 4: both acceptance cases from the CLI (the UI do
 hw07-part5:             ## Part 5: 3 attacks x 3 defense configurations
 	$(PYTHON) code/run_hw07_part5.py
 
+hw07-part5-replay:      ## Part 5: deterministic tool-boundary replay (no model)
+	$(PYTHON) code/run_hw07_part5.py --replay
+
 hw07-part6:             ## Part 6: integration test + 10-command safety-gate test
 	$(PYTHON) code/run_hw07_part6.py
 

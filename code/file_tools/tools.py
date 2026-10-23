@@ -55,6 +55,10 @@ class FileTools:
         try:
             p = self._path(path)
             lines = p.read_text(encoding="utf-8").splitlines()
+        except FileNotFoundError:
+            known = sorted(self._rel(f) for f in self.root.rglob("*") if f.is_file())[:20]
+            return fail(f"read_file: file not found: '{path}'. Use a path exactly as returned by "
+                        f"glob_files/search_in_files. Existing files: {known}")
         except (OSError, PermissionError, UnicodeDecodeError) as exc:
             return fail(f"read_file: {exc}")
         if max_lines is not None and (not isinstance(max_lines, int) or max_lines < 1):

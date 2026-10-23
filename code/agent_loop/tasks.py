@@ -38,9 +38,9 @@ TASKS: list[Task] = [
          "and the name of its transit line.",
          ("search_incidents", "get_incident"), {"text": "Airport"}),
     Task("B", "aggregate -> supporting example",
-         "How many Accident incidents are there in total across all lines? Then find one "
-         "Accident incident as a supporting example and give its incident code and route title.",
-         ("incident_stats", "search_incidents"), {"category": "Accident"}),
+         "Show the incident counts per category for line L-033. Then find one supporting example "
+         "of the most common category on that line and give its incident code and route title.",
+         ("incident_stats", "search_incidents"), {"line_code": "L-033"}),
     Task("C", "compare: search + two detail lookups",
          "Compare the two most recent Breakdown incidents on line L-033: search for them, "
          "look up the details of each one, and tell me both incident codes, where each "
@@ -69,8 +69,10 @@ def ground_truth(task: Task, repo: Any) -> dict:
         return {"code": first["incident_code"], "category": detail["category"],
                 "line_name": detail.get("line_name"), "line_code": detail.get("line_code")}
     if task.task_id == "B":
-        stats = {r["category"]: r["incidents"] for r in repo.category_stats(None)}
-        return {"count": stats.get("Accident", 0)}
+        stats = {r["category"]: r["incidents"] for r in repo.category_stats(task.params["line_code"])}
+        top = max(stats.values()) if stats else 0
+        return {"line": task.params["line_code"], "count": top,
+                "top": sorted(k for k, v in stats.items() if v == top)}
     if task.task_id == "C":
         rows = repo.search_incidents("Breakdown", task.params["line_code"], None, 2)
         places = [r["route_title"].split(" near ")[-1].split(" at ")[-1] for r in rows]
@@ -103,15 +105,16 @@ def verify(task: Task, result: Any, repo: Any) -> Verdict:
         c["answer_has_line"] = bool(gt["line_name"]) and (gt["line_name"].lower() in ans.lower()
                                                           or gt["line_code"] in ans)
     elif task.task_id == "B":
-        c["called_stats"] = bool(_calls(result, "incident_stats"))
-        c["searched_accidents"] = any(t["input"].get("category") == "Accident"
-                                      for t in _calls(result, "search_incidents"))
-        c["answer_has_count"] = gt["count"] in _numbers(ans)
+        c["stats_for_line"] = any(t["input"].get("line_code") == gt["line"]
+                                  for t in _calls(result, "incident_stats"))
+        c["searched_for_example"] = bool(_calls(result, "search_incidents"))
+        c["answer_has_top_count"] = gt["count"] in _numbers(ans)
         example_ok = False
         for code in codes:
             row = repo.get_incident(code)
-            example_ok = example_ok or (row is not None and row["category"] == "Accident")
-        c["example_is_accident"] = example_ok
+            example_ok = example_ok or (row is not None and row["category"] in gt["top"]
+                                        and row.get("line_code") == gt["line"])
+        c["example_is_top_category_on_line"] = example_ok
     elif task.task_id == "C":
         c["searched_line"] = any(t["input"].get("line_code") == "L-033"
                                  for t in _calls(result, "search_incidents"))

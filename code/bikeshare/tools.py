@@ -185,7 +185,10 @@ def csv_sql(store: TripStore, sql: str, security: SecurityConfig) -> dict:
             cols = [d[0] for d in cur.description or []]
             fetched = cur.fetchmany(MAX_ROWS + 1) if cols else []
     except duckdb.Error as exc:
-        return envelope(False, error=f"SQL error: {str(exc).splitlines()[0][:200]}", source="uploaded.csv")
+        msg = f"SQL error: {str(exc).splitlines()[0][:200]}"
+        if "not found" in msg or "does not exist" in msg:      # help the model fix its query
+            msg += f". Table `trips` has ONLY these columns: {', '.join(store.columns)}"
+        return envelope(False, error=msg, source="uploaded.csv")
     rows = [{c: _jsonable(v) for c, v in zip(cols, r, strict=True)} for r in fetched[:MAX_ROWS]]
     data = {"rows": rows, "row_count": len(rows), "source": "uploaded.csv"}
     if len(fetched) > MAX_ROWS:

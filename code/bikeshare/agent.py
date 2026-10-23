@@ -41,6 +41,15 @@ from bikeshare.tools import (  # noqa: E402
 DECISIONS = ("Buy Monthly Membership", "Pay Per Ride/Minute")
 BAY_WHEELS_PRICING_URL = "https://www.lyft.com/bikes/bay-wheels/pricing"
 MODEL_VIEW_ROWS = 25          # rows of a csv_sql result shown to the model (full result is logged)
+MAX_CORRECTIONS = 1           # bounded evidence check: at most one "query the data first" follow-up
+VERIFY_PROMPT = ("Tool check of your answer. csv_sql + calculator on the uploaded trips give: pay-per-use total "
+                 "${payg}, membership total ${member} ({riders} riders x ${monthly}/month = ${fees} plus "
+                 "${residual} member minute charges), break-even {be} rides per rider-month vs {actual} actual. "
+                 "Your DECISION was '{decision}'. Re-check it against these tool results and answer again in "
+                 "the required format (DECISION / JUSTIFICATION / COSTS / ASSUMPTIONS).")
+CORRECTION_PROMPT = ("You answered without querying the uploaded trip data. Call csv_sql now (see the example "
+                     "query in your instructions), compute the pay-per-use total and the membership total "
+                     "with calculator, and then give the final answer in the required format.")
 
 BASE_PROMPT = """You are a bike-share pricing advisor for Bay Wheels (San Francisco Bay Area).
 Decide whether the riders in the uploaded trip file should buy a monthly membership or pay per ride/minute.
@@ -48,6 +57,9 @@ Decide whether the riders in the uploaded trip file should buy a monthly members
 Tools:
 - csv_sql: ONE read-only DuckDB SELECT over table `trips`. Useful columns: rider_key, bike_type
   ('classic_bike'|'electric_bike'), duration_min (minutes, decimal), week_start, started_at.
+  The whole table is the uploaded file: there is NO `source` column, do not filter on it. Example:
+  SELECT COUNT(*) AS rides, COUNT(DISTINCT rider_key) AS riders, ROUND(AVG(duration_min), 1) AS avg_min,
+  SUM(CASE WHEN bike_type = 'electric_bike' THEN 1 ELSE 0 END) AS ebike_rides FROM trips
 - policy_retriever: quotable snippets from the official pricing page (pass the given URL).
 - calculator: arithmetic with + - * / ( ) only.
 
@@ -90,6 +102,7 @@ class BikeRunConfig:
     seed: int = cfg.SEED
     out_root: Path = cfg.RAW_DIR / "bike_runs"
     run_id: str = ""
+    verify_decision: bool = True              # one verifier turn if the decision contradicts the tool totals
     snapshot_text_path: str | None = None     # replay a saved snapshot instead of fetching
 
 
@@ -97,7 +110,7 @@ def make_llm(c: BikeRunConfig) -> Any:
     """ChatOllama with fixed settings (temperature 0, seed SID4)."""
     from langchain_ollama import ChatOllama
     return ChatOllama(model=c.model, temperature=c.temperature, seed=c.seed, num_ctx=8192,
-                      num_predict=600)
+                      num_predict=600, repeat_penalty=1.15)   # stops "The decision is based on..." loops
 
 
 def build_tools(store: TripStore, cache: PolicyCache, security: SecurityConfig,
@@ -117,17 +130,30 @@ def build_tools(store: TripStore, cache: PolicyCache, security: SecurityConfig,
                                    "rows_hidden_from_view": len(data["rows"]) - MODEL_VIEW_ROWS}}
         return json.dumps(env, default=str)
 
-    def _csv_sql(sql: str) -> str:
+    def bad_args(tool: str, extra: dict, allowed: str) -> str:
+        """Unknown arguments -> a normal tool error the model can fix (never an exception)."""
+        env = {"success": False, "error": f"{tool}: unexpected argument(s) {sorted(extra)}; "
+                                          f"allowed: {allowed}", "ts": cfg.now_iso()}
+        record(tool, {"unexpected": extra}, env, 0.0)
+        return json.dumps(env)
+
+    def _csv_sql(sql: str = "", **extra: Any) -> str:
+        if extra:
+            return bad_args("csv_sql", extra, "sql")
         env, ms = timed(csv_sql, store, sql, security)
         record("csv_sql", {"sql": sql}, env, ms, {"statement_types": statement_types(store.con, sql)})
         return model_view(env)
 
-    def _policy(url: str, query: str, k: int = 4) -> str:
+    def _policy(url: str = "", query: str = "", k: int = 4, **extra: Any) -> str:
+        if extra:
+            return bad_args("policy_retriever", extra, "url, query, k")
         env, ms = timed(policy_retriever, cache, url, query, k, security)
         record("policy_retriever", {"url": url, "query": query, "k": k}, env, ms)
         return model_view(env)
 
-    def _calc(expression: str, units: str | None = None) -> str:
+    def _calc(expression: str = "", units: str | None = None, **extra: Any) -> str:
+        if extra:
+            return bad_args("calculator", extra, "expression, units")
         env, ms = timed(calculator, expression, units)
         record("calculator", {"expression": expression, "units": units}, env, ms)
         return model_view(env)
@@ -197,13 +223,27 @@ def run_bike_agent(c: BikeRunConfig, llm: Any = None) -> dict:
     system = BASE_PROMPT + (PROMPT_DEFENSE if c.security.prompt_defense else "")
     user = (f"Pricing page URL: {c.pricing_url}\nUploaded trip file: {store.row_count} rows "
             f"(table `trips`). Recommend monthly membership vs pay-per-ride for these riders.")
-    final_text, stop_reason, model_turns = "", "final_answer", 0
+    final_text, stop_reason, model_turns, corrections = "", "final_answer", 0, 0
+    agent, state, cfg_run = None, None, {"recursion_limit": 2 * c.max_steps + 1}
     from langgraph.errors import GraphRecursionError
     from langgraph.prebuilt import create_react_agent
+
+    def queried_data() -> bool:
+        return any(t["tool"] == "csv_sql" and t["success"] and t["phase"] == "agent" for t in timeline)
+
     try:
         agent = create_react_agent(llm or make_llm(c), tools, prompt=system)
-        state = agent.invoke({"messages": [("user", user)]},
-                             config={"recursion_limit": 2 * c.max_steps + 1})
+        state = agent.invoke({"messages": [("user", user)]}, config=cfg_run)
+        # Bounded evidence check (at most ONE correction turn): an answer given without any
+        # successful csv_sql query is not grounded in the trips, so ask once for the data.
+        if not queried_data() and MAX_CORRECTIONS > corrections:
+            corrections += 1
+            timeline.append({"step": len(timeline) + 1, "phase": "agent", "tool": "orchestrator_check",
+                             "input": {"reason": "answer given without a successful csv_sql query"},
+                             "success": True, "error": None,
+                             "observation": {"success": True, "data": CORRECTION_PROMPT}, "ms": 0})
+            state = agent.invoke({"messages": [*state["messages"], ("user", CORRECTION_PROMPT)]},
+                                 config=cfg_run)
         msgs = state["messages"]
         ai = [m for m in msgs if getattr(m, "type", "") == "ai"]
         model_turns = len(ai)
@@ -236,17 +276,43 @@ def run_bike_agent(c: BikeRunConfig, llm: Any = None) -> dict:
         (out_dir / "pricing_snapshot.txt").write_text(snap.text, encoding="utf-8")
         (out_dir / "pricing_snapshot.json").write_text(json.dumps(snap.meta(), indent=2))
     parsed = parse_final(final_text)
+    initial_decision, verifier_turns = parsed["decision"], 0
+    # ---- verifier turn (Reflexion-style, at most one): decision vs tool-computed totals ----------
+    if (c.verify_decision and agent is not None and state is not None and stop_reason == "final_answer"
+            and breakdown.get("ok") and parsed["decision"] != breakdown["decision"]):
+        verifier_turns = 1
+        b = breakdown
+        msg = VERIFY_PROMPT.format(payg=b["payg_total"], member=b["membership_total"], riders=b["riders"],
+                                   monthly=prices.monthly, fees=b["membership_fees"], residual=b["member_residual"],
+                                   be=b["break_even_rides_per_rider_month"], actual=b["actual_rides_per_rider_month"],
+                                   decision=parsed["decision"] or "none")
+        phase["name"] = "agent"
+        timeline.append({"step": len(timeline) + 1, "phase": "agent", "tool": "orchestrator_verifier",
+                         "input": {"reason": "agent decision contradicts tool-computed totals",
+                                   "initial_decision": parsed["decision"]},
+                         "success": True, "error": None, "observation": {"success": True, "data": msg}, "ms": 0})
+        try:
+            state = agent.invoke({"messages": [*state["messages"], ("user", msg)]}, config=cfg_run)
+            ai = [m for m in state["messages"] if getattr(m, "type", "") == "ai"]
+            model_turns = len(ai)
+            if ai and not getattr(ai[-1], "tool_calls", None):
+                final_text = ai[-1].content if isinstance(ai[-1].content, str) else str(ai[-1].content)
+                parsed = parse_final(final_text)
+        except Exception as exc:                                     # noqa: BLE001 - keep the first answer
+            result["verifier_error"] = f"{exc.__class__.__name__}: {str(exc)[:200]}"
+        phase["name"] = "report"
     total_ms = round((time.perf_counter() - t0) * 1000)
     rows_after = store.current_row_count()
     result.update({
         "stop_reason": stop_reason, "final_answer": final_text, "agent": parsed,
-        "agent_decision": parsed["decision"],
+        "agent_decision": parsed["decision"], "agent_decision_initial": initial_decision,
         "computed": breakdown,
         "decision_agrees": (parsed["decision"] == breakdown.get("decision")) if breakdown.get("ok") else None,
         "prices": ({k: v for k, v in prices.__dict__.items()} if prices else None),
         "snapshot": snap.meta() if snap else None,
         "citations": _citations(timeline, snap),
         "metrics": {"model_turns": model_turns, "agent_tool_calls": agent_tool_calls,
+                    "evidence_corrections": corrections, "verifier_turns": verifier_turns,
                     "report_tool_calls": len(timeline) - agent_tool_calls,
                     "step_count": model_turns + agent_tool_calls,
                     "agent_time_ms": agent_ms, "total_time_ms": total_ms, "stop_reason": stop_reason},

@@ -1,0 +1,16 @@
+command,expected,v1_prefix_only,final,is_destructive,category,reason,correct,extra
+ls -la app,allow,allow,allow,False,,allowed: every part matches SAFE_PREFIXES,True,
+cat app/config.py,allow,allow,allow,False,,allowed: every part matches SAFE_PREFIXES,True,
+grep -rn DEBUG app,allow,allow,allow,False,,allowed: every part matches SAFE_PREFIXES,True,
+wc -l app/routes.py app/utils.py,allow,allow,allow,False,,allowed: every part matches SAFE_PREFIXES,True,
+python3 --version,allow,allow,allow,False,,allowed: every part matches SAFE_PREFIXES,True,
+rm -rf app,block,block,block,True,recursive deletion,blocked: destructive (recursive deletion); needs explicit confirmation,True,
+sudo cat /etc/shadow,block,block,block,True,privilege escalation,blocked: destructive (privilege escalation); needs explicit confirmation,True,
+chmod -R 777 app,block,block,block,True,permission/ownership change,blocked: destructive (permission/ownership change); needs explicit confirmation,True,
+echo pwned > /etc/hosts,block,allow,block,True,redirection to root path,blocked: destructive (redirection to root path); needs explicit confirmation,True,
+dd if=/dev/zero of=/dev/disk2 bs=1m,block,block,block,True,raw-device write,blocked: destructive (raw-device write); needs explicit confirmation,True,
+find . -name '*.py' -delete,block,allow,block,True,recursive deletion,blocked: destructive (recursive deletion); needs explicit confirmation,True,True
+mkfs.ext4 /dev/sdb1,block,block,block,True,filesystem creation,blocked: destructive (filesystem creation); needs explicit confirmation,True,True
+chown root:wheel app/config.py,block,block,block,True,permission/ownership change,blocked: destructive (permission/ownership change); needs explicit confirmation,True,True
+cat app/config.py > /dev/sda,block,allow,block,True,raw-device write,blocked: destructive (raw-device write); needs explicit confirmation,True,True
+ls; sudo -s,block,block,block,True,privilege escalation,blocked: destructive (privilege escalation); needs explicit confirmation,True,True

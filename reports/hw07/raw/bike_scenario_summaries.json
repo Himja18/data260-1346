@@ -1,0 +1,64 @@
+{
+  "source_url": "https://s3.amazonaws.com/baywheels-data/202509-baywheels-tripdata.csv.zip",
+  "source_page": "https://www.lyft.com/bikes/bay-wheels/system-data",
+  "zip_file": "202509-baywheels-tripdata.csv.zip",
+  "zip_sha256": "6e1492be32f6ef61583bd361cc5fa3b7493139dad4c0411d1666b8739585de64",
+  "month_rows": 458240,
+  "seed": 1346,
+  "prepared_at": "2026-10-22T15:50:18-07:00",
+  "rider_id_note": "Public data has no rider id; trips are assigned to riders with SEED.",
+  "scenarios": {
+    "membership_wins": {
+      "scenario": "membership_wins",
+      "rows": 540,
+      "riders": 15,
+      "filters": {
+        "member_casual": "member",
+        "min_minutes": 10,
+        "max_minutes": 45,
+        "ebike_share": null,
+        "trips": 540,
+        "riders": 15
+      },
+      "pool_size": 134901,
+      "window": [
+        "2025-08-31",
+        "2025-09-27"
+      ],
+      "avg_duration_min": 16.69,
+      "median_duration_min": 14.62,
+      "ebike_share": 0.798,
+      "rides_per_rider": 36.0,
+      "first_ride": "2025-09-01 09:57:22.824000",
+      "last_ride": "2025-09-27 23:44:51.073000",
+      "csv": "reports/hw07/cases/bike/membership_wins.csv",
+      "csv_sha256": "47555843d6fd9318bd2bf00e70a479d214e6f619928b4ff781d57dab088f9f6a"
+    },
+    "payg_wins": {
+      "scenario": "payg_wins",
+      "rows": 520,
+      "riders": 260,
+      "filters": {
+        "member_casual": "casual",
+        "min_minutes": 3,
+        "max_minutes": 12,
+        "ebike_share": 0.15,
+        "trips": 520,
+        "riders": 260
+      },
+      "pool_size": 40501,
+      "window": [
+        "2025-08-31",
+        "2025-09-27"
+      ],
+      "avg_duration_min": 7.66,
+      "median_duration_min": 7.69,
+      "ebike_share": 0.15,
+      "rides_per_rider": 2.0,
+      "first_ride": "2025-09-01 00:20:54.874000",
+      "last_ride": "2025-09-27 19:01:57.677000",
+      "csv": "reports/hw07/cases/bike/payg_wins.csv",
+      "csv_sha256": "db54f218301323d42cb9da754189db5f905e385801aac5042391484617858824"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "attempts": 21,
+  "model": "qwen2.5:3b via Ollama",
+  "temperature": 0.3,
+  "call_opportunities": 45,
+  "well_formed_before_repair": 29,
+  "well_formed_after_repair": 44,
+  "rate_before_repair": 0.644,
+  "rate_after_repair": 0.978,
+  "attempts_without_any_failure": 5,
+  "attempts_completed_full_chain": 20,
+  "verifier_pass": 14,
+  "failures_by_type": {
+    "malformed_arguments": 0,
+    "unknown_tool": 0,
+    "text_when_tool_required": 0,
+    "lost_multistep_chain": 16
+  },
+  "per_task": {
+    "A": {
+      "attempts": 7,
+      "verifier_pass": 7,
+      "repairs_used": 2
+    },
+    "B": {
+      "attempts": 7,
+      "verifier_pass": 1,
+      "repairs_used": 7
+    },
+    "C": {
+      "attempts": 7,
+      "verifier_pass": 6,
+      "repairs_used": 8
+    }
+  }
+}

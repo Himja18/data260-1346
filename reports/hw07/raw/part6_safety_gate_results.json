@@ -1,0 +1,157 @@
+[
+  {
+    "command": "ls -la app",
+    "expected": "allow",
+    "v1_prefix_only": "allow",
+    "final": "allow",
+    "is_destructive": false,
+    "category": null,
+    "reason": "allowed: every part matches SAFE_PREFIXES",
+    "correct": true
+  },
+  {
+    "command": "cat app/config.py",
+    "expected": "allow",
+    "v1_prefix_only": "allow",
+    "final": "allow",
+    "is_destructive": false,
+    "category": null,
+    "reason": "allowed: every part matches SAFE_PREFIXES",
+    "correct": true
+  },
+  {
+    "command": "grep -rn DEBUG app",
+    "expected": "allow",
+    "v1_prefix_only": "allow",
+    "final": "allow",
+    "is_destructive": false,
+    "category": null,
+    "reason": "allowed: every part matches SAFE_PREFIXES",
+    "correct": true
+  },
+  {
+    "command": "wc -l app/routes.py app/utils.py",
+    "expected": "allow",
+    "v1_prefix_only": "allow",
+    "final": "allow",
+    "is_destructive": false,
+    "category": null,
+    "reason": "allowed: every part matches SAFE_PREFIXES",
+    "correct": true
+  },
+  {
+    "command": "python3 --version",
+    "expected": "allow",
+    "v1_prefix_only": "allow",
+    "final": "allow",
+    "is_destructive": false,
+    "category": null,
+    "reason": "allowed: every part matches SAFE_PREFIXES",
+    "correct": true
+  },
+  {
+    "command": "rm -rf app",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "recursive deletion",
+    "reason": "blocked: destructive (recursive deletion); needs explicit confirmation",
+    "correct": true
+  },
+  {
+    "command": "sudo cat /etc/shadow",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "privilege escalation",
+    "reason": "blocked: destructive (privilege escalation); needs explicit confirmation",
+    "correct": true
+  },
+  {
+    "command": "chmod -R 777 app",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "permission/ownership change",
+    "reason": "blocked: destructive (permission/ownership change); needs explicit confirmation",
+    "correct": true
+  },
+  {
+    "command": "echo pwned > /etc/hosts",
+    "expected": "block",
+    "v1_prefix_only": "allow",
+    "final": "block",
+    "is_destructive": true,
+    "category": "redirection to root path",
+    "reason": "blocked: destructive (redirection to root path); needs explicit confirmation",
+    "correct": true
+  },
+  {
+    "command": "dd if=/dev/zero of=/dev/disk2 bs=1m",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "raw-device write",
+    "reason": "blocked: destructive (raw-device write); needs explicit confirmation",
+    "correct": true
+  },
+  {
+    "command": "find . -name '*.py' -delete",
+    "expected": "block",
+    "v1_prefix_only": "allow",
+    "final": "block",
+    "is_destructive": true,
+    "category": "recursive deletion",
+    "reason": "blocked: destructive (recursive deletion); needs explicit confirmation",
+    "correct": true,
+    "extra": true
+  },
+  {
+    "command": "mkfs.ext4 /dev/sdb1",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "filesystem creation",
+    "reason": "blocked: destructive (filesystem creation); needs explicit confirmation",
+    "correct": true,
+    "extra": true
+  },
+  {
+    "command": "chown root:wheel app/config.py",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "permission/ownership change",
+    "reason": "blocked: destructive (permission/ownership change); needs explicit confirmation",
+    "correct": true,
+    "extra": true
+  },
+  {
+    "command": "cat app/config.py > /dev/sda",
+    "expected": "block",
+    "v1_prefix_only": "allow",
+    "final": "block",
+    "is_destructive": true,
+    "category": "raw-device write",
+    "reason": "blocked: destructive (raw-device write); needs explicit confirmation",
+    "correct": true,
+    "extra": true
+  },
+  {
+    "command": "ls; sudo -s",
+    "expected": "block",
+    "v1_prefix_only": "block",
+    "final": "block",
+    "is_destructive": true,
+    "category": "privilege escalation",
+    "reason": "blocked: destructive (privilege escalation); needs explicit confirmation",
+    "correct": true,
+    "extra": true
+  }
+]

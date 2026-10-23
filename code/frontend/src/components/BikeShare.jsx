@@ -54,7 +54,14 @@ export default function BikeShare({ user, onLogin }) {
       <form className="form-card bike-form" onSubmit={handleRun}>
         <div className="field">
           <label htmlFor="csv">Trip CSV <span className="req">Required</span></label>
-          <input id="csv" type="file" accept=".csv" onChange={(e) => setFile(e.target.files[0] || null)} />
+          <input id="csv" type="file" accept=".csv" onChange={(e) => {
+            const f = e.target.files[0] || null;
+            setFile(f);
+            // label follows the file name, so evidence is never saved under the wrong scenario
+            if (f?.name.startsWith("membership_wins")) setScenario("membership_wins");
+            else if (f?.name.startsWith("payg_wins")) setScenario("payg_wins");
+            else if (f) setScenario("adhoc");
+          }} />
         </div>
         <div className="field">
           <label htmlFor="url">Pricing page URL <span className="req">Required</span></label>
@@ -89,6 +96,7 @@ export default function BikeShare({ user, onLogin }) {
             <div><span>Agent tool calls</span><strong>{m?.agent_tool_calls ?? "–"}</strong></div>
             <div><span>Total time</span><strong>{m ? `${(m.total_time_ms / 1000).toFixed(1)} s` : "–"}</strong></div>
             <div><span>Stop reason</span><strong>{result.stop_reason}</strong></div>
+            <div><span>Evidence / verifier turns</span><strong>{m?.evidence_corrections ?? 0} / {m?.verifier_turns ?? 0}</strong></div>
             <div><span>Defenses</span><strong>{result.security.prompt_defense ? "prompt" : "–"} / {result.security.tool_defense ? "tool" : "–"}</strong></div>
             <div><span>Rows before / after</span><strong>{result.data_integrity?.rows_before} / {result.data_integrity?.rows_after ?? "dropped"}</strong></div>
           </section>
@@ -115,7 +123,9 @@ export default function BikeShare({ user, onLogin }) {
             <section className="panel">
               <h2>Result</h2>
               <div className="decision">
-                <div><span>Agent decision</span><strong>{result.agent_decision || "(none parsed)"}</strong></div>
+                <div><span>Agent decision{m?.verifier_turns ? " (after verifier turn)" : ""}</span>
+                  <strong>{result.agent_decision || "(none parsed)"}</strong>
+                  {m?.verifier_turns ? <em className="hint">initial: {result.agent_decision_initial || "none"}</em> : null}</div>
                 <div><span>Tool-computed decision</span><strong>{c?.decision || "–"}</strong></div>
                 {result.decision_agrees === false && (
                   <p className="alert alert-error">Agent decision disagrees with the tool-computed costs.</p>

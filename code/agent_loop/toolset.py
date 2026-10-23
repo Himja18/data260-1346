@@ -85,8 +85,37 @@ class SchemaToolset:
         if errors:
             details = "; ".join(
                 f"{'.'.join(str(p) for p in e.path) or 'arguments'}: {e.message}" for e in errors[:3])
-            return CallCheck(False, MALFORMED_ARGS, f"{name} schema validation failed - {details}", args)
+            return CallCheck(False, MALFORMED_ARGS,
+                             f"{name} schema validation failed - {details}. {self.hint(name, args)}", args)
         return CallCheck(True, arguments=args)
+
+    def describe(self, name: str) -> str:
+        """One-line argument summary of a tool, e.g. "line_code (optional, string like ^L-\\d{3}$)"."""
+        schema = self.tools[name][1]
+        req = set(schema.get("required", []))
+        parts = []
+        for prop, spec in schema.get("properties", {}).items():
+            kind = spec.get("type", "any")
+            extra = (f" one of {spec['enum']}" if "enum" in spec else
+                     f" matching {spec['pattern']}" if "pattern" in spec else "")
+            if "minimum" in spec or "maximum" in spec:
+                extra += f" from {spec.get('minimum', '-inf')} to {spec.get('maximum', 'inf')}"
+            parts.append(f"{prop} ({'required' if prop in req else 'optional'} {kind}{extra})")
+        return ", ".join(parts) or "no arguments"
+
+    def hint(self, name: str, args: dict) -> str:
+        """Repair hint (HW7 fix after the first real run): the allowed arguments, empty optional
+        fields to drop, and which other tool takes an argument this tool does not accept."""
+        allowed = set(self.tools[name][1].get("properties", {}))
+        tips = [f"{name} accepts ONLY: {self.describe(name)}."]
+        empty = [k for k, v in args.items() if v in ("", None)]
+        if empty:
+            tips.append(f"Omit optional arguments instead of sending empty values: {empty}.")
+        for key in sorted(set(args) - allowed):
+            owners = [n for n in self.tools if key in self.tools[n][1].get("properties", {})]
+            if owners:
+                tips.append(f"'{key}' is an argument of {' / '.join(owners)}, not of {name}.")
+        return " ".join(tips)
 
     def execute(self, name: str, arguments: dict) -> str:
         """Run one validated call; the tool itself returns a JSON envelope string."""
@@ -95,13 +124,15 @@ class SchemaToolset:
 
 DOMAIN_DESCRIPTIONS = {
     "search_incidents": "Search transit incidents, newest first. Optional filters: category "
-                        "(Delay|Breakdown|Accident|Service Change), line_code like 'L-005', "
-                        "text = words in the route title (e.g. a street). limit 1-50 (default 10). "
-                        "Returns incident_code values like 'INC-004979'.",
+                        "(Delay|Breakdown|Accident|Service Change), line_code = 'L-' plus exactly 3 digits "
+                        "(e.g. 'L-033', never 'L-0033'), text = words in the route title (e.g. a street). "
+                        "limit 1-50 (default 10). Returns incident_code values like 'INC-004979'.",
     "get_incident": "Full details of ONE incident by its exact incident_code, e.g. 'INC-004979' "
                     "(line name, mode, category, timestamps).",
-    "incident_stats": "Aggregate counts: number of incidents and passengers affected per category, "
-                      "for one line_code ('L-005') or for all lines when line_code is omitted.",
+    "incident_stats": "Counts for ALL categories in one call: number of incidents and passengers affected "
+                      "per category (read the category you need from by_category). It has NO category "
+                      "argument. Call it with no arguments for all lines, or with line_code ('L-033') "
+                      "for one line.",
 }
 
 

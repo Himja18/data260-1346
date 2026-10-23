@@ -32,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))       # code/
 import hw07_config as cfg  # noqa: E402
 from agent_loop.toolset import (  # noqa: E402
     LOST_CHAIN,
+    MALFORMED_ARGS,
     TEXT_INSTEAD_OF_TOOL,
     CallCheck,
     SchemaToolset,
@@ -115,6 +116,25 @@ def salvage_text_call(text: str, toolset: SchemaToolset) -> dict | None:
     return None
 
 
+MODEL_VIEW_RESULTS = 10   # rows of a list result the MODEL sees; the full result stays in the trace
+
+
+def model_view(raw: str) -> str:
+    """Compact observation for a small model: long result lists are cut to MODEL_VIEW_RESULTS rows
+    (HW7 fix after a real run where 50 rows made qwen2.5:3b summarise data instead of continuing)."""
+    try:
+        env = json.loads(raw)
+    except ValueError:
+        return raw
+    data = env.get("data") if isinstance(env, dict) else None
+    rows = data.get("results") if isinstance(data, dict) else None
+    if isinstance(rows, list) and len(rows) > MODEL_VIEW_RESULTS:
+        env["data"] = {**data, "results": rows[:MODEL_VIEW_RESULTS],
+                       "note": f"showing {MODEL_VIEW_RESULTS} of {len(rows)} results"}
+        return json.dumps(env, default=str)
+    return raw
+
+
 def _short(raw: str, limit: int = 400) -> str:
     return raw if len(raw) <= limit else raw[:limit] + f"... (+{len(raw) - limit} chars)"
 
@@ -132,8 +152,12 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
               max_repairs: int = cfg.MAX_REPAIRS, tool_call_budget: int | None = None,
               token_budget: int | None = None, seed: int | None = None,
               log_path: Path | None = DEFAULT_LOG, run_id: str | None = None,
-              tags: dict | None = None) -> AgentResult:
-    """Run the tool-calling loop until a final answer, a clean stop, or the iteration ceiling."""
+              tags: dict | None = None, require_success: bool = False) -> AgentResult:
+    """Run the tool-calling loop until a final answer, a clean stop, or the iteration ceiling.
+
+    require_success=True (Part 6 only): a required tool counts as done only after a SUCCESSFUL
+    result, so a failed read_file (e.g. an invented path) triggers one reprompt instead of an answer.
+    Default False keeps the Part 2/3 behaviour unchanged."""
     client = client or default_client()
     toolset = toolset or domain_toolset()
     required = list(required_tools or [])
@@ -146,16 +170,21 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
         _write(log_path, {"ts": cfg.now_iso(), **base, "event": "start", "input": user_input})
     log.info("[run %s] user: %s", run_id, user_input)
     pending: Opportunity | None = None       # opportunity waiting for its one repair
+    pending_key: tuple = ()                  # (tool, failure class) that was just reprompted
     started = time.perf_counter()
 
-    def fail_opportunity(opp: Opportunity, check_failure: str, message: str, reply: dict) -> bool:
-        """Record a failed try; reprompt once if allowed. Returns False when the run must stop."""
-        if pending is not None or res.repairs_used >= max_repairs:
+    def fail_opportunity(opp: Opportunity, check_failure: str, message: str, reply: dict,
+                         key: tuple = ()) -> bool:
+        """Reprompt ONCE per specific problem. Stop (False) if the same problem comes back right after
+        its reprompt, or the run's repair budget (max_repairs) is spent."""
+        nonlocal pending_key
+        if (pending is not None and key == pending_key) or res.repairs_used >= max_repairs:
             res.stop_reason = "repair_failed"
             res.answer = (f"Stopped: could not get a valid tool call after repair ({message}).")
             log.info("    repair failed -> stop: %s", message)
             return False
         res.repairs_used += 1
+        pending_key = key
         messages.append(reply)
         messages.append({"role": "user", "content":
                          f"Your last response could not be executed: {message}. "
@@ -189,7 +218,9 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
             if text_call:
                 raw_calls, salvaged = [text_call], True
 
-        called_ok = {t["tool"] for t in res.tool_trace if t["ok"]}
+        # A required tool counts as done once it has RUN - an error result (e.g. "not found")
+        # is still a result the model may legitimately report (HW7 fix after the first real run).
+        called_ok = {t["tool"] for t in res.tool_trace if t["ok"] or not require_success}
         missing = [t for t in required if t not in called_ok]
 
         # ---- plain text answer -------------------------------------------------------
@@ -203,8 +234,10 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
                     res.failures.append(kind)
                 msg = (f"you answered in text but the task still needs tool results from: "
                        f"{', '.join(missing)}")
-                if not fail_opportunity(opp, kind, msg,
-                                        {"role": "assistant", "content": content}):
+                if require_success and any(t["tool"] in missing and not t["ok"] for t in res.tool_trace):
+                    msg += " (the last call failed - read its error and call the tool again with a corrected argument)"
+                if not fail_opportunity(opp, kind, msg, {"role": "assistant", "content": content},
+                                        key=("", kind)):
                     res.answer = content or res.answer
                     break
                 pending = opp
@@ -214,11 +247,28 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
 
         # ---- tool calls ----------------------------------------------------------------
         checks: list[tuple[dict, CallCheck]] = [(c, toolset.check(c)) for c in raw_calls]
+        first_bad = [(c, ck) for c, ck in checks if not ck.ok]
+        # Deterministic repair step: optional arguments sent as null/"" mean "not given" -> drop them
+        # and re-validate before spending a reprompt (still counted as a malformed FIRST try).
+        normalized = False
+        for i, (c, ck) in enumerate(checks):
+            args = c.get("arguments")
+            if not ck.ok and ck.failure == MALFORMED_ARGS and isinstance(args, dict):
+                cleaned = {k: v for k, v in args.items() if v not in (None, "")}
+                if cleaned != args:
+                    c2 = {**c, "arguments": cleaned}
+                    ck2 = toolset.check(c2)
+                    if ck2.ok:
+                        log.info("    [normalized] %s: dropped empty optional args %s",
+                                 c.get("name"), sorted(set(args) - set(cleaned)))
+                        checks[i], normalized = (c2, ck2), True
+        raw_calls = [c for c, _ in checks]
         bad = [(c, ck) for c, ck in checks if not ck.ok]
         if pending is None:
-            opp = Opportunity(turn=res.iterations, first_try_ok=not bad and not salvaged,
-                              failure=bad[0][1].failure if bad else (TEXT_INSTEAD_OF_TOOL if salvaged else None),
-                              salvaged_from_text=salvaged and not bad)
+            opp = Opportunity(turn=res.iterations, first_try_ok=not first_bad and not salvaged,
+                              failure=first_bad[0][1].failure if first_bad
+                              else (TEXT_INSTEAD_OF_TOOL if salvaged else None),
+                              salvaged_from_text=salvaged and not first_bad)
             res.opportunities.append(opp)
             if opp.failure:
                 res.failures.append(opp.failure)
@@ -240,16 +290,17 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
                                   "iteration": res.iterations, "tool": call.get("name"),
                                   "input": call.get("arguments"), "failure": ck.failure,
                                   "message": ck.message})
-            if not fail_opportunity(opp, ck.failure or "", ck.message, assistant_msg):
+            if not fail_opportunity(opp, ck.failure or "", ck.message, assistant_msg,
+                                    key=(call.get("name"), ck.failure)):
                 break
             pending = opp
             continue
 
         if pending is not None:
             pending.repaired = True
-            pending = None
-        if opp.salvaged_from_text:          # repair path without a reprompt: parsed from text
-            opp.repaired = True
+            pending, pending_key = None, ()
+        if opp.salvaged_from_text or (normalized and not opp.first_try_ok):
+            opp.repaired = True             # repair path without a reprompt (parsed / normalized)
         messages.append(assistant_msg)
         for call, ck in checks:
             res.tool_calls += 1
@@ -269,7 +320,7 @@ def run_agent(user_input: str, client: Any = None, toolset: SchemaToolset | None
                                   "iteration": res.iterations, "tool": call["name"],
                                   "input": ck.arguments, "ok": ok, "error": err,
                                   "result": _short(raw)})
-            messages.append({"role": "tool", "tool_name": call["name"], "content": raw})
+            messages.append({"role": "tool", "tool_name": call["name"], "content": model_view(raw)})
     else:
         res.answer = res.answer or f"Stopped after the {max_iterations}-iteration ceiling without a final answer."
 

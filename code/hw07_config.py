@@ -29,7 +29,7 @@ RUN_LOG = REPORT_DIR / "RUN_LOG.txt"
 
 # ---- Model settings (same for every HW7 experiment) --------------------------------
 MODEL_NAME = os.getenv("OLLAMA_MODEL", "qwen2.5:3b")
-AGENT_TEMPERATURE = float(os.getenv("AGENT_TEMPERATURE", "0.7"))   # >0 so 20 attempts differ
+AGENT_TEMPERATURE = float(os.getenv("AGENT_TEMPERATURE", "0.3"))   # low but >0: attempts differ by seed
 AGENT_NUM_PREDICT = int(os.getenv("AGENT_NUM_PREDICT", "400"))
 BIKE_TEMPERATURE = float(os.getenv("BIKE_TEMPERATURE", "0"))       # Part 4/5: repeatable
 MODEL_DESCRIPTION = f"{MODEL_NAME} via Ollama"
@@ -37,7 +37,7 @@ HARDWARE = os.getenv("HW_DESCRIPTION", 'MacBook Pro 13" (Apple M2, 8 GB RAM), ma
 
 # ---- Agent loop limits (Part 2) ------------------------------------------------------
 MAX_ITERATIONS = 8          # hard ceiling on model turns per run
-MAX_REPAIRS = 2             # bounded repair reprompts per run
+MAX_REPAIRS = 3             # bounded repair reprompts per run (one per distinct problem)
 
 # ---- Reflexion limits (Part 3) -------------------------------------------------------
 MAX_REFLEXION_RETRIES = 2

@@ -98,9 +98,24 @@ def part5() -> list[str]:
                 cells.append("-")
                 continue
             n = sum(x["succeeded"] for x in rs)
-            cells.append(f"{'**succeeded**' if n else 'blocked'} ({n}/{len(rs)})")
+            tried = sum(x.get("attempted", True) for x in rs)
+            word = "**succeeded**" if n else ("failed" if tried else "not attempted by model")
+            cells.append(f"{word} ({n}/{len(rs)})")
         out.append(f"| {label} | " + " | ".join(cells) + " |")
     out += ["", "Raw: `raw/part5_attack_results.json/.csv`; excerpts per cell in the CSV `excerpt` column."]
+    rep = load("part5_tool_boundary_replay.json")
+    if rep:
+        out += ["", "Tool-boundary replay (injected SQL sent straight to csv_sql, no model):", "",
+                "| Injected statement | Before defenses | After prompt defense | After prompt + tool defense |",
+                "|---|---|---|---|"]
+        for sql in dict.fromkeys(r["sql"] for r in rep):
+            cells = []
+            for c in ("before", "prompt", "prompt_tool"):
+                r = next((x for x in rep if x["sql"] == sql and x["config"] == c), None)
+                cells.append("-" if r is None else ("executed" if r["executed"] else "**blocked**")
+                             + (f", rows {r['rows_before']}->{r['rows_after']}" if r and r["attack"] == "sql" else ""))
+            out.append(f"| `{sql[:50]}` | " + " | ".join(cells) + " |")
+        out += ["", "Raw: `raw/part5_tool_boundary_replay.json`."]
     return out
 
 
@@ -117,7 +132,9 @@ def part6() -> list[str]:
     fa = [r["command"] for r in main_rows if r["v1_prefix_only"] == "allow" and r["expected"] == "block"]
     out += ["", f"Final: {sum(r['correct'] for r in main_rows)}/{len(main_rows)} correct; v1 false allows fixed: {fa}.",
             f"Integration (glob -> search -> read): {'PASS' if integ and integ['passed'] else 'FAIL / not run'}"
-            + (f", tool order {' -> '.join(integ['tool_order'])}" if integ else "")]
+            + (f"; all calls {' -> '.join(integ['tool_order'])}; successful calls "
+               f"{' -> '.join(integ.get('successful_order', []))}; stop reason {integ.get('stop_reason')}"
+               if integ else "")]
     return out
 
 

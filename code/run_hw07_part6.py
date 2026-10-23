@@ -79,14 +79,26 @@ def integration(offline: bool) -> dict:
     res = run_agent(INSTRUCTION, client=scripted_client() if offline else None, toolset=toolset,
                     required_tools=["glob_files", "search_in_files", "read_file"],
                     system_prompt="You are a coding assistant working inside a project sandbox. Use the file "
-                                  "tools one at a time; after read_file, answer with the file name and its contents.",
-                    seed=cfg.SEED, log_path=cfg.RAW_DIR / "agent_runs.jsonl", tags={"part": "6-integration"})
+                                  "tools one at a time. Pass read_file the exact relative path listed in "
+                                  "the search_in_files result (its 'files' field) - never invent a file name; "
+                                  "after read_file, answer with the file name and its contents.",
+                    seed=cfg.SEED, log_path=cfg.RAW_DIR / "agent_runs.jsonl", tags={"part": "6-integration"},
+                    require_success=True)
     order = [t["tool"] for t in res.tool_trace]
     read = [t for t in res.tool_trace if t["tool"] == "read_file" and t["ok"]]
     found = bool(read) and json.loads(read[-1]["result"])["data"]["path"] == "app/config.py"
-    passed = found and order[:3] == ["glob_files", "search_in_files", "read_file"]
-    print(f"    tool order: {' -> '.join(order)} | file with DEBUG read: {found} | "
-          f"RESULT {'PASS' if passed else 'FAIL'}")
+    # Pass rule: the SUCCESSFUL calls contain glob_files -> search_in_files -> read_file in that order
+    # (a rejected call, e.g. an invented path, does not count) and the file read is the DEBUG file.
+    ok_order = [t["tool"] for t in res.tool_trace if t["ok"]]
+    def in_order(seq: list[str], want: list[str]) -> bool:
+        it = iter(seq)
+        return all(w in it for w in want)
+    chain = in_order(ok_order, ["glob_files", "search_in_files", "read_file"])
+    passed = found and chain
+    labels = [t["tool"] + ("" if t["ok"] else " (failed)") for t in res.tool_trace]
+    print(f"    all calls:        {' -> '.join(labels)}")
+    print(f"    successful calls: {' -> '.join(ok_order)} | glob->search->read chain: {chain} | "
+          f"file with DEBUG read: {found} | RESULT {'PASS' if passed else 'FAIL'}")
     if read:
         print("    read_file content:\n" + "\n".join("      | " + ln for ln in
                                                      json.loads(read[-1]["result"])["data"]["content"].splitlines()))
@@ -103,7 +115,7 @@ def integration(offline: bool) -> dict:
     b = tools.bash("rm -rf app")
     print(f"    bash('rm -rf app') -> {b['error']}  (app/ still exists: {(sandbox / 'app').exists()})")
     print(f"    escape attempt read_file('../../etc/passwd') -> {tools.read_file('../../etc/passwd')['error']}")
-    out = {"sandbox": str(sandbox), "instruction": INSTRUCTION, "tool_order": order, "passed": passed,
+    out = {"sandbox": str(sandbox), "instruction": INSTRUCTION, "tool_order": order, "successful_order": ok_order, "passed": passed,
            "stop_reason": res.stop_reason, "answer": res.answer, "offline": offline}
     shutil.rmtree(sandbox, ignore_errors=True)
     return out

@@ -28,14 +28,14 @@ def get_repo():
     return SqlRepository()
 
 
-def demo(repo) -> None:
+def demo(repo, seed: int = cfg.SEED) -> None:
     """Run tasks A, B, C once each without any follow-up prompt."""
-    print("PART 2 I - three multi-step verification tasks (no follow-up prompting)\n")
+    print(f"PART 2 I - three multi-step verification tasks (no follow-up prompting), seed {seed}\n")
     total = 0
     for task in TASKS:
         print(f"--- Task {task.task_id} ({task.kind}) ---")
         res = run_agent(task.prompt, required_tools=list(task.required_tools),
-                        seed=cfg.SEED, tags={"part": "2-demo", "task": task.task_id})
+                        seed=seed, tags={"part": "2-demo", "task": task.task_id})
         v = verify(task, res, repo)
         total += res.tool_calls
         print(f"    verifier: {'PASS' if v.passed else 'FAIL'} ({v.reason})")
@@ -43,7 +43,7 @@ def demo(repo) -> None:
     print(f"TOTAL tool calls across tasks A-C: {total}")
 
 
-def recovery() -> None:
+def recovery(seed: int = cfg.SEED) -> None:
     """Nonexistent and impossible IDs: execute_tool returns a useful error, the agent does not crash."""
     from domain_tools import execute_tool
     print("PART 2 II - error recovery\n")
@@ -51,7 +51,7 @@ def recovery() -> None:
         print(f"execute_tool('get_incident', {{'incident_code': '{code}'}}) ->")
         print("    " + execute_tool("get_incident", {"incident_code": code}))
     print("\nAgent run on a nonexistent ID:")
-    res = run_agent(ERROR_RECOVERY_PROMPT, required_tools=["get_incident"], seed=cfg.SEED,
+    res = run_agent(ERROR_RECOVERY_PROMPT, required_tools=["get_incident"], seed=seed,
                     tags={"part": "2-recovery"})
     print(f"\nRESULT: stop_reason={res.stop_reason}, tool_calls={res.tool_calls}, crashed=False")
 
@@ -140,6 +140,7 @@ def main() -> None:
     ap.add_argument("--recovery", action="store_true")
     ap.add_argument("--reliability", type=int, default=0, metavar="N")
     ap.add_argument("--all", action="store_true")
+    ap.add_argument("--seed", type=int, default=cfg.SEED, help="model seed for --demo / --recovery")
     a = ap.parse_args()
     if a.all:
         a.demo, a.recovery, a.reliability = True, True, a.reliability or 21
@@ -148,9 +149,9 @@ def main() -> None:
     repo = get_repo()
     with cfg.run_log("HW7 PART 2 - hand-written agent loop"):
         if a.demo:
-            demo(repo)
+            demo(repo, a.seed)
         if a.recovery:
-            recovery()
+            recovery(a.seed)
         if a.reliability:
             reliability(a.reliability, repo)
 

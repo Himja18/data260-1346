@@ -1,0 +1,37 @@
+{
+  "original": {
+    "runs": 9,
+    "task_success": "5/9",
+    "task_success_rate": 0.556,
+    "unsupported_claims": 0,
+    "retry_rate": 0.0,
+    "total_retries": 0,
+    "tool_calls_mean": 2.56,
+    "tool_calls_total": 23,
+    "tokens_mean": 3947,
+    "latency_ms_mean": 25438,
+    "verifier_possible_false_rejections": 1,
+    "stop_reasons": {
+      "final_answer": 4,
+      "success": 5
+    }
+  },
+  "reflexion": {
+    "runs": 9,
+    "task_success": "8/9",
+    "task_success_rate": 0.889,
+    "unsupported_claims": 0,
+    "retry_rate": 0.444,
+    "total_retries": 5,
+    "tool_calls_mean": 3.89,
+    "tool_calls_total": 35,
+    "tokens_mean": 6437,
+    "latency_ms_mean": 43333,
+    "verifier_possible_false_rejections": 0,
+    "stop_reasons": {
+      "human_review": 1,
+      "success": 8
+    }
+  },
+  "note": "verifier_possible_false_rejections = strict verifier FAIL but lenient re-check PASS; each flagged run must be reviewed by hand (see part3_comparison_runs.csv)."
+}
