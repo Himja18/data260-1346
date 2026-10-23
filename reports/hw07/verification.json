@@ -1,0 +1,160 @@
+{
+  "homework": "HW7",
+  "sid4": 1346,
+  "student": "Himja Patel",
+  "commit_hash": "58581c63dd7830adfaca3aeeea0f38157384a41d",
+  "tag": "hw7",
+  "model_configuration": "qwen2.5:3b via Ollama; agent temperature 0.3, bike agent temperature 0.0, seed 1346",
+  "hardware": "MacBook Pro 13\" (Apple M2, 8 GB RAM), macOS",
+  "seed": 1346,
+  "verify_seed": 261346,
+  "port_base": 8446,
+  "mode": "live+offline",
+  "timestamp": "2026-10-22T17:52:29-07:00",
+  "checks": [
+    {
+      "name": "backend_on_port_base",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "login_valid_returns_jwt",
+      "passed": true,
+      "detail": "3/3 role users"
+    },
+    {
+      "name": "login_invalid_401",
+      "passed": true,
+      "detail": "status=401"
+    },
+    {
+      "name": "auth_me_identity_and_role",
+      "passed": true,
+      "detail": "{'id': 3, 'username': 'writer1346', 'role': 'writer', 'name': None}"
+    },
+    {
+      "name": "auth_me_no_token_401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "auth_me_invalid_token_401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "auth_me_expired_token_401",
+      "passed": true,
+      "detail": "status=401"
+    },
+    {
+      "name": "create_as_reader_403",
+      "passed": true,
+      "detail": "status=403"
+    },
+    {
+      "name": "create_as_writer_201",
+      "passed": true,
+      "detail": "status=201"
+    },
+    {
+      "name": "delete_as_writer_403",
+      "passed": true,
+      "detail": "status=403"
+    },
+    {
+      "name": "delete_as_moderator_200",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "list_as_reader_200",
+      "passed": true,
+      "detail": "items=3"
+    },
+    {
+      "name": "list_without_token_401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "agent_loop_completes_task_A_live",
+      "passed": true,
+      "detail": "stop=final_answer tool_calls=2 all checks passed"
+    },
+    {
+      "name": "offline_jwt_login_me_401s",
+      "passed": true,
+      "detail": "200/401/401/401/401"
+    },
+    {
+      "name": "offline_rbac_403_201_200",
+      "passed": true,
+      "detail": "403/201/403/200/200"
+    },
+    {
+      "name": "offline_passwords_hashed",
+      "passed": true,
+      "detail": "3 hashed"
+    },
+    {
+      "name": "offline_agent_repair_path",
+      "passed": true,
+      "detail": "repaired + clean stop"
+    },
+    {
+      "name": "offline_agent_error_recovery",
+      "passed": true,
+      "detail": "incident INC-999999 not found"
+    },
+    {
+      "name": "offline_reflexion_stop_reasons",
+      "passed": true,
+      "detail": "human_review / human_review / budget_exhausted"
+    },
+    {
+      "name": "offline_reflection_sanitized",
+      "passed": true,
+      "detail": "replaced"
+    },
+    {
+      "name": "offline_bike_tools_contracts",
+      "passed": true,
+      "detail": "SELECT-only, safe calc, labelled passages"
+    },
+    {
+      "name": "offline_bike_agent_offline",
+      "passed": true,
+      "detail": "computed Buy Monthly Membership"
+    },
+    {
+      "name": "offline_safety_gate_10_commands",
+      "passed": true,
+      "detail": "10/10"
+    },
+    {
+      "name": "offline_file_tools_sandbox",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "ruff_clean",
+      "passed": true,
+      "detail": "All checks passed!"
+    },
+    {
+      "name": "raw_evidence_files_present",
+      "passed": true,
+      "detail": "6 files"
+    },
+    {
+      "name": "pricing_snapshots_with_sha256",
+      "passed": true,
+      "detail": "2 snapshots"
+    }
+  ],
+  "summary": {
+    "passed": 28,
+    "total": 28
+  }
+}
