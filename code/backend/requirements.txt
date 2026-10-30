@@ -25,3 +25,5 @@ langchain-core>=0.3
 langchain-ollama>=0.3
 ruff==0.17.1              # Part 1 linting (same version as the pre-commit hook)
 pre-commit>=3.7
+# HW8 (Kafka request/response + three-agent pipeline)
+confluent-kafka>=2.5

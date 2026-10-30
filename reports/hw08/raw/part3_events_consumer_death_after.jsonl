@@ -1,0 +1,5 @@
+{"ts": 1793377620.793731, "at": "2026-10-30T09:27:00.793-07:00", "instance": "writer-death-after-a", "pid": 88902, "event": "assigned", "partitions": [0, 1]}
+{"ts": 1793377620.906197, "at": "2026-10-30T09:27:00.906-07:00", "instance": "writer-death-after-a", "pid": 88902, "event": "received", "partition": 1, "offset": 25, "correlation_id": "d4c38874-9d82-4eae-8d3c-cf9bfded56cd"}
+{"ts": 1793377633.840409, "at": "2026-10-30T09:27:13.840-07:00", "instance": "writer-death-after-b", "pid": 88915, "event": "assigned", "partitions": [0, 1]}
+{"ts": 1793377633.8600378, "at": "2026-10-30T09:27:13.860-07:00", "instance": "writer-death-after-b", "pid": 88915, "event": "received", "partition": 1, "offset": 25, "correlation_id": "d4c38874-9d82-4eae-8d3c-cf9bfded56cd"}
+{"ts": 1793377634.9446442, "at": "2026-10-30T09:27:14.944-07:00", "instance": "writer-death-after-b", "pid": 88915, "event": "processed", "partition": 1, "offset": 25, "correlation_id": "d4c38874-9d82-4eae-8d3c-cf9bfded56cd", "attempts": 1, "entity_id": null, "seq": null, "msg_index": null, "produced": true}

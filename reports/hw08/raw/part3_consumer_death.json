@@ -1,0 +1,30 @@
+{
+  "scenario": "consumer_death",
+  "at": "2026-10-30T09:26:11.323-07:00",
+  "before": {
+    "writer_flags": [
+      "--auto-commit"
+    ],
+    "correlation_id": "e9e8a04e-3144-4132-b641-8eabcc3ee84c",
+    "partition": 0,
+    "message_offset": 33,
+    "committed_before_kill": 34,
+    "committed_after_kill": 34,
+    "redelivered_after_restart": false,
+    "committed_after_restart": 34,
+    "drafts_produced": 0,
+    "outcome": "LOST"
+  },
+  "after": {
+    "writer_flags": [],
+    "correlation_id": "d4c38874-9d82-4eae-8d3c-cf9bfded56cd",
+    "partition": 1,
+    "message_offset": 25,
+    "committed_before_kill": 25,
+    "committed_after_kill": 25,
+    "redelivered_after_restart": true,
+    "committed_after_restart": 26,
+    "drafts_produced": 1,
+    "outcome": "completed after restart"
+  }
+}

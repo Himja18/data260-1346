@@ -1,0 +1,3 @@
+{"ts": 1793377571.946105, "at": "2026-10-30T09:26:11.946-07:00", "instance": "writer-death-before-a", "pid": 88437, "event": "assigned", "partitions": [0, 1]}
+{"ts": 1793377572.1661592, "at": "2026-10-30T09:26:12.166-07:00", "instance": "writer-death-before-a", "pid": 88437, "event": "received", "partition": 0, "offset": 33, "correlation_id": "e9e8a04e-3144-4132-b641-8eabcc3ee84c"}
+{"ts": 1793377585.0087569, "at": "2026-10-30T09:26:25.008-07:00", "instance": "writer-death-before-b", "pid": 88529, "event": "assigned", "partitions": [0, 1]}

@@ -1,0 +1,97 @@
+{
+  "homework": 8,
+  "sid4": 1346,
+  "prefix": "s1346",
+  "port_base": 8446,
+  "domain_id": 2,
+  "commit": "f9aaabdb243fddff7e45d4d6bf30a4d2aa54a305",
+  "tag_hw8": "UNKNOWN",
+  "model": "qwen2.5:3b via Ollama",
+  "hardware": "MacBook Pro 13\" (Apple M2, 8 GB RAM), macOS",
+  "seed": 1346,
+  "verify_seed": 261346,
+  "kafka": "localhost:9092",
+  "mode": "full",
+  "generated_at": "2026-10-30T09:21:53-0700",
+  "duration_s": 29.3,
+  "checks": [
+    {
+      "name": "section0_config",
+      "passed": true,
+      "detail": "port=8446 prefix=s1346"
+    },
+    {
+      "name": "offline_test_suite",
+      "passed": true,
+      "detail": "11/11 offline HW8 tests passed"
+    },
+    {
+      "name": "kafka_broker_reachable",
+      "passed": true,
+      "detail": "localhost:9092"
+    },
+    {
+      "name": "topics_exist_with_partitions",
+      "passed": true,
+      "detail": "all 7 OK (tasks=2)"
+    },
+    {
+      "name": "create_incident_over_kafka",
+      "passed": true,
+      "detail": "incident_id=6063a740-9dcf-4cde-9330-b310165c0f7d correlation preserved=True"
+    },
+    {
+      "name": "get_incident_round_trip",
+      "passed": true,
+      "detail": "fields equal=True"
+    },
+    {
+      "name": "error_get_unknown_id",
+      "passed": true,
+      "detail": "error='Incident not found'"
+    },
+    {
+      "name": "error_unknown_operation",
+      "passed": true,
+      "detail": "error='Unknown operation'"
+    },
+    {
+      "name": "error_invalid_fields",
+      "passed": true,
+      "detail": "error='Validation failed: location must not be empty; category must be one of Delay, Breakdown, Accident, Service Change'"
+    },
+    {
+      "name": "duplicate_replay_idempotent",
+      "passed": true,
+      "detail": "2 responses, distinct incident ids=1"
+    },
+    {
+      "name": "fastapi_on_port_base",
+      "passed": true,
+      "detail": "http://127.0.0.1:8446/health -> ok"
+    },
+    {
+      "name": "fastapi_create_get_via_kafka",
+      "passed": true,
+      "detail": "POST 200, GET 200"
+    },
+    {
+      "name": "fastapi_unknown_id_404",
+      "passed": true,
+      "detail": "404"
+    },
+    {
+      "name": "pipeline_inbox_to_final",
+      "passed": true,
+      "detail": "status=approved stages=['planner', 'writer', 'reviewer']"
+    },
+    {
+      "name": "poison_to_dead_letter",
+      "passed": true,
+      "detail": "attempts=3 source=writer-1"
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "all_passed": true
+}

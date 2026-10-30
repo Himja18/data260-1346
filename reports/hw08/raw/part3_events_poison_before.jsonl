@@ -1,0 +1,6 @@
+{"ts": 1793377693.11273, "at": "2026-10-30T09:28:13.112-07:00", "instance": "writer-poison-before-1", "pid": 89465, "event": "assigned", "partitions": [0, 1]}
+{"ts": 1793377693.1168032, "at": "2026-10-30T09:28:13.116-07:00", "instance": "writer-poison-before-1", "pid": 89465, "event": "received", "partition": 1, "offset": 26, "correlation_id": null}
+{"ts": 1793377693.117114, "at": "2026-10-30T09:28:13.117-07:00", "instance": "writer-poison-before-1", "pid": 89465, "event": "crash", "partition": 1, "offset": 26, "error": "Unterminated string starting at: line 1 column 44 (char 43)"}
+{"ts": 1793377694.6670752, "at": "2026-10-30T09:28:14.667-07:00", "instance": "writer-poison-before-2", "pid": 89554, "event": "assigned", "partitions": [0, 1]}
+{"ts": 1793377694.675373, "at": "2026-10-30T09:28:14.675-07:00", "instance": "writer-poison-before-2", "pid": 89554, "event": "received", "partition": 1, "offset": 26, "correlation_id": null}
+{"ts": 1793377694.675709, "at": "2026-10-30T09:28:14.675-07:00", "instance": "writer-poison-before-2", "pid": 89554, "event": "crash", "partition": 1, "offset": 26, "error": "Unterminated string starting at: line 1 column 44 (char 43)"}

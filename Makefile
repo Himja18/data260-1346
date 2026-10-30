@@ -65,3 +65,56 @@ hw07-part6:             ## Part 6: integration test + 10-command safety-gate tes
 
 hw07-metrics:           ## rebuild reports/hw07/METRICS.md from raw files
 	$(PYTHON) code/make_metrics_hw07.py
+
+# ---------------------------------------------------------------- HW8 ----
+KAFKA_TOPICS = docker exec s1346-kafka /opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092
+
+.PHONY: hw08-up hw08-down hw08-topics hw08-ps hw08-demo hw08-demo-api hw08-ask hw08-part3 \
+        hw08-test hw08-metrics verify-hw08
+
+hw08-up:                ## start Kafka + incident worker + FastAPI (port 8446)
+	docker compose up -d --build
+
+hw08-down:              ## stop the HW8 containers
+	docker compose down
+
+hw08-topics:            ## create the 7 s1346 topics with the Kafka CLI, then describe them
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_incident_requests  --partitions 1 --replication-factor 1
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_incident_responses --partitions 1 --replication-factor 1
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_inbox       --partitions 1 --replication-factor 1
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_tasks       --partitions 2 --replication-factor 1
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_drafts      --partitions 1 --replication-factor 1
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_final       --partitions 1 --replication-factor 1
+	$(KAFKA_TOPICS) --create --if-not-exists --topic s1346_dead_letter --partitions 1 --replication-factor 1
+	$(KAFKA_TOPICS) --list
+	$(KAFKA_TOPICS) --describe --topic s1346_tasks
+
+hw08-ps:                ## containers + the worker/API startup lines
+	docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"
+	docker logs s1346-incident-worker 2>&1 | grep -m1 "Consumer is ready"
+	docker logs s1346-incident-api 2>&1 | grep -m1 "FastAPI server started"
+
+hw08-demo:              ## Part 1: CREATE_INCIDENT -> GET_INCIDENT over Kafka (homework_demo.py)
+	$(PYTHON) code/kafka_service/homework_demo.py
+
+hw08-demo-api:          ## Part 1: the same flow through the FastAPI wrapper
+	$(PYTHON) code/kafka_service/homework_demo.py --via-api
+
+hw08-ask:               ## Part 2: send one question to s1346_inbox and wait for s1346_final
+	$(PYTHON) code/kafka_agents/send_question.py
+
+hw08-part3:             ## Part 3: duplicate / consumer death / poison / ordering, before + after
+	$(PYTHON) code/run_hw08_part3.py --scenario all
+
+hw08-reset-writers:     ## after Part 3: move group s1346_writers past the test messages (writer must be stopped)
+	docker exec s1346-kafka /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 \
+		--group s1346_writers --topic s1346_tasks --reset-offsets --to-latest --execute
+
+hw08-test:              ## offline HW8 tests (no Kafka, no Ollama)
+	$(PYTHON) code/test_hw08.py
+
+hw08-metrics:           ## rebuild reports/hw08/METRICS.md from raw files
+	$(PYTHON) code/make_metrics_hw08.py
+
+verify-hw08:            ## smoke test (stack + agents up) -> reports/hw08/verification.json
+	$(PYTHON) verify_hw08.py

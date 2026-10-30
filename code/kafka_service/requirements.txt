@@ -1,0 +1,5 @@
+# HW8 Kafka service image (worker + FastAPI wrapper)
+confluent-kafka>=2.5
+fastapi
+uvicorn[standard]
+pydantic>=2.6

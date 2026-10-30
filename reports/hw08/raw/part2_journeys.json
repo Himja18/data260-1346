@@ -1,0 +1,218 @@
+[
+  {
+    "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+    "question": "My Line 22 trolley bus broke down at Fillmore and Geary and we waited 25 minutes. How do I report it and which incident category applies?",
+    "seconds": 26.8,
+    "final": {
+      "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+      "status": "approved",
+      "answer": "Step 1: Report the incident. Contact Municipal Transit Incidents help desk via phone or online form. Describe the breakdown at Fillmore and Geary, including the bus number (Line 22) and the wait time (25 minutes). Step 2: Choose the appropriate incident category. This is a Breakdown incident. Step 3: Provide detailed information. Include the date, time, exact location, and any other relevant details. Step 4: Follow up if needed. Check the status of your report and provide feedback if requested.",
+      "question": "My Line 22 trolley bus broke down at Fillmore and Geary and we waited 25 minutes. How do I report it and which incident category applies?",
+      "review_notes": "Draft answers the question and follows the plan",
+      "reviewed_by": "qwen2.5:3b",
+      "finalized_at": "2026-10-30T09:05:21.534-07:00",
+      "trace": [
+        {
+          "stage": "you",
+          "instance": "send_question",
+          "at": "2026-10-30T09:04:54.811-07:00"
+        },
+        {
+          "stage": "planner",
+          "instance": "planner-1",
+          "at": "2026-10-30T09:05:00.808-07:00"
+        },
+        {
+          "stage": "writer",
+          "instance": "writer-1",
+          "at": "2026-10-30T09:05:16.644-07:00"
+        },
+        {
+          "stage": "reviewer",
+          "instance": "reviewer-1",
+          "at": "2026-10-30T09:05:21.534-07:00"
+        }
+      ]
+    },
+    "events": [
+      {
+        "ts": 1793376295.3235462,
+        "at": "2026-10-30T09:04:55.323-07:00",
+        "component": "send_question",
+        "event": "agent_sent",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_inbox"
+      },
+      {
+        "ts": 1793376295.3260128,
+        "at": "2026-10-30T09:04:55.326-07:00",
+        "component": "planner-1",
+        "event": "agent_received",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_inbox",
+        "partition": 0,
+        "offset": 0
+      },
+      {
+        "ts": 1793376300.857167,
+        "at": "2026-10-30T09:05:00.857-07:00",
+        "component": "planner-1",
+        "event": "agent_sent",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_tasks"
+      },
+      {
+        "ts": 1793376300.8873138,
+        "at": "2026-10-30T09:05:00.887-07:00",
+        "component": "writer-1",
+        "event": "agent_received",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_tasks",
+        "partition": 1,
+        "offset": 0
+      },
+      {
+        "ts": 1793376316.737525,
+        "at": "2026-10-30T09:05:16.737-07:00",
+        "component": "writer-1",
+        "event": "agent_sent",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_drafts"
+      },
+      {
+        "ts": 1793376316.8242729,
+        "at": "2026-10-30T09:05:16.826-07:00",
+        "component": "reviewer-1",
+        "event": "agent_received",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_drafts",
+        "partition": 0,
+        "offset": 0
+      },
+      {
+        "ts": 1793376321.577388,
+        "at": "2026-10-30T09:05:21.577-07:00",
+        "component": "reviewer-1",
+        "event": "agent_sent",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_final"
+      },
+      {
+        "ts": 1793376321.6051998,
+        "at": "2026-10-30T09:05:21.605-07:00",
+        "component": "send_question",
+        "event": "agent_received",
+        "correlation_id": "30f19a64-7432-4fbf-b85c-9d427d48b28f",
+        "topic": "s1346_final"
+      }
+    ]
+  },
+  {
+    "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+    "question": "My Line 22 trolley bus broke down at Fillmore and Geary and we waited 25 minutes. How do I report it and which incident category applies?",
+    "seconds": 25.69,
+    "final": {
+      "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+      "status": "approved",
+      "answer": "Line 22 trolley bus broke down at Fillmore and Geary. Total waiting time was 25 minutes. This incident falls under the Breakdown category. Please report it to the Municipal Transit Incidents help desk.",
+      "question": "My Line 22 trolley bus broke down at Fillmore and Geary and we waited 25 minutes. How do I report it and which incident category applies?",
+      "review_notes": "Draft answers the question and follows the plan",
+      "reviewed_by": "qwen2.5:3b",
+      "finalized_at": "2026-10-30T09:13:16.614-07:00",
+      "trace": [
+        {
+          "stage": "you",
+          "instance": "send_question",
+          "at": "2026-10-30T09:12:51.175-07:00"
+        },
+        {
+          "stage": "planner",
+          "instance": "planner-1",
+          "at": "2026-10-30T09:13:01.271-07:00"
+        },
+        {
+          "stage": "writer",
+          "instance": "writer-1",
+          "at": "2026-10-30T09:13:09.376-07:00"
+        },
+        {
+          "stage": "reviewer",
+          "instance": "reviewer-1",
+          "at": "2026-10-30T09:13:16.614-07:00"
+        }
+      ]
+    },
+    "events": [
+      {
+        "ts": 1793376771.689908,
+        "at": "2026-10-30T09:12:51.689-07:00",
+        "component": "send_question",
+        "event": "agent_sent",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_inbox"
+      },
+      {
+        "ts": 1793376771.7220962,
+        "at": "2026-10-30T09:12:51.722-07:00",
+        "component": "planner-1",
+        "event": "agent_received",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_inbox",
+        "partition": 0,
+        "offset": 1
+      },
+      {
+        "ts": 1793376781.313057,
+        "at": "2026-10-30T09:13:01.313-07:00",
+        "component": "planner-1",
+        "event": "agent_sent",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_tasks"
+      },
+      {
+        "ts": 1793376781.3821208,
+        "at": "2026-10-30T09:13:01.383-07:00",
+        "component": "writer-1",
+        "event": "agent_received",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_tasks",
+        "partition": 1,
+        "offset": 1
+      },
+      {
+        "ts": 1793376789.640705,
+        "at": "2026-10-30T09:13:09.640-07:00",
+        "component": "writer-1",
+        "event": "agent_sent",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_drafts"
+      },
+      {
+        "ts": 1793376789.75055,
+        "at": "2026-10-30T09:13:09.750-07:00",
+        "component": "reviewer-1",
+        "event": "agent_received",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_drafts",
+        "partition": 0,
+        "offset": 1
+      },
+      {
+        "ts": 1793376796.681428,
+        "at": "2026-10-30T09:13:16.681-07:00",
+        "component": "reviewer-1",
+        "event": "agent_sent",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_final"
+      },
+      {
+        "ts": 1793376796.862328,
+        "at": "2026-10-30T09:13:16.862-07:00",
+        "component": "send_question",
+        "event": "agent_received",
+        "correlation_id": "e1fa1092-6f57-41a3-9adf-f6f26e0a6eea",
+        "topic": "s1346_final"
+      }
+    ]
+  }
+]

@@ -3,7 +3,7 @@ target-version = "py311"
 line-length = 110
 extend-exclude = ["code/frontend", "reports", "**/node_modules"]
 # Module roots used by the code (sys.path entries), so import sorting is the same from any cwd.
-src = [".", "code", "code/backend", "code/mcp", "src"]
+src = [".", "code", "code/backend", "code/mcp", "code/kafka_service", "code/kafka_agents", "src"]
 
 [lint]
 # E/W pycodestyle, F pyflakes (unused imports/variables, undefined names), I isort,

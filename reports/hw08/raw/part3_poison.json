@@ -1,0 +1,55 @@
+{
+  "scenario": "poison",
+  "at": "2026-10-30T09:28:12.375-07:00",
+  "max_attempts": 3,
+  "before": {
+    "writer_flags": [
+      "--no-dlq"
+    ],
+    "crashes": 2,
+    "good_message_corr": "a1d64c10-09fb-422f-b6d7-4c2d822eb482",
+    "good_message_processed": false,
+    "dead_letter_records": 0,
+    "committed": {
+      "0": 34,
+      "1": 26
+    }
+  },
+  "after": {
+    "writer_flags": [],
+    "dead_letter_records": 2,
+    "dead_letters": [
+      {
+        "correlation_id": null,
+        "error": "PoisonMessageError: invalid JSON: Unterminated string starting at: line 1 column 44 (char 43)",
+        "attempts": 3,
+        "partition": 1,
+        "offset": 26
+      },
+      {
+        "correlation_id": "poison-2",
+        "error": "PoisonMessageError: missing required field(s): plan",
+        "attempts": 3,
+        "partition": 1,
+        "offset": 28
+      }
+    ],
+    "retry_lines": [
+      "2026-10-30 09:28:16.635 | Himja Patel | s1346 | writer-poison-after | RETRY attempt 1/3 failed: PoisonMessageError: invalid JSON: Unterminated string starting at: line 1 column 44 (char 43)",
+      "2026-10-30 09:28:17.136 | Himja Patel | s1346 | writer-poison-after | RETRY attempt 2/3 failed: PoisonMessageError: invalid JSON: Unterminated string starting at: line 1 column 44 (char 43)",
+      "2026-10-30 09:28:18.141 | Himja Patel | s1346 | writer-poison-after | RETRY attempt 3/3 failed: PoisonMessageError: invalid JSON: Unterminated string starting at: line 1 column 44 (char 43)",
+      "2026-10-30 09:28:18.181 | Himja Patel | s1346 | writer-poison-after | RETRY attempt 1/3 failed: PoisonMessageError: missing required field(s): plan",
+      "2026-10-30 09:28:18.684 | Himja Patel | s1346 | writer-poison-after | RETRY attempt 2/3 failed: PoisonMessageError: missing required field(s): plan",
+      "2026-10-30 09:28:19.691 | Himja Patel | s1346 | writer-poison-after | RETRY attempt 3/3 failed: PoisonMessageError: missing required field(s): plan"
+    ],
+    "good_messages_processed": {
+      "a1d64c10-09fb-422f-b6d7-4c2d822eb482": true,
+      "8531d557-9ecd-45f4-a061-3fd1c2856a66": true
+    },
+    "drafts_for_good_messages": 2,
+    "committed": {
+      "0": 34,
+      "1": 30
+    }
+  }
+}

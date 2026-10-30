@@ -1,0 +1,179 @@
+{
+  "at": "2026-10-30T09:01:38.509-07:00",
+  "mode": "kafka",
+  "incident_input": {
+    "route_title": "Line 22 - Fillmore",
+    "location": "Fillmore St & Geary Blvd",
+    "category": "Breakdown",
+    "passengers_affected": 37,
+    "description": "Trolley bus lost overhead power; passengers moved to the next bus."
+  },
+  "create": {
+    "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+    "response": {
+      "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+      "operation": "CREATE_INCIDENT",
+      "success": true,
+      "incident_id": "05c8fc63-1fb9-4502-830e-eccc16713a92",
+      "message": "Incident created"
+    }
+  },
+  "get": {
+    "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+    "response": {
+      "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+      "operation": "GET_INCIDENT",
+      "success": true,
+      "incident": {
+        "incident_id": "05c8fc63-1fb9-4502-830e-eccc16713a92",
+        "route_title": "Line 22 - Fillmore",
+        "location": "Fillmore St & Geary Blvd",
+        "category": "Breakdown",
+        "passengers_affected": 37,
+        "description": "Trolley bus lost overhead power; passengers moved to the next bus.",
+        "created_at": "2026-10-30T16:01:37+00:00"
+      }
+    }
+  },
+  "fields_round_trip": true,
+  "errors": {
+    "unknown_incident_id": {
+      "request_correlation_id": "6ddb1189-4cd5-46b5-95e1-976bf997afd8",
+      "response": {
+        "correlation_id": "6ddb1189-4cd5-46b5-95e1-976bf997afd8",
+        "operation": "GET_INCIDENT",
+        "success": false,
+        "error": "Incident not found"
+      },
+      "correlation_preserved": true
+    },
+    "unknown_operation": {
+      "request_correlation_id": "488a3b05-a68b-4f4c-8826-ec5c464d0061",
+      "response": {
+        "correlation_id": "488a3b05-a68b-4f4c-8826-ec5c464d0061",
+        "operation": "DELETE_INCIDENT",
+        "success": false,
+        "error": "Unknown operation"
+      },
+      "correlation_preserved": true
+    },
+    "missing_and_invalid_fields": {
+      "request_correlation_id": "450a5a1f-9417-4124-90e1-b0a78cd8810a",
+      "response": {
+        "correlation_id": "450a5a1f-9417-4124-90e1-b0a78cd8810a",
+        "operation": "CREATE_INCIDENT",
+        "success": false,
+        "error": "Validation failed: route_title must not be empty; location is required; category must be one of Delay, Breakdown, Accident, Service Change; passengers_affected Input should be greater than or equal to 0"
+      },
+      "correlation_preserved": true
+    }
+  },
+  "sequence": [
+    {
+      "ts": 1793376097.3133461,
+      "at": "2026-10-30T09:01:37.313-07:00",
+      "component": "client",
+      "event": "client_sent",
+      "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+      "operation": "CREATE_INCIDENT",
+      "topic": "s1346_incident_requests"
+    },
+    {
+      "ts": 1793376097.3239846,
+      "at": "2026-10-30T09:01:37.324-07:00",
+      "component": "worker",
+      "event": "worker_received",
+      "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+      "operation": "CREATE_INCIDENT",
+      "topic": "s1346_incident_requests",
+      "partition": 0,
+      "offset": 10
+    },
+    {
+      "ts": 1793376097.3284516,
+      "at": "2026-10-30T09:01:37.328-07:00",
+      "component": "worker",
+      "event": "worker_processed",
+      "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+      "operation": "CREATE_INCIDENT",
+      "success": true,
+      "duplicate": false,
+      "store_size": 3,
+      "incident_id": "05c8fc63-1fb9-4502-830e-eccc16713a92"
+    },
+    {
+      "ts": 1793376097.33185,
+      "at": "2026-10-30T09:01:37.331-07:00",
+      "component": "worker",
+      "event": "worker_replied",
+      "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+      "topic": "s1346_incident_responses",
+      "success": true
+    },
+    {
+      "ts": 1793376097.335422,
+      "at": "2026-10-30T09:01:37.335-07:00",
+      "component": "client",
+      "event": "client_received",
+      "correlation_id": "4873e764-661f-4182-a43b-03378e21cbb3",
+      "operation": "CREATE_INCIDENT",
+      "topic": "s1346_incident_responses",
+      "success": true,
+      "latency_ms": 27.6,
+      "correlation_preserved": true
+    },
+    {
+      "ts": 1793376097.649781,
+      "at": "2026-10-30T09:01:37.649-07:00",
+      "component": "worker",
+      "event": "worker_received",
+      "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+      "operation": "GET_INCIDENT",
+      "topic": "s1346_incident_requests",
+      "partition": 0,
+      "offset": 11
+    },
+    {
+      "ts": 1793376097.650368,
+      "at": "2026-10-30T09:01:37.650-07:00",
+      "component": "client",
+      "event": "client_sent",
+      "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+      "operation": "GET_INCIDENT",
+      "topic": "s1346_incident_requests"
+    },
+    {
+      "ts": 1793376097.6514544,
+      "at": "2026-10-30T09:01:37.651-07:00",
+      "component": "worker",
+      "event": "worker_processed",
+      "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+      "operation": "GET_INCIDENT",
+      "success": true,
+      "duplicate": false,
+      "store_size": 3,
+      "incident_id": "05c8fc63-1fb9-4502-830e-eccc16713a92"
+    },
+    {
+      "ts": 1793376097.6552541,
+      "at": "2026-10-30T09:01:37.655-07:00",
+      "component": "worker",
+      "event": "worker_replied",
+      "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+      "topic": "s1346_incident_responses",
+      "success": true
+    },
+    {
+      "ts": 1793376097.657665,
+      "at": "2026-10-30T09:01:37.657-07:00",
+      "component": "client",
+      "event": "client_received",
+      "correlation_id": "297abe88-364a-4b5d-bb8a-7b30166b0630",
+      "operation": "GET_INCIDENT",
+      "topic": "s1346_incident_responses",
+      "success": true,
+      "latency_ms": 13.7,
+      "correlation_preserved": true
+    }
+  ]
+}

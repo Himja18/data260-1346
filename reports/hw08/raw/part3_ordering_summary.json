@@ -1,0 +1,137 @@
+{
+  "scenario": "ordering",
+  "at": "2026-10-30T09:29:18.985-07:00",
+  "verify_seed": 261346,
+  "unkeyed": {
+    "entities": {
+      "INC-870109": {
+        "processed_seq": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_order": true,
+        "inversions": 0,
+        "partitions": [
+          0,
+          1
+        ]
+      },
+      "INC-464751": {
+        "processed_seq": [
+          2,
+          1,
+          3,
+          4,
+          5
+        ],
+        "in_order": false,
+        "inversions": 1,
+        "partitions": [
+          0,
+          1
+        ]
+      },
+      "INC-322480": {
+        "processed_seq": [
+          2,
+          3,
+          1,
+          5,
+          4
+        ],
+        "in_order": false,
+        "inversions": 3,
+        "partitions": [
+          0,
+          1
+        ]
+      },
+      "INC-189756": {
+        "processed_seq": [
+          1,
+          2,
+          3,
+          5,
+          4
+        ],
+        "in_order": false,
+        "inversions": 1,
+        "partitions": [
+          0,
+          1
+        ]
+      }
+    },
+    "entities_in_order": 1,
+    "entities_total": 4,
+    "total_inversions": 5,
+    "messages_processed": 20
+  },
+  "keyed": {
+    "entities": {
+      "INC-464751": {
+        "processed_seq": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_order": true,
+        "inversions": 0,
+        "partitions": [
+          0
+        ]
+      },
+      "INC-322480": {
+        "processed_seq": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_order": true,
+        "inversions": 0,
+        "partitions": [
+          1
+        ]
+      },
+      "INC-870109": {
+        "processed_seq": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_order": true,
+        "inversions": 0,
+        "partitions": [
+          0
+        ]
+      },
+      "INC-189756": {
+        "processed_seq": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_order": true,
+        "inversions": 0,
+        "partitions": [
+          1
+        ]
+      }
+    },
+    "entities_in_order": 4,
+    "entities_total": 4,
+    "total_inversions": 0,
+    "messages_processed": 20
+  }
+}
