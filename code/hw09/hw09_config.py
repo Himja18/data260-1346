@@ -33,6 +33,9 @@ EMBED_MODEL = os.getenv("HW09_EMBED_MODEL", "BAAI/bge-small-en-v1.5")  # same mo
 EMBED_DIM = 384
 DEFAULT_THRESHOLD = float(os.getenv("HW09_THRESHOLD", "0.85"))
 THRESHOLDS = (0.75, 0.80, 0.85, 0.90, 0.95)
+# Part 3.4 result: bge-small scores "INC-000230" vs "INC-000231" questions at 0.93-0.98, above most
+# paraphrases, so a hit must also name exactly the same incident codes as the cached question.
+ENTITY_GUARD = os.getenv("HW09_ENTITY_GUARD", "1") != "0"
 STATIC_VERSION = "static-v1"     # data-version marker for answers that do not depend on a s1346_rel row
 
 # Part 3.4 - cost model (dollars per event; justified in the report)

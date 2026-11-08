@@ -25,6 +25,8 @@ from typing import Any, Optional
 
 sys.path[:0] = [str(Path(__file__).resolve().parents[1]), str(Path(__file__).resolve().parents[2] / "src")]
 
+from confluent_kafka import KafkaException  # noqa: E402
+
 import hw08_config as cfg  # noqa: E402
 from kafka_common import (  # noqa: E402
     decode,
@@ -241,8 +243,12 @@ class KafkaAgent:
         if corr and not a.no_idempotency:
             self.store.add(corr)
         if not a.auto_commit:
-            consumer.commit(message=msg, asynchronous=False)
-            self.log.info("COMMITTED %s (next offset %d) after successful processing", where, msg.offset() + 1)
+            try:
+                consumer.commit(message=msg, asynchronous=False)
+                self.log.info("COMMITTED %s (next offset %d) after successful processing", where, msg.offset() + 1)
+            except KafkaException as exc:   # HW9: group rebalanced under load - keep running, do not crash
+                self.log.warning("COMMIT FAILED %s (%s) - partition was reassigned; the message may be "
+                                 "redelivered and the idempotency store will drop the duplicate", where, exc)
         self._event(event="processed", partition=msg.partition(), offset=msg.offset(), correlation_id=corr,
                     attempts=attempts, entity_id=value.get("entity_id") if isinstance(value, dict) else None,
                     seq=value.get("seq") if isinstance(value, dict) else None,

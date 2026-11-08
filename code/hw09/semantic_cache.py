@@ -46,7 +46,7 @@ class CacheResult:
     latency_ms: float
     threshold: float
     matched_query: Optional[str] = None
-    reason: str = ""                    # hit | miss:no-match | miss:below-threshold | miss:stale-version
+    reason: str = ""   # hit | miss:no-match | miss:below-threshold | miss:entity-mismatch | miss:stale-version
     data_version: str = ""
     timings_ms: dict = field(default_factory=dict)
 
@@ -134,7 +134,8 @@ class SemanticCache:
     """Ingress cache in front of the agent pipeline."""
 
     def __init__(self, r: Any, embedder: Any, facts: Any, agent: Any, log: Any,
-                 threshold: float = cfg.DEFAULT_THRESHOLD, version_check: bool = True) -> None:
+                 threshold: float = cfg.DEFAULT_THRESHOLD, version_check: bool = True,
+                 entity_guard: bool = cfg.ENTITY_GUARD) -> None:
         self.r = r
         self.embedder = embedder
         self.facts = facts                  # IncidentCache (s1346_rel access)
@@ -142,6 +143,7 @@ class SemanticCache:
         self.log = log
         self.threshold = threshold
         self.version_check = version_check
+        self.entity_guard = entity_guard     # Part 3.4: a hit must name exactly the same incident codes
         backend = RediSearchIndex if cfg.VECTOR_BACKEND == "redisearch" else ScanIndex
         self.index = backend(r, embedder.dim)
         self.index.ensure()
@@ -184,6 +186,7 @@ class SemanticCache:
                       + self.facts.facts_text(facts, codes))
         out = self.agent.ask(prompt)
         timings["agent"] = out["agent_ms"]
+        timings["status"] = out.get("status")          # reviewer verdict from s1346_final
         return out["answer"], codes, version, timings
 
     # -- the ingress -------------------------------------------------------------
@@ -197,8 +200,17 @@ class SemanticCache:
         sim = None if match is None else round(match.similarity, 4)
 
         reason = "miss:no-match" if match is None else "miss:below-threshold"
+        match_ok = False
         if match is not None and match.similarity >= thr:
             deps = [c for c in match.fields["deps"].split(",") if c]
+            if self.entity_guard and set(incident_codes(query)) != set(deps):
+                reason = "miss:entity-mismatch"
+                self.log.info("GUARD  sim=%.4f >= %.2f but incident codes differ (%s vs cached %s) -> miss",
+                              match.similarity, thr, incident_codes(query) or "-", deps or "-")
+                match_ok = False
+            else:
+                match_ok = True
+        if match is not None and match.similarity >= thr and match_ok:
             stale = False
             if check and deps:
                 t0 = time.perf_counter()
@@ -220,16 +232,20 @@ class SemanticCache:
                                    matched_query=match.fields["query"], reason="hit",
                                    data_version=match.fields["data_version"], timings_ms=timings)
 
-        if reason != "miss:stale-version":
+        if reason not in ("miss:stale-version", "miss:entity-mismatch"):
             self.log.info("MISS   best sim=%s < %.2f  -> HW8 agent pipeline", "none" if sim is None else f"{sim:.4f}", thr)
         answer, codes, version, agent_t = self.run_agent(query)
         timings.update(agent_t)
-        if store:
+        if store and agent_t.get("status") in (None, "approved"):
             t0 = time.perf_counter()
             self.store(query, vec, answer, codes, version, agent_t["agent"])
             timings["store"] = round((time.perf_counter() - t0) * 1000, 2)
+        elif store:      # never cache an answer the Reviewer rejected - it would be served to every paraphrase
+            self.log.info("NOT STORED: reviewer status=%s", agent_t.get("status"))
         latency = (time.perf_counter() - started) * 1000
-        self.log.info("STORED latency=%.1f ms (agent %.0f ms)  data_version=%s", latency, agent_t["agent"], version)
+        self.log.info("%s latency=%.1f ms (agent %.0f ms, reviewer=%s)  data_version=%s",
+                      "STORED" if "store" in timings else "ANSWERED", latency, agent_t["agent"],
+                      agent_t.get("status"), version)
         return CacheResult(query=query, answer=answer, is_cached=False, similarity=sim,
                            latency_ms=round(latency, 1), threshold=thr,
                            matched_query=None if match is None else match.fields["query"],

@@ -53,7 +53,8 @@ def agent_runs(cache, queries: list[str], log, fresh: bool) -> dict:  # noqa: AN
     for i, q in enumerate(todo, 1):
         log.info("agent run %d/%d: %s", i, len(todo), short(q, 90))
         answer, codes, version, t = cache.run_agent(q)
-        runs[q] = {"answer": answer, "agent_ms": t["agent"], "deps": codes, "data_version": version}
+        runs[q] = {"answer": answer, "agent_ms": t["agent"], "deps": codes, "data_version": version,
+                   "status": t.get("status")}
         log.info("   %.0f ms | %s", t["agent"], short(answer, 120))
         write_json(AGENT_RUNS, runs)                       # save as we go (resume after a crash)
     return runs
@@ -81,59 +82,84 @@ def main() -> None:  # noqa: PLR0915
         cache.store(q, cache.embedder.embed(q), run["answer"], run["deps"], run["data_version"], run["agent_ms"])
     seed_by_query = {q: sid for sid, q in seeds.items()}
 
-    # 3. sweep
-    rows, table = [], []
+    # 3. sweep - two policies on the same lookups:
+    #    threshold_only : hit if similarity >= threshold
+    #    entity_guard   : ... AND the incident codes in the question equal the cached entry's codes
+    rows = []
     for thr in cfg.THRESHOLDS:
         for c in cases:
             t0 = time.perf_counter()
             match, _vec, _tm = cache.lookup(c["query"])
             sim = match.similarity if match else 0.0
             nearest = seed_by_query.get(match.fields["query"]) if match else None
-            hit = match is not None and sim >= thr
-            if hit and match.fields["deps"]:
-                cache.facts.data_version([d for d in match.fields["deps"].split(",") if d])  # same work as ask()
+            deps = [d for d in match.fields["deps"].split(",") if d] if match else []
+            if match is not None and sim >= thr and deps:
+                cache.facts.data_version(deps)                     # same work as ask() on a hit
             lookup_ms = (time.perf_counter() - t0) * 1000
-            latency = lookup_ms if hit else lookup_ms + runs[c["query"]]["agent_ms"]
-            false_hit = hit and (not c["should_hit"] or nearest != c["seed"])
-            rows.append({"threshold": thr, "id": c["id"], "group": c["group"], "should_hit": c["should_hit"],
-                         "expected_seed": c["seed"], "nearest_seed": nearest, "similarity": round(sim, 4),
-                         "hit": hit, "false_hit": false_hit, "correct_hit": hit and not false_hit,
-                         "latency_ms": round(latency, 1), "lookup_ms": round(lookup_ms, 2), "query": c["query"]})
-        cur = [r for r in rows if r["threshold"] == thr]
-        hits = sum(r["hit"] for r in cur)
-        false_hits = sum(r["false_hit"] for r in cur)
-        misses = len(cur) - hits
-        cost = misses * args.cost_miss + false_hits * args.cost_false_hit
-        table.append({"threshold": thr, "hits": hits, "hit_rate": round(hits / len(cur), 3),
-                      "false_hits": false_hits,
-                      "false_hit_rate": round(false_hits / hits, 3) if hits else 0.0,       # of hits served
-                      "false_hit_rate_all": round(false_hits / len(cur), 3),                # of all 40 queries
-                      "missed_should_hit": sum(r["should_hit"] and not r["hit"] for r in cur),
-                      "misses": misses, "mean_latency_ms": round(statistics.mean(r["latency_ms"] for r in cur), 1),
-                      "total_cost": round(cost, 2)})
+            codes_match = set(incident_codes(c["query"])) == set(deps)
+            for mode in ("threshold_only", "entity_guard"):
+                hit = match is not None and sim >= thr and (mode == "threshold_only" or codes_match)
+                latency = lookup_ms if hit else lookup_ms + runs[c["query"]]["agent_ms"]
+                false_hit = hit and (not c["should_hit"] or nearest != c["seed"])
+                rows.append({"mode": mode, "threshold": thr, "id": c["id"], "group": c["group"],
+                             "should_hit": c["should_hit"], "expected_seed": c["seed"], "nearest_seed": nearest,
+                             "similarity": round(sim, 4), "codes_match": codes_match, "hit": hit,
+                             "false_hit": false_hit, "correct_hit": hit and not false_hit,
+                             "latency_ms": round(latency, 1), "lookup_ms": round(lookup_ms, 2), "query": c["query"]})
+
+    def table_for(mode: str) -> list[dict]:
+        out = []
+        for thr in cfg.THRESHOLDS:
+            cur = [r for r in rows if r["mode"] == mode and r["threshold"] == thr]
+            hits = sum(r["hit"] for r in cur)
+            false_hits = sum(r["false_hit"] for r in cur)
+            misses = len(cur) - hits
+            out.append({"mode": mode, "threshold": thr, "hits": hits, "hit_rate": round(hits / len(cur), 3),
+                        "false_hits": false_hits,
+                        "false_hit_rate": round(false_hits / hits, 3) if hits else 0.0,     # of hits served
+                        "false_hit_rate_all": round(false_hits / len(cur), 3),              # of all 40 queries
+                        "correct_hits": hits - false_hits,
+                        "missed_should_hit": sum(r["should_hit"] and not r["hit"] for r in cur), "misses": misses,
+                        "mean_latency_ms": round(statistics.mean(r["latency_ms"] for r in cur), 1),
+                        "total_cost": round(misses * args.cost_miss + false_hits * args.cost_false_hit, 2)})
+        return out
+
+    tables = {m: table_for(m) for m in ("threshold_only", "entity_guard")}
+    base = [r for r in rows if r["mode"] == "threshold_only" and r["threshold"] == cfg.THRESHOLDS[0]]
 
     # similarity of every case (identical for every threshold)
     log.info("==== similarity of each case to its nearest cached seed ====")
-    for r in [r for r in rows if r["threshold"] == cfg.THRESHOLDS[0]]:
-        log.info("%s %-22s sim=%.4f nearest=%-4s expected=%-4s should_hit=%-5s | %s", r["id"], r["group"],
-                 r["similarity"], r["nearest_seed"], r["expected_seed"], r["should_hit"], short(r["query"], 70))
+    for r in base:
+        log.info("%s %-22s sim=%.4f nearest=%-4s expected=%-4s should_hit=%-5s codes_match=%-5s | %s", r["id"],
+                 r["group"], r["similarity"], r["nearest_seed"], r["expected_seed"], r["should_hit"],
+                 r["codes_match"], short(r["query"], 70))
     for grp in ("exact_duplicate", "paraphrase", "superficially_similar", "unrelated"):
-        sims = [r["similarity"] for r in rows if r["threshold"] == cfg.THRESHOLDS[0] and r["group"] == grp]
+        sims = [r["similarity"] for r in base if r["group"] == grp]
         log.info("  %-22s similarity min %.3f  mean %.3f  max %.3f", grp, min(sims), statistics.mean(sims), max(sims))
 
-    log.info("==== threshold table (cost: miss $%.2f, false hit $%.2f) ====", args.cost_miss, args.cost_false_hit)
-    log.info("threshold | hit rate      | false-hit rate (of hits) | mean latency (ms) | total cost")
-    for t in table:
-        log.info("  %.2f    | %2d/40 = %4.0f%% | %2d/%-2d = %5.1f%%          | %17.1f | $%.2f", t["threshold"],
-                 t["hits"], 100 * t["hit_rate"], t["false_hits"], t["hits"], 100 * t["false_hit_rate"],
-                 t["mean_latency_ms"], t["total_cost"])
-    best = min(table, key=lambda t: (t["total_cost"], -t["threshold"]))
-    log.info("lowest total cost: threshold %.2f ($%.2f)", best["threshold"], best["total_cost"])
+    best = {}
+    for mode, tab in tables.items():
+        log.info("==== threshold table - %s (cost: miss $%.2f, false hit $%.2f) ====", mode, args.cost_miss,
+                 args.cost_false_hit)
+        log.info("threshold | hit rate      | false-hit rate (of hits) | mean latency (ms) | total cost")
+        for t in tab:
+            log.info("  %.2f    | %2d/40 = %4.0f%% | %2d/%-2d = %5.1f%%          | %17.1f | $%.2f", t["threshold"],
+                     t["hits"], 100 * t["hit_rate"], t["false_hits"], t["hits"], 100 * t["false_hit_rate"],
+                     t["mean_latency_ms"], t["total_cost"])
+        best[mode] = min(tab, key=lambda t: (t["total_cost"], -t["threshold"]))
+        log.info("lowest total cost (%s): threshold %.2f ($%.2f)", mode, best[mode]["threshold"],
+                 best[mode]["total_cost"])
+    # how sensitive is the choice to the false-hit price?
+    for cf in (0.02, 0.10, 0.50, 2.00):
+        picks = {m: min(tab, key=lambda t, cf=cf: (t["misses"] * args.cost_miss + t["false_hits"] * cf,
+                                                   -t["threshold"]))["threshold"] for m, tab in tables.items()}
+        log.info("sensitivity: false hit $%.2f -> cheapest threshold_only %.2f | entity_guard %.2f", cf,
+                 picks["threshold_only"], picks["entity_guard"])
 
     # 3.3 one false hit in full (prefer 0.85, prefer a superficially-similar case)
     fh = None
     for thr in (0.85, *cfg.THRESHOLDS):
-        cands = [r for r in rows if r["threshold"] == thr and r["false_hit"]]
+        cands = [r for r in rows if r["mode"] == "threshold_only" and r["threshold"] == thr and r["false_hit"]]
         cands.sort(key=lambda r: (r["group"] != "superficially_similar", -r["similarity"]))
         if cands:
             fh = cands[0]
@@ -156,7 +182,8 @@ def main() -> None:  # noqa: PLR0915
         log.info("no false hit at any threshold")
 
     write_json("part3_thresholds.json", {"cost_miss": args.cost_miss, "cost_false_hit": args.cost_false_hit,
-                                         "table": table, "lowest_cost_threshold": best["threshold"]})
+                                         "tables": tables,
+                                         "lowest_cost": {m: b["threshold"] for m, b in best.items()}})
     with open(cfg.RAW_DIR / "part3_sweep.csv", "w", newline="", encoding="utf-8") as fh_csv:
         w = csv.DictWriter(fh_csv, fieldnames=list(rows[0]))
         w.writeheader()

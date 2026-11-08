@@ -92,7 +92,9 @@ def make_consumer(group_id: str, client_id: str, auto_commit: bool = False,
     """Group consumer. auto_commit=False (default) means the caller commits after successful processing."""
     conf = {"bootstrap.servers": cfg.KAFKA_BOOTSTRAP, "group.id": group_id, "client.id": client_id,
             "auto.offset.reset": offset_reset, "enable.auto.commit": auto_commit,
-            "session.timeout.ms": 10000, "heartbeat.interval.ms": 1000,
+            # HW9: overridable - on the 8 GB Mac a busy LLM call can stall heartbeats for ~20 s
+            "session.timeout.ms": int(os.getenv("KAFKA_SESSION_TIMEOUT_MS", "10000")),
+            "heartbeat.interval.ms": 1000,
             "max.poll.interval.ms": 300000}
     if auto_commit:
         conf["auto.commit.interval.ms"] = 200      # the "before fix" setting: commit soon after poll
