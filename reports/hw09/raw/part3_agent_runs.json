@@ -1,0 +1,296 @@
+{
+  "How do I report a bus breakdown to the transit incident desk?": {
+    "answer": "To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown for accurate dispatch. Contact the Municipal Transit Incidents help desk with this information.",
+    "agent_ms": 16103.6,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What incident category should I use when my train is running late?": {
+    "answer": "For a train running late, use the Delay incident category. Report the specific reason for the delay, whether it's due to scheduled maintenance, traffic, or other unforeseen circumstances.",
+    "agent_ms": 12132.4,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What category is incident INC-000042?": {
+    "answer": "INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at 14:36:24. No passengers were affected.",
+    "agent_ms": 18220.5,
+    "deps": [
+      "INC-000042"
+    ],
+    "data_version": "v:37f4649a5070"
+  },
+  "How many passengers were affected by incident INC-000105?": {
+    "answer": "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.",
+    "agent_ms": 16858.4,
+    "deps": [
+      "INC-000105"
+    ],
+    "data_version": "v:5c8d9f1235ab"
+  },
+  "Which transit line is incident INC-000230 on?": {
+    "answer": "INC-000230 is on Route 118 - Detem around Broadway (L-118). It's a Service Change with no passengers affected. Affected line: L-118 (Route 118 - Riverside). Reported at 2025-09-17 09:46:15.",
+    "agent_ms": 24283.6,
+    "deps": [
+      "INC-000230"
+    ],
+    "data_version": "v:feea25f0f0f4"
+  },
+  "What should I do if my bus is detoured because of a service change?": {
+    "answer": "If your bus route is detoured due to a service change, first identify the specific route affected. Then, determine if this is a temporary or permanent change. Contact the transit agency for further information and updates. Plan to use alternative routes or modes of transportation as needed.",
+    "agent_ms": 19926.7,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "Who do I contact if I was injured in a minor collision on a light rail train?": {
+    "answer": "If you were injured in a minor collision on a light rail train, contact the transit agency's customer service or safety department immediately. First, identify the specific light rail line and the date of the incident. Then, determine if it fits the criteria for a Breakdown or Accident, and contact the appropriate department for assistance.",
+    "agent_ms": 22214.8,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What information should I include when I report a delay?": {
+    "answer": "When reporting a delay, classify it as a Delay incident. Explain the reason for the delay, such as maintenance or unexpected traffic. When you report, include details like your route, exact location, time of delay, and what caused it. Transit will then investigate and take necessary actions. It usually takes 24-48 hours to resolve such issues.",
+    "agent_ms": 22929.7,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What is the difference between a Delay and a Service Change incident?": {
+    "answer": "A Delay incident occurs when a bus or train is running behind schedule, affecting the regular timing of services. A Service Change incident, on the other hand, involves alterations to the routes or schedules, which can affect the entire service network. Reporting a delay focuses on the current service disruption, while a service change requires more comprehensive information about the new routes or schedules.",
+    "agent_ms": 17989.6,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "How long does it usually take for a vehicle breakdown to be cleared?": {
+    "answer": "Response: The typical response time for clearing a vehicle breakdown can vary, but generally, transit agencies aim to clear the issue within 30-60 minutes. Severity levels and specific routes can influence this time. Please provide your route and severity level for more accurate information.",
+    "agent_ms": 14570.9,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What is the route title for incident INC-000318?": {
+    "answer": "route_title=\"L-141 (LRT Line 141 - University)\"",
+    "agent_ms": 18051.4,
+    "deps": [
+      "INC-000318"
+    ],
+    "data_version": "v:6968cd63b479"
+  },
+  "When was incident INC-000777 reported?": {
+    "answer": "Incident INC-000777 was reported as an Accident on Route 6 - Minor collision at Airport Blvd on 2025-10-25 21:45:58. The line affected was L-006 (Route 6 - Hillcrest).",
+    "agent_ms": 22560.0,
+    "deps": [
+      "INC-000777"
+    ],
+    "data_version": "v:e93c1f856abf"
+  },
+  "What's the process for reporting a broken-down bus to the incident desk?": {
+    "answer": "To report a broken-down bus, provide the route number, exact location, time and date of the breakdown. Include any details like visible damage, broken parts, or issues with the bus. Share your contact info for updates.",
+    "agent_ms": 14234.3,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "My train is running behind schedule - which incident category applies?": {
+    "answer": "My train is running behind schedule - this falls under the Delay incident category. It's due to schedule changes, not a mechanical issue or accident.",
+    "agent_ms": 11039.0,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "Which category was incident INC-000042 filed under?": {
+    "answer": "INC-000042 was filed under the Breakdown category. The incident occurred on L-152 (LRT Line 152 - Crosstown) near 1st St, with no passengers affected and reported at 2025-09-04 14:36:24.",
+    "agent_ms": 19764.1,
+    "deps": [
+      "INC-000042"
+    ],
+    "data_version": "v:37f4649a5070"
+  },
+  "How many riders were impacted by incident INC-000105?": {
+    "answer": "INC-000105 involved a 18-minute delay on LRT Line 136 at Park Ave. The incident category was Delay, and according to the records, 0 passengers were impacted.",
+    "agent_ms": 16272.4,
+    "deps": [
+      "INC-000105"
+    ],
+    "data_version": "v:5c8d9f1235ab"
+  },
+  "Incident INC-000230 happened on which transit line?": {
+    "answer": "Incident INC-000230 on the Service Change category affected 0 passengers. It was related to the transit line L-118 (Route 118 - Riverside).",
+    "agent_ms": 17241.8,
+    "deps": [
+      "INC-000230"
+    ],
+    "data_version": "v:feea25f0f0f4"
+  },
+  "My bus got rerouted because of a service change. What should I do?": {
+    "answer": "Identify your specific route and new route details. Report the service change to the transit agency with this information. Inquire about the expected duration of the rerouting.",
+    "agent_ms": 12277.7,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "I got hurt in a small collision on a light rail train - who should I contact?": {
+    "answer": "For a collision on a light rail train, contact the transit agency immediately. Identify the specific line and report the incident, including details of the collision, to ensure proper handling and assistance.",
+    "agent_ms": 11844.5,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What details do I need to give when reporting a delay?": {
+    "answer": "When reporting a delay, provide the specific route affected, the exact time it started and how long it has lasted, and any additional details like affected stops or times it impacts.",
+    "agent_ms": 12618.5,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "How is a Service Change incident different from a Delay incident?": {
+    "answer": "A Service Change involves altering routes or schedules, whereas a Delay focuses on disruptions to the regular schedule or route. A Service Change is about changes like route adjustments or service suspensions, while a Delay pertains to when services are running behind schedule. For example, a Service Change might involve rerouting buses to avoid construction, while a Delay would be if buses are running late due to traffic.",
+    "agent_ms": 16190.1,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "Typically, how long until a broken-down vehicle is cleared?": {
+    "answer": "For a breakdown, typically a bus is cleared within 30-60 minutes. However, specific routes may vary. Please report any issues to our help desk for immediate assistance.",
+    "agent_ms": 11892.7,
+    "deps": [],
+    "data_version": "static-v1"
+  },
+  "What category is incident INC-000043?": {
+    "answer": "INC-000043: Delay category, affecting Subway Line 170 (Subway Line 170 - Hillcrest), reported on 2025-09-04 18:31:37, no passengers affected.",
+    "agent_ms": 18448.6,
+    "deps": [
+      "INC-000043"
+    ],
+    "data_version": "v:49c9729bd95d"
+  },
+  "How many passengers were affected by incident INC-000106?": {
+    "answer": "Route 67 experienced an 8-minute delay at Airport Blvd, categorized as a Delay. However, no passengers were affected by this incident. The affected route, L-067, remains operational.",
+    "agent_ms": 14632.9,
+    "deps": [
+      "INC-000106"
+    ],
+    "data_version": "v:4cd8683bd6a2"
+  },
+  "Which transit line is incident INC-000231 on?": {
+    "answer": "The transit line involved in incident INC-000231 is L-121 (LRT Line 121 - Northside), which experienced a 12-minute delay at Airport Blvd. The incident was reported on 2025-09-17 at 10:36 AM.",
+    "agent_ms": 18657.8,
+    "deps": [
+      "INC-000231"
+    ],
+    "data_version": "v:51bba4bdb045"
+  },
+  "What is the route title for incident INC-000319?": {
+    "answer": "Subway Line 176 - Vehicle breakdown near Union Square\nThis is a Breakdown category incident with no passengers affected.",
+    "agent_ms": 25148.8,
+    "deps": [
+      "INC-000319"
+    ],
+    "data_version": "v:a57c4926bdd4"
+  },
+  "When was incident INC-000778 reported?": {
+    "answer": "INC-000778 reported a breakdown on Route 23 - Riverside (L-023) near Broadway on October 26, 2025 at 01:46:13. This incident falls under the Breakdown category, indicating a vehicle failure that disrupted service. No passengers were affected by this breakdown.",
+    "agent_ms": 18376.4,
+    "deps": [
+      "INC-000778"
+    ],
+    "data_version": "v:e2bd96a2a6ba",
+    "status": "approved"
+  },
+  "What incident category should I use when my train is cancelled?": {
+    "answer": "When your train is cancelled due to an unexpected issue, classify it as a Breakdown. If it's part of a scheduled service change, then it falls under a Service Change incident.",
+    "agent_ms": 15973.5,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "How do I report a light rail accident with injuries to the transit incident desk?": {
+    "answer": "To report a light rail accident with injuries, provide the date, time, and location. Include details about injured individuals and their condition. Contact transit agency's hotline or use their online reporting system. Request a follow-up for updates.",
+    "agent_ms": 16355.0,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "How long does it usually take for a minor collision to be cleared?": {
+    "answer": "Incident category: Accident. Please provide your specific route and time of the collision. We'll need this info to gather details and request clearance information. Typically, minor collisions are cleared within 24 hours, but this can vary based on the situation and local traffic conditions.",
+    "agent_ms": 14611.6,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "What information should I include when I report an accident?": {
+    "answer": "When reporting an accident, include the date, time, and location. Describe the type of accident and its severity. Provide details about any injuries or damage. Include contact info for all parties.",
+    "agent_ms": 14450.8,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "What is the difference between a Breakdown and an Accident incident?": {
+    "answer": "A Breakdown incident involves a vehicle or system failure, where the transit vehicle can still move but not at full capacity. An Accident involves a collision or incident where the vehicle is no longer operational. Reporting a Breakdown is about service disruption and capacity issues, while an Accident requires immediate safety checks and may need emergency services.",
+    "agent_ms": 19329.8,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "What is the weather in San Jose tomorrow?": {
+    "answer": "Could you please provide current weather conditions in San Jose? And if possible, could you share the weather forecast for tomorrow, including temperature, precipitation, and any other relevant conditions?",
+    "agent_ms": 21375.3,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "rejected"
+  },
+  "How do I reset my Wi-Fi router?": {
+    "answer": "To reset your Wi-Fi router, first identify your router's model. Next, refer to the user manual or visit the manufacturer's website for specific reset instructions. Follow these steps to reset your router, then restart your devices to apply the changes.",
+    "agent_ms": 19645.8,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "Can you recommend a good pizza place downtown?": {
+    "answer": "Sorry for the mix-up, but I couldn't find any transit-related incidents. Let's focus on your query about pizza places downtown. Here are a few recommendations: Pizza Hut at 123 Main St, open daily 11am-11pm; Tony's Pizzeria at 456 Elm St, open daily 11am-10pm. Enjoy your meal!",
+    "agent_ms": 17124.7,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "rejected"
+  },
+  "What is the capital of Australia?": {
+    "answer": "Incident: Service Change\nThe capital of Australia is Canberra. This information is not related to transit incidents, so no action is needed from this help desk. Please report any transit issues like delays, breakdowns, or accidents for assistance.",
+    "agent_ms": 15117.0,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "rejected"
+  },
+  "How do I bake sourdough bread at home?": {
+    "answer": "How do I bake sourdough bread at home? Request a recipe, details on equipment needed, proper sourdough starter maintenance, and storage advice.",
+    "agent_ms": 12275.7,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "Who won the 2022 FIFA World Cup?": {
+    "answer": "The 2022 FIFA World Cup was won by Qatar.",
+    "agent_ms": 8925.0,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "How do I renew my driver's license online?": {
+    "answer": "How do I renew my driver's license online? Visit your state’s DMV website or official license renewal portal, select driver’s license renewal, upload required documents, pay the fee online, and verify your information to complete the process.",
+    "agent_ms": 14875.2,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "How much does a bike share ride cost per minute?": {
+    "answer": "We don't have specific information about bike share ride costs per minute. However, for municipal transit incidents, we can focus on delays, breakdowns, accidents, and service changes. Could you please specify which incident you're experiencing?",
+    "agent_ms": 13621.2,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "rejected"
+  },
+  "Translate 'thank you very much' into Spanish.": {
+    "answer": "No action is needed regarding translation. You can find resources for Spanish language assistance online.",
+    "agent_ms": 8675.2,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  },
+  "What are some tips for parallel parking a car?": {
+    "answer": "Understanding your location's parking guidelines, practicing in a safe area first, observing other vehicles for proper positioning, and communicating with passengers if needed are key tips for successful parallel parking.",
+    "agent_ms": 11964.2,
+    "deps": [],
+    "data_version": "static-v1",
+    "status": "approved"
+  }
+}

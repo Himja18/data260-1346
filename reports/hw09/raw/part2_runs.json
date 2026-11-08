@@ -1,0 +1,237 @@
+{
+  "summary": {
+    "queries": 12,
+    "hits": 7,
+    "misses": 5,
+    "hit_rate": 0.583,
+    "threshold": 0.85,
+    "avg_latency_cached_ms": 478.4,
+    "avg_latency_non_cached_ms": 16986.5,
+    "observed_speedup_x": 35.5
+  },
+  "rows": [
+    {
+      "n": 1,
+      "type": "new",
+      "query": "How do I report a bus breakdown to the transit incident desk?",
+      "answer": "To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown for accurate dispatch. Contact the Municipal Transit Incidents help desk with this information.",
+      "is_cached": false,
+      "similarity": null,
+      "latency_ms": 16469.3,
+      "threshold": 0.85,
+      "matched_query": null,
+      "reason": "miss:no-match",
+      "data_version": "static-v1",
+      "timings_ms": {
+        "embed": 1178.68,
+        "search": 6.17,
+        "db_facts": 0.02,
+        "agent": 15241.6,
+        "store": 40.41
+      }
+    },
+    {
+      "n": 2,
+      "type": "new",
+      "query": "What category is incident INC-000042?",
+      "answer": "INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at 14:36:24. No passengers were affected.",
+      "is_cached": false,
+      "similarity": 0.6421,
+      "latency_ms": 19825.0,
+      "threshold": 0.85,
+      "matched_query": "How do I report a bus breakdown to the transit incident desk?",
+      "reason": "miss:below-threshold",
+      "data_version": "v:37f4649a5070",
+      "timings_ms": {
+        "embed": 719.64,
+        "search": 25.05,
+        "db_facts": 855.65,
+        "agent": 18214.6,
+        "store": 5.98
+      }
+    },
+    {
+      "n": 3,
+      "type": "exact duplicate of #1",
+      "query": "How do I report a bus breakdown to the transit incident desk?",
+      "answer": "To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown for accurate dispatch. Contact the Municipal Transit Incidents help desk with this information.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 606.8,
+      "threshold": 0.85,
+      "matched_query": "How do I report a bus breakdown to the transit incident desk?",
+      "reason": "hit",
+      "data_version": "static-v1",
+      "timings_ms": {
+        "embed": 599.49,
+        "search": 7.25
+      }
+    },
+    {
+      "n": 4,
+      "type": "paraphrase of #1",
+      "query": "What's the process for reporting a broken-down bus?",
+      "answer": "To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown for accurate dispatch. Contact the Municipal Transit Incidents help desk with this information.",
+      "is_cached": true,
+      "similarity": 0.8871,
+      "latency_ms": 30.8,
+      "threshold": 0.85,
+      "matched_query": "How do I report a bus breakdown to the transit incident desk?",
+      "reason": "hit",
+      "data_version": "static-v1",
+      "timings_ms": {
+        "embed": 28.29,
+        "search": 2.52
+      }
+    },
+    {
+      "n": 5,
+      "type": "paraphrase of #2",
+      "query": "Which category was incident INC-000042 filed under?",
+      "answer": "INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at 14:36:24. No passengers were affected.",
+      "is_cached": true,
+      "similarity": 0.9748,
+      "latency_ms": 282.7,
+      "threshold": 0.85,
+      "matched_query": "What category is incident INC-000042?",
+      "reason": "hit",
+      "data_version": "v:37f4649a5070",
+      "timings_ms": {
+        "embed": 47.86,
+        "search": 1.75,
+        "version_check": 233.02
+      }
+    },
+    {
+      "n": 6,
+      "type": "new",
+      "query": "How many passengers were affected by incident INC-000105?",
+      "answer": "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.",
+      "is_cached": false,
+      "similarity": 0.7671,
+      "latency_ms": 18663.1,
+      "threshold": 0.85,
+      "matched_query": "What category is incident INC-000042?",
+      "reason": "miss:below-threshold",
+      "data_version": "v:5c8d9f1235ab",
+      "timings_ms": {
+        "embed": 41.85,
+        "search": 4.76,
+        "db_facts": 4.91,
+        "agent": 18573.8,
+        "store": 26.87
+      }
+    },
+    {
+      "n": 7,
+      "type": "exact duplicate of #2",
+      "query": "What category is incident INC-000042?",
+      "answer": "INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at 14:36:24. No passengers were affected.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 926.2,
+      "threshold": 0.85,
+      "matched_query": "What category is incident INC-000042?",
+      "reason": "hit",
+      "data_version": "v:37f4649a5070",
+      "timings_ms": {
+        "embed": 722.64,
+        "search": 6.51,
+        "version_check": 196.94
+      }
+    },
+    {
+      "n": 8,
+      "type": "new",
+      "query": "What should I do if my bus is detoured because of a service change?",
+      "answer": "If your bus route is detoured due to a service change, first identify the specific route affected. Then, determine if this is a temporary or permanent change. Contact the transit agency for further information and updates. Plan to use alternative routes or modes of transportation as needed.",
+      "is_cached": false,
+      "similarity": 0.7883,
+      "latency_ms": 16539.3,
+      "threshold": 0.85,
+      "matched_query": "How do I report a bus breakdown to the transit incident desk?",
+      "reason": "miss:below-threshold",
+      "data_version": "static-v1",
+      "timings_ms": {
+        "embed": 106.29,
+        "search": 1.36,
+        "db_facts": 0.0,
+        "agent": 16417.0,
+        "store": 10.8
+      }
+    },
+    {
+      "n": 9,
+      "type": "paraphrase of #6",
+      "query": "How many riders were impacted by incident INC-000105?",
+      "answer": "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.",
+      "is_cached": true,
+      "similarity": 0.9429,
+      "latency_ms": 696.9,
+      "threshold": 0.85,
+      "matched_query": "How many passengers were affected by incident INC-000105?",
+      "reason": "hit",
+      "data_version": "v:5c8d9f1235ab",
+      "timings_ms": {
+        "embed": 581.43,
+        "search": 5.76,
+        "version_check": 109.58
+      }
+    },
+    {
+      "n": 10,
+      "type": "paraphrase of #8",
+      "query": "My bus got rerouted due to a service change, what should I do?",
+      "answer": "If your bus route is detoured due to a service change, first identify the specific route affected. Then, determine if this is a temporary or permanent change. Contact the transit agency for further information and updates. Plan to use alternative routes or modes of transportation as needed.",
+      "is_cached": true,
+      "similarity": 0.9223,
+      "latency_ms": 23.9,
+      "threshold": 0.85,
+      "matched_query": "What should I do if my bus is detoured because of a service change?",
+      "reason": "hit",
+      "data_version": "static-v1",
+      "timings_ms": {
+        "embed": 22.92,
+        "search": 1.02
+      }
+    },
+    {
+      "n": 11,
+      "type": "new (unrelated)",
+      "query": "What is the weather in San Jose tomorrow?",
+      "answer": "Could you please provide current weather conditions in San Jose? And if possible, could you share the weather forecast for tomorrow, including temperature, precipitation, and any other relevant conditions?",
+      "is_cached": false,
+      "similarity": 0.449,
+      "latency_ms": 13435.9,
+      "threshold": 0.85,
+      "matched_query": "How do I report a bus breakdown to the transit incident desk?",
+      "reason": "miss:below-threshold",
+      "data_version": "static-v1",
+      "timings_ms": {
+        "embed": 48.75,
+        "search": 0.97,
+        "db_facts": 0.0,
+        "agent": 13369.3,
+        "store": 12.45
+      }
+    },
+    {
+      "n": 12,
+      "type": "exact duplicate of #6",
+      "query": "How many passengers were affected by incident INC-000105?",
+      "answer": "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 781.2,
+      "threshold": 0.85,
+      "matched_query": "How many passengers were affected by incident INC-000105?",
+      "reason": "hit",
+      "data_version": "v:5c8d9f1235ab",
+      "timings_ms": {
+        "embed": 611.44,
+        "search": 3.71,
+        "version_check": 165.99
+      }
+    }
+  ]
+}

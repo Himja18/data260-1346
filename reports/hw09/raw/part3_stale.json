@@ -1,0 +1,77 @@
+{
+  "question": "How many passengers were affected by incident INC-000105?",
+  "steps": {
+    "1_cached_answer": {
+      "query": "How many passengers were affected by incident INC-000105?",
+      "answer": "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 942.3,
+      "threshold": 0.85,
+      "matched_query": "How many passengers were affected by incident INC-000105?",
+      "reason": "hit",
+      "data_version": "v:5c8d9f1235ab",
+      "timings_ms": {
+        "embed": 933.57,
+        "search": 3.89,
+        "version_check": 4.72
+      }
+    },
+    "2_update": {
+      "code": "INC-000105",
+      "old": 0,
+      "new": 40
+    },
+    "3_stale_hit": {
+      "query": "How many passengers were affected by incident INC-000105?",
+      "answer": "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 25.2,
+      "threshold": 0.85,
+      "matched_query": "How many passengers were affected by incident INC-000105?",
+      "reason": "hit",
+      "data_version": "v:5c8d9f1235ab",
+      "timings_ms": {
+        "embed": 23.08,
+        "search": 2.13
+      }
+    },
+    "4_invalidated_and_recomputed": {
+      "query": "How many passengers were affected by incident INC-000105?",
+      "answer": "40 passengers were affected by the Delay incident (INC-000105) on L-136 (LRT Line 136 - Airport Express), reported at 2025-09-08 18:32:43.",
+      "is_cached": false,
+      "similarity": 1.0,
+      "latency_ms": 25595.3,
+      "threshold": 0.85,
+      "matched_query": "How many passengers were affected by incident INC-000105?",
+      "reason": "miss:stale-version",
+      "data_version": "v:992a1818a96f",
+      "timings_ms": {
+        "embed": 28.37,
+        "search": 1.19,
+        "version_check": 2.9,
+        "db_facts": 1.29,
+        "agent": 25496.5,
+        "status": "approved",
+        "store": 55.14
+      }
+    },
+    "5_hit_on_fresh_entry": {
+      "query": "How many passengers were affected by incident INC-000105?",
+      "answer": "40 passengers were affected by the Delay incident (INC-000105) on L-136 (LRT Line 136 - Airport Express), reported at 2025-09-08 18:32:43.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 1284.7,
+      "threshold": 0.85,
+      "matched_query": "How many passengers were affected by incident INC-000105?",
+      "reason": "hit",
+      "data_version": "v:992a1818a96f",
+      "timings_ms": {
+        "embed": 1040.82,
+        "search": 33.56,
+        "version_check": 207.82
+      }
+    }
+  }
+}

@@ -33,7 +33,7 @@ FIELD_LABEL = {"current_status": "current status", "current_delay_min": "current
                "passengers_affected": "passengers affected (latest count)", "category": "category",
                "line": "line", "location": "location", "cause": "cause", "alternative": "alternative for riders"}
 DECLINE = re.compile(
-    r"no record|not (found|listed|available)|(isn't|is not|not) in (the|my|our) (data|records?|dispatch|incident)|"
+    r"\bno\b[\w\s]{0,20}?\brecords?\b|\bno\b[\w\s]{0,30}?\bmatch(es)?\b|not (found|listed|available)|(isn't|is not|not) in (the|my|our) (data|records?|dispatch|incident)|"
     r"(don't|do not) have|no (information|data|details)|(cannot|can't|couldn't|could not|unable to) (find|provide|"
     r"answer|help)|outside (of )?(the|my)|only (help|answer)|not related to|no incident", re.IGNORECASE)
 NEGATED = r"(not|n't|never|un)\s*(yet\s*)?(been\s*)?$"

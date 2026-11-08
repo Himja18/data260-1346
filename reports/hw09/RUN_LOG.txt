@@ -1,0 +1,609 @@
+2026-11-07 22:09:07.811 | Himja Patel | s1346 | part1        | HW9 Part 1 - view counter | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 22:11:10.622 | Himja Patel | s1346 | part1        | HW9 Part 1 - view counter | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 22:11:10.935 | Himja Patel | s1346 | part1        | incident before: {'id': 42, 'incident_code': 'INC-000042', 'route_title': 'LRT Line 152 - Vehicle breakdown near 1st St', 'category': 'Breakdown', 'passengers_affected': 0, 'view_count': 0, 'updated_at': datetime.datetime(2026, 10, 3, 23, 27, 28)}
+2026-11-07 22:11:10.961 | Himja Patel | s1346 | part1        | reset: DEL s1346:views:incident:42 and incidents.view_count = 0
+2026-11-07 22:11:10.992 | Himja Patel | s1346 | part1        | ✓ Synced views to database (incidents.id=42 view_count=10, key=s1346:views:incident:42)
+2026-11-07 22:11:10.999 | Himja Patel | s1346 | part1        | ✓ Synced views to database (incidents.id=42 view_count=20, key=s1346:views:incident:42)
+2026-11-07 22:11:11.004 | Himja Patel | s1346 | part1        | Redis  GET s1346:views:incident:42 -> 25
+2026-11-07 22:11:11.004 | Himja Patel | s1346 | part1        | MySQL  s1346_rel.incidents id=42 view_count=20 (last sync at a multiple of 10; 5 views not yet persisted)
+2026-11-07 22:11:11.004 | Himja Patel | s1346 | part1        | updated_at unchanged by the view syncs: True
+2026-11-07 22:11:11.060 | Himja Patel | s1346 | part1        | timing per view (25 views): Redis path mean 1.631 ms (MySQL written 2 times) | MySQL UPDATE every view mean 2.171 ms (MySQL written 25 times)
+2026-11-07 22:11:11.061 | Himja Patel | s1346 | part1        | saved reports/hw09/raw/part1_counter.json
+2026-11-07 22:20:30.514 | Himja Patel | s1346 | part2        | HW9 Part 2 - semantic response cache | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 22:20:50.751 | Himja Patel | s1346 | part2        | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-07 22:20:51.189 | Himja Patel | s1346 | part2        | cleared 0 old entries under s1346:semcache:*
+2026-11-07 22:20:51.189 | Himja Patel | s1346 | part2        | ---- Q01 [new] How do I report a bus breakdown to the transit incident desk?
+2026-11-07 22:20:52.374 | Himja Patel | s1346 | part2        | MISS   best sim=none < 0.85  -> HW8 agent pipeline
+2026-11-07 22:20:52.418 | Himja Patel | s1346 | part2        |    agent: SENT -> s1346_inbox corr=51d39c6d (waiting for s1346_final)
+2026-11-07 22:21:07.659 | Himja Patel | s1346 | part2        | STORED latency=16469.3 ms (agent 15242 ms)  data_version=static-v1
+2026-11-07 22:21:07.665 | Himja Patel | s1346 | part2        |      is_cached=False similarity=None latency_ms=16469.3 answer="To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown ..."
+2026-11-07 22:21:07.669 | Himja Patel | s1346 | part2        | ---- Q02 [new] What category is incident INC-000042?
+2026-11-07 22:21:08.415 | Himja Patel | s1346 | part2        | MISS   best sim=0.6421 < 0.85  -> HW8 agent pipeline
+2026-11-07 22:21:09.313 | Himja Patel | s1346 | part2        |    agent: SENT -> s1346_inbox corr=69c89558 (waiting for s1346_final)
+2026-11-07 22:21:27.495 | Himja Patel | s1346 | part2        | STORED latency=19825.0 ms (agent 18215 ms)  data_version=v:37f4649a5070
+2026-11-07 22:21:27.497 | Himja Patel | s1346 | part2        |      is_cached=False similarity=0.6421 latency_ms=19825.0 answer="INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at..."
+2026-11-07 22:21:27.498 | Himja Patel | s1346 | part2        | ---- Q03 [exact duplicate of #1] How do I report a bus breakdown to the transit incident desk?
+2026-11-07 22:21:28.105 | Himja Patel | s1346 | part2        | HIT    sim=1.0000 >= 0.85  latency=606.8 ms  cached query="How do I report a bus breakdown to the transit incident desk?"
+2026-11-07 22:21:28.106 | Himja Patel | s1346 | part2        |      is_cached=True similarity=1.0 latency_ms=606.8 answer="To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown ..."
+2026-11-07 22:21:28.106 | Himja Patel | s1346 | part2        | ---- Q04 [paraphrase of #1] What's the process for reporting a broken-down bus?
+2026-11-07 22:21:28.137 | Himja Patel | s1346 | part2        | HIT    sim=0.8871 >= 0.85  latency=30.8 ms  cached query="How do I report a bus breakdown to the transit incident desk?"
+2026-11-07 22:21:28.137 | Himja Patel | s1346 | part2        |      is_cached=True similarity=0.8871 latency_ms=30.8 answer="To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact time of the breakdown ..."
+2026-11-07 22:21:28.137 | Himja Patel | s1346 | part2        | ---- Q05 [paraphrase of #2] Which category was incident INC-000042 filed under?
+2026-11-07 22:21:28.420 | Himja Patel | s1346 | part2        | HIT    sim=0.9748 >= 0.85  latency=282.7 ms  cached query="What category is incident INC-000042?"
+2026-11-07 22:21:28.421 | Himja Patel | s1346 | part2        |      is_cached=True similarity=0.9748 latency_ms=282.7 answer="INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at..."
+2026-11-07 22:21:28.421 | Himja Patel | s1346 | part2        | ---- Q06 [new] How many passengers were affected by incident INC-000105?
+2026-11-07 22:21:28.468 | Himja Patel | s1346 | part2        | MISS   best sim=0.7671 < 0.85  -> HW8 agent pipeline
+2026-11-07 22:21:28.519 | Himja Patel | s1346 | part2        |    agent: SENT -> s1346_inbox corr=a7b7b31f (waiting for s1346_final)
+2026-11-07 22:21:47.085 | Himja Patel | s1346 | part2        | STORED latency=18663.1 ms (agent 18574 ms)  data_version=v:5c8d9f1235ab
+2026-11-07 22:21:47.087 | Himja Patel | s1346 | part2        |      is_cached=False similarity=0.7671 latency_ms=18663.1 answer="Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders."
+2026-11-07 22:21:47.087 | Himja Patel | s1346 | part2        | ---- Q07 [exact duplicate of #2] What category is incident INC-000042?
+2026-11-07 22:21:48.014 | Himja Patel | s1346 | part2        | HIT    sim=1.0000 >= 0.85  latency=926.2 ms  cached query="What category is incident INC-000042?"
+2026-11-07 22:21:48.015 | Himja Patel | s1346 | part2        |      is_cached=True similarity=1.0 latency_ms=926.2 answer="INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident reported on 2025-09-04 at..."
+2026-11-07 22:21:48.015 | Himja Patel | s1346 | part2        | ---- Q08 [new] What should I do if my bus is detoured because of a service change?
+2026-11-07 22:21:48.123 | Himja Patel | s1346 | part2        | MISS   best sim=0.7883 < 0.85  -> HW8 agent pipeline
+2026-11-07 22:21:48.136 | Himja Patel | s1346 | part2        |    agent: SENT -> s1346_inbox corr=0ad85076 (waiting for s1346_final)
+2026-11-07 22:22:04.555 | Himja Patel | s1346 | part2        | STORED latency=16539.3 ms (agent 16417 ms)  data_version=static-v1
+2026-11-07 22:22:04.558 | Himja Patel | s1346 | part2        |      is_cached=False similarity=0.7883 latency_ms=16539.3 answer="If your bus route is detoured due to a service change, first identify the specific route affected. Then, determine if this is a temporary..."
+2026-11-07 22:22:04.559 | Himja Patel | s1346 | part2        | ---- Q09 [paraphrase of #6] How many riders were impacted by incident INC-000105?
+2026-11-07 22:22:05.256 | Himja Patel | s1346 | part2        | HIT    sim=0.9429 >= 0.85  latency=696.9 ms  cached query="How many passengers were affected by incident INC-000105?"
+2026-11-07 22:22:05.257 | Himja Patel | s1346 | part2        |      is_cached=True similarity=0.9429 latency_ms=696.9 answer="Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders."
+2026-11-07 22:22:05.257 | Himja Patel | s1346 | part2        | ---- Q10 [paraphrase of #8] My bus got rerouted due to a service change, what should I do?
+2026-11-07 22:22:05.281 | Himja Patel | s1346 | part2        | HIT    sim=0.9223 >= 0.85  latency=23.9 ms  cached query="What should I do if my bus is detoured because of a service change?"
+2026-11-07 22:22:05.281 | Himja Patel | s1346 | part2        |      is_cached=True similarity=0.9223 latency_ms=23.9 answer="If your bus route is detoured due to a service change, first identify the specific route affected. Then, determine if this is a temporary..."
+2026-11-07 22:22:05.282 | Himja Patel | s1346 | part2        | ---- Q11 [new (unrelated)] What is the weather in San Jose tomorrow?
+2026-11-07 22:22:05.332 | Himja Patel | s1346 | part2        | MISS   best sim=0.4490 < 0.85  -> HW8 agent pipeline
+2026-11-07 22:22:05.347 | Himja Patel | s1346 | part2        |    agent: SENT -> s1346_inbox corr=6ecbe939 (waiting for s1346_final)
+2026-11-07 22:22:18.719 | Himja Patel | s1346 | part2        | STORED latency=13435.9 ms (agent 13369 ms)  data_version=static-v1
+2026-11-07 22:22:18.725 | Himja Patel | s1346 | part2        |      is_cached=False similarity=0.449 latency_ms=13435.9 answer="Could you please provide current weather conditions in San Jose? And if possible, could you share the weather forecast for tomorrow, incl..."
+2026-11-07 22:22:18.727 | Himja Patel | s1346 | part2        | ---- Q12 [exact duplicate of #6] How many passengers were affected by incident INC-000105?
+2026-11-07 22:22:19.508 | Himja Patel | s1346 | part2        | HIT    sim=1.0000 >= 0.85  latency=781.2 ms  cached query="How many passengers were affected by incident INC-000105?"
+2026-11-07 22:22:19.875 | Himja Patel | s1346 | part2        |      is_cached=True similarity=1.0 latency_ms=781.2 answer="Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders."
+2026-11-07 22:22:19.887 | Himja Patel | s1346 | part2        | ==== Part 2 results (threshold 0.85) ====
+2026-11-07 22:22:19.938 | Himja Patel | s1346 | part2        |   #  type                   cached  sim     latency_ms  query
+2026-11-07 22:22:19.939 | Himja Patel | s1346 | part2        |   1  new                    False   -          16469.3  How do I report a bus breakdown to the transit incident d...
+2026-11-07 22:22:19.939 | Himja Patel | s1346 | part2        |   2  new                    False   0.642      19825.0  What category is incident INC-000042?
+2026-11-07 22:22:19.939 | Himja Patel | s1346 | part2        |   3  exact duplicate of #1  True    1.000        606.8  How do I report a bus breakdown to the transit incident d...
+2026-11-07 22:22:19.939 | Himja Patel | s1346 | part2        |   4  paraphrase of #1       True    0.887         30.8  What's the process for reporting a broken-down bus?
+2026-11-07 22:22:19.939 | Himja Patel | s1346 | part2        |   5  paraphrase of #2       True    0.975        282.7  Which category was incident INC-000042 filed under?
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |   6  new                    False   0.767      18663.1  How many passengers were affected by incident INC-000105?
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |   7  exact duplicate of #2  True    1.000        926.2  What category is incident INC-000042?
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |   8  new                    False   0.788      16539.3  What should I do if my bus is detoured because of a servi...
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |   9  paraphrase of #6       True    0.943        696.9  How many riders were impacted by incident INC-000105?
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |  10  paraphrase of #8       True    0.922         23.9  My bus got rerouted due to a service change, what should ...
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |  11  new (unrelated)        False   0.449      13435.9  What is the weather in San Jose tomorrow?
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        |  12  exact duplicate of #6  True    1.000        781.2  How many passengers were affected by incident INC-000105?
+2026-11-07 22:22:19.940 | Himja Patel | s1346 | part2        | hit rate 7/12 = 58% | avg latency cached 478.4 ms vs non-cached 16986.5 ms | speed-up 35.5x
+2026-11-07 22:22:19.954 | Himja Patel | s1346 | part2        | index: {'index': 's1346:idx:semcache', 'num_docs': '5', 'attributes': [['identifier', 'query', 'attribute', 'query', 'type', 'TEXT', 'WEIGHT', '1.0'], ['identifier', 'deps', 'attribute', 'deps', 'type', 'TAG', 'SEPARATOR', ','], ['identifier', 'data_version', 'attribute', 'data_version', 'type', 'TAG', 'SEPARATOR', ','], ['identifier', 'embedding', 'attribute', 'embedding', 'type', 'VECTOR', 'algorithm', 'HNSW', 'data_type', 'FLOAT32', 'dim', '384', 'distance_metric', 'COSINE', 'M', '16', 'ef_construction', '200']]}
+2026-11-07 22:22:19.962 | Himja Patel | s1346 | part2        | saved reports/hw09/raw/part2_runs.json
+2026-11-07 22:27:29.522 | Himja Patel | s1346 | inspect      | HW9 Redis contents | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 22:27:29.675 | Himja Patel | s1346 | inspect      | redis_version=7.4.1 modules=[b'search', b'ReJSON', b'redisgears_2', b'RedisCompat', b'bf', b'timeseries']
+2026-11-07 22:27:29.677 | Himja Patel | s1346 | inspect      | 6 keys, 6 start with 's1346', 0 do not []
+2026-11-07 22:27:29.679 | Himja Patel | s1346 | inspect      |   s1346:views:incident:42                  string 25
+2026-11-07 22:27:29.679 | Himja Patel | s1346 | inspect      |   s1346:semcache:* : 5 hashes (one per cached query)
+2026-11-07 22:27:29.694 | Himja Patel | s1346 | inspect      | index s1346:idx:semcache: num_docs=5
+2026-11-07 22:27:29.694 | Himja Patel | s1346 | inspect      |    field identifier query attribute query type TEXT WEIGHT 1.0
+2026-11-07 22:27:29.694 | Himja Patel | s1346 | inspect      |    field identifier deps attribute deps type TAG SEPARATOR ,
+2026-11-07 22:27:29.694 | Himja Patel | s1346 | inspect      |    field identifier data_version attribute data_version type TAG SEPARATOR ,
+2026-11-07 22:27:29.694 | Himja Patel | s1346 | inspect      |    field identifier embedding attribute embedding type VECTOR algorithm HNSW data_type FLOAT32 dim 384 distance_metric COSINE M 16 ef_construction 200
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      | example entry s1346:semcache:59790ad7ffafbac8:
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    agent_ms      18573.8
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    query         How many passengers were affected by incident INC-000105?
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    answer        Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    deps          INC-000105
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    embedding     <1536 bytes = 384 float32>
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    created_at    2026-11-07T22:21:47-08:00
+2026-11-07 22:27:29.696 | Himja Patel | s1346 | inspect      |    data_version  v:5c8d9f1235ab
+2026-11-07 22:30:25.909 | Himja Patel | s1346 | part3-sweep  | HW9 Part 3 - threshold sweep | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 22:30:37.177 | Himja Patel | s1346 | part3-sweep  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-07 22:30:37.476 | Himja Patel | s1346 | part3-sweep  | agent runs: 0 saved, 42 to run through the HW8 pipeline
+2026-11-07 22:30:37.476 | Himja Patel | s1346 | part3-sweep  | agent run 1/42: How do I report a bus breakdown to the transit incident desk?
+2026-11-07 22:30:37.495 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=b18b50e1 (waiting for s1346_final)
+2026-11-07 22:30:53.582 | Himja Patel | s1346 | part3-sweep  |    16104 ms | To report a bus breakdown, clearly state the route number and location where the issue occurred. Include the exact ti...
+2026-11-07 22:30:53.589 | Himja Patel | s1346 | part3-sweep  | agent run 2/42: What incident category should I use when my train is running late?
+2026-11-07 22:30:53.594 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=c4baa4b2 (waiting for s1346_final)
+2026-11-07 22:31:05.729 | Himja Patel | s1346 | part3-sweep  |    12132 ms | For a train running late, use the Delay incident category. Report the specific reason for the delay, whether it's due...
+2026-11-07 22:31:05.731 | Himja Patel | s1346 | part3-sweep  | agent run 3/42: What category is incident INC-000042?
+2026-11-07 22:31:05.950 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=cc0d8853 (waiting for s1346_final)
+2026-11-07 22:31:24.163 | Himja Patel | s1346 | part3-sweep  |    18220 ms | INC-000042 falls under the Breakdown category, affecting L-152 (LRT Line 152 - Crosstown) near 1st St. Incident repor...
+2026-11-07 22:31:24.166 | Himja Patel | s1346 | part3-sweep  | agent run 4/42: How many passengers were affected by incident INC-000105?
+2026-11-07 22:31:24.246 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=60406692 (waiting for s1346_final)
+2026-11-07 22:31:41.101 | Himja Patel | s1346 | part3-sweep  |    16858 ms | Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders.
+2026-11-07 22:31:41.106 | Himja Patel | s1346 | part3-sweep  | agent run 5/42: Which transit line is incident INC-000230 on?
+2026-11-07 22:31:41.182 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=63b99a95 (waiting for s1346_final)
+2026-11-07 22:32:05.463 | Himja Patel | s1346 | part3-sweep  |    24284 ms | INC-000230 is on Route 118 - Detem around Broadway (L-118). It's a Service Change with no passengers affected. Affect...
+2026-11-07 22:32:05.465 | Himja Patel | s1346 | part3-sweep  | agent run 6/42: What should I do if my bus is detoured because of a service change?
+2026-11-07 22:32:05.469 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=6b159237 (waiting for s1346_final)
+2026-11-07 22:32:25.405 | Himja Patel | s1346 | part3-sweep  |    19927 ms | If your bus route is detoured due to a service change, first identify the specific route affected. Then, determine if...
+2026-11-07 22:32:25.439 | Himja Patel | s1346 | part3-sweep  | agent run 7/42: Who do I contact if I was injured in a minor collision on a light rail train?
+2026-11-07 22:32:25.457 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=37c550cf (waiting for s1346_final)
+2026-11-07 22:32:47.663 | Himja Patel | s1346 | part3-sweep  |    22215 ms | If you were injured in a minor collision on a light rail train, contact the transit agency's customer service or safe...
+2026-11-07 22:32:47.668 | Himja Patel | s1346 | part3-sweep  | agent run 8/42: What information should I include when I report a delay?
+2026-11-07 22:32:47.678 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=81450308 (waiting for s1346_final)
+2026-11-07 22:33:10.611 | Himja Patel | s1346 | part3-sweep  |    22930 ms | When reporting a delay, classify it as a Delay incident. Explain the reason for the delay, such as maintenance or une...
+2026-11-07 22:33:10.622 | Himja Patel | s1346 | part3-sweep  | agent run 9/42: What is the difference between a Delay and a Service Change incident?
+2026-11-07 22:33:10.637 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=31fe2e90 (waiting for s1346_final)
+2026-11-07 22:33:28.617 | Himja Patel | s1346 | part3-sweep  |    17990 ms | A Delay incident occurs when a bus or train is running behind schedule, affecting the regular timing of services. A S...
+2026-11-07 22:33:28.625 | Himja Patel | s1346 | part3-sweep  | agent run 10/42: How long does it usually take for a vehicle breakdown to be cleared?
+2026-11-07 22:33:28.637 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=829f6f13 (waiting for s1346_final)
+2026-11-07 22:33:43.204 | Himja Patel | s1346 | part3-sweep  |    14571 ms | Response: The typical response time for clearing a vehicle breakdown can vary, but generally, transit agencies aim to...
+2026-11-07 22:33:43.208 | Himja Patel | s1346 | part3-sweep  | agent run 11/42: What is the route title for incident INC-000318?
+2026-11-07 22:33:43.372 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=64546123 (waiting for s1346_final)
+2026-11-07 22:34:01.422 | Himja Patel | s1346 | part3-sweep  |    18051 ms | route_title="L-141 (LRT Line 141 - University)"
+2026-11-07 22:34:01.426 | Himja Patel | s1346 | part3-sweep  | agent run 12/42: When was incident INC-000777 reported?
+2026-11-07 22:34:01.514 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=15667068 (waiting for s1346_final)
+2026-11-07 22:34:24.068 | Himja Patel | s1346 | part3-sweep  |    22560 ms | Incident INC-000777 was reported as an Accident on Route 6 - Minor collision at Airport Blvd on 2025-10-25 21:45:58. ...
+2026-11-07 22:34:24.070 | Himja Patel | s1346 | part3-sweep  | agent run 13/42: What's the process for reporting a broken-down bus to the incident desk?
+2026-11-07 22:34:24.074 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=a2c44467 (waiting for s1346_final)
+2026-11-07 22:34:38.311 | Himja Patel | s1346 | part3-sweep  |    14234 ms | To report a broken-down bus, provide the route number, exact location, time and date of the breakdown. Include any de...
+2026-11-07 22:34:38.325 | Himja Patel | s1346 | part3-sweep  | agent run 14/42: My train is running behind schedule - which incident category applies?
+2026-11-07 22:34:38.334 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=7de1f19e (waiting for s1346_final)
+2026-11-07 22:34:49.367 | Himja Patel | s1346 | part3-sweep  |    11039 ms | My train is running behind schedule - this falls under the Delay incident category. It's due to schedule changes, not...
+2026-11-07 22:34:49.369 | Himja Patel | s1346 | part3-sweep  | agent run 15/42: Which category was incident INC-000042 filed under?
+2026-11-07 22:34:49.459 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=ad7e0ad8 (waiting for s1346_final)
+2026-11-07 22:35:09.213 | Himja Patel | s1346 | part3-sweep  |    19764 ms | INC-000042 was filed under the Breakdown category. The incident occurred on L-152 (LRT Line 152 - Crosstown) near 1st...
+2026-11-07 22:35:09.216 | Himja Patel | s1346 | part3-sweep  | agent run 16/42: How many riders were impacted by incident INC-000105?
+2026-11-07 22:35:09.305 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=0a374de7 (waiting for s1346_final)
+2026-11-07 22:35:25.576 | Himja Patel | s1346 | part3-sweep  |    16272 ms | INC-000105 involved a 18-minute delay on LRT Line 136 at Park Ave. The incident category was Delay, and according to ...
+2026-11-07 22:35:25.585 | Himja Patel | s1346 | part3-sweep  | agent run 17/42: Incident INC-000230 happened on which transit line?
+2026-11-07 22:35:25.672 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=8221d13a (waiting for s1346_final)
+2026-11-07 22:35:42.915 | Himja Patel | s1346 | part3-sweep  |    17242 ms | Incident INC-000230 on the Service Change category affected 0 passengers. It was related to the transit line L-118 (R...
+2026-11-07 22:35:42.917 | Himja Patel | s1346 | part3-sweep  | agent run 18/42: My bus got rerouted because of a service change. What should I do?
+2026-11-07 22:35:42.920 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=0b2a8036 (waiting for s1346_final)
+2026-11-07 22:35:55.198 | Himja Patel | s1346 | part3-sweep  |    12278 ms | Identify your specific route and new route details. Report the service change to the transit agency with this informa...
+2026-11-07 22:35:55.200 | Himja Patel | s1346 | part3-sweep  | agent run 19/42: I got hurt in a small collision on a light rail train - who should I contact?
+2026-11-07 22:35:55.210 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=60241bf8 (waiting for s1346_final)
+2026-11-07 22:36:07.050 | Himja Patel | s1346 | part3-sweep  |    11844 ms | For a collision on a light rail train, contact the transit agency immediately. Identify the specific line and report ...
+2026-11-07 22:36:07.056 | Himja Patel | s1346 | part3-sweep  | agent run 20/42: What details do I need to give when reporting a delay?
+2026-11-07 22:36:07.060 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=f222d515 (waiting for s1346_final)
+2026-11-07 22:36:19.679 | Himja Patel | s1346 | part3-sweep  |    12618 ms | When reporting a delay, provide the specific route affected, the exact time it started and how long it has lasted, an...
+2026-11-07 22:36:19.696 | Himja Patel | s1346 | part3-sweep  | agent run 21/42: How is a Service Change incident different from a Delay incident?
+2026-11-07 22:36:19.704 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=3dc51243 (waiting for s1346_final)
+2026-11-07 22:36:35.889 | Himja Patel | s1346 | part3-sweep  |    16190 ms | A Service Change involves altering routes or schedules, whereas a Delay focuses on disruptions to the regular schedul...
+2026-11-07 22:36:35.896 | Himja Patel | s1346 | part3-sweep  | agent run 22/42: Typically, how long until a broken-down vehicle is cleared?
+2026-11-07 22:36:35.900 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=5ad4115b (waiting for s1346_final)
+2026-11-07 22:36:47.792 | Himja Patel | s1346 | part3-sweep  |    11893 ms | For a breakdown, typically a bus is cleared within 30-60 minutes. However, specific routes may vary. Please report an...
+2026-11-07 22:36:47.794 | Himja Patel | s1346 | part3-sweep  | agent run 23/42: What category is incident INC-000043?
+2026-11-07 22:36:47.867 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=1fdb4e26 (waiting for s1346_final)
+2026-11-07 22:37:06.314 | Himja Patel | s1346 | part3-sweep  |    18449 ms | INC-000043: Delay category, affecting Subway Line 170 (Subway Line 170 - Hillcrest), reported on 2025-09-04 18:31:37,...
+2026-11-07 22:37:06.317 | Himja Patel | s1346 | part3-sweep  | agent run 24/42: How many passengers were affected by incident INC-000106?
+2026-11-07 22:37:06.335 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=89bbc3a1 (waiting for s1346_final)
+2026-11-07 22:37:20.967 | Himja Patel | s1346 | part3-sweep  |    14633 ms | Route 67 experienced an 8-minute delay at Airport Blvd, categorized as a Delay. However, no passengers were affected ...
+2026-11-07 22:37:20.968 | Himja Patel | s1346 | part3-sweep  | agent run 25/42: Which transit line is incident INC-000231 on?
+2026-11-07 22:37:20.987 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=21ded83d (waiting for s1346_final)
+2026-11-07 22:37:39.653 | Himja Patel | s1346 | part3-sweep  |    18658 ms | The transit line involved in incident INC-000231 is L-121 (LRT Line 121 - Northside), which experienced a 12-minute d...
+2026-11-07 22:37:39.663 | Himja Patel | s1346 | part3-sweep  | agent run 26/42: What is the route title for incident INC-000319?
+2026-11-07 22:37:39.803 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=88618eae (waiting for s1346_final)
+2026-11-07 22:38:24.126 | Himja Patel | s1346 | part3-sweep  |    25149 ms | Subway Line 176 - Vehicle breakdown near Union Square This is a Breakdown category incident with no passengers affected.
+2026-11-07 22:38:24.141 | Himja Patel | s1346 | part3-sweep  | agent run 27/42: When was incident INC-000778 reported?
+2026-11-07 22:38:25.104 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=a728f4e0 (waiting for s1346_final)
+2026-11-07 23:03:10.431 | Himja Patel | s1346 | part3-sweep  | HW9 Part 3 - threshold sweep | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:03:24.154 | Himja Patel | s1346 | part3-sweep  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-07 23:03:25.058 | Himja Patel | s1346 | part3-sweep  | agent runs: 26 saved, 16 to run through the HW8 pipeline
+2026-11-07 23:03:25.059 | Himja Patel | s1346 | part3-sweep  | agent run 1/16: When was incident INC-000778 reported?
+2026-11-07 23:03:25.668 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=feb427e3 (waiting for s1346_final)
+2026-11-07 23:03:43.982 | Himja Patel | s1346 | part3-sweep  |    18376 ms | INC-000778 reported a breakdown on Route 23 - Riverside (L-023) near Broadway on October 26, 2025 at 01:46:13. This i...
+2026-11-07 23:03:44.018 | Himja Patel | s1346 | part3-sweep  | agent run 2/16: What incident category should I use when my train is cancelled?
+2026-11-07 23:03:44.050 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=948a12be (waiting for s1346_final)
+2026-11-07 23:04:00.022 | Himja Patel | s1346 | part3-sweep  |    15974 ms | When your train is cancelled due to an unexpected issue, classify it as a Breakdown. If it's part of a scheduled serv...
+2026-11-07 23:04:00.038 | Himja Patel | s1346 | part3-sweep  | agent run 3/16: How do I report a light rail accident with injuries to the transit incident desk?
+2026-11-07 23:04:00.050 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=dea997de (waiting for s1346_final)
+2026-11-07 23:04:16.420 | Himja Patel | s1346 | part3-sweep  |    16355 ms | To report a light rail accident with injuries, provide the date, time, and location. Include details about injured in...
+2026-11-07 23:04:16.434 | Himja Patel | s1346 | part3-sweep  | agent run 4/16: How long does it usually take for a minor collision to be cleared?
+2026-11-07 23:04:16.445 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=202225a7 (waiting for s1346_final)
+2026-11-07 23:04:31.049 | Himja Patel | s1346 | part3-sweep  |    14612 ms | Incident category: Accident. Please provide your specific route and time of the collision. We'll need this info to ga...
+2026-11-07 23:04:31.052 | Himja Patel | s1346 | part3-sweep  | agent run 5/16: What information should I include when I report an accident?
+2026-11-07 23:04:31.059 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=c3f19a8f (waiting for s1346_final)
+2026-11-07 23:04:45.508 | Himja Patel | s1346 | part3-sweep  |    14451 ms | When reporting an accident, include the date, time, and location. Describe the type of accident and its severity. Pro...
+2026-11-07 23:04:45.515 | Himja Patel | s1346 | part3-sweep  | agent run 6/16: What is the difference between a Breakdown and an Accident incident?
+2026-11-07 23:04:45.526 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=f7dce862 (waiting for s1346_final)
+2026-11-07 23:05:04.863 | Himja Patel | s1346 | part3-sweep  |    19330 ms | A Breakdown incident involves a vehicle or system failure, where the transit vehicle can still move but not at full c...
+2026-11-07 23:05:04.936 | Himja Patel | s1346 | part3-sweep  | agent run 7/16: What is the weather in San Jose tomorrow?
+2026-11-07 23:05:04.980 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=b87c9042 (waiting for s1346_final)
+2026-11-07 23:05:26.323 | Himja Patel | s1346 | part3-sweep  |    21375 ms | Could you please provide current weather conditions in San Jose? And if possible, could you share the weather forecas...
+2026-11-07 23:05:26.326 | Himja Patel | s1346 | part3-sweep  | agent run 8/16: How do I reset my Wi-Fi router?
+2026-11-07 23:05:26.334 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=5605fa16 (waiting for s1346_final)
+2026-11-07 23:05:45.977 | Himja Patel | s1346 | part3-sweep  |    19646 ms | To reset your Wi-Fi router, first identify your router's model. Next, refer to the user manual or visit the manufactu...
+2026-11-07 23:05:45.990 | Himja Patel | s1346 | part3-sweep  | agent run 9/16: Can you recommend a good pizza place downtown?
+2026-11-07 23:05:46.024 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=ad5b4753 (waiting for s1346_final)
+2026-11-07 23:06:03.120 | Himja Patel | s1346 | part3-sweep  |    17125 ms | Sorry for the mix-up, but I couldn't find any transit-related incidents. Let's focus on your query about pizza places...
+2026-11-07 23:06:03.134 | Himja Patel | s1346 | part3-sweep  | agent run 10/16: What is the capital of Australia?
+2026-11-07 23:06:03.161 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=8eec21d6 (waiting for s1346_final)
+2026-11-07 23:06:18.256 | Himja Patel | s1346 | part3-sweep  |    15117 ms | Incident: Service Change The capital of Australia is Canberra. This information is not related to transit incidents, ...
+2026-11-07 23:06:18.262 | Himja Patel | s1346 | part3-sweep  | agent run 11/16: How do I bake sourdough bread at home?
+2026-11-07 23:06:18.303 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=2b090697 (waiting for s1346_final)
+2026-11-07 23:06:30.545 | Himja Patel | s1346 | part3-sweep  |    12276 ms | How do I bake sourdough bread at home? Request a recipe, details on equipment needed, proper sourdough starter mainte...
+2026-11-07 23:06:30.547 | Himja Patel | s1346 | part3-sweep  | agent run 12/16: Who won the 2022 FIFA World Cup?
+2026-11-07 23:06:30.551 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=f6ad1cf6 (waiting for s1346_final)
+2026-11-07 23:06:39.476 | Himja Patel | s1346 | part3-sweep  |    8925 ms | The 2022 FIFA World Cup was won by Qatar.
+2026-11-07 23:06:39.480 | Himja Patel | s1346 | part3-sweep  | agent run 13/16: How do I renew my driver's license online?
+2026-11-07 23:06:39.487 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=0e360d75 (waiting for s1346_final)
+2026-11-07 23:06:54.361 | Himja Patel | s1346 | part3-sweep  |    14875 ms | How do I renew my driver's license online? Visit your state’s DMV website or official license renewal portal, select ...
+2026-11-07 23:06:54.368 | Himja Patel | s1346 | part3-sweep  | agent run 14/16: How much does a bike share ride cost per minute?
+2026-11-07 23:06:54.387 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=e5dca267 (waiting for s1346_final)
+2026-11-07 23:07:07.993 | Himja Patel | s1346 | part3-sweep  |    13621 ms | We don't have specific information about bike share ride costs per minute. However, for municipal transit incidents, ...
+2026-11-07 23:07:08.001 | Himja Patel | s1346 | part3-sweep  | agent run 15/16: Translate 'thank you very much' into Spanish.
+2026-11-07 23:07:08.009 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=ccfdc269 (waiting for s1346_final)
+2026-11-07 23:07:16.681 | Himja Patel | s1346 | part3-sweep  |    8675 ms | No action is needed regarding translation. You can find resources for Spanish language assistance online.
+2026-11-07 23:07:16.686 | Himja Patel | s1346 | part3-sweep  | agent run 16/16: What are some tips for parallel parking a car?
+2026-11-07 23:07:16.693 | Himja Patel | s1346 | part3-sweep  |    agent: SENT -> s1346_inbox corr=61d364f8 (waiting for s1346_final)
+2026-11-07 23:07:28.657 | Himja Patel | s1346 | part3-sweep  |    11964 ms | Understanding your location's parking guidelines, practicing in a safe area first, observing other vehicles for prope...
+2026-11-07 23:07:28.852 | Himja Patel | s1346 | part3-sweep  | cleared 5 entries; storing the 12 seeds
+2026-11-07 23:07:35.312 | Himja Patel | s1346 | part3-sweep  | ==== similarity of each case to its nearest cached seed ====
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E01 exact_duplicate        sim=1.0000 nearest=S01  expected=S01  should_hit=True  | How do I report a bus breakdown to the transit incident desk?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E02 exact_duplicate        sim=1.0000 nearest=S02  expected=S02  should_hit=True  | What incident category should I use when my train is running late?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E03 exact_duplicate        sim=1.0000 nearest=S03  expected=S03  should_hit=True  | What category is incident INC-000042?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E04 exact_duplicate        sim=1.0000 nearest=S04  expected=S04  should_hit=True  | How many passengers were affected by incident INC-000105?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E05 exact_duplicate        sim=1.0000 nearest=S05  expected=S05  should_hit=True  | Which transit line is incident INC-000230 on?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E06 exact_duplicate        sim=1.0000 nearest=S06  expected=S06  should_hit=True  | What should I do if my bus is detoured because of a service change?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E07 exact_duplicate        sim=1.0000 nearest=S07  expected=S07  should_hit=True  | Who do I contact if I was injured in a minor collision on a light r...
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E08 exact_duplicate        sim=1.0000 nearest=S08  expected=S08  should_hit=True  | What information should I include when I report a delay?
+2026-11-07 23:07:35.313 | Himja Patel | s1346 | part3-sweep  | E09 exact_duplicate        sim=1.0000 nearest=S11  expected=S11  should_hit=True  | What is the route title for incident INC-000318?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | E10 exact_duplicate        sim=1.0000 nearest=S12  expected=S12  should_hit=True  | When was incident INC-000777 reported?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P01 paraphrase             sim=0.9495 nearest=S01  expected=S01  should_hit=True  | What's the process for reporting a broken-down bus to the incident ...
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P02 paraphrase             sim=0.9177 nearest=S02  expected=S02  should_hit=True  | My train is running behind schedule - which incident category applies?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P03 paraphrase             sim=0.9748 nearest=S03  expected=S03  should_hit=True  | Which category was incident INC-000042 filed under?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P04 paraphrase             sim=0.9429 nearest=S04  expected=S04  should_hit=True  | How many riders were impacted by incident INC-000105?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P05 paraphrase             sim=0.9632 nearest=S05  expected=S05  should_hit=True  | Incident INC-000230 happened on which transit line?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P06 paraphrase             sim=0.9215 nearest=S06  expected=S06  should_hit=True  | My bus got rerouted because of a service change. What should I do?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P07 paraphrase             sim=0.9741 nearest=S07  expected=S07  should_hit=True  | I got hurt in a small collision on a light rail train - who should ...
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P08 paraphrase             sim=0.9709 nearest=S08  expected=S08  should_hit=True  | What details do I need to give when reporting a delay?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P09 paraphrase             sim=0.9809 nearest=S09  expected=S09  should_hit=True  | How is a Service Change incident different from a Delay incident?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | P10 paraphrase             sim=0.9293 nearest=S10  expected=S10  should_hit=True  | Typically, how long until a broken-down vehicle is cleared?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D01 superficially_similar  sim=0.9320 nearest=S03  expected=S03  should_hit=False | What category is incident INC-000043?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D02 superficially_similar  sim=0.9568 nearest=S04  expected=S04  should_hit=False | How many passengers were affected by incident INC-000106?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D03 superficially_similar  sim=0.9822 nearest=S05  expected=S05  should_hit=False | Which transit line is incident INC-000231 on?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D04 superficially_similar  sim=0.9724 nearest=S11  expected=S11  should_hit=False | What is the route title for incident INC-000319?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D05 superficially_similar  sim=0.9797 nearest=S12  expected=S12  should_hit=False | When was incident INC-000778 reported?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D06 superficially_similar  sim=0.9189 nearest=S02  expected=S02  should_hit=False | What incident category should I use when my train is cancelled?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D07 superficially_similar  sim=0.8809 nearest=S01  expected=S01  should_hit=False | How do I report a light rail accident with injuries to the transit ...
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D08 superficially_similar  sim=0.8330 nearest=S10  expected=S10  should_hit=False | How long does it usually take for a minor collision to be cleared?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D09 superficially_similar  sim=0.7833 nearest=S08  expected=S08  should_hit=False | What information should I include when I report an accident?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | D10 superficially_similar  sim=0.7365 nearest=S09  expected=S09  should_hit=False | What is the difference between a Breakdown and an Accident incident?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | U01 unrelated              sim=0.4901 nearest=S08  expected=None should_hit=False | What is the weather in San Jose tomorrow?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | U02 unrelated              sim=0.5874 nearest=S06  expected=None should_hit=False | How do I reset my Wi-Fi router?
+2026-11-07 23:07:35.314 | Himja Patel | s1346 | part3-sweep  | U03 unrelated              sim=0.4697 nearest=S05  expected=None should_hit=False | Can you recommend a good pizza place downtown?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U04 unrelated              sim=0.4508 nearest=S11  expected=None should_hit=False | What is the capital of Australia?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U05 unrelated              sim=0.4252 nearest=S08  expected=None should_hit=False | How do I bake sourdough bread at home?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U06 unrelated              sim=0.3947 nearest=S04  expected=None should_hit=False | Who won the 2022 FIFA World Cup?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U07 unrelated              sim=0.5127 nearest=S11  expected=None should_hit=False | How do I renew my driver's license online?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U08 unrelated              sim=0.4954 nearest=S04  expected=None should_hit=False | How much does a bike share ride cost per minute?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U09 unrelated              sim=0.4532 nearest=S11  expected=None should_hit=False | Translate 'thank you very much' into Spanish.
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | U10 unrelated              sim=0.5667 nearest=S06  expected=None should_hit=False | What are some tips for parallel parking a car?
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   exact_duplicate        similarity min 1.000  mean 1.000  max 1.000
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   paraphrase             similarity min 0.918  mean 0.952  max 0.981
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   superficially_similar  similarity min 0.737  mean 0.898  max 0.982
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   unrelated              similarity min 0.395  mean 0.485  max 0.587
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | ==== threshold table (cost: miss $0.02, false hit $0.50) ====
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  | threshold | hit rate      | false-hit rate (of hits) | mean latency (ms) | total cost
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   0.75    | 29/40 =   72% |  9/29 =  31.0%          |            4093.9 | $4.72
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   0.80    | 28/40 =   70% |  8/28 =  28.6%          |            4451.9 | $4.24
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   0.85    | 27/40 =   68% |  7/27 =  25.9%          |            4816.7 | $3.76
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   0.90    | 26/40 =   65% |  6/26 =  23.1%          |            5225.7 | $3.28
+2026-11-07 23:07:35.315 | Himja Patel | s1346 | part3-sweep  |   0.95    | 19/40 =   48% |  4/19 =  21.1%          |            7729.9 | $2.42
+2026-11-07 23:07:35.316 | Himja Patel | s1346 | part3-sweep  | lowest total cost: threshold 0.95 ($2.42)
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  | ==== 3.3 false hit (threshold 0.85, case D03) ====
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   threshold              0.85
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   case_id                D03
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   group                  superficially_similar
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   cached_query           Which transit line is incident INC-000230 on?
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   incoming_query         Which transit line is incident INC-000231 on?
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   similarity             0.9822
+2026-11-07 23:07:35.327 | Himja Patel | s1346 | part3-sweep  |   cached_answer_returned INC-000230 is on Route 118 - Detem around Broadway (L-118). It's a Service Change with no passengers affected. Affected line: L-118 (Route 118 - Riverside). Reported at 2025-09-17 09:46:15.
+2026-11-07 23:07:35.333 | Himja Patel | s1346 | part3-sweep  |   correct_answer         The transit line involved in incident INC-000231 is L-121 (LRT Line 121 - Northside), which experienced a 12-minute delay at Airport Blvd. The incident was reported on 2025-09-17 at 10:36 AM.
+2026-11-07 23:07:35.334 | Himja Patel | s1346 | part3-sweep  |   s1346_rel_rows         {"INC-000230": {"id": "230", "incident_code": "INC-000230", "route_title": "Route 118 - Detour around Broadway", "category": "Service Change", "passengers_affected": "0", "created_at": "2025-09-17 09:46:15", "line_code": "L-118", "line_name": "Route 118 - Riverside"}, "INC-000231": {"id": "231", "incident_code": "INC-000231", "route_title": "LRT Line 121 - 12 min delay at Airport Blvd", "catego...
+2026-11-07 23:07:35.338 | Himja Patel | s1346 | part3-sweep  | saved reports/hw09/raw/part3_thresholds.json, part3_sweep.csv, part3_false_hit.json, part3_agent_runs.json
+2026-11-07 23:16:39.099 | Himja Patel | s1346 | part3-sweep  | HW9 Part 3 - threshold sweep | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:16:49.953 | Himja Patel | s1346 | part3-sweep  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-07 23:16:50.213 | Himja Patel | s1346 | part3-sweep  | agent runs: 42 saved, 0 to run through the HW8 pipeline
+2026-11-07 23:16:50.222 | Himja Patel | s1346 | part3-sweep  | cleared 12 entries; storing the 12 seeds
+2026-11-07 23:16:54.624 | Himja Patel | s1346 | part3-sweep  | ==== similarity of each case to its nearest cached seed ====
+2026-11-07 23:16:54.624 | Himja Patel | s1346 | part3-sweep  | E01 exact_duplicate        sim=1.0000 nearest=S01  expected=S01  should_hit=True  codes_match=True  | How do I report a bus breakdown to the transit incident desk?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E02 exact_duplicate        sim=1.0000 nearest=S02  expected=S02  should_hit=True  codes_match=True  | What incident category should I use when my train is running late?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E03 exact_duplicate        sim=1.0000 nearest=S03  expected=S03  should_hit=True  codes_match=True  | What category is incident INC-000042?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E04 exact_duplicate        sim=1.0000 nearest=S04  expected=S04  should_hit=True  codes_match=True  | How many passengers were affected by incident INC-000105?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E05 exact_duplicate        sim=1.0000 nearest=S05  expected=S05  should_hit=True  codes_match=True  | Which transit line is incident INC-000230 on?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E06 exact_duplicate        sim=1.0000 nearest=S06  expected=S06  should_hit=True  codes_match=True  | What should I do if my bus is detoured because of a service change?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E07 exact_duplicate        sim=1.0000 nearest=S07  expected=S07  should_hit=True  codes_match=True  | Who do I contact if I was injured in a minor collision on a light r...
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E08 exact_duplicate        sim=1.0000 nearest=S08  expected=S08  should_hit=True  codes_match=True  | What information should I include when I report a delay?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E09 exact_duplicate        sim=1.0000 nearest=S11  expected=S11  should_hit=True  codes_match=True  | What is the route title for incident INC-000318?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | E10 exact_duplicate        sim=1.0000 nearest=S12  expected=S12  should_hit=True  codes_match=True  | When was incident INC-000777 reported?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P01 paraphrase             sim=0.9495 nearest=S01  expected=S01  should_hit=True  codes_match=True  | What's the process for reporting a broken-down bus to the incident ...
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P02 paraphrase             sim=0.9177 nearest=S02  expected=S02  should_hit=True  codes_match=True  | My train is running behind schedule - which incident category applies?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P03 paraphrase             sim=0.9748 nearest=S03  expected=S03  should_hit=True  codes_match=True  | Which category was incident INC-000042 filed under?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P04 paraphrase             sim=0.9429 nearest=S04  expected=S04  should_hit=True  codes_match=True  | How many riders were impacted by incident INC-000105?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P05 paraphrase             sim=0.9632 nearest=S05  expected=S05  should_hit=True  codes_match=True  | Incident INC-000230 happened on which transit line?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P06 paraphrase             sim=0.9215 nearest=S06  expected=S06  should_hit=True  codes_match=True  | My bus got rerouted because of a service change. What should I do?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P07 paraphrase             sim=0.9741 nearest=S07  expected=S07  should_hit=True  codes_match=True  | I got hurt in a small collision on a light rail train - who should ...
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P08 paraphrase             sim=0.9709 nearest=S08  expected=S08  should_hit=True  codes_match=True  | What details do I need to give when reporting a delay?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P09 paraphrase             sim=0.9809 nearest=S09  expected=S09  should_hit=True  codes_match=True  | How is a Service Change incident different from a Delay incident?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | P10 paraphrase             sim=0.9293 nearest=S10  expected=S10  should_hit=True  codes_match=True  | Typically, how long until a broken-down vehicle is cleared?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | D01 superficially_similar  sim=0.9320 nearest=S03  expected=S03  should_hit=False codes_match=False | What category is incident INC-000043?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | D02 superficially_similar  sim=0.9568 nearest=S04  expected=S04  should_hit=False codes_match=False | How many passengers were affected by incident INC-000106?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | D03 superficially_similar  sim=0.9822 nearest=S05  expected=S05  should_hit=False codes_match=False | Which transit line is incident INC-000231 on?
+2026-11-07 23:16:54.625 | Himja Patel | s1346 | part3-sweep  | D04 superficially_similar  sim=0.9724 nearest=S11  expected=S11  should_hit=False codes_match=False | What is the route title for incident INC-000319?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | D05 superficially_similar  sim=0.9797 nearest=S12  expected=S12  should_hit=False codes_match=False | When was incident INC-000778 reported?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | D06 superficially_similar  sim=0.9189 nearest=S02  expected=S02  should_hit=False codes_match=True  | What incident category should I use when my train is cancelled?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | D07 superficially_similar  sim=0.8809 nearest=S01  expected=S01  should_hit=False codes_match=True  | How do I report a light rail accident with injuries to the transit ...
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | D08 superficially_similar  sim=0.8330 nearest=S10  expected=S10  should_hit=False codes_match=True  | How long does it usually take for a minor collision to be cleared?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | D09 superficially_similar  sim=0.7833 nearest=S08  expected=S08  should_hit=False codes_match=True  | What information should I include when I report an accident?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | D10 superficially_similar  sim=0.7365 nearest=S09  expected=S09  should_hit=False codes_match=True  | What is the difference between a Breakdown and an Accident incident?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U01 unrelated              sim=0.4901 nearest=S08  expected=None should_hit=False codes_match=True  | What is the weather in San Jose tomorrow?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U02 unrelated              sim=0.5874 nearest=S06  expected=None should_hit=False codes_match=True  | How do I reset my Wi-Fi router?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U03 unrelated              sim=0.4697 nearest=S05  expected=None should_hit=False codes_match=False | Can you recommend a good pizza place downtown?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U04 unrelated              sim=0.4508 nearest=S11  expected=None should_hit=False codes_match=False | What is the capital of Australia?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U05 unrelated              sim=0.4252 nearest=S08  expected=None should_hit=False codes_match=True  | How do I bake sourdough bread at home?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U06 unrelated              sim=0.3947 nearest=S04  expected=None should_hit=False codes_match=False | Who won the 2022 FIFA World Cup?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U07 unrelated              sim=0.5127 nearest=S11  expected=None should_hit=False codes_match=False | How do I renew my driver's license online?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U08 unrelated              sim=0.4954 nearest=S04  expected=None should_hit=False codes_match=False | How much does a bike share ride cost per minute?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U09 unrelated              sim=0.4532 nearest=S11  expected=None should_hit=False codes_match=False | Translate 'thank you very much' into Spanish.
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | U10 unrelated              sim=0.5667 nearest=S06  expected=None should_hit=False codes_match=True  | What are some tips for parallel parking a car?
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   exact_duplicate        similarity min 1.000  mean 1.000  max 1.000
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   paraphrase             similarity min 0.918  mean 0.952  max 0.981
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   superficially_similar  similarity min 0.737  mean 0.898  max 0.982
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   unrelated              similarity min 0.395  mean 0.485  max 0.587
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | ==== threshold table - threshold_only (cost: miss $0.02, false hit $0.50) ====
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | threshold | hit rate      | false-hit rate (of hits) | mean latency (ms) | total cost
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   0.75    | 29/40 =   72% |  9/29 =  31.0%          |            4095.1 | $4.72
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   0.80    | 28/40 =   70% |  8/28 =  28.6%          |            4451.0 | $4.24
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   0.85    | 27/40 =   68% |  7/27 =  25.9%          |            4816.2 | $3.76
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   0.90    | 26/40 =   65% |  6/26 =  23.1%          |            5225.8 | $3.28
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  |   0.95    | 19/40 =   48% |  4/19 =  21.1%          |            7728.3 | $2.42
+2026-11-07 23:16:54.626 | Himja Patel | s1346 | part3-sweep  | lowest total cost (threshold_only): threshold 0.95 ($2.42)
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | ==== threshold table - entity_guard (cost: miss $0.02, false hit $0.50) ====
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | threshold | hit rate      | false-hit rate (of hits) | mean latency (ms) | total cost
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  |   0.75    | 24/40 =   60% |  4/24 =  16.7%          |            6476.7 | $2.32
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  |   0.80    | 23/40 =   57% |  3/23 =  13.0%          |            6832.6 | $1.84
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  |   0.85    | 22/40 =   55% |  2/22 =   9.1%          |            7197.8 | $1.36
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  |   0.90    | 21/40 =   52% |  1/21 =   4.8%          |            7607.4 | $0.88
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  |   0.95    | 15/40 =   38% |  0/15 =   0.0%          |            9648.7 | $0.50
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | lowest total cost (entity_guard): threshold 0.95 ($0.50)
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | sensitivity: false hit $0.02 -> cheapest threshold_only 0.90 | entity_guard 0.85
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | sensitivity: false hit $0.10 -> cheapest threshold_only 0.95 | entity_guard 0.90
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | sensitivity: false hit $0.50 -> cheapest threshold_only 0.95 | entity_guard 0.95
+2026-11-07 23:16:54.627 | Himja Patel | s1346 | part3-sweep  | sensitivity: false hit $2.00 -> cheapest threshold_only 0.95 | entity_guard 0.95
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  | ==== 3.3 false hit (threshold 0.85, case D03) ====
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   threshold              0.85
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   case_id                D03
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   group                  superficially_similar
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   cached_query           Which transit line is incident INC-000230 on?
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   incoming_query         Which transit line is incident INC-000231 on?
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   similarity             0.9822
+2026-11-07 23:16:54.631 | Himja Patel | s1346 | part3-sweep  |   cached_answer_returned INC-000230 is on Route 118 - Detem around Broadway (L-118). It's a Service Change with no passengers affected. Affected line: L-118 (Route 118 - Riverside). Reported at 2025-09-17 09:46:15.
+2026-11-07 23:16:54.638 | Himja Patel | s1346 | part3-sweep  |   correct_answer         The transit line involved in incident INC-000231 is L-121 (LRT Line 121 - Northside), which experienced a 12-minute delay at Airport Blvd. The incident was reported on 2025-09-17 at 10:36 AM.
+2026-11-07 23:16:54.638 | Himja Patel | s1346 | part3-sweep  |   s1346_rel_rows         {"INC-000230": {"id": "230", "incident_code": "INC-000230", "route_title": "Route 118 - Detour around Broadway", "category": "Service Change", "passengers_affected": "0", "created_at": "2025-09-17 09:46:15", "line_code": "L-118", "line_name": "Route 118 - Riverside"}, "INC-000231": {"id": "231", "incident_code": "INC-000231", "route_title": "LRT Line 121 - 12 min delay at Airport Blvd", "catego...
+2026-11-07 23:16:54.642 | Himja Patel | s1346 | part3-sweep  | saved reports/hw09/raw/part3_thresholds.json, part3_sweep.csv, part3_false_hit.json, part3_agent_runs.json
+2026-11-07 23:19:08.598 | Himja Patel | s1346 | part3-stale  | HW9 Part 3.5 - stale answers and invalidation | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:19:21.526 | Himja Patel | s1346 | part3-stale  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-07 23:19:22.229 | Himja Patel | s1346 | part3-stale  | [1] s1346_rel row: INC-000105 | passengers_affected=0 | version=v:5c8d9f1235ab
+2026-11-07 23:19:23.172 | Himja Patel | s1346 | part3-stale  | HIT    sim=1.0000 >= 0.85  latency=942.3 ms  cached query="How many passengers were affected by incident INC-000105?"
+2026-11-07 23:19:23.173 | Himja Patel | s1346 | part3-stale  | [1] cached: is_cached=True data_version=v:5c8d9f1235ab answer="Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders."
+2026-11-07 23:19:23.197 | Himja Patel | s1346 | part3-stale  | [2] UPDATE incidents SET passengers_affected = 40 WHERE incident_code = 'INC-000105'  (was 0) -> version now v:992a1818a96f
+2026-11-07 23:19:23.222 | Himja Patel | s1346 | part3-stale  | HIT    sim=1.0000 >= 0.85  latency=25.2 ms  cached query="How many passengers were affected by incident INC-000105?"
+2026-11-07 23:19:23.222 | Himja Patel | s1346 | part3-stale  | [3] version check OFF: is_cached=True sim=1.0 latency=25.2 ms
+2026-11-07 23:19:23.223 | Himja Patel | s1346 | part3-stale  | [3] returned answer (built from passengers_affected=0): "Affected passengers: 0. Incident INC-000105 was a 18-minute delay on LRT Line 136 at Park Ave, affecting no riders."
+2026-11-07 23:19:23.223 | Himja Patel | s1346 | part3-stale  | [3] database now says passengers_affected=40  ->  STALE HIT: True
+2026-11-07 23:19:23.257 | Himja Patel | s1346 | part3-stale  | STALE  sim=1.0000  stored version v:5c8d9f1235ab != current v:992a1818a96f for INC-000105 -> entry deleted, re-running the agent
+2026-11-07 23:19:23.311 | Himja Patel | s1346 | part3-stale  |    agent: SENT -> s1346_inbox corr=03539751 (waiting for s1346_final)
+2026-11-07 23:19:48.820 | Himja Patel | s1346 | part3-stale  | STORED latency=25595.3 ms (agent 25496 ms, reviewer=approved)  data_version=v:992a1818a96f
+2026-11-07 23:19:48.822 | Himja Patel | s1346 | part3-stale  | [4] version check ON : is_cached=False reason=miss:stale-version latency=25595.3 ms new version=v:992a1818a96f
+2026-11-07 23:19:48.822 | Himja Patel | s1346 | part3-stale  | [4] new answer: "40 passengers were affected by the Delay incident (INC-000105) on L-136 (LRT Line 136 - Airport Express), reported at 2025-09-08 18:32:43."
+2026-11-07 23:19:48.838 | Himja Patel | s1346 | part3-stale  | [4] new answer mentions 40: True
+2026-11-07 23:19:50.128 | Himja Patel | s1346 | part3-stale  | HIT    sim=1.0000 >= 0.85  latency=1284.7 ms  cached query="How many passengers were affected by incident INC-000105?"
+2026-11-07 23:19:50.131 | Himja Patel | s1346 | part3-stale  | [5] ask again: is_cached=True reason=hit latency=1284.7 ms (version check 207.82 ms)
+2026-11-07 23:19:50.188 | Himja Patel | s1346 | part3-stale  | [6] restored INC-000105 passengers_affected=0 (the entry stored in [4] is now stale again and would be invalidated the same way on its next hit)
+2026-11-07 23:19:50.200 | Himja Patel | s1346 | part3-stale  | saved reports/hw09/raw/part3_stale.json
+2026-11-07 23:21:17.197 | Himja Patel | s1346 | part4        | HW9 Part 4 - Answering + Evaluator agents | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:21:17.320 | Himja Patel | s1346 | part4        | ==== 4.1 controlled revision sequence ====
+2026-11-07 23:21:17.320 | Himja Patel | s1346 | part4        | [CT01] QUESTION: What is the current status of incident INC-260101?
+2026-11-07 23:21:17.320 | Himja Patel | s1346 | part4        | [CT01] attempt 1 (CONTROLLED: intentionally incomplete): Incident INC-260101 is a Breakdown on Line 22 at Fillmore St & Geary Blvd.
+2026-11-07 23:21:17.321 | Himja Patel | s1346 | part4        | [CT01] EVALUATOR -> REVISE  INC-260101: the answer does not state the current status. | pattern=missing_value
+2026-11-07 23:21:17.321 | Himja Patel | s1346 | part4        | [CT01]    feedback: INC-260101: the answer does not state the current status. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Resolved. Answer with these values.
+2026-11-07 23:21:24.162 | Himja Patel | s1346 | part4        | [CT01] ANSWERING -> EVALUATOR  attempt 2 (6839 ms): Incident INC-260101 is a Breakdown on Line 22 at Fillmore St & Geary Blvd and has been Resolved.
+2026-11-07 23:21:24.165 | Himja Patel | s1346 | part4        | [CT01] EVALUATOR -> PASS  INC-260101: current status = Resolved - matches the reference dataset.
+2026-11-07 23:21:24.165 | Himja Patel | s1346 | part4        | [CT01] FINAL: PASS after 2 attempt(s), 6845 ms
+2026-11-07 23:21:24.165 | Himja Patel | s1346 | part4        | sequence: question -> initial answer -> REVISE + feedback -> revised answer -> PASS | attempts=2 | final response: Incident INC-260101 is a Breakdown on Line 22 at Fillmore St & Geary Blvd and has been Resolved.
+2026-11-07 23:22:48.448 | Himja Patel | s1346 | part4        | HW9 Part 4 - Answering + Evaluator agents | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:22:48.588 | Himja Patel | s1346 | part4        | ==== training_data.json: Evaluator Repair + lesson creation (min_repeats=2) ====
+2026-11-07 23:22:48.588 | Himja Patel | s1346 | part4        | [TR01] QUESTION: What is the current status of incident INC-260101?
+2026-11-07 23:22:53.642 | Himja Patel | s1346 | part4        | [TR01] ANSWERING -> EVALUATOR  attempt 1 (5052 ms): Breakdown on Line 22 - Fillmore at Fillmore St & Geary Blvd since 07:42, trolley pole came off the overhead wire. Alternative Route 38 buses operating on Geary Blvd. 30 passengers affected, estimated delay 15 minutes.
+2026-11-07 23:22:53.645 | Himja Patel | s1346 | part4        | [TR01] EVALUATOR -> REVISE  INC-260101: the answer does not state the current status. | pattern=missing_value
+2026-11-07 23:22:53.645 | Himja Patel | s1346 | part4        | [TR01]    feedback: INC-260101: the answer does not state the current status. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Resolved. Answer with these values.
+2026-11-07 23:23:01.128 | Himja Patel | s1346 | part4        | [TR01] ANSWERING -> EVALUATOR  attempt 2 (7481 ms): Breakdown on Line 22 - Fillmore at Fillmore St & Geary Blvd since 07:42, trolley pole came off the overhead wire. Incident has been Resolved, no alternative routes needed, 30 passengers affected, estimated delay 15 mi...
+2026-11-07 23:23:01.133 | Himja Patel | s1346 | part4        | [TR01] EVALUATOR -> PASS  INC-260101: current status = Resolved - matches the reference dataset.
+2026-11-07 23:23:01.135 | Himja Patel | s1346 | part4        | [TR01] FINAL: PASS after 2 attempt(s), 12546 ms
+2026-11-07 23:23:01.135 | Himja Patel | s1346 | part4        | [TR02] QUESTION: How long is the delay right now for incident INC-260102?
+2026-11-07 23:23:04.684 | Himja Patel | s1346 | part4        | [TR02] ANSWERING -> EVALUATOR  attempt 1 (3549 ms): The delay for incident INC-260102 is currently 10 minutes.
+2026-11-07 23:23:04.691 | Himja Patel | s1346 | part4        | [TR02] EVALUATOR -> REVISE  INC-260102: the answer gives the first-report value (current delay (minutes) 10) instead of the current value. | pattern=stale_value
+2026-11-07 23:23:04.691 | Himja Patel | s1346 | part4        | [TR02]    feedback: INC-260102: the answer gives the first-report value (current delay (minutes) 10) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current delay (minutes) = 35. Answer with these values.
+2026-11-07 23:23:07.717 | Himja Patel | s1346 | part4        | [TR02] ANSWERING -> EVALUATOR  attempt 2 (3024 ms): The current delay for incident INC-260102 is 35 minutes.
+2026-11-07 23:23:07.723 | Himja Patel | s1346 | part4        | [TR02] EVALUATOR -> PASS  INC-260102: current delay (minutes) = 35 - matches the reference dataset.
+2026-11-07 23:23:07.724 | Himja Patel | s1346 | part4        | [TR02] FINAL: PASS after 2 attempt(s), 6588 ms
+2026-11-07 23:23:07.725 | Himja Patel | s1346 | part4        | [TR03] QUESTION: Which line is incident INC-260103 on?
+2026-11-07 23:23:13.106 | Himja Patel | s1346 | part4        | [TR03] ANSWERING -> EVALUATOR  attempt 1 (5381 ms): Line L-101 (LRT Line 101 - Market Street) is affected by the Breakdown incident (INC-260103).
+2026-11-07 23:23:13.108 | Himja Patel | s1346 | part4        | [TR03] EVALUATOR -> PASS  INC-260103: line = L-101 (LRT Line 101 - Market Street) - matches the reference dataset.
+2026-11-07 23:23:13.108 | Himja Patel | s1346 | part4        | [TR03] FINAL: PASS after 1 attempt(s), 5384 ms
+2026-11-07 23:23:13.108 | Himja Patel | s1346 | part4        | [TR04] QUESTION: How many passengers have been affected so far by incident INC-260104?
+2026-11-07 23:23:16.533 | Himja Patel | s1346 | part4        | [TR04] ANSWERING -> EVALUATOR  attempt 1 (3424 ms): 400 passengers have been affected so far by incident INC-260104.
+2026-11-07 23:23:16.536 | Himja Patel | s1346 | part4        | [TR04] EVALUATOR -> REVISE  INC-260104: the answer gives the first-report value (passengers affected (latest count) 400) instead of the current value. | pattern=stale_value
+2026-11-07 23:23:16.536 | Himja Patel | s1346 | part4        | [TR04]    feedback: INC-260104: the answer gives the first-report value (passengers affected (latest count) 400) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: passengers affected (latest count) = 650. Answer with these values.
+2026-11-07 23:23:19.902 | Himja Patel | s1346 | part4        | [TR04] ANSWERING -> EVALUATOR  attempt 2 (3365 ms): 650 passengers have been affected so far by incident INC-260104.
+2026-11-07 23:23:19.903 | Himja Patel | s1346 | part4        | [TR04] EVALUATOR -> PASS  INC-260104: passengers affected (latest count) = 650 - matches the reference dataset.
+2026-11-07 23:23:19.906 | Himja Patel | s1346 | part4        | [TR04] NEW LESSON lesson_001 created (pattern stale_value repeated in ['TR02', 'TR04']): For questions about the current status, delay, passenger count or category of an incident, check the reference dataset (latest verified values) and state that value, not the first-report value.
+2026-11-07 23:23:19.909 | Himja Patel | s1346 | part4        | [TR04] FINAL: PASS after 2 attempt(s), 6800 ms
+2026-11-07 23:23:19.910 | Himja Patel | s1346 | part4        | [TR05] QUESTION: What caused incident INC-260105?
+2026-11-07 23:23:23.958 | Himja Patel | s1346 | part4        | [TR05] ANSWERING -> EVALUATOR  attempt 1 (4048 ms): The cause of incident INC-260105 was a double-parked delivery van, causing a delay with passengers affected.
+2026-11-07 23:23:23.961 | Himja Patel | s1346 | part4        | [TR05] EVALUATOR -> PASS  INC-260105: cause = double-parked delivery van - matches the reference dataset.
+2026-11-07 23:23:23.961 | Himja Patel | s1346 | part4        | [TR05] FINAL: PASS after 1 attempt(s), 4053 ms
+2026-11-07 23:23:23.962 | Himja Patel | s1346 | part4        | [TR06] QUESTION: What category is incident INC-260107 classified as now?
+2026-11-07 23:23:23.962 | Himja Patel | s1346 | part4        | [TR06] lessons loaded: lesson_001 (stale_value, used 0x before)
+2026-11-07 23:23:26.110 | Himja Patel | s1346 | part4        | [TR06] ANSWERING -> EVALUATOR  attempt 1 (2148 ms): category=Service Change
+2026-11-07 23:23:26.111 | Himja Patel | s1346 | part4        | [TR06] EVALUATOR -> PASS  INC-260107: category = Service Change - matches the reference dataset.
+2026-11-07 23:23:26.112 | Himja Patel | s1346 | part4        | [TR06] FINAL: PASS after 1 attempt(s), 2150 ms
+2026-11-07 23:23:26.112 | Himja Patel | s1346 | part4        | [TR07] QUESTION: What is the status of incident INC-269999?
+2026-11-07 23:23:26.112 | Himja Patel | s1346 | part4        | [TR07] lessons loaded: lesson_001 (stale_value, used 1x before)
+2026-11-07 23:23:28.317 | Himja Patel | s1346 | part4        | [TR07] ANSWERING -> EVALUATOR  attempt 1 (2204 ms): No record in the dispatch feed or reference dataset. Category unknown.
+2026-11-07 23:23:28.318 | Himja Patel | s1346 | part4        | [TR07] EVALUATOR -> PASS  Correctly says there is no record (INC-269999 is not in the reference dataset).
+2026-11-07 23:23:28.319 | Himja Patel | s1346 | part4        | [TR07] FINAL: PASS after 1 attempt(s), 2207 ms
+2026-11-07 23:23:28.319 | Himja Patel | s1346 | part4        | [TR08] QUESTION: How do I report a vehicle breakdown?
+2026-11-07 23:23:35.024 | Himja Patel | s1346 | part4        | [TR08] ANSWERING -> EVALUATOR  attempt 1 (6703 ms): Report a vehicle breakdown to the Transit Incident Desk by calling 311 or using the 'Report an incident' form in the s1346 transit app. Provide the line, vehicle number, location, and time.
+2026-11-07 23:23:35.026 | Himja Patel | s1346 | part4        | [TR08] EVALUATOR -> PASS  Follows POL-01 (How to report a vehicle breakdown): mentions 311.
+2026-11-07 23:23:35.026 | Himja Patel | s1346 | part4        | [TR08] FINAL: PASS after 1 attempt(s), 6706 ms
+2026-11-07 23:23:35.026 | Himja Patel | s1346 | part4        | [TR09] QUESTION: Where did incident INC-260108 happen?
+2026-11-07 23:23:37.853 | Himja Patel | s1346 | part4        | [TR09] ANSWERING -> EVALUATOR  attempt 1 (2827 ms): INC-260108 happened at Mission St & 24th St.
+2026-11-07 23:23:37.855 | Himja Patel | s1346 | part4        | [TR09] EVALUATOR -> PASS  INC-260108: location = Mission St & 24th St - matches the reference dataset.
+2026-11-07 23:23:37.855 | Himja Patel | s1346 | part4        | [TR09] FINAL: PASS after 1 attempt(s), 2829 ms
+2026-11-07 23:23:37.855 | Himja Patel | s1346 | part4        | [TR10] QUESTION: Is incident INC-260106 still waiting for a crew, or has one been dispatched?
+2026-11-07 23:23:37.855 | Himja Patel | s1346 | part4        | [TR10] lessons loaded: lesson_001 (stale_value, used 2x before)
+2026-11-07 23:23:43.822 | Himja Patel | s1346 | part4        | [TR10] ANSWERING -> EVALUATOR  attempt 1 (5964 ms): INC-260106 current status is Crew dispatched, with an estimated delay of 55 minutes and 240 passengers affected.
+2026-11-07 23:23:43.826 | Himja Patel | s1346 | part4        | [TR10] EVALUATOR -> PASS  INC-260106: current status = Crew dispatched - matches the reference dataset.
+2026-11-07 23:23:43.826 | Himja Patel | s1346 | part4        | [TR10] FINAL: PASS after 1 attempt(s), 5971 ms
+2026-11-07 23:23:43.826 | Himja Patel | s1346 | part4        | [TR11] QUESTION: What's a good restaurant near Union Square?
+2026-11-07 23:23:45.104 | Himja Patel | s1346 | part4        | [TR11] ANSWERING -> EVALUATOR  attempt 1 (1277 ms): No dispatch record or policy matches this question
+2026-11-07 23:23:45.104 | Himja Patel | s1346 | part4        | [TR11] EVALUATOR -> REVISE  Unsupported answer: the question matches no incident or policy in the reference dataset, but the answer gives details anyway. | pattern=unsupported_answer
+2026-11-07 23:23:45.105 | Himja Patel | s1346 | part4        | [TR11]    feedback: There is no matching record: the question matches no incident or policy in the reference dataset. Reply in one sentence that there is no record of this in the s1346 transit incident data, and give no other details.
+2026-11-07 23:23:46.789 | Himja Patel | s1346 | part4        | [TR11] ANSWERING -> EVALUATOR  attempt 2 (1684 ms): No dispatch record or policy matches this question.
+2026-11-07 23:23:46.790 | Himja Patel | s1346 | part4        | [TR11] EVALUATOR -> REVISE  Unsupported answer: the question matches no incident or policy in the reference dataset, but the answer gives details anyway. | pattern=unsupported_answer
+2026-11-07 23:23:46.791 | Himja Patel | s1346 | part4        | [TR11] FINAL: REVISE after 2 attempt(s), 2964 ms
+2026-11-07 23:23:46.791 | Himja Patel | s1346 | part4        | [TR12] QUESTION: What alternative can riders use during incident INC-260103?
+2026-11-07 23:23:49.729 | Himja Patel | s1346 | part4        | [TR12] ANSWERING -> EVALUATOR  attempt 1 (2937 ms): Riders can use shuttle buses between Civic Center and Embarcadero as an alternative during this incident.
+2026-11-07 23:23:49.729 | Himja Patel | s1346 | part4        | [TR12] EVALUATOR -> PASS  INC-260103: alternative for riders = shuttle buses between Civic Center and Embarcadero - matches the reference dataset.
+2026-11-07 23:23:49.729 | Himja Patel | s1346 | part4        | [TR12] FINAL: PASS after 1 attempt(s), 2939 ms
+2026-11-07 23:23:49.730 | Himja Patel | s1346 | part4        | ==== 4.2 lesson reuse: lesson_001 created after TR04 failed; loaded for the later question TR06 ====
+2026-11-07 23:23:49.730 | Himja Patel | s1346 | part4        |    later question: What category is incident INC-260107 classified as now?
+2026-11-07 23:23:49.730 | Himja Patel | s1346 | part4        |    lessons loaded: ['lesson_001'] -> first attempt PASS, final PASS in 1 attempt(s)
+2026-11-07 23:23:49.731 | Himja Patel | s1346 | part4        |    answer: category=Service Change
+2026-11-07 23:23:49.732 | Himja Patel | s1346 | part4        | training summary: {'correct': 11, 'incorrect': 1, 'avg_attempts': 1.33, 'avg_latency_ms': 5094.9} | lessons: [('lesson_001', 'stale_value', 3)]
+2026-11-07 23:24:55.240 | Himja Patel | s1346 | part4        | HW9 Part 4 - Answering + Evaluator agents | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:24:55.366 | Himja Patel | s1346 | part4        | ==== training_data.json: Evaluator Repair + lesson creation (min_repeats=2) ====
+2026-11-07 23:24:55.367 | Himja Patel | s1346 | part4        | [TR01] QUESTION: What is the current status of incident INC-260101?
+2026-11-07 23:24:58.991 | Himja Patel | s1346 | part4        | [TR01] ANSWERING -> EVALUATOR  attempt 1 (3624 ms): Breakdown on Line 22 - Fillmore at Fillmore St & Geary Blvd since 07:42, trolley pole came off the overhead wire. Alternative Route 38 buses operating on Geary Blvd. 30 passengers affected, estimated delay 15 minutes.
+2026-11-07 23:24:58.995 | Himja Patel | s1346 | part4        | [TR01] EVALUATOR -> REVISE  INC-260101: the answer does not state the current status. | pattern=missing_value
+2026-11-07 23:24:58.995 | Himja Patel | s1346 | part4        | [TR01]    feedback: INC-260101: the answer does not state the current status. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Resolved. Answer with these values.
+2026-11-07 23:25:06.371 | Himja Patel | s1346 | part4        | [TR01] ANSWERING -> EVALUATOR  attempt 2 (7374 ms): Breakdown on Line 22 - Fillmore at Fillmore St & Geary Blvd since 07:42, trolley pole came off the overhead wire. Incident has been Resolved, no alternative routes needed, 30 passengers affected, estimated delay 15 mi...
+2026-11-07 23:25:06.380 | Himja Patel | s1346 | part4        | [TR01] EVALUATOR -> PASS  INC-260101: current status = Resolved - matches the reference dataset.
+2026-11-07 23:25:06.380 | Himja Patel | s1346 | part4        | [TR01] FINAL: PASS after 2 attempt(s), 11014 ms
+2026-11-07 23:25:06.380 | Himja Patel | s1346 | part4        | [TR02] QUESTION: How long is the delay right now for incident INC-260102?
+2026-11-07 23:25:08.570 | Himja Patel | s1346 | part4        | [TR02] ANSWERING -> EVALUATOR  attempt 1 (2189 ms): The delay for incident INC-260102 is currently 10 minutes.
+2026-11-07 23:25:08.572 | Himja Patel | s1346 | part4        | [TR02] EVALUATOR -> REVISE  INC-260102: the answer gives the first-report value (current delay (minutes) 10) instead of the current value. | pattern=stale_value
+2026-11-07 23:25:08.572 | Himja Patel | s1346 | part4        | [TR02]    feedback: INC-260102: the answer gives the first-report value (current delay (minutes) 10) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current delay (minutes) = 35. Answer with these values.
+2026-11-07 23:25:11.489 | Himja Patel | s1346 | part4        | [TR02] ANSWERING -> EVALUATOR  attempt 2 (2917 ms): The current delay for incident INC-260102 is 35 minutes.
+2026-11-07 23:25:11.491 | Himja Patel | s1346 | part4        | [TR02] EVALUATOR -> PASS  INC-260102: current delay (minutes) = 35 - matches the reference dataset.
+2026-11-07 23:25:11.491 | Himja Patel | s1346 | part4        | [TR02] FINAL: PASS after 2 attempt(s), 5111 ms
+2026-11-07 23:25:11.491 | Himja Patel | s1346 | part4        | [TR03] QUESTION: Which line is incident INC-260103 on?
+2026-11-07 23:25:15.252 | Himja Patel | s1346 | part4        | [TR03] ANSWERING -> EVALUATOR  attempt 1 (3760 ms): Line L-101 (LRT Line 101 - Market Street) is affected by the Breakdown incident (INC-260103).
+2026-11-07 23:25:15.254 | Himja Patel | s1346 | part4        | [TR03] EVALUATOR -> PASS  INC-260103: line = L-101 (LRT Line 101 - Market Street) - matches the reference dataset.
+2026-11-07 23:25:15.254 | Himja Patel | s1346 | part4        | [TR03] FINAL: PASS after 1 attempt(s), 3763 ms
+2026-11-07 23:25:15.255 | Himja Patel | s1346 | part4        | [TR04] QUESTION: How many passengers have been affected so far by incident INC-260104?
+2026-11-07 23:25:17.376 | Himja Patel | s1346 | part4        | [TR04] ANSWERING -> EVALUATOR  attempt 1 (2121 ms): 400 passengers have been affected so far by incident INC-260104.
+2026-11-07 23:25:17.378 | Himja Patel | s1346 | part4        | [TR04] EVALUATOR -> REVISE  INC-260104: the answer gives the first-report value (passengers affected (latest count) 400) instead of the current value. | pattern=stale_value
+2026-11-07 23:25:17.378 | Himja Patel | s1346 | part4        | [TR04]    feedback: INC-260104: the answer gives the first-report value (passengers affected (latest count) 400) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: passengers affected (latest count) = 650. Answer with these values.
+2026-11-07 23:25:20.674 | Himja Patel | s1346 | part4        | [TR04] ANSWERING -> EVALUATOR  attempt 2 (3295 ms): 650 passengers have been affected so far by incident INC-260104.
+2026-11-07 23:25:20.676 | Himja Patel | s1346 | part4        | [TR04] EVALUATOR -> PASS  INC-260104: passengers affected (latest count) = 650 - matches the reference dataset.
+2026-11-07 23:25:20.679 | Himja Patel | s1346 | part4        | [TR04] NEW LESSON lesson_001 created (pattern stale_value repeated in ['TR02', 'TR04']): For questions about the current status, delay, passenger count or category of an incident, check the reference dataset (latest verified values) and state that value, not the first-report value.
+2026-11-07 23:25:20.679 | Himja Patel | s1346 | part4        | [TR04] FINAL: PASS after 2 attempt(s), 5425 ms
+2026-11-07 23:25:20.680 | Himja Patel | s1346 | part4        | [TR05] QUESTION: What caused incident INC-260105?
+2026-11-07 23:25:23.934 | Himja Patel | s1346 | part4        | [TR05] ANSWERING -> EVALUATOR  attempt 1 (3253 ms): The cause of incident INC-260105 was a double-parked delivery van, causing a delay with passengers affected.
+2026-11-07 23:25:23.936 | Himja Patel | s1346 | part4        | [TR05] EVALUATOR -> PASS  INC-260105: cause = double-parked delivery van - matches the reference dataset.
+2026-11-07 23:25:23.936 | Himja Patel | s1346 | part4        | [TR05] FINAL: PASS after 1 attempt(s), 3257 ms
+2026-11-07 23:25:23.936 | Himja Patel | s1346 | part4        | [TR06] QUESTION: What category is incident INC-260107 classified as now?
+2026-11-07 23:25:23.936 | Himja Patel | s1346 | part4        | [TR06] lessons loaded: lesson_001 (stale_value, used 0x before)
+2026-11-07 23:25:24.727 | Himja Patel | s1346 | part4        | [TR06] ANSWERING -> EVALUATOR  attempt 1 (790 ms): category=Service Change
+2026-11-07 23:25:24.728 | Himja Patel | s1346 | part4        | [TR06] EVALUATOR -> PASS  INC-260107: category = Service Change - matches the reference dataset.
+2026-11-07 23:25:24.729 | Himja Patel | s1346 | part4        | [TR06] FINAL: PASS after 1 attempt(s), 792 ms
+2026-11-07 23:25:24.729 | Himja Patel | s1346 | part4        | [TR07] QUESTION: What is the status of incident INC-269999?
+2026-11-07 23:25:24.729 | Himja Patel | s1346 | part4        | [TR07] lessons loaded: lesson_001 (stale_value, used 1x before)
+2026-11-07 23:25:27.313 | Himja Patel | s1346 | part4        | [TR07] ANSWERING -> EVALUATOR  attempt 1 (2584 ms): No record in the dispatch feed or reference dataset. Category unknown.
+2026-11-07 23:25:27.313 | Himja Patel | s1346 | part4        | [TR07] EVALUATOR -> PASS  Correctly says there is no record (INC-269999 is not in the reference dataset).
+2026-11-07 23:25:27.313 | Himja Patel | s1346 | part4        | [TR07] FINAL: PASS after 1 attempt(s), 2584 ms
+2026-11-07 23:25:27.313 | Himja Patel | s1346 | part4        | [TR08] QUESTION: How do I report a vehicle breakdown?
+2026-11-07 23:25:31.765 | Himja Patel | s1346 | part4        | [TR08] ANSWERING -> EVALUATOR  attempt 1 (4451 ms): Report a vehicle breakdown to the Transit Incident Desk by calling 311 or using the 'Report an incident' form in the s1346 transit app. Provide the line, vehicle number, location, and time.
+2026-11-07 23:25:31.766 | Himja Patel | s1346 | part4        | [TR08] EVALUATOR -> PASS  Follows POL-01 (How to report a vehicle breakdown): mentions 311.
+2026-11-07 23:25:31.766 | Himja Patel | s1346 | part4        | [TR08] FINAL: PASS after 1 attempt(s), 4453 ms
+2026-11-07 23:25:31.767 | Himja Patel | s1346 | part4        | [TR09] QUESTION: Where did incident INC-260108 happen?
+2026-11-07 23:25:33.827 | Himja Patel | s1346 | part4        | [TR09] ANSWERING -> EVALUATOR  attempt 1 (2060 ms): INC-260108 happened at Mission St & 24th St.
+2026-11-07 23:25:33.828 | Himja Patel | s1346 | part4        | [TR09] EVALUATOR -> PASS  INC-260108: location = Mission St & 24th St - matches the reference dataset.
+2026-11-07 23:25:33.828 | Himja Patel | s1346 | part4        | [TR09] FINAL: PASS after 1 attempt(s), 2062 ms
+2026-11-07 23:25:33.829 | Himja Patel | s1346 | part4        | [TR10] QUESTION: Is incident INC-260106 still waiting for a crew, or has one been dispatched?
+2026-11-07 23:25:33.829 | Himja Patel | s1346 | part4        | [TR10] lessons loaded: lesson_001 (stale_value, used 2x before)
+2026-11-07 23:25:37.257 | Himja Patel | s1346 | part4        | [TR10] ANSWERING -> EVALUATOR  attempt 1 (3428 ms): INC-260106 current status is Crew dispatched, with an estimated delay of 55 minutes and 240 passengers affected.
+2026-11-07 23:25:37.258 | Himja Patel | s1346 | part4        | [TR10] EVALUATOR -> PASS  INC-260106: current status = Crew dispatched - matches the reference dataset.
+2026-11-07 23:25:37.259 | Himja Patel | s1346 | part4        | [TR10] FINAL: PASS after 1 attempt(s), 3430 ms
+2026-11-07 23:25:37.259 | Himja Patel | s1346 | part4        | [TR11] QUESTION: What's a good restaurant near Union Square?
+2026-11-07 23:25:38.611 | Himja Patel | s1346 | part4        | [TR11] ANSWERING -> EVALUATOR  attempt 1 (1352 ms): No dispatch record or policy matches this question
+2026-11-07 23:25:38.611 | Himja Patel | s1346 | part4        | [TR11] EVALUATOR -> PASS  Correctly says there is no record (the question matches no incident or policy in the reference dataset).
+2026-11-07 23:25:38.611 | Himja Patel | s1346 | part4        | [TR11] FINAL: PASS after 1 attempt(s), 1352 ms
+2026-11-07 23:25:38.611 | Himja Patel | s1346 | part4        | [TR12] QUESTION: What alternative can riders use during incident INC-260103?
+2026-11-07 23:25:42.234 | Himja Patel | s1346 | part4        | [TR12] ANSWERING -> EVALUATOR  attempt 1 (3622 ms): Riders can use shuttle buses between Civic Center and Embarcadero as an alternative during this incident.
+2026-11-07 23:25:42.236 | Himja Patel | s1346 | part4        | [TR12] EVALUATOR -> PASS  INC-260103: alternative for riders = shuttle buses between Civic Center and Embarcadero - matches the reference dataset.
+2026-11-07 23:25:42.236 | Himja Patel | s1346 | part4        | [TR12] FINAL: PASS after 1 attempt(s), 3625 ms
+2026-11-07 23:25:42.236 | Himja Patel | s1346 | part4        | ==== 4.2 lesson reuse: lesson_001 created after TR04 failed; loaded for the later question TR06 ====
+2026-11-07 23:25:42.236 | Himja Patel | s1346 | part4        |    later question: What category is incident INC-260107 classified as now?
+2026-11-07 23:25:42.237 | Himja Patel | s1346 | part4        |    lessons loaded: ['lesson_001'] -> first attempt PASS, final PASS in 1 attempt(s)
+2026-11-07 23:25:42.237 | Himja Patel | s1346 | part4        |    answer: category=Service Change
+2026-11-07 23:25:42.238 | Himja Patel | s1346 | part4        | training summary: {'correct': 12, 'incorrect': 0, 'avg_attempts': 1.25, 'avg_latency_ms': 3905.7} | lessons: [('lesson_001', 'stale_value', 3)]
+2026-11-07 23:26:27.629 | Himja Patel | s1346 | part4        | HW9 Part 4 - Answering + Evaluator agents | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:26:27.748 | Himja Patel | s1346 | part4        | ==== 4.3 validation_data.json: keep a lesson only if nothing regresses ====
+2026-11-07 23:27:21.431 | Himja Patel | s1346 | part4        | lesson_001 (stale_value): failures 3 -> 0 [] | regressions none | unrelated ['VA06', 'VA08']: unsupported after none, new none -> KEPT
+2026-11-07 23:27:21.433 | Himja Patel | s1346 | part4        |    VA01 changed REVISE -> PASS: current_status=Ongoing; current_delay_min=22;
+2026-11-07 23:27:21.434 | Himja Patel | s1346 | part4        |    VA02 changed REVISE -> PASS: INC-260110 now has a current delay of 35 minutes.
+2026-11-07 23:27:21.434 | Himja Patel | s1346 | part4        |    VA05 changed REVISE -> PASS: The latest passenger count for incident INC-260101 is 37.
+2026-11-07 23:28:19.675 | Himja Patel | s1346 | part4        | HW9 Part 4 - Answering + Evaluator agents | Himja Patel | s1346 | model=qwen2.5:3b | redis=redis://localhost:6379/0
+2026-11-07 23:28:19.825 | Himja Patel | s1346 | part4        | ==== 4.4 test_data.json on four variants (lessons frozen, test data never used for lessons) ====
+2026-11-07 23:28:19.827 | Himja Patel | s1346 | part4        | ---- variant: Baseline (max attempts 1, lessons none) ----
+2026-11-07 23:29:00.662 | Himja Patel | s1346 | part4        |    TE01 REVISE attempts=1 lessons=- | INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimate...
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE02 REVISE attempts=1 lessons=- | The current delay for incident INC-260106 is 30 minutes.
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE03 REVISE attempts=1 lessons=- | 25
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE04 PASS   attempts=1 lessons=- | category=Accident
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE05 PASS   attempts=1 lessons=- | Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE06 PASS   attempts=1 lessons=- | Power failure in the tunnel caused the breakdown at Civic Center station.
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE07 REVISE attempts=1 lessons=- | Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a f...
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE08 PASS   attempts=1 lessons=- | No record in the dispatch feed indicates the status of INC-261234 is unknown.
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE09 PASS   attempts=1 lessons=- | Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or through the s...
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE10 REVISE attempts=1 lessons=- | Plain text only as per your request.
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE11 PASS   attempts=1 lessons=- | INC-260112 happened at Millbrae station.
+2026-11-07 23:29:00.664 | Himja Patel | s1346 | part4        |    TE12 PASS   attempts=1 lessons=- | Riders have the alternative of taking shuttle trains every 10 minutes during the service change a...
+2026-11-07 23:29:00.666 | Himja Patel | s1346 | part4        | ---- variant: Evaluator Repair (max attempts 2, lessons none) ----
+2026-11-07 23:29:52.485 | Himja Patel | s1346 | part4        |    TE01 PASS   attempts=2 lessons=- | INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimate...
+2026-11-07 23:29:52.487 | Himja Patel | s1346 | part4        |    TE02 PASS   attempts=2 lessons=- | The current delay for incident INC-260106 is 55 minutes.
+2026-11-07 23:29:52.487 | Himja Patel | s1346 | part4        |    TE03 PASS   attempts=2 lessons=- | passengers affected (latest count) = 80
+2026-11-07 23:29:52.487 | Himja Patel | s1346 | part4        |    TE04 PASS   attempts=1 lessons=- | category=Accident
+2026-11-07 23:29:52.487 | Himja Patel | s1346 | part4        |    TE05 PASS   attempts=1 lessons=- | Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.
+2026-11-07 23:29:52.487 | Himja Patel | s1346 | part4        |    TE06 PASS   attempts=1 lessons=- | Power failure in the tunnel caused the breakdown at Civic Center station.
+2026-11-07 23:29:52.487 | Himja Patel | s1346 | part4        |    TE07 PASS   attempts=2 lessons=- | Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a f...
+2026-11-07 23:29:52.488 | Himja Patel | s1346 | part4        |    TE08 PASS   attempts=1 lessons=- | No record in the dispatch feed indicates the status of INC-261234 is unknown.
+2026-11-07 23:29:52.488 | Himja Patel | s1346 | part4        |    TE09 PASS   attempts=1 lessons=- | Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or through the s...
+2026-11-07 23:29:52.488 | Himja Patel | s1346 | part4        |    TE10 PASS   attempts=2 lessons=- | No record
+2026-11-07 23:29:52.488 | Himja Patel | s1346 | part4        |    TE11 PASS   attempts=1 lessons=- | INC-260112 happened at Millbrae station.
+2026-11-07 23:29:52.488 | Himja Patel | s1346 | part4        |    TE12 PASS   attempts=1 lessons=- | Riders have the alternative of taking shuttle trains every 10 minutes during the service change a...
+2026-11-07 23:29:52.494 | Himja Patel | s1346 | part4        | ---- variant: Lesson Memory (max attempts 2, lessons ['lesson_001']) ----
+2026-11-07 23:30:21.895 | Himja Patel | s1346 | part4        |    TE01 PASS   attempts=1 lessons=['lesson_001'] | current_status=Ongoing; current_delay_min=35; passengers_affected=180
+2026-11-07 23:30:21.896 | Himja Patel | s1346 | part4        |    TE02 PASS   attempts=1 lessons=['lesson_001'] | The current delay for incident INC-260106 is 55 minutes.
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE03 PASS   attempts=1 lessons=['lesson_001'] | passengers_affected=80
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE04 PASS   attempts=1 lessons=['lesson_001'] | category=Accident; current_status=Service restored; current_delay_min=40; passengers_affected=64
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE05 PASS   attempts=1 lessons=- | Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE06 PASS   attempts=1 lessons=- | Power failure in the tunnel caused the breakdown at Civic Center station.
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE07 PASS   attempts=1 lessons=['lesson_001'] | category=Breakdown, current_status=Crew dispatched, current_delay_min=20, passengers_affected=52
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE08 PASS   attempts=1 lessons=['lesson_001'] | No record in the dispatch feed or reference dataset.
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE09 PASS   attempts=1 lessons=['lesson_001'] | To report a delay, call 311 or use the 'Report an incident' form in the s1346 transit app. Includ...
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE10 PASS   attempts=2 lessons=- | No record
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE11 PASS   attempts=1 lessons=- | INC-260112 happened at Millbrae station.
+2026-11-07 23:30:21.897 | Himja Patel | s1346 | part4        |    TE12 PASS   attempts=1 lessons=- | Riders have the alternative of taking shuttle trains every 10 minutes during the service change a...
+2026-11-07 23:30:21.899 | Himja Patel | s1346 | part4        | ---- variant: Validated Improvement (max attempts 2, lessons ['lesson_001']) ----
+2026-11-07 23:30:46.132 | Himja Patel | s1346 | part4        |    TE01 PASS   attempts=1 lessons=['lesson_001'] | current_status=Ongoing; current_delay_min=35; passengers_affected=180
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE02 PASS   attempts=1 lessons=['lesson_001'] | The current delay for incident INC-260106 is 55 minutes.
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE03 PASS   attempts=1 lessons=['lesson_001'] | passengers_affected=80
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE04 PASS   attempts=1 lessons=['lesson_001'] | category=Accident; current_status=Service restored; current_delay_min=40; passengers_affected=64
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE05 PASS   attempts=1 lessons=- | Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE06 PASS   attempts=1 lessons=- | Power failure in the tunnel caused the breakdown at Civic Center station.
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE07 PASS   attempts=1 lessons=['lesson_001'] | category=Breakdown, current_status=Crew dispatched, current_delay_min=20, passengers_affected=52
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE08 PASS   attempts=1 lessons=['lesson_001'] | No record in the dispatch feed or reference dataset.
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE09 PASS   attempts=1 lessons=['lesson_001'] | To report a delay, call 311 or use the 'Report an incident' form in the s1346 transit app. Includ...
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE10 PASS   attempts=2 lessons=- | No record
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE11 PASS   attempts=1 lessons=- | INC-260112 happened at Millbrae station.
+2026-11-07 23:30:46.134 | Himja Patel | s1346 | part4        |    TE12 PASS   attempts=1 lessons=- | Riders have the alternative of taking shuttle trains every 10 minutes during the service change a...
+2026-11-07 23:30:46.135 | Himja Patel | s1346 | part4        | ==== results table (test_data.json, 12 questions) ====
+2026-11-07 23:30:46.135 | Himja Patel | s1346 | part4        | variant                | correct | incorrect | avg attempts | avg latency (ms)
+2026-11-07 23:30:46.135 | Himja Patel | s1346 | part4        | Baseline               |       7 |         5 |         1.00 |           3402.4
+2026-11-07 23:30:46.135 | Himja Patel | s1346 | part4        | Evaluator Repair       |      12 |         0 |         1.42 |           4317.9
+2026-11-07 23:30:46.135 | Himja Patel | s1346 | part4        | Lesson Memory          |      12 |         0 |         1.08 |           2449.9
+2026-11-07 23:30:46.135 | Himja Patel | s1346 | part4        | Validated Improvement  |      12 |         0 |         1.08 |           2019.2

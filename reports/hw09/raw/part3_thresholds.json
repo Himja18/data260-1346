@@ -1,0 +1,154 @@
+{
+  "cost_miss": 0.02,
+  "cost_false_hit": 0.5,
+  "tables": {
+    "threshold_only": [
+      {
+        "mode": "threshold_only",
+        "threshold": 0.75,
+        "hits": 29,
+        "hit_rate": 0.725,
+        "false_hits": 9,
+        "false_hit_rate": 0.31,
+        "false_hit_rate_all": 0.225,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 11,
+        "mean_latency_ms": 4095.1,
+        "total_cost": 4.72
+      },
+      {
+        "mode": "threshold_only",
+        "threshold": 0.8,
+        "hits": 28,
+        "hit_rate": 0.7,
+        "false_hits": 8,
+        "false_hit_rate": 0.286,
+        "false_hit_rate_all": 0.2,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 12,
+        "mean_latency_ms": 4451.0,
+        "total_cost": 4.24
+      },
+      {
+        "mode": "threshold_only",
+        "threshold": 0.85,
+        "hits": 27,
+        "hit_rate": 0.675,
+        "false_hits": 7,
+        "false_hit_rate": 0.259,
+        "false_hit_rate_all": 0.175,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 13,
+        "mean_latency_ms": 4816.2,
+        "total_cost": 3.76
+      },
+      {
+        "mode": "threshold_only",
+        "threshold": 0.9,
+        "hits": 26,
+        "hit_rate": 0.65,
+        "false_hits": 6,
+        "false_hit_rate": 0.231,
+        "false_hit_rate_all": 0.15,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 14,
+        "mean_latency_ms": 5225.8,
+        "total_cost": 3.28
+      },
+      {
+        "mode": "threshold_only",
+        "threshold": 0.95,
+        "hits": 19,
+        "hit_rate": 0.475,
+        "false_hits": 4,
+        "false_hit_rate": 0.211,
+        "false_hit_rate_all": 0.1,
+        "correct_hits": 15,
+        "missed_should_hit": 5,
+        "misses": 21,
+        "mean_latency_ms": 7728.3,
+        "total_cost": 2.42
+      }
+    ],
+    "entity_guard": [
+      {
+        "mode": "entity_guard",
+        "threshold": 0.75,
+        "hits": 24,
+        "hit_rate": 0.6,
+        "false_hits": 4,
+        "false_hit_rate": 0.167,
+        "false_hit_rate_all": 0.1,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 16,
+        "mean_latency_ms": 6476.7,
+        "total_cost": 2.32
+      },
+      {
+        "mode": "entity_guard",
+        "threshold": 0.8,
+        "hits": 23,
+        "hit_rate": 0.575,
+        "false_hits": 3,
+        "false_hit_rate": 0.13,
+        "false_hit_rate_all": 0.075,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 17,
+        "mean_latency_ms": 6832.6,
+        "total_cost": 1.84
+      },
+      {
+        "mode": "entity_guard",
+        "threshold": 0.85,
+        "hits": 22,
+        "hit_rate": 0.55,
+        "false_hits": 2,
+        "false_hit_rate": 0.091,
+        "false_hit_rate_all": 0.05,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 18,
+        "mean_latency_ms": 7197.8,
+        "total_cost": 1.36
+      },
+      {
+        "mode": "entity_guard",
+        "threshold": 0.9,
+        "hits": 21,
+        "hit_rate": 0.525,
+        "false_hits": 1,
+        "false_hit_rate": 0.048,
+        "false_hit_rate_all": 0.025,
+        "correct_hits": 20,
+        "missed_should_hit": 0,
+        "misses": 19,
+        "mean_latency_ms": 7607.4,
+        "total_cost": 0.88
+      },
+      {
+        "mode": "entity_guard",
+        "threshold": 0.95,
+        "hits": 15,
+        "hit_rate": 0.375,
+        "false_hits": 0,
+        "false_hit_rate": 0.0,
+        "false_hit_rate_all": 0.0,
+        "correct_hits": 15,
+        "missed_should_hit": 5,
+        "misses": 25,
+        "mean_latency_ms": 9648.7,
+        "total_cost": 0.5
+      }
+    ]
+  },
+  "lowest_cost": {
+    "threshold_only": 0.95,
+    "entity_guard": 0.95
+  }
+}

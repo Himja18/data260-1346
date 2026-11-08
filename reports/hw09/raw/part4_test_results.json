@@ -1,0 +1,1552 @@
+{
+  "Baseline": {
+    "summary": {
+      "correct": 7,
+      "incorrect": 5,
+      "avg_attempts": 1,
+      "avg_latency_ms": 3402.4
+    },
+    "records": [
+      {
+        "id": "TE01",
+        "question": "What is the current status of incident INC-260102?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimated delay of 10 minutes.",
+            "model_ms": 5128.5,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260102: the answer does not state the current status.",
+            "feedback": "INC-260102: the answer does not state the current status. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Ongoing. Answer with these values.",
+            "failure_pattern": "missing_value",
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260102"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimated delay of 10 minutes.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 5130.8,
+        "new_lesson": null
+      },
+      {
+        "id": "TE02",
+        "question": "How long is the current delay for incident INC-260106?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The current delay for incident INC-260106 is 30 minutes.",
+            "model_ms": 3284.1,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260106: the answer gives the first-report value (current delay (minutes) 30) instead of the current value.",
+            "feedback": "INC-260106: the answer gives the first-report value (current delay (minutes) 30) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current delay (minutes) = 55. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "current_delay_min": "55"
+            },
+            "reference_ids": [
+              "INC-260106"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The current delay for incident INC-260106 is 30 minutes.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 3287.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE03",
+        "question": "How many passengers are affected now by incident INC-260107?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "25",
+            "model_ms": 1435.4,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260107: the answer gives the first-report value (passengers affected (latest count) 25) instead of the current value.",
+            "feedback": "INC-260107: the answer gives the first-report value (passengers affected (latest count) 25) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: passengers affected (latest count) = 80. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "passengers_affected": "80"
+            },
+            "reference_ids": [
+              "INC-260107"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "25",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 1436.0,
+        "new_lesson": null
+      },
+      {
+        "id": "TE04",
+        "question": "What category is incident INC-260103 classified as now?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Accident",
+            "model_ms": 1583.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260103: category = Accident - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "category": "Accident"
+            },
+            "reference_ids": [
+              "INC-260103"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Accident",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1584.1,
+        "new_lesson": null
+      },
+      {
+        "id": "TE05",
+        "question": "Which line is incident INC-260109 on?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+            "model_ms": 3408.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260109: line = L-101 (LRT Line 101 - Market Street) - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "line": "L-101 (LRT Line 101 - Market Street)"
+            },
+            "reference_ids": [
+              "INC-260109"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3410.1,
+        "new_lesson": null
+      },
+      {
+        "id": "TE06",
+        "question": "What caused incident INC-260110?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+            "model_ms": 2545.9,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260110: cause = power failure in the tunnel - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "cause": "power failure in the tunnel"
+            },
+            "reference_ids": [
+              "INC-260110"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2547.0,
+        "new_lesson": null
+      },
+      {
+        "id": "TE07",
+        "question": "What is the current status of incident INC-260111?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a flat tire. Dispatch reported at 12:40, with an estimated delay of 20 minutes, affecting 40 passengers, and a suggested alternative is the next Route 38 bus in 6 minutes.",
+            "model_ms": 9165.5,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260111: the answer gives the first-report value (current status reported) instead of the current value.",
+            "feedback": "INC-260111: the answer gives the first-report value (current status reported) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Crew dispatched. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "current_status": "Crew dispatched"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a flat tire. Dispatch reported at 12:40, with an estimated delay of 20 minutes, affecting 40 passengers, and a suggested alternative is the next Route 38 bus in 6 minutes.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 9166.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE08",
+        "question": "What is the status of incident INC-261234?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "No record in the dispatch feed indicates the status of INC-261234 is unknown.",
+            "model_ms": 2686.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (INC-261234 is not in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "INC-261234 is not in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "No record in the dispatch feed indicates the status of INC-261234 is unknown.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2686.7,
+        "new_lesson": null
+      },
+      {
+        "id": "TE09",
+        "question": "How do I report a delay?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or through the s1346 transit app by providing the line and how long you waited.",
+            "model_ms": 4870.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Follows POL-03 (How to report a delay): mentions 311.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "policy": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or in the s1346 transit app. Include the line, stop and how long you waited."
+            },
+            "reference_ids": [
+              "POL-03"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or through the s1346 transit app by providing the line and how long you waited.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 4871.5,
+        "new_lesson": null
+      },
+      {
+        "id": "TE10",
+        "question": "Who won the FIFA World Cup in 2022?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Plain text only as per your request.",
+            "model_ms": 1028.5,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "Unsupported answer: the question matches no incident or policy in the reference dataset, but the answer gives details anyway.",
+            "feedback": "There is no matching record: the question matches no incident or policy in the reference dataset. Reply in one sentence that there is no record of this in the s1346 transit incident data, and give no other details.",
+            "failure_pattern": "unsupported_answer",
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Plain text only as per your request.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 1028.6,
+        "new_lesson": null
+      },
+      {
+        "id": "TE11",
+        "question": "Where did incident INC-260112 happen?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260112 happened at Millbrae station.",
+            "model_ms": 2309.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260112: location = Millbrae station - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "location": "Millbrae station"
+            },
+            "reference_ids": [
+              "INC-260112"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260112 happened at Millbrae station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2310.7,
+        "new_lesson": null
+      },
+      {
+        "id": "TE12",
+        "question": "What alternative do riders have during incident INC-260104?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+            "model_ms": 3366.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260104: alternative for riders = shuttle trains every 10 minutes - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "alternative": "shuttle trains every 10 minutes"
+            },
+            "reference_ids": [
+              "INC-260104"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3369.1,
+        "new_lesson": null
+      }
+    ]
+  },
+  "Evaluator Repair": {
+    "summary": {
+      "correct": 12,
+      "incorrect": 0,
+      "avg_attempts": 1.42,
+      "avg_latency_ms": 4317.9
+    },
+    "records": [
+      {
+        "id": "TE01",
+        "question": "What is the current status of incident INC-260102?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimated delay of 10 minutes.",
+            "model_ms": 4310.7,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260102: the answer does not state the current status.",
+            "feedback": "INC-260102: the answer does not state the current status. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Ongoing. Answer with these values.",
+            "failure_pattern": "missing_value",
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260102"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimated delay of 10 minutes and in an Ongoing status.",
+            "model_ms": 4928.0,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260102: current status = Ongoing - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260102"
+            ]
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "INC-260102 is a Delay incident on line L-014, currently affecting 120 passengers with an estimated delay of 10 minutes and in an Ongoing status.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 9240.4,
+        "new_lesson": null
+      },
+      {
+        "id": "TE02",
+        "question": "How long is the current delay for incident INC-260106?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The current delay for incident INC-260106 is 30 minutes.",
+            "model_ms": 2230.0,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260106: the answer gives the first-report value (current delay (minutes) 30) instead of the current value.",
+            "feedback": "INC-260106: the answer gives the first-report value (current delay (minutes) 30) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current delay (minutes) = 55. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "current_delay_min": "55"
+            },
+            "reference_ids": [
+              "INC-260106"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "The current delay for incident INC-260106 is 55 minutes.",
+            "model_ms": 2701.5,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260106: current delay (minutes) = 55 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_delay_min": "55"
+            },
+            "reference_ids": [
+              "INC-260106"
+            ]
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "The current delay for incident INC-260106 is 55 minutes.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 4933.8,
+        "new_lesson": null
+      },
+      {
+        "id": "TE03",
+        "question": "How many passengers are affected now by incident INC-260107?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "25",
+            "model_ms": 257.1,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260107: the answer gives the first-report value (passengers affected (latest count) 25) instead of the current value.",
+            "feedback": "INC-260107: the answer gives the first-report value (passengers affected (latest count) 25) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: passengers affected (latest count) = 80. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "passengers_affected": "80"
+            },
+            "reference_ids": [
+              "INC-260107"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "passengers affected (latest count) = 80",
+            "model_ms": 1822.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260107: passengers affected (latest count) = 80 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "passengers_affected": "80"
+            },
+            "reference_ids": [
+              "INC-260107"
+            ]
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "passengers affected (latest count) = 80",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2080.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE04",
+        "question": "What category is incident INC-260103 classified as now?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Accident",
+            "model_ms": 1947.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260103: category = Accident - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "category": "Accident"
+            },
+            "reference_ids": [
+              "INC-260103"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Accident",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1948.1,
+        "new_lesson": null
+      },
+      {
+        "id": "TE05",
+        "question": "Which line is incident INC-260109 on?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+            "model_ms": 2979.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260109: line = L-101 (LRT Line 101 - Market Street) - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "line": "L-101 (LRT Line 101 - Market Street)"
+            },
+            "reference_ids": [
+              "INC-260109"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2980.7,
+        "new_lesson": null
+      },
+      {
+        "id": "TE06",
+        "question": "What caused incident INC-260110?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+            "model_ms": 1443.3,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260110: cause = power failure in the tunnel - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "cause": "power failure in the tunnel"
+            },
+            "reference_ids": [
+              "INC-260110"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1444.4,
+        "new_lesson": null
+      },
+      {
+        "id": "TE07",
+        "question": "What is the current status of incident INC-260111?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a flat tire. Dispatch reported at 12:40, with an estimated delay of 20 minutes, affecting 40 passengers, and a suggested alternative is the next Route 38 bus in 6 minutes.",
+            "model_ms": 7415.9,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260111: the answer gives the first-report value (current status reported) instead of the current value.",
+            "feedback": "INC-260111: the answer gives the first-report value (current status reported) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Crew dispatched. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "current_status": "Crew dispatched"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a flat tire. Dispatch reported at 12:40, with an estimated delay of 20 minutes, affecting 40 passengers, and a suggested alternative is the next Route 38 bus in 6 minutes. Current status: Crew dispatched.",
+            "model_ms": 8259.0,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260111: current status = Crew dispatched - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Crew dispatched"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "Incident INC-260111 is a Breakdown on Route 38 - Geary at Geary Blvd & Fillmore St, caused by a flat tire. Dispatch reported at 12:40, with an estimated delay of 20 minutes, affecting 40 passengers, and a suggested alternative is the next Route 38 bus in 6 minutes. Current status: Crew dispatched.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 15676.7,
+        "new_lesson": null
+      },
+      {
+        "id": "TE08",
+        "question": "What is the status of incident INC-261234?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "No record in the dispatch feed indicates the status of INC-261234 is unknown.",
+            "model_ms": 2981.6,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (INC-261234 is not in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "INC-261234 is not in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "No record in the dispatch feed indicates the status of INC-261234 is unknown.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2982.1,
+        "new_lesson": null
+      },
+      {
+        "id": "TE09",
+        "question": "How do I report a delay?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or through the s1346 transit app by providing the line and how long you waited.",
+            "model_ms": 4857.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Follows POL-03 (How to report a delay): mentions 311.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "policy": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or in the s1346 transit app. Include the line, stop and how long you waited."
+            },
+            "reference_ids": [
+              "POL-03"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or through the s1346 transit app by providing the line and how long you waited.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 4863.5,
+        "new_lesson": null
+      },
+      {
+        "id": "TE10",
+        "question": "Who won the FIFA World Cup in 2022?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Plain text only as per your request.",
+            "model_ms": 822.5,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "Unsupported answer: the question matches no incident or policy in the reference dataset, but the answer gives details anyway.",
+            "feedback": "There is no matching record: the question matches no incident or policy in the reference dataset. Reply in one sentence that there is no record of this in the s1346 transit incident data, and give no other details.",
+            "failure_pattern": "unsupported_answer",
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          },
+          {
+            "attempt": 2,
+            "answer": "No record",
+            "model_ms": 733.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (the question matches no incident or policy in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "No record",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1556.3,
+        "new_lesson": null
+      },
+      {
+        "id": "TE11",
+        "question": "Where did incident INC-260112 happen?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260112 happened at Millbrae station.",
+            "model_ms": 1498.0,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260112: location = Millbrae station - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "location": "Millbrae station"
+            },
+            "reference_ids": [
+              "INC-260112"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260112 happened at Millbrae station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1498.3,
+        "new_lesson": null
+      },
+      {
+        "id": "TE12",
+        "question": "What alternative do riders have during incident INC-260104?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+            "model_ms": 2609.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260104: alternative for riders = shuttle trains every 10 minutes - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "alternative": "shuttle trains every 10 minutes"
+            },
+            "reference_ids": [
+              "INC-260104"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2610.0,
+        "new_lesson": null
+      }
+    ]
+  },
+  "Lesson Memory": {
+    "summary": {
+      "correct": 12,
+      "incorrect": 0,
+      "avg_attempts": 1.08,
+      "avg_latency_ms": 2449.9
+    },
+    "records": [
+      {
+        "id": "TE01",
+        "question": "What is the current status of incident INC-260102?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "current_status=Ongoing; current_delay_min=35; passengers_affected=180",
+            "model_ms": 2873.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260102: current status = Ongoing - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260102"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "current_status=Ongoing; current_delay_min=35; passengers_affected=180",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2875.2,
+        "new_lesson": null
+      },
+      {
+        "id": "TE02",
+        "question": "How long is the current delay for incident INC-260106?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The current delay for incident INC-260106 is 55 minutes.",
+            "model_ms": 2325.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260106: current delay (minutes) = 55 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_delay_min": "55"
+            },
+            "reference_ids": [
+              "INC-260106"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The current delay for incident INC-260106 is 55 minutes.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2325.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE03",
+        "question": "How many passengers are affected now by incident INC-260107?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "passengers_affected=80",
+            "model_ms": 1409.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260107: passengers affected (latest count) = 80 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "passengers_affected": "80"
+            },
+            "reference_ids": [
+              "INC-260107"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "passengers_affected=80",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1410.1,
+        "new_lesson": null
+      },
+      {
+        "id": "TE04",
+        "question": "What category is incident INC-260103 classified as now?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Accident; current_status=Service restored; current_delay_min=40; passengers_affected=64",
+            "model_ms": 3730.0,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260103: category = Accident - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "category": "Accident"
+            },
+            "reference_ids": [
+              "INC-260103"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Accident; current_status=Service restored; current_delay_min=40; passengers_affected=64",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3731.0,
+        "new_lesson": null
+      },
+      {
+        "id": "TE05",
+        "question": "Which line is incident INC-260109 on?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+            "model_ms": 2590.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260109: line = L-101 (LRT Line 101 - Market Street) - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "line": "L-101 (LRT Line 101 - Market Street)"
+            },
+            "reference_ids": [
+              "INC-260109"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2591.3,
+        "new_lesson": null
+      },
+      {
+        "id": "TE06",
+        "question": "What caused incident INC-260110?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+            "model_ms": 1201.3,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260110: cause = power failure in the tunnel - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "cause": "power failure in the tunnel"
+            },
+            "reference_ids": [
+              "INC-260110"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1201.8,
+        "new_lesson": null
+      },
+      {
+        "id": "TE07",
+        "question": "What is the current status of incident INC-260111?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Breakdown, current_status=Crew dispatched, current_delay_min=20, passengers_affected=52",
+            "model_ms": 2817.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260111: current status = Crew dispatched - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Crew dispatched"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Breakdown, current_status=Crew dispatched, current_delay_min=20, passengers_affected=52",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2817.8,
+        "new_lesson": null
+      },
+      {
+        "id": "TE08",
+        "question": "What is the status of incident INC-261234?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "No record in the dispatch feed or reference dataset.",
+            "model_ms": 2508.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (INC-261234 is not in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "INC-261234 is not in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "No record in the dispatch feed or reference dataset.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2509.3,
+        "new_lesson": null
+      },
+      {
+        "id": "TE09",
+        "question": "How do I report a delay?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To report a delay, call 311 or use the 'Report an incident' form in the s1346 transit app. Include the line and how long you waited.",
+            "model_ms": 4393.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Follows POL-03 (How to report a delay): mentions 311.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "policy": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or in the s1346 transit app. Include the line, stop and how long you waited."
+            },
+            "reference_ids": [
+              "POL-03"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "To report a delay, call 311 or use the 'Report an incident' form in the s1346 transit app. Include the line and how long you waited.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 4393.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE10",
+        "question": "Who won the FIFA World Cup in 2022?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Plain text only as per your request.",
+            "model_ms": 930.0,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "Unsupported answer: the question matches no incident or policy in the reference dataset, but the answer gives details anyway.",
+            "feedback": "There is no matching record: the question matches no incident or policy in the reference dataset. Reply in one sentence that there is no record of this in the s1346 transit incident data, and give no other details.",
+            "failure_pattern": "unsupported_answer",
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          },
+          {
+            "attempt": 2,
+            "answer": "No record",
+            "model_ms": 757.0,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (the question matches no incident or policy in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "No record",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1687.4,
+        "new_lesson": null
+      },
+      {
+        "id": "TE11",
+        "question": "Where did incident INC-260112 happen?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260112 happened at Millbrae station.",
+            "model_ms": 1218.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260112: location = Millbrae station - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "location": "Millbrae station"
+            },
+            "reference_ids": [
+              "INC-260112"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260112 happened at Millbrae station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1219.0,
+        "new_lesson": null
+      },
+      {
+        "id": "TE12",
+        "question": "What alternative do riders have during incident INC-260104?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+            "model_ms": 2634.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260104: alternative for riders = shuttle trains every 10 minutes - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "alternative": "shuttle trains every 10 minutes"
+            },
+            "reference_ids": [
+              "INC-260104"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2635.7,
+        "new_lesson": null
+      }
+    ]
+  },
+  "Validated Improvement": {
+    "summary": {
+      "correct": 12,
+      "incorrect": 0,
+      "avg_attempts": 1.08,
+      "avg_latency_ms": 2019.2
+    },
+    "records": [
+      {
+        "id": "TE01",
+        "question": "What is the current status of incident INC-260102?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "current_status=Ongoing; current_delay_min=35; passengers_affected=180",
+            "model_ms": 2158.5,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260102: current status = Ongoing - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260102"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "current_status=Ongoing; current_delay_min=35; passengers_affected=180",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2159.5,
+        "new_lesson": null
+      },
+      {
+        "id": "TE02",
+        "question": "How long is the current delay for incident INC-260106?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The current delay for incident INC-260106 is 55 minutes.",
+            "model_ms": 1854.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260106: current delay (minutes) = 55 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_delay_min": "55"
+            },
+            "reference_ids": [
+              "INC-260106"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The current delay for incident INC-260106 is 55 minutes.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1854.7,
+        "new_lesson": null
+      },
+      {
+        "id": "TE03",
+        "question": "How many passengers are affected now by incident INC-260107?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "passengers_affected=80",
+            "model_ms": 630.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260107: passengers affected (latest count) = 80 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "passengers_affected": "80"
+            },
+            "reference_ids": [
+              "INC-260107"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "passengers_affected=80",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 631.0,
+        "new_lesson": null
+      },
+      {
+        "id": "TE04",
+        "question": "What category is incident INC-260103 classified as now?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Accident; current_status=Service restored; current_delay_min=40; passengers_affected=64",
+            "model_ms": 2087.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260103: category = Accident - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "category": "Accident"
+            },
+            "reference_ids": [
+              "INC-260103"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Accident; current_status=Service restored; current_delay_min=40; passengers_affected=64",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2087.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE05",
+        "question": "Which line is incident INC-260109 on?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+            "model_ms": 2984.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260109: line = L-101 (LRT Line 101 - Market Street) - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "line": "L-101 (LRT Line 101 - Market Street)"
+            },
+            "reference_ids": [
+              "INC-260109"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Line L-101 (LRT Line 101 - Market Street) is incident INC-260109.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2984.7,
+        "new_lesson": null
+      },
+      {
+        "id": "TE06",
+        "question": "What caused incident INC-260110?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+            "model_ms": 1485.5,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260110: cause = power failure in the tunnel - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "cause": "power failure in the tunnel"
+            },
+            "reference_ids": [
+              "INC-260110"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Power failure in the tunnel caused the breakdown at Civic Center station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1486.4,
+        "new_lesson": null
+      },
+      {
+        "id": "TE07",
+        "question": "What is the current status of incident INC-260111?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Breakdown, current_status=Crew dispatched, current_delay_min=20, passengers_affected=52",
+            "model_ms": 2193.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260111: current status = Crew dispatched - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Crew dispatched"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Breakdown, current_status=Crew dispatched, current_delay_min=20, passengers_affected=52",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2193.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE08",
+        "question": "What is the status of incident INC-261234?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "No record in the dispatch feed or reference dataset.",
+            "model_ms": 882.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (INC-261234 is not in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "INC-261234 is not in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "No record in the dispatch feed or reference dataset.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 882.9,
+        "new_lesson": null
+      },
+      {
+        "id": "TE09",
+        "question": "How do I report a delay?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To report a delay, call 311 or use the 'Report an incident' form in the s1346 transit app. Include the line and how long you waited.",
+            "model_ms": 3445.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Follows POL-03 (How to report a delay): mentions 311.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "policy": "Delays of 10 minutes or more can be reported to the Transit Incident Desk at 311 or in the s1346 transit app. Include the line, stop and how long you waited."
+            },
+            "reference_ids": [
+              "POL-03"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "To report a delay, call 311 or use the 'Report an incident' form in the s1346 transit app. Include the line and how long you waited.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3446.6,
+        "new_lesson": null
+      },
+      {
+        "id": "TE10",
+        "question": "Who won the FIFA World Cup in 2022?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Plain text only as per your request.",
+            "model_ms": 1390.2,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "Unsupported answer: the question matches no incident or policy in the reference dataset, but the answer gives details anyway.",
+            "feedback": "There is no matching record: the question matches no incident or policy in the reference dataset. Reply in one sentence that there is no record of this in the s1346 transit incident data, and give no other details.",
+            "failure_pattern": "unsupported_answer",
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          },
+          {
+            "attempt": 2,
+            "answer": "No record",
+            "model_ms": 961.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (the question matches no incident or policy in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 2,
+        "final_answer": "No record",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2352.6,
+        "new_lesson": null
+      },
+      {
+        "id": "TE11",
+        "question": "Where did incident INC-260112 happen?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260112 happened at Millbrae station.",
+            "model_ms": 1784.6,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260112: location = Millbrae station - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "location": "Millbrae station"
+            },
+            "reference_ids": [
+              "INC-260112"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260112 happened at Millbrae station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1785.6,
+        "new_lesson": null
+      },
+      {
+        "id": "TE12",
+        "question": "What alternative do riders have during incident INC-260104?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+            "model_ms": 2363.4,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260104: alternative for riders = shuttle trains every 10 minutes - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "alternative": "shuttle trains every 10 minutes"
+            },
+            "reference_ids": [
+              "INC-260104"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Riders have the alternative of taking shuttle trains every 10 minutes during the service change at Union Square station.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2364.5,
+        "new_lesson": null
+      }
+    ]
+  }
+}

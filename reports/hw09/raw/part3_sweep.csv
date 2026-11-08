@@ -1,0 +1,401 @@
+mode,threshold,id,group,should_hit,expected_seed,nearest_seed,similarity,codes_match,hit,false_hit,correct_hit,latency_ms,lookup_ms,query
+threshold_only,0.75,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,20.3,20.34,How do I report a bus breakdown to the transit incident desk?
+entity_guard,0.75,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,20.3,20.34,How do I report a bus breakdown to the transit incident desk?
+threshold_only,0.75,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,16.6,16.6,What incident category should I use when my train is running late?
+entity_guard,0.75,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,16.6,16.6,What incident category should I use when my train is running late?
+threshold_only,0.75,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,164.5,164.5,What category is incident INC-000042?
+entity_guard,0.75,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,164.5,164.5,What category is incident INC-000042?
+threshold_only,0.75,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,27.1,27.09,How many passengers were affected by incident INC-000105?
+entity_guard,0.75,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,27.1,27.09,How many passengers were affected by incident INC-000105?
+threshold_only,0.75,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,19.6,19.58,Which transit line is incident INC-000230 on?
+entity_guard,0.75,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,19.6,19.58,Which transit line is incident INC-000230 on?
+threshold_only,0.75,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,17.9,17.9,What should I do if my bus is detoured because of a service change?
+entity_guard,0.75,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,17.9,17.9,What should I do if my bus is detoured because of a service change?
+threshold_only,0.75,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,18.2,18.19,Who do I contact if I was injured in a minor collision on a light rail train?
+entity_guard,0.75,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,18.2,18.19,Who do I contact if I was injured in a minor collision on a light rail train?
+threshold_only,0.75,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,19.0,19.02,What information should I include when I report a delay?
+entity_guard,0.75,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,19.0,19.02,What information should I include when I report a delay?
+threshold_only,0.75,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,20.3,20.32,What is the route title for incident INC-000318?
+entity_guard,0.75,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,20.3,20.32,What is the route title for incident INC-000318?
+threshold_only,0.75,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,19.2,19.2,When was incident INC-000777 reported?
+entity_guard,0.75,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,19.2,19.2,When was incident INC-000777 reported?
+threshold_only,0.75,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,16.0,16.03,What's the process for reporting a broken-down bus to the incident desk?
+entity_guard,0.75,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,16.0,16.03,What's the process for reporting a broken-down bus to the incident desk?
+threshold_only,0.75,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,16.2,16.17,My train is running behind schedule - which incident category applies?
+entity_guard,0.75,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,16.2,16.17,My train is running behind schedule - which incident category applies?
+threshold_only,0.75,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,17.2,17.25,Which category was incident INC-000042 filed under?
+entity_guard,0.75,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,17.2,17.25,Which category was incident INC-000042 filed under?
+threshold_only,0.75,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,17.4,17.45,How many riders were impacted by incident INC-000105?
+entity_guard,0.75,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,17.4,17.45,How many riders were impacted by incident INC-000105?
+threshold_only,0.75,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,17.4,17.44,Incident INC-000230 happened on which transit line?
+entity_guard,0.75,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,17.4,17.44,Incident INC-000230 happened on which transit line?
+threshold_only,0.75,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,21.4,21.41,My bus got rerouted because of a service change. What should I do?
+entity_guard,0.75,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,21.4,21.41,My bus got rerouted because of a service change. What should I do?
+threshold_only,0.75,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,37.3,37.33,I got hurt in a small collision on a light rail train - who should I contact?
+entity_guard,0.75,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,37.3,37.33,I got hurt in a small collision on a light rail train - who should I contact?
+threshold_only,0.75,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,20.3,20.3,What details do I need to give when reporting a delay?
+entity_guard,0.75,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,20.3,20.3,What details do I need to give when reporting a delay?
+threshold_only,0.75,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,20.6,20.62,How is a Service Change incident different from a Delay incident?
+entity_guard,0.75,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,20.6,20.62,How is a Service Change incident different from a Delay incident?
+threshold_only,0.75,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,16.6,16.61,"Typically, how long until a broken-down vehicle is cleared?"
+entity_guard,0.75,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,16.6,16.61,"Typically, how long until a broken-down vehicle is cleared?"
+threshold_only,0.75,D01,superficially_similar,False,S03,S03,0.932,False,True,True,False,16.9,16.92,What category is incident INC-000043?
+entity_guard,0.75,D01,superficially_similar,False,S03,S03,0.932,False,False,False,False,18465.5,16.92,What category is incident INC-000043?
+threshold_only,0.75,D02,superficially_similar,False,S04,S04,0.9568,False,True,True,False,17.6,17.59,How many passengers were affected by incident INC-000106?
+entity_guard,0.75,D02,superficially_similar,False,S04,S04,0.9568,False,False,False,False,14650.5,17.59,How many passengers were affected by incident INC-000106?
+threshold_only,0.75,D03,superficially_similar,False,S05,S05,0.9822,False,True,True,False,17.1,17.09,Which transit line is incident INC-000231 on?
+entity_guard,0.75,D03,superficially_similar,False,S05,S05,0.9822,False,False,False,False,18674.9,17.09,Which transit line is incident INC-000231 on?
+threshold_only,0.75,D04,superficially_similar,False,S11,S11,0.9724,False,True,True,False,17.4,17.41,What is the route title for incident INC-000319?
+entity_guard,0.75,D04,superficially_similar,False,S11,S11,0.9724,False,False,False,False,25166.2,17.41,What is the route title for incident INC-000319?
+threshold_only,0.75,D05,superficially_similar,False,S12,S12,0.9797,False,True,True,False,17.7,17.67,When was incident INC-000778 reported?
+entity_guard,0.75,D05,superficially_similar,False,S12,S12,0.9797,False,False,False,False,18394.1,17.67,When was incident INC-000778 reported?
+threshold_only,0.75,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,15.9,15.92,What incident category should I use when my train is cancelled?
+entity_guard,0.75,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,15.9,15.92,What incident category should I use when my train is cancelled?
+threshold_only,0.75,D07,superficially_similar,False,S01,S01,0.8809,True,True,True,False,16.2,16.17,How do I report a light rail accident with injuries to the transit incident desk?
+entity_guard,0.75,D07,superficially_similar,False,S01,S01,0.8809,True,True,True,False,16.2,16.17,How do I report a light rail accident with injuries to the transit incident desk?
+threshold_only,0.75,D08,superficially_similar,False,S10,S10,0.833,True,True,True,False,16.2,16.21,How long does it usually take for a minor collision to be cleared?
+entity_guard,0.75,D08,superficially_similar,False,S10,S10,0.833,True,True,True,False,16.2,16.21,How long does it usually take for a minor collision to be cleared?
+threshold_only,0.75,D09,superficially_similar,False,S08,S08,0.7833,True,True,True,False,15.9,15.92,What information should I include when I report an accident?
+entity_guard,0.75,D09,superficially_similar,False,S08,S08,0.7833,True,True,True,False,15.9,15.92,What information should I include when I report an accident?
+threshold_only,0.75,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19345.5,15.72,What is the difference between a Breakdown and an Accident incident?
+entity_guard,0.75,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19345.5,15.72,What is the difference between a Breakdown and an Accident incident?
+threshold_only,0.75,U01,unrelated,False,,S08,0.4901,True,False,False,False,21392.3,17.01,What is the weather in San Jose tomorrow?
+entity_guard,0.75,U01,unrelated,False,,S08,0.4901,True,False,False,False,21392.3,17.01,What is the weather in San Jose tomorrow?
+threshold_only,0.75,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.4,15.56,How do I reset my Wi-Fi router?
+entity_guard,0.75,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.4,15.56,How do I reset my Wi-Fi router?
+threshold_only,0.75,U03,unrelated,False,,S05,0.4697,False,False,False,False,17141.6,16.9,Can you recommend a good pizza place downtown?
+entity_guard,0.75,U03,unrelated,False,,S05,0.4697,False,False,False,False,17141.6,16.9,Can you recommend a good pizza place downtown?
+threshold_only,0.75,U04,unrelated,False,,S11,0.4508,False,False,False,False,15133.8,16.77,What is the capital of Australia?
+entity_guard,0.75,U04,unrelated,False,,S11,0.4508,False,False,False,False,15133.8,16.77,What is the capital of Australia?
+threshold_only,0.75,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.6,15.86,How do I bake sourdough bread at home?
+entity_guard,0.75,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.6,15.86,How do I bake sourdough bread at home?
+threshold_only,0.75,U06,unrelated,False,,S04,0.3947,False,False,False,False,8940.6,15.57,Who won the 2022 FIFA World Cup?
+entity_guard,0.75,U06,unrelated,False,,S04,0.3947,False,False,False,False,8940.6,15.57,Who won the 2022 FIFA World Cup?
+threshold_only,0.75,U07,unrelated,False,,S11,0.5127,False,False,False,False,14891.4,16.15,How do I renew my driver's license online?
+entity_guard,0.75,U07,unrelated,False,,S11,0.5127,False,False,False,False,14891.4,16.15,How do I renew my driver's license online?
+threshold_only,0.75,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.0,15.77,How much does a bike share ride cost per minute?
+entity_guard,0.75,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.0,15.77,How much does a bike share ride cost per minute?
+threshold_only,0.75,U09,unrelated,False,,S11,0.4532,False,False,False,False,8693.0,17.8,Translate 'thank you very much' into Spanish.
+entity_guard,0.75,U09,unrelated,False,,S11,0.4532,False,False,False,False,8693.0,17.8,Translate 'thank you very much' into Spanish.
+threshold_only,0.75,U10,unrelated,False,,S06,0.5667,True,False,False,False,11980.1,15.95,What are some tips for parallel parking a car?
+entity_guard,0.75,U10,unrelated,False,,S06,0.5667,True,False,False,False,11980.1,15.95,What are some tips for parallel parking a car?
+threshold_only,0.8,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,17.3,17.3,How do I report a bus breakdown to the transit incident desk?
+entity_guard,0.8,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,17.3,17.3,How do I report a bus breakdown to the transit incident desk?
+threshold_only,0.8,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,17.3,17.27,What incident category should I use when my train is running late?
+entity_guard,0.8,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,17.3,17.27,What incident category should I use when my train is running late?
+threshold_only,0.8,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,16.4,16.43,What category is incident INC-000042?
+entity_guard,0.8,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,16.4,16.43,What category is incident INC-000042?
+threshold_only,0.8,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,18.1,18.11,How many passengers were affected by incident INC-000105?
+entity_guard,0.8,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,18.1,18.11,How many passengers were affected by incident INC-000105?
+threshold_only,0.8,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,18.2,18.22,Which transit line is incident INC-000230 on?
+entity_guard,0.8,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,18.2,18.22,Which transit line is incident INC-000230 on?
+threshold_only,0.8,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,16.4,16.39,What should I do if my bus is detoured because of a service change?
+entity_guard,0.8,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,16.4,16.39,What should I do if my bus is detoured because of a service change?
+threshold_only,0.8,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,19.7,19.69,Who do I contact if I was injured in a minor collision on a light rail train?
+entity_guard,0.8,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,19.7,19.69,Who do I contact if I was injured in a minor collision on a light rail train?
+threshold_only,0.8,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,16.0,16.04,What information should I include when I report a delay?
+entity_guard,0.8,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,16.0,16.04,What information should I include when I report a delay?
+threshold_only,0.8,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,19.0,19.05,What is the route title for incident INC-000318?
+entity_guard,0.8,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,19.0,19.05,What is the route title for incident INC-000318?
+threshold_only,0.8,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,17.9,17.92,When was incident INC-000777 reported?
+entity_guard,0.8,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,17.9,17.92,When was incident INC-000777 reported?
+threshold_only,0.8,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,16.9,16.92,What's the process for reporting a broken-down bus to the incident desk?
+entity_guard,0.8,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,16.9,16.92,What's the process for reporting a broken-down bus to the incident desk?
+threshold_only,0.8,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,17.3,17.27,My train is running behind schedule - which incident category applies?
+entity_guard,0.8,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,17.3,17.27,My train is running behind schedule - which incident category applies?
+threshold_only,0.8,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,17.9,17.89,Which category was incident INC-000042 filed under?
+entity_guard,0.8,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,17.9,17.89,Which category was incident INC-000042 filed under?
+threshold_only,0.8,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,17.8,17.84,How many riders were impacted by incident INC-000105?
+entity_guard,0.8,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,17.8,17.84,How many riders were impacted by incident INC-000105?
+threshold_only,0.8,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,17.3,17.29,Incident INC-000230 happened on which transit line?
+entity_guard,0.8,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,17.3,17.29,Incident INC-000230 happened on which transit line?
+threshold_only,0.8,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,15.3,15.32,My bus got rerouted because of a service change. What should I do?
+entity_guard,0.8,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,15.3,15.32,My bus got rerouted because of a service change. What should I do?
+threshold_only,0.8,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,15.4,15.36,I got hurt in a small collision on a light rail train - who should I contact?
+entity_guard,0.8,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,15.4,15.36,I got hurt in a small collision on a light rail train - who should I contact?
+threshold_only,0.8,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,18.0,17.97,What details do I need to give when reporting a delay?
+entity_guard,0.8,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,18.0,17.97,What details do I need to give when reporting a delay?
+threshold_only,0.8,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.8,16.76,How is a Service Change incident different from a Delay incident?
+entity_guard,0.8,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.8,16.76,How is a Service Change incident different from a Delay incident?
+threshold_only,0.8,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,16.9,16.87,"Typically, how long until a broken-down vehicle is cleared?"
+entity_guard,0.8,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,16.9,16.87,"Typically, how long until a broken-down vehicle is cleared?"
+threshold_only,0.8,D01,superficially_similar,False,S03,S03,0.932,False,True,True,False,18.1,18.08,What category is incident INC-000043?
+entity_guard,0.8,D01,superficially_similar,False,S03,S03,0.932,False,False,False,False,18466.7,18.08,What category is incident INC-000043?
+threshold_only,0.8,D02,superficially_similar,False,S04,S04,0.9568,False,True,True,False,17.5,17.45,How many passengers were affected by incident INC-000106?
+entity_guard,0.8,D02,superficially_similar,False,S04,S04,0.9568,False,False,False,False,14650.4,17.45,How many passengers were affected by incident INC-000106?
+threshold_only,0.8,D03,superficially_similar,False,S05,S05,0.9822,False,True,True,False,16.6,16.58,Which transit line is incident INC-000231 on?
+entity_guard,0.8,D03,superficially_similar,False,S05,S05,0.9822,False,False,False,False,18674.4,16.58,Which transit line is incident INC-000231 on?
+threshold_only,0.8,D04,superficially_similar,False,S11,S11,0.9724,False,True,True,False,17.0,17.01,What is the route title for incident INC-000319?
+entity_guard,0.8,D04,superficially_similar,False,S11,S11,0.9724,False,False,False,False,25165.8,17.01,What is the route title for incident INC-000319?
+threshold_only,0.8,D05,superficially_similar,False,S12,S12,0.9797,False,True,True,False,16.0,15.95,When was incident INC-000778 reported?
+entity_guard,0.8,D05,superficially_similar,False,S12,S12,0.9797,False,False,False,False,18392.4,15.95,When was incident INC-000778 reported?
+threshold_only,0.8,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,15.3,15.33,What incident category should I use when my train is cancelled?
+entity_guard,0.8,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,15.3,15.33,What incident category should I use when my train is cancelled?
+threshold_only,0.8,D07,superficially_similar,False,S01,S01,0.8809,True,True,True,False,15.3,15.31,How do I report a light rail accident with injuries to the transit incident desk?
+entity_guard,0.8,D07,superficially_similar,False,S01,S01,0.8809,True,True,True,False,15.3,15.31,How do I report a light rail accident with injuries to the transit incident desk?
+threshold_only,0.8,D08,superficially_similar,False,S10,S10,0.833,True,True,True,False,14.9,14.91,How long does it usually take for a minor collision to be cleared?
+entity_guard,0.8,D08,superficially_similar,False,S10,S10,0.833,True,True,True,False,14.9,14.91,How long does it usually take for a minor collision to be cleared?
+threshold_only,0.8,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.8,16.0,What information should I include when I report an accident?
+entity_guard,0.8,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.8,16.0,What information should I include when I report an accident?
+threshold_only,0.8,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19345.3,15.47,What is the difference between a Breakdown and an Accident incident?
+entity_guard,0.8,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19345.3,15.47,What is the difference between a Breakdown and an Accident incident?
+threshold_only,0.8,U01,unrelated,False,,S08,0.4901,True,False,False,False,21389.8,14.51,What is the weather in San Jose tomorrow?
+entity_guard,0.8,U01,unrelated,False,,S08,0.4901,True,False,False,False,21389.8,14.51,What is the weather in San Jose tomorrow?
+threshold_only,0.8,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.2,15.37,How do I reset my Wi-Fi router?
+entity_guard,0.8,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.2,15.37,How do I reset my Wi-Fi router?
+threshold_only,0.8,U03,unrelated,False,,S05,0.4697,False,False,False,False,17139.5,14.85,Can you recommend a good pizza place downtown?
+entity_guard,0.8,U03,unrelated,False,,S05,0.4697,False,False,False,False,17139.5,14.85,Can you recommend a good pizza place downtown?
+threshold_only,0.8,U04,unrelated,False,,S11,0.4508,False,False,False,False,15131.5,14.54,What is the capital of Australia?
+entity_guard,0.8,U04,unrelated,False,,S11,0.4508,False,False,False,False,15131.5,14.54,What is the capital of Australia?
+threshold_only,0.8,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.7,16.01,How do I bake sourdough bread at home?
+entity_guard,0.8,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.7,16.01,How do I bake sourdough bread at home?
+threshold_only,0.8,U06,unrelated,False,,S04,0.3947,False,False,False,False,8939.9,14.92,Who won the 2022 FIFA World Cup?
+entity_guard,0.8,U06,unrelated,False,,S04,0.3947,False,False,False,False,8939.9,14.92,Who won the 2022 FIFA World Cup?
+threshold_only,0.8,U07,unrelated,False,,S11,0.5127,False,False,False,False,14890.6,15.37,How do I renew my driver's license online?
+entity_guard,0.8,U07,unrelated,False,,S11,0.5127,False,False,False,False,14890.6,15.37,How do I renew my driver's license online?
+threshold_only,0.8,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.3,16.1,How much does a bike share ride cost per minute?
+entity_guard,0.8,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.3,16.1,How much does a bike share ride cost per minute?
+threshold_only,0.8,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.3,15.09,Translate 'thank you very much' into Spanish.
+entity_guard,0.8,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.3,15.09,Translate 'thank you very much' into Spanish.
+threshold_only,0.8,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.4,15.17,What are some tips for parallel parking a car?
+entity_guard,0.8,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.4,15.17,What are some tips for parallel parking a car?
+threshold_only,0.85,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,17.0,17.02,How do I report a bus breakdown to the transit incident desk?
+entity_guard,0.85,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,17.0,17.02,How do I report a bus breakdown to the transit incident desk?
+threshold_only,0.85,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,17.1,17.06,What incident category should I use when my train is running late?
+entity_guard,0.85,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,17.1,17.06,What incident category should I use when my train is running late?
+threshold_only,0.85,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,17.9,17.94,What category is incident INC-000042?
+entity_guard,0.85,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,17.9,17.94,What category is incident INC-000042?
+threshold_only,0.85,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,18.3,18.33,How many passengers were affected by incident INC-000105?
+entity_guard,0.85,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,18.3,18.33,How many passengers were affected by incident INC-000105?
+threshold_only,0.85,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,17.8,17.83,Which transit line is incident INC-000230 on?
+entity_guard,0.85,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,17.8,17.83,Which transit line is incident INC-000230 on?
+threshold_only,0.85,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,16.0,16.03,What should I do if my bus is detoured because of a service change?
+entity_guard,0.85,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,16.0,16.03,What should I do if my bus is detoured because of a service change?
+threshold_only,0.85,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,15.8,15.84,Who do I contact if I was injured in a minor collision on a light rail train?
+entity_guard,0.85,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,15.8,15.84,Who do I contact if I was injured in a minor collision on a light rail train?
+threshold_only,0.85,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,15.7,15.74,What information should I include when I report a delay?
+entity_guard,0.85,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,15.7,15.74,What information should I include when I report a delay?
+threshold_only,0.85,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,17.6,17.63,What is the route title for incident INC-000318?
+entity_guard,0.85,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,17.6,17.63,What is the route title for incident INC-000318?
+threshold_only,0.85,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,17.1,17.09,When was incident INC-000777 reported?
+entity_guard,0.85,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,17.1,17.09,When was incident INC-000777 reported?
+threshold_only,0.85,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,16.2,16.24,What's the process for reporting a broken-down bus to the incident desk?
+entity_guard,0.85,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,16.2,16.24,What's the process for reporting a broken-down bus to the incident desk?
+threshold_only,0.85,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,16.1,16.13,My train is running behind schedule - which incident category applies?
+entity_guard,0.85,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,16.1,16.13,My train is running behind schedule - which incident category applies?
+threshold_only,0.85,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,16.8,16.84,Which category was incident INC-000042 filed under?
+entity_guard,0.85,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,16.8,16.84,Which category was incident INC-000042 filed under?
+threshold_only,0.85,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,17.1,17.08,How many riders were impacted by incident INC-000105?
+entity_guard,0.85,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,17.1,17.08,How many riders were impacted by incident INC-000105?
+threshold_only,0.85,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,16.5,16.49,Incident INC-000230 happened on which transit line?
+entity_guard,0.85,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,16.5,16.49,Incident INC-000230 happened on which transit line?
+threshold_only,0.85,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,16.0,16.0,My bus got rerouted because of a service change. What should I do?
+entity_guard,0.85,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,16.0,16.0,My bus got rerouted because of a service change. What should I do?
+threshold_only,0.85,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,16.0,15.95,I got hurt in a small collision on a light rail train - who should I contact?
+entity_guard,0.85,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,16.0,15.95,I got hurt in a small collision on a light rail train - who should I contact?
+threshold_only,0.85,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,16.4,16.38,What details do I need to give when reporting a delay?
+entity_guard,0.85,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,16.4,16.38,What details do I need to give when reporting a delay?
+threshold_only,0.85,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.2,16.19,How is a Service Change incident different from a Delay incident?
+entity_guard,0.85,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.2,16.19,How is a Service Change incident different from a Delay incident?
+threshold_only,0.85,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,16.7,16.68,"Typically, how long until a broken-down vehicle is cleared?"
+entity_guard,0.85,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,16.7,16.68,"Typically, how long until a broken-down vehicle is cleared?"
+threshold_only,0.85,D01,superficially_similar,False,S03,S03,0.932,False,True,True,False,17.2,17.25,What category is incident INC-000043?
+entity_guard,0.85,D01,superficially_similar,False,S03,S03,0.932,False,False,False,False,18465.8,17.25,What category is incident INC-000043?
+threshold_only,0.85,D02,superficially_similar,False,S04,S04,0.9568,False,True,True,False,17.6,17.57,How many passengers were affected by incident INC-000106?
+entity_guard,0.85,D02,superficially_similar,False,S04,S04,0.9568,False,False,False,False,14650.5,17.57,How many passengers were affected by incident INC-000106?
+threshold_only,0.85,D03,superficially_similar,False,S05,S05,0.9822,False,True,True,False,17.0,17.02,Which transit line is incident INC-000231 on?
+entity_guard,0.85,D03,superficially_similar,False,S05,S05,0.9822,False,False,False,False,18674.8,17.02,Which transit line is incident INC-000231 on?
+threshold_only,0.85,D04,superficially_similar,False,S11,S11,0.9724,False,True,True,False,17.8,17.76,What is the route title for incident INC-000319?
+entity_guard,0.85,D04,superficially_similar,False,S11,S11,0.9724,False,False,False,False,25166.6,17.76,What is the route title for incident INC-000319?
+threshold_only,0.85,D05,superficially_similar,False,S12,S12,0.9797,False,True,True,False,16.4,16.39,When was incident INC-000778 reported?
+entity_guard,0.85,D05,superficially_similar,False,S12,S12,0.9797,False,False,False,False,18392.8,16.39,When was incident INC-000778 reported?
+threshold_only,0.85,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,16.0,15.98,What incident category should I use when my train is cancelled?
+entity_guard,0.85,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,16.0,15.98,What incident category should I use when my train is cancelled?
+threshold_only,0.85,D07,superficially_similar,False,S01,S01,0.8809,True,True,True,False,15.6,15.58,How do I report a light rail accident with injuries to the transit incident desk?
+entity_guard,0.85,D07,superficially_similar,False,S01,S01,0.8809,True,True,True,False,15.6,15.58,How do I report a light rail accident with injuries to the transit incident desk?
+threshold_only,0.85,D08,superficially_similar,False,S10,S10,0.833,True,False,False,False,14627.8,16.18,How long does it usually take for a minor collision to be cleared?
+entity_guard,0.85,D08,superficially_similar,False,S10,S10,0.833,True,False,False,False,14627.8,16.18,How long does it usually take for a minor collision to be cleared?
+threshold_only,0.85,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.9,16.13,What information should I include when I report an accident?
+entity_guard,0.85,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.9,16.13,What information should I include when I report an accident?
+threshold_only,0.85,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19346.2,16.43,What is the difference between a Breakdown and an Accident incident?
+entity_guard,0.85,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19346.2,16.43,What is the difference between a Breakdown and an Accident incident?
+threshold_only,0.85,U01,unrelated,False,,S08,0.4901,True,False,False,False,21390.9,15.61,What is the weather in San Jose tomorrow?
+entity_guard,0.85,U01,unrelated,False,,S08,0.4901,True,False,False,False,21390.9,15.61,What is the weather in San Jose tomorrow?
+threshold_only,0.85,U02,unrelated,False,,S06,0.5874,True,False,False,False,19662.0,16.2,How do I reset my Wi-Fi router?
+entity_guard,0.85,U02,unrelated,False,,S06,0.5874,True,False,False,False,19662.0,16.2,How do I reset my Wi-Fi router?
+threshold_only,0.85,U03,unrelated,False,,S05,0.4697,False,False,False,False,17140.2,15.54,Can you recommend a good pizza place downtown?
+entity_guard,0.85,U03,unrelated,False,,S05,0.4697,False,False,False,False,17140.2,15.54,Can you recommend a good pizza place downtown?
+threshold_only,0.85,U04,unrelated,False,,S11,0.4508,False,False,False,False,15131.7,14.73,What is the capital of Australia?
+entity_guard,0.85,U04,unrelated,False,,S11,0.4508,False,False,False,False,15131.7,14.73,What is the capital of Australia?
+threshold_only,0.85,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.4,15.75,How do I bake sourdough bread at home?
+entity_guard,0.85,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.4,15.75,How do I bake sourdough bread at home?
+threshold_only,0.85,U06,unrelated,False,,S04,0.3947,False,False,False,False,8939.6,14.56,Who won the 2022 FIFA World Cup?
+entity_guard,0.85,U06,unrelated,False,,S04,0.3947,False,False,False,False,8939.6,14.56,Who won the 2022 FIFA World Cup?
+threshold_only,0.85,U07,unrelated,False,,S11,0.5127,False,False,False,False,14891.1,15.92,How do I renew my driver's license online?
+entity_guard,0.85,U07,unrelated,False,,S11,0.5127,False,False,False,False,14891.1,15.92,How do I renew my driver's license online?
+threshold_only,0.85,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.4,16.21,How much does a bike share ride cost per minute?
+entity_guard,0.85,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.4,16.21,How much does a bike share ride cost per minute?
+threshold_only,0.85,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.8,15.61,Translate 'thank you very much' into Spanish.
+entity_guard,0.85,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.8,15.61,Translate 'thank you very much' into Spanish.
+threshold_only,0.85,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.6,15.42,What are some tips for parallel parking a car?
+entity_guard,0.85,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.6,15.42,What are some tips for parallel parking a car?
+threshold_only,0.9,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,16.2,16.17,How do I report a bus breakdown to the transit incident desk?
+entity_guard,0.9,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,16.2,16.17,How do I report a bus breakdown to the transit incident desk?
+threshold_only,0.9,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,16.3,16.27,What incident category should I use when my train is running late?
+entity_guard,0.9,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,16.3,16.27,What incident category should I use when my train is running late?
+threshold_only,0.9,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,18.1,18.14,What category is incident INC-000042?
+entity_guard,0.9,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,18.1,18.14,What category is incident INC-000042?
+threshold_only,0.9,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,19.5,19.55,How many passengers were affected by incident INC-000105?
+entity_guard,0.9,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,19.5,19.55,How many passengers were affected by incident INC-000105?
+threshold_only,0.9,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,18.4,18.39,Which transit line is incident INC-000230 on?
+entity_guard,0.9,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,18.4,18.39,Which transit line is incident INC-000230 on?
+threshold_only,0.9,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,17.7,17.66,What should I do if my bus is detoured because of a service change?
+entity_guard,0.9,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,17.7,17.66,What should I do if my bus is detoured because of a service change?
+threshold_only,0.9,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,17.7,17.69,Who do I contact if I was injured in a minor collision on a light rail train?
+entity_guard,0.9,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,17.7,17.69,Who do I contact if I was injured in a minor collision on a light rail train?
+threshold_only,0.9,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,17.7,17.67,What information should I include when I report a delay?
+entity_guard,0.9,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,17.7,17.67,What information should I include when I report a delay?
+threshold_only,0.9,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,20.3,20.3,What is the route title for incident INC-000318?
+entity_guard,0.9,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,20.3,20.3,What is the route title for incident INC-000318?
+threshold_only,0.9,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,19.3,19.27,When was incident INC-000777 reported?
+entity_guard,0.9,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,19.3,19.27,When was incident INC-000777 reported?
+threshold_only,0.9,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,17.0,16.96,What's the process for reporting a broken-down bus to the incident desk?
+entity_guard,0.9,P01,paraphrase,True,S01,S01,0.9495,True,True,False,True,17.0,16.96,What's the process for reporting a broken-down bus to the incident desk?
+threshold_only,0.9,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,17.0,17.01,My train is running behind schedule - which incident category applies?
+entity_guard,0.9,P02,paraphrase,True,S02,S02,0.9177,True,True,False,True,17.0,17.01,My train is running behind schedule - which incident category applies?
+threshold_only,0.9,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,18.3,18.32,Which category was incident INC-000042 filed under?
+entity_guard,0.9,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,18.3,18.32,Which category was incident INC-000042 filed under?
+threshold_only,0.9,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,18.9,18.85,How many riders were impacted by incident INC-000105?
+entity_guard,0.9,P04,paraphrase,True,S04,S04,0.9429,True,True,False,True,18.9,18.85,How many riders were impacted by incident INC-000105?
+threshold_only,0.9,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,17.7,17.71,Incident INC-000230 happened on which transit line?
+entity_guard,0.9,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,17.7,17.71,Incident INC-000230 happened on which transit line?
+threshold_only,0.9,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,16.3,16.34,My bus got rerouted because of a service change. What should I do?
+entity_guard,0.9,P06,paraphrase,True,S06,S06,0.9215,True,True,False,True,16.3,16.34,My bus got rerouted because of a service change. What should I do?
+threshold_only,0.9,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,17.3,17.34,I got hurt in a small collision on a light rail train - who should I contact?
+entity_guard,0.9,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,17.3,17.34,I got hurt in a small collision on a light rail train - who should I contact?
+threshold_only,0.9,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,16.8,16.84,What details do I need to give when reporting a delay?
+entity_guard,0.9,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,16.8,16.84,What details do I need to give when reporting a delay?
+threshold_only,0.9,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.1,16.06,How is a Service Change incident different from a Delay incident?
+entity_guard,0.9,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.1,16.06,How is a Service Change incident different from a Delay incident?
+threshold_only,0.9,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,17.4,17.38,"Typically, how long until a broken-down vehicle is cleared?"
+entity_guard,0.9,P10,paraphrase,True,S10,S10,0.9293,True,True,False,True,17.4,17.38,"Typically, how long until a broken-down vehicle is cleared?"
+threshold_only,0.9,D01,superficially_similar,False,S03,S03,0.932,False,True,True,False,17.5,17.52,What category is incident INC-000043?
+entity_guard,0.9,D01,superficially_similar,False,S03,S03,0.932,False,False,False,False,18466.1,17.52,What category is incident INC-000043?
+threshold_only,0.9,D02,superficially_similar,False,S04,S04,0.9568,False,True,True,False,20.2,20.2,How many passengers were affected by incident INC-000106?
+entity_guard,0.9,D02,superficially_similar,False,S04,S04,0.9568,False,False,False,False,14653.1,20.2,How many passengers were affected by incident INC-000106?
+threshold_only,0.9,D03,superficially_similar,False,S05,S05,0.9822,False,True,True,False,20.1,20.09,Which transit line is incident INC-000231 on?
+entity_guard,0.9,D03,superficially_similar,False,S05,S05,0.9822,False,False,False,False,18677.9,20.09,Which transit line is incident INC-000231 on?
+threshold_only,0.9,D04,superficially_similar,False,S11,S11,0.9724,False,True,True,False,19.6,19.64,What is the route title for incident INC-000319?
+entity_guard,0.9,D04,superficially_similar,False,S11,S11,0.9724,False,False,False,False,25168.4,19.64,What is the route title for incident INC-000319?
+threshold_only,0.9,D05,superficially_similar,False,S12,S12,0.9797,False,True,True,False,18.4,18.43,When was incident INC-000778 reported?
+entity_guard,0.9,D05,superficially_similar,False,S12,S12,0.9797,False,False,False,False,18394.8,18.43,When was incident INC-000778 reported?
+threshold_only,0.9,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,17.9,17.92,What incident category should I use when my train is cancelled?
+entity_guard,0.9,D06,superficially_similar,False,S02,S02,0.9189,True,True,True,False,17.9,17.92,What incident category should I use when my train is cancelled?
+threshold_only,0.9,D07,superficially_similar,False,S01,S01,0.8809,True,False,False,False,16371.5,16.48,How do I report a light rail accident with injuries to the transit incident desk?
+entity_guard,0.9,D07,superficially_similar,False,S01,S01,0.8809,True,False,False,False,16371.5,16.48,How do I report a light rail accident with injuries to the transit incident desk?
+threshold_only,0.9,D08,superficially_similar,False,S10,S10,0.833,True,False,False,False,14627.0,15.37,How long does it usually take for a minor collision to be cleared?
+entity_guard,0.9,D08,superficially_similar,False,S10,S10,0.833,True,False,False,False,14627.0,15.37,How long does it usually take for a minor collision to be cleared?
+threshold_only,0.9,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.7,15.94,What information should I include when I report an accident?
+entity_guard,0.9,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.7,15.94,What information should I include when I report an accident?
+threshold_only,0.9,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19345.7,15.85,What is the difference between a Breakdown and an Accident incident?
+entity_guard,0.9,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19345.7,15.85,What is the difference between a Breakdown and an Accident incident?
+threshold_only,0.9,U01,unrelated,False,,S08,0.4901,True,False,False,False,21390.3,15.03,What is the weather in San Jose tomorrow?
+entity_guard,0.9,U01,unrelated,False,,S08,0.4901,True,False,False,False,21390.3,15.03,What is the weather in San Jose tomorrow?
+threshold_only,0.9,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.4,15.64,How do I reset my Wi-Fi router?
+entity_guard,0.9,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.4,15.64,How do I reset my Wi-Fi router?
+threshold_only,0.9,U03,unrelated,False,,S05,0.4697,False,False,False,False,17140.1,15.4,Can you recommend a good pizza place downtown?
+entity_guard,0.9,U03,unrelated,False,,S05,0.4697,False,False,False,False,17140.1,15.4,Can you recommend a good pizza place downtown?
+threshold_only,0.9,U04,unrelated,False,,S11,0.4508,False,False,False,False,15131.8,14.83,What is the capital of Australia?
+entity_guard,0.9,U04,unrelated,False,,S11,0.4508,False,False,False,False,15131.8,14.83,What is the capital of Australia?
+threshold_only,0.9,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.7,15.97,How do I bake sourdough bread at home?
+entity_guard,0.9,U05,unrelated,False,,S08,0.4252,True,False,False,False,12291.7,15.97,How do I bake sourdough bread at home?
+threshold_only,0.9,U06,unrelated,False,,S04,0.3947,False,False,False,False,8940.3,15.32,Who won the 2022 FIFA World Cup?
+entity_guard,0.9,U06,unrelated,False,,S04,0.3947,False,False,False,False,8940.3,15.32,Who won the 2022 FIFA World Cup?
+threshold_only,0.9,U07,unrelated,False,,S11,0.5127,False,False,False,False,14890.8,15.63,How do I renew my driver's license online?
+entity_guard,0.9,U07,unrelated,False,,S11,0.5127,False,False,False,False,14890.8,15.63,How do I renew my driver's license online?
+threshold_only,0.9,U08,unrelated,False,,S04,0.4954,False,False,False,False,13636.9,15.65,How much does a bike share ride cost per minute?
+entity_guard,0.9,U08,unrelated,False,,S04,0.4954,False,False,False,False,13636.9,15.65,How much does a bike share ride cost per minute?
+threshold_only,0.9,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.9,15.71,Translate 'thank you very much' into Spanish.
+entity_guard,0.9,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.9,15.71,Translate 'thank you very much' into Spanish.
+threshold_only,0.9,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.3,15.14,What are some tips for parallel parking a car?
+entity_guard,0.9,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.3,15.14,What are some tips for parallel parking a car?
+threshold_only,0.95,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,16.5,16.49,How do I report a bus breakdown to the transit incident desk?
+entity_guard,0.95,E01,exact_duplicate,True,S01,S01,1.0,True,True,False,True,16.5,16.49,How do I report a bus breakdown to the transit incident desk?
+threshold_only,0.95,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,16.4,16.37,What incident category should I use when my train is running late?
+entity_guard,0.95,E02,exact_duplicate,True,S02,S02,1.0,True,True,False,True,16.4,16.37,What incident category should I use when my train is running late?
+threshold_only,0.95,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,16.7,16.72,What category is incident INC-000042?
+entity_guard,0.95,E03,exact_duplicate,True,S03,S03,1.0,True,True,False,True,16.7,16.72,What category is incident INC-000042?
+threshold_only,0.95,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,18.0,17.97,How many passengers were affected by incident INC-000105?
+entity_guard,0.95,E04,exact_duplicate,True,S04,S04,1.0,True,True,False,True,18.0,17.97,How many passengers were affected by incident INC-000105?
+threshold_only,0.95,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,16.3,16.33,Which transit line is incident INC-000230 on?
+entity_guard,0.95,E05,exact_duplicate,True,S05,S05,1.0,True,True,False,True,16.3,16.33,Which transit line is incident INC-000230 on?
+threshold_only,0.95,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,15.7,15.74,What should I do if my bus is detoured because of a service change?
+entity_guard,0.95,E06,exact_duplicate,True,S06,S06,1.0,True,True,False,True,15.7,15.74,What should I do if my bus is detoured because of a service change?
+threshold_only,0.95,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,15.3,15.27,Who do I contact if I was injured in a minor collision on a light rail train?
+entity_guard,0.95,E07,exact_duplicate,True,S07,S07,1.0,True,True,False,True,15.3,15.27,Who do I contact if I was injured in a minor collision on a light rail train?
+threshold_only,0.95,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,15.4,15.38,What information should I include when I report a delay?
+entity_guard,0.95,E08,exact_duplicate,True,S08,S08,1.0,True,True,False,True,15.4,15.38,What information should I include when I report a delay?
+threshold_only,0.95,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,17.4,17.39,What is the route title for incident INC-000318?
+entity_guard,0.95,E09,exact_duplicate,True,S11,S11,1.0,True,True,False,True,17.4,17.39,What is the route title for incident INC-000318?
+threshold_only,0.95,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,17.6,17.56,When was incident INC-000777 reported?
+entity_guard,0.95,E10,exact_duplicate,True,S12,S12,1.0,True,True,False,True,17.6,17.56,When was incident INC-000777 reported?
+threshold_only,0.95,P01,paraphrase,True,S01,S01,0.9495,True,False,False,False,14250.0,15.71,What's the process for reporting a broken-down bus to the incident desk?
+entity_guard,0.95,P01,paraphrase,True,S01,S01,0.9495,True,False,False,False,14250.0,15.71,What's the process for reporting a broken-down bus to the incident desk?
+threshold_only,0.95,P02,paraphrase,True,S02,S02,0.9177,True,False,False,False,11054.4,15.4,My train is running behind schedule - which incident category applies?
+entity_guard,0.95,P02,paraphrase,True,S02,S02,0.9177,True,False,False,False,11054.4,15.4,My train is running behind schedule - which incident category applies?
+threshold_only,0.95,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,17.5,17.51,Which category was incident INC-000042 filed under?
+entity_guard,0.95,P03,paraphrase,True,S03,S03,0.9748,True,True,False,True,17.5,17.51,Which category was incident INC-000042 filed under?
+threshold_only,0.95,P04,paraphrase,True,S04,S04,0.9429,True,False,False,False,16288.8,16.45,How many riders were impacted by incident INC-000105?
+entity_guard,0.95,P04,paraphrase,True,S04,S04,0.9429,True,False,False,False,16288.8,16.45,How many riders were impacted by incident INC-000105?
+threshold_only,0.95,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,16.6,16.61,Incident INC-000230 happened on which transit line?
+entity_guard,0.95,P05,paraphrase,True,S05,S05,0.9632,True,True,False,True,16.6,16.61,Incident INC-000230 happened on which transit line?
+threshold_only,0.95,P06,paraphrase,True,S06,S06,0.9215,True,False,False,False,12293.2,15.5,My bus got rerouted because of a service change. What should I do?
+entity_guard,0.95,P06,paraphrase,True,S06,S06,0.9215,True,False,False,False,12293.2,15.5,My bus got rerouted because of a service change. What should I do?
+threshold_only,0.95,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,15.6,15.64,I got hurt in a small collision on a light rail train - who should I contact?
+entity_guard,0.95,P07,paraphrase,True,S07,S07,0.9741,True,True,False,True,15.6,15.64,I got hurt in a small collision on a light rail train - who should I contact?
+threshold_only,0.95,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,15.7,15.74,What details do I need to give when reporting a delay?
+entity_guard,0.95,P08,paraphrase,True,S08,S08,0.9709,True,True,False,True,15.7,15.74,What details do I need to give when reporting a delay?
+threshold_only,0.95,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.0,15.96,How is a Service Change incident different from a Delay incident?
+entity_guard,0.95,P09,paraphrase,True,S09,S09,0.9809,True,True,False,True,16.0,15.96,How is a Service Change incident different from a Delay incident?
+threshold_only,0.95,P10,paraphrase,True,S10,S10,0.9293,True,False,False,False,11909.4,16.69,"Typically, how long until a broken-down vehicle is cleared?"
+entity_guard,0.95,P10,paraphrase,True,S10,S10,0.9293,True,False,False,False,11909.4,16.69,"Typically, how long until a broken-down vehicle is cleared?"
+threshold_only,0.95,D01,superficially_similar,False,S03,S03,0.932,False,False,False,False,18464.7,16.1,What category is incident INC-000043?
+entity_guard,0.95,D01,superficially_similar,False,S03,S03,0.932,False,False,False,False,18464.7,16.1,What category is incident INC-000043?
+threshold_only,0.95,D02,superficially_similar,False,S04,S04,0.9568,False,True,True,False,18.9,18.86,How many passengers were affected by incident INC-000106?
+entity_guard,0.95,D02,superficially_similar,False,S04,S04,0.9568,False,False,False,False,14651.8,18.86,How many passengers were affected by incident INC-000106?
+threshold_only,0.95,D03,superficially_similar,False,S05,S05,0.9822,False,True,True,False,17.0,17.01,Which transit line is incident INC-000231 on?
+entity_guard,0.95,D03,superficially_similar,False,S05,S05,0.9822,False,False,False,False,18674.8,17.01,Which transit line is incident INC-000231 on?
+threshold_only,0.95,D04,superficially_similar,False,S11,S11,0.9724,False,True,True,False,17.6,17.57,What is the route title for incident INC-000319?
+entity_guard,0.95,D04,superficially_similar,False,S11,S11,0.9724,False,False,False,False,25166.4,17.57,What is the route title for incident INC-000319?
+threshold_only,0.95,D05,superficially_similar,False,S12,S12,0.9797,False,True,True,False,16.8,16.77,When was incident INC-000778 reported?
+entity_guard,0.95,D05,superficially_similar,False,S12,S12,0.9797,False,False,False,False,18393.2,16.77,When was incident INC-000778 reported?
+threshold_only,0.95,D06,superficially_similar,False,S02,S02,0.9189,True,False,False,False,15990.0,16.47,What incident category should I use when my train is cancelled?
+entity_guard,0.95,D06,superficially_similar,False,S02,S02,0.9189,True,False,False,False,15990.0,16.47,What incident category should I use when my train is cancelled?
+threshold_only,0.95,D07,superficially_similar,False,S01,S01,0.8809,True,False,False,False,16371.1,16.06,How do I report a light rail accident with injuries to the transit incident desk?
+entity_guard,0.95,D07,superficially_similar,False,S01,S01,0.8809,True,False,False,False,16371.1,16.06,How do I report a light rail accident with injuries to the transit incident desk?
+threshold_only,0.95,D08,superficially_similar,False,S10,S10,0.833,True,False,False,False,14626.9,15.33,How long does it usually take for a minor collision to be cleared?
+entity_guard,0.95,D08,superficially_similar,False,S10,S10,0.833,True,False,False,False,14626.9,15.33,How long does it usually take for a minor collision to be cleared?
+threshold_only,0.95,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.7,15.88,What information should I include when I report an accident?
+entity_guard,0.95,D09,superficially_similar,False,S08,S08,0.7833,True,False,False,False,14466.7,15.88,What information should I include when I report an accident?
+threshold_only,0.95,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19346.6,16.78,What is the difference between a Breakdown and an Accident incident?
+entity_guard,0.95,D10,superficially_similar,False,S09,S09,0.7365,True,False,False,False,19346.6,16.78,What is the difference between a Breakdown and an Accident incident?
+threshold_only,0.95,U01,unrelated,False,,S08,0.4901,True,False,False,False,21390.9,15.59,What is the weather in San Jose tomorrow?
+entity_guard,0.95,U01,unrelated,False,,S08,0.4901,True,False,False,False,21390.9,15.59,What is the weather in San Jose tomorrow?
+threshold_only,0.95,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.6,15.79,How do I reset my Wi-Fi router?
+entity_guard,0.95,U02,unrelated,False,,S06,0.5874,True,False,False,False,19661.6,15.79,How do I reset my Wi-Fi router?
+threshold_only,0.95,U03,unrelated,False,,S05,0.4697,False,False,False,False,17139.4,14.74,Can you recommend a good pizza place downtown?
+entity_guard,0.95,U03,unrelated,False,,S05,0.4697,False,False,False,False,17139.4,14.74,Can you recommend a good pizza place downtown?
+threshold_only,0.95,U04,unrelated,False,,S11,0.4508,False,False,False,False,15132.0,15.02,What is the capital of Australia?
+entity_guard,0.95,U04,unrelated,False,,S11,0.4508,False,False,False,False,15132.0,15.02,What is the capital of Australia?
+threshold_only,0.95,U05,unrelated,False,,S08,0.4252,True,False,False,False,12292.0,16.3,How do I bake sourdough bread at home?
+entity_guard,0.95,U05,unrelated,False,,S08,0.4252,True,False,False,False,12292.0,16.3,How do I bake sourdough bread at home?
+threshold_only,0.95,U06,unrelated,False,,S04,0.3947,False,False,False,False,8940.4,15.4,Who won the 2022 FIFA World Cup?
+entity_guard,0.95,U06,unrelated,False,,S04,0.3947,False,False,False,False,8940.4,15.4,Who won the 2022 FIFA World Cup?
+threshold_only,0.95,U07,unrelated,False,,S11,0.5127,False,False,False,False,14891.3,16.09,How do I renew my driver's license online?
+entity_guard,0.95,U07,unrelated,False,,S11,0.5127,False,False,False,False,14891.3,16.09,How do I renew my driver's license online?
+threshold_only,0.95,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.1,15.92,How much does a bike share ride cost per minute?
+entity_guard,0.95,U08,unrelated,False,,S04,0.4954,False,False,False,False,13637.1,15.92,How much does a bike share ride cost per minute?
+threshold_only,0.95,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.2,15.05,Translate 'thank you very much' into Spanish.
+entity_guard,0.95,U09,unrelated,False,,S11,0.4532,False,False,False,False,8690.2,15.05,Translate 'thank you very much' into Spanish.
+threshold_only,0.95,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.5,15.31,What are some tips for parallel parking a car?
+entity_guard,0.95,U10,unrelated,False,,S06,0.5667,True,False,False,False,11979.5,15.31,What are some tips for parallel parking a car?

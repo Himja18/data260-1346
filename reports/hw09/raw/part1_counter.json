@@ -1,0 +1,12 @@
+{
+  "incident_id": 42,
+  "key": "s1346:views:incident:42",
+  "accesses": 25,
+  "redis_value": 25,
+  "mysql_view_count": 20,
+  "syncs": 2,
+  "incr_ms_mean": 1.631,
+  "db_update_ms_mean": 2.171,
+  "mysql_round_trips_redis_design": 2,
+  "mysql_round_trips_db_design": 25
+}

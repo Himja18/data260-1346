@@ -1,0 +1,45 @@
+{
+  "id": "CT01",
+  "question": "What is the current status of incident INC-260101?",
+  "lessons_loaded": [],
+  "attempts": [
+    {
+      "attempt": 1,
+      "answer": "Incident INC-260101 is a Breakdown on Line 22 at Fillmore St & Geary Blvd.",
+      "model_ms": 0.0,
+      "forced": true,
+      "result": "REVISE",
+      "explanation": "INC-260101: the answer does not state the current status.",
+      "feedback": "INC-260101: the answer does not state the current status. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Resolved. Answer with these values.",
+      "failure_pattern": "missing_value",
+      "expected": {
+        "current_status": "Resolved"
+      },
+      "reference_ids": [
+        "INC-260101"
+      ]
+    },
+    {
+      "attempt": 2,
+      "answer": "Incident INC-260101 is a Breakdown on Line 22 at Fillmore St & Geary Blvd and has been Resolved.",
+      "model_ms": 6839.3,
+      "forced": false,
+      "result": "PASS",
+      "explanation": "INC-260101: current status = Resolved - matches the reference dataset.",
+      "feedback": null,
+      "failure_pattern": null,
+      "expected": {
+        "current_status": "Resolved"
+      },
+      "reference_ids": [
+        "INC-260101"
+      ]
+    }
+  ],
+  "n_attempts": 2,
+  "final_answer": "Incident INC-260101 is a Breakdown on Line 22 at Fillmore St & Geary Blvd and has been Resolved.",
+  "final_result": "PASS",
+  "correct": true,
+  "latency_ms": 6845.4,
+  "new_lesson": null
+}

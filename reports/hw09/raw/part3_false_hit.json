@@ -1,0 +1,32 @@
+{
+  "threshold": 0.85,
+  "case_id": "D03",
+  "group": "superficially_similar",
+  "cached_query": "Which transit line is incident INC-000230 on?",
+  "incoming_query": "Which transit line is incident INC-000231 on?",
+  "similarity": 0.9822,
+  "cached_answer_returned": "INC-000230 is on Route 118 - Detem around Broadway (L-118). It's a Service Change with no passengers affected. Affected line: L-118 (Route 118 - Riverside). Reported at 2025-09-17 09:46:15.",
+  "correct_answer": "The transit line involved in incident INC-000231 is L-121 (LRT Line 121 - Northside), which experienced a 12-minute delay at Airport Blvd. The incident was reported on 2025-09-17 at 10:36 AM.",
+  "s1346_rel_rows": {
+    "INC-000230": {
+      "id": "230",
+      "incident_code": "INC-000230",
+      "route_title": "Route 118 - Detour around Broadway",
+      "category": "Service Change",
+      "passengers_affected": "0",
+      "created_at": "2025-09-17 09:46:15",
+      "line_code": "L-118",
+      "line_name": "Route 118 - Riverside"
+    },
+    "INC-000231": {
+      "id": "231",
+      "incident_code": "INC-000231",
+      "route_title": "LRT Line 121 - 12 min delay at Airport Blvd",
+      "category": "Delay",
+      "passengers_affected": "0",
+      "created_at": "2025-09-17 10:36:19",
+      "line_code": "L-121",
+      "line_name": "LRT Line 121 - Northside"
+    }
+  }
+}

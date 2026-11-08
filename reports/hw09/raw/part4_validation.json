@@ -1,0 +1,648 @@
+[
+  {
+    "lesson_id": "lesson_001",
+    "dataset": "validation",
+    "failures_before": [
+      "VA01",
+      "VA02",
+      "VA05"
+    ],
+    "failures_after": [],
+    "regressions": [],
+    "unrelated_questions": [
+      "VA06",
+      "VA08"
+    ],
+    "unsupported_after": [],
+    "new_unsupported": [],
+    "decision": "kept",
+    "per_question": {
+      "VA01": [
+        "REVISE",
+        "PASS"
+      ],
+      "VA02": [
+        "REVISE",
+        "PASS"
+      ],
+      "VA03": [
+        "PASS",
+        "PASS"
+      ],
+      "VA04": [
+        "PASS",
+        "PASS"
+      ],
+      "VA05": [
+        "REVISE",
+        "PASS"
+      ],
+      "VA06": [
+        "PASS",
+        "PASS"
+      ],
+      "VA07": [
+        "PASS",
+        "PASS"
+      ],
+      "VA08": [
+        "PASS",
+        "PASS"
+      ],
+      "VA09": [
+        "PASS",
+        "PASS"
+      ],
+      "VA10": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    "before": [
+      {
+        "id": "VA01",
+        "question": "What is the current status of incident INC-260109?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260109 is a Delay incident on LRT Line 101 - Market Street, with a reported cause of door fault on train 1107. It is at the Embarcadero station, affecting 90 passengers, and is expected to cause a 5 minute delay. Alternative service is provided by Route 14 buses on Mission St.",
+            "model_ms": 7510.2,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260109: the answer gives the first-report value (current status reported) instead of the current value.",
+            "feedback": "INC-260109: the answer gives the first-report value (current status reported) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current status = Ongoing. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260109"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260109 is a Delay incident on LRT Line 101 - Market Street, with a reported cause of door fault on train 1107. It is at the Embarcadero station, affecting 90 passengers, and is expected to cause a 5 minute delay. Alternative service is provided by Route 14 buses on Mission St.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 7512.9,
+        "new_lesson": null
+      },
+      {
+        "id": "VA02",
+        "question": "How many minutes of delay does incident INC-260110 have now?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Incident INC-260110 has an estimated delay of 25 minutes.",
+            "model_ms": 2607.7,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260110: the answer gives the first-report value (current delay (minutes) 25) instead of the current value.",
+            "feedback": "INC-260110: the answer gives the first-report value (current delay (minutes) 25) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: current delay (minutes) = 35. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "current_delay_min": "35"
+            },
+            "reference_ids": [
+              "INC-260110"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Incident INC-260110 has an estimated delay of 25 minutes.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 2609.1,
+        "new_lesson": null
+      },
+      {
+        "id": "VA03",
+        "question": "Which line is incident INC-260111 on?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Line L-038 (Route 38 - Geary) is incident INC-260111.",
+            "model_ms": 4018.3,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260111: line = L-038 (Route 38 - Geary) - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "line": "L-038 (Route 38 - Geary)"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Line L-038 (Route 38 - Geary) is incident INC-260111.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 4019.4,
+        "new_lesson": null
+      },
+      {
+        "id": "VA04",
+        "question": "What caused incident INC-260112?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The weekend schedule change caused incident INC-260112.",
+            "model_ms": 2609.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260112: cause = weekend schedule change - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "cause": "weekend schedule change"
+            },
+            "reference_ids": [
+              "INC-260112"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The weekend schedule change caused incident INC-260112.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2611.1,
+        "new_lesson": null
+      },
+      {
+        "id": "VA05",
+        "question": "What is the latest passenger count for incident INC-260101?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The latest passenger count for incident INC-260101 is 30.",
+            "model_ms": 2581.5,
+            "forced": false,
+            "result": "REVISE",
+            "explanation": "INC-260101: the answer gives the first-report value (passengers affected (latest count) 30) instead of the current value.",
+            "feedback": "INC-260101: the answer gives the first-report value (passengers affected (latest count) 30) instead of the current value. The reference dataset (verified, as of 2026-11-06T18:00:00-08:00) says: passengers affected (latest count) = 37. Answer with these values.",
+            "failure_pattern": "stale_value",
+            "expected": {
+              "passengers_affected": "37"
+            },
+            "reference_ids": [
+              "INC-260101"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The latest passenger count for incident INC-260101 is 30.",
+        "final_result": "REVISE",
+        "correct": false,
+        "latency_ms": 2582.4,
+        "new_lesson": null
+      },
+      {
+        "id": "VA06",
+        "question": "What is the status of incident INC-260199?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "No record in the dispatch feed indicates the status of INC-260199 is unknown.",
+            "model_ms": 2939.6,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (INC-260199 is not in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "INC-260199 is not in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "No record in the dispatch feed indicates the status of INC-260199 is unknown.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2940.1,
+        "new_lesson": null
+      },
+      {
+        "id": "VA07",
+        "question": "How do I report an accident with injuries?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "If anyone is injured in an accident, call 911 first. Then report the accident to the Transit Incident Desk at 311 with the line number, location, and time.",
+            "model_ms": 4836.7,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Follows POL-02 (How to report an accident with injuries): mentions 911.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "policy": "If anyone is injured, call 911 first. Then report the accident to the Transit Incident Desk at 311 with the line, location and time."
+            },
+            "reference_ids": [
+              "POL-02"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "If anyone is injured in an accident, call 911 first. Then report the accident to the Transit Incident Desk at 311 with the line number, location, and time.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 4838.0,
+        "new_lesson": null
+      },
+      {
+        "id": "VA08",
+        "question": "What is the weather in San Jose tomorrow?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The question about weather in San Jose tomorrow is not related to any provided dispatch records or policies.",
+            "model_ms": 1670.3,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (the question matches no incident or policy in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The question about weather in San Jose tomorrow is not related to any provided dispatch records or policies.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1670.6,
+        "new_lesson": null
+      },
+      {
+        "id": "VA09",
+        "question": "What category is incident INC-260105?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Delay",
+            "model_ms": 824.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260105: category = Delay - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "category": "Delay"
+            },
+            "reference_ids": [
+              "INC-260105"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Delay",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 824.6,
+        "new_lesson": null
+      },
+      {
+        "id": "VA10",
+        "question": "Where did incident INC-260104 happen?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Union Square station",
+            "model_ms": 898.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260104: location = Union Square station - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "location": "Union Square station"
+            },
+            "reference_ids": [
+              "INC-260104"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Union Square station",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 898.5,
+        "new_lesson": null
+      }
+    ],
+    "after": [
+      {
+        "id": "VA01",
+        "question": "What is the current status of incident INC-260109?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "current_status=Ongoing; current_delay_min=22;",
+            "model_ms": 2359.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260109: current status = Ongoing - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_status": "Ongoing"
+            },
+            "reference_ids": [
+              "INC-260109"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "current_status=Ongoing; current_delay_min=22;",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2365.2,
+        "new_lesson": null
+      },
+      {
+        "id": "VA02",
+        "question": "How many minutes of delay does incident INC-260110 have now?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "INC-260110 now has a current delay of 35 minutes.",
+            "model_ms": 3225.2,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260110: current delay (minutes) = 35 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "current_delay_min": "35"
+            },
+            "reference_ids": [
+              "INC-260110"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "INC-260110 now has a current delay of 35 minutes.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3227.5,
+        "new_lesson": null
+      },
+      {
+        "id": "VA03",
+        "question": "Which line is incident INC-260111 on?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Line L-038 (Route 38 - Geary) is incident INC-260111.",
+            "model_ms": 2375.6,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260111: line = L-038 (Route 38 - Geary) - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "line": "L-038 (Route 38 - Geary)"
+            },
+            "reference_ids": [
+              "INC-260111"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Line L-038 (Route 38 - Geary) is incident INC-260111.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2376.6,
+        "new_lesson": null
+      },
+      {
+        "id": "VA04",
+        "question": "What caused incident INC-260112?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The weekend schedule change caused incident INC-260112.",
+            "model_ms": 1387.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260112: cause = weekend schedule change - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "cause": "weekend schedule change"
+            },
+            "reference_ids": [
+              "INC-260112"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The weekend schedule change caused incident INC-260112.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1388.0,
+        "new_lesson": null
+      },
+      {
+        "id": "VA05",
+        "question": "What is the latest passenger count for incident INC-260101?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The latest passenger count for incident INC-260101 is 37.",
+            "model_ms": 3823.3,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260101: passengers affected (latest count) = 37 - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "passengers_affected": "37"
+            },
+            "reference_ids": [
+              "INC-260101"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The latest passenger count for incident INC-260101 is 37.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3825.6,
+        "new_lesson": null
+      },
+      {
+        "id": "VA06",
+        "question": "What is the status of incident INC-260199?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "No record in the reference dataset, status unknown.",
+            "model_ms": 2294.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (INC-260199 is not in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "INC-260199 is not in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "No record in the reference dataset, status unknown.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2305.6,
+        "new_lesson": null
+      },
+      {
+        "id": "VA07",
+        "question": "How do I report an accident with injuries?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "If anyone is injured in an accident, call 911 first. Then report the accident to the Transit Incident Desk at 311 with the line number, location, and time.",
+            "model_ms": 3333.1,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Follows POL-02 (How to report an accident with injuries): mentions 911.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "policy": "If anyone is injured, call 911 first. Then report the accident to the Transit Incident Desk at 311 with the line, location and time."
+            },
+            "reference_ids": [
+              "POL-02"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "If anyone is injured in an accident, call 911 first. Then report the accident to the Transit Incident Desk at 311 with the line number, location, and time.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 3333.7,
+        "new_lesson": null
+      },
+      {
+        "id": "VA08",
+        "question": "What is the weather in San Jose tomorrow?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The question about weather in San Jose tomorrow is not related to any provided dispatch records or policies.",
+            "model_ms": 1772.8,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "Correctly says there is no record (the question matches no incident or policy in the reference dataset).",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "no_record": "the question matches no incident or policy in the reference dataset"
+            },
+            "reference_ids": []
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "The question about weather in San Jose tomorrow is not related to any provided dispatch records or policies.",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 1773.2,
+        "new_lesson": null
+      },
+      {
+        "id": "VA09",
+        "question": "What category is incident INC-260105?",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "category=Delay",
+            "model_ms": 2068.6,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260105: category = Delay - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "category": "Delay"
+            },
+            "reference_ids": [
+              "INC-260105"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "category=Delay",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 2070.1,
+        "new_lesson": null
+      },
+      {
+        "id": "VA10",
+        "question": "Where did incident INC-260104 happen?",
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Union Square station",
+            "model_ms": 507.5,
+            "forced": false,
+            "result": "PASS",
+            "explanation": "INC-260104: location = Union Square station - matches the reference dataset.",
+            "feedback": null,
+            "failure_pattern": null,
+            "expected": {
+              "location": "Union Square station"
+            },
+            "reference_ids": [
+              "INC-260104"
+            ]
+          }
+        ],
+        "n_attempts": 1,
+        "final_answer": "Union Square station",
+        "final_result": "PASS",
+        "correct": true,
+        "latency_ms": 507.7,
+        "new_lesson": null
+      }
+    ]
+  }
+]
