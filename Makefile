@@ -118,3 +118,43 @@ hw08-metrics:           ## rebuild reports/hw08/METRICS.md from raw files
 
 verify-hw08:            ## smoke test (stack + agents up) -> reports/hw08/verification.json
 	$(PYTHON) verify_hw08.py
+
+# ---------------------------------------------------------------- HW9 ----
+.PHONY: hw09-redis hw09-migrate hw09-part1 hw09-part2 hw09-api hw09-sweep hw09-stale hw09-inspect \
+        hw09-part4 hw09-part4-controlled hw09-part4-train hw09-part4-validate hw09-part4-test
+
+hw09-redis:             ## start Redis Stack (RediSearch) as s1346-redis on 6379
+	docker compose up -d redis
+	docker exec s1346-redis redis-cli MODULE LIST
+
+hw09-migrate:           ## add incidents.view_count to s1346_rel (run once)
+	mysql -u root -p < code/backend/migrations/005_hw9_view_count.sql
+
+hw09-part1:             ## Part 1: Redis view counter, MySQL sync every 10
+	$(PYTHON) code/hw09/run_hw09_part1.py
+
+hw09-part2:             ## Part 2: semantic cache in front of the HW8 pipeline, 12 queries
+	$(PYTHON) code/hw09/run_hw09_part2.py
+
+hw09-api:               ## Part 2: cached Q&A endpoint on port 8447
+	uvicorn qa_api:app --app-dir code/hw09 --port 8447
+
+hw09-sweep:             ## Part 3.2-3.4: 40 cases x 5 thresholds, false hit, cost
+	$(PYTHON) code/hw09/run_hw09_part3_sweep.py
+
+hw09-stale:             ## Part 3.5: stale hit, then version-marker invalidation
+	$(PYTHON) code/hw09/run_hw09_part3_stale.py
+
+hw09-inspect:           ## every s1346:* key + the vector index
+	$(PYTHON) code/hw09/run_hw09_inspect.py
+
+hw09-part4-controlled:  ## Part 4.1 controlled revision
+	$(PYTHON) code/hw09/part4/run_hw09_part4.py controlled
+hw09-part4-train:       ## Part 4.2 training + lesson reuse
+	$(PYTHON) code/hw09/part4/run_hw09_part4.py train
+hw09-part4-validate:    ## Part 4.3 validation gate
+	$(PYTHON) code/hw09/part4/run_hw09_part4.py validate
+hw09-part4-test:        ## Part 4.4 four variants on test_data
+	$(PYTHON) code/hw09/part4/run_hw09_part4.py test
+hw09-part4:             ## Part 4: all four steps
+	$(PYTHON) code/hw09/part4/run_hw09_part4.py all

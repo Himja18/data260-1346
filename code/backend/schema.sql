@@ -1,6 +1,7 @@
--- DATA-260 HW7 schema for s1346_rel (fresh install).
+-- DATA-260 HW7 (+HW9 view_count) schema for s1346_rel (fresh install).
 -- Existing databases: run migrations/003_hw5_related_entity.sql (HW4 -> HW5) and
--- migrations/004_hw7_jwt_roles.sql (HW5/HW6 -> HW7) instead.
+-- migrations/004_hw7_jwt_roles.sql (HW5/HW6 -> HW7) and
+-- migrations/005_hw9_view_count.sql (HW8 -> HW9) instead.
 -- Run:  mysql -u root -p < code/backend/schema.sql
 
 CREATE DATABASE IF NOT EXISTS s1346_rel
@@ -22,6 +23,7 @@ CREATE TABLE IF NOT EXISTS incidents (
   route_title         VARCHAR(200) NOT NULL,            -- primary field
   category            VARCHAR(50)  NOT NULL,            -- secondary field
   passengers_affected INT          NOT NULL DEFAULT 0,  -- numeric field w/ default
+  view_count          INT          NOT NULL DEFAULT 0,  -- HW9: views persisted from Redis every 10
   line_id             INT NULL,
   created_at          DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at          DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

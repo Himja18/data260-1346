@@ -1,0 +1,73 @@
+# HW9 Part 3.1 - labelled cache cases (s1346 | Himja Patel | Municipal Transit Incidents)
+#
+# Written and committed BEFORE any threshold sweep. Labels are never edited after seeing results;
+# a labelling mistake found later is documented in reports/hw09/LABEL_NOTES.md instead.
+#
+# seeds  = the 12 questions placed in the cache first (answers come from the HW8 agent pipeline,
+#          incident facts from s1346_rel). Every case is compared against this cache.
+# cases  = 40 incoming questions:
+#          10 exact_duplicate     - same text as a seed            -> should hit that seed
+#          10 paraphrase          - same meaning, different words  -> should hit that seed
+#          10 superficially_similar - looks like a seed but the correct answer differs -> should miss
+#          10 unrelated           - not about the cached questions -> should miss
+# A hit counts as a FALSE HIT when should_hit is false, or when it returns a different seed than `seed`.
+version: 1
+domain: Municipal Transit Incidents (DOMAIN_ID 2)
+seeds:
+  - {id: S01, query: "How do I report a bus breakdown to the transit incident desk?"}
+  - {id: S02, query: "What incident category should I use when my train is running late?"}
+  - {id: S03, query: "What category is incident INC-000042?"}
+  - {id: S04, query: "How many passengers were affected by incident INC-000105?"}
+  - {id: S05, query: "Which transit line is incident INC-000230 on?"}
+  - {id: S06, query: "What should I do if my bus is detoured because of a service change?"}
+  - {id: S07, query: "Who do I contact if I was injured in a minor collision on a light rail train?"}
+  - {id: S08, query: "What information should I include when I report a delay?"}
+  - {id: S09, query: "What is the difference between a Delay and a Service Change incident?"}
+  - {id: S10, query: "How long does it usually take for a vehicle breakdown to be cleared?"}
+  - {id: S11, query: "What is the route title for incident INC-000318?"}
+  - {id: S12, query: "When was incident INC-000777 reported?"}
+cases:
+  # ---- 10 exact duplicates (should hit) --------------------------------------------------
+  - {id: E01, group: exact_duplicate, seed: S01, should_hit: true, query: "How do I report a bus breakdown to the transit incident desk?"}
+  - {id: E02, group: exact_duplicate, seed: S02, should_hit: true, query: "What incident category should I use when my train is running late?"}
+  - {id: E03, group: exact_duplicate, seed: S03, should_hit: true, query: "What category is incident INC-000042?"}
+  - {id: E04, group: exact_duplicate, seed: S04, should_hit: true, query: "How many passengers were affected by incident INC-000105?"}
+  - {id: E05, group: exact_duplicate, seed: S05, should_hit: true, query: "Which transit line is incident INC-000230 on?"}
+  - {id: E06, group: exact_duplicate, seed: S06, should_hit: true, query: "What should I do if my bus is detoured because of a service change?"}
+  - {id: E07, group: exact_duplicate, seed: S07, should_hit: true, query: "Who do I contact if I was injured in a minor collision on a light rail train?"}
+  - {id: E08, group: exact_duplicate, seed: S08, should_hit: true, query: "What information should I include when I report a delay?"}
+  - {id: E09, group: exact_duplicate, seed: S11, should_hit: true, query: "What is the route title for incident INC-000318?"}
+  - {id: E10, group: exact_duplicate, seed: S12, should_hit: true, query: "When was incident INC-000777 reported?"}
+  # ---- 10 paraphrases (should hit) -------------------------------------------------------
+  - {id: P01, group: paraphrase, seed: S01, should_hit: true, query: "What's the process for reporting a broken-down bus to the incident desk?"}
+  - {id: P02, group: paraphrase, seed: S02, should_hit: true, query: "My train is running behind schedule - which incident category applies?"}
+  - {id: P03, group: paraphrase, seed: S03, should_hit: true, query: "Which category was incident INC-000042 filed under?"}
+  - {id: P04, group: paraphrase, seed: S04, should_hit: true, query: "How many riders were impacted by incident INC-000105?"}
+  - {id: P05, group: paraphrase, seed: S05, should_hit: true, query: "Incident INC-000230 happened on which transit line?"}
+  - {id: P06, group: paraphrase, seed: S06, should_hit: true, query: "My bus got rerouted because of a service change. What should I do?"}
+  - {id: P07, group: paraphrase, seed: S07, should_hit: true, query: "I got hurt in a small collision on a light rail train - who should I contact?"}
+  - {id: P08, group: paraphrase, seed: S08, should_hit: true, query: "What details do I need to give when reporting a delay?"}
+  - {id: P09, group: paraphrase, seed: S09, should_hit: true, query: "How is a Service Change incident different from a Delay incident?"}
+  - {id: P10, group: paraphrase, seed: S10, should_hit: true, query: "Typically, how long until a broken-down vehicle is cleared?"}
+  # ---- 10 superficially similar, different correct answer (should miss) ------------------
+  - {id: D01, group: superficially_similar, seed: S03, should_hit: false, query: "What category is incident INC-000043?"}
+  - {id: D02, group: superficially_similar, seed: S04, should_hit: false, query: "How many passengers were affected by incident INC-000106?"}
+  - {id: D03, group: superficially_similar, seed: S05, should_hit: false, query: "Which transit line is incident INC-000231 on?"}
+  - {id: D04, group: superficially_similar, seed: S11, should_hit: false, query: "What is the route title for incident INC-000319?"}
+  - {id: D05, group: superficially_similar, seed: S12, should_hit: false, query: "When was incident INC-000778 reported?"}
+  - {id: D06, group: superficially_similar, seed: S02, should_hit: false, query: "What incident category should I use when my train is cancelled?"}
+  - {id: D07, group: superficially_similar, seed: S01, should_hit: false, query: "How do I report a light rail accident with injuries to the transit incident desk?"}
+  - {id: D08, group: superficially_similar, seed: S10, should_hit: false, query: "How long does it usually take for a minor collision to be cleared?"}
+  - {id: D09, group: superficially_similar, seed: S08, should_hit: false, query: "What information should I include when I report an accident?"}
+  - {id: D10, group: superficially_similar, seed: S09, should_hit: false, query: "What is the difference between a Breakdown and an Accident incident?"}
+  # ---- 10 unrelated (should miss) --------------------------------------------------------
+  - {id: U01, group: unrelated, seed: null, should_hit: false, query: "What is the weather in San Jose tomorrow?"}
+  - {id: U02, group: unrelated, seed: null, should_hit: false, query: "How do I reset my Wi-Fi router?"}
+  - {id: U03, group: unrelated, seed: null, should_hit: false, query: "Can you recommend a good pizza place downtown?"}
+  - {id: U04, group: unrelated, seed: null, should_hit: false, query: "What is the capital of Australia?"}
+  - {id: U05, group: unrelated, seed: null, should_hit: false, query: "How do I bake sourdough bread at home?"}
+  - {id: U06, group: unrelated, seed: null, should_hit: false, query: "Who won the 2022 FIFA World Cup?"}
+  - {id: U07, group: unrelated, seed: null, should_hit: false, query: "How do I renew my driver's license online?"}
+  - {id: U08, group: unrelated, seed: null, should_hit: false, query: "How much does a bike share ride cost per minute?"}
+  - {id: U09, group: unrelated, seed: null, should_hit: false, query: "Translate 'thank you very much' into Spanish."}
+  - {id: U10, group: unrelated, seed: null, should_hit: false, query: "What are some tips for parallel parking a car?"}

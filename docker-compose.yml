@@ -65,3 +65,21 @@ services:
       kafka:
         condition: service_healthy
     restart: on-failure
+
+  # HW9 - Redis Stack (Redis + RediSearch vector index). All keys start with s1346:
+  redis:
+    image: redis/redis-stack-server:7.4.0-v1
+    container_name: s1346-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - s1346-redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: on-failure
+
+volumes:
+  s1346-redis-data:

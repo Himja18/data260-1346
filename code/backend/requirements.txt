@@ -27,3 +27,5 @@ ruff==0.17.1              # Part 1 linting (same version as the pre-commit hook)
 pre-commit>=3.7
 # HW8 (Kafka request/response + three-agent pipeline)
 confluent-kafka>=2.5
+# HW9 (Redis view counter + semantic cache with a RediSearch vector index)
+redis>=5.0
