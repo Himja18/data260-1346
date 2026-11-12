@@ -158,3 +158,33 @@ hw09-part4-test:        ## Part 4.4 four variants on test_data
 	$(PYTHON) code/hw09/part4/run_hw09_part4.py test
 hw09-part4:             ## Part 4: all four steps
 	$(PYTHON) code/hw09/part4/run_hw09_part4.py all
+
+# ---------------------------------------------------------------- HW10 ----
+.PHONY: hw10-install hw10-evaluator hw10-cases hw10-label hw10-judge hw10-replay hw10-traces hw10-latency hw10-dashboard
+
+hw10-install:           ## DeepEval (GEval), Streamlit, SciPy
+	$(PYTHON) -m pip install "deepeval>=4" "streamlit>=1.50" scipy requests
+
+hw10-evaluator:         ## Part 2: evaluator service (joins plan/draft/final by correlation_id)
+	$(PYTHON) code/hw10/evaluator.py
+
+hw10-cases:             ## Part 3.1: freeze 20 Writer drafts -> eval_cases.json + empty human_labels.csv
+	$(PYTHON) code/hw10/make_eval_cases.py
+
+hw10-label:             ## Part 3.1: type YOUR 1-5 label for each draft
+	$(PYTHON) code/hw10/label_drafts.py
+
+hw10-judge:             ## Part 3.2-3.3: judge vs human labels, 3 repeat runs
+	$(PYTHON) code/hw10/run_judge_validation.py
+
+hw10-replay:            ## Part 2: evaluate one trace from the topics: make hw10-replay TRACE=<id>
+	$(PYTHON) code/hw10/evaluator.py --trace-id $(TRACE)
+
+hw10-traces:            ## Part 4.2: cache-hit, cache-miss and failed traces
+	$(PYTHON) code/hw10/run_hw10_traces.py
+
+hw10-latency:           ## Part 4.3: 50 confirmed cache misses, stage p50/p95
+	$(PYTHON) code/hw10/run_hw10_latency.py
+
+hw10-dashboard:         ## Part 1: Streamlit dashboard on port 8448
+	streamlit run code/hw10/dashboard.py --server.port 8448

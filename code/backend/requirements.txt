@@ -29,3 +29,8 @@ pre-commit>=3.7
 confluent-kafka>=2.5
 # HW9 (Redis view counter + semantic cache with a RediSearch vector index)
 redis>=5.0
+# HW10 (DeepEval GEval judge + Streamlit dashboard)
+deepeval>=4
+streamlit>=1.50
+scipy
+requests

@@ -6,7 +6,7 @@ Planner, Writer and Reviewer (qwen2.5:3b through src/model_client.py) must be ru
 import sys
 import time
 import uuid
-from typing import Any
+from typing import Any, Optional
 
 import hw09_config as cfg
 
@@ -36,20 +36,25 @@ class KafkaPipelineAgent:
         self.producer = make_producer(f"{cfg.PREFIX}-hw09-cache")
         self.early: dict[str, dict] = {}                 # finals for other ids that arrived while waiting
 
-    def ask(self, question: str) -> dict:
-        """Returns {answer, status, correlation_id, agent_ms}."""
+    def ask(self, question: str, trace_id: Optional[str] = None, inject_fault: Optional[str] = None,
+            timeout_s: Optional[float] = None) -> dict:
+        """Returns {answer, status, correlation_id, agent_ms}. trace_id (HW10) becomes the correlation_id."""
         from kafka_common import decode, encode, new_correlation_id, now_iso, trace
-        corr = new_correlation_id()
+        from tracing import queue_span
+        corr = trace_id or new_correlation_id()
+        timeout_s = timeout_s or self.timeout_s
         msg = {"correlation_id": corr, "question": question, "asked_by": cfg.STUDENT_NAME, "sent_at": now_iso(),
                "trace": [{"stage": "hw09_cache_miss", "instance": "semantic_cache", "at": now_iso()}]}
+        if inject_fault:
+            msg["inject_fault"] = inject_fault
         started = time.perf_counter()
         self.producer.produce(self.cfg8.INBOX_TOPIC, key=corr.encode(), value=encode(msg))
         self.producer.flush(10)
         trace("hw09_cache", "agent_sent", corr, topic=self.cfg8.INBOX_TOPIC)
         self.log.info("   agent: SENT -> %s corr=%s (waiting for %s)", self.cfg8.INBOX_TOPIC, corr[:8],
                       self.cfg8.FINAL_TOPIC)
-        final = self.early.pop(corr, None)
-        while final is None and time.perf_counter() - started < self.timeout_s:
+        final, final_ts = self.early.pop(corr, (None, None))
+        while final is None and time.perf_counter() - started < timeout_s:
             m = self.reader.poll(1.0)
             if m is None or m.error():
                 continue
@@ -60,12 +65,13 @@ class KafkaPipelineAgent:
             if not isinstance(value, dict):
                 continue
             if value.get("correlation_id") == corr:
-                final = value
+                final, final_ts = value, (m.timestamp(), time.time())
             elif value.get("correlation_id"):
-                self.early[value["correlation_id"]] = value
+                self.early[value["correlation_id"]] = (value, (m.timestamp(), time.time()))
         if final is None:
-            raise AgentTimeout(f"no final answer for {corr} within {self.timeout_s:.0f}s - "
-                               "are planner.py, writer.py and reviewer.py running?")
+            raise AgentTimeout(f"no final answer for {corr} within {timeout_s:.0f}s - "
+                               "a stage failed (see s1346_dead_letter) or planner/writer/reviewer are not running")
+        queue_span(corr, self.cfg8.FINAL_TOPIC, final_ts[0], final_ts[1], "semantic_cache")
         ms = (time.perf_counter() - started) * 1000
         trace("hw09_cache", "agent_received", corr, topic=self.cfg8.FINAL_TOPIC)
         return {"answer": str(final.get("answer", "")).strip(), "status": final.get("status"),
@@ -85,12 +91,15 @@ class FakeAgent:
         self.delay_s = delay_s
         self.calls = 0
 
-    def ask(self, question: str) -> dict:
+    def ask(self, question: str, trace_id: Optional[str] = None, inject_fault: Optional[str] = None,
+            timeout_s: Optional[float] = None) -> dict:
         """Echo the facts back as the 'answer'."""
+        if inject_fault:
+            raise AgentTimeout(f"no final answer for {trace_id} (fake agent, injected fault in {inject_fault})")
         self.calls += 1
         time.sleep(self.delay_s)
         return {"answer": f"[fake answer #{self.calls}] {question}", "status": "approved",
-                "correlation_id": f"fake-{self.calls}", "agent_ms": self.delay_s * 1000}
+                "correlation_id": trace_id or f"fake-{self.calls}", "agent_ms": self.delay_s * 1000}
 
     def close(self) -> None:
         """Nothing to release."""

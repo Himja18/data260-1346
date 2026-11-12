@@ -1,0 +1,583 @@
+{
+  "settings": {
+    "framework": "DeepEval GEval",
+    "judge_model": "ollama/qwen2.5:3b",
+    "temperature": 0.3,
+    "seed": null,
+    "num_predict": 256,
+    "timeout_s": 120.0,
+    "scale": "1-5 = round(1 + 4 * GEval score)",
+    "evaluation_steps": "fixed per metric (one judge call per score)"
+  },
+  "labels_frozen": [
+    {
+      "file": "code/hw10/eval_cases.json",
+      "last_commit": "60242abc0e2b467b63850c58900deef9ec618e4f 2026-11-12T07:58:17-08:00",
+      "unchanged_since_commit": true
+    },
+    {
+      "file": "code/hw10/human_labels.csv",
+      "last_commit": "60242abc0e2b467b63850c58900deef9ec618e4f 2026-11-12T07:58:17-08:00",
+      "unchanged_since_commit": true
+    }
+  ],
+  "summary": {
+    "n_cases": 20,
+    "n_scored_all_runs": 20,
+    "failed_cases": [],
+    "spearman_run1": -0.263,
+    "spearman_run1_p_value": 0.2626,
+    "spearman_per_run": [
+      -0.263,
+      -0.149,
+      0.213
+    ],
+    "spearman_mean_of_3_runs": -0.154,
+    "mad_run1": 1.15,
+    "mad_per_run": [
+      1.15,
+      1.1,
+      1
+    ],
+    "repeatability": {
+      "cases_with_any_change": 11,
+      "cases_with_any_change_pct": 55.0,
+      "changed_cases": [
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C08",
+        "C09",
+        "C10",
+        "C13",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "pairwise_comparisons": 60,
+      "pairwise_changed": 24,
+      "pairwise_changed_pct": 40.0,
+      "mean_abs_change": 0.467,
+      "max_abs_change": 2,
+      "mean_abs_change_raw": 0.427,
+      "max_abs_change_raw": 2.0
+    },
+    "human_label_distribution": {
+      "1": 3,
+      "2": 8,
+      "3": 9,
+      "4": 0,
+      "5": 0
+    },
+    "judge_run1_distribution": {
+      "1": 9,
+      "2": 5,
+      "3": 4,
+      "4": 2,
+      "5": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "C01",
+      "question_type": "incident lookup",
+      "human": 2,
+      "judge": [
+        3,
+        3,
+        3
+      ],
+      "judge_raw": [
+        3.0,
+        3.4,
+        3.4
+      ],
+      "reasons": [
+        "The draft provides the correct number of passengers affected (40) and the line (L-136) for the incident (INC-000105). However, it also includes additional information such as the route title and the reported time, which is not requested. This padding with irrelevant text results in a lower score.",
+        "The response is accurate as it matches the exact number of passengers affected (40) and the reported time (2025-09-08 18:32:43) from the database records. However, it includes additional information (route title and line) that was not asked for in the question, which is a shortcoming as the question only asked for the number of passengers affected.",
+        "The response is accurate as it matches the exact number of passengers affected (40) and the reported time (2025-09-08 18:32:43) from the database records. However, it includes additional information (route title and line details) that was not requested, which is a shortcoming as the rider only asked for the number of passengers affected."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C02",
+      "question_type": "incident lookup",
+      "human": 2,
+      "judge": [
+        2,
+        2,
+        1
+      ],
+      "judge_raw": [
+        1.8,
+        1.8,
+        1.0
+      ],
+      "reasons": [
+        "The response is off-topic and does not directly answer the question. It provides additional context and details not asked for, such as the category, passengers affected, and the incident's relevance to service disruption. The date and time are correct, but the response does not explicitly state when the incident was reported.",
+        "The response contains irrelevant information such as 'near Broadway' and 'indicating a vehicle failure that disrupted service', which do not directly answer the question of when the incident was reported. Additionally, it includes personal details like 'October 26, 2025 at 01:46:13' which are not required by the question.",
+        "The response is off-topic and does not directly answer the question. It provides additional information about the incident (vehicle failure, no passengers affected) that is not asked for, and does not state the exact date and time of the report."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C03",
+      "question_type": "incident lookup",
+      "human": 3,
+      "judge": [
+        2,
+        1,
+        3
+      ],
+      "judge_raw": [
+        1.8,
+        1.0,
+        2.6
+      ],
+      "reasons": [
+        "The actual output only provides the route title and category, but does not include the location or the specific incident details. It also does not mention the date of the incident, which is required by the evaluation steps.",
+        "The actual output does not directly answer the question asked. It provides details about the incident but does not specify the route title for INC-000319.",
+        "The response is accurate as it matches the route_title value from the database. However, it does not directly give the route title as the rider asked, but instead provides additional details. This is not directly answering the question."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C04",
+      "question_type": "incident lookup",
+      "human": 2,
+      "judge": [
+        4,
+        4,
+        4
+      ],
+      "judge_raw": [
+        3.8,
+        4.2,
+        3.8
+      ],
+      "reasons": [
+        "The response is accurate as it matches the route_title and line from the database record. However, it includes extra information like the delay duration and the exact time reported, which is not asked for. This makes it slightly off-topic and unhelpful.",
+        "The response is accurate and directly answers the question asked. However, it includes extra information (such as the delay duration and the time of reporting) which is not required. This makes the response slightly more verbose than necessary, though still useful.",
+        "The response is accurate and directly answers the question asked. However, it includes extra information such as the delay duration and the time of reporting, which is not necessary for the answer. This makes the response slightly off-topic and redundant."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C05",
+      "question_type": "incident lookup",
+      "human": 3,
+      "judge": [
+        1,
+        1,
+        2
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.8
+      ],
+      "reasons": [
+        "The response does not directly answer the question 'How many passengers were affected by incident INC-000106?'. Instead, it provides general information about the incident and the affected route, which is not the specific information requested.",
+        "The response does not directly answer the question 'How many passengers were affected by incident INC-000106?'. Instead, it provides general information about the incident and the affected route, without specifying the number of affected passengers.",
+        "The response does not directly answer the question asked. It provides additional context about the incident but does not state the number of affected passengers. It also includes information about the route remaining operational, which is not requested."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C06",
+      "question_type": "incident lookup",
+      "human": 3,
+      "judge": [
+        3,
+        3,
+        4
+      ],
+      "judge_raw": [
+        3.4,
+        3.4,
+        3.8
+      ],
+      "reasons": [
+        "The response is accurate as it matches the category, line, and reported date from the database. However, it includes extra information like 'affecting Subway Line 170 (Subway Line 170 - Hillcrest)' which is not asked for and is redundant. It also repeats the reported date, which is not necessary for the question asked.",
+        "The response is accurate as it matches the category, line, and reported date from the database record. However, it adds extra information (no passengers affected) that was not present in the database record and does not directly answer the question asked (What category is incident INC-000043?).",
+        "The response is accurate as it matches the category 'Delay' and the reported date. However, it includes additional information (line and passengers affected) that was not asked for, which is a shortcoming. The response is also direct and useful as it directly answers the question asked."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C07",
+      "question_type": "incident lookup",
+      "human": 2,
+      "judge": [
+        1,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response is not accurate as it mentions the category and affected passengers, which are not asked for in the question. It also mentions the category and affected passengers, which are not asked for in the question. The response does not directly answer the question about which transit line the incident happened on.",
+        "The response is not accurate as it does not mention the transit line for the incident. It only states the category and number of affected passengers, missing the key information about the transit line.",
+        "The response is inaccurate as it mentions passengers affected (0) and the category (Service Change), which are not asked in the question. It also provides irrelevant information like the line and reported_at date. The response does not directly answer the question about which transit line the incident happened on."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C08",
+      "question_type": "incident lookup",
+      "human": 2,
+      "judge": [
+        3,
+        1,
+        2
+      ],
+      "judge_raw": [
+        3.0,
+        1.0,
+        1.8
+      ],
+      "reasons": [
+        "The response is accurate as it correctly states the incident category, the affected line, and the number of impacted passengers. However, it does not directly answer the question 'How many riders were impacted by incident INC-000105?'. It provides additional context about the incident, which is useful but not directly answering the question asked.",
+        "The response is inaccurate as it does not provide the number of impacted riders, which is 0, but instead gives a general description of the incident. It also includes irrelevant information like the line name and category, which should not be present in the answer.",
+        "The response is inaccurate as it mentions 0 passengers were impacted, but the database record shows 0 passengers affected. The response should state that 0 passengers were impacted by the incident."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C09",
+      "question_type": "incident lookup",
+      "human": 3,
+      "judge": [
+        4,
+        4,
+        3
+      ],
+      "judge_raw": [
+        4.2,
+        3.8,
+        3.0
+      ],
+      "reasons": [
+        "The response is accurate and directly answers the question by specifying the category 'Breakdown'. However, it includes additional information such as the line and reported time which is not required. This makes it slightly less useful than strictly necessary.",
+        "The response is accurate and directly answers the question by stating the category under which the incident was filed. However, it includes additional information (location and time) that was not explicitly asked for, which is not useful. This off-topic information slightly reduces the score.",
+        "The response is accurate as it matches the category 'Breakdown' from the database record. However, it includes additional information such as the route title, passengers affected, and reported time, which is unnecessary and does not directly answer the question asked. This makes the response slightly off-topic and unhelpful."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C10",
+      "question_type": "transit how-to",
+      "human": 3,
+      "judge": [
+        1,
+        1,
+        2
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.8
+      ],
+      "reasons": [
+        "The response does not directly answer the question 'What is the difference between a Breakdown and an Accident incident?'. Instead, it provides information on the implications and reporting procedures for both types of incidents, which is off-topic and does not directly answer the question.",
+        "The response does not directly answer the question asked. The question was 'What is the difference between a Breakdown and an Accident incident?', but the response provides information on how to report and handle these incidents, which is off-topic. The response includes details on service disruption, safety checks, and emergency services, which are not relevant to the question asked.",
+        "The response does not directly answer the question asked. It provides information about the difference between Breakdown and Accident incidents, but does not state the difference explicitly. It also includes additional context and details that are not requested."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C11",
+      "question_type": "transit how-to",
+      "human": 1,
+      "judge": [
+        1,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response is not directly answering the question asked. The question is 'What information should I include when I report an accident?' but the response provides a general guide on what to include when reporting an accident, which is not directly answering the specific question.",
+        "The response is not directly answering the question 'What information should I include when I report an accident?'. Instead, it provides a generic list of information that should be included in an accident report, which does not match the rider's request.",
+        "The response is not directly answering the question asked. The question 'What information should I include when I report an accident?' is not answered by providing steps on how to report an accident. The response includes steps on what to include, but does not address the question of what information to include."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C12",
+      "question_type": "transit how-to",
+      "human": 1,
+      "judge": [
+        2,
+        2,
+        2
+      ],
+      "judge_raw": [
+        1.8,
+        1.8,
+        1.8
+      ],
+      "reasons": [
+        "The response includes irrelevant information such as incident category and request for specific route and time, which deviates from the rider's question about the time it usually takes for a minor collision to be cleared. It also provides a general timeframe without directly answering the question.",
+        "The response includes irrelevant information such as incident category and details collection, which deviates from the rider's question about the time it takes for a minor collision to be cleared. The response also asks for more information, which is not what the rider asked for.",
+        "The response includes irrelevant information such as incident category and the need for specific route and time of the collision, which are not requested by the rider. The response also provides a general timeframe for minor collisions instead of directly answering the question."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C13",
+      "question_type": "transit how-to",
+      "human": 2,
+      "judge": [
+        2,
+        2,
+        1
+      ],
+      "judge_raw": [
+        1.8,
+        1.8,
+        1.0
+      ],
+      "reasons": [
+        "The response is not directly answering the rider's question. It provides general instructions on how to report a light rail accident with injuries, but does not specify how to report the accident with the given details (date, time, location, injured individuals, and their condition). It also includes additional information not asked for, such as contacting the transit agency's hotline or using their online reporting system, and requesting a follow-up. These elements make the response less useful and more off-topic.",
+        "The response is not directly answering the rider's question. It provides general instructions on how to report an accident, but does not specifically mention reporting to the transit incident desk. It also includes information that is not directly asked for, such as details about injured individuals and the need for a follow-up.",
+        "The response is not directly answering the rider's question. It provides general instructions on how to report a light rail accident instead of directly addressing the specific request to contact the transit incident desk."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C14",
+      "question_type": "transit how-to",
+      "human": 3,
+      "judge": [
+        1,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response does not directly answer the question asked. It provides multiple categories for different scenarios instead of just one appropriate incident category for a cancelled train.",
+        "The response does not directly answer the question asked. It provides information on how to classify different types of train cancellations, which is not what the rider is looking for. The rider specifically asked for an incident category when their train is cancelled, but the response gives multiple scenarios and does not provide a single, clear answer.",
+        "The response is not directly answering the question asked. It is providing multiple scenarios and classifications instead of giving a single incident category for a cancelled train."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C15",
+      "question_type": "transit how-to",
+      "human": 3,
+      "judge": [
+        1,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response does not directly answer the question about how long until a broken-down vehicle is cleared. Instead, it provides information about bus breakdowns and suggests reporting issues to a help desk. This is off-topic and does not fulfill the rider's request.",
+        "The response does not directly answer the question about how long until a broken-down vehicle is cleared. Instead, it provides information about bus breakdowns and advises to report issues to a help desk. This is off-topic and does not fulfill the rider's request.",
+        "The response does not directly answer the question about how long until a broken-down vehicle is cleared. Instead, it provides information about bus breakdowns and suggests reporting issues to a help desk. This is off-topic and does not meet the usefulness criterion."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C16",
+      "question_type": "transit how-to",
+      "human": 2,
+      "judge": [
+        2,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.8,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response is not directly answering the question asked. The question 'What details do I need to give when reporting a delay?' is asking for a list of specific details needed for reporting a delay, but the response provides a general template for what should be included in a delay report. This is off-topic and does not directly answer the question.",
+        "The response is off-topic as it provides general guidance on reporting a delay instead of answering the specific question about what details are needed.",
+        "The response is not directly answering the question asked. The question is 'What details do I need to give when reporting a delay?', but the response provides a list of details that should be included in the report. This is off-topic and does not directly answer the question."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C17",
+      "question_type": "transit how-to",
+      "human": 2,
+      "judge": [
+        1,
+        2,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.8,
+        1.4
+      ],
+      "reasons": [
+        "The response is not directly answering the question asked. It provides advice on what to do in case of a collision on a light rail train, but does not specify who to contact.",
+        "The response is not directly answering the rider's question. It provides advice on what to do in case of a collision on a light rail train, but does not specify who to contact.",
+        "The response is not directly answering the rider's question. It is giving advice on what to do in case of a collision, but does not specify who to contact."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C18",
+      "question_type": "off-domain",
+      "human": 1,
+      "judge": [
+        3,
+        1,
+        1
+      ],
+      "judge_raw": [
+        3.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response includes tips for parallel parking, which directly answers the question asked. However, the response is not specific to the input parameters and does not mention any s1346_rel database records. It also adds unnecessary details about communication with passengers, which is not relevant to the question.",
+        "The response is not directly answering the question about tips for parallel parking a car. Instead, it provides general tips for understanding parking guidelines and practicing in a safe area, which are not specific to parallel parking.",
+        "The response does not directly answer the question about tips for parallel parking a car. Instead, it provides general advice on understanding parking guidelines and practicing in a safe area, which is not specific to parallel parking."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C19",
+      "question_type": "off-domain",
+      "human": 3,
+      "judge": [
+        1,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response does not provide a translation of 'thank you very much' into Spanish. Instead, it offers a suggestion for finding resources online, which does not directly answer the question asked.",
+        "The response does not provide a translation as requested and instead offers a suggestion for finding resources, which is off-topic and unhelpful.",
+        "The response does not provide a translation as requested. Instead, it offers resources for Spanish language assistance, which is off-topic and does not directly answer the question."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case_id": "C20",
+      "question_type": "off-domain",
+      "human": 3,
+      "judge": [
+        1,
+        1,
+        1
+      ],
+      "judge_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "reasons": [
+        "The response is off-topic and does not provide the requested information about bike share ride costs per minute. Instead, it asks for information about municipal transit incidents, which is irrelevant to the question.",
+        "The response is off-topic and does not directly answer the question about bike share ride costs per minute. Instead, it asks for information about municipal transit incidents, which is irrelevant to the question.",
+        "The response does not provide the requested information about bike share ride costs per minute. Instead, it asks for information about municipal transit incidents, which is off-topic and does not answer the question. This is a significant shortcoming."
+      ],
+      "errors": [
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

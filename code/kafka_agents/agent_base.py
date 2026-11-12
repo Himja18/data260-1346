@@ -40,6 +40,7 @@ from kafka_common import (  # noqa: E402
     trace,
     wait_for_broker,
 )
+from tracing import queue_span, write_span  # noqa: E402  (HW10 Part 4 spans)
 
 
 class PoisonMessageError(ValueError):
@@ -185,6 +186,7 @@ class KafkaAgent:
     def _handle_message(self, msg: Any, consumer: Any, producer: Any) -> None:
         """Process one record with idempotency, retries/DLQ and commit-after-success."""
         a = self.args
+        t_recv = time.time()                                   # HW10: stage span starts at receive
         where = f"{msg.topic()}[{msg.partition()}]@{msg.offset()}"
         try:
             preview = decode(msg.value())
@@ -203,6 +205,8 @@ class KafkaAgent:
                 consumer.commit(message=msg, asynchronous=False)
             return
 
+        queue_span(corr, msg.topic(), msg.timestamp(), t_recv, self.instance, partition=msg.partition(),
+                   offset=msg.offset())
         required = self.required_for(preview) if self.required_for else self.required
         if a.no_dlq:
             # before fix: one attempt, any failure crashes the agent without committing the offset
@@ -228,6 +232,8 @@ class KafkaAgent:
                 self.log.error("DEAD-LETTER %s after %d attempts (%s) -> %s; offset committed, moving on",
                                where, attempts, error, cfg.DEAD_LETTER_TOPIC)
                 trace(self.instance, "agent_dead_lettered", corr, topic=cfg.DEAD_LETTER_TOPIC, error=error)
+                write_span(corr, self.name, t_recv, time.time(), "error", self.instance, error=error,
+                           attempts=attempts, dead_letter_topic=cfg.DEAD_LETTER_TOPIC)
                 self._event(event="dead_lettered", partition=msg.partition(), offset=msg.offset(),
                             correlation_id=corr, attempts=attempts, error=error)
                 if not a.auto_commit:
@@ -240,6 +246,8 @@ class KafkaAgent:
             producer.flush(10)
             self.log.info("SENT -> %s corr=%s message=%s", self.out_topic, corr, short(output, 300))
             trace(self.instance, "agent_sent", corr, topic=self.out_topic)
+            write_span(corr, self.name, t_recv, time.time(), "ok", self.instance, attempts=attempts,
+                       out_topic=self.out_topic)
         if corr and not a.no_idempotency:
             self.store.add(corr)
         if not a.auto_commit:
@@ -261,7 +269,12 @@ class KafkaAgent:
         if delay > 0:
             self.log.info("processing corr=%s (work %.2fs) ...", value.get("correlation_id"), delay)
             time.sleep(delay)
+        fault = value.get("inject_fault")
+        if fault == self.name:        # HW10 Part 4.2: deliberate, documented failure for the failed-trace example
+            raise RuntimeError(f"injected fault in {self.name} (inject_fault={fault!r})")
         out = self.handler(value)
+        if out is not None and fault:
+            out.setdefault("inject_fault", fault)                # carry it to the next stage
         if out is not None:
             out.setdefault("trace", list(value.get("trace", [])))
             out["trace"].append({"stage": self.name, "instance": self.instance, "at": now_iso()})

@@ -1,0 +1,162 @@
+{
+  "n_requested": 50,
+  "n_confirmed_miss": 50,
+  "n_complete": 50,
+  "not_miss": [],
+  "end_to_end_ms": {
+    "p50": 19763.8,
+    "p95": 23623.9,
+    "mean": 20146.2,
+    "n": 50
+  },
+  "user_facing_ms": {
+    "p50": 9170.2,
+    "p95": 11245.6,
+    "mean": 9134.5,
+    "n": 50
+  },
+  "stages": [
+    {
+      "p50": 1496.1,
+      "p95": 2266.9,
+      "mean": 1547.2,
+      "n": 50,
+      "stage": "Cache lookup",
+      "key": "cache_lookup",
+      "pct_of_e2e": 7.7
+    },
+    {
+      "p50": 3039.8,
+      "p95": 4224.5,
+      "mean": 3109.3,
+      "n": 50,
+      "stage": "Planner",
+      "key": "planner",
+      "pct_of_e2e": 15.4
+    },
+    {
+      "p50": 2246.2,
+      "p95": 2996.9,
+      "mean": 2282.8,
+      "n": 50,
+      "stage": "Writer",
+      "key": "writer",
+      "pct_of_e2e": 11.3
+    },
+    {
+      "p50": 1497.8,
+      "p95": 1819.2,
+      "mean": 1559.5,
+      "n": 50,
+      "stage": "Reviewer",
+      "key": "reviewer",
+      "pct_of_e2e": 7.7
+    },
+    {
+      "p50": 314.3,
+      "p95": 627.8,
+      "mean": 375.7,
+      "n": 50,
+      "stage": "Queue wait (total)",
+      "key": "queue_total",
+      "pct_of_e2e": 1.9
+    },
+    {
+      "p50": 10810.2,
+      "p95": 13480.6,
+      "mean": 11078.6,
+      "n": 50,
+      "stage": "Evaluation",
+      "key": "evaluation",
+      "pct_of_e2e": 55.0
+    }
+  ],
+  "queue_hops": {
+    "queue_inbox": {
+      "p50": 188.7,
+      "p95": 440.7,
+      "mean": 205.4,
+      "n": 50
+    },
+    "queue_tasks": {
+      "p50": 32.0,
+      "p95": 75.1,
+      "mean": 39.0,
+      "n": 50
+    },
+    "queue_drafts": {
+      "p50": 36.8,
+      "p95": 79.2,
+      "mean": 41.0,
+      "n": 50
+    },
+    "queue_final": {
+      "p50": 28.5,
+      "p95": 84.9,
+      "mean": 90.3,
+      "n": 50
+    }
+  },
+  "other_ms_mean": 193.1,
+  "other_pct": 1.0,
+  "dominant_stage": "Evaluation",
+  "trace_ids": [
+    "87982842-3605-499d-a0dc-a2a5523ed670",
+    "efc1c337-7104-4c89-aeb5-3247c6fc7ced",
+    "bb95c387-5bed-447a-bdb2-970f719c0189",
+    "19652c83-d0d2-4d49-b11b-7300d23d4d1c",
+    "9c56b45f-9578-4b2f-95da-9748fc9b49bb",
+    "b38a258e-801d-4dd8-98ea-6ebbb3dabdc7",
+    "c4c324c3-907b-4858-be6c-925966193e84",
+    "7d20f108-5d70-47a9-a5b7-6b80219e63be",
+    "c35d6665-111f-41e8-bf65-c7ba5f80553f",
+    "60e891be-b462-48e0-9c67-68c12ce53112",
+    "eff35a50-fc52-4ab1-a2ba-1b6cd7d4bd41",
+    "5452f7dd-c2e9-40d2-8bff-534b89a71c37",
+    "4e171692-39aa-4553-834b-ff76c5a73412",
+    "c2f29168-f45d-42d9-aeb4-37fbc1f3c1b9",
+    "7942619f-a77c-43af-b95d-a86ecb5c1aca",
+    "927507e2-485d-46a3-bb84-e4a8dfb90efa",
+    "a292bcf0-995e-46ed-9ede-2e38d2f366a3",
+    "1d49162f-969c-4242-b053-32c53c6beda3",
+    "35978920-dfa9-4961-be74-3933a65cadc1",
+    "126c92ed-9b84-4a9a-95b5-a890a01dd38f",
+    "a9d8e895-9c61-46d1-83c7-f08b1826a272",
+    "4d6f3dd9-efe3-4c24-9a20-71f1c67b68c8",
+    "c80f7c4b-03be-45a9-9fa1-8bedc30f282a",
+    "5034a293-406c-462e-8194-e74e313bd216",
+    "e350bf2c-da2b-440d-9f5a-052ba97b230f",
+    "693a9fad-8019-4869-97ef-fc88f1bcfc8f",
+    "bd5c90f2-412a-43ac-9e75-9fe34bd8cdf0",
+    "5d0295f3-b11f-48dd-aa48-dc6694fb4e60",
+    "1ad89e5b-ec70-4dac-a57a-a8700efd5fac",
+    "4e3a37c3-d44a-4bad-b997-3d5b428314ec",
+    "e6a9d3ff-52ca-4d08-b1d0-ea9ffd311a95",
+    "8b5da1c8-08b2-4c3f-9183-f9a9fb47d608",
+    "063b98c2-fc30-431c-9f96-4500fb54ba29",
+    "b88bdc27-b6fe-429a-877a-ee284bb9e097",
+    "e9997bb5-b6ab-4077-9d1a-73fa854933be",
+    "dc4eeb8c-b56f-443d-8b54-5c06f0c8ffa0",
+    "04b92e08-1e3e-4b09-a858-44d238558568",
+    "6c1c9716-7d53-4460-82bb-a4a6fb1f0aa2",
+    "34a549bc-1645-4b11-8b48-8fb1a20a0748",
+    "e0240d46-860d-47dc-8225-548b2ad67dda",
+    "14a76811-0c8a-44d5-a175-91afa15fc6a0",
+    "69d47050-7847-4c56-a07f-9d4eff0267ae",
+    "f4c5da7e-2815-42b5-92bc-5d3b083beff8",
+    "07fce845-015f-41e8-95ef-4acb0c3d31fb",
+    "e7aedabb-9e65-4d52-a3a9-4f4568ffe338",
+    "fef62e8b-6722-4f12-9e28-9cd723ef4ba8",
+    "8edd63d6-da57-4d40-b188-c98efa3e6a9d",
+    "bd0f988a-2f56-4fe3-bca9-9044d38d7ce6",
+    "502f77b1-3c8a-445e-88b7-a0fd8d6206cd",
+    "f431a78b-08bb-4967-a9bd-400841d8cd1c"
+  ],
+  "duration_s": 1033.5,
+  "cache_hit_ms": {
+    "p50": 19.2,
+    "p95": 1232.8,
+    "mean": 241.4,
+    "n": 10
+  }
+}

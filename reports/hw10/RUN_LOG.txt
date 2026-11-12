@@ -1,0 +1,473 @@
+2026-11-12 07:48:23.887 | Himja Patel | s1346 | evaluator    | evaluator ready: ['s1346_tasks', 's1346_drafts', 's1346_final', 's1346_dead_letter'] | group=s1346_evaluators | judge=ollama/qwen2.5:3b | wait=240.0s
+2026-11-12 07:50:33.759 | Himja Patel | s1346 | eval-cases   | read 49 records from s1346_drafts
+2026-11-12 07:50:33.767 | Himja Patel | s1346 | eval-cases   | wrote code/hw10/eval_cases.json (20 cases: {'incident lookup': 9, 'transit how-to': 8, 'off-domain': 3}) and code/hw10/human_labels.csv with EMPTY human_label - fill it in by hand
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C01 [incident lookup] How many passengers were affected by incident INC-000105?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C02 [incident lookup] When was incident INC-000778 reported?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C03 [incident lookup] What is the route title for incident INC-000319?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C04 [incident lookup] Which transit line is incident INC-000231 on?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C05 [incident lookup] How many passengers were affected by incident INC-000106?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C06 [incident lookup] What category is incident INC-000043?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C07 [incident lookup] Incident INC-000230 happened on which transit line?
+2026-11-12 07:50:33.769 | Himja Patel | s1346 | eval-cases   | C08 [incident lookup] How many riders were impacted by incident INC-000105?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C09 [incident lookup] Which category was incident INC-000042 filed under?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C10 [transit how-to] What is the difference between a Breakdown and an Accident incident?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C11 [transit how-to] What information should I include when I report an accident?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C12 [transit how-to] How long does it usually take for a minor collision to be cleared?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C13 [transit how-to] How do I report a light rail accident with injuries to the transit incident desk?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C14 [transit how-to] What incident category should I use when my train is cancelled?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C15 [transit how-to] Typically, how long until a broken-down vehicle is cleared?
+2026-11-12 07:50:33.770 | Himja Patel | s1346 | eval-cases   | C16 [transit how-to] What details do I need to give when reporting a delay?
+2026-11-12 07:50:33.771 | Himja Patel | s1346 | eval-cases   | C17 [transit how-to] I got hurt in a small collision on a light rail train - who should I contact?
+2026-11-12 07:50:33.771 | Himja Patel | s1346 | eval-cases   | C18 [off-domain] What are some tips for parallel parking a car?
+2026-11-12 07:50:33.771 | Himja Patel | s1346 | eval-cases   | C19 [off-domain] Translate 'thank you very much' into Spanish.
+2026-11-12 07:50:33.771 | Himja Patel | s1346 | eval-cases   | C20 [off-domain] How much does a bike share ride cost per minute?
+2026-11-12 07:59:27.474 | Himja Patel | s1346 | hw10-traces  | HW10 Part 4.2 trace examples | Himja Patel | s1346
+2026-11-12 07:59:46.425 | Himja Patel | s1346 | hw10-traces  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-12 07:59:47.798 | Himja Patel | s1346 | hw10-traces  | MISS   best sim=0.9333 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:01:49.935 | Himja Patel | s1346 | hw10-traces  | HW10 Part 4.2 trace examples | Himja Patel | s1346
+2026-11-12 08:01:59.028 | Himja Patel | s1346 | hw10-traces  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-12 08:01:59.954 | Himja Patel | s1346 | hw10-traces  | MISS   best sim=0.9333 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:04:27.042 | Himja Patel | s1346 | hw10-traces  | HW10 Part 4.2 trace examples | Himja Patel | s1346
+2026-11-12 08:04:35.705 | Himja Patel | s1346 | hw10-traces  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-12 08:04:36.605 | Himja Patel | s1346 | hw10-traces  | MISS   best sim=0.9333 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:04:37.284 | Himja Patel | s1346 | hw10-traces  |    agent: SENT -> s1346_inbox corr=6a54a8b9 (waiting for s1346_final)
+2026-11-12 08:04:38.954 | Himja Patel | s1346 | evaluator    | EVALUATION ERROR trace=6a54a8b9-b6d6-42df-852e-6d33658b9972 stage=planner: planner dead-lettered after 3 attempts: ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused"))
+2026-11-12 08:21:03.505 | Himja Patel | s1346 | hw10-traces  | HW10 Part 4.2 trace examples | Himja Patel | s1346
+2026-11-12 08:21:12.933 | Himja Patel | s1346 | hw10-traces  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-12 08:21:14.871 | Himja Patel | s1346 | hw10-traces  | MISS   best sim=0.9333 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:21:15.186 | Himja Patel | s1346 | hw10-traces  |    agent: SENT -> s1346_inbox corr=32c69737 (waiting for s1346_final)
+2026-11-12 08:21:16.904 | Himja Patel | s1346 | evaluator    | EVALUATION ERROR trace=32c69737-2287-43b2-9d7f-bba65fd586fa stage=planner: planner dead-lettered after 3 attempts: ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused"))
+2026-11-12 08:23:53.093 | Himja Patel | s1346 | hw10-traces  | HW10 Part 4.2 trace examples | Himja Patel | s1346
+2026-11-12 08:24:07.964 | Himja Patel | s1346 | hw10-traces  | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-12 08:24:09.332 | Himja Patel | s1346 | hw10-traces  | MISS   best sim=0.9333 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:24:09.780 | Himja Patel | s1346 | hw10-traces  |    agent: SENT -> s1346_inbox corr=96fba1de (waiting for s1346_final)
+2026-11-12 08:24:17.547 | Himja Patel | s1346 | evaluator    | EVALUATE trace=96fba1de-bcf2-466f-8927-96abc91d0053 (reviewer=approved) question="What is the route title for incident INC-000512?"
+2026-11-12 08:24:17.569 | Himja Patel | s1346 | hw10-traces  | STORED latency=9197.5 ms (agent 7885 ms, reviewer=approved)  data_version=v:c0f2261e22cb
+2026-11-12 08:24:29.649 | Himja Patel | s1346 | evaluator    | SCORES trace=96fba1de-bcf2-466f-8927-96abc91d0053 plan=2 writer=2 final=1 draft-as-final=1 diff=0 (12.1 s)
+2026-11-12 08:24:30.644 | Himja Patel | s1346 | hw10-traces  | ---- CACHE MISS (success) trace 96fba1de-bcf2-466f-8927-96abc91d0053 (10 spans) ----
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    request       ok       08:24:08.371 -> 08:24:17.569    9198.0 ms 
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    cache_lookup  miss     08:24:08.371 -> 08:24:09.332     961.2 ms 
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    queue_inbox   ok       08:24:09.662 -> 08:24:09.804     142.8 ms 
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    planner       ok       08:24:09.804 -> 08:24:13.470    3666.1 ms 
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    queue_tasks   ok       08:24:13.409 -> 08:24:13.483      74.9 ms 
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    writer        ok       08:24:13.483 -> 08:24:16.068    2584.1 ms 
+2026-11-12 08:24:30.646 | Himja Patel | s1346 | hw10-traces  |    queue_drafts  ok       08:24:16.041 -> 08:24:16.090      49.3 ms 
+2026-11-12 08:24:30.647 | Himja Patel | s1346 | hw10-traces  |    reviewer      ok       08:24:16.090 -> 08:24:17.536    1446.7 ms 
+2026-11-12 08:24:30.648 | Himja Patel | s1346 | hw10-traces  |    queue_final   ok       08:24:17.522 -> 08:24:17.542      20.5 ms 
+2026-11-12 08:24:30.648 | Himja Patel | s1346 | hw10-traces  |    evaluation    ok       08:24:17.539 -> 08:24:29.643   12104.4 ms 
+2026-11-12 08:24:31.949 | Himja Patel | s1346 | hw10-traces  | HIT    sim=1.0000 >= 0.95  latency=1292.3 ms  cached query="What is the route title for incident INC-000512?"
+2026-11-12 08:24:31.952 | Himja Patel | s1346 | hw10-traces  | ---- CACHE HIT trace 04b2b196-95e2-456e-8cbf-e7a369e2c7e6 (2 spans) ----
+2026-11-12 08:24:31.952 | Himja Patel | s1346 | hw10-traces  |    request       ok       08:24:30.651 -> 08:24:31.943    1292.3 ms 
+2026-11-12 08:24:31.952 | Himja Patel | s1346 | hw10-traces  |    cache_lookup  hit      08:24:30.651 -> 08:24:31.943    1292.3 ms 
+2026-11-12 08:24:32.062 | Himja Patel | s1346 | hw10-traces  | MISS   best sim=0.9142 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:24:32.540 | Himja Patel | s1346 | hw10-traces  |    agent: SENT -> s1346_inbox corr=e7361b58 (waiting for s1346_final)
+2026-11-12 08:24:37.682 | Himja Patel | s1346 | evaluator    | EVALUATION ERROR trace=e7361b58-b348-4152-bfb4-f6dd3d2e25dc stage=writer: writer dead-lettered after 3 attempts: RuntimeError: injected fault in writer (inject_fault='writer')
+2026-11-12 08:26:02.895 | Himja Patel | s1346 | hw10-traces  | client error after 90.9 s: no final answer for e7361b58-b348-4152-bfb4-f6dd3d2e25dc within 90s - a stage failed (see s1346_dead_letter) or planner/writer/reviewer are not running
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  | ---- FAILED trace e7361b58-b348-4152-bfb4-f6dd3d2e25dc (7 spans) ----
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  |    request       error    08:24:31.952 -> 08:26:02.821   90868.5 ms ERROR: AgentTimeout: no final answer for e7361b58-b348-4152-bfb4-f6dd3d2e25dc within 90s - a stage failed (see s1346_dead_letter) or planner/writer/reviewer are not running
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  |    cache_lookup  miss     08:24:31.952 -> 08:24:32.062     109.9 ms 
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  |    queue_inbox   ok       08:24:32.066 -> 08:24:32.566     500.3 ms 
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  |    planner       ok       08:24:32.566 -> 08:24:36.089    3523.2 ms 
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  |    queue_tasks   ok       08:24:36.072 -> 08:24:36.099      27.1 ms 
+2026-11-12 08:26:02.945 | Himja Patel | s1346 | hw10-traces  |    writer        error    08:24:36.099 -> 08:24:37.660    1561.4 ms ERROR: RuntimeError: injected fault in writer (inject_fault='writer')
+2026-11-12 08:26:02.967 | Himja Patel | s1346 | hw10-traces  |    evaluation    error    08:24:37.661 -> 08:24:37.662       1.8 ms ERROR: writer dead-lettered after 3 attempts: RuntimeError: injected fault in writer (inject_fault='writer')
+2026-11-12 08:26:02.967 | Himja Patel | s1346 | hw10-traces  | failing stage: writer | error: RuntimeError: injected fault in writer (inject_fault='writer')
+2026-11-12 08:26:02.978 | Himja Patel | s1346 | hw10-traces  | saved reports/hw10/trace_examples.json: {'cache_miss': '96fba1de-bcf2-466f-8927-96abc91d0053', 'cache_hit': '04b2b196-95e2-456e-8cbf-e7a369e2c7e6', 'failed': 'e7361b58-b348-4152-bfb4-f6dd3d2e25dc'}
+2026-11-12 08:28:50.142 | Himja Patel | s1346 | judge-valid  | labels frozen: [{'file': 'code/hw10/eval_cases.json', 'last_commit': '60242abc0e2b467b63850c58900deef9ec618e4f 2026-11-12T07:58:17-08:00', 'unchanged_since_commit': True}, {'file': 'code/hw10/human_labels.csv', 'last_commit': '60242abc0e2b467b63850c58900deef9ec618e4f 2026-11-12T07:58:17-08:00', 'unchanged_since_commit': True}]
+2026-11-12 08:28:50.142 | Himja Patel | s1346 | judge-valid  | judge settings: {'framework': 'DeepEval GEval', 'judge_model': 'ollama/qwen2.5:3b', 'temperature': 0.3, 'seed': None, 'num_predict': 256, 'timeout_s': 120.0, 'scale': '1-5 = round(1 + 4 * GEval score)', 'evaluation_steps': 'fixed per metric (one judge call per score)'}
+2026-11-12 08:29:04.464 | Himja Patel | s1346 | judge-valid  | run 1 C01 human=2 judge=3 (raw 3.0) 
+2026-11-12 08:29:07.879 | Himja Patel | s1346 | judge-valid  | run 1 C02 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:29:10.496 | Himja Patel | s1346 | judge-valid  | run 1 C03 human=3 judge=2 (raw 1.8) 
+2026-11-12 08:29:13.418 | Himja Patel | s1346 | judge-valid  | run 1 C04 human=2 judge=4 (raw 3.8) 
+2026-11-12 08:29:15.882 | Himja Patel | s1346 | judge-valid  | run 1 C05 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:29:18.915 | Himja Patel | s1346 | judge-valid  | run 1 C06 human=3 judge=3 (raw 3.4) 
+2026-11-12 08:29:21.689 | Himja Patel | s1346 | judge-valid  | run 1 C07 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:29:24.580 | Himja Patel | s1346 | judge-valid  | run 1 C08 human=2 judge=3 (raw 3.0) 
+2026-11-12 08:29:26.985 | Himja Patel | s1346 | judge-valid  | run 1 C09 human=3 judge=4 (raw 4.2) 
+2026-11-12 08:29:29.926 | Himja Patel | s1346 | judge-valid  | run 1 C10 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:29:32.325 | Himja Patel | s1346 | judge-valid  | run 1 C11 human=1 judge=1 (raw 1.0) 
+2026-11-12 08:29:34.906 | Himja Patel | s1346 | judge-valid  | run 1 C12 human=1 judge=2 (raw 1.8) 
+2026-11-12 08:29:39.124 | Himja Patel | s1346 | judge-valid  | run 1 C13 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:29:41.053 | Himja Patel | s1346 | judge-valid  | run 1 C14 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:29:43.910 | Himja Patel | s1346 | judge-valid  | run 1 C15 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:29:46.997 | Himja Patel | s1346 | judge-valid  | run 1 C16 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:29:49.171 | Himja Patel | s1346 | judge-valid  | run 1 C17 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:29:52.024 | Himja Patel | s1346 | judge-valid  | run 1 C18 human=1 judge=3 (raw 3.0) 
+2026-11-12 08:29:54.042 | Himja Patel | s1346 | judge-valid  | run 1 C19 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:29:56.543 | Himja Patel | s1346 | judge-valid  | run 1 C20 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:29:56.544 | Himja Patel | s1346 | judge-valid  | run 1 done in 66 s
+2026-11-12 08:30:00.314 | Himja Patel | s1346 | judge-valid  | run 2 C01 human=2 judge=3 (raw 3.4) 
+2026-11-12 08:30:03.598 | Himja Patel | s1346 | judge-valid  | run 2 C02 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:30:05.635 | Himja Patel | s1346 | judge-valid  | run 2 C03 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:08.373 | Himja Patel | s1346 | judge-valid  | run 2 C04 human=2 judge=4 (raw 4.2) 
+2026-11-12 08:30:11.164 | Himja Patel | s1346 | judge-valid  | run 2 C05 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:14.622 | Himja Patel | s1346 | judge-valid  | run 2 C06 human=3 judge=3 (raw 3.4) 
+2026-11-12 08:30:16.937 | Himja Patel | s1346 | judge-valid  | run 2 C07 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:30:19.447 | Himja Patel | s1346 | judge-valid  | run 2 C08 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:30:22.952 | Himja Patel | s1346 | judge-valid  | run 2 C09 human=3 judge=4 (raw 3.8) 
+2026-11-12 08:30:26.025 | Himja Patel | s1346 | judge-valid  | run 2 C10 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:28.436 | Himja Patel | s1346 | judge-valid  | run 2 C11 human=1 judge=1 (raw 1.0) 
+2026-11-12 08:30:30.813 | Himja Patel | s1346 | judge-valid  | run 2 C12 human=1 judge=2 (raw 1.8) 
+2026-11-12 08:30:33.666 | Himja Patel | s1346 | judge-valid  | run 2 C13 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:30:36.793 | Himja Patel | s1346 | judge-valid  | run 2 C14 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:39.454 | Himja Patel | s1346 | judge-valid  | run 2 C15 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:41.093 | Himja Patel | s1346 | judge-valid  | run 2 C16 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:30:43.148 | Himja Patel | s1346 | judge-valid  | run 2 C17 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:30:45.463 | Himja Patel | s1346 | judge-valid  | run 2 C18 human=1 judge=1 (raw 1.0) 
+2026-11-12 08:30:46.984 | Himja Patel | s1346 | judge-valid  | run 2 C19 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:48.944 | Himja Patel | s1346 | judge-valid  | run 2 C20 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:30:48.945 | Himja Patel | s1346 | judge-valid  | run 2 done in 52 s
+2026-11-12 08:30:52.480 | Himja Patel | s1346 | judge-valid  | run 3 C01 human=2 judge=3 (raw 3.4) 
+2026-11-12 08:30:54.866 | Himja Patel | s1346 | judge-valid  | run 3 C02 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:30:57.059 | Himja Patel | s1346 | judge-valid  | run 3 C03 human=3 judge=3 (raw 2.6) 
+2026-11-12 08:30:59.638 | Himja Patel | s1346 | judge-valid  | run 3 C04 human=2 judge=4 (raw 3.8) 
+2026-11-12 08:31:01.996 | Himja Patel | s1346 | judge-valid  | run 3 C05 human=3 judge=2 (raw 1.8) 
+2026-11-12 08:31:04.674 | Himja Patel | s1346 | judge-valid  | run 3 C06 human=3 judge=4 (raw 3.8) 
+2026-11-12 08:31:07.418 | Himja Patel | s1346 | judge-valid  | run 3 C07 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:31:09.812 | Himja Patel | s1346 | judge-valid  | run 3 C08 human=2 judge=2 (raw 1.8) 
+2026-11-12 08:31:12.951 | Himja Patel | s1346 | judge-valid  | run 3 C09 human=3 judge=3 (raw 3.0) 
+2026-11-12 08:31:15.391 | Himja Patel | s1346 | judge-valid  | run 3 C10 human=3 judge=2 (raw 1.8) 
+2026-11-12 08:31:17.931 | Himja Patel | s1346 | judge-valid  | run 3 C11 human=1 judge=1 (raw 1.0) 
+2026-11-12 08:31:20.427 | Himja Patel | s1346 | judge-valid  | run 3 C12 human=1 judge=2 (raw 1.8) 
+2026-11-12 08:31:22.755 | Himja Patel | s1346 | judge-valid  | run 3 C13 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:31:24.762 | Himja Patel | s1346 | judge-valid  | run 3 C14 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:31:27.140 | Himja Patel | s1346 | judge-valid  | run 3 C15 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:31:29.236 | Himja Patel | s1346 | judge-valid  | run 3 C16 human=2 judge=1 (raw 1.0) 
+2026-11-12 08:31:30.839 | Himja Patel | s1346 | judge-valid  | run 3 C17 human=2 judge=1 (raw 1.4) 
+2026-11-12 08:31:32.746 | Himja Patel | s1346 | judge-valid  | run 3 C18 human=1 judge=1 (raw 1.0) 
+2026-11-12 08:31:34.391 | Himja Patel | s1346 | judge-valid  | run 3 C19 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:31:36.413 | Himja Patel | s1346 | judge-valid  | run 3 C20 human=3 judge=1 (raw 1.0) 
+2026-11-12 08:31:36.414 | Himja Patel | s1346 | judge-valid  | run 3 done in 47 s
+2026-11-12 08:31:37.747 | Himja Patel | s1346 | judge-valid  | ==== judge vs human (n=20) ====
+2026-11-12 08:31:37.748 | Himja Patel | s1346 | judge-valid  | Spearman rho (run 1) = -0.263 (p=0.2626) | per run [-0.263, -0.149, 0.213] | mean of 3 runs -0.154
+2026-11-12 08:31:37.748 | Himja Patel | s1346 | judge-valid  | Mean absolute difference (run 1) = 1.150 | per run [1.15, 1.1, 1]
+2026-11-12 08:31:37.748 | Himja Patel | s1346 | judge-valid  | Repeatability: 11/20 cases changed across 3 runs (55.0%); 24/60 pairwise comparisons changed; mean |change| 0.467, max |change| 2 (raw: mean 0.427, max 2.00)
+2026-11-12 08:31:37.748 | Himja Patel | s1346 | judge-valid  | human labels {1: 3, 2: 8, 3: 9, 4: 0, 5: 0} | judge run 1 {1: 9, 2: 5, 3: 4, 4: 2, 5: 0}
+2026-11-12 08:31:37.748 | Himja Patel | s1346 | judge-valid  | saved reports/hw10/judge_validation.json and reports/hw10/raw/judge_scores.csv
+2026-11-12 08:34:31.754 | Himja Patel | s1346 | hw10-latency | HW10 Part 4.3 latency experiment | Himja Patel | s1346 | n=50
+2026-11-12 08:34:41.337 | Himja Patel | s1346 | hw10-latency | embedder=BAAI/bge-small-en-v1.5 dim=384 | vector backend=redisearch | agent=HW8 Kafka pipeline (Planner -> Writer -> Reviewer, qwen2.5:3b)
+2026-11-12 08:34:42.927 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9061 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:34:43.498 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=87982842 (waiting for s1346_final)
+2026-11-12 08:34:50.834 | Himja Patel | s1346 | evaluator    | EVALUATE trace=87982842-3605-499d-a0dc-a2a5523ed670 (reviewer=approved) question="What category is incident INC-000601?"
+2026-11-12 08:34:50.860 | Himja Patel | s1346 | hw10-latency | STORED latency=9001.5 ms (agent 7549 ms, reviewer=approved)  data_version=v:4757764dad61
+2026-11-12 08:35:01.735 | Himja Patel | s1346 | evaluator    | SCORES trace=87982842-3605-499d-a0dc-a2a5523ed670 plan=2 writer=3 final=4 draft-as-final=4 diff=0 (10.9 s)
+2026-11-12 08:35:01.927 | Himja Patel | s1346 | hw10-latency | request  1/50 MISS trace=87982842-3605-499d-a0dc-a2a5523ed670 user-facing 9002 ms | evaluation 10902 ms (ok)
+2026-11-12 08:35:03.150 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9226 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:35:03.552 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=efc1c337 (waiting for s1346_final)
+2026-11-12 08:35:08.819 | Himja Patel | s1346 | evaluator    | EVALUATE trace=efc1c337-7104-4c89-aeb5-3247c6fc7ced (reviewer=approved) question="How many passengers were affected by incident INC-000602?"
+2026-11-12 08:35:08.846 | Himja Patel | s1346 | hw10-latency | STORED latency=6912.9 ms (agent 5401 ms, reviewer=approved)  data_version=v:9f67e1b030f6
+2026-11-12 08:35:19.519 | Himja Patel | s1346 | evaluator    | SCORES trace=efc1c337-7104-4c89-aeb5-3247c6fc7ced plan=2 writer=2 final=1 draft-as-final=1 diff=0 (10.7 s)
+2026-11-12 08:35:19.916 | Himja Patel | s1346 | hw10-latency | request  2/50 MISS trace=efc1c337-7104-4c89-aeb5-3247c6fc7ced user-facing 6913 ms | evaluation 10698 ms (ok)
+2026-11-12 08:35:20.496 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9161 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:35:20.833 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=bb95c387 (waiting for s1346_final)
+2026-11-12 08:35:26.603 | Himja Patel | s1346 | evaluator    | EVALUATE trace=bb95c387-5bed-447a-bdb2-970f719c0189 (reviewer=approved) question="Which transit line is incident INC-000603 on?"
+2026-11-12 08:35:26.617 | Himja Patel | s1346 | hw10-latency | STORED latency=6698.7 ms (agent 5924 ms, reviewer=approved)  data_version=v:6ca8cdef6886
+2026-11-12 08:35:36.508 | Himja Patel | s1346 | evaluator    | SCORES trace=bb95c387-5bed-447a-bdb2-970f719c0189 plan=2 writer=3 final=1 draft-as-final=4 diff=-3 (9.9 s)
+2026-11-12 08:35:36.684 | Himja Patel | s1346 | hw10-latency | request  3/50 MISS trace=bb95c387-5bed-447a-bdb2-970f719c0189 user-facing 6699 ms | evaluation 9904 ms (ok)
+2026-11-12 08:35:37.280 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.8813 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:35:37.520 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=19652c83 (waiting for s1346_final)
+2026-11-12 08:35:42.694 | Himja Patel | s1346 | evaluator    | EVALUATE trace=19652c83-d0d2-4d49-b11b-7300d23d4d1c (reviewer=approved) question="When was incident INC-000604 reported?"
+2026-11-12 08:35:42.704 | Himja Patel | s1346 | hw10-latency | STORED latency=6015.4 ms (agent 5244 ms, reviewer=approved)  data_version=v:9528c4ba5ccd
+2026-11-12 08:35:53.898 | Himja Patel | s1346 | evaluator    | SCORES trace=19652c83-d0d2-4d49-b11b-7300d23d4d1c plan=2 writer=2 final=4 draft-as-final=3 diff=1 (11.2 s)
+2026-11-12 08:35:54.827 | Himja Patel | s1346 | hw10-latency | request  4/50 MISS trace=19652c83-d0d2-4d49-b11b-7300d23d4d1c user-facing 6015 ms | evaluation 11203 ms (ok)
+2026-11-12 08:35:55.324 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9309 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:35:55.675 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=9c56b45f (waiting for s1346_final)
+2026-11-12 08:36:03.975 | Himja Patel | s1346 | evaluator    | EVALUATE trace=9c56b45f-9578-4b2f-95da-9748fc9b49bb (reviewer=approved) question="What is the route title for incident INC-000605?"
+2026-11-12 08:36:04.029 | Himja Patel | s1346 | hw10-latency | STORED latency=9198.2 ms (agent 8471 ms, reviewer=approved)  data_version=v:db632a5866c2
+2026-11-12 08:36:14.468 | Himja Patel | s1346 | evaluator    | SCORES trace=9c56b45f-9578-4b2f-95da-9748fc9b49bb plan=3 writer=1 final=1 draft-as-final=1 diff=0 (10.5 s)
+2026-11-12 08:36:15.105 | Himja Patel | s1346 | hw10-latency | request  5/50 MISS trace=9c56b45f-9578-4b2f-95da-9748fc9b49bb user-facing 9198 ms | evaluation 10500 ms (ok)
+2026-11-12 08:36:16.552 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9612 >= 0.95 but incident codes differ (['INC-000606'] vs cached ['INC-000601']) -> miss
+2026-11-12 08:36:17.042 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=b38a258e (waiting for s1346_final)
+2026-11-12 08:36:22.229 | Himja Patel | s1346 | evaluator    | EVALUATE trace=b38a258e-801d-4dd8-98ea-6ebbb3dabdc7 (reviewer=approved) question="What category is incident INC-000606?"
+2026-11-12 08:36:22.437 | Himja Patel | s1346 | hw10-latency | STORED latency=7329.1 ms (agent 5345 ms, reviewer=approved)  data_version=v:46a16fe44e62
+2026-11-12 08:36:33.742 | Himja Patel | s1346 | evaluator    | SCORES trace=b38a258e-801d-4dd8-98ea-6ebbb3dabdc7 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (11.5 s)
+2026-11-12 08:36:34.584 | Himja Patel | s1346 | hw10-latency | request  6/50 MISS trace=b38a258e-801d-4dd8-98ea-6ebbb3dabdc7 user-facing 7329 ms | evaluation 11504 ms (ok)
+2026-11-12 08:36:36.187 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9709 >= 0.95 but incident codes differ (['INC-000607'] vs cached ['INC-000602']) -> miss
+2026-11-12 08:36:36.775 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=c4c324c3 (waiting for s1346_final)
+2026-11-12 08:36:43.569 | Himja Patel | s1346 | evaluator    | EVALUATE trace=c4c324c3-907b-4858-be6c-925966193e84 (reviewer=approved) question="How many passengers were affected by incident INC-000607?"
+2026-11-12 08:36:43.634 | Himja Patel | s1346 | hw10-latency | STORED latency=9041.2 ms (agent 7016 ms, reviewer=approved)  data_version=v:8b9a93624940
+2026-11-12 08:36:52.724 | Himja Patel | s1346 | evaluator    | SCORES trace=c4c324c3-907b-4858-be6c-925966193e84 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (9.2 s)
+2026-11-12 08:36:53.722 | Himja Patel | s1346 | hw10-latency | request  7/50 MISS trace=c4c324c3-907b-4858-be6c-925966193e84 user-facing 9041 ms | evaluation 9153 ms (ok)
+2026-11-12 08:36:55.271 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9543 >= 0.95 but incident codes differ (['INC-000608'] vs cached ['INC-000603']) -> miss
+2026-11-12 08:36:55.851 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=7d20f108 (waiting for s1346_final)
+2026-11-12 08:37:03.584 | Himja Patel | s1346 | evaluator    | EVALUATE trace=7d20f108-5d70-47a9-a5b7-6b80219e63be (reviewer=approved) question="Which transit line is incident INC-000608 on?"
+2026-11-12 08:37:03.677 | Himja Patel | s1346 | hw10-latency | STORED latency=9935.8 ms (agent 7984 ms, reviewer=approved)  data_version=v:3df507b91947
+2026-11-12 08:37:15.528 | Himja Patel | s1346 | evaluator    | SCORES trace=7d20f108-5d70-47a9-a5b7-6b80219e63be plan=2 writer=1 final=2 draft-as-final=1 diff=1 (12.0 s)
+2026-11-12 08:37:15.767 | Himja Patel | s1346 | hw10-latency | request  8/50 MISS trace=7d20f108-5d70-47a9-a5b7-6b80219e63be user-facing 9936 ms | evaluation 11952 ms (ok)
+2026-11-12 08:37:17.134 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9467 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:37:17.519 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=c35d6665 (waiting for s1346_final)
+2026-11-12 08:37:26.087 | Himja Patel | s1346 | evaluator    | EVALUATE trace=c35d6665-111f-41e8-bf65-c7ba5f80553f (reviewer=approved) question="When was incident INC-000609 reported?"
+2026-11-12 08:37:26.120 | Himja Patel | s1346 | hw10-latency | STORED latency=10347.4 ms (agent 8731 ms, reviewer=approved)  data_version=v:3a16ca39e694
+2026-11-12 08:37:35.750 | Himja Patel | s1346 | evaluator    | SCORES trace=c35d6665-111f-41e8-bf65-c7ba5f80553f plan=2 writer=3 final=4 draft-as-final=4 diff=0 (9.7 s)
+2026-11-12 08:37:36.228 | Himja Patel | s1346 | hw10-latency | request  9/50 MISS trace=c35d6665-111f-41e8-bf65-c7ba5f80553f user-facing 10347 ms | evaluation 9663 ms (ok)
+2026-11-12 08:37:37.336 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9250 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:37:37.710 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=60e891be (waiting for s1346_final)
+2026-11-12 08:37:43.570 | Himja Patel | s1346 | evaluator    | EVALUATE trace=60e891be-b462-48e0-9c67-68c12ce53112 (reviewer=approved) question="What is the route title for incident INC-000610?"
+2026-11-12 08:37:43.658 | Himja Patel | s1346 | hw10-latency | STORED latency=7420.7 ms (agent 6050 ms, reviewer=approved)  data_version=v:5cf20dc6b2be
+2026-11-12 08:37:56.380 | Himja Patel | s1346 | evaluator    | SCORES trace=60e891be-b462-48e0-9c67-68c12ce53112 plan=2 writer=2 final=3 draft-as-final=3 diff=0 (12.8 s)
+2026-11-12 08:37:56.807 | Himja Patel | s1346 | hw10-latency | request 10/50 MISS trace=60e891be-b462-48e0-9c67-68c12ce53112 user-facing 7421 ms | evaluation 12805 ms (ok)
+2026-11-12 08:37:58.139 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9470 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:37:58.660 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=eff35a50 (waiting for s1346_final)
+2026-11-12 08:38:04.914 | Himja Patel | s1346 | evaluator    | EVALUATE trace=eff35a50-fc52-4ab1-a2ba-1b6cd7d4bd41 (reviewer=approved) question="What category is incident INC-000611?"
+2026-11-12 08:38:04.952 | Himja Patel | s1346 | hw10-latency | STORED latency=8139.5 ms (agent 6478 ms, reviewer=approved)  data_version=v:a76020b5c284
+2026-11-12 08:38:16.430 | Himja Patel | s1346 | evaluator    | SCORES trace=eff35a50-fc52-4ab1-a2ba-1b6cd7d4bd41 plan=2 writer=4 final=3 draft-as-final=4 diff=-1 (11.5 s)
+2026-11-12 08:38:17.054 | Himja Patel | s1346 | hw10-latency | request 11/50 MISS trace=eff35a50-fc52-4ab1-a2ba-1b6cd7d4bd41 user-facing 8140 ms | evaluation 11513 ms (ok)
+2026-11-12 08:38:17.737 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9336 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:38:18.064 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=5452f7dd (waiting for s1346_final)
+2026-11-12 08:38:24.085 | Himja Patel | s1346 | evaluator    | EVALUATE trace=5452f7dd-c2e9-40d2-8bff-534b89a71c37 (reviewer=approved) question="How many passengers were affected by incident INC-000612?"
+2026-11-12 08:38:24.134 | Himja Patel | s1346 | hw10-latency | STORED latency=7072.0 ms (agent 6097 ms, reviewer=approved)  data_version=v:da647d2d2282
+2026-11-12 08:38:34.942 | Himja Patel | s1346 | evaluator    | SCORES trace=5452f7dd-c2e9-40d2-8bff-534b89a71c37 plan=1 writer=3 final=4 draft-as-final=4 diff=0 (10.9 s)
+2026-11-12 08:38:35.225 | Himja Patel | s1346 | hw10-latency | request 12/50 MISS trace=5452f7dd-c2e9-40d2-8bff-534b89a71c37 user-facing 7072 ms | evaluation 10855 ms (ok)
+2026-11-12 08:38:36.821 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9311 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:38:37.318 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=4e171692 (waiting for s1346_final)
+2026-11-12 08:38:44.715 | Himja Patel | s1346 | evaluator    | EVALUATE trace=4e171692-39aa-4553-834b-ff76c5a73412 (reviewer=approved) question="Which transit line is incident INC-000613 on?"
+2026-11-12 08:38:44.890 | Himja Patel | s1346 | hw10-latency | STORED latency=9660.3 ms (agent 7587 ms, reviewer=approved)  data_version=v:5f0091e9e18a
+2026-11-12 08:38:59.139 | Himja Patel | s1346 | evaluator    | SCORES trace=4e171692-39aa-4553-834b-ff76c5a73412 plan=1 writer=3 final=1 draft-as-final=1 diff=0 (14.4 s)
+2026-11-12 08:38:59.151 | Himja Patel | s1346 | hw10-latency | request 13/50 MISS trace=4e171692-39aa-4553-834b-ff76c5a73412 user-facing 9660 ms | evaluation 14405 ms (ok)
+2026-11-12 08:39:02.702 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9041 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:39:03.632 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=c2f29168 (waiting for s1346_final)
+2026-11-12 08:39:10.990 | Himja Patel | s1346 | evaluator    | EVALUATE trace=c2f29168-f45d-42d9-aeb4-37fbc1f3c1b9 (reviewer=approved) question="When was incident INC-000614 reported?"
+2026-11-12 08:39:11.043 | Himja Patel | s1346 | hw10-latency | STORED latency=11872.5 ms (agent 7757 ms, reviewer=approved)  data_version=v:61e002b0be6f
+2026-11-12 08:39:22.270 | Himja Patel | s1346 | evaluator    | SCORES trace=c2f29168-f45d-42d9-aeb4-37fbc1f3c1b9 plan=1 writer=2 final=3 draft-as-final=3 diff=0 (11.3 s)
+2026-11-12 08:39:23.183 | Himja Patel | s1346 | hw10-latency | request 14/50 MISS trace=c2f29168-f45d-42d9-aeb4-37fbc1f3c1b9 user-facing 11872 ms | evaluation 11285 ms (ok)
+2026-11-12 08:39:24.331 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9468 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:39:24.664 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=7942619f (waiting for s1346_final)
+2026-11-12 08:39:30.856 | Himja Patel | s1346 | evaluator    | EVALUATE trace=7942619f-a77c-43af-b95d-a86ecb5c1aca (reviewer=approved) question="What is the route title for incident INC-000615?"
+2026-11-12 08:39:30.895 | Himja Patel | s1346 | hw10-latency | STORED latency=7683.5 ms (agent 6342 ms, reviewer=approved)  data_version=v:2b2ee2ea89f7
+2026-11-12 08:39:42.096 | Himja Patel | s1346 | evaluator    | SCORES trace=7942619f-a77c-43af-b95d-a86ecb5c1aca plan=2 writer=2 final=3 draft-as-final=3 diff=0 (11.2 s)
+2026-11-12 08:39:43.007 | Himja Patel | s1346 | hw10-latency | request 15/50 MISS trace=7942619f-a77c-43af-b95d-a86ecb5c1aca user-facing 7684 ms | evaluation 11229 ms (ok)
+2026-11-12 08:39:44.951 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9399 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:39:45.501 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=927507e2 (waiting for s1346_final)
+2026-11-12 08:39:52.080 | Himja Patel | s1346 | evaluator    | EVALUATE trace=927507e2-485d-46a3-bb84-e4a8dfb90efa (reviewer=approved) question="What category is incident INC-000616?"
+2026-11-12 08:39:52.211 | Himja Patel | s1346 | hw10-latency | STORED latency=9182.3 ms (agent 6707 ms, reviewer=approved)  data_version=v:d01f93321cad
+2026-11-12 08:40:03.612 | Himja Patel | s1346 | evaluator    | SCORES trace=927507e2-485d-46a3-bb84-e4a8dfb90efa plan=2 writer=2 final=3 draft-as-final=4 diff=-1 (11.5 s)
+2026-11-12 08:40:04.374 | Himja Patel | s1346 | hw10-latency | request 16/50 MISS trace=927507e2-485d-46a3-bb84-e4a8dfb90efa user-facing 9182 ms | evaluation 11537 ms (ok)
+2026-11-12 08:40:05.614 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9453 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:40:07.095 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=a292bcf0 (waiting for s1346_final)
+2026-11-12 08:40:13.497 | Himja Patel | s1346 | evaluator    | EVALUATE trace=a292bcf0-995e-46ed-9ede-2e38d2f366a3 (reviewer=approved) question="How many passengers were affected by incident INC-000617?"
+2026-11-12 08:40:13.547 | Himja Patel | s1346 | hw10-latency | STORED latency=9149.2 ms (agent 6475 ms, reviewer=approved)  data_version=v:7eabc933ff7e
+2026-11-12 08:40:23.109 | Himja Patel | s1346 | evaluator    | SCORES trace=a292bcf0-995e-46ed-9ede-2e38d2f366a3 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (9.6 s)
+2026-11-12 08:40:23.630 | Himja Patel | s1346 | hw10-latency | request 17/50 MISS trace=a292bcf0-995e-46ed-9ede-2e38d2f366a3 user-facing 9149 ms | evaluation 9609 ms (ok)
+2026-11-12 08:40:25.035 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9576 >= 0.95 but incident codes differ (['INC-000618'] vs cached ['INC-000613']) -> miss
+2026-11-12 08:40:25.447 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=1d49162f (waiting for s1346_final)
+2026-11-12 08:40:33.303 | Himja Patel | s1346 | evaluator    | EVALUATE trace=1d49162f-969c-4242-b053-32c53c6beda3 (reviewer=approved) question="Which transit line is incident INC-000618 on?"
+2026-11-12 08:40:33.341 | Himja Patel | s1346 | hw10-latency | STORED latency=9706.6 ms (agent 8022 ms, reviewer=approved)  data_version=v:ca8d9f510fc4
+2026-11-12 08:40:43.278 | Himja Patel | s1346 | evaluator    | SCORES trace=1d49162f-969c-4242-b053-32c53c6beda3 plan=2 writer=3 final=2 draft-as-final=1 diff=1 (10.0 s)
+2026-11-12 08:40:43.421 | Himja Patel | s1346 | hw10-latency | request 18/50 MISS trace=1d49162f-969c-4242-b053-32c53c6beda3 user-facing 9707 ms | evaluation 9985 ms (ok)
+2026-11-12 08:40:44.440 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9367 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:40:44.937 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=35978920 (waiting for s1346_final)
+2026-11-12 08:40:53.506 | Himja Patel | s1346 | evaluator    | EVALUATE trace=35978920-dfa9-4961-be74-3933a65cadc1 (reviewer=approved) question="When was incident INC-000619 reported?"
+2026-11-12 08:40:53.570 | Himja Patel | s1346 | hw10-latency | STORED latency=10146.6 ms (agent 8710 ms, reviewer=approved)  data_version=v:ef53ef51a0f5
+2026-11-12 08:41:05.450 | Himja Patel | s1346 | evaluator    | SCORES trace=35978920-dfa9-4961-be74-3933a65cadc1 plan=2 writer=1 final=1 draft-as-final=3 diff=-2 (11.9 s)
+2026-11-12 08:41:05.687 | Himja Patel | s1346 | hw10-latency | request 19/50 MISS trace=35978920-dfa9-4961-be74-3933a65cadc1 user-facing 10147 ms | evaluation 11944 ms (ok)
+2026-11-12 08:41:07.043 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9645 >= 0.95 but incident codes differ (['INC-000620'] vs cached ['INC-000610']) -> miss
+2026-11-12 08:41:08.608 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=126c92ed (waiting for s1346_final)
+2026-11-12 08:41:13.466 | Himja Patel | s1346 | evaluator    | EVALUATE trace=126c92ed-9b84-4a9a-95b5-a890a01dd38f (reviewer=approved) question="What is the route title for incident INC-000620?"
+2026-11-12 08:41:13.513 | Himja Patel | s1346 | hw10-latency | STORED latency=7812.4 ms (agent 4915 ms, reviewer=approved)  data_version=v:9f8029cde44c
+2026-11-12 08:41:23.599 | Himja Patel | s1346 | evaluator    | SCORES trace=126c92ed-9b84-4a9a-95b5-a890a01dd38f plan=2 writer=1 final=1 draft-as-final=2 diff=-1 (10.1 s)
+2026-11-12 08:41:23.633 | Himja Patel | s1346 | hw10-latency | request 20/50 MISS trace=126c92ed-9b84-4a9a-95b5-a890a01dd38f user-facing 7812 ms | evaluation 10132 ms (ok)
+2026-11-12 08:41:24.855 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9417 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:41:25.123 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=a9d8e895 (waiting for s1346_final)
+2026-11-12 08:41:32.532 | Himja Patel | s1346 | evaluator    | EVALUATE trace=a9d8e895-9c61-46d1-83c7-f08b1826a272 (reviewer=approved) question="What category is incident INC-000621?"
+2026-11-12 08:41:32.573 | Himja Patel | s1346 | hw10-latency | STORED latency=8933.3 ms (agent 7479 ms, reviewer=approved)  data_version=v:861b6fbbff90
+2026-11-12 08:41:42.896 | Himja Patel | s1346 | evaluator    | SCORES trace=a9d8e895-9c61-46d1-83c7-f08b1826a272 plan=2 writer=4 final=3 draft-as-final=4 diff=-1 (10.4 s)
+2026-11-12 08:41:43.751 | Himja Patel | s1346 | hw10-latency | request 21/50 MISS trace=a9d8e895-9c61-46d1-83c7-f08b1826a272 user-facing 8933 ms | evaluation 10364 ms (ok)
+2026-11-12 08:41:45.244 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9466 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:41:45.768 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=4d6f3dd9 (waiting for s1346_final)
+2026-11-12 08:41:52.514 | Himja Patel | s1346 | evaluator    | EVALUATE trace=4d6f3dd9-efe3-4c24-9a20-71f1c67b68c8 (reviewer=approved) question="How many passengers were affected by incident INC-000622?"
+2026-11-12 08:41:52.567 | Himja Patel | s1346 | hw10-latency | STORED latency=8800.5 ms (agent 6915 ms, reviewer=approved)  data_version=v:760d139bc08e
+2026-11-12 08:42:03.367 | Himja Patel | s1346 | evaluator    | SCORES trace=4d6f3dd9-efe3-4c24-9a20-71f1c67b68c8 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (10.8 s)
+2026-11-12 08:42:03.706 | Himja Patel | s1346 | hw10-latency | request 22/50 MISS trace=4d6f3dd9-efe3-4c24-9a20-71f1c67b68c8 user-facing 8800 ms | evaluation 10849 ms (ok)
+2026-11-12 08:42:05.991 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9686 >= 0.95 but incident codes differ (['INC-000623'] vs cached ['INC-000230']) -> miss
+2026-11-12 08:42:06.632 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=c80f7c4b (waiting for s1346_final)
+2026-11-12 08:42:13.728 | Himja Patel | s1346 | evaluator    | EVALUATE trace=c80f7c4b-03be-45a9-9fa1-8bedc30f282a (reviewer=approved) question="Which transit line is incident INC-000623 on?"
+2026-11-12 08:42:13.829 | Himja Patel | s1346 | hw10-latency | STORED latency=10110.0 ms (agent 7314 ms, reviewer=approved)  data_version=v:519aedbd33e7
+2026-11-12 08:42:27.722 | Himja Patel | s1346 | evaluator    | SCORES trace=c80f7c4b-03be-45a9-9fa1-8bedc30f282a plan=2 writer=2 final=1 draft-as-final=3 diff=-2 (14.0 s)
+2026-11-12 08:42:28.005 | Himja Patel | s1346 | hw10-latency | request 23/50 MISS trace=c80f7c4b-03be-45a9-9fa1-8bedc30f282a user-facing 10110 ms | evaluation 13987 ms (ok)
+2026-11-12 08:42:29.396 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9429 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:42:29.866 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=5034a293 (waiting for s1346_final)
+2026-11-12 08:42:40.208 | Himja Patel | s1346 | evaluator    | EVALUATE trace=5034a293-406c-462e-8194-e74e313bd216 (reviewer=approved) question="When was incident INC-000624 reported?"
+2026-11-12 08:42:40.241 | Himja Patel | s1346 | hw10-latency | STORED latency=12221.4 ms (agent 10530 ms, reviewer=approved)  data_version=v:a8b87d0b20f1
+2026-11-12 08:42:50.085 | Himja Patel | s1346 | evaluator    | SCORES trace=5034a293-406c-462e-8194-e74e313bd216 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (9.9 s)
+2026-11-12 08:42:50.361 | Himja Patel | s1346 | hw10-latency | request 24/50 MISS trace=5034a293-406c-462e-8194-e74e313bd216 user-facing 12221 ms | evaluation 9888 ms (ok)
+2026-11-12 08:42:51.647 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9656 >= 0.95 but incident codes differ (['INC-000625'] vs cached ['INC-000620']) -> miss
+2026-11-12 08:42:52.075 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=e350bf2c (waiting for s1346_final)
+2026-11-12 08:42:58.537 | Himja Patel | s1346 | evaluator    | EVALUATE trace=e350bf2c-da2b-440d-9f5a-052ba97b230f (reviewer=approved) question="What is the route title for incident INC-000625?"
+2026-11-12 08:42:58.578 | Himja Patel | s1346 | hw10-latency | STORED latency=8201.9 ms (agent 6599 ms, reviewer=approved)  data_version=v:5c96f221b0b6
+2026-11-12 08:43:08.951 | Himja Patel | s1346 | evaluator    | SCORES trace=e350bf2c-da2b-440d-9f5a-052ba97b230f plan=2 writer=4 final=3 draft-as-final=3 diff=0 (10.4 s)
+2026-11-12 08:43:09.668 | Himja Patel | s1346 | hw10-latency | request 25/50 MISS trace=e350bf2c-da2b-440d-9f5a-052ba97b230f user-facing 8202 ms | evaluation 10397 ms (ok)
+2026-11-12 08:43:10.510 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9498 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:43:10.844 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=693a9fad (waiting for s1346_final)
+2026-11-12 08:43:16.903 | Himja Patel | s1346 | evaluator    | EVALUATE trace=693a9fad-8019-4869-97ef-fc88f1bcfc8f (reviewer=approved) question="What category is incident INC-000626?"
+2026-11-12 08:43:16.935 | Himja Patel | s1346 | hw10-latency | STORED latency=7261.2 ms (agent 6123 ms, reviewer=approved)  data_version=v:31cb792b2a0d
+2026-11-12 08:43:26.551 | Himja Patel | s1346 | evaluator    | SCORES trace=693a9fad-8019-4869-97ef-fc88f1bcfc8f plan=2 writer=3 final=4 draft-as-final=3 diff=1 (9.6 s)
+2026-11-12 08:43:27.047 | Himja Patel | s1346 | hw10-latency | request 26/50 MISS trace=693a9fad-8019-4869-97ef-fc88f1bcfc8f user-facing 7261 ms | evaluation 9641 ms (ok)
+2026-11-12 08:43:28.133 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9643 >= 0.95 but incident codes differ (['INC-000627'] vs cached ['INC-000622']) -> miss
+2026-11-12 08:43:28.495 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=bd5c90f2 (waiting for s1346_final)
+2026-11-12 08:43:35.563 | Himja Patel | s1346 | evaluator    | EVALUATE trace=bd5c90f2-412a-43ac-9e75-9fe34bd8cdf0 (reviewer=approved) question="How many passengers were affected by incident INC-000627?"
+2026-11-12 08:43:35.593 | Himja Patel | s1346 | hw10-latency | STORED latency=8531.9 ms (agent 7190 ms, reviewer=approved)  data_version=v:f7dba6062788
+2026-11-12 08:43:45.789 | Himja Patel | s1346 | evaluator    | SCORES trace=bd5c90f2-412a-43ac-9e75-9fe34bd8cdf0 plan=1 writer=1 final=1 draft-as-final=1 diff=0 (10.2 s)
+2026-11-12 08:43:46.708 | Himja Patel | s1346 | hw10-latency | request 27/50 MISS trace=bd5c90f2-412a-43ac-9e75-9fe34bd8cdf0 user-facing 8532 ms | evaluation 10225 ms (ok)
+2026-11-12 08:43:47.761 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9564 >= 0.95 but incident codes differ (['INC-000628'] vs cached ['INC-000623']) -> miss
+2026-11-12 08:43:48.071 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=5d0295f3 (waiting for s1346_final)
+2026-11-12 08:43:55.634 | Himja Patel | s1346 | evaluator    | EVALUATE trace=5d0295f3-b11f-48dd-aa48-dc6694fb4e60 (reviewer=approved) question="Which transit line is incident INC-000628 on?"
+2026-11-12 08:43:55.688 | Himja Patel | s1346 | hw10-latency | STORED latency=8976.6 ms (agent 7660 ms, reviewer=approved)  data_version=v:0552f01761ff
+2026-11-12 08:44:09.178 | Himja Patel | s1346 | evaluator    | SCORES trace=5d0295f3-b11f-48dd-aa48-dc6694fb4e60 plan=2 writer=2 final=4 draft-as-final=2 diff=2 (13.5 s)
+2026-11-12 08:44:09.908 | Himja Patel | s1346 | hw10-latency | request 28/50 MISS trace=5d0295f3-b11f-48dd-aa48-dc6694fb4e60 user-facing 8977 ms | evaluation 13524 ms (ok)
+2026-11-12 08:44:11.812 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9589 >= 0.95 but incident codes differ (['INC-000629'] vs cached ['INC-000624']) -> miss
+2026-11-12 08:44:12.191 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=1ad89e5b (waiting for s1346_final)
+2026-11-12 08:44:21.390 | Himja Patel | s1346 | evaluator    | EVALUATE trace=1ad89e5b-ec70-4dac-a57a-a8700efd5fac (reviewer=approved) question="When was incident INC-000629 reported?"
+2026-11-12 08:44:21.438 | Himja Patel | s1346 | hw10-latency | STORED latency=11523.0 ms (agent 9320 ms, reviewer=approved)  data_version=v:de258a581619
+2026-11-12 08:44:34.822 | Himja Patel | s1346 | evaluator    | SCORES trace=1ad89e5b-ec70-4dac-a57a-a8700efd5fac plan=1 writer=3 final=3 draft-as-final=3 diff=0 (13.4 s)
+2026-11-12 08:44:35.814 | Himja Patel | s1346 | hw10-latency | request 29/50 MISS trace=1ad89e5b-ec70-4dac-a57a-a8700efd5fac user-facing 11523 ms | evaluation 13427 ms (ok)
+2026-11-12 08:44:38.398 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9598 >= 0.95 but incident codes differ (['INC-000630'] vs cached ['INC-000620']) -> miss
+2026-11-12 08:44:39.613 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=4e3a37c3 (waiting for s1346_final)
+2026-11-12 08:44:46.194 | Himja Patel | s1346 | evaluator    | EVALUATE trace=4e3a37c3-d44a-4bad-b997-3d5b428314ec (reviewer=approved) question="What is the route title for incident INC-000630?"
+2026-11-12 08:44:46.261 | Himja Patel | s1346 | hw10-latency | STORED latency=10400.4 ms (agent 7344 ms, reviewer=approved)  data_version=v:fc39615bf5a3
+2026-11-12 08:44:58.177 | Himja Patel | s1346 | evaluator    | SCORES trace=4e3a37c3-d44a-4bad-b997-3d5b428314ec plan=2 writer=2 final=1 draft-as-final=2 diff=-1 (11.9 s)
+2026-11-12 08:44:58.438 | Himja Patel | s1346 | hw10-latency | request 30/50 MISS trace=4e3a37c3-d44a-4bad-b997-3d5b428314ec user-facing 10400 ms | evaluation 11943 ms (ok)
+2026-11-12 08:44:59.954 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9579 >= 0.95 but incident codes differ (['INC-000631'] vs cached ['INC-000611']) -> miss
+2026-11-12 08:45:00.366 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=e6a9d3ff (waiting for s1346_final)
+2026-11-12 08:45:06.483 | Himja Patel | s1346 | evaluator    | EVALUATE trace=e6a9d3ff-52ca-4d08-b1d0-ea9ffd311a95 (reviewer=approved) question="What category is incident INC-000631?"
+2026-11-12 08:45:06.509 | Himja Patel | s1346 | hw10-latency | STORED latency=8062.9 ms (agent 6247 ms, reviewer=approved)  data_version=v:67cd294451aa
+2026-11-12 08:45:18.374 | Himja Patel | s1346 | evaluator    | SCORES trace=e6a9d3ff-52ca-4d08-b1d0-ea9ffd311a95 plan=2 writer=3 final=2 draft-as-final=3 diff=-1 (11.9 s)
+2026-11-12 08:45:18.694 | Himja Patel | s1346 | hw10-latency | request 31/50 MISS trace=e6a9d3ff-52ca-4d08-b1d0-ea9ffd311a95 user-facing 8063 ms | evaluation 11888 ms (ok)
+2026-11-12 08:45:20.068 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9610 >= 0.95 but incident codes differ (['INC-000632'] vs cached ['INC-000622']) -> miss
+2026-11-12 08:45:20.481 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=8b5da1c8 (waiting for s1346_final)
+2026-11-12 08:45:28.562 | Himja Patel | s1346 | evaluator    | EVALUATE trace=8b5da1c8-08b2-4c3f-9183-f9a9fb47d608 (reviewer=approved) question="How many passengers were affected by incident INC-000632?"
+2026-11-12 08:45:28.682 | Himja Patel | s1346 | hw10-latency | STORED latency=9982.6 ms (agent 8244 ms, reviewer=approved)  data_version=v:f02c35e28bc6
+2026-11-12 08:45:38.357 | Himja Patel | s1346 | evaluator    | SCORES trace=8b5da1c8-08b2-4c3f-9183-f9a9fb47d608 plan=2 writer=2 final=1 draft-as-final=1 diff=0 (9.8 s)
+2026-11-12 08:45:38.853 | Himja Patel | s1346 | hw10-latency | request 32/50 MISS trace=8b5da1c8-08b2-4c3f-9183-f9a9fb47d608 user-facing 9983 ms | evaluation 9795 ms (ok)
+2026-11-12 08:45:40.643 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9602 >= 0.95 but incident codes differ (['INC-000633'] vs cached ['INC-000613']) -> miss
+2026-11-12 08:45:40.988 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=063b98c2 (waiting for s1346_final)
+2026-11-12 08:45:47.327 | Himja Patel | s1346 | evaluator    | EVALUATE trace=063b98c2-fc30-431c-9f96-4500fb54ba29 (reviewer=approved) question="Which transit line is incident INC-000633 on?"
+2026-11-12 08:45:47.383 | Himja Patel | s1346 | hw10-latency | STORED latency=8527.5 ms (agent 6432 ms, reviewer=approved)  data_version=v:35c53b0e4f8c
+2026-11-12 08:45:59.639 | Himja Patel | s1346 | evaluator    | SCORES trace=063b98c2-fc30-431c-9f96-4500fb54ba29 plan=1 writer=2 final=4 draft-as-final=4 diff=0 (12.3 s)
+2026-11-12 08:46:00.536 | Himja Patel | s1346 | hw10-latency | request 33/50 MISS trace=063b98c2-fc30-431c-9f96-4500fb54ba29 user-facing 8528 ms | evaluation 12305 ms (ok)
+2026-11-12 08:46:02.349 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9508 >= 0.95 but incident codes differ (['INC-000634'] vs cached ['INC-000624']) -> miss
+2026-11-12 08:46:02.822 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=b88bdc27 (waiting for s1346_final)
+2026-11-12 08:46:11.094 | Himja Patel | s1346 | evaluator    | EVALUATE trace=b88bdc27-b6fe-429a-877a-ee284bb9e097 (reviewer=approved) question="When was incident INC-000634 reported?"
+2026-11-12 08:46:11.172 | Himja Patel | s1346 | hw10-latency | STORED latency=10626.7 ms (agent 8476 ms, reviewer=approved)  data_version=v:8db83df625a3
+2026-11-12 08:46:23.218 | Himja Patel | s1346 | evaluator    | SCORES trace=b88bdc27-b6fe-429a-877a-ee284bb9e097 plan=2 writer=3 final=4 draft-as-final=4 diff=0 (12.1 s)
+2026-11-12 08:46:23.331 | Himja Patel | s1346 | hw10-latency | request 34/50 MISS trace=b88bdc27-b6fe-429a-877a-ee284bb9e097 user-facing 10627 ms | evaluation 12127 ms (ok)
+2026-11-12 08:46:25.030 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9624 >= 0.95 but incident codes differ (['INC-000635'] vs cached ['INC-000630']) -> miss
+2026-11-12 08:46:25.580 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=e9997bb5 (waiting for s1346_final)
+2026-11-12 08:46:32.593 | Himja Patel | s1346 | evaluator    | EVALUATE trace=e9997bb5-b6ab-4077-9d1a-73fa854933be (reviewer=approved) question="What is the route title for incident INC-000635?"
+2026-11-12 08:46:32.640 | Himja Patel | s1346 | hw10-latency | STORED latency=9295.1 ms (agent 7251 ms, reviewer=approved)  data_version=v:aaac5718a6c0
+2026-11-12 08:46:43.025 | Himja Patel | s1346 | evaluator    | SCORES trace=e9997bb5-b6ab-4077-9d1a-73fa854933be plan=2 writer=2 final=1 draft-as-final=1 diff=0 (10.4 s)
+2026-11-12 08:46:43.777 | Himja Patel | s1346 | hw10-latency | request 35/50 MISS trace=e9997bb5-b6ab-4077-9d1a-73fa854933be user-facing 9295 ms | evaluation 10421 ms (ok)
+2026-11-12 08:46:45.527 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9521 >= 0.95 but incident codes differ (['INC-000636'] vs cached ['INC-000631']) -> miss
+2026-11-12 08:46:45.930 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=dc4eeb8c (waiting for s1346_final)
+2026-11-12 08:46:53.386 | Himja Patel | s1346 | evaluator    | EVALUATE trace=dc4eeb8c-b56f-443d-8b54-5c06f0c8ffa0 (reviewer=approved) question="What category is incident INC-000636?"
+2026-11-12 08:46:53.426 | Himja Patel | s1346 | hw10-latency | STORED latency=9633.6 ms (agent 7578 ms, reviewer=approved)  data_version=v:c232f24a7f63
+2026-11-12 08:47:04.103 | Himja Patel | s1346 | evaluator    | SCORES trace=dc4eeb8c-b56f-443d-8b54-5c06f0c8ffa0 plan=2 writer=2 final=4 draft-as-final=3 diff=1 (10.7 s)
+2026-11-12 08:47:04.573 | Himja Patel | s1346 | hw10-latency | request 36/50 MISS trace=dc4eeb8c-b56f-443d-8b54-5c06f0c8ffa0 user-facing 9634 ms | evaluation 10712 ms (ok)
+2026-11-12 08:47:06.573 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9615 >= 0.95 but incident codes differ (['INC-000637'] vs cached ['INC-000632']) -> miss
+2026-11-12 08:47:07.048 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=04b92e08 (waiting for s1346_final)
+2026-11-12 08:47:14.911 | Himja Patel | s1346 | evaluator    | EVALUATE trace=04b92e08-1e3e-4b09-a858-44d238558568 (reviewer=approved) question="How many passengers were affected by incident INC-000637?"
+2026-11-12 08:47:14.994 | Himja Patel | s1346 | hw10-latency | STORED latency=10415.1 ms (agent 8002 ms, reviewer=approved)  data_version=v:08fada1309ab
+2026-11-12 08:47:25.370 | Himja Patel | s1346 | evaluator    | SCORES trace=04b92e08-1e3e-4b09-a858-44d238558568 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (10.5 s)
+2026-11-12 08:47:26.173 | Himja Patel | s1346 | hw10-latency | request 37/50 MISS trace=04b92e08-1e3e-4b09-a858-44d238558568 user-facing 10415 ms | evaluation 10463 ms (ok)
+2026-11-12 08:47:27.448 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9598 >= 0.95 but incident codes differ (['INC-000638'] vs cached ['INC-000628']) -> miss
+2026-11-12 08:47:27.882 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=6c1c9716 (waiting for s1346_final)
+2026-11-12 08:47:34.708 | Himja Patel | s1346 | evaluator    | EVALUATE trace=6c1c9716-7d53-4460-82bb-a4a6fb1f0aa2 (reviewer=approved) question="Which transit line is incident INC-000638 on?"
+2026-11-12 08:47:34.740 | Himja Patel | s1346 | hw10-latency | STORED latency=8559.2 ms (agent 6962 ms, reviewer=approved)  data_version=v:22f1fa5fdd74
+2026-11-12 08:47:43.786 | Himja Patel | s1346 | evaluator    | SCORES trace=6c1c9716-7d53-4460-82bb-a4a6fb1f0aa2 plan=2 writer=2 final=1 draft-as-final=1 diff=0 (9.1 s)
+2026-11-12 08:47:43.865 | Himja Patel | s1346 | hw10-latency | request 38/50 MISS trace=6c1c9716-7d53-4460-82bb-a4a6fb1f0aa2 user-facing 8559 ms | evaluation 9094 ms (ok)
+2026-11-12 08:47:45.166 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9543 >= 0.95 but incident codes differ (['INC-000639'] vs cached ['INC-000634']) -> miss
+2026-11-12 08:47:45.650 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=34a549bc (waiting for s1346_final)
+2026-11-12 08:47:53.355 | Himja Patel | s1346 | evaluator    | EVALUATE trace=34a549bc-1645-4b11-8b48-8fb1a20a0748 (reviewer=approved) question="When was incident INC-000639 reported?"
+2026-11-12 08:47:53.373 | Himja Patel | s1346 | hw10-latency | STORED latency=9498.0 ms (agent 7822 ms, reviewer=approved)  data_version=v:a8d26e3eea3f
+2026-11-12 08:48:03.919 | Himja Patel | s1346 | evaluator    | SCORES trace=34a549bc-1645-4b11-8b48-8fb1a20a0748 plan=2 writer=4 final=2 draft-as-final=1 diff=1 (10.6 s)
+2026-11-12 08:48:04.522 | Himja Patel | s1346 | hw10-latency | request 39/50 MISS trace=34a549bc-1645-4b11-8b48-8fb1a20a0748 user-facing 9498 ms | evaluation 10564 ms (ok)
+2026-11-12 08:48:06.626 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9412 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:48:07.481 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=e0240d46 (waiting for s1346_final)
+2026-11-12 08:48:13.522 | Himja Patel | s1346 | evaluator    | EVALUATE trace=e0240d46-860d-47dc-8225-548b2ad67dda (reviewer=approved) question="What is the route title for incident INC-000640?"
+2026-11-12 08:48:13.604 | Himja Patel | s1346 | hw10-latency | STORED latency=9078.5 ms (agent 6500 ms, reviewer=approved)  data_version=v:10e4c11b3b88
+2026-11-12 08:48:23.378 | Himja Patel | s1346 | evaluator    | SCORES trace=e0240d46-860d-47dc-8225-548b2ad67dda plan=1 writer=1 final=2 draft-as-final=2 diff=0 (9.8 s)
+2026-11-12 08:48:23.807 | Himja Patel | s1346 | hw10-latency | request 40/50 MISS trace=e0240d46-860d-47dc-8225-548b2ad67dda user-facing 9078 ms | evaluation 9814 ms (ok)
+2026-11-12 08:48:25.743 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9561 >= 0.95 but incident codes differ (['INC-000641'] vs cached ['INC-000601']) -> miss
+2026-11-12 08:48:26.274 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=14a76811 (waiting for s1346_final)
+2026-11-12 08:48:32.498 | Himja Patel | s1346 | evaluator    | EVALUATE trace=14a76811-0c8a-44d5-a175-91afa15fc6a0 (reviewer=approved) question="What category is incident INC-000641?"
+2026-11-12 08:48:32.513 | Himja Patel | s1346 | hw10-latency | STORED latency=8697.6 ms (agent 6380 ms, reviewer=approved)  data_version=v:13e0dd746ccc
+2026-11-12 08:48:42.836 | Himja Patel | s1346 | evaluator    | SCORES trace=14a76811-0c8a-44d5-a175-91afa15fc6a0 plan=2 writer=3 final=3 draft-as-final=4 diff=-1 (10.3 s)
+2026-11-12 08:48:43.630 | Himja Patel | s1346 | hw10-latency | request 41/50 MISS trace=14a76811-0c8a-44d5-a175-91afa15fc6a0 user-facing 8698 ms | evaluation 10319 ms (ok)
+2026-11-12 08:48:45.254 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9679 >= 0.95 but incident codes differ (['INC-000642'] vs cached ['INC-000602']) -> miss
+2026-11-12 08:48:45.791 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=69d47050 (waiting for s1346_final)
+2026-11-12 08:48:51.970 | Himja Patel | s1346 | evaluator    | EVALUATE trace=69d47050-7847-4c56-a07f-9d4eff0267ae (reviewer=approved) question="How many passengers were affected by incident INC-000642?"
+2026-11-12 08:48:52.074 | Himja Patel | s1346 | hw10-latency | STORED latency=8436.1 ms (agent 6348 ms, reviewer=approved)  data_version=v:a779025cc222
+2026-11-12 08:49:02.677 | Himja Patel | s1346 | evaluator    | SCORES trace=69d47050-7847-4c56-a07f-9d4eff0267ae plan=1 writer=1 final=1 draft-as-final=1 diff=0 (10.7 s)
+2026-11-12 08:49:03.250 | Himja Patel | s1346 | hw10-latency | request 42/50 MISS trace=69d47050-7847-4c56-a07f-9d4eff0267ae user-facing 8436 ms | evaluation 10711 ms (ok)
+2026-11-12 08:49:04.667 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9632 >= 0.95 but incident codes differ (['INC-000643'] vs cached ['INC-000603']) -> miss
+2026-11-12 08:49:05.061 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=f4c5da7e (waiting for s1346_final)
+2026-11-12 08:49:12.991 | Himja Patel | s1346 | evaluator    | EVALUATE trace=f4c5da7e-2815-42b5-92bc-5d3b083beff8 (reviewer=approved) question="Which transit line is incident INC-000643 on?"
+2026-11-12 08:49:13.044 | Himja Patel | s1346 | hw10-latency | STORED latency=9783.3 ms (agent 8062 ms, reviewer=approved)  data_version=v:fef964996e42
+2026-11-12 08:49:24.567 | Himja Patel | s1346 | evaluator    | SCORES trace=f4c5da7e-2815-42b5-92bc-5d3b083beff8 plan=2 writer=1 final=3 draft-as-final=2 diff=1 (11.6 s)
+2026-11-12 08:49:25.219 | Himja Patel | s1346 | hw10-latency | request 43/50 MISS trace=f4c5da7e-2815-42b5-92bc-5d3b083beff8 user-facing 9783 ms | evaluation 11569 ms (ok)
+2026-11-12 08:49:26.951 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9538 >= 0.95 but incident codes differ (['INC-000644'] vs cached ['INC-000604']) -> miss
+2026-11-12 08:49:27.396 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=07fce845 (waiting for s1346_final)
+2026-11-12 08:49:35.180 | Himja Patel | s1346 | evaluator    | EVALUATE trace=07fce845-015f-41e8-95ef-4acb0c3d31fb (reviewer=approved) question="When was incident INC-000644 reported?"
+2026-11-12 08:49:35.208 | Himja Patel | s1346 | hw10-latency | STORED latency=9977.9 ms (agent 7948 ms, reviewer=approved)  data_version=v:bcb8c902c546
+2026-11-12 08:49:45.948 | Himja Patel | s1346 | evaluator    | SCORES trace=07fce845-015f-41e8-95ef-4acb0c3d31fb plan=2 writer=2 final=3 draft-as-final=4 diff=-1 (10.8 s)
+2026-11-12 08:49:46.350 | Himja Patel | s1346 | hw10-latency | request 44/50 MISS trace=07fce845-015f-41e8-95ef-4acb0c3d31fb user-facing 9978 ms | evaluation 10772 ms (ok)
+2026-11-12 08:49:48.058 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9732 >= 0.95 but incident codes differ (['INC-000645'] vs cached ['INC-000640']) -> miss
+2026-11-12 08:49:48.489 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=e7aedabb (waiting for s1346_final)
+2026-11-12 08:49:57.127 | Himja Patel | s1346 | evaluator    | EVALUATE trace=e7aedabb-9e65-4d52-a3a9-4f4568ffe338 (reviewer=approved) question="What is the route title for incident INC-000645?"
+2026-11-12 08:49:57.260 | Himja Patel | s1346 | hw10-latency | STORED latency=10904.3 ms (agent 8853 ms, reviewer=approved)  data_version=v:620ba8ded51a
+2026-11-12 08:50:08.314 | Himja Patel | s1346 | evaluator    | SCORES trace=e7aedabb-9e65-4d52-a3a9-4f4568ffe338 plan=2 writer=3 final=1 draft-as-final=1 diff=0 (11.2 s)
+2026-11-12 08:50:08.405 | Himja Patel | s1346 | hw10-latency | request 45/50 MISS trace=e7aedabb-9e65-4d52-a3a9-4f4568ffe338 user-facing 10904 ms | evaluation 11191 ms (ok)
+2026-11-12 08:50:09.870 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9614 >= 0.95 but incident codes differ (['INC-000646'] vs cached ['INC-000606']) -> miss
+2026-11-12 08:50:11.766 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=fef62e8b (waiting for s1346_final)
+2026-11-12 08:50:18.902 | Himja Patel | s1346 | evaluator    | EVALUATE trace=fef62e8b-6722-4f12-9e28-9cd723ef4ba8 (reviewer=approved) question="What category is incident INC-000646?"
+2026-11-12 08:50:18.938 | Himja Patel | s1346 | hw10-latency | STORED latency=10530.3 ms (agent 7193 ms, reviewer=approved)  data_version=v:ee34506b9398
+2026-11-12 08:50:31.716 | Himja Patel | s1346 | evaluator    | SCORES trace=fef62e8b-6722-4f12-9e28-9cd723ef4ba8 plan=2 writer=4 final=4 draft-as-final=4 diff=0 (12.8 s)
+2026-11-12 08:50:32.111 | Himja Patel | s1346 | hw10-latency | request 46/50 MISS trace=fef62e8b-6722-4f12-9e28-9cd723ef4ba8 user-facing 10530 ms | evaluation 12816 ms (ok)
+2026-11-12 08:50:33.303 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9697 >= 0.95 but incident codes differ (['INC-000647'] vs cached ['INC-000642']) -> miss
+2026-11-12 08:50:33.574 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=8edd63d6 (waiting for s1346_final)
+2026-11-12 08:50:40.345 | Himja Patel | s1346 | evaluator    | EVALUATE trace=8edd63d6-da57-4d40-b188-c98efa3e6a9d (reviewer=approved) question="How many passengers were affected by incident INC-000647?"
+2026-11-12 08:50:40.377 | Himja Patel | s1346 | hw10-latency | STORED latency=8262.0 ms (agent 6870 ms, reviewer=approved)  data_version=v:df69549c8c9d
+2026-11-12 08:50:53.780 | Himja Patel | s1346 | evaluator    | SCORES trace=8edd63d6-da57-4d40-b188-c98efa3e6a9d plan=1 writer=4 final=2 draft-as-final=2 diff=0 (13.4 s)
+2026-11-12 08:50:54.607 | Himja Patel | s1346 | hw10-latency | request 47/50 MISS trace=8edd63d6-da57-4d40-b188-c98efa3e6a9d user-facing 8262 ms | evaluation 13404 ms (ok)
+2026-11-12 08:50:56.751 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9684 >= 0.95 but incident codes differ (['INC-000648'] vs cached ['INC-000608']) -> miss
+2026-11-12 08:50:57.250 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=bd0f988a (waiting for s1346_final)
+2026-11-12 08:51:04.694 | Himja Patel | s1346 | evaluator    | EVALUATE trace=bd0f988a-2f56-4fe3-bca9-9044d38d7ce6 (reviewer=approved) question="Which transit line is incident INC-000648 on?"
+2026-11-12 08:51:04.725 | Himja Patel | s1346 | hw10-latency | STORED latency=10072.5 ms (agent 7628 ms, reviewer=approved)  data_version=v:991ca87dfa43
+2026-11-12 08:51:13.841 | Himja Patel | s1346 | evaluator    | SCORES trace=bd0f988a-2f56-4fe3-bca9-9044d38d7ce6 plan=2 writer=1 final=1 draft-as-final=1 diff=0 (9.1 s)
+2026-11-12 08:51:13.887 | Himja Patel | s1346 | hw10-latency | request 48/50 MISS trace=bd0f988a-2f56-4fe3-bca9-9044d38d7ce6 user-facing 10072 ms | evaluation 9148 ms (ok)
+2026-11-12 08:51:16.134 | Himja Patel | s1346 | hw10-latency | MISS   best sim=0.9494 < 0.95  -> HW8 agent pipeline
+2026-11-12 08:51:16.588 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=502f77b1 (waiting for s1346_final)
+2026-11-12 08:51:23.663 | Himja Patel | s1346 | evaluator    | EVALUATE trace=502f77b1-3c8a-445e-88b7-a0fd8d6206cd (reviewer=approved) question="When was incident INC-000649 reported?"
+2026-11-12 08:51:23.700 | Himja Patel | s1346 | hw10-latency | STORED latency=9807.5 ms (agent 7177 ms, reviewer=approved)  data_version=v:25e38e1e88ce
+2026-11-12 08:51:35.883 | Himja Patel | s1346 | evaluator    | SCORES trace=502f77b1-3c8a-445e-88b7-a0fd8d6206cd plan=3 writer=3 final=4 draft-as-final=1 diff=3 (12.2 s)
+2026-11-12 08:51:35.922 | Himja Patel | s1346 | hw10-latency | request 49/50 MISS trace=502f77b1-3c8a-445e-88b7-a0fd8d6206cd user-facing 9808 ms | evaluation 12214 ms (ok)
+2026-11-12 08:51:38.122 | Himja Patel | s1346 | hw10-latency | GUARD  sim=0.9585 >= 0.95 but incident codes differ (['INC-000650'] vs cached ['INC-000640']) -> miss
+2026-11-12 08:51:38.643 | Himja Patel | s1346 | hw10-latency |    agent: SENT -> s1346_inbox corr=f431a78b (waiting for s1346_final)
+2026-11-12 08:51:45.065 | Himja Patel | s1346 | evaluator    | EVALUATE trace=f431a78b-08bb-4967-a9bd-400841d8cd1c (reviewer=approved) question="What is the route title for incident INC-000650?"
+2026-11-12 08:51:45.137 | Himja Patel | s1346 | hw10-latency | STORED latency=9193.0 ms (agent 6707 ms, reviewer=approved)  data_version=v:5b2093313210
+2026-11-12 08:51:54.647 | Himja Patel | s1346 | evaluator    | SCORES trace=f431a78b-08bb-4967-a9bd-400841d8cd1c plan=2 writer=1 final=1 draft-as-final=1 diff=0 (9.6 s)
+2026-11-12 08:51:55.294 | Himja Patel | s1346 | hw10-latency | request 50/50 MISS trace=f431a78b-08bb-4967-a9bd-400841d8cd1c user-facing 9193 ms | evaluation 9581 ms (ok)
+2026-11-12 08:51:57.562 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=2152.9 ms  cached query="What category is incident INC-000601?"
+2026-11-12 08:51:57.675 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=108.2 ms  cached query="How many passengers were affected by incident INC-000602?"
+2026-11-12 08:51:57.702 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=27.1 ms  cached query="Which transit line is incident INC-000603 on?"
+2026-11-12 08:51:57.725 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=22.4 ms  cached query="When was incident INC-000604 reported?"
+2026-11-12 08:51:57.741 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=16.1 ms  cached query="What is the route title for incident INC-000605?"
+2026-11-12 08:51:57.759 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=16.8 ms  cached query="What category is incident INC-000606?"
+2026-11-12 08:51:57.777 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=17.8 ms  cached query="How many passengers were affected by incident INC-000607?"
+2026-11-12 08:51:57.794 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=17.1 ms  cached query="Which transit line is incident INC-000608 on?"
+2026-11-12 08:51:57.810 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=15.4 ms  cached query="When was incident INC-000609 reported?"
+2026-11-12 08:51:57.831 | Himja Patel | s1346 | hw10-latency | HIT    sim=1.0000 >= 0.95  latency=20.6 ms  cached query="What is the route title for incident INC-000610?"
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | ==== stage latency over 50 confirmed cache misses (end-to-end p50 19764 ms, p95 23624 ms) ====
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Stage                |   p50 (ms) |   p95 (ms) | % of cache-miss end-to-end
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Cache lookup         |     1496.1 |     2266.9 |   7.7%
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Planner              |     3039.8 |     4224.5 |  15.4%
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Writer               |     2246.2 |     2996.9 |  11.3%
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Reviewer             |     1497.8 |     1819.2 |   7.7%
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Queue wait (total)   |      314.3 |      627.8 |   1.9%
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Evaluation           |    10810.2 |    13480.6 |  55.0%
+2026-11-12 08:51:57.848 | Himja Patel | s1346 | hw10-latency | Other                |            |            |   1.0%  (client, DB facts, cache store, gaps)
+2026-11-12 08:51:57.849 | Himja Patel | s1346 | hw10-latency |    queue_inbox   p50    188.7  p95    440.7
+2026-11-12 08:51:57.849 | Himja Patel | s1346 | hw10-latency |    queue_tasks   p50     32.0  p95     75.1
+2026-11-12 08:51:57.849 | Himja Patel | s1346 | hw10-latency |    queue_drafts  p50     36.8  p95     79.2
+2026-11-12 08:51:57.849 | Himja Patel | s1346 | hw10-latency |    queue_final   p50     28.5  p95     84.9
+2026-11-12 08:51:57.850 | Himja Patel | s1346 | hw10-latency | user-facing (to the final answer) p50 9170 ms, p95 11246 ms | cache-HIT latency (n=10) p50 19.2 ms, p95 1232.8 ms
+2026-11-12 08:51:57.850 | Himja Patel | s1346 | hw10-latency | dominant stage: Evaluation | excluded (not a miss): 0 | saved reports/hw10/latency_experiment.json

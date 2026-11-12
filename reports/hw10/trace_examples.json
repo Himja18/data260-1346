@@ -1,0 +1,21 @@
+{
+  "cache_miss": {
+    "trace_id": "96fba1de-bcf2-466f-8927-96abc91d0053",
+    "question": "What is the route title for incident INC-000512?",
+    "latency_ms": 9197.5
+  },
+  "cache_hit": {
+    "trace_id": "04b2b196-95e2-456e-8cbf-e7a369e2c7e6",
+    "question": "What is the route title for incident INC-000512?",
+    "latency_ms": 1292.3,
+    "is_cached": true,
+    "similarity": 1.0
+  },
+  "failed": {
+    "trace_id": "e7361b58-b348-4152-bfb4-f6dd3d2e25dc",
+    "question": "How many passengers were affected by incident INC-000513?",
+    "inject_fault": "writer",
+    "failing_stage": "writer",
+    "error": "RuntimeError: injected fault in writer (inject_fault='writer')"
+  }
+}
