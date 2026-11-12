@@ -1,0 +1,21 @@
+case_id,human_label,labeler,question_short
+C01,2,Himja Patel,How many passengers were affected by incident INC-000105?
+C02,2,Himja Patel,When was incident INC-000778 reported?
+C03,3,Himja Patel,What is the route title for incident INC-000319?
+C04,2,Himja Patel,Which transit line is incident INC-000231 on?
+C05,3,Himja Patel,How many passengers were affected by incident INC-000106?
+C06,3,Himja Patel,What category is incident INC-000043?
+C07,2,Himja Patel,Incident INC-000230 happened on which transit line?
+C08,2,Himja Patel,How many riders were impacted by incident INC-000105?
+C09,3,Himja Patel,Which category was incident INC-000042 filed under?
+C10,3,Himja Patel,What is the difference between a Breakdown and an Accident incident?
+C11,1,Himja Patel,What information should I include when I report an accident?
+C12,1,Himja Patel,How long does it usually take for a minor collision to be cleared?
+C13,2,Himja Patel,How do I report a light rail accident with injuries to the transit incident desk?
+C14,3,Himja Patel,What incident category should I use when my train is cancelled?
+C15,3,Himja Patel,"Typically, how long until a broken-down vehicle is cleared?"
+C16,2,Himja Patel,What details do I need to give when reporting a delay?
+C17,2,Himja Patel,I got hurt in a small collision on a light rail train - who should I contact?
+C18,1,Himja Patel,What are some tips for parallel parking a car?
+C19,3,Himja Patel,Translate 'thank you very much' into Spanish.
+C20,3,Himja Patel,How much does a bike share ride cost per minute?
