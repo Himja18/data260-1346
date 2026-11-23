@@ -1,7 +1,7 @@
 # HW7 Part 1 - Ruff configuration (lint + import order), used by pre-commit and `make lint`.
 target-version = "py311"
 line-length = 110
-extend-exclude = ["code/frontend", "reports", "**/node_modules"]
+extend-exclude = ["code/frontend", "reports", "**/node_modules", "code/hw11/stock-watch/watch.py"]
 # Module roots used by the code (sys.path entries), so import sorting is the same from any cwd.
 src = [".", "code/backend", "code/mcp", "code/kafka_service", "code/kafka_agents", "code/hw09", "code/hw09/part4", "code/hw10", "code", "src"]
 

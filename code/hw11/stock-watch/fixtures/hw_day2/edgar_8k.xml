@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DATA 260 HW11 FIXTURE (Himja Patel, s1346). Harbor Line Transit Systems (HLTS), Cedar Rail Signaling (CDRS), BayView Fare Technologies (BVFT) and MetroFleet Electric (MFEV) are FICTIONAL companies; these filings and news items do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 fixture, day 2)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000302</id>
+    <updated>2026-12-02T08:05:00-05:00</updated>
+    <title>HLTS: 8-K - Current report (other events)</title>
+    <summary>(Fictional test filing.) Harbor Line Transit Systems Inc. Item 8.01 Other Events: the Lakeside County Transit Board selected Harbor Line as the preferred bidder for a seven-year, $85M bus-operations contract. Contract terms are still being negotiated and no definitive agreement has been signed.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000302/0009999911-26-000302-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000202</id>
+    <updated>2026-12-01T17:30:00-05:00</updated>
+    <title>CDRS: 8-K/A - Current report, amendment</title>
+    <summary>(Fictional test filing.) Cedar Rail Signaling Inc. Amendment No. 1 to the 8-K of November 30, filed only to attach the investor presentation as Exhibit 99.2 (Item 9.01). No change to the reported results or guidance.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000202/0009999912-26-000202-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000301</id>
+    <updated>2026-11-30T08:30:00-05:00</updated>
+    <title>HLTS: 8-K - Current report (officer change)</title>
+    <summary>(Fictional test filing.) Harbor Line Transit Systems Inc. Item 5.02 Departure of Directors or Certain Officers: Chief Executive Officer Dana Whitfield will step down effective December 31, 2026. The board named Chief Operating Officer Luis Ortega as interim CEO and has begun a search.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000301/0009999911-26-000301-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000201</id>
+    <updated>2026-11-30T16:10:00-05:00</updated>
+    <title>CDRS: 8-K - Current report (Q3 results)</title>
+    <summary>(Fictional test filing.) Cedar Rail Signaling Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Q3 revenue $318M, up 21% year over year, driven by positive-train-control upgrades; full-year revenue guidance raised to $1.22B-$1.25B.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000201/0009999912-26-000201-index.htm" rel="alternate"/>
+  </entry>
+</feed>

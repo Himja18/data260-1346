@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DATA 260 HW11 FIXTURE (Himja Patel, s1346). Harbor Line Transit Systems (HLTS), Cedar Rail Signaling (CDRS), BayView Fare Technologies (BVFT) and MetroFleet Electric (MFEV) are FICTIONAL companies; these filings and news items do not exist. -->
+<rss version="2.0"><channel>
+  <title>Example Newswire: transit and mobility (HW11 fixture, day 2)</title>
+  <link>https://example-newswire.example/markets</link>
+  <item>
+    <title>Market wrap: transport stocks drift in light trading</title>
+    <link>https://example-newswire.example/markets/wrap-1202</link>
+    <pubDate>Wed, 02 Dec 2026 21:10:00 GMT</pubDate>
+    <description>(Fictional test item.) The transportation index rose about 0.2% on light volume.</description>
+  </item>
+</channel></rss>

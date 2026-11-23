@@ -1,0 +1,86 @@
+{
+  "topic": "Material changes for a transit and mobility watchlist (Uber, Lyft, Wabtec): large daily price moves and new SEC 8-K filings",
+  "user_agent": "DATA260-stock-watch/1.0 REALNAME@sjsu.edu",
+  "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. SEC asks automated clients to send a User-Agent with a contact email: put yours in user_agent above. HW11 (Himja Patel, s1346): candidate threshold 2% for every ticker; the per-ticker notify thresholds (notify_pct) are set and justified in policy.md and are printed in every price item.",
+  "sources": [
+    {
+      "id": "prices_live",
+      "type": "stooq",
+      "modes": [
+        "live"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "uber.us",
+        "lyft.us",
+        "wab.us"
+      ],
+      "threshold_pct": 2.0,
+      "lookback_days": 3,
+      "notify_pct": {
+        "UBER": 6.0,
+        "LYFT": 8.0,
+        "WAB": 4.0
+      }
+    },
+    {
+      "id": "edgar_live",
+      "type": "edgar",
+      "modes": [
+        "live"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "form": "8-K",
+      "per_company": 5,
+      "ciks": {
+        "UBER": "0001543151",
+        "LYFT": "0001759509",
+        "WAB": "0000943452"
+      }
+    },
+    {
+      "id": "prices_demo",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "nbrx.us",
+        "cbds.us",
+        "lksp.us",
+        "hlts.us",
+        "cdrs.us",
+        "bvft.us",
+        "mfev.us"
+      ],
+      "threshold_pct": 2.0,
+      "lookback_days": 3,
+      "notify_pct": {
+        "HLTS": 4.0,
+        "CDRS": 5.0,
+        "BVFT": 6.0,
+        "MFEV": 8.0
+      }
+    },
+    {
+      "id": "edgar_demo",
+      "type": "edgar",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "fixture": "edgar_8k.xml",
+      "ciks": {}
+    },
+    {
+      "id": "newswire_demo",
+      "type": "rss",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://example-newswire.example/markets/feed.xml",
+      "fixture": "newswire.xml"
+    }
+  ]
+}
