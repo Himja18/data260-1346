@@ -1,6 +1,6 @@
 {
   "topic": "Material changes for a transit and mobility watchlist (Uber, Lyft, Wabtec): large daily price moves and new SEC 8-K filings",
-  "user_agent": "DATA260-stock-watch/1.0 REALNAME@sjsu.edu",
+  "user_agent": "DATA260-stock-watch/1.0 himja.patel@sjsu.edu",
   "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. SEC asks automated clients to send a User-Agent with a contact email: put yours in user_agent above. HW11 (Himja Patel, s1346): candidate threshold 2% for every ticker; the per-ticker notify thresholds (notify_pct) are set and justified in policy.md and are printed in every price item.",
   "sources": [
     {
