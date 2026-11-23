@@ -60,6 +60,12 @@ Price scoring (T = the ticker's notify threshold):
 A deal is notify only when the filing says a definitive agreement was **signed** (1.01). "Selected",
 "preferred bidder", "in negotiations" or "letter of intent" is digest.
 
+**Backfill (live mode):** EDGAR lists each company's latest filings, so the first live run also sees
+filings from weeks or months ago. A filing dated more than 7 days before today is history, not a
+change: score 0.10, `quiet`, reason "backfill: filed <date>". It is still recorded in the ledger, so it
+can never alert later. (Added after the first live run; it changes none of the golden labels, whose
+fixture filings are dated after the run date.)
+
 ## 4. News
 
 - A news story that reports a filing or price move scores the same as that event. If it cites the
